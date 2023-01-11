@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infralution.Controls", "Infralution.Controls.csproj", "{C245D32F-BC3F-4FEF-B571-CA0E54F40370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infralution.Common", "..\..\Infralution.Common\Infralution.Common.csproj", "{CBA7A8D5-DB18-4F47-BA87-E628692647D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C245D32F-BC3F-4FEF-B571-CA0E54F40370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C245D32F-BC3F-4FEF-B571-CA0E54F40370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C245D32F-BC3F-4FEF-B571-CA0E54F40370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C245D32F-BC3F-4FEF-B571-CA0E54F40370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA7A8D5-DB18-4F47-BA87-E628692647D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA7A8D5-DB18-4F47-BA87-E628692647D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA7A8D5-DB18-4F47-BA87-E628692647D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA7A8D5-DB18-4F47-BA87-E628692647D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

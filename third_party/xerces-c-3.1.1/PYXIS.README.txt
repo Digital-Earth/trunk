@@ -1,0 +1,8 @@
+Build instractions:
+1) download source from: http://xerces.apache.org/xerces-c/download.cgi
+
+2) build instractions can be found in: http://xerces.apache.org/xerces-c/build-3.html
+     I have upgraded VS2010 project into VS2012 project and compiled it.
+     I have enable SEH exception in the project
+
+3) create the needed directories and copy the output files to right location.

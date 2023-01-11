@@ -1,0 +1,22 @@
+# Makefile.paths
+# Copyright (c) 1997, Regents of the University of California
+# $Id: Makefile.paths.Linux.i686,v 1.1 2004/12/15 21:33:40 Patrick Dooley Exp $
+
+#
+# amdb is currently built with javasoft JDK-1.1.6.
+#
+JDKINSTALL = /usr/local/lib/jdk118
+HAVEJDK:=$(shell test -d ${JDKINSTALL}/include && echo true)
+JFCINSTALL = ${JDKINSTALL}/swing
+JDKINCS = -I$(JDKINSTALL)/include -I$(JDKINSTALL)/include/linux
+
+# 
+# system-specific settings (binaries, paths, etc.)
+#
+
+# Linux
+GPPINCL = /usr/include
+GPPLIBS = /usr/lib
+CC = /usr/bin/g++
+LINKER = $(CC)
+LDFLAGS = -g -shared -L$(LIBDIR)

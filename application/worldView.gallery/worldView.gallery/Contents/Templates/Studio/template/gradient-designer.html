@@ -1,0 +1,30 @@
+<!-- == Gradient Widget Container == -->
+<div class="gradient-editor">
+    <div class="gradient-stops">
+        <!-- == Gradient == -->
+        <div class="gradient" ng-click="appendStep()"></div>
+        <!-- == Gradient Step (Labels) == -->
+
+        <section ng-if="editorMode === 'expanded'">
+            <div class="gradient-stop" gradient-stop ng-repeat="step in colorPalette.Steps" on-last-repeat>
+                <!-- == Gradient Handle  == -->
+                <div class="gradient-stop-handle">
+                    <div class="gradient-stop-arrow"></div>
+                    <div class="gradient-stop-swatch">
+                        <div class="swatch" popup-template="/popup-menu/geosource-style.html" placement="left center" 
+                        popup-group="popup-menu" show-trigger="click">
+                            <span ng-style="{'background-color':step.Color}" ng-class="{'is-transparent': step.Color == 'rgba(0,0,0,0.0)' || step.Color == 'rgba(0,0,0,0.00)'}" tooltip="{{'tooltip.legend.geosource.value.styling'|i18n}}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-stop-icon" ng-if="item.Style.Icon.IconDataUrl">
+                     <img ng-src="{{item.Style.Icon.IconDataUrl}}" />
+                </div>
+                <div class="gradient-stop-location">
+                    <input type="text" ng-model="stepValue.copy" elastic-input elastic-input-maxwidth="200px" ng-blur="updateStepValue(stepValue.copy)" ng-enter="updateStepValue(stepValue.copy)" />
+                </div>
+                <div class="gradient-stop-remove" ng-click="deleteStep(step)"><i class="fa fa-remove"></i></div>
+            </div>
+        </section>
+    </div>
+</div>

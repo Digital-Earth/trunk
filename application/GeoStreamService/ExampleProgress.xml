@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<status>
+  <pipeline procRef="">
+    <isDownloaded>
+      <status>true</status>
+    </isDownloaded>
+    <isPublished>
+      <status>true</status>
+    </isPublished>
+    <isProcessed>
+      <status>true</status>
+    </isProcessed>
+  </pipeline>
+</status>
+
+<status>
+  <pipeline procRef="">
+    <isDownloaded>
+      <status>true</status>
+    </isDownloaded>
+    <isPublished>
+      <status>true</status>
+    </isPublished>
+    <isProcessed>
+      <status>false</status>
+      <resolutionsProcessed>
+        <resolution>2</resolution>
+        <resolution>3</resolution>
+        <resolution>4</resolution>
+        <resolution>16</resolution>
+      </resolutionsProcessed>
+    </isProcessed>
+  </pipeline>
+</status>
+
+<status>
+  <pipeline procRef="">
+    <isDownloaded>
+      <status>false</status>
+      <filesDownloaded>
+        <checksum>[checksum]</checksum>
+        <checksum>[checksum]</checksum>
+      </filesDownloaded>
+      <fileDownloading>
+        <checksum>[checksum]</checksum>
+        <progressPercent>40</progressPercent>
+      </fileDownloading>
+    </isDownloaded>
+    <isPublished>
+      <status>true</status>
+    </isPublished>
+    <isProcessed>
+      <status>true</status>
+    </isProcessed>
+  </pipeline>
+</status>

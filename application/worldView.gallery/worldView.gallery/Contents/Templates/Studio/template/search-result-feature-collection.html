@@ -1,0 +1,17 @@
+﻿<div class="complex-result">
+    <div class="resource-result resource-gallery complex-result-header">
+        <div class="section title">
+            <i class="fa fa-map-marker"></i>
+            {{resource.Metadata.Name}}
+        </div>
+    </div>
+    <div class="complex-result-content">
+        <scrollbar class="results-scroll">
+            <div class="sub-items">
+                <div class="item" ng-repeat="feature in resource.features">
+                    <search-result-resource resource="feature" current-map="currentMap" action="invoke($action,$resource)"></search-result-resource>
+                </div>
+            </div>
+        </scrollbar>    
+    </div>
+</div>

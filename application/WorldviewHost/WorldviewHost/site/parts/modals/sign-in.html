@@ -1,0 +1,42 @@
+ <div class="modal__content" ng-controller="SignInFormController">
+    <a class="modal__content__close" href="" ng-click="show.modal = ''"><span class="nc-icon-outline ui-1_simple-remove"></span></a>
+    <div class="modal__body">
+        <div class="modal__header">
+            <h2 class="section-title">Sign in</h2>
+            <a class="link link--normal" href="" ng-click="show.modal = 'register'; form.reset()">Don't have an account? Register</a>
+        </div>
+        <div class="register-social">
+            <span class="register__lead">With social media:</span>
+            <div class="register__services">
+                <a class="register__service" href="" ng-click="socialSignIn('Facebook'); gaEvent('signin modal', 'social auth', 'Facebook');">
+                    <i class="nc-icon-glyph socials-1_logo-facebook"></i>
+                </a>
+                <a class="register__service" href="" ng-click="socialSignIn('LinkedIn'); gaEvent('signin modal', 'social auth', 'LinkedIn');">
+                    <i class="nc-icon-glyph socials-1_logo-linkedin"></i>
+                </a>
+                <a class="register__service" href="" ng-click="socialSignIn('Google'); gaEvent('signin modal', 'social auth', 'Google');">
+                    <i class="nc-icon-glyph socials-1_logo-google-plus"></i>
+                </a>
+            </div>
+        </div>
+        <span class="or">OR</span>
+        <div class="horizontal-rule"></div>
+        <form class="register__form" name="signInForm" validation-schema schema="SignIn" ng-keypress="$event.keyCode == 13 && submitSignIn()">
+            <div class="form-panel">
+                <div class="form-panel__split">
+                    <label class="label-small">Username or Email</label>
+                    <input class="input input--rounded" type="text" name="email" ng-model="signInForm.Email"/>
+            </div>
+                <div class="form-panel__split">
+                    <label class="label-small">Password: <a class="link link--normal" ng-click="show.modal = ''" href="/forgotPassword">Forgot Password</a></label>
+                    <input class="input input--rounded" type="password" name="password" ng-model="signInForm.Password"/>    
+                </div>
+            </div>
+            <div class="form__footer">
+                <div class="form-sumbit">
+                    <a class="btn btn--action btn--rounded btn--small" href="" validation-submit="signInForm" href="" ng-click="submitSignIn()" ng-disabled="submitting">Sign in</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

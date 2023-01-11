@@ -1,0 +1,237 @@
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+F U N C T I O N S
+                    
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+vendor($prop, $values...)
+    $vendor = (-webkit- -moz- -ms- -o-)
+    $values = unquote($values) if $values is a 'string'
+       
+    for $prefix, $index in $vendor
+        {$prefix}{$prop}: $values
+       
+    {$prop}: $values
+
+strip-unit($value)
+    return unit($value, '')
+
+px($value)
+    return unit($value, 'px') 
+
+auto-line-height($value, $increase = 0) 
+    $magic-number = 1.35
+    $do-operation = '*'
+    $update-value = operate($do-operation, strip-unit($value), $magic-number + $increase)
+  
+    if $update-value % 4 isnt 0 
+        $update-value = floor($update-value / 4) * 4
+        
+    return unit(round($update-value), 'px')
+    
+image-width($path)
+    return image-size($path)[0]
+    
+image-height($path)
+    return image-size($path)[1]
+ 
+calcFor(property, operator, percent, value)
+    vendors = (-webkit- -moz- -ms- -o-)
+    for vendor, index in vendors 
+        prefix = vendor + 'calc(%s %s %s)'
+        add-property(property, s(prefix, percent, unquote(operator), value))
+    
+    add-property(property, s('calc(%s %s %s)', percent, unquote(operator), value))
+
+   
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+M I X I N S
+                    
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+transition()
+    $arguments = ''
+
+    if length(arguments) is 2
+        for argument, index in arguments
+            if index
+                noprint = $arguments += ', ' + argument
+            else
+                noprint = $arguments += argument
+                
+        vendor('transition', $arguments) 
+        
+    else
+        vendor('transition', arguments)  
+
+
+transform-property() 
+    vendor('transform', arguments)
+
+transform-origin()
+    vendor('transform-origin', arguments)
+    
+box-sizing()
+    vendor('box-sizing', arguments)
+
+box-shadow()
+    vendor('box-shadow', arguments)
+
+text-shadow()
+    vendor('text-shadow', arguments)
+
+border-radius()
+    vendor('border-radius', arguments)
+
+border-box-html()
+  html
+    box-sizing: border-box
+
+  *,
+  *:before,
+  *:after
+    box-sizing: inherit
+         
+circle($radius)
+    height: px($radius)
+    width: px($radius)
+    border-radius(px(1000))
+    
+align($position = relative, $axis = 'vertical')
+    if $axis is 'horizontal'
+        left: 50%
+        transform-property(translate3d(-50%, 0, 0))
+    else if $axis is 'vertical'  
+        top: 50%
+        transform-property(translate3d(0, -50%, 0))
+    else 
+        left: 50%
+        top: 50%
+        transform-property(translate3d(-50%, -50%, 0))
+        
+    position: $position
+    vendor(backface-visibility, hidden)
+    vendor(transform-style, flat)
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+F L E X B O X
+                    
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+flexbox(value = flex)
+    if value == inline-flex
+        display -webkit-inline-flex
+        display -ms-inline-flexbox
+        display inline-flex
+    else if value == flex
+        display -webkit-flex
+        display -ms-flexbox
+        display flex
+
+flex(value)
+    -webkit-flex value
+    -ms-flex value
+    flex value
+
+flex-basis(value)
+    -webkit-flex-basis value
+    -ms-flex-basis value
+    flex-basis value
+
+flex-grow(value)
+    -webkit-flex-grow value
+    -ms-flex-grow value
+    flex-grow value
+
+flex-shrink(value)
+    -webkit-flex-shrink value
+    -ms-flex-shrink value
+    flex-shrink value
+
+flex-direction(value)
+    -webkit-flex-direction value
+    -ms-flex-direction value
+    flex-direction value
+
+flex-wrap(value)
+    -webkit-flex-wrap value
+    -ms-flex-wrap value
+    flex-wrap value
+
+flex-flow(value)
+    -webkit-flex-flow value
+    -ms-flex-flow value
+    flex-flow value
+
+justify-content(value)
+    if value == start || value == end
+        -webkit-justify-content flex-+value
+        -ms-flex-pack value
+        justify-content flex-+value
+    else if value == center
+        -webkit-justify-content value
+        -ms-flex-pack value
+        justify-content value
+    else if value == space-between
+        -webkit-justify-content value
+        -ms-flex-pack justify
+        justify-content value
+    else if value == space-around
+        -webkit-justify-content value
+        -ms-flex-pack distribute
+        justify-content value
+
+align-content(value)
+    if value == space-around
+        -webkit-align-content value
+        -ms-flex-line-pack distribute
+        align-content value
+    else if value == space-between
+        -webkit-align-content value
+        -ms-flex-line-pack justify
+        align-content value
+    else if value == end or value == start
+        -webkit-align-content flex-+value
+        -ms-flex-line-pack value
+        align-content flex-+value
+    else
+        -webkit-align-content value
+        -ms-flex-line-pack value
+        align-content value
+
+align-items(value)
+    if value == start or value == end
+        -webkit-align-items flex-+value
+        -ms-flex-align value
+        align-items flex-+value
+    else
+        -webkit-align-items value
+        -ms-flex-align value
+        align-items value
+
+align-self(value)
+    if value == start or value == end
+        -webkit-align-self flex-+value
+        -ms-flex-item-align value
+        align-self flex-+value
+    else
+        -webkit-align-self value
+        -ms-flex-item-align value
+        align-self value
+
+order(value)
+    -ms-flex-order value
+    -webkit-order value
+    order value
+
+
+    
+

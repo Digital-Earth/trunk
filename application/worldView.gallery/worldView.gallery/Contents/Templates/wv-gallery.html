@@ -1,0 +1,86 @@
+﻿<div style="left:0px;right:0px;padding:40px;">
+    <div class="banner" >
+        <img ng-if="banner" ng-show="banner" ng-src="{{banner}}" />
+        <div ng-if="owner && !banner" class="add-banner">Your gallery banner goes here</div>
+    </div>
+    <div>
+        <div style="float: right; margin-top: 20px">
+            <button ng-show="admin && !owner" class="big orange" title="EnableEdit" ng-click="owner = admin">Enable Edit</button>
+            <div ng-if="owner">
+                <button ng-if="cards.length==0" class="big gray" ng-click="enterDeleteMode()"><i class="fa fa-trash-o"></i><span>Delete</span></button>
+                <button class="big gray" ng-click="enterEditMode()"><i class="fa fa-edit"></i><span>Edit</span></button>
+            </div>
+        </div>
+        <h1>
+            <i ng-show="gallery.Metadata.Visibility == 'Private'" class="fa fa-lock" title="Private GeoSource"></i>
+            {{gallery.Metadata.Name}}
+            <span ng-if="cards.length>0" class="gray-text small-text">({{cards.length}} GeoSource)</span>
+        </h1>        
+        <div style="clear:both"></div>
+        <div class="metadata">
+            <a class="user" href="/User/{{gallery.Metadata.User.Id}}">
+                <i class="fa fa-user"></i>{{gallery.Metadata.User.Name}}
+            </a>
+            <span class="created" style="padding-right:40px;">
+                Created: <span class="gray-text">{{gallery.Metadata.Created | timedelta}}</span>
+            </span>
+            <div class="tags" style="display:inline-block">
+                <span ng-repeat="tag in gallery.Metadata.Tags"><a href="/?search={{tag}}">{{tag}}</a></span>
+            </div>        
+        </div>
+        <div style="text-align: justify;">{{gallery.Metadata.Description}}</div>
+        <br />
+    </div>
+    <div class="masonry" item-width="240" v-space="24" h-space="30" style="margin-left:auto;margin-right:auto;" should-expand="false">
+        <card ng-repeat="card in cards" ng-model="card" masonry-item>{{card.Metadata.Name}}</card>
+    </div>    
+</div>
+<modal-dialog ng-if="editmode">
+    <div class="form-group">
+        <span class="gray-text small-text">Name</span>
+        <input disabled type="text" class="form-control" name="name" ng-model="newValues.Name" placeholder="Your Gallery Name" required="">
+	</div>
+    <div class="form-group">
+        <span class="gray-text small-text">Description</span>
+        <textarea class="form-control" style="width:100%;height:100px;resize: none;" ng-model="newValues.Description" placeholder="Gallery Description"></textarea>
+	</div>
+    <div class="form-group">
+        <span class="gray-text small-text">Tags</span>
+        <input-tags ng-model="newValues.Tags"></input-tags>
+	</div>
+    <div class="form-group">
+        <span class="gray-text small-text">Banner</span>
+        <div class="banner" >
+            <img ng-if="newValues.banner" ng-show="newValues.banner" image-drop="newValues.updateBanner($files)" ng-src="{{newValues.banner}}" />
+            <div ng-if="!newValues.banner" class="add-banner" image-drop="newValues.updateBanner($files)">No Banner Provided</div>
+        </div>
+        <input type="file" file-change="newValues.updateBanner($files)" name="banner"></input>
+    </div>
+    <div class="form-group">
+        <span class="gray-text small-text">Logo</span>
+        <div class="gallery-logo" >
+            <img ng-if="newValues.logo" ng-show="newValues.logo" image-drop="newValues.updateLogo($files)" ng-src="{{newValues.logo}}" />
+            <div ng-if="!newValues.logo" class="no-logo" image-drop="newValues.updateLogo($files)">No Logo</div>
+        </div>
+        <input type="file" name="logo" file-change="newValues.updateLogo($files)"></input>
+    </div>
+    <div class="form-group" style="font-size:16px;">
+        <span class="gray-text small-text">Permissions</span>
+        <input-permission ng-model="newValues.Visibility"></input-permission>
+	</div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="commitEditMode()"><i class="fa fa-check"></i><span>Save Changes</span></button>
+        <button class="big gray" ng-click="cancelEditMode()"><i class="fa fa-times"></i><span>Cancel</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+<modal-dialog ng-if="deletemode">
+    <h1>Delete Gallery</h1>
+    <div style="min-height:300px;">
+        <p>Are you sure you would like to remove '{{gallery.Metadata.Name}}'?</p>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="commitDeleteMode()"><i class="fa fa-trash-o"></i><span>Delete</span></button>
+        <button class="big gray" ng-click="cancelDeleteMode()"><i class="fa fa-times"></i><span>Cancel</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+

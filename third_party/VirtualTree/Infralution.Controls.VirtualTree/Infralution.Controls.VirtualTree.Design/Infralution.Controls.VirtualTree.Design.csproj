@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAB8B30D-C458-4DEF-8FB0-24EB78C1F3A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infralution.Controls.VirtualTree.Design</RootNamespace>
+    <AssemblyName>Infralution.Controls.VirtualTree.Design</AssemblyName>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CHECK_PUBLIC_KEY</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1699</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CHECK_PUBLIC_KEY</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1699</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoGenerateBindingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellEditorAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellEditorControlTypeConverter.cs" />
+    <Compile Include="CellEditorsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CellEditorUpdateValueEventEditor.cs" />
+    <Compile Include="CellEditorUpdateValueEventTypeConverter.cs" />
+    <Compile Include="CellEditorValuePropertyEditor.cs" />
+    <Compile Include="CellEditorValuePropertyTypeConverter.cs" />
+    <Compile Include="ColumnsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataFieldEditor.cs" />
+    <Compile Include="ObjectFieldEditor.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <Compile Include="DataRelationChildEditor.cs" />
+    <Compile Include="DataRelationParentEditor.cs" />
+    <Compile Include="DataRowCellBindingConverter.cs" />
+    <Compile Include="DataSetCellBindingConverter.cs" />
+    <Compile Include="DataTableEditor.cs" />
+    <Compile Include="DataViewCellBindingConverter.cs" />
+    <Compile Include="LookupFieldEditor.cs" />
+    <Compile Include="ObjectCellBindingConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RowBindingsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeDesigner.cs" />
+    <Compile Include="TreeEditor.cs" />
+    <Compile Include="TreeEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infralution.Common\Infralution.Common.csproj">
+      <Project>{CBA7A8D5-DB18-4F47-BA87-E628692647D6}</Project>
+      <Name>Infralution.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infralution.Controls\Infralution.Controls.Design\Infralution.Controls.Design.csproj">
+      <Project>{DA5E7871-BC3B-4B0A-9D0C-30DC2404F8B8}</Project>
+      <Name>Infralution.Controls.Design</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infralution.Controls\Infralution.Controls\Infralution.Controls.csproj">
+      <Project>{c245d32f-bc3f-4fef-b571-ca0e54f40370}</Project>
+      <Name>Infralution.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infralution.Controls.VirtualTree\Infralution.Controls.VirtualTree.csproj">
+      <Project>{4A44BBD6-AC7F-4332-A2D7-9C4D8063E352}</Project>
+      <Name>Infralution.Controls.VirtualTree</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutoGenerateBindingsForm.resx">
+      <DependentUpon>AutoGenerateBindingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CellEditorAddForm.resx">
+      <DependentUpon>CellEditorAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CellEditorsEditorControl.resx">
+      <DependentUpon>CellEditorsEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColumnsEditorControl.resx">
+      <DependentUpon>ColumnsEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RowBindingsEditorControl.resx">
+      <DependentUpon>RowBindingsEditorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeEditorForm.resx">
+      <DependentUpon>TreeEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

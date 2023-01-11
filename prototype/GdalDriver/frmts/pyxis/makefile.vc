@@ -1,0 +1,27 @@
+
+OBJ	=	pyxisdataset.obj
+
+EXTRAFLAGS = 	$(PYXIS_INC)
+
+GDAL_ROOT	=	..\..
+
+!INCLUDE $(GDAL_ROOT)\nmake.opt
+
+default:	$(OBJ)
+	xcopy /D  /Y *.obj ..\o
+
+clean:
+	-del *.obj
+	-del *.dll
+
+
+plugin:	gdal_PYXIS.dll
+
+gdal_PYXIS.dll:	$(OBJ)
+	link /dll /out:gdal_PYXIS.dll $(OBJ) \
+		$(GDAL_ROOT)/gdal_i.lib $(PYXIS_LIB) 
+	if exist gdal_PYXIS.manifest mt -manifest gdal_PYXIS.manifest -outputresource:gdal_PYXIS.dll
+
+
+
+

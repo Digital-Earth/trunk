@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Pyxis.WorldView.Studio.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StartupUrl" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.globalgridsystems.com/Studio/beta-v1</Value>
+    </Setting>
+    <Setting Name="CrashDumpUploadUri" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.globalgridsystems.com/Api/UploadCrash</Value>
+    </Setting>
+    <Setting Name="ProductionStartupUriHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www.globalgridsystems.com</Value>
+    </Setting>
+    <Setting Name="DevelopmentStartupUriHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www-dev.globalgridsystems.com</Value>
+    </Setting>
+    <Setting Name="TestStartupUriHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www-test.globalgridsystems.com</Value>
+    </Setting>
+    <Setting Name="FeedbackUrl" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.globalgridsystems.com/Api/Feedback</Value>
+    </Setting>
+    <Setting Name="ApplicationDownloadUrl" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.globalgridsystems.com/download</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

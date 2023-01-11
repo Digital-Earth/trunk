@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfigurationErrorMessage" xml:space="preserve">
+    <value>There was a problem reading your user settings file.  Your user settings will be reset to the defaults.</value>
+  </data>
+  <data name="ConfigurationErrorTitle" xml:space="preserve">
+    <value>User Configuration Error</value>
+  </data>
+  <data name="Dlg0x001_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Dlg0x001_Open" xml:space="preserve">
+    <value>&amp;Open</value>
+  </data>
+  <data name="Dlg0x001_Save" xml:space="preserve">
+    <value>&amp;Save</value>
+  </data>
+  <data name="Dlg0x002_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Dlg0x003_Abort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="Dlg0x004_Retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="Dlg0x005_Ignore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="Dlg0x006_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Dlg0x007_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Dlg0x401_Properties" xml:space="preserve">
+    <value>&amp;Properties...</value>
+  </data>
+  <data name="Dlg0x40_Help" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="Dlg0x410_Openasreadonly" xml:space="preserve">
+    <value>Open as &amp;readonly</value>
+  </data>
+  <data name="Dlg0x410_Printtofile" xml:space="preserve">
+    <value>Print to fi&amp;le</value>
+  </data>
+  <data name="Dlg0x411_Collate" xml:space="preserve">
+    <value>C&amp;ollate</value>
+  </data>
+  <data name="Dlg0x420_All" xml:space="preserve">
+    <value>&amp;All</value>
+  </data>
+  <data name="Dlg0x421_Selection" xml:space="preserve">
+    <value>&amp;Selection</value>
+  </data>
+  <data name="Dlg0x422_Pages" xml:space="preserve">
+    <value>Pa&amp;ges</value>
+  </data>
+  <data name="Dlg0x430_Printrange" xml:space="preserve">
+    <value>Print range</value>
+  </data>
+  <data name="Dlg0x431_Copies" xml:space="preserve">
+    <value>Copies</value>
+  </data>
+  <data name="Dlg0x433_Printer" xml:space="preserve">
+    <value>Printer</value>
+  </data>
+  <data name="Dlg0x441_Filesoftype" xml:space="preserve">
+    <value>Files of &amp;type</value>
+  </data>
+  <data name="Dlg0x441_from" xml:space="preserve">
+    <value>&amp;from:</value>
+  </data>
+  <data name="Dlg0x441_Saveastype" xml:space="preserve">
+    <value>Save as &amp;type:</value>
+  </data>
+  <data name="Dlg0x442_Filename" xml:space="preserve">
+    <value>File &amp;name:</value>
+  </data>
+  <data name="Dlg0x442_to" xml:space="preserve">
+    <value>&amp;to:</value>
+  </data>
+  <data name="Dlg0x443_Lookin" xml:space="preserve">
+    <value>Look &amp;in:</value>
+  </data>
+  <data name="Dlg0x443_Savein" xml:space="preserve">
+    <value>Save &amp;in:</value>
+  </data>
+  <data name="Dlg0x444_Numberofcopies" xml:space="preserve">
+    <value>Number of &amp;copies:</value>
+  </data>
+  <data name="Dlg0x445_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Dlg0x446_Type" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="Dlg0x447_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Dlg0x448_Comment" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="Dlg0x449_Where" xml:space="preserve">
+    <value>Where:</value>
+  </data>
+  <data name="Dlg0x3744_Translate" xml:space="preserve">
+    <value>Translate</value>
+  </data>
+  <data name="Dlg0x3746_MakeNewFolder" xml:space="preserve">
+    <value>&amp;Make New Folder</value>
+  </data>
+  <data name="Dlg0x3749_Toviewanysubfoldersc" xml:space="preserve">
+    <value>To view any subfolders, click a plus sign above</value>
+  </data>
+  <data name="Dlg0x3748_Folder" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+</root>

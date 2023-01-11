@@ -1,0 +1,47 @@
+﻿<form name="editForm" class="edit-resource-form" ng-esc="editResourceModel.cancelPublish()">            
+    <h2 class="title">{{'Publish '+(editResourceModel.type|upgradeResourceType)|i18n}}</h2>
+    <scrollbar class="edit-resource-form-content">
+        <p i18n="Here are summary of modifications:"></p>
+
+        <ul>
+            <li ng-if="editResourceModel.item.Metadata.Name != editResourceModel.publishedVersion.Metadata.Name" class="value-change">
+                <div>{{'Title changed to "%s"'|i18n:editResourceModel.item.Metadata.Name}}</div>
+                <div class="old-value">[ {{'old title was "%s"'|i18n:editResourceModel.publishedVersion.Metadata.Name}} ]</div>
+            </li>
+            <li ng-if="editResourceModel.item.Metadata.Description != editResourceModel.publishedVersion.Metadata.Description" class="value-change">
+                <div>{{'Description changed to "%s"'|i18n:editResourceModel.item.Metadata.Description}}</div>
+                <div class="old-value">[ {{'old description was "%s"'|i18n:editResourceModel.publishedVersion.Metadata.Description}} ]</div>
+            </li>
+            <li ng-if="editResourceModel.changesSummary.tagsChanged">
+                <span i18n="Tags changed."></span>
+                <span ng-if="editResourceModel.changesSummary.tagsAdded.length">
+                    <span class="tags"><span ng-repeat="tag in editResourceModel.changesSummary.tagsAdded">{{tag}}</span></span>
+                    <span i18n="added"></span>
+                    <span ng-if="editResourceModel.changesSummary.tagsRemoved.length" i18n="and"></span>
+                </span>
+                <span ng-if="editResourceModel.changesSummary.tagsRemoved.length">
+                    <span class="tags"><span ng-repeat="tag in editResourceModel.changesSummary.tagsRemoved">{{tag}}</span></span>
+                    <span i18n="removed"></span>
+                </span>
+                .
+            </li>
+            <li ng-if="editResourceModel.changesSummary.specChanges.length" class="value-change">
+                <div i18n="Specification changed for the following fields:"></div>
+                <ul>
+                    <li ng-repeat="specChange in editResourceModel.changesSummary.specChanges">{{specChange.newSpec.Metadata.Name}}</li>
+                </ul>
+            </li>
+            <li ng-if="editResourceModel.changesSummary.imageChanged" class="value-change">
+                {{'New image has been chosen for the '+(editResourceModel.type|upgradeResourceType)|i18n}}
+            </li>
+            <li ng-if="editResourceModel.changesSummary.cameraChanged" class="value-change">
+                {{'New camera position has been set for the Globe'|i18n}}
+            </li>
+        </ul>
+        
+    </scrollbar>        
+    <modal-dialog-buttons>                
+        <button class="big gray-hover" ng-click="editResourceModel.cancelPublish()"><span i18n="Cancel"></span></button>                
+        <button class="big gray" ng-click="editResourceModel.commitMetadataUpdate()"><span i18n="Publish"></span></button>                
+    </modal-dialog-buttons>
+</form>

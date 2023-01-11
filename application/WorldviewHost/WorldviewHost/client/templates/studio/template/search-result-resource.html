@@ -1,0 +1,32 @@
+﻿<div ng-switch on="resource.Type">
+    <div ng-switch-when="Property">
+        <div ng-include="'/client/templates/studio/template/search-result-property.html'"></div>
+    </div>
+    <div ng-switch-when="GeoSource">
+        <div ng-include="'/client/templates/studio/template/search-result-geosource.html'"></div>
+    </div>
+    <div ng-switch-when="Map">
+        <div ng-include="'/client/templates/studio/template/search-result-map.html'"></div>
+    </div>
+    <div ng-switch-when="Gallery">
+        <div ng-include="'/client/templates/studio/template/search-result-gallery.html'"></div>
+    </div>
+    <div ng-switch-when="DataSet">
+        <div ng-include="'/client/templates/studio/template/search-result-data-set.html'"></div>
+    </div>
+    <div ng-switch-when="Catalog">
+        <div ng-include="'/client/templates/studio/template/search-result-catalog.html'"></div>
+    </div>
+    <div ng-switch-when="Question">
+        <div ng-include="'/client/templates/studio/template/search-result-question.html'"></div>
+    </div>
+    <div ng-switch-when="FeatureCollection">
+        <div ng-include="'/client/templates/studio/template/search-result-feature-collection.html'"></div>
+    </div>
+    <div ng-switch-when="Feature">
+        <div ng-include="'/client/templates/studio/template/search-result-feature.html'"></div>
+    </div>
+    <div ng-switch-when="Expression">
+        <div ng-include="'/client/templates/studio/template/search-result-expression.html'"></div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿ <div ng-if="theme.url" class="background" fade-in-background="theme.url" target-opacity="0.9"></div>
+    <modal-dialog modal-class="verify" stop-propagation="keyup">
+        <h2 ng-if="userInitiation.send === 'again' || userInitiation.send === 'sending'" class="title" i18n="Please confirm your email"></h2>
+        <h2 ng-if="userInitiation.send === 'sent'" class="title" i18n="Email sent"></h2>
+        <p ng-if="userInitiation.send === 'again' || userInitiation.send === 'sending'" class="lead" i18n="Continue Using WorldView"></p>
+        <p ng-if="userInitiation.send === 'sent'" class="lead" i18n="New Email Sent"></p>
+
+         <button class="gray confirm-email" 
+         ng-click="sendConfirmationEmail()" ng-disabled="userInitiation.send === 'sending' || userInitiation.send === 'sent'" 
+         ng-switch on="userInitiation.send" ng-class="{'is-hidden': userInitiation.send === 'sent'}">
+            <span ng-switch-when="again" i18n="Resend email confirmation"></span>
+            <span ng-switch-when="sending" i18n="Sending..."></span>
+            <span ng-switch-when="sent" i18n="Email sent"></span>
+         </button> 
+        <span ng-if="userInitiation.send === 'again' || userInitiation.send === 'sending'">or </span> 
+        <a href="" class="link-hover-underlined action" ng-click="signoutAndRestartApp()">Sign in</a>
+    </modal-dialog>

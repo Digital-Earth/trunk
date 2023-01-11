@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7C24120-D4A1-43C4-BB3B-26FF676D25A3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PyxisCLI</RootNamespace>
+    <AssemblyName>pyx</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\pyx.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\pyx.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elasticsearch.Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Elasticsearch.Net.2.4.1\lib\net45\Elasticsearch.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EngineIoClientDotNet, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EngineIoClientDotNet.1.0.6\lib\net45\EngineIoClientDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ftp, Version=2.0.17107.1333, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ftp.dll.2.0.17107.1333\lib\Net45\Ftp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jose-jwt, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\jose-jwt.2.4.0\lib\net40\jose-jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.3.0.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.0.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Driver.2.2.3\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.2.2.3\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NEST.2.4.0\lib\net45\Nest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Polly, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Polly.4.2.0\lib\net45\Polly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpRaven, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpRaven.2.1.0\lib\net45\SharpRaven.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SocketIoClientDotNet, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SocketIoClientDotNet.1.0.6\lib\net45\SocketIoClientDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine, Version=0.10.0.0, Culture=neutral, PublicKeyToken=ee9af13f57f00acc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperSocket.ClientEngine.Core.0.10.0\lib\net45\SuperSocket.ClientEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Swashbuckle.Core.5.3.2\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.4.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.OData.5.7.0\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebSocket4Net, Version=0.15.2.11, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebSocket4Net.0.15.2\lib\net45\WebSocket4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsciiArt.cs" />
+    <Compile Include="Operations\GeomOperation.cs" />
+    <Compile Include="Operations\InteractiveOperation.cs" />
+    <Compile Include="Operations\ValueOperation.cs" />
+    <Compile Include="Operations\DggsOperation.cs" />
+    <Compile Include="Operations\ProcessOperation.cs" />
+    <Compile Include="Operations\Workspace\WorkspaceCreateOperation.cs" />
+    <Compile Include="Operations\Workspace\WorkspaceListOperation.cs" />
+    <Compile Include="Server\Cluster\HttpClusterProxy.cs" />
+    <Compile Include="Server\Controllers\AuthorizedApiController.cs" />
+    <Compile Include="Server\Controllers\SliceController.cs" />
+    <Compile Include="Server\Controllers\DggsController.cs" />
+    <Compile Include="Server\Controllers\WorkspaceGlobesController.cs" />
+    <Compile Include="Server\WebConfig\AuthenticationProvider\AuthenticationProvider.cs" />
+    <Compile Include="Server\WebConfig\AuthenticationProvider\Auth0AuthorizationProvider.cs" />
+    <Compile Include="Server\WebConfig\AuthenticationProvider\GuestAuthenticationProvider.cs" />
+    <Compile Include="Server\WebConfig\PlugableAuthenticationAttribute.cs" />
+    <Compile Include="State\ClusterConfiguration.cs" />
+    <Compile Include="Utilities\FeatureFilterParser.cs" />
+    <Compile Include="Utilities\GeoTagMethodFinder.cs" />
+    <Compile Include="Operations\CacheOperation.cs" />
+    <Compile Include="Operations\CalculateOperation.cs" />
+    <Compile Include="Operations\ConfigOperation.cs" />
+    <Compile Include="Operations\StatsOperation.cs" />
+    <Compile Include="Operations\ServeOperation.cs" />
+    <Compile Include="Operations\Workspace\WorkspaceRemoveOperation.cs" />
+    <Compile Include="Operations\Workspace\WorkspaceAddOperation.cs" />
+    <Compile Include="Utilities\RecordCollectionSample.cs" />
+    <Compile Include="Server\Cache\FileSystemCacheStorage.cs" />
+    <Compile Include="Server\Cache\GeometryCache.cs" />
+    <Compile Include="Server\Cache\GeoSourceBlobCache.cs" />
+    <Compile Include="Server\Cache\ICacheStorage.cs" />
+    <Compile Include="Server\Cache\PersistentCache.cs" />
+    <Compile Include="Server\Cache\StyleCache.cs" />
+    <Compile Include="Server\Cluster\Cluster.cs" />
+    <Compile Include="Server\Cluster\ClusterUtils.cs" />
+    <Compile Include="Server\Cluster\GeometryClusterResolver.cs" />
+    <Compile Include="Server\Cluster\GeoSourceClusterResolver.cs" />
+    <Compile Include="Server\Cluster\HashRing.cs" />
+    <Compile Include="Server\Cluster\IClusterResolver.cs" />
+    <Compile Include="Server\Cluster\RemoteTask.cs" />
+    <Compile Include="Server\Controllers\ClusterController.cs" />
+    <Compile Include="Server\Controllers\WorkspaceImportsController.cs" />
+    <Compile Include="Server\Controllers\WorkspaceEndpointsController.cs" />
+    <Compile Include="Server\Controllers\SearchController.cs" />
+    <Compile Include="Server\Controllers\StyleController.cs" />
+    <Compile Include="Server\Controllers\WorkspaceController.cs" />
+    <Compile Include="Server\Controllers\GeometryController.cs" />
+    <Compile Include="Server\Controllers\GeoSourceController.cs" />
+    <Compile Include="Server\Controllers\GeoSourceProxyController.cs" />
+    <Compile Include="Server\Controllers\GeoSourceTilesController.cs" />
+    <Compile Include="Server\Controllers\GeoSourceIconsController.cs" />
+    <Compile Include="Server\Controllers\ImageController.cs" />
+    <Compile Include="Server\Models\WorkspaceWithStatus.cs" />
+    <Compile Include="EngineCleanup.cs" />
+    <Compile Include="Server\ODataConfig.cs" />
+    <Compile Include="Server\ODataExtensions.cs" />
+    <Compile Include="Workspaces\EndpointState.cs" />
+    <Compile Include="Workspaces\ILocalWorkspaces.cs" />
+    <Compile Include="Workspaces\ItemNotFoundException.cs" />
+    <Compile Include="Workspaces\LocalFileWatcher.cs" />
+    <Compile Include="Server\Services\GeoSourceInitializer.cs" />
+    <Compile Include="Server\Models\AutoStyleRequest.cs" />
+    <Compile Include="Server\Models\CompressedFloat32Rhombus.cs" />
+    <Compile Include="Server\Models\FailureResponse.cs" />
+    <Compile Include="Server\Models\GeoSourceDataCharacterization.cs" />
+    <Compile Include="Server\Models\IconsModel.cs" />
+    <Compile Include="Server\Services\CachedResult.cs" />
+    <Compile Include="Server\Services\GeoSourceState.cs" />
+    <Compile Include="Server\Services\IGeoSourceState.cs" />
+    <Compile Include="Server\Utilities\PyxisOData.cs" />
+    <Compile Include="Server\Models\StyleAndHash.cs" />
+    <Compile Include="Server\OwinStartup.cs" />
+    <Compile Include="Server\Utilities\FeatureFieldsExtractor.cs" />
+    <Compile Include="Server\Utilities\PortFinder.cs" />
+    <Compile Include="Server\Utilities\RhombusHelper.cs" />
+    <Compile Include="Server\Utilities\UniqueHashGenerator.cs" />
+    <Compile Include="Server\WebConfig\ApiCacheAttribute.cs" />
+    <Compile Include="Server\WebConfig\ApiException.cs" />
+    <Compile Include="Server\WebConfig\ApiExceptionFilterAttribute.cs" />
+    <Compile Include="Server\WebConfig\HttpResponseMessageExtensions.cs" />
+    <Compile Include="Server\WebConfig\TimeTraceAttribute.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\ImportOperation.cs" />
+    <Compile Include="Operations\Workspace\WorkspaceDatasetsOperation.cs" />
+    <Compile Include="Operations\DiscoverOperation.cs" />
+    <Compile Include="Workspaces\LocalWorkspaces.cs" />
+    <Compile Include="Operations\Workspace\WorkspaceStatusOperation.cs" />
+    <Compile Include="Operations\Url\UrlErrorsOperation.cs" />
+    <Compile Include="Operations\Expermintal\ResolutionOperation.cs" />
+    <Compile Include="Operations\PublishOperation.cs" />
+    <Compile Include="PyxisCliConfig.cs" />
+    <Compile Include="State\LocalGazetteer.cs" />
+    <Compile Include="State\MongoPersistance.cs" />
+    <Compile Include="Operations\Url\UrlAddOperation.cs" />
+    <Compile Include="Operations\Url\UrlDiscoverOperation.cs" />
+    <Compile Include="Operations\Url\UrlListOperation.cs" />
+    <Compile Include="Operations\Url\UrlRemoveOperation.cs" />
+    <Compile Include="Operations\Url\UrlSaveOperation.cs" />
+    <Compile Include="Operations\Url\UrlUpdateOperation.cs" />
+    <Compile Include="Operations\Url\UrlValidateOperation.cs" />
+    <Compile Include="Operations\Expermintal\WordsOperation.cs" />
+    <Compile Include="State\LocalDirPersistance.cs" />
+    <Compile Include="Operations\Url\UrlOperation.cs" />
+    <Compile Include="Operations\ExportOperation.cs" />
+    <Compile Include="Operations\Old\FilesOperation.cs" />
+    <Compile Include="Operations\MergeOperation.cs" />
+    <Compile Include="GeoSourceCreator.cs" />
+    <Compile Include="Operations\SpecOperation.cs" />
+    <Compile Include="Operations\SearchOperation.cs" />
+    <Compile Include="Operations\ShowOperation.cs" />
+    <Compile Include="Operations\Old\DiscoverOperation.cs" />
+    <Compile Include="Operations\IOperationMode.cs" />
+    <Compile Include="Operations\OpenOperation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Operations\WhereOperation.cs" />
+    <Compile Include="Workspaces\StatusFactory.cs" />
+    <Compile Include="Workspaces\AuthorizedLocalWorkspaces.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pyxis\Contracts\Pyxis.Contracts.csproj">
+      <Project>{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}</Project>
+      <Name>Pyxis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Core\Pyxis.Core.csproj">
+      <Project>{6F9755F3-8FE4-42B0-B34F-F06480022352}</Project>
+      <Name>Pyxis.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\IO\Pyxis.IO.csproj">
+      <Project>{44B44E81-7223-45CC-AE0A-0790D1E73BE5}</Project>
+      <Name>Pyxis.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Publishing\Pyxis.Publishing.csproj">
+      <Project>{5ba06255-9024-4a7f-8253-2a60b6ba194e}</Project>
+      <Name>Pyxis.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Pyxis.Storage\Pyxis.Storage.csproj">
+      <Project>{5c69cae6-ddea-4063-a2c9-41a63bc78bdf}</Project>
+      <Name>Pyxis.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Utilities\Pyxis.Utilities.csproj">
+      <Project>{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92C4CC38-0161-457D-A0F6-7808FF4CD0F5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>robocopy $(SolutionDir)$(ConfigurationName)\plugins $(TargetDir)plugins *.* /E &gt;nul
+robocopy $(SolutionDir)$(ConfigurationName) $(TargetDir) pyxlib.dll pyxlib_swig.dll view_model.dll view_model_swig.dll library.dll library_swig.dll application.dll application_swig.dll cpprest*.dll zlib*.dll xerces*.dll sqlite3.dll &gt;nul
+exit 0
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

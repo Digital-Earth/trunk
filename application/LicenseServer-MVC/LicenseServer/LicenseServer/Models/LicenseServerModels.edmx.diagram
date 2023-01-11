@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="075ce05914154882aeb6809a1b9195a4" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.ChannelDefinition" Width="1.5" PointX="4.75" PointY="6.875" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.ChannelMetaData" Width="1.5" PointX="6.625" PointY="6.875" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.ChannelPipeline" Width="1.5" PointX="2.75" PointY="6.875" />
+        <AssociationConnector Association="pyxis_licenseserverModel.ChannelMetaData_ibfk_1" />
+        <AssociationConnector Association="pyxis_licenseserverModel.ChannelPipelines_ibfk_2" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineDefinition" Width="1.5" PointX="2.75" PointY="4" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineMetaData" Width="1.5" PointX="4.75" PointY="4" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelinePending" Width="1.5" PointX="6.625" PointY="1.25" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineServer" Width="1.5" PointX="2.75" PointY="1.25" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.Server" Width="1.5" PointX="4.75" PointY="1.25" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineInfo" Width="1.5" PointX="6.625" PointY="3.25" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineStatus" Width="1.5" PointX="9.875" PointY="3.25" />
+        <AssociationConnector Association="pyxis_licenseserverModel.ChannelPipelines_ibfk_1" />
+        <AssociationConnector Association="pyxis_licenseserverModel.PipelineMetaData_ibfk_1" />
+        <AssociationConnector Association="pyxis_licenseserverModel.PipelineServers_ibfk_1" />
+        <AssociationConnector Association="pyxis_licenseserverModel.PipelineServers_ibfk_2" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.ChannelPipelineTag" Width="1.5" PointX="2.75" PointY="9.625" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.ChannelTaggedPipeline" Width="1.5" PointX="8.375" PointY="6.875" />
+        <AssociationConnector Association="pyxis_licenseserverModel.ChannelPipelineTags_ibfk_1" ></AssociationConnector>
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineInfoNoDefinition" Width="1.5" PointX="8.25" PointY="3.25" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineTag" Width="1.5" PointX="0.75" PointY="4" />
+        <AssociationConnector Association="pyxis_licenseserverModel.PipelineTags_ibfk_1" />
+        <EntityTypeShape EntityType="pyxis_licenseserverModel.PipelineUsable" Width="1.5" PointX="8.25" PointY="1.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

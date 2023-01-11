@@ -1,0 +1,20 @@
+﻿<!-- Tool help message -->
+<div class="tool-helper-message" ng-class="{hide: currentTool.name == 'arrow'}">
+    <div class="content" ng-repeat="line in currentToolHelp">
+        {{line}}
+    </div>
+    <div class="align-right">
+        <button class="flat-button" ng-click="selectTool('arrow')">Cancel</button>
+    </div>
+</div>
+
+<!-- Magic wand popup menu for multi selection -->
+<div ng-if="magicwandPopupMenu.active" style="position: fixed;" ng-style="{left:magicwandPopupMenu.left+'px',top:magicwandPopupMenu.top+'px'}" delayed-hover delayed-leave="magicwandPopupMenu.active=false">
+    <popup-window arrow="top center">
+        <div class="popup-menu wide">
+            <div class="menu-title">Choose a feature of interest:</div>
+            <hr>
+            <div class="menu-item" ng-repeat="result in magicwandPopupMenu.results" ng-click="selectFeature(result)">{{result.item.Metadata.Name}}</div>
+        </div>
+    </popup-window>
+</div>

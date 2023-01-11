@@ -1,0 +1,11 @@
+﻿<div class="popup-menu">
+    <srs-details ng-model="srs"></srs-details>
+    <span ng-if="currentMap.state.Imports.length > 1" style="padding: 10px;">
+        <input type="checkbox" ng-model="srs.applyToAll" />
+        <span i18n="Apply to all" ng-click="srs.applyToAll = !srs.applyToAll"></span> 
+    </span>
+    <div style="text-align:right;padding:0px 10px;">
+        <button class="gray-hover" ng-click="provideSrs(item,null,$popup)" i18n="Cancel"></button>
+        <button class="gray" ng-click="provideSrs(item,srs,$popup)" i18n="Apply"></button>
+    </div>
+</div>

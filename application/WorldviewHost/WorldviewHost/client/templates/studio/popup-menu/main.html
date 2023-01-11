@@ -1,0 +1,33 @@
+﻿<div class="popup-menu">
+    <div class="menu-item" ng-click="createNewMap()" i18n="New Globe" tooltip="{{'tooltip.menu.newglobe'|i18n}}"></div>
+    <div class="menu-item" ng-click="showImportFilesDialog()" ng-class="{gray:!showImportFilesDialog}" i18n="Import" tooltip="{{'tooltip.menu.import'|i18n}}"></div>
+    <!-- YK: temporary disable the complete file system scan;
+         if a decision is made to remove it completely, remove the code
+    <div ng-if="scanLocalComputer">
+        <div ng-if="!scanningLocalComputer" class="menu-item" ng-click="scanLocalComputer()" i18n="Search My Computer" tooltip="{{'tooltip.menu.searchMyComputer'|i18n}}"></div>
+        <div ng-if="scanningLocalComputer" class="menu-item gray" style="padding-left: 2px;">
+            <div class="loading-progress-icon"></div>
+            <span i18n="Search My Computer" tooltip="{{'tooltip.menu.searchMyComputer'|i18n}}"></span>
+        </div>
+    </div> -->
+    <hr/>
+     <div class="menu-item">
+        <a href="" ng-click="getHelpCenter()" target="_blank" tooltip="{{'tooltip.menu.help'|i18n}}" i18n="Help Center"></a>
+    </div>
+    <div class="menu-item">
+        <a href="" ng-click="getUserInfo()" tooltip="{{'tooltip.menu.help'|i18n}}" i18n="User Guide"></a>
+    </div>
+    <div class="menu-item">
+        <a href="" ng-click="getVideos()" i18n="Videos"></a>
+    </div>
+    <div class="menu-item">
+        <a ng-if="gettingStartedMode === 'hide'" href="" ng-click="optInGettingStarted()" i18n="Show Getting Started"></a>
+        <a ng-if="gettingStartedMode === 'show'" href="" ng-click="optOutGettingStarted()" i18n="Hide Getting Started"></a>
+    </div>
+    <hr/>
+    <div class="menu-item" ng-click="openAbout()" i18n="About" tooltip="{{'tooltip.menu.about'|i18n}}"></div>
+    <div class="menu-item" ng-if="feedbackModal.enabled" ng-click="feedbackModal.show()" i18n="Feedback" tooltip="{{'tooltip.menu.feedback'|i18n}}"></div>
+    <hr/>
+    <div ng-if="signoutAndRestartApp" class="menu-item" ng-click="signoutAndRestartApp()" i18n="Sign Out" tooltip="{{'tooltip.menu.signout'|i18n}}"></div>
+    <div class="menu-item" ng-click="closeApp()" i18n="Exit" tooltip="{{'tooltip.menu.exit'|i18n}}"></div>
+</div>

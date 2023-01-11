@@ -1,0 +1,9 @@
+; WMSClientDLL.def : Declares the module parameters for the DLL.
+
+LIBRARY      "WMSClientDLL"
+
+EXPORTS
+    DLLMakeNewInstance
+    DLLDeleteInstance
+    DLLGetPipeName
+    

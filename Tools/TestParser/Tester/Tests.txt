@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="c:\autobuild\work\PYXNet\PyxNet\bin\Release\PyxNet.dll" total="43" failures="1" not-run="0" date="2007-02-20" time="00:41:53">
+  <environment nunit-version="2.2.9.0" clr-version="2.0.50727.42" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="c:\autobuild\work\PYXNet\PyxNet\bin\Release" machine-name="EUCLID" user="autobuild" user-domain="PYXISINNOVATION" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="c:\autobuild\work\PYXNet\PyxNet\bin\Release\PyxNet.dll" success="False" time="132.529" asserts="0">
+    <results>
+      <test-suite name="c:\autobuild\work\PYXNet\PyxNet\bin\Release\PyxNet.dll" success="False" time="132.513" asserts="0">
+        <results>
+          <test-suite name="PyxNet" success="False" time="132.497" asserts="0">
+            <results>
+              <test-suite name="Test" success="False" time="132.497" asserts="0">
+                <results>
+                  <test-suite name="DataPackageTester" success="True" time="0.125" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.DataPackageTester.TestDataPackage" executed="True" success="True" time="0.109" asserts="50110" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="FileChunkTester" success="True" time="0.437" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.FileChunkTester.TestFileChunkConstruction" executed="True" success="True" time="0.016" asserts="5" />
+                      <test-case name="PyxNet.Test.FileChunkTester.TestFileChunkCopy" executed="True" success="True" time="0.406" asserts="110593" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="FilePublisherTester" success="True" time="3.750" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.FilePublisherTester.TestConstruction" executed="True" success="True" time="0.187" asserts="0" />
+                      <test-case name="PyxNet.Test.FilePublisherTester.TestTopologyFour" executed="True" success="True" time="3.562" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="KnownHubListTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.KnownHubListTester.TestKnownHubList" executed="True" success="True" time="0.000" asserts="14" />
+                      <test-case name="PyxNet.Test.KnownHubListTester.TestKnownHubListContains" executed="True" success="True" time="0.016" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="LocalNodeInfoTester" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.LocalNodeInfoTester.TestLocalNodeInfo" executed="True" success="True" time="0.000" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="MessageHandlerCollectionTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.ComplexMessageHandler" executed="True" success="True" time="0.016" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.ComplexMessageHandler2" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.SingleMessageHandler" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.SingleMessageHandler2" executed="True" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="MessageParsingTester" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.MessageParsingTester.TestMessageParser" executed="True" success="True" time="0.000" asserts="5" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="MessageTester" success="True" time="0.062" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.MessageTester.Identifier" executed="True" success="True" time="0.016" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageTester.TestMessage" executed="True" success="True" time="0.031" asserts="33" />
+                      <test-case name="PyxNet.Test.MessageTester.TestMessageExtraction" executed="True" success="True" time="0.000" asserts="8" />
+                      <test-case name="PyxNet.Test.MessageTester.TestMessageStartsWith" executed="True" success="True" time="0.016" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="NetworkAddressTester" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.NetworkAddressTester.Test" executed="True" success="True" time="0.000" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryAcknowledgementTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryAcknowledgementTester.TestQueryAcknowledgement" executed="True" success="True" time="0.016" asserts="16" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryHashTableTester" success="True" time="0.031" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestAddingHashTables" executed="True" success="True" time="0.000" asserts="9" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestConstruction" executed="True" success="True" time="0.016" asserts="0" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestMessageConversion" executed="True" success="True" time="0.016" asserts="6" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestOnChange" executed="True" success="True" time="0.000" asserts="2" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestStringValues" executed="True" success="True" time="0.000" asserts="12" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryResultTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryResultTester.TestQueryResult" executed="True" success="True" time="0.016" asserts="13" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryTester.TestQuery" executed="True" success="True" time="0.016" asserts="4" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionKnownHubListTester" success="True" time="0.422" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionKnownHubListTester.Test" executed="True" success="True" time="0.312" asserts="12" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionLocalNodeInfoTester" success="True" time="0.422" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionLocalNodeInfoTester.TestLNI" executed="True" success="True" time="0.312" asserts="10" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionMessageTester" success="True" time="0.312" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionMessageTester.TestAnyAndUnknown" executed="True" success="True" time="0.203" asserts="9" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionPingPongTester" success="True" time="0.422" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionPingPongTester.TestPingPong" executed="True" success="True" time="0.312" asserts="10" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionQueryHashTableTester" success="True" time="0.422" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionQueryHashTableTester.Test" executed="True" success="True" time="0.328" asserts="8" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackTester" success="False" time="112.763" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.StackTester.TestConstructionAndLiveForTwoSeconds" executed="True" success="True" time="2.125" asserts="0" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyFourQueryHashTableTest" executed="True" success="True" time="68.452" asserts="39" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyFourShort" executed="True" success="True" time="1.000" asserts="416" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyOneQueryHashTableTest" executed="True" success="True" time="5.891" asserts="7" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyOneShort" executed="True" success="True" time="0.891" asserts="97" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyThreeQueryHashTableTest" executed="True" success="True" time="20.656" asserts="18" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyThreeShort" executed="True" success="True" time="0.922" asserts="211" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyTwoQueryHashTableTest" executed="True" success="True" time="12.031" asserts="14" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyTwoShort" executed="True" success="False" time="0.797" asserts="141">
+                        <failure>
+                          <message><![CDATA[Stack Node 5 did not contain information about hub Node 0]]></message>
+                          <stack-trace><![CDATA[   at PyxNet.Test.StackTest.Run(Int32 pingTimerIntervals) in c:\autobuild\work\PYXNet\PyxNet\Stack.cs:line 2008
+   at PyxNet.Test.StackTester.TopologyTwoShort() in c:\autobuild\work\PYXNet\PyxNet\Stack.cs:line 2259
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                  <test-suite name="TcpNetworkConnectionTester" success="True" time="7.078" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.TcpNetworkConnectionTester.TestTcpNetworkConnection" executed="True" success="True" time="7.078" asserts="31" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="TCPNetworkTester" success="True" time="6.172" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.TCPNetworkTester.TestTCPIPFunctionality" executed="True" success="True" time="1.766" asserts="8" />
+                      <test-case name="PyxNet.Test.TCPNetworkTester.TestTCPIPMultiThreadedSuitability" executed="True" success="True" time="4.391" asserts="594390" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="c:\autobuild\work\PYXNet\PyxNet.Utilities\bin\Release\PyxNet.Utilities.dll" total="0" failures="0" not-run="0" date="2007-02-20" time="00:41:55">
+  <environment nunit-version="2.2.9.0" clr-version="2.0.50727.42" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="c:\autobuild\work\PYXNet\PyxNet.Utilities\bin\Release" machine-name="EUCLID" user="autobuild" user-domain="PYXISINNOVATION" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="c:\autobuild\work\PYXNet\PyxNet.Utilities\bin\Release\PyxNet.Utilities.dll" success="True" time="0.016" asserts="0">
+    <results>
+      <test-suite name="c:\autobuild\work\PYXNet\PyxNet.Utilities\bin\Release\PyxNet.Utilities.dll" success="True" time="0.000" asserts="0">
+        <results />
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release\PyxNet.dll" total="43" failures="1" not-run="0" date="2007-02-20" time="01:56:54">
+  <environment nunit-version="2.2.9.0" clr-version="2.0.50727.42" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release" machine-name="EUCLID" user="autobuild" user-domain="PYXISINNOVATION" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release\PyxNet.dll" success="False" time="131.310" asserts="0">
+    <results>
+      <test-suite name="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release\PyxNet.dll" success="False" time="131.294" asserts="0">
+        <results>
+          <test-suite name="PyxNet" success="False" time="131.279" asserts="0">
+            <results>
+              <test-suite name="Test" success="False" time="131.279" asserts="0">
+                <results>
+                  <test-suite name="DataPackageTester" success="True" time="0.062" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.DataPackageTester.TestDataPackage" executed="True" success="True" time="0.062" asserts="50110" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="FileChunkTester" success="True" time="0.406" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.FileChunkTester.TestFileChunkConstruction" executed="True" success="True" time="0.016" asserts="5" />
+                      <test-case name="PyxNet.Test.FileChunkTester.TestFileChunkCopy" executed="True" success="True" time="0.391" asserts="110593" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="FilePublisherTester" success="True" time="3.797" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.FilePublisherTester.TestConstruction" executed="True" success="True" time="0.187" asserts="0" />
+                      <test-case name="PyxNet.Test.FilePublisherTester.TestTopologyFour" executed="True" success="True" time="3.609" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="KnownHubListTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.KnownHubListTester.TestKnownHubList" executed="True" success="True" time="0.016" asserts="14" />
+                      <test-case name="PyxNet.Test.KnownHubListTester.TestKnownHubListContains" executed="True" success="True" time="0.000" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="LocalNodeInfoTester" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.LocalNodeInfoTester.TestLocalNodeInfo" executed="True" success="True" time="0.000" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="MessageHandlerCollectionTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.ComplexMessageHandler" executed="True" success="True" time="0.016" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.ComplexMessageHandler2" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.SingleMessageHandler" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageHandlerCollectionTester.SingleMessageHandler2" executed="True" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="MessageParsingTester" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.MessageParsingTester.TestMessageParser" executed="True" success="True" time="0.000" asserts="5" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="MessageTester" success="True" time="0.031" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.MessageTester.Identifier" executed="True" success="True" time="0.000" asserts="1" />
+                      <test-case name="PyxNet.Test.MessageTester.TestMessage" executed="True" success="True" time="0.016" asserts="33" />
+                      <test-case name="PyxNet.Test.MessageTester.TestMessageExtraction" executed="True" success="True" time="0.000" asserts="8" />
+                      <test-case name="PyxNet.Test.MessageTester.TestMessageStartsWith" executed="True" success="True" time="0.000" asserts="7" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="NetworkAddressTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.NetworkAddressTester.Test" executed="True" success="True" time="0.016" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryAcknowledgementTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryAcknowledgementTester.TestQueryAcknowledgement" executed="True" success="True" time="0.016" asserts="16" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryHashTableTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestAddingHashTables" executed="True" success="True" time="0.000" asserts="9" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestConstruction" executed="True" success="True" time="0.000" asserts="0" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestMessageConversion" executed="True" success="True" time="0.016" asserts="6" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestOnChange" executed="True" success="True" time="0.000" asserts="2" />
+                      <test-case name="PyxNet.Test.QueryHashTableTester.TestStringValues" executed="True" success="True" time="0.000" asserts="12" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryResultTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryResultTester.TestQueryResult" executed="True" success="True" time="0.016" asserts="13" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="QueryTester" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.QueryTester.TestQuery" executed="True" success="True" time="0.016" asserts="4" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionKnownHubListTester" success="True" time="0.422" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionKnownHubListTester.Test" executed="True" success="True" time="0.312" asserts="12" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionLocalNodeInfoTester" success="True" time="0.422" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionLocalNodeInfoTester.TestLNI" executed="True" success="True" time="0.312" asserts="10" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionMessageTester" success="True" time="0.312" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionMessageTester.TestAnyAndUnknown" executed="True" success="True" time="0.219" asserts="9" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionPingPongTester" success="True" time="0.406" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionPingPongTester.TestPingPong" executed="True" success="True" time="0.297" asserts="10" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackConnectionQueryHashTableTester" success="True" time="0.437" asserts="1">
+                    <results>
+                      <test-case name="PyxNet.Test.StackConnectionQueryHashTableTester.Test" executed="True" success="True" time="0.328" asserts="8" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="StackTester" success="False" time="112.138" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.StackTester.TestConstructionAndLiveForTwoSeconds" executed="True" success="True" time="2.125" asserts="0" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyFourQueryHashTableTest" executed="True" success="True" time="67.827" asserts="39" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyFourShort" executed="True" success="True" time="1.016" asserts="416" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyOneQueryHashTableTest" executed="True" success="True" time="5.891" asserts="7" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyOneShort" executed="True" success="True" time="0.891" asserts="97" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyThreeQueryHashTableTest" executed="True" success="True" time="20.640" asserts="18" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyThreeShort" executed="True" success="True" time="0.922" asserts="211" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyTwoQueryHashTableTest" executed="True" success="True" time="12.031" asserts="14" />
+                      <test-case name="PyxNet.Test.StackTester.TopologyTwoShort" executed="True" success="False" time="0.797" asserts="141">
+                        <failure>
+                          <message><![CDATA[Stack Node 5 did not contain information about hub Node 0]]></message>
+                          <stack-trace><![CDATA[   at PyxNet.Test.StackTest.Run(Int32 pingTimerIntervals) in c:\autobuild\work\PYXNet\PyxNet\Stack.cs:line 2008
+   at PyxNet.Test.StackTester.TopologyTwoShort() in c:\autobuild\work\PYXNet\PyxNet\Stack.cs:line 2259
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                  <test-suite name="TcpNetworkConnectionTester" success="True" time="7.031" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.TcpNetworkConnectionTester.TestTcpNetworkConnection" executed="True" success="True" time="7.031" asserts="30" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="TCPNetworkTester" success="True" time="5.672" asserts="0">
+                    <results>
+                      <test-case name="PyxNet.Test.TCPNetworkTester.TestTCPIPFunctionality" executed="True" success="True" time="1.687" asserts="7" />
+                      <test-case name="PyxNet.Test.TCPNetworkTester.TestTCPIPMultiThreadedSuitability" executed="True" success="True" time="3.984" asserts="606367" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release\PyxNetLongTests.dll" total="4" failures="0" not-run="1" date="2007-02-20" time="03:07:27">
+  <environment nunit-version="2.2.9.0" clr-version="2.0.50727.42" os-version="Microsoft Windows NT 5.1.2600 Service Pack 2" platform="Win32NT" cwd="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release" machine-name="EUCLID" user="autobuild" user-domain="PYXISINNOVATION" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release\PyxNetLongTests.dll" success="True" time="4231.919" asserts="0">
+    <results>
+      <test-suite name="c:\autobuild\work\PYXNet\PyxNetLongTests\bin\Release\PyxNetLongTests.dll" success="True" time="4231.919" asserts="0">
+        <results>
+          <test-suite name="PyxNetLongTests" success="True" time="4231.919" asserts="0">
+            <results>
+              <test-suite name="TestStacks" success="True" time="4231.919" asserts="0">
+                <results>
+                  <test-case name="PyxNetLongTests.TestStacks.TopologyAllShortRepeat100" executed="False">
+                    <categories>
+                      <category name="Long Tests" />
+                    </categories>
+                    <reason>
+                      <message><![CDATA[]]></message>
+                    </reason>
+                  </test-case>
+                  <test-case name="PyxNetLongTests.TestStacks.TopologyFourLong" executed="True" success="True" time="1530.767" asserts="612">
+                    <categories>
+                      <category name="Long Tests" />
+                    </categories>
+                  </test-case>
+                  <test-case name="PyxNetLongTests.TestStacks.TopologyOneLong" executed="True" success="True" time="900.358" asserts="97">
+                    <categories>
+                      <category name="Long Tests" />
+                    </categories>
+                  </test-case>
+                  <test-case name="PyxNetLongTests.TestStacks.TopologyThreeLong" executed="True" success="True" time="900.405" asserts="211">
+                    <categories>
+                      <category name="Long Tests" />
+                    </categories>
+                  </test-case>
+                  <test-case name="PyxNetLongTests.TestStacks.TopologyTwoLong" executed="True" success="True" time="900.373" asserts="152">
+                    <categories>
+                      <category name="Long Tests" />
+                    </categories>
+                  </test-case>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

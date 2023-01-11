@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C95DBA2-A590-4240-A9F8-6B645A59BC9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PyxNet.Test</RootNamespace>
+    <AssemblyName>PyxNet.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataHandling\DataChunkRequestTests.cs" />
+    <Compile Include="DataHandling\DataChunkTests.cs" />
+    <Compile Include="DataHandling\DataInfoMessagesTests.cs" />
+    <Compile Include="DataHandling\DataPackageTests.cs" />
+    <Compile Include="MessageParsingTests.cs" />
+    <Compile Include="MessageRelayerMock.cs" />
+    <Compile Include="NetworkAddressTests.cs" />
+    <Compile Include="QuerierTest.cs" />
+    <Compile Include="QueryHashTableTests.cs" />
+    <Compile Include="QueryResultTests.cs" />
+    <Compile Include="Service\CertificateReqestResponseTests.cs" />
+    <Compile Include="Service\CertificateRequestTests.cs" />
+    <Compile Include="ContextTests.cs" />
+    <Compile Include="DataHandling\DataGuidTests.cs" />
+    <Compile Include="EncryptedMessageHelperTests.cs" />
+    <Compile Include="FileTransfer\ManifestBuilderTests.cs" />
+    <Compile Include="FileTransfer\ManifestManagerTests.cs" />
+    <Compile Include="GeoStreamServer\GeoStreamServerServiceTests.cs" />
+    <Compile Include="IpAddressAndPortTests.cs" />
+    <Compile Include="KnownHubListTests.cs" />
+    <Compile Include="Logging\LoggedEventMessageTests.cs" />
+    <Compile Include="Logging\LoggingClientTests.cs" />
+    <Compile Include="Logging\LoggingServiceTests.cs" />
+    <Compile Include="MessageHandlerCollectionTests.cs" />
+    <Compile Include="MessageRelayAcknowledgementTests.cs" />
+    <Compile Include="MessageRelayTests.cs" />
+    <Compile Include="MessageTests.cs" />
+    <Compile Include="NetworkMultiThreadedHammerTests.cs" />
+    <Compile Include="NetworkSimplifiedMultiThreadedHammerTests.cs" />
+    <Compile Include="NetworkTests.cs" />
+    <Compile Include="NodeIdTests.cs" />
+    <Compile Include="NodeInfoHelper.cs" />
+    <Compile Include="NodeInfoTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishing\DynamicPublishedItemTests.cs" />
+    <Compile Include="Publishing\Files\PublishedFileInfoTests.cs" />
+    <Compile Include="Publishing\Files\PublishedFileRepositoryTests.cs" />
+    <Compile Include="Publishing\PublishedNodeInfoTests.cs" />
+    <Compile Include="QueryAcknowledgementTests.cs" />
+    <Compile Include="QueryTests.cs" />
+    <Compile Include="Service\CertificateRepositoryTests.cs" />
+    <Compile Include="Service\CertificateServerTests.cs" />
+    <Compile Include="Service\CertificateTests.cs" />
+    <Compile Include="Service\GeoSourcePermissionFactTests.cs" />
+    <Compile Include="Service\PipelinePermissionFactTests.cs" />
+    <Compile Include="Service\ResourceInstanceFactTests.cs" />
+    <Compile Include="Service\ResourceTests.cs" />
+    <Compile Include="Service\ServiceFinderTests.cs" />
+    <Compile Include="Service\ServiceIdTests.cs" />
+    <Compile Include="Service\ServiceInstanceIdTests.cs" />
+    <Compile Include="Service\ServiceInstanceTests.cs" />
+    <Compile Include="SignedMessageHelperTests.cs" />
+    <Compile Include="StackConnectionKnownHubListTests.cs" />
+    <Compile Include="StackConnectionLocalNodeInfoTests.cs" />
+    <Compile Include="StackConnectionMessageTests.cs" />
+    <Compile Include="StackConnectionPingPongTests.cs" />
+    <Compile Include="StackConnectionQueryHashTableTests.cs" />
+    <Compile Include="StackConnectionRequestTests.cs" />
+    <Compile Include="StackConnectionResponseTests.cs" />
+    <Compile Include="StackConnectionTests.cs" />
+    <Compile Include="StackConnectorTests.cs" />
+    <Compile Include="StackTestHelper.cs" />
+    <Compile Include="StackTests.cs" />
+    <Compile Include="StatusMessageTests.cs" />
+    <Compile Include="TcpNetworkConnectionTests.cs" />
+    <Compile Include="TcpNetworkTests.cs" />
+    <Compile Include="TestStackConnection.cs" />
+    <Compile Include="TimedConnectionHolderTests.cs" />
+    <Compile Include="UserIdTests.cs" />
+    <Compile Include="XPathQueryTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pyxis\Utilities.Test\Pyxis.Utilities.Test.csproj">
+      <Project>{CC557ED0-6200-46CE-8477-4C0EF60226B8}</Project>
+      <Name>Pyxis.Utilities.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Utilities\Pyxis.Utilities.csproj">
+      <Project>{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet.DLM\PyxNet.DLM.csproj">
+      <Project>{c302e222-29a0-4a95-8e65-740fb72e6795}</Project>
+      <Name>PyxNet.DLM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet\PyxNet.csproj">
+      <Project>{39EFFC79-2E12-4861-8DC9-7E59B6D2B9D1}</Project>
+      <Name>PyxNet %28PyxNet\PyxNet%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

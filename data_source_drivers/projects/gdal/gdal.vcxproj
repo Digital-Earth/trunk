@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{94066A88-35E4-482F-A137-FBBA9F569AD5}</ProjectGuid>
+    <RootNamespace>gdal</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\plugins\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\plugins\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>source;../driver_utility/source;../../../pyxlib/projects/pyxlib/source;../../../third_party/gdal/include;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MODULE_GDAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+      <AdditionalOptions>/Zm110 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdal_i.lib;gist.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)$(Configuration)\plugins;../../../third_party/libgist-2.0/src/libgist/$(Configuration);../../../third_party/gdal/lib/$(Configuration);../../../third_party/boost/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+    <PreBuildEvent>
+      <Command>robocopy ..\..\..\third_party\gdal\bin\debug $(OutDir) gdal200.dll gdal200.pdb ogr_DWG.dll ogr_DWG.pdb &gt;nul
+robocopy ..\..\..\third_party\gdal\data $(OutDir)gdaldata &gt;nul
+robocopy ..\..\..\third_party\expat\win32\bin\debug $(OutDir) libexpat.dll &gt;nul
+robocopy ..\..\..\third_party\hdf4 $(OutDir) hdf_D.dll mfhdf_D.dll xdr_D.dll &gt;nul
+robocopy ..\..\..\third_party\hdf5 $(OutDir) hdf5_D.dll hdf5_hl_D.dll &gt;nul
+robocopy ..\..\..\third_party\instantclient $(OutDir) oci.dll &gt;nul
+robocopy ..\..\..\third_party\libcurl $(OutDir) libcurld.dll &gt;nul
+robocopy ..\..\..\third_party\mrsid-6.0.7.1408-vc8\Debug $(OutDir) lti_dsdk_cdll.dll lti_dsdk_dll.dll &gt;nul
+robocopy ..\..\..\third_party\netcdf $(OutDir) netcdfd.dll &gt;nul
+robocopy ..\..\..\third_party\ogdi-3.1.5\bin\debug $(OutDir) expat_ogdi31.dll ogdi31.dll vrf.dll zlib_ogdi31.dll &gt;nul
+robocopy ..\..\..\third_party\proj-4.8.0\build_pyxis\Debug $(OutDir) proj.dll &gt;nul
+robocopy ..\..\..\third_party\szip $(OutDir) szipd.dll &gt;nul
+rem robocopy ..\..\..\third_party\teigha\exe\vc11dll $(OutDir) &gt;nul
+robocopy ..\..\..\third_party\xerces-c-3.1.1\bin $(OutDir) xerces-c_3_1D.dll &gt;nul
+robocopy ..\..\..\third_party\zlib $(OutDir) zlib_pyxisd.dll &gt;nul
+exit 0</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Copying files</Message>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Message />
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_SECURE_SCL=0 /Zm110 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>source;../driver_utility/source;../../../pyxlib/projects/pyxlib/source;../../../third_party/gdal/include;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MODULE_GDAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdal_i.lib;gist.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)$(Configuration)\plugins;../../../third_party/libgist-2.0/src/libgist/$(Configuration);../../../third_party/gdal/lib/$(Configuration);../../../third_party/boost/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+    <PreBuildEvent>
+      <Command>robocopy ..\..\..\third_party\gdal\bin\release $(OutDir) gdal200.dll ogr_DWG.dll &gt;nul
+robocopy ..\..\..\third_party\gdal\data $(OutDir)gdaldata &gt;nul
+robocopy ..\..\..\third_party\expat\win32\bin\release $(OutDir) libexpat.dll &gt;nul
+robocopy ..\..\..\third_party\hdf4 $(OutDir) hdf.dll mfhdf.dll xdr.dll &gt;nul
+robocopy ..\..\..\third_party\hdf5 $(OutDir) hdf5.dll hdf5_hl.dll &gt;nul
+robocopy ..\..\..\third_party\instantclient $(OutDir) oci.dll &gt;nul
+robocopy ..\..\..\third_party\libcurl $(OutDir) libcurl.dll &gt;nul
+robocopy ..\..\..\third_party\mrsid-6.0.7.1408-vc8\Release $(OutDir) lti_dsdk_cdll.dll lti_dsdk_dll.dll &gt;nul
+robocopy ..\..\..\third_party\netcdf $(OutDir) netcdf.dll &gt;nul
+robocopy ..\..\..\third_party\ogdi-3.1.5\bin\release $(OutDir) expat_ogdi31.dll ogdi31.dll vrf.dll zlib_ogdi31.dll &gt;nul
+robocopy ..\..\..\third_party\proj-4.8.0\build_pyxis\Release $(OutDir) proj.dll &gt;nul
+robocopy ..\..\..\third_party\szip $(OutDir) szip.dll &gt;nul
+rem robocopy ..\..\..\third_party\teigha\exe\vc11dll $(OutDir) &gt;nul
+robocopy ..\..\..\third_party\xerces-c-3.1.1\bin $(OutDir) xerces-c_3_1.dll &gt;nul
+robocopy ..\..\..\third_party\zlib $(OutDir) zlib_pyxis.dll &gt;nul
+exit 0</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Copying files</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\pyxlib\projects\pyxlib\pyxlib.vcxproj">
+      <Project>{804d618b-7f32-4cb8-9778-224df0b5054e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\driver_utility\driver_utility.vcxproj">
+      <Project>{502ac63c-b8dd-4ae7-a8b0-f452c51a5848}</Project>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <Private>false</Private>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\exceptions.cpp" />
+    <ClCompile Include="source\gdal_bing_process.cpp" />
+    <ClCompile Include="source\gdal_file_converter_process.cpp" />
+    <ClCompile Include="source\gdal_file_process.cpp" />
+    <ClCompile Include="source\gdal_metadata.cpp" />
+    <ClCompile Include="source\gdal_multi_process.cpp" />
+    <ClCompile Include="source\gdal_pipe_builder.cpp" />
+    <ClCompile Include="source\gdal_wcs_process.cpp" />
+    <ClCompile Include="source\gdal_wcs_process_v2.cpp" />
+    <ClCompile Include="source\gdal_wms_process.cpp" />
+    <ClCompile Include="source\gdal_xy_coverage.cpp" />
+    <ClCompile Include="source\geoservices_reference.cpp" />
+    <ClCompile Include="source\module_gdal.cpp" />
+    <ClCompile Include="source\ogr_feature_server_process.cpp" />
+    <ClCompile Include="source\ogr_pipe_builder.cpp" />
+    <ClCompile Include="source\ogr_process.cpp" />
+    <ClCompile Include="source\ogr_wfs_process.cpp" />
+    <ClCompile Include="source\ows_context_formatter.cpp" />
+    <ClCompile Include="source\ows_network_resource.cpp" />
+    <ClCompile Include="source\ows_reference.cpp" />
+    <ClCompile Include="source\pyx_ogr_data_source.cpp" />
+    <ClCompile Include="source\pyx_ogr_feature.cpp" />
+    <ClCompile Include="source\pyx_shared_gdal_data_set.cpp" />
+    <ClCompile Include="source\search_result_proc.cpp" />
+    <ClCompile Include="source\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\wps_process.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\exceptions.h" />
+    <ClInclude Include="source\gdal_bing_process.h" />
+    <ClInclude Include="source\gdal_file_converter_process.h" />
+    <ClInclude Include="source\gdal_file_process.h" />
+    <ClInclude Include="source\gdal_metadata.h" />
+    <ClInclude Include="source\gdal_multi_process.h" />
+    <ClInclude Include="source\gdal_pipe_builder.h" />
+    <ClInclude Include="source\gdal_wcs_process.h" />
+    <ClInclude Include="source\gdal_wcs_process_v2.h" />
+    <ClInclude Include="source\gdal_wms_process.h" />
+    <ClInclude Include="source\gdal_xy_coverage.h" />
+    <ClInclude Include="source\geoservices_reference.h" />
+    <ClInclude Include="source\module_gdal.h" />
+    <ClInclude Include="source\ogr_feature_server_process.h" />
+    <ClInclude Include="source\ogr_pipe_builder.h" />
+    <ClInclude Include="source\ogr_process.h" />
+    <ClInclude Include="source\ogr_wfs_process.h" />
+    <ClInclude Include="source\ows_context_formatter.h" />
+    <ClInclude Include="source\ows_network_resource.h" />
+    <ClInclude Include="source\ows_reference.h" />
+    <ClInclude Include="source\pyx_ogr_data_source.h" />
+    <ClInclude Include="source\pyx_ogr_feature.h" />
+    <ClInclude Include="source\pyx_shared_gdal_data_set.h" />
+    <ClInclude Include="source\search_result_proc.h" />
+    <ClInclude Include="source\stdafx.h" />
+    <ClInclude Include="source\wps_process.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1 @@
+C:\Python24\python C:\Python24\Scripts\trac-admin "C:/Program Files/Apache Software Foundation/Apache2.2/htdocs/Worldview" permission add %1 %2

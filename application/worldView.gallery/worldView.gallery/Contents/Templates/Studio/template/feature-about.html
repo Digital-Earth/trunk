@@ -1,0 +1,75 @@
+﻿<!-- About dialog -->
+<modal-dialog ng-if="showAbout" stop-propagation="keyup" modal-class="about">
+    <h2 class="title">
+        <span i18n="About Title"></span>
+        <span class="float-right small-text gray-text" style="padding-top: 6px" ng-show="applicationVersion">{{applicationVersion}}</span>
+    </h2>
+
+    <div class="small-text" i18n="PYXIS Copyright"></div>
+
+    <p class="about-action">
+        <i class="fa fa-file-text-o"></i>
+        <a target="_blank" href="https://www.worldview.gallery/info/terms" i18n="View the Terms of Service"></a>
+    </p>
+    <p class="about-action">
+        <i class="fa fa-desktop"></i>
+        <a target="_blank" href="https://www.worldview.gallery/info/systemRequirements" i18n="System Requirements"></a>
+    </p>
+    <p class="about-action">
+        <i class="fa fa-plug"></i>
+        <a target="_blank" href="mailto:support@pyxisinnovation.com?subject=Technical%20Support%20Requirement:" i18n="Need Tech Support?"></a>
+    </p>
+    <p class="about-action">
+        <i class="fa fa-twitter"></i>
+        <span i18n="Follow us"></span> <a target="_blank" href="https://twitter.com/PyxisInnovation">@PyxisInnovation</a>
+    </p>
+
+    <div class="tiny-text" style="padding-top: 14px;" i18n="PYXIS would like to thank"></div>
+    <p class="tiny-text about-reference">
+        <span class="reference">
+            <a target="_blank" href="http://wiki.awesomium.com/licensing/licensing-overview.html">Awesomium</a> © Awesomium Team 2014;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://trac.osgeo.org/proj/wiki/WikiStart#Documentation">Cartographic Projection Software (PROJ.4)</a> © 2000, Frank Warmerdam;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://expat.sourceforge.net/">Expat XML Parsing Library</a> © 2015, James Clark;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://logging.apache.org/log4net/">log4net</a> © 2004, Apache;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://gist.cs.berkeley.edu/software.html">Generalized Search Tree C++ Library</a> © 1997, 1998, 1999 Regents of the University of California;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://www.gdal.org/">Geospatial Data Abstraction Library</a> © 2000, Frank Warmerdam;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://earth-info.nima.mil/GandG/geotrans/docs/MSP_GeoTrans_Terms_of_Use.pdf">GEOTRANS Geographic Translator (GEOTRANS)</a>;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://ogdi.sourceforge.net/">Open Geographic Datastore Interface (OGDI)</a> © 1995, Logiciels et Applications Scientifiques (L.A.S.), © 1997 Her Majesty the Queen in Right of Canada, © 2001 Information Interoperability Institute, © 1991-1993 The Regents of the University of California, © 1995-1996 Jean-loup Gailly and Mark Adler, © 1994 Sun Microsystems, Inc. © 1986, University of Toronto, © 1994 Software Research Associates;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="https://www.openssl.org/">OpenSSL Project</a> © 1999-2014 The OpenSSL Project;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="https://sqlite.org/">Sqlite3</a>;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://www.swig.org/">SWIG</a>, © 1996, 1997 David M. Beazley;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://cran.r-project.org/web/packages/rtiff/LICENSE">Tagged Image File Format Library</a>, © 1988 – 1997 Sam Leffler, © 1991 – 1997 Silicon Graphics, Inc.;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://www.opentk.com/">Tao.OpenGL</a>, © 2006 - 2014 Stefanos Apostolopoulos;
+        </span>
+        <span class="reference">
+            <a target="_blank" href="http://www.zlib.net/">zlib</a>, © 1995-2012, <a target="_blank" href="http://gailly.net/">Jean-loup Gailly</a> and <a target="_blank" href="http://en.wikipedia.org/wiki/Mark_Adler">Mark Adler</a>.
+        </span>
+    </p>
+    <modal-dialog-buttons style="padding-top: 24px">    
+        <button class="big gray" type="submit" ng-click="closeAbout()"><span i18n="OK"></span></button>
+    </modal-dialog-buttons>
+</modal-dialog>

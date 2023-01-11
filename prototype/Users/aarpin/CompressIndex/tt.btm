@@ -1,0 +1,3 @@
+timer
+E:\Programs\CompressIndex\Release\\CompressIndex.exe -m 38 -l 38 -h 100000 > x
+timer

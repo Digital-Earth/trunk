@@ -1,0 +1,40 @@
+﻿<div class="resource-result">
+    <div ng-if="image" class="item-header" fade-in-background="image"></div>
+    <div ng-if="resource.Metadata.Visibility === 'Private'" class="section item-type"><i class="fa fa-lock"></i> {{'Private' | i18n }}</div>
+    <div class="section title">
+        {{resource.Metadata.Name}}
+        <div class="options" ng-if="!item && !importing">
+            <div>
+                <modal-dialog ng-if="showAgreement && !resource.Licenses.length">
+                    <h1 class="title" i18n="License Terms"></h1>
+                    <div style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;"><terms></terms></div>
+                    <modal-dialog-buttons>
+                        <button class="big gray" ng-click="commitImport()" pyx-track="search-import-WorldViewGallery"><i class="fa fa-check"></i><span i18n="Agree"></span></button>
+                        <button class="big gray" ng-click="cancelImport()"><i class="fa fa-times"></i><span i18n="Disagree"></span></button>
+                    </modal-dialog-buttons>
+                </modal-dialog>
+            </div>
+            <div>
+                <license-agreement ng-if="showAgreement && resource.Licenses.length" license-id="resource.Licenses[0].Id" on-agree="commitImport()" on-disagree="cancelImport()"/>
+            </div>
+            <button ng-if="hasAccess === false" class="gray-hover" ng-click="beginImport()" i18n="Import"></button>
+            <button ng-if="hasAccess" class="gray-hover" ng-click="commitImport()" pyx-track="search-import-WorldViewGallery" i18n="Import"></button>
+        </div>
+        <div class="options" ng-if="importing" i18n="Importing..."></div>
+        <div class="options" ng-if="item && !importing">
+            <button class="gray-hover" ng-click="invoke('goto',item)" i18n="Goto"></button>
+            <button class="gray-hover" ng-if="!item.Active" ng-click="invoke('toggle',item)" i18n="Show"></button>
+            <button class="gray-hover" ng-if="item.Active" ng-click="invoke('toggle',item)" i18n="Hide"></button>
+        </div>
+    </div>
+    <div ng-if="resource.Metadata.Description" class="section description" ng-click="showAll=!showAll" ng-class="{clamp: !showAll}">
+        <div class="content">
+            {{resource.Metadata.Description}}    
+        </div>        
+    </div>
+    <div ng-if="resource.Metadata.Tags" class="section">
+        <span class="tags">
+            <span ng-repeat="tag in resource.Metadata.Tags">{{tag}}</span>
+        </span>    
+    </div>    
+</div>

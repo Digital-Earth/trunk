@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		960CCB6012E9F8940064AF33 /* libboost_thread-xgcc42-mt-1_43.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960CCB5F12E9F8940064AF33 /* libboost_thread-xgcc42-mt-1_43.a */; };
+		9621600F11E6928100685050 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9621600E11E6928100685050 /* main.cpp */; };
+		963529E712400A0600FA9DD5 /* subtree_multimap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 963529E512400A0600FA9DD5 /* subtree_multimap.cpp */; };
+		963529E812400A0600FA9DD5 /* subtree_set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 963529E612400A0600FA9DD5 /* subtree_set.cpp */; };
+		964CCA8B1296DE7000486B0E /* compact_vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA851296DE7000486B0E /* compact_vector.cpp */; };
+		964CCA8C1296DE7000486B0E /* concurrent_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA861296DE7000486B0E /* concurrent_queue.cpp */; };
+		964CCA8D1296DE7000486B0E /* intrusive_functor_reference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA871296DE7000486B0E /* intrusive_functor_reference.cpp */; };
+		964CCA8E1296DE7000486B0E /* multimap_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA881296DE7000486B0E /* multimap_interface.cpp */; };
+		964CCA8F1296DE7000486B0E /* multimap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA891296DE7000486B0E /* multimap.cpp */; };
+		964CCA901296DE7000486B0E /* set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA8A1296DE7000486B0E /* set.cpp */; };
+		9665F622122096D00053E206 /* forward_range_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9665F621122096D00053E206 /* forward_range_interface.cpp */; };
+		9665F64612209C2A0053E206 /* tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9665F64512209C2A0053E206 /* tile.cpp */; };
+		96B937551225ADBA00FDE5AF /* intrusive_reference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96B937541225ADBA00FDE5AF /* intrusive_reference.cpp */; };
+		96D39466121C8818002AE085 /* assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D39456121C8818002AE085 /* assert.cpp */; };
+		96D39467121C8818002AE085 /* choice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D39457121C8818002AE085 /* choice.cpp */; };
+		96D3946A121C8818002AE085 /* empty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D3945A121C8818002AE085 /* empty.cpp */; };
+		96D3946B121C8818002AE085 /* fraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D3945B121C8818002AE085 /* fraction.cpp */; };
+		96D3946C121C8818002AE085 /* functor_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D3945C121C8818002AE085 /* functor_interface.cpp */; };
+		96D3946D121C8818002AE085 /* is_singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D3945D121C8818002AE085 /* is_singleton.cpp */; };
+		96D3946E121C8818002AE085 /* lazy_copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D3945E121C8818002AE085 /* lazy_copy.cpp */; };
+		96D3946F121C8818002AE085 /* map_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D3945F121C8818002AE085 /* map_interface.cpp */; };
+		96D39470121C8818002AE085 /* map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D39460121C8818002AE085 /* map.cpp */; };
+		96D39471121C8818002AE085 /* pointee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D39461121C8818002AE085 /* pointee.cpp */; };
+		96D39472121C8818002AE085 /* set_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D39462121C8818002AE085 /* set_interface.cpp */; };
+		96D39475121C8818002AE085 /* visit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D39465121C8818002AE085 /* visit.cpp */; };
+		96D95A581219ADDD00BE8C37 /* cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A3D1219ADDD00BE8C37 /* cell.cpp */; };
+		96D95A591219ADDD00BE8C37 /* coverage_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A3E1219ADDD00BE8C37 /* coverage_interface.cpp */; };
+		96D95A5A1219ADDD00BE8C37 /* feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A3F1219ADDD00BE8C37 /* feature.cpp */; };
+		96D95A5B1219ADDD00BE8C37 /* gazetteer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A401219ADDD00BE8C37 /* gazetteer.cpp */; };
+		96D95A5C1219ADDD00BE8C37 /* raster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A411219ADDD00BE8C37 /* raster.cpp */; };
+		96D95A5D1219ADDD00BE8C37 /* arc_region_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A431219ADDD00BE8C37 /* arc_region_interface.cpp */; };
+		96D95A5E1219ADDD00BE8C37 /* buffer_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A441219ADDD00BE8C37 /* buffer_region.cpp */; };
+		96D95A5F1219ADDD00BE8C37 /* exterior_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A451219ADDD00BE8C37 /* exterior_region.cpp */; };
+		96D95A601219ADDD00BE8C37 /* great_arc_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A461219ADDD00BE8C37 /* great_arc_region.cpp */; };
+		96D95A621219ADDD00BE8C37 /* intersection_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A481219ADDD00BE8C37 /* intersection_region.cpp */; };
+		96D95A631219ADDD00BE8C37 /* point_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A491219ADDD00BE8C37 /* point_region.cpp */; };
+		96D95A641219ADDD00BE8C37 /* polygon_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A4A1219ADDD00BE8C37 /* polygon_region.cpp */; };
+		96D95A651219ADDD00BE8C37 /* polygon_region_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A4B1219ADDD00BE8C37 /* polygon_region_interface.cpp */; };
+		96D95A661219ADDD00BE8C37 /* raster_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A4C1219ADDD00BE8C37 /* raster_region.cpp */; };
+		96D95A671219ADDD00BE8C37 /* rectangle_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A4D1219ADDD00BE8C37 /* rectangle_region.cpp */; };
+		96D95A681219ADDD00BE8C37 /* region_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A4E1219ADDD00BE8C37 /* region_interface.cpp */; };
+		96D95A691219ADDD00BE8C37 /* small_arc_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A4F1219ADDD00BE8C37 /* small_arc_region.cpp */; };
+		96D95A6A1219ADDD00BE8C37 /* union_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A501219ADDD00BE8C37 /* union_region.cpp */; };
+		96D95A6B1219ADDD00BE8C37 /* resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A511219ADDD00BE8C37 /* resolution.cpp */; };
+		96D95A6C1219ADDD00BE8C37 /* index.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A531219ADDD00BE8C37 /* index.cpp */; };
+		96D95A6D1219ADDD00BE8C37 /* level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A541219ADDD00BE8C37 /* level.cpp */; };
+		96D95A6E1219ADDD00BE8C37 /* step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A551219ADDD00BE8C37 /* step.cpp */; };
+		96D95A6F1219ADDD00BE8C37 /* subtree_map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A561219ADDD00BE8C37 /* subtree_map.cpp */; };
+		96F52747122447980051B60E /* raster_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96F52746122447980051B60E /* raster_interface.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		960CCB5F12E9F8940064AF33 /* libboost_thread-xgcc42-mt-1_43.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_thread-xgcc42-mt-1_43.a"; path = "/Volumes/Windows/Users/Jason/Documents/Clients/PYXIS/Code/Current/third_party/boost_1_43_0/lib/libboost_thread-xgcc42-mt-1_43.a"; sourceTree = "<absolute>"; };
+		96215FFD11E6927000685050 /* cell.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cell.hpp; path = ../../headers/pyxis/globe/cell.hpp; sourceTree = SOURCE_ROOT; };
+		96215FFE11E6927000685050 /* coverage_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = coverage_interface.hpp; path = ../../headers/pyxis/globe/coverage_interface.hpp; sourceTree = SOURCE_ROOT; };
+		9621600011E6927000685050 /* feature.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = feature.hpp; path = ../../headers/pyxis/globe/feature.hpp; sourceTree = SOURCE_ROOT; };
+		9621600111E6927000685050 /* gazetteer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gazetteer.hpp; path = ../../headers/pyxis/globe/gazetteer.hpp; sourceTree = SOURCE_ROOT; };
+		9621600811E6927000685050 /* raster.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = raster.hpp; path = ../../headers/pyxis/globe/raster.hpp; sourceTree = SOURCE_ROOT; };
+		9621600B11E6927000685050 /* resolution.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = resolution.hpp; path = ../../headers/pyxis/globe/resolution.hpp; sourceTree = SOURCE_ROOT; };
+		9621600E11E6928100685050 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../sources/main.cpp; sourceTree = SOURCE_ROOT; };
+		963529E3124009E700FA9DD5 /* subtree_multimap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = subtree_multimap.hpp; path = ../../headers/pyxis/globe/tree/subtree_multimap.hpp; sourceTree = SOURCE_ROOT; };
+		963529E4124009E700FA9DD5 /* subtree_set.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = subtree_set.hpp; path = ../../headers/pyxis/globe/tree/subtree_set.hpp; sourceTree = SOURCE_ROOT; };
+		963529E512400A0600FA9DD5 /* subtree_multimap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = subtree_multimap.cpp; path = ../../sources/pyxis/globe/tree/subtree_multimap.cpp; sourceTree = SOURCE_ROOT; };
+		963529E612400A0600FA9DD5 /* subtree_set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = subtree_set.cpp; path = ../../sources/pyxis/globe/tree/subtree_set.cpp; sourceTree = SOURCE_ROOT; };
+		963FEF5711B2F9FF000326B0 /* pyxis.globe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pyxis.globe; sourceTree = BUILT_PRODUCTS_DIR; };
+		964CCA851296DE7000486B0E /* compact_vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = compact_vector.cpp; path = ../../../pyxis/sources/pyxis/compact_vector.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA861296DE7000486B0E /* concurrent_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = concurrent_queue.cpp; path = ../../../pyxis/sources/pyxis/concurrent_queue.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA871296DE7000486B0E /* intrusive_functor_reference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = intrusive_functor_reference.cpp; path = ../../../pyxis/sources/pyxis/intrusive_functor_reference.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA881296DE7000486B0E /* multimap_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = multimap_interface.cpp; path = ../../../pyxis/sources/pyxis/multimap_interface.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA891296DE7000486B0E /* multimap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = multimap.cpp; path = ../../../pyxis/sources/pyxis/multimap.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA8A1296DE7000486B0E /* set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = set.cpp; path = ../../../pyxis/sources/pyxis/set.cpp; sourceTree = SOURCE_ROOT; };
+		9665F621122096D00053E206 /* forward_range_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = forward_range_interface.cpp; path = ../../../pyxis/sources/pyxis/forward_range_interface.cpp; sourceTree = SOURCE_ROOT; };
+		9665F644122099200053E206 /* tile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = tile.hpp; path = ../../headers/pyxis/globe/tile.hpp; sourceTree = SOURCE_ROOT; };
+		9665F64512209C2A0053E206 /* tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tile.cpp; path = ../../sources/pyxis/globe/tile.cpp; sourceTree = SOURCE_ROOT; };
+		96B937541225ADBA00FDE5AF /* intrusive_reference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = intrusive_reference.cpp; path = ../../../pyxis/sources/pyxis/intrusive_reference.cpp; sourceTree = SOURCE_ROOT; };
+		96D39455121C87D5002AE085 /* test.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = test.hpp; sourceTree = "<group>"; };
+		96D39456121C8818002AE085 /* assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = assert.cpp; path = ../../../pyxis/sources/pyxis/assert.cpp; sourceTree = SOURCE_ROOT; };
+		96D39457121C8818002AE085 /* choice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = choice.cpp; path = ../../../pyxis/sources/pyxis/choice.cpp; sourceTree = SOURCE_ROOT; };
+		96D3945A121C8818002AE085 /* empty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = empty.cpp; path = ../../../pyxis/sources/pyxis/empty.cpp; sourceTree = SOURCE_ROOT; };
+		96D3945B121C8818002AE085 /* fraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fraction.cpp; path = ../../../pyxis/sources/pyxis/fraction.cpp; sourceTree = SOURCE_ROOT; };
+		96D3945C121C8818002AE085 /* functor_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = functor_interface.cpp; path = ../../../pyxis/sources/pyxis/functor_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D3945D121C8818002AE085 /* is_singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = is_singleton.cpp; path = ../../../pyxis/sources/pyxis/is_singleton.cpp; sourceTree = SOURCE_ROOT; };
+		96D3945E121C8818002AE085 /* lazy_copy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lazy_copy.cpp; path = ../../../pyxis/sources/pyxis/lazy_copy.cpp; sourceTree = SOURCE_ROOT; };
+		96D3945F121C8818002AE085 /* map_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = map_interface.cpp; path = ../../../pyxis/sources/pyxis/map_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D39460121C8818002AE085 /* map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = map.cpp; path = ../../../pyxis/sources/pyxis/map.cpp; sourceTree = SOURCE_ROOT; };
+		96D39461121C8818002AE085 /* pointee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pointee.cpp; path = ../../../pyxis/sources/pyxis/pointee.cpp; sourceTree = SOURCE_ROOT; };
+		96D39462121C8818002AE085 /* set_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = set_interface.cpp; path = ../../../pyxis/sources/pyxis/set_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D39465121C8818002AE085 /* visit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = visit.cpp; path = ../../../pyxis/sources/pyxis/visit.cpp; sourceTree = SOURCE_ROOT; };
+		96D39489121C8B21002AE085 /* test.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = test.hpp; path = ../../headers/pyxis/globe/test.hpp; sourceTree = SOURCE_ROOT; };
+		96D95A3D1219ADDD00BE8C37 /* cell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cell.cpp; path = ../../sources/pyxis/globe/cell.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A3E1219ADDD00BE8C37 /* coverage_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = coverage_interface.cpp; path = ../../sources/pyxis/globe/coverage_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A3F1219ADDD00BE8C37 /* feature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = feature.cpp; path = ../../sources/pyxis/globe/feature.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A401219ADDD00BE8C37 /* gazetteer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gazetteer.cpp; path = ../../sources/pyxis/globe/gazetteer.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A411219ADDD00BE8C37 /* raster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = raster.cpp; path = ../../sources/pyxis/globe/raster.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A431219ADDD00BE8C37 /* arc_region_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arc_region_interface.cpp; path = ../../sources/pyxis/globe/region/arc_region_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A441219ADDD00BE8C37 /* buffer_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = buffer_region.cpp; path = ../../sources/pyxis/globe/region/buffer_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A451219ADDD00BE8C37 /* exterior_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = exterior_region.cpp; path = ../../sources/pyxis/globe/region/exterior_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A461219ADDD00BE8C37 /* great_arc_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = great_arc_region.cpp; path = ../../sources/pyxis/globe/region/great_arc_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A481219ADDD00BE8C37 /* intersection_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = intersection_region.cpp; path = ../../sources/pyxis/globe/region/intersection_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A491219ADDD00BE8C37 /* point_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = point_region.cpp; path = ../../sources/pyxis/globe/region/point_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A4A1219ADDD00BE8C37 /* polygon_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = polygon_region.cpp; path = ../../sources/pyxis/globe/region/polygon_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A4B1219ADDD00BE8C37 /* polygon_region_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = polygon_region_interface.cpp; path = ../../sources/pyxis/globe/region/polygon_region_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A4C1219ADDD00BE8C37 /* raster_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = raster_region.cpp; path = ../../sources/pyxis/globe/region/raster_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A4D1219ADDD00BE8C37 /* rectangle_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rectangle_region.cpp; path = ../../sources/pyxis/globe/region/rectangle_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A4E1219ADDD00BE8C37 /* region_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = region_interface.cpp; path = ../../sources/pyxis/globe/region/region_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A4F1219ADDD00BE8C37 /* small_arc_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = small_arc_region.cpp; path = ../../sources/pyxis/globe/region/small_arc_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A501219ADDD00BE8C37 /* union_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = union_region.cpp; path = ../../sources/pyxis/globe/region/union_region.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A511219ADDD00BE8C37 /* resolution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = resolution.cpp; path = ../../sources/pyxis/globe/resolution.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A531219ADDD00BE8C37 /* index.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = index.cpp; path = ../../sources/pyxis/globe/tree/index.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A541219ADDD00BE8C37 /* level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = level.cpp; path = ../../sources/pyxis/globe/tree/level.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A551219ADDD00BE8C37 /* step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = step.cpp; path = ../../sources/pyxis/globe/tree/step.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A561219ADDD00BE8C37 /* subtree_map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = subtree_map.cpp; path = ../../sources/pyxis/globe/tree/subtree_map.cpp; sourceTree = SOURCE_ROOT; };
+		96E6064212164EA100B127A4 /* arc_region_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = arc_region_interface.hpp; path = ../../headers/pyxis/globe/region/arc_region_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064312164EA100B127A4 /* buffer_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = buffer_region.hpp; path = ../../headers/pyxis/globe/region/buffer_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064412164EA100B127A4 /* exterior_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = exterior_region.hpp; path = ../../headers/pyxis/globe/region/exterior_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064512164EA100B127A4 /* great_arc_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = great_arc_region.hpp; path = ../../headers/pyxis/globe/region/great_arc_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064712164EA100B127A4 /* intersection_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = intersection_region.hpp; path = ../../headers/pyxis/globe/region/intersection_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064812164EA100B127A4 /* point_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = point_region.hpp; path = ../../headers/pyxis/globe/region/point_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064912164EA100B127A4 /* polygon_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = polygon_region.hpp; path = ../../headers/pyxis/globe/region/polygon_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064A12164EA100B127A4 /* polygon_region_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = polygon_region_interface.hpp; path = ../../headers/pyxis/globe/region/polygon_region_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064B12164EA100B127A4 /* raster_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = raster_region.hpp; path = ../../headers/pyxis/globe/region/raster_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064C12164EA100B127A4 /* rectangle_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = rectangle_region.hpp; path = ../../headers/pyxis/globe/region/rectangle_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064D12164EA100B127A4 /* region_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = region_interface.hpp; path = ../../headers/pyxis/globe/region/region_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064E12164EA100B127A4 /* small_arc_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = small_arc_region.hpp; path = ../../headers/pyxis/globe/region/small_arc_region.hpp; sourceTree = SOURCE_ROOT; };
+		96E6064F12164EA100B127A4 /* union_region.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = union_region.hpp; path = ../../headers/pyxis/globe/region/union_region.hpp; sourceTree = SOURCE_ROOT; };
+		96F5270312243BE00051B60E /* feature_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = feature_interface.hpp; path = ../../headers/pyxis/globe/feature_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96F527411224470A0051B60E /* raster_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = raster_interface.hpp; path = ../../headers/pyxis/globe/raster_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96F52746122447980051B60E /* raster_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = raster_interface.cpp; path = ../../sources/pyxis/globe/raster_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96F88A2712109152007D8EAF /* index.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = index.hpp; path = ../../headers/pyxis/globe/tree/index.hpp; sourceTree = SOURCE_ROOT; };
+		96F88A2812109152007D8EAF /* level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = level.hpp; path = ../../headers/pyxis/globe/tree/level.hpp; sourceTree = SOURCE_ROOT; };
+		96F88A2912109152007D8EAF /* step.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = step.hpp; path = ../../headers/pyxis/globe/tree/step.hpp; sourceTree = SOURCE_ROOT; };
+		96F88A2B12109152007D8EAF /* subtree_map.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = subtree_map.hpp; path = ../../headers/pyxis/globe/tree/subtree_map.hpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960CCB6012E9F8940064AF33 /* libboost_thread-xgcc42-mt-1_43.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				9682A43E11AE1B7C0049DE84 /* Libraries */,
+				96D95A371219AD7700BE8C37 /* Sources */,
+				08FB7795FE84155DC02AAC07 /* Headers */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = Pyxis;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				96215FE711E6926300685050 /* pyxis */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				963FEF5711B2F9FF000326B0 /* pyxis.globe */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96215FE711E6926300685050 /* pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				96215FF611E6927000685050 /* globe */,
+				96D39455121C87D5002AE085 /* test.hpp */,
+			);
+			name = pyxis;
+			path = ../../../pyxis/headers/pyxis;
+			sourceTree = SOURCE_ROOT;
+		};
+		96215FF611E6927000685050 /* globe */ = {
+			isa = PBXGroup;
+			children = (
+				96E6064112164EA100B127A4 /* region */,
+				96F88A2612109152007D8EAF /* tree */,
+				96215FFD11E6927000685050 /* cell.hpp */,
+				96215FFE11E6927000685050 /* coverage_interface.hpp */,
+				9621600011E6927000685050 /* feature.hpp */,
+				96F5270312243BE00051B60E /* feature_interface.hpp */,
+				9621600111E6927000685050 /* gazetteer.hpp */,
+				9621600811E6927000685050 /* raster.hpp */,
+				96F527411224470A0051B60E /* raster_interface.hpp */,
+				9621600B11E6927000685050 /* resolution.hpp */,
+				96D39489121C8B21002AE085 /* test.hpp */,
+				9665F644122099200053E206 /* tile.hpp */,
+			);
+			name = globe;
+			path = ../../headers/pyxis/globe;
+			sourceTree = SOURCE_ROOT;
+		};
+		9682A43E11AE1B7C0049DE84 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				960CCB5F12E9F8940064AF33 /* libboost_thread-xgcc42-mt-1_43.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		96D95A371219AD7700BE8C37 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9621600E11E6928100685050 /* main.cpp */,
+				96D95A3A1219ADD600BE8C37 /* pyxis */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		96D95A3A1219ADD600BE8C37 /* pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				96D95A3C1219ADDD00BE8C37 /* globe */,
+				96D39456121C8818002AE085 /* assert.cpp */,
+				96D39457121C8818002AE085 /* choice.cpp */,
+				964CCA851296DE7000486B0E /* compact_vector.cpp */,
+				964CCA861296DE7000486B0E /* concurrent_queue.cpp */,
+				96D3945A121C8818002AE085 /* empty.cpp */,
+				9665F621122096D00053E206 /* forward_range_interface.cpp */,
+				96D3945B121C8818002AE085 /* fraction.cpp */,
+				96D3945C121C8818002AE085 /* functor_interface.cpp */,
+				964CCA871296DE7000486B0E /* intrusive_functor_reference.cpp */,
+				96B937541225ADBA00FDE5AF /* intrusive_reference.cpp */,
+				96D3945D121C8818002AE085 /* is_singleton.cpp */,
+				96D3945E121C8818002AE085 /* lazy_copy.cpp */,
+				96D3945F121C8818002AE085 /* map_interface.cpp */,
+				96D39460121C8818002AE085 /* map.cpp */,
+				964CCA891296DE7000486B0E /* multimap.cpp */,
+				964CCA881296DE7000486B0E /* multimap_interface.cpp */,
+				96D39461121C8818002AE085 /* pointee.cpp */,
+				964CCA8A1296DE7000486B0E /* set.cpp */,
+				96D39462121C8818002AE085 /* set_interface.cpp */,
+				96D39465121C8818002AE085 /* visit.cpp */,
+			);
+			name = pyxis;
+			path = ../../sources/pyxis;
+			sourceTree = SOURCE_ROOT;
+		};
+		96D95A3C1219ADDD00BE8C37 /* globe */ = {
+			isa = PBXGroup;
+			children = (
+				96D95A421219ADDD00BE8C37 /* region */,
+				96D95A521219ADDD00BE8C37 /* tree */,
+				96D95A3D1219ADDD00BE8C37 /* cell.cpp */,
+				96D95A3E1219ADDD00BE8C37 /* coverage_interface.cpp */,
+				96D95A3F1219ADDD00BE8C37 /* feature.cpp */,
+				96D95A401219ADDD00BE8C37 /* gazetteer.cpp */,
+				96D95A411219ADDD00BE8C37 /* raster.cpp */,
+				96F52746122447980051B60E /* raster_interface.cpp */,
+				96D95A511219ADDD00BE8C37 /* resolution.cpp */,
+				9665F64512209C2A0053E206 /* tile.cpp */,
+			);
+			name = globe;
+			path = ../../sources/pyxis/globe;
+			sourceTree = SOURCE_ROOT;
+		};
+		96D95A421219ADDD00BE8C37 /* region */ = {
+			isa = PBXGroup;
+			children = (
+				96D95A431219ADDD00BE8C37 /* arc_region_interface.cpp */,
+				96D95A441219ADDD00BE8C37 /* buffer_region.cpp */,
+				96D95A451219ADDD00BE8C37 /* exterior_region.cpp */,
+				96D95A461219ADDD00BE8C37 /* great_arc_region.cpp */,
+				96D95A481219ADDD00BE8C37 /* intersection_region.cpp */,
+				96D95A491219ADDD00BE8C37 /* point_region.cpp */,
+				96D95A4A1219ADDD00BE8C37 /* polygon_region.cpp */,
+				96D95A4B1219ADDD00BE8C37 /* polygon_region_interface.cpp */,
+				96D95A4C1219ADDD00BE8C37 /* raster_region.cpp */,
+				96D95A4D1219ADDD00BE8C37 /* rectangle_region.cpp */,
+				96D95A4E1219ADDD00BE8C37 /* region_interface.cpp */,
+				96D95A4F1219ADDD00BE8C37 /* small_arc_region.cpp */,
+				96D95A501219ADDD00BE8C37 /* union_region.cpp */,
+			);
+			name = region;
+			path = ../../sources/pyxis/globe/region;
+			sourceTree = SOURCE_ROOT;
+		};
+		96D95A521219ADDD00BE8C37 /* tree */ = {
+			isa = PBXGroup;
+			children = (
+				96D95A531219ADDD00BE8C37 /* index.cpp */,
+				96D95A541219ADDD00BE8C37 /* level.cpp */,
+				96D95A551219ADDD00BE8C37 /* step.cpp */,
+				96D95A561219ADDD00BE8C37 /* subtree_map.cpp */,
+				963529E512400A0600FA9DD5 /* subtree_multimap.cpp */,
+				963529E612400A0600FA9DD5 /* subtree_set.cpp */,
+			);
+			path = tree;
+			sourceTree = "<group>";
+		};
+		96E6064112164EA100B127A4 /* region */ = {
+			isa = PBXGroup;
+			children = (
+				96E6064212164EA100B127A4 /* arc_region_interface.hpp */,
+				96E6064312164EA100B127A4 /* buffer_region.hpp */,
+				96E6064412164EA100B127A4 /* exterior_region.hpp */,
+				96E6064512164EA100B127A4 /* great_arc_region.hpp */,
+				96E6064712164EA100B127A4 /* intersection_region.hpp */,
+				96E6064812164EA100B127A4 /* point_region.hpp */,
+				96E6064912164EA100B127A4 /* polygon_region.hpp */,
+				96E6064A12164EA100B127A4 /* polygon_region_interface.hpp */,
+				96E6064B12164EA100B127A4 /* raster_region.hpp */,
+				96E6064C12164EA100B127A4 /* rectangle_region.hpp */,
+				96E6064D12164EA100B127A4 /* region_interface.hpp */,
+				96E6064E12164EA100B127A4 /* small_arc_region.hpp */,
+				96E6064F12164EA100B127A4 /* union_region.hpp */,
+			);
+			name = region;
+			path = ../../headers/pyxis/globe/region;
+			sourceTree = SOURCE_ROOT;
+		};
+		96F88A2612109152007D8EAF /* tree */ = {
+			isa = PBXGroup;
+			children = (
+				96F88A2712109152007D8EAF /* index.hpp */,
+				96F88A2812109152007D8EAF /* level.hpp */,
+				96F88A2912109152007D8EAF /* step.hpp */,
+				96F88A2B12109152007D8EAF /* subtree_map.hpp */,
+				963529E3124009E700FA9DD5 /* subtree_multimap.hpp */,
+				963529E4124009E700FA9DD5 /* subtree_set.hpp */,
+			);
+			name = tree;
+			path = ../../headers/pyxis/globe/tree;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* pyxis.globe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "pyxis.globe" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pyxis.globe;
+			productInstallPath = "$(HOME)/bin";
+			productName = Pyxis;
+			productReference = 963FEF5711B2F9FF000326B0 /* pyxis.globe */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "pyxis.globe" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Pyxis */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* pyxis.globe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9621600F11E6928100685050 /* main.cpp in Sources */,
+				96D95A581219ADDD00BE8C37 /* cell.cpp in Sources */,
+				96D95A591219ADDD00BE8C37 /* coverage_interface.cpp in Sources */,
+				96D95A5A1219ADDD00BE8C37 /* feature.cpp in Sources */,
+				96D95A5B1219ADDD00BE8C37 /* gazetteer.cpp in Sources */,
+				96D95A5C1219ADDD00BE8C37 /* raster.cpp in Sources */,
+				96D95A5D1219ADDD00BE8C37 /* arc_region_interface.cpp in Sources */,
+				96D95A5E1219ADDD00BE8C37 /* buffer_region.cpp in Sources */,
+				96D95A5F1219ADDD00BE8C37 /* exterior_region.cpp in Sources */,
+				96D95A601219ADDD00BE8C37 /* great_arc_region.cpp in Sources */,
+				96D95A621219ADDD00BE8C37 /* intersection_region.cpp in Sources */,
+				96D95A631219ADDD00BE8C37 /* point_region.cpp in Sources */,
+				96D95A641219ADDD00BE8C37 /* polygon_region.cpp in Sources */,
+				96D95A651219ADDD00BE8C37 /* polygon_region_interface.cpp in Sources */,
+				96D95A661219ADDD00BE8C37 /* raster_region.cpp in Sources */,
+				96D95A671219ADDD00BE8C37 /* rectangle_region.cpp in Sources */,
+				96D95A681219ADDD00BE8C37 /* region_interface.cpp in Sources */,
+				96D95A691219ADDD00BE8C37 /* small_arc_region.cpp in Sources */,
+				96D95A6A1219ADDD00BE8C37 /* union_region.cpp in Sources */,
+				96D95A6B1219ADDD00BE8C37 /* resolution.cpp in Sources */,
+				96D95A6C1219ADDD00BE8C37 /* index.cpp in Sources */,
+				96D95A6D1219ADDD00BE8C37 /* level.cpp in Sources */,
+				96D95A6E1219ADDD00BE8C37 /* step.cpp in Sources */,
+				96D95A6F1219ADDD00BE8C37 /* subtree_map.cpp in Sources */,
+				96D39466121C8818002AE085 /* assert.cpp in Sources */,
+				96D39467121C8818002AE085 /* choice.cpp in Sources */,
+				96D3946A121C8818002AE085 /* empty.cpp in Sources */,
+				96D3946B121C8818002AE085 /* fraction.cpp in Sources */,
+				96D3946C121C8818002AE085 /* functor_interface.cpp in Sources */,
+				96D3946D121C8818002AE085 /* is_singleton.cpp in Sources */,
+				96D3946E121C8818002AE085 /* lazy_copy.cpp in Sources */,
+				96D3946F121C8818002AE085 /* map_interface.cpp in Sources */,
+				96D39470121C8818002AE085 /* map.cpp in Sources */,
+				96D39471121C8818002AE085 /* pointee.cpp in Sources */,
+				96D39472121C8818002AE085 /* set_interface.cpp in Sources */,
+				96D39475121C8818002AE085 /* visit.cpp in Sources */,
+				9665F622122096D00053E206 /* forward_range_interface.cpp in Sources */,
+				9665F64612209C2A0053E206 /* tile.cpp in Sources */,
+				96F52747122447980051B60E /* raster_interface.cpp in Sources */,
+				96B937551225ADBA00FDE5AF /* intrusive_reference.cpp in Sources */,
+				963529E712400A0600FA9DD5 /* subtree_multimap.cpp in Sources */,
+				963529E812400A0600FA9DD5 /* subtree_set.cpp in Sources */,
+				964CCA8B1296DE7000486B0E /* compact_vector.cpp in Sources */,
+				964CCA8C1296DE7000486B0E /* concurrent_queue.cpp in Sources */,
+				964CCA8D1296DE7000486B0E /* intrusive_functor_reference.cpp in Sources */,
+				964CCA8E1296DE7000486B0E /* multimap_interface.cpp in Sources */,
+				964CCA8F1296DE7000486B0E /* multimap.cpp in Sources */,
+				964CCA901296DE7000486B0E /* set.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/lib\"",
+				);
+				PRODUCT_NAME = pyxis.globe;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/lib\"",
+				);
+				PRODUCT_NAME = pyxis.globe;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = ansi;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/include\"";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../pyxis/headers\" \"${SOURCE_ROOT}/../../headers\"";
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = ansi;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/include\"";
+				LIBRARY_SEARCH_PATHS = "";
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../pyxis/headers\" \"${SOURCE_ROOT}/../../headers\"";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "pyxis.globe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "pyxis.globe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

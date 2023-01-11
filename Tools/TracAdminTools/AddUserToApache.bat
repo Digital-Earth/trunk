@@ -1,0 +1,1 @@
+"C:\Program Files\Apache Software Foundation\Apache2.2\bin\htpasswd" "C:\Program Files\Apache Software Foundation\Apache2.2\conf\passwd" %1

@@ -1,0 +1,12 @@
+/* IE ONLY CSS */
+
+
+
+input#searchButton {
+  color:#d78626;
+  font-size:0;
+  }
+
+input#searchBox {
+	margin-top:-1px;
+	}

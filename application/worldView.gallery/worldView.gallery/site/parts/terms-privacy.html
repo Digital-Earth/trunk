@@ -1,0 +1,26 @@
+ <div class="page page-terms surface">
+    <div class="container">
+       <div class="page__header text-center">
+            <ng-switch on="termsCtrl.renderTerms">
+                <h1 class="headline" ng-switch-when="true">Terms &amp; Conditions</h1>
+                <h1 class="headline" ng-switch-when="false">Privacy Policy</h1>
+            </ng-switch>
+        </div>
+         <div class="page__content">
+            <div class="page__content__inner">
+                <div class="btns">
+                    <a class="btn btn--switch ng-class:{ 'is-active': termsCtrl.renderTerms };" href="" ng-click="termsCtrl.toggleTerms(true)">Terms &amp; Conditions</a>
+                    <a class="btn btn--switch ng-class:{ 'is-active': !termsCtrl.renderTerms };" href="" ng-click="termsCtrl.toggleTerms(false)">Privacy Policy</a>
+                </div>
+                <ng-switch on="termsCtrl.renderTerms">
+                    <div class="page__body" ng-switch-when="true">
+                        <div ng-include="'/site/parts/terms.html'"></div>
+                    </div>
+                    <div class="page__body" ng-switch-when="false">
+                        <div ng-include="'/site/parts/privacy.html'"></div>
+                    </div>
+                </ng-switch>
+            </div>
+        </div>
+    </div>
+ </div>

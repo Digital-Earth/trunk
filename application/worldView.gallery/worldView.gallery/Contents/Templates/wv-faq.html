@@ -1,0 +1,10 @@
+﻿<div class="center-content">
+    <h1 class="title">Frequently Asked Questions</h1>
+	<div ng-repeat="section in faqs">
+        <h2 class="faq-section">{{section.heading}}</h2>
+        <div ng-repeat="qaPair in section.qaPairs" class="faq" ng-class="{visible:selectedHeading==$parent.$index && selectedQuestion==$index}">
+            <h2 ng-click="makeSelection($parent.$index,$index)">{{qaPair.question}}</h2>
+            <div class="content" ng-bind-html="qaPair.answer | escapehtml"></div>
+        </div>
+    </div>
+</div>

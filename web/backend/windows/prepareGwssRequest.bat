@@ -1,0 +1,1 @@
+"C:\Program Files\MongoDB 2.6 Standard\bin\mongo.exe" -u pyxis_licensing -p Innovation1 pyxis_licenseserver "C:\Program Files\MongoDB 2.6 Standard\scripts\gwssController.js"

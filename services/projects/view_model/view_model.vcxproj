@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{06A1B8E8-D594-4669-9677-90DFD8C0EB34}</ProjectGuid>
+    <RootNamespace>view_model</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;source;../../../pyxlib/projects/pyxlib/source;../../../third_party/glee-5.21;../../../third_party/cml-1_0_0;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/openssl-0.9.8h/inc32;../../../third_party/zlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VIEW_MODEL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;zlib_pyxisd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);../../../third_party/boost/lib;../../../third_party/zlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>.;source;../../../pyxlib/projects/pyxlib/source;../../../third_party/glee-5.21;../../../third_party/cml-1_0_0;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/openssl-0.9.8h/inc32;../../../third_party/zlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VIEW_MODEL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild />
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;zlib_pyxis.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);../../../third_party/boost/lib;../../../third_party/zlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;source;../../../pyxlib/projects/pyxlib/source;../../../third_party/glee-5.21;../../../third_party/cml-1_0_0;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/openssl-0.9.8h/inc32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VIEW_MODEL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);../../../third_party/boost/lib;../../../third_party/zlib/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\pyxlib\projects\pyxlib\pyxlib.vcxproj">
+      <Project>{804d618b-7f32-4cb8-9778-224df0b5054e}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\addr.cpp" />
+    <ClCompile Include="source\addr_utils.cpp" />
+    <ClCompile Include="source\annotation.cpp" />
+    <ClCompile Include="source\camera.cpp" />
+    <ClCompile Include="source\camera_animator.cpp" />
+    <ClCompile Include="source\cml_utils.cpp" />
+    <ClCompile Include="source\components\image_component.cpp" />
+    <ClCompile Include="source\exceptions.cpp" />
+    <ClCompile Include="source\fill_utils.cpp" />
+    <ClCompile Include="source\garbage_collector.cpp" />
+    <ClCompile Include="source\gl_utils.cpp" />
+    <ClCompile Include="source\go_to_pipeline_command.cpp" />
+    <ClCompile Include="source\performance_counter.cpp" />
+    <ClCompile Include="source\pyxtree.cpp" />
+    <ClCompile Include="source\pyxtree_utils.cpp" />
+    <ClCompile Include="source\ray.cpp" />
+    <ClCompile Include="source\rhombus.cpp" />
+    <ClCompile Include="source\rhombus_bitmap.cpp" />
+    <ClCompile Include="source\rhombus_utils.cpp" />
+    <ClCompile Include="source\stars.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\stile.cpp" />
+    <ClCompile Include="source\stile_fill_manager.cpp" />
+    <ClCompile Include="source\stile_mesh.cpp" />
+    <ClCompile Include="source\surface.cpp" />
+    <ClCompile Include="source\surface_fillers.cpp" />
+    <ClCompile Include="source\surface_memento.cpp" />
+    <ClCompile Include="source\sync_context.cpp" />
+    <ClCompile Include="source\tuv.cpp" />
+    <ClCompile Include="source\vdata.cpp" />
+    <ClCompile Include="source\vector_utils.cpp" />
+    <ClCompile Include="source\view.cpp" />
+    <ClCompile Include="view_model.cpp" />
+    <ClCompile Include="source\view_model_api.cpp" />
+    <ClCompile Include="source\view_open_gl_thread.cpp" />
+    <ClCompile Include="source\vtree.cpp" />
+    <ClCompile Include="source\animation.cpp" />
+    <ClCompile Include="source\open_gl_context.cpp" />
+    <ClCompile Include="source\open_gl_program.cpp" />
+    <ClCompile Include="source\open_gl_resource.cpp" />
+    <ClCompile Include="source\open_gl_resource_pool.cpp" />
+    <ClCompile Include="source\open_gl_shader.cpp" />
+    <ClCompile Include="source\open_gl_texture.cpp" />
+    <ClCompile Include="source\open_gl_vbo.cpp" />
+    <ClCompile Include="source\texture_packer.cpp" />
+    <ClCompile Include="source\components\annotations_controller.cpp" />
+    <ClCompile Include="source\components\camera_controller.cpp" />
+    <ClCompile Include="source\components\compass_renderer.cpp" />
+    <ClCompile Include="source\component.cpp" />
+    <ClCompile Include="source\component_resource.cpp" />
+    <ClCompile Include="source\components\container_component.cpp" />
+    <ClCompile Include="source\components\icon_annotation_controller.cpp" />
+    <ClCompile Include="source\components\icon_cpu_renderer.cpp" />
+    <ClCompile Include="source\components\icon_gpu_renderer.cpp" />
+    <ClCompile Include="source\components\icon_renderer.cpp" />
+    <ClCompile Include="source\components\icosahedron_renderer.cpp" />
+    <ClCompile Include="source\components\performance_renderer.cpp" />
+    <ClCompile Include="source\components\pyxis_grid_renderer.cpp" />
+    <ClCompile Include="source\components\rhombus_renderer.cpp" />
+    <ClCompile Include="source\components\safe_render_container_component.cpp" />
+    <ClCompile Include="source\components\scale_renderer.cpp" />
+    <ClCompile Include="source\components\screen_displacer_component.cpp" />
+    <ClCompile Include="source\components\scrollbar_renderer.cpp" />
+    <ClCompile Include="source\components\tiles_cpu_renderer.cpp" />
+    <ClCompile Include="source\ui_events.cpp" />
+    <ClCompile Include="source\components\zoom_controller.cpp" />
+    <ClCompile Include="source\storage\visible_store.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\addr.h" />
+    <ClInclude Include="source\addr_utils.h" />
+    <ClInclude Include="source\annotation.h" />
+    <ClInclude Include="source\camera.h" />
+    <ClInclude Include="source\camera_animator.h" />
+    <ClInclude Include="source\cml_utils.h" />
+    <ClInclude Include="source\components\image_component.h" />
+    <ClInclude Include="source\continues_data_map.h" />
+    <ClInclude Include="source\exceptions.h" />
+    <ClInclude Include="source\fill_utils.h" />
+    <ClInclude Include="source\garbage_collector.h" />
+    <ClInclude Include="source\gl_utils.h" />
+    <ClInclude Include="source\go_to_pipeline_command.h" />
+    <ClInclude Include="source\performance_counter.h" />
+    <ClInclude Include="source\pyxtree.h" />
+    <ClInclude Include="source\pyxtree_utils.h" />
+    <ClInclude Include="source\ray.h" />
+    <ClInclude Include="source\rhombus.h" />
+    <ClInclude Include="source\rhombus_bitmap.h" />
+    <ClInclude Include="source\rhombus_utils.h" />
+    <ClInclude Include="source\stars.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="source\stile.h" />
+    <ClInclude Include="source\stile_fill_manager.h" />
+    <ClInclude Include="source\stile_mesh.h" />
+    <ClInclude Include="source\surface.h" />
+    <ClInclude Include="source\surface_fillers.h" />
+    <ClInclude Include="source\surface_memento.h" />
+    <ClInclude Include="source\surface_tree.h" />
+    <ClInclude Include="source\sync_context.h" />
+    <ClInclude Include="source\tuv.h" />
+    <ClInclude Include="source\vdata.h" />
+    <ClInclude Include="source\vector_utils.h" />
+    <ClInclude Include="source\view.h" />
+    <ClInclude Include="view_model.h" />
+    <ClInclude Include="source\view_model_api.h" />
+    <ClInclude Include="source\view_open_gl_thread.h" />
+    <ClInclude Include="source\vtree.h" />
+    <ClInclude Include="source\animation.h" />
+    <ClInclude Include="source\open_gl_context.h" />
+    <ClInclude Include="source\open_gl_program.h" />
+    <ClInclude Include="source\open_gl_resource.h" />
+    <ClInclude Include="source\open_gl_resource_pool.h" />
+    <ClInclude Include="source\open_gl_shader.h" />
+    <ClInclude Include="source\open_gl_texture.h" />
+    <ClInclude Include="source\open_gl_vbo.h" />
+    <ClInclude Include="source\texture_packer.h" />
+    <ClInclude Include="source\components\annotations_controller.h" />
+    <ClInclude Include="source\components\camera_controller.h" />
+    <ClInclude Include="source\components\compass_renderer.h" />
+    <ClInclude Include="source\component.h" />
+    <ClInclude Include="source\component_resource.h" />
+    <ClInclude Include="source\components\container_component.h" />
+    <ClInclude Include="source\components\icon_annotation_controller.h" />
+    <ClInclude Include="source\components\icon_cpu_renderer.h" />
+    <ClInclude Include="source\components\icon_gpu_renderer.h" />
+    <ClInclude Include="source\components\icon_renderer.h" />
+    <ClInclude Include="source\components\icosahedron_renderer.h" />
+    <ClInclude Include="source\components\performance_renderer.h" />
+    <ClInclude Include="source\components\pyxis_grid_renderer.h" />
+    <ClInclude Include="source\components\rhombus_renderer.h" />
+    <ClInclude Include="source\components\safe_render_container_component.h" />
+    <ClInclude Include="source\components\scale_renderer.h" />
+    <ClInclude Include="source\components\screen_displacer_component.h" />
+    <ClInclude Include="source\components\scrollbar_renderer.h" />
+    <ClInclude Include="source\components\tiles_cpu_renderer.h" />
+    <ClInclude Include="source\ui_events.h" />
+    <ClInclude Include="source\components\zoom_controller.h" />
+    <ClInclude Include="source\storage\visible_store.h" />
+    <ClInclude Include="source\storage\memento\pipelines.h" />
+    <ClInclude Include="source\storage\memento\pipelines_tiles.h" />
+    <ClInclude Include="source\storage\memento\tiles.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FileServer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HostingAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:17071</Value>
+    </Setting>
+    <Setting Name="AzureConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DefaultEndpointsProtocol=https;AccountName=pyxisstorage;AccountKey=SaDuqL2iehi3T9IQmwi5dv+cXsKb/KeOTPD1U6Y5Aj2kiAqx1VQWxwjRfUbfuPfDTW8h4BdGub6Hiibi2mEuOw==</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

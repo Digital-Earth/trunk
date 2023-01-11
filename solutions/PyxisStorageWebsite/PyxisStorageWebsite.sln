@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyxis.Storage", "..\..\Pyxis\Pyxis.Storage\Pyxis.Storage.csproj", "{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyxisStorageWebsite", "..\..\application\worldView.gallery\PyxisStorageWebsite\PyxisStorageWebsite.csproj", "{0EE84D93-7A9B-4C7F-A217-18CFF8CC8FD1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\Pyxis\\Pyxis.Storage\\Pyxis.Storage.csproj
+		SccProjectName1 = ../../Pyxis/Pyxis.Storage
+		SccLocalPath1 = ..\\..\\Pyxis\\Pyxis.Storage
+		SccProjectUniqueName2 = ..\\..\\application\\worldView.gallery\\PyxisStorageWebsite\\PyxisStorageWebsite.csproj
+		SccProjectName2 = ../../application/worldView.gallery/PyxisStorageWebsite
+		SccLocalPath2 = ..\\..\\application\\worldView.gallery\\PyxisStorageWebsite
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EE84D93-7A9B-4C7F-A217-18CFF8CC8FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE84D93-7A9B-4C7F-A217-18CFF8CC8FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EE84D93-7A9B-4C7F-A217-18CFF8CC8FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE84D93-7A9B-4C7F-A217-18CFF8CC8FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

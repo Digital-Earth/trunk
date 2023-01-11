@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5708BFC4-9BEB-412D-B2A0-906DFB997EEE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pyxis.UI</RootNamespace>
+    <AssemblyName>Pyxis.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\application\worldview\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Pyxis.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Tao.OpenGl">
+      <HintPath>..\..\third_party\tao-2.1.0\bin\assemblies\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Platform.Windows">
+      <HintPath>..\..\third_party\tao-2.1.0\bin\assemblies\Tao.Platform.Windows.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation.cs" />
+    <Compile Include="Icons.cs" />
+    <Compile Include="ILayer.cs" />
+    <Compile Include="Layers\BackgroundLayer.cs" />
+    <Compile Include="Layers\BaseLayer.cs" />
+    <Compile Include="Layers\SelectionLayer.cs" />
+    <Compile Include="Layers\NavigationControlsLayer.cs" />
+    <Compile Include="Layers\GlobeLayer.cs" />
+    <Compile Include="Layers\Globe\MapWithEmbeddedResources.cs" />
+    <Compile Include="Layers\Globe\CameraExtensions.cs" />
+    <Compile Include="Layers\Globe\CameraChangeEventArgs.cs" />
+    <Compile Include="Layers\Globe\GeographicMouseEventArgs.cs" />
+    <Compile Include="Layers\Globe\GlobeAnnotationMouseEventArgs.cs" />
+    <Compile Include="Layers\Globe\StyledGeoSource.cs" />
+    <Compile Include="Layers\Globe\ViewState.cs" />
+    <Compile Include="Layers\Sprites\Sprite.cs" />
+    <Compile Include="Layers\Sprites\RootSprite.cs" />
+    <Compile Include="Layers\Sprites\Texture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PyxisEngineApiFactory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PyxisView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PyxisView.Designer.cs">
+      <DependentUpon>PyxisView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PyxisViewExtensions.cs" />
+    <Compile Include="RenderingTimeReport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\application\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92c4cc38-0161-457d-a0f6-7808ff4cd0f5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\projects\application\application_swig_csharp\application_swig_csharp.csproj">
+      <Project>{1cd1ac04-4400-45f7-8feb-3c4bb3f5a489}</Project>
+      <Name>application_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\projects\view_model\view_model_swig_csharp\view_model_swig_csharp.csproj">
+      <Project>{82c2049d-9f25-4c21-9e57-0e6f139e0b44}</Project>
+      <Name>view_model_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contracts\Pyxis.Contracts.csproj">
+      <Project>{bb0fdb8b-be80-4db0-87f0-9c75bb89c7c7}</Project>
+      <Name>Pyxis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Pyxis.Core.csproj">
+      <Project>{6f9755f3-8fe4-42b0-b34f-f06480022352}</Project>
+      <Name>Pyxis.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Publishing\Pyxis.Publishing.csproj">
+      <Project>{5ba06255-9024-4a7f-8253-2a60b6ba194e}</Project>
+      <Name>Pyxis.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Pyxis.Utilities.csproj">
+      <Project>{e0263220-f917-4e71-9cb4-9d6ede2aa8cb}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PyxisView.resx">
+      <DependentUpon>PyxisView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\demo-icons2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\missing_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\pyxis_grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Textures\Compass\compass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Textures\Scrollbar\minus_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Textures\Scrollbar\plus_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Textures\Scrollbar\scroll_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Textures\Scrollbar\scroll_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Textures\Compass\compass2.png" />
+    <EmbeddedResource Include="Resources\Textures\Camera\controls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

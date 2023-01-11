@@ -1,0 +1,14 @@
+﻿<!-- Rendering FPS report dialog -->
+<div ng-if="renderReport" style="position: fixed; bottom: 5px; right: 130px; font-size: 12px; padding: 2px; background-color: white; border: 1px solid #aaa; border-radius: 4px;">
+    <div>Total:{{renderReport.RenderTimeInMilliseconds | number:2}} [ms]
+        <span style="float: right">
+            <i class="fa fa-stop" ng-click="$parent.renderReportRefresh='step'" style="padding-right: 5px"></i>
+            <i class="fa fa-play" ng-click="$parent.renderReportRefresh='auto'" style="padding-right: 5px"></i>
+            <i class="fa fa-step-forward" ng-click="$parent.renderReportRefresh='step'" style="padding-right: 5px"></i>  
+        </span>
+    </div>
+    <div style="color: #888" ng-repeat="layerReport in renderReport.Details">
+        {{layerReport.Name}} : {{layerReport.RenderTimeInMilliseconds | number:2}} [ms]
+        <div ng-repeat="report in layerReport.Details" style="padding-left: 20px">{{report.Name}} : {{report.RenderTimeInMilliseconds | number:2}} [ms]</div>
+    </div>
+</div>

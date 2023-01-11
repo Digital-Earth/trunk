@@ -1,0 +1,77 @@
+﻿<!-- GeoSource Create form -->
+<div class="content-padding">
+    <div class="two-column left">
+        <div class="content screen-shot">            
+            <div ng-if="!img" class="no-image-frame" image-drop="uploadImage($files)"><span><i class="fa fa-cloud-upload"></i> Upload a screenshot</span></div>
+            <img ng-if="img" ng-src="{{img}}"  image-drop="uploadImage($files)" style="width:100%;" />
+            <div class="drag-drop-help"><div class="text">Drag and drop an image or <input class="form-control" type="file" file-change="uploadImage($files)" /></div></div>
+        </div>
+        <div ng-if="isGeoSource()">
+            Storage: <span ng-show="storage.quota != 0" class="progress-bar">
+                <i ng-hide="withinStorageQuota()" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;font-size: 14px;"></i>
+                <span class="bar" ng-style="{'width':storage.usedPercent+'px', 'max-width':100+'px'}"></span>
+                <span class="bar" ng-show="storage.usedPercent < 100" ng-style="{'width':storage.newPercent+'px', 'left':storage.usedPercent+'px', 'min-width': '2px', 'max-width':100-storage.usedPercent+'px', 'background-color': storage.usedPercent+storage.newPercent > 100 ? '#f00' : '#1abb5c'}"></span>
+            </span>
+            <span ng-hide="storage.quota == 0 || withinStorageQuota()" class="text">({{(storage.used+newValues.DataSize)-storage.quota | number}} bytes over)</span>
+        </div>
+    </div>
+    <div class="two-column right">
+        <div class="content">
+            <form name="newGeoSource">
+                <div class="form-group">
+                    <span class="gray-text small-text">Name</span>
+                    <div style="position:relative">
+                        <i ng-hide="newGeoSource.name.$valid" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+                        <input type="text" class="form-control" name="name" ng-model="newValues.Metadata.Name" placeholder="{{newValues.Type}} Name" required="">
+                    </div>
+	            </div>
+                <div class="form-group">
+                    <span class="gray-text small-text">Description</span>
+                    <div style="position:relative">
+                        <i ng-hide="newGeoSource.description.$valid" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+                        <textarea class="form-control" style="width:100%;height:200px;resize: none;" name="description" ng-model="newValues.Metadata.Description" required=""></textarea>
+                    </div>
+	            </div>
+                <div class="form-group">
+                    <span class="gray-text small-text">Publish To Gallery</span>
+                    <select name="hearabout" id="hearabout" class="form-control" placeholder="Choose Gallery" ng-model="gallery" ng-options="gallery.Metadata.Name for gallery in galleries">
+                    </select>
+	            </div>
+                <div class="form-group">
+                    <span class="gray-text small-text">Tags (2 to 5)</span>
+                    <div style="position:relative">
+                        <i ng-hide="newGeoSource.tags.$valid" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+                        <input-tags ng-model="newValues.Metadata.Tags" name="tags" min-length="2" max-length="5"></input-tags>
+                    </div>
+	            </div>
+                <div class="form-group">
+                    <span class="gray-text small-text">Permissions</span>
+                    <input-permission ng-model="newValues.Metadata.Visibility"></input-permission>
+	            </div>
+                <div class="form-group" style="position: relative">
+                    <i ng-hide="!newGeoSource.acceptTerms.$error.required" class="fa fa-asterisk fa-sm" style="color: #faa; position: absolute; left: -20px; top: 3px; font-size: 14px;"></i>
+                    <input type="checkbox" ng-model="acceptTerms" name="acceptTerms" required/>I accept the <a href="#" ng-click="showTermsOpen()">Terms of Service</a>
+                </div>
+                <div ng-hide="profile.EmailConfirmed" class="form-group" style="position:relative">
+                    <i class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 3px;font-size: 14px;"></i>
+                    Confirm your email before publishing
+                </div>
+                <modal-dialog-buttons>
+                    <button ng-disabled="!newGeoSource.$valid || !withinStorageQuota() || !profile.EmailConfirmed" class="big gray" ng-click="commitCreateMode()"><i class="fa fa-check"></i><span>Publish</span></button>
+                    <button class="big gray" ng-click="cancelCreateMode()"><i class="fa fa-times"></i><span>Cancel</span></button>
+                </modal-dialog-buttons>
+            </form>
+        </div>
+    </div>    
+    <div style="clear:both"></div>
+</div>
+
+<!-- Dialogs -->
+<modal-dialog ng-if="showTerms">
+    <h1 class="title">Terms of Service</h1>
+    <div style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;"><terms></terms></div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="showTermsCommit()"><i class="fa fa-check"></i><span>Agree</span></button>
+        <button class="big gray" ng-click="showTermsCancel()"><i class="fa fa-times"></i><span>Disagree</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>

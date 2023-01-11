@@ -1,0 +1,29 @@
+﻿<div class="popup-menu">
+    <div style="padding: 10px;">
+        <div ng-if="item.requests['GeoTag'].length">
+            <span i18n="Geo tag options"></span>:
+            <div class="radio-buttons vertical" ng-init="selectDefaultGeoTag(item.requests['GeoTag'])">
+                <div ng-repeat="option in item.requests['GeoTag']" class="radio-button" ng-class="{selected:geotag.option==option}" ng-click="geotag.option=option">
+                    <span ng-if="option.Point">
+                        {{'Geo tag point description'|i18n:option}}
+                        <span style="padding-left: 10px;" popup-template="/client/templates/studio/popup-menu/geotag-menu-srs-submenu.html" placement="right">
+                            <i class="fa fa-cog"></i>
+                        </span>
+                    </span>
+                    <span ng-if="option.Lookup">
+                        {{'Geo tag lookup description'|i18n:option}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div ng-if="item.requests['GeoTag'].length==0">
+            <span i18n="Failed to find geo tag method"></span>
+            <br/>
+            <span i18n="Working on geo tag tutorial message"></span>
+        </div>
+    </div>
+    <div style="text-align: right; padding: 0px 10px;">
+        <button class="gray hover" ng-click="provideGeoTag(item,null,$popup)" i18n="Cancel"></button>
+        <button ng-if="item.requests['GeoTag'].length" class="gray" ng-click="provideGeoTag(item,geotag.option,$popup)" i18n="Apply"></button>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿<div class="center-content">
+	<h1 class="title">System Status</h1>
+
+    <div id="demo-error" class="text-danger">{{errorMessage}}</div>
+
+    <div class="server-status" ng-repeat="server in servers | orderBy:'Name'">
+        <div class="title">{{server.Name}}</div>
+        <table>
+            <tr>
+                <td>Available Disk Space</td>
+                <td>{{server.AvailableDiskSpaceMB}}MB</td>
+            </tr>
+            <tr>
+                <td>GeoSources</td>
+                <td>{{server.PipelinesCount}}
+                    <span ng-if="server.PipelinesCount">
+                        [
+                        <span ng-if="server.PublishedCount">Published: {{server.PublishedCount*100/server.PipelinesCount|number:1}}%</span>
+                        <span ng-if="server.PublishedCount">Downloading: {{server.DownloadingCount*100/server.PipelinesCount|number:1}}%</span>
+                        ]
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Heard</td>
+                <td>{{server.LastHeard | timedelta}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size: 14px; color: gray;">
+                    <div ng-repeat="operation in server.Operations">{{operation.Description}} [{{operation.StatusCode}} : {{operation.Progress}}]</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h2 class="title">Search GeoSource information</h2>
+    <div style="margin-bottom:24px;">
+        <div style="width:80%;display:inline-block">
+            <input class="form-control" ng-model="geoSourceId" />
+        </div>
+        <button class="gray" ng-click="searchForGeoSource()">Search</button>
+    </div>
+    <div ng-if="geoSourceInfo" style="float:left;padding-right:20px;"><card ng-model="geoSourceInfo"></card>
+    </div>
+    <div ng-if="geoSourceInfo" style="font-size:16px;">
+        <div>ID: {{geoSourceInfo.Id}}</div>
+        <div>ProcRef: {{geoSourceInfo.ProcRef}}</div>
+        <div style="padding-top:24px;">Servers:</div>
+        <div ng-repeat="server in geoSourceInfo.servers">{{server.Name}}: {{server.Status}}</div>
+    </div>
+
+</div>

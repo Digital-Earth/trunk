@@ -1,0 +1,14 @@
+﻿<div class="results">
+    <div ng-if="currentSearchResult">
+        <div ng-switch on="currentSearchResult.Type">
+            <div ng-switch-when="Gallery">
+                <search-result-resource resource="currentSearchResult" current-map="currentMap" action="handleSearchAction($action,$resource)"></search-result-resource>
+            </div>
+            <div ng-switch-default>
+                <scrollbar class="results-scroll">
+                    <search-result-resource resource="currentSearchResult" current-map="currentMap" action="handleSearchAction($action,$resource)"></search-result-resource>
+                </scrollbar>
+            </div>
+        </div>
+    </div>
+</div>

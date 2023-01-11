@@ -1,0 +1,7 @@
+﻿<div class="draw-surface">
+    <div style="position:absolute;top:0px;left:0;right:0;bottom:0;overflow:hidden;" ng-mousemove="addPoint($event)" ng-mouseup="commitPaint()">
+        <svg width="100%" height="100%">
+            <polygon ng-attr-points="{{getPoints()}}" style="fill:rgba(255,0,0,0.2);stroke:red;stroke-width:2" />
+        </svg>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="PipelineLibrary"
+                   namespace="Pyxis.Services.PipelineLibrary.Domain">
+  <class name="PipelineIdentity">
+    <id name="Id" column="IdentityId">
+      <generator class="increment"/>
+    </id>
+    <property name="XmlIdentity"/>
+    <property name="IsStable" not-null="true"/>
+    <set name="Pipelines" lazy="true" cascade="all-delete-orphan">
+      <key column="IdentityId"/>
+      <one-to-many class="Pipeline"/>
+    </set>
+  </class>
+</hibernate-mapping>

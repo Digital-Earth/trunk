@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pyxis.Utilities</RootNamespace>
+    <AssemblyName>Pyxis.Utilities</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\application\worldview\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>..\third_party\NUnit-2.4.3-net-2.0\bin\nunit-x86.exe</StartProgram>
+    <StartArguments>PyxNet.Utilities.dll</StartArguments>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>..\third_party\NUnit-2.4.3-net-2.0\bin\nunit-x86.exe</StartProgram>
+    <StartArguments>PyxNet.Utilities.dll</StartArguments>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Profile|AnyCPU' ">
+    <OutputPath>bin\Profile\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <WarningLevel>3</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Reference Include="NDde, Version=2.0.410.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\third_party\NDde\NDde.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.44.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\third_party\SQLite.Net\bin\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgsParser.cs" />
+    <Compile Include="AutomationLog.cs" />
+    <Compile Include="ChecksumCache.cs" />
+    <Compile Include="ChecksumSingleton.cs" />
+    <Compile Include="ApplicationResult.cs" />
+    <Compile Include="Compression.cs" />
+    <Compile Include="ContextRepository.cs" />
+    <Compile Include="CrashReporter.cs" />
+    <Compile Include="DDEServer.cs" />
+    <Compile Include="DeadManTimer.cs" />
+    <Compile Include="DelayedFileSystemWatcher.cs" />
+    <Compile Include="DynamicList.cs" />
+    <Compile Include="EventHelper.cs" />
+    <Compile Include="FileHashGenerator.cs" />
+    <Compile Include="GlobalTypeFinder.cs" />
+    <Compile Include="HttpTool.cs" />
+    <Compile Include="IChecksum.cs" />
+    <Compile Include="ICommandContext.cs" />
+    <Compile Include="ImageComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InvokeExtensions.cs" />
+    <Compile Include="Job.cs" />
+    <Compile Include="JobList.cs" />
+    <Compile Include="LimitedSizeDictionary.cs" />
+    <Compile Include="LocalPersistance.cs" />
+    <Compile Include="Logging\Categories.cs" />
+    <Compile Include="Logging\LogCategory.cs" />
+    <Compile Include="Logging\LogRecord.cs" />
+    <Compile Include="Logging\LogRepository.cs" />
+    <Compile Include="Manifest.cs" />
+    <Compile Include="ManifestEntry.cs" />
+    <Compile Include="ManifestId.cs" />
+    <Compile Include="MD5Checksummer.cs" />
+    <Compile Include="LogHelper.cs" />
+    <Compile Include="MessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxEx.Designer.cs">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiniDump.cs" />
+    <Compile Include="ObservableObject.cs" />
+    <Compile Include="PerformanceCounters.cs" />
+    <Compile Include="ProductSpecification.cs" />
+    <Compile Include="ProgressData.cs" />
+    <Compile Include="JsonTool.cs" />
+    <Compile Include="RemoteStream.cs" />
+    <Compile Include="Shell\ShellAction.cs" />
+    <Compile Include="Shell\ShellEngine.cs" />
+    <Compile Include="SimpleDatabase.cs" />
+    <Compile Include="SimpleTimer.cs" />
+    <Compile Include="StatusItem.cs" />
+    <Compile Include="StatusItemRegistry.cs" />
+    <Compile Include="StopwatchProfiler.cs" />
+    <Compile Include="SynchronizationEvent.cs" />
+    <Compile Include="TemporaryDirectory.cs" />
+    <Compile Include="TemporaryFile.cs" />
+    <Compile Include="TemporaryObject.cs" />
+    <Compile Include="ThreadSafeDictionary.cs" />
+    <Compile Include="ThreadSafeInt.cs" />
+    <Compile Include="TraceTool.cs" />
+    <Compile Include="TypedGuid.cs" />
+    <Compile Include="TypedWeakReference.cs" />
+    <Compile Include="UriQueryBuilder.cs" />
+    <Compile Include="UsageReports\UsageReports.cs" />
+    <Compile Include="UsageReports\UsageReportsDataObjects.cs" />
+    <Compile Include="UsageReports\UsageReportsHelper.cs" />
+    <Compile Include="UsageReports\UsageReportsDataLoggers.cs" />
+    <Compile Include="UUEncoder.cs" />
+    <Compile Include="WeakReferenceList.cs" />
+    <Compile Include="WindowsConstants.cs" />
+    <Compile Include="XmlTool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MessageBoxEx.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

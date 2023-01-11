@@ -1,0 +1,20 @@
+﻿<div class="resource-result">
+    <div ng-if="image" class="item-header" fade-in-background="image"></div>
+    <div class="section item-type"><card-type-icon type="resource.Type"></card-type-icon>{{resource.Type | upgradeResourceType | i18n | uppercase}}</div>
+    <div class="section title">
+        {{resource.Metadata.Name}}
+        <div class="options">
+            <button class="gray-hover" ng-click="invoke('import',resource)" i18n="Import"></button>            
+        </div>        
+    </div>
+    <div ng-if="resource.Metadata.Description" class="section description" ng-click="showAll=!showAll" ng-class="{clamp: !showAll}">
+        <div class="content">
+            {{resource.Metadata.Description}}    
+        </div>        
+    </div>
+    <div ng-if="resource.Metadata.Tags" class="section">
+        <span class="tags">
+            <span ng-repeat="tag in resource.Metadata.Tags">{{tag}}</span>
+        </span>    
+    </div>    
+</div>

@@ -1,0 +1,28 @@
+﻿<!-- feedback dialog -->
+<modal-dialog ng-if="feedbackModal.active" modal-class="feedback">
+    <h2 class="title" i18n="feedback.title"></h2>
+    <div>
+        <div class="form-group" style="padding-top: 5px">
+            <div style="position: relative">
+                <textarea ng-model="feedbackModal.message" style="width:100%; height:200px">
+                </textarea>                
+            </div>
+        </div>
+        <div class="form-group" style="padding-bottom: 5px">
+            <div style="position: relative">
+                <input type="checkbox" name="screenshot" ng-model="feedbackModal.screenshot" />
+                <span i18n="feedback.screenshot"></span>
+            </div>
+        </div>
+        <div class="form-group" style="padding-bottom: 5px">
+            <div style="position: relative">
+                <input type="checkbox" name="sessionLog" ng-model="feedbackModal.sessionLog" />
+                <span i18n="feedback.sessionLog"></span>
+            </div>
+        </div>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray-hover" ng-click="feedbackModal.cancel()"><span i18n="Cancel"></span></button>
+        <button class="big gray" ng-click="feedbackModal.send()"><span i18n="Send"></span></button>
+    </modal-dialog-buttons>
+</modal-dialog>

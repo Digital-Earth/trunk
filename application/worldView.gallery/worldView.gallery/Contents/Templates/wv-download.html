@@ -1,0 +1,56 @@
+﻿<div ng-if="worldViewSupported" class="center-content download-container">
+    <h1 class="title">We're now downloading WorldView Studio&trade;</h1>
+	
+    <h2>Your download should automatically start within seconds. <br /> If it doesn't, <a class="link-pink" href="https://www.pyxisinnovation.com/Downloads/WorldViewStudioInstaller.exe">restart the download</a>.</h2>
+
+    <img class="download-graphic" src="/Contents/Images/laptop-download.png" />
+
+    <h2>Run the installer when your download is complete. <br /> 
+        <a href="" class="link-pink" ng-click="requirements.visibility = 'visible'">View System Requirements</a>.
+    </h2>
+
+    <!-- this iframe will start the download in the background while keeping this page open -->
+    <iframe src="https://www.pyxisinnovation.com/Downloads/WorldViewStudioInstaller.exe" style="display: none;"></iframe>
+</div>
+
+<div ng-if="!worldViewSupported" class="center-content download-container">
+    <h1 class="title">Unfortunately WorldView Studio&trade; is not supported on your system.</h1>
+	
+    <!-- User is on an unknown platform -->
+    <div ng-if="userPlatformUnknown">
+        Please view our <a href="" class="link-pink" ng-click="requirements.visibility = 'visible'">system requirements</a>. If your current system meets these requirements, please contact WorldView support at <a class="link-pink" href="mailto:support@pyxisinnovation.com" target="_blank">support@pyxisinnovataion.com</a>
+    </div>
+
+    <h2>The WorldView Studio app will soon be accessible on the web for all platforms. Sign up now to be notified when it becomes available.</h2>
+
+    <a href="/signUp" style="margin-top: 60px; display: block;">
+        <button class="xl gray pink" ng-click="showRegisterStep(1)">
+            <span>Sign Up Now</span>
+        </button>
+    </a>    
+
+</div>
+
+<!-- System requirements dialog -->
+<modal-dialog ng-if="requirements.visibility === 'visible'" stop-propagation="keyup" modal-class="login">
+    <h1 class="title">WorldView Studio System Requirements</h1>
+    <div style="font-size: 16px">
+        <h2>Software</h2>
+        <ul>
+            <li>Operating System: Windows Vista, 7, or 8+</li>
+            <li>Web browser: Modern web browsers like the latest versions of Chrome, Firefox and Internet Explorer.</li>
+        </ul>
+        <h2>Hardware</h2>
+        <ul>
+            <li>Graphics card: 512MB and support for openGL 2.0</li>
+            <li>Disk Space: 100MB for installed application, and another 2GB for cached data</li>
+            <li>Memory: 2GB (4GB recommended)</li>
+            <li>Processor: Any CPU will do (multi-core processors recommended)</li>
+            <li>Internet connection speed: 10Mbps</li>
+        </ul>
+        <br/>
+        <div style="text-align: center">
+            <button class="gray" ng-click="requirements.visibility = 'hidden'">Close</button>
+        </div>
+    </div>
+</modal-dialog>  

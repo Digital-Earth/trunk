@@ -1,0 +1,11 @@
+{
+"People":[
+		{
+		"Name":"Perry Peterson",
+		"Title": "President and CEO",
+		"Post-Nominals" : [ "Dipl. Tech", "B.Eng."],
+		"Bio":["Perry is a Visionary and Pioneer in the field of Discrete Global Grid System (DGGS). As the principle inventor of the PYXIS DGGS, he spent his life creating and experimenting with digital models simulating high fidelity real world phenomena. His automated technology to hybridize vector and raster data revolutionized municipal GIS deployment. More than advancing science, his disruptive vision enables on-demand geospatial data integration"]
+			 
+		}
+	]
+}

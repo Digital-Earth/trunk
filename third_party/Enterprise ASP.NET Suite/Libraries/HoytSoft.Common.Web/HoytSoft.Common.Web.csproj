@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CB94C4A-DEB8-476F-90B0-CDF53EAF2C9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HoytSoft.Common.Web</RootNamespace>
+    <AssemblyName>HoytSoft.Common.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\URLRewriteFormAdapter.cs" />
+    <Compile Include="Application Listeners\CustomErrorsListener.cs" />
+    <Compile Include="Authentication.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Http Handlers\ToSecure.cs" />
+    <Compile Include="Http Handlers\ToStandard.cs" />
+    <Compile Include="OnePageWonders.cs" />
+    <Compile Include="Settings\AuthenticationSettings.cs" />
+    <Compile Include="Settings\CustomErrorsSettings.cs" />
+    <Compile Include="Application Listeners\LicensesListener.cs" />
+    <Compile Include="Application Listeners\URLRewriteListener.cs" />
+    <Compile Include="Application Listeners\URLRewriteRegularExpressionRule.cs" />
+    <Compile Include="Settings\URLRewriteSettings.cs" />
+    <Compile Include="Application Listeners\URLRewriteUtils.cs" />
+    <Compile Include="Application Listeners\VirtualDirectoryListener.cs" />
+    <Compile Include="Settings\VirtualDirectorySettings.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Attributes\PublicPageAttribute.cs" />
+    <Compile Include="HttpHandler.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="LocalizedMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalizedPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\OnePageWondersSettings.cs" />
+    <Compile Include="Page.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\CookiePersonalizationProvider.cs" />
+    <Compile Include="Providers\MembershipProvider.cs" />
+    <Compile Include="Settings\SystemEventsSettings.cs" />
+    <Compile Include="SystemEvents.cs" />
+    <Compile Include="UserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HoytSoft.Common.Configuration\HoytSoft.Common.Configuration.csproj">
+      <Project>{1A8F7B7F-F2AE-4BB6-AE82-EFE35D015D52}</Project>
+      <Name>HoytSoft.Common.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HoytSoft.Common.Data\HoytSoft.Common.Data.csproj">
+      <Project>{251794A9-17E4-4FFD-930D-1CB359333E4C}</Project>
+      <Name>HoytSoft.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HoytSoft.Common\HoytSoft.Common.csproj">
+      <Project>{08E9977B-215E-4720-92F5-835D77517CF1}</Project>
+      <Name>HoytSoft.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(ProjectDir)..\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

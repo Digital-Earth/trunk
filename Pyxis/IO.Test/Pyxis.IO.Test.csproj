@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8888F906-FA11-4F33-9A7E-D4987F5CF5A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pyxis.IO.Test</RootNamespace>
+    <AssemblyName>Pyxis.IO.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OgcWebMapCapabilitiesParserTests.cs" />
+    <Compile Include="OgcWebFeatureCapabilitiesParserTests.cs" />
+    <Compile Include="OgcMetadataExtractorTest.cs" />
+    <Compile Include="OgcUrlTests.cs" />
+    <Compile Include="OgcWebCoverageCapabilitiesParserTests.cs" />
+    <Compile Include="OgcWebMapCapabilitiesParserLayerContextTests.cs" />
+    <Compile Include="OgcWebServerTests.cs" />
+    <Compile Include="OgcWebServiceTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\GazetteerExtensionsTests.cs" />
+    <Compile Include="Search\GazetteerTests.cs" />
+    <Compile Include="XmlNodeExtractorTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\application\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92c4cc38-0161-457d-a0f6-7808ff4cd0f5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\projects\application\application_swig_csharp\application_swig_csharp.csproj">
+      <Project>{1cd1ac04-4400-45f7-8feb-3c4bb3f5a489}</Project>
+      <Name>application_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contracts\Pyxis.Contracts.csproj">
+      <Project>{bb0fdb8b-be80-4db0-87f0-9c75bb89c7c7}</Project>
+      <Name>Pyxis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IO\Pyxis.IO.csproj">
+      <Project>{44b44e81-7223-45cc-ae0a-0790d1e73be5}</Project>
+      <Name>Pyxis.IO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\OGC\wcs_2.0.1_DescribeEOCoverageSet.xml" />
+    <Content Include="Resources\OGC\wcs_2.0.1_EO_capabilities.xml" />
+    <Content Include="Resources\OGC\wcs_1.0.0_capabilities.xml" />
+    <Content Include="Resources\OGC\wcs_1.1.2_capabilities_1_coverage_with_abstract.xml" />
+    <Content Include="Resources\OGC\wcs_2.0.1_capabilities.xml" />
+    <Content Include="Resources\OGC\wcs_valid_capabilities.xml" />
+    <Content Include="Resources\OGC\wfs_1.0.0_capabilities.xml" />
+    <Content Include="Resources\OGC\wfs_1.1.0_capabilities%28ArcGIS%29.xml" />
+    <Content Include="Resources\OGC\wfs_2.0.0_capabilities.xml" />
+    <Content Include="Resources\OGC\wfs_valid_capabilities.xml" />
+    <Content Include="Resources\OGC\wms_1.3.2_capabilities_deep_hierarchy.xml" />
+    <Content Include="Resources\OGC\wms_1.3.0_capbilitites_mixed_depth.xml" />
+    <Content Include="Resources\OGC\wms_1.3.2_capabilities_simple.xml" />
+    <Content Include="Resources\OGC\wms_1.3.0_capabilities_simple.xml" />
+    <Content Include="Resources\OGC\wms_1.1.1_capabilities_nasa_missing_styles.xml" />
+    <Content Include="Resources\OGC\wms_valid_capabilities.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

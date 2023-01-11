@@ -1,0 +1,120 @@
+﻿<div class="center-content">
+    <!-- General account data -->
+    <h1 class="title">{{profile.Metadata.Name}} Account</h1>
+    <table class="properties">
+        <!-- User Name -->
+        <tr>
+            <td>User Name</td>
+            <td>{{username}}</td>
+            <td></td>
+        </tr>
+        <!-- Email -->
+        <tr>
+            <td>Email</td>
+            <td>{{profile.Email}}</td>
+            <td>
+                <span ng-if="profile.EmailConfirmed">(Confirmed)</span>
+                <button ng-if="!profile.EmailConfirmed" class="gray" ng-click="sendConfirmationEmail()" ng-disabled="sending">Confirm your email</button>
+            </td>
+        </tr>
+        <!-- Account Type -->
+        <tr>
+            <td>Account Type</td>
+            <td>
+                <span ng-switch on="account">
+                    <span ng-switch-when="admin">Admin Account</span>
+                    <span ng-switch-when="siteAdmin">Site Admin Account</span>
+                    <span ng-switch-default="">Member Account</span>
+                </span>
+            </td>
+            <td></td>
+        </tr>
+        <!-- Password -->
+        <tr ng-if="!profile.ExternalLoginProvider">
+            <td>Password</td>
+            <td>Enabled</td>
+            <td><button class="gray" ng-click="changePasswordOpen()">Change Password</button></td>
+        </tr>
+        <!-- External login Provider -->
+        <tr ng-if="profile.ExternalLoginProvider">
+            <td>Sign-in Provider</td>
+            <td>{{profile.ExternalLoginProvider}}</td>
+            <td></td>
+        </tr>
+        <!-- Communication Consent -->
+        <tr>
+            <td>Newsletter</td>
+            <td>{{profile.PromotionConsent ? 'Subscribed' : 'Not Subscribed'}}</td>
+            <td><button class="gray" ng-click="toggleConsent()" ng-disabled="togglingConsent">{{profile.PromotionConsent ? 'Unsubscribe' : 'Subscribe'}}</button></td>
+        </tr>
+    </table>
+    <!-- Account usage data -->
+    <h2 class="title">Usage</h2>
+    <!-- Loading usage data... -->
+    <div ng-if="loadingUsage" class="gray-text">
+        <i class="fa fa-spin fa-refresh" style="margin-right: 10px"></i>Loading...
+    </div>
+    <!-- Usage data loaded or failed to load -->
+    <div ng-if="!loadingUsage">
+        <span ng-if="loadingUsageError" class="error message">Failed To load Usage: {{loadingUsageError}}</span>
+        <table class="properties">
+            <!-- Gallery count -->
+            <tr>
+                <td>Galleries</td>
+                <td>{{profile.Galleries.length}}</td>
+                <td></td>
+            </tr>
+            <!-- GeoSource count -->
+            <tr>
+                <td>GeoSources</td>
+                <td>{{usage.length}}</td>
+                <td></td>
+            </tr>
+            <!-- Storage used -->
+            <tr>
+                <td>Storage</td>
+                <td>
+                    <span ng-show="storage.quota" ng-attr-title="{{storage.quota-storage.used|number:0}}MB available (using {{storage.used|number:0}}MB of {{storage.quota|number:0}}MB)" class="progress-bar" style="margin-left: 0">
+                        <span class="bar" ng-style="{'width':storage.usedPercent+'px', 'max-width':100+'px'}"></span>
+                    </span>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div style="height: 48px;"></div>
+</div>
+
+
+<!-- Dialogs -->
+<modal-dialog ng-if="changePassword">
+    <h1 class="title">Change Password</h1>
+    <form name="changePasswordForm">
+        <div class="form-group" style="position:relative">
+			<i ng-hide="!changePasswordForm.oldPassword.$error.required" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+			<input type="password" class="form-control" name="oldPassword" placeholder="Current Password" required="" ng-model="changePasswordValues.oldPassword" ng-minlength="6">
+		</div>
+
+        <div class="form-group" style="position:relative">
+			<i ng-hide="!changePasswordForm.newPassword.$error.required" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+            <span ng-show="!changePasswordForm.newPassword.$error.required" ng-switch on="changePasswordForm.newPassword.$error.minlength" style="position:absolute;right: 10px;top: 3px;font-size: 14px;">
+                <i ng-switch-when="false" class="fa fa-check fa-sm" style="color: #0c0;"></i>
+                <i ng-switch-when="true" class="fa fa-times fa-sm" style="color: #c00;"></i>
+            </span>
+			<input type="password" class="form-control" name="newPassword" placeholder="New Password (minimum 6 letters)" required="" ng-model="changePasswordValues.newPassword" ng-minlength="6">
+		</div>
+
+        <div class="form-group" style="position:relative">
+			<i ng-hide="!changePasswordForm.confirmPassword.$error.required" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+            <span ng-show="!changePasswordForm.confirmPassword.$error.required" ng-switch on="changePasswordForm.confirmPassword.$error.match" style="position:absolute;right: 10px;top: 3px;font-size: 14px;">
+                <i ng-switch-when="false" class="fa fa-check fa-sm" style="color: #0c0;"></i>
+                <i ng-switch-when="true" class="fa fa-times fa-sm" style="color: #c00;"></i>
+            </span>
+			<input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required="" ng-model="changePasswordValues.confirmPassword" match="changePasswordValues.newPassword">
+		</div>
+        <modal-dialog-buttons>
+            <button ng-disabled="!changePasswordForm.$valid" class="big gray" ng-click="changePasswordCommit()"><i class="fa fa-check"></i><span>Change</span></button>
+            <button class="big gray" ng-click="changePasswordCancel()"><i class="fa fa-times"></i><span>Cancel</span></button>
+        </modal-dialog-buttons>
+    </form>
+</modal-dialog>

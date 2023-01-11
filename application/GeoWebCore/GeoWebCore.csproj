@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D50D14C-723F-498F-B8D7-A6B11EF87813}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoWebCore</RootNamespace>
+    <AssemblyName>GeoWebCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\worldview\</SolutionDir>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GeoWebCore.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\GeoWebCore.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EngineIoClientDotNet, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EngineIoClientDotNet.1.0.6\lib\net45\EngineIoClientDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jose-jwt, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\jose-jwt.1.9.3\lib\4.0\jose-jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Diagnostics.3.0.0\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.3.0.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.0.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpRaven, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpRaven.2.1.0\lib\net45\SharpRaven.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SocketIoClientDotNet, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SocketIoClientDotNet.1.0.6\lib\net45\SocketIoClientDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine, Version=0.10.0.0, Culture=neutral, PublicKeyToken=ee9af13f57f00acc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SuperSocket.ClientEngine.Core.0.10.0\lib\net45\SuperSocket.ClientEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Swashbuckle.Core.5.3.2\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.4.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.OData.5.7.0\lib\net45\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="WebSocket4Net, Version=0.15.2.11, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebSocket4Net.0.15.2\lib\net45\WebSocket4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLI\GalleryStatus.cs" />
+    <Compile Include="CLI\ImportGeoSource.cs" />
+    <Compile Include="CLI\ValidateChecksum.cs" />
+    <Compile Include="Controllers\GeometryController.cs" />
+    <Compile Include="Controllers\GeoSourceTilesController.cs" />
+    <Compile Include="Controllers\GallerySyncController.cs" />
+    <Compile Include="Controllers\GalleryUrlsController.cs" />
+    <Compile Include="Controllers\GeoSourceProxyController.cs" />
+    <Compile Include="Controllers\GalleryCatalogsController.cs" />
+    <Compile Include="Controllers\WebTilesController.cs" />
+    <Compile Include="Models\GalleryContent.cs" />
+    <Compile Include="Controllers\GalleryServersController.cs" />
+    <Compile Include="Controllers\GalleryFilesController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
+    <Compile Include="Controllers\GeoSourceController.cs" />
+    <Compile Include="Controllers\IconsController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="GeoWebCoreRunInformation.cs" />
+    <Compile Include="Models\PublishExpressionRequest.cs" />
+    <Compile Include="Models\StyleAndHash.cs" />
+    <Compile Include="Services\CachedResult.cs" />
+    <Compile Include="Services\Cache\FileSystemCacheStorage.cs" />
+    <Compile Include="Services\Cache\ICacheStorage.cs" />
+    <Compile Include="Services\Cache\GeoSourceBlobCache.cs" />
+    <Compile Include="Services\Cluster\Cluster.cs" />
+    <Compile Include="Services\Cluster\ClusterUtils.cs" />
+    <Compile Include="Services\Cluster\GeometryClusterResolver.cs" />
+    <Compile Include="Services\Cluster\GeoSourceClusterResolver.cs" />
+    <Compile Include="Services\Cluster\IClusterResolver.cs" />
+    <Compile Include="Services\ExpressionPublisher.cs" />
+    <Compile Include="Services\GeoSourceState.cs" />
+    <Compile Include="Services\Cluster\HashRing.cs" />
+    <Compile Include="Services\IGeoSourceState.cs" />
+    <Compile Include="Services\PublishRequest.cs" />
+    <Compile Include="Services\Storage\UserSyncStorage.cs" />
+    <Compile Include="Services\Storage\UserUrlsStorage.cs" />
+    <Compile Include="Services\Storage\UserServersStorage.cs" />
+    <Compile Include="Services\Storage\UserImportsStorage.cs" />
+    <Compile Include="Services\Storage\UserFilesStorage.cs" />
+    <Compile Include="Models\CompressedFloat32Rhombus.cs" />
+    <Compile Include="Models\FailureResponse.cs" />
+    <Compile Include="Models\GalleryUsageResponse.cs" />
+    <Compile Include="Models\GeoSourceDataCharacterization.cs" />
+    <Compile Include="Models\ImportDataSetRequest.cs" />
+    <Compile Include="Models\FilesModels.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AtomicFile.cs" />
+    <Compile Include="Services\Cache\InMemoryGeoSourceCache.cs" />
+    <Compile Include="Services\ImportRequestsQueue.cs" />
+    <Compile Include="Services\Cache\InMemoryServersCatalogsCache.cs" />
+    <Compile Include="Services\PublishGeoSourceHelper.cs" />
+    <Compile Include="Services\UserAuthorizer.cs" />
+    <Compile Include="Utilities\CustomImportSettingProvider.cs" />
+    <Compile Include="Utilities\FileNamePreservingMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Utilities\PortFinder.cs" />
+    <Compile Include="WebConfig\AuthorizeGalleryAttribute.cs" />
+    <Compile Include="Services\GalleryGrantingAuthority.cs" />
+    <Compile Include="Services\Cache\GeometryCache.cs" />
+    <Compile Include="Services\Cache\ImportedGeoSourceCache.cs" />
+    <Compile Include="Utilities\ObjectExtensions.cs" />
+    <Compile Include="Services\Cache\PersistentCache.cs" />
+    <Compile Include="Services\Cache\StyleCache.cs" />
+    <Compile Include="Services\UniqueHashGenerator.cs" />
+    <Compile Include="Utilities\UserAuthorizer.cs" />
+    <Compile Include="WebConfig\ApiCacheAttribute.cs" />
+    <Compile Include="Utilities\FeatureFieldsExtractor.cs" />
+    <Compile Include="Utilities\GeoTagMethodFinder.cs" />
+    <Compile Include="Utilities\PyxisOData.cs" />
+    <Compile Include="Models\IconsModel.cs" />
+    <Compile Include="Controllers\LocalController.cs" />
+    <Compile Include="Controllers\MeshController.cs" />
+    <Compile Include="Models\AutoStyleRequest.cs" />
+    <Compile Include="Models\StyleRequest.cs" />
+    <Compile Include="Utilities\INumberToColorConverter.cs" />
+    <Compile Include="Utilities\Number16BitToColorConverter.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ThreeJsGeometryController.cs" />
+    <Compile Include="Models\RhombusValues.cs" />
+    <Compile Include="Utilities\Number24BitToColorConverter.cs" />
+    <Compile Include="Utilities\RecordCollectionSample.cs" />
+    <Compile Include="Models\MultiChannelRhombusRequest.cs" />
+    <Compile Include="Models\ThreeJsGeometry.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Services\GeoSourceInitializer.cs" />
+    <Compile Include="Models\Mesh.cs" />
+    <Compile Include="OwinStartup.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebConfig\ApiException.cs" />
+    <Compile Include="WebConfig\ApiExceptionFilterAttribute.cs" />
+    <Compile Include="WebConfig\GlobalActionArgument.cs" />
+    <Compile Include="WebConfig\TimeTraceAttribute.cs" />
+    <Compile Include="WebConfig\AuthorizeGeoSourceAttribute.cs" />
+    <Compile Include="WebConfig\HttpResponseMessageExtensions.cs" />
+    <Compile Include="Utilities\RhombusHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pyxis\Contracts\Pyxis.Contracts.csproj">
+      <Project>{bb0fdb8b-be80-4db0-87f0-9c75bb89c7c7}</Project>
+      <Name>Pyxis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Core\Pyxis.Core.csproj">
+      <Project>{6f9755f3-8fe4-42b0-b34f-f06480022352}</Project>
+      <Name>Pyxis.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\IO\Pyxis.IO.csproj">
+      <Project>{44B44E81-7223-45CC-AE0A-0790D1E73BE5}</Project>
+      <Name>Pyxis.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Publishing\Pyxis.Publishing.csproj">
+      <Project>{5ba06255-9024-4a7f-8253-2a60b6ba194e}</Project>
+      <Name>Pyxis.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Pyxis.Storage\Pyxis.Storage.csproj">
+      <Project>{5c69cae6-ddea-4063-a2c9-41a63bc78bdf}</Project>
+      <Name>Pyxis.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\UI\Pyxis.UI.csproj">
+      <Project>{5708BFC4-9BEB-412D-B2A0-906DFB997EEE}</Project>
+      <Name>Pyxis.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Utilities\Pyxis.Utilities.csproj">
+      <Project>{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92c4cc38-0161-457d-a0f6-7808ff4cd0f5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>robocopy $(SolutionDir)$(ConfigurationName)\plugins $(TargetDir)plugins *.* /E &gt;nul
+robocopy $(SolutionDir)$(ConfigurationName) $(TargetDir) pyxlib.dll pyxlib_swig.dll view_model.dll view_model_swig.dll library.dll library_swig.dll application.dll application_swig.dll cpprest*.dll zlib*.dll xerces*.dll sqlite3.dll &gt;nul
+exit 0
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

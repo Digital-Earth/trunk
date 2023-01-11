@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "Requests";
+}
+@section scripts{
+    <script type="text/javascript">
+        /* ng-infinite-scroll - v1.0.0 - 2013-02-23 */
+        var mod;
+        mod = angular.module("infinite-scroll", []), mod.directive("infiniteScroll", [
+            "$rootScope", "$window", "$timeout", function(i, n, e) {
+                return {
+                    link: function(t, l, o) {
+                        var r, c, f, a;
+                        return n = angular.element(n), f = 0, null != o.infiniteScrollDistance && t.$watch(o.infiniteScrollDistance, function(i) { return f = parseInt(i, 10) }), a = !0, r = !1, null != o.infiniteScrollDisabled && t.$watch(o.infiniteScrollDisabled, function(i) { return a = !i, a && r ? (r = !1, c()) : void 0 }), c = function() {
+                            var e, c, u, d;
+                            return d = n.height() + n.scrollTop(), e = l.offset().top + l.height(), c = e - d, u = n.height() * f >= c, u && a ? i.$$phase ? t.$eval(o.infiniteScroll) : t.$apply(o.infiniteScroll) : u ? r = !0 : void 0
+                        }, n.on("scroll", c), t.$on("$destroy", function() { return n.off("scroll", c) }), e(function() { return o.infiniteScrollImmediateCheck ? t.$eval(o.infiniteScrollImmediateCheck) ? c() : void 0 : c() }, 0)
+                    }
+                }
+            }
+        ]);
+    </script>
+
+    <script type="text/javascript">
+        var app = angular.module('requestsApp', ['ui.bootstrap', 'infinite-scroll'], function($compileProvider) {
+            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|pyxis):/);
+        }).config([
+            '$locationProvider',
+            function($locationProvider) {
+                $locationProvider.html5Mode(true);
+            }
+        ]);
+
+        app.controller('requestsController', function ($scope, $http, $timeout, $location) {
+
+            $scope.requests = {
+                'Pending': [],
+                'Archive': [],
+                'Crawled': [],
+                'Removed': []
+            };
+            $scope.serverBusy = false;
+
+            $scope.loadRequests = function () {
+                $scope.serverBusy = true;
+
+                $http({ method: 'GET', 'url': "/api/Requests" })
+                    .success(function (data, status, headers, config) {
+                        for (var i = 0; i < data.length; ++i) {
+                            $scope.requests[data[i].State].push(data[i]);
+                        }
+                        $scope.serverBusy = false;
+                    })
+                    .error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        $scope.requests = {};
+                        $scope.serverBusy = false;
+                    });
+            }
+
+            function findRequest(id, requests) {
+                for (var i = 0; i < requests.length; i++) {
+                    if (requests[i].Id === id) {
+                        return requests[i];
+                    }
+                }
+                return null;
+            }
+
+            function arrayObjectIndexOf(id, requests) {
+                for (var i = 0; i < requests.length; i++) {
+                    if (requests[i].Id === id) {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+
+            function swapRequest(request, source, target) {
+                var index = arrayObjectIndexOf(request.Id, source);
+                if (source !== -1) {
+                    source.splice(index, 1);
+                    target.unshift(request);
+                }
+            }
+
+            function changeState(id, newState) {
+                $scope.serverBusy = true;
+                var requests = $scope.requests['Pending'];
+                var request = findRequest(id, requests);
+                if (!request) {
+                    requests = $scope.requests['Archive'];
+                    request = findRequest(id, requests);
+                }
+                if (!request) {
+                    requests = $scope.requests['Crawled'];
+                    request = findRequest(id, requests);
+                }
+                if (!request) {
+                    requests = $scope.requests['Removed'];
+                    request = findRequest(id, requests);
+                }
+                if (!request || request.State === newState) {
+                    $scope.serverBusy = false;
+                    return;
+                }
+                $http({
+                    method: 'PUT',
+                    'url': "/api/Requests",
+                    'data': { Id: request.Id, State: newState }
+                })
+                    .success(function (data, status, headers, config) {
+                        swapRequest(request, requests, $scope.requests[newState]);
+                        request.State = newState;
+                        $scope.serverBusy = false;
+                    })
+                    .error(function (data, status, headers, config) {
+                        $scope.serverBusy = false;
+                    });
+            }
+
+            $scope.archive = function (request) {
+                changeState(request.Id, 'Archive');
+            }
+
+            $scope.crawl = function (request) {
+                changeState(request.Id, 'Crawled');
+            }
+
+            $scope.remove = function (request) {
+                changeState(request.Id, 'Removed');
+            }
+
+            $scope.loadRequests();
+        });
+    </script>
+}
+<div ng-app="requestsApp" ng-controller="requestsController">
+    
+    <h3>
+        Requests
+    </h3> 
+
+    <div>
+        <table class="table table-striped table-curved table-hover">
+            <tr ng-repeat="request in requests.Pending | orderBy:'-Count'">
+                <td>
+                    <p>
+                        <a href="" ng-click="crawl(request)">Crawl</a>
+                        <a href="" ng-click="archive(request)">Archive</a>
+                        <strong>{{request.Uri}}</strong> ({{request.Count}})
+                        <span ng-repeat="protocol in request.Protocols" class="service">{{protocol}} </span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <h4>Archive</h4>
+        <table class="table table-striped table-curved table-hover">
+            <tr ng-repeat="request in requests.Archive | orderBy:'-Count'">
+                <td>
+                    <p>
+                        <a href="" ng-click="crawl(request)">Crawl</a>
+                        <a href="" ng-click="remove(request)">Remove</a>
+                        <strong>{{request.Uri}}</strong> ({{request.Count}})
+                        <span ng-repeat="protocol in request.Protocols" class="service">{{protocol}} </span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

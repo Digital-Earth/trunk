@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding="ISO-8859-1" ?>
+<WFS_Capabilities 
+   version="1.0.0" 
+   updateSequence="0" 
+   xmlns="http://www.opengis.net/wfs" 
+   xmlns:ogc="http://www.opengis.net/ogc" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.0.0/WFS-capabilities.xsd">
+
+<!-- MapServer version 5.0.2 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=FREETYPE SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=THREADS INPUT=ORACLESPATIAL INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>MapServer WFS</Name>
+  <Title>Environment Canada MSC Weather and Environmental Monitoring OGC Web Services</Title>
+  <Abstract>This service contains a number of map layers that represent Canadian climate and hydrometric (water quantity) monitoring stations, both active and inactive (discontinued)</Abstract>
+  <Keywords>
+    environment
+    weather
+    msc
+    wem
+    monitoring
+    hydrometric
+    water levels
+    ec
+    cise
+    ogc
+    cgdi
+  </Keywords>
+  <OnlineResource>http://www.msc.ec.gc.ca/</OnlineResource>
+  <Fees>none</Fees>
+  <AccessConstraints>none</AccessConstraints>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <DCPType>
+        <HTTP>
+          <Get onlineResource="http://arcms30.tor.ec.gc.ca/cgi-bin/wem_en?" />
+        </HTTP>
+      </DCPType>
+      <DCPType>
+        <HTTP>
+          <Post onlineResource="http://arcms30.tor.ec.gc.ca/cgi-bin/wem_en?" />
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <DescribeFeatureType>
+      <SchemaDescriptionLanguage>
+        <XMLSCHEMA/>
+      </SchemaDescriptionLanguage>
+      <DCPType>
+        <HTTP>
+          <Get onlineResource="http://arcms30.tor.ec.gc.ca/cgi-bin/wem_en?" />
+        </HTTP>
+      </DCPType>
+      <DCPType>
+        <HTTP>
+          <Post onlineResource="http://arcms30.tor.ec.gc.ca/cgi-bin/wem_en?" />
+        </HTTP>
+      </DCPType>
+    </DescribeFeatureType>
+    <GetFeature>
+      <ResultFormat>
+        <GML2/>
+      </ResultFormat>
+      <DCPType>
+        <HTTP>
+          <Get onlineResource="http://arcms30.tor.ec.gc.ca/cgi-bin/wem_en?" />
+        </HTTP>
+      </DCPType>
+      <DCPType>
+        <HTTP>
+          <Post onlineResource="http://arcms30.tor.ec.gc.ca/cgi-bin/wem_en?" />
+        </HTTP>
+      </DCPType>
+    </GetFeature>
+  </Request>
+</Capability>
+
+<FeatureTypeList>
+  <Operations>
+    <Query/>
+  </Operations>
+    <FeatureType>
+        <Name>Active_Station_View</Name>
+        <Title>Real-time Hydrometric Monitoring Stations in Canada</Title>
+        <Abstract>The purpose is to identify active hydrometric stations in Canada that provide Water Level data in near real-time. The real-time water level data is received via satellite (data collection platforms) or land-line (telephone) transmissions from hydrometric stations across Canada. Satellite transmissions of water level data are made on a scheduled basis, typically every 1 to 3 hours. Land-line hydrometric stations are polled on a scheduled basis varying from every hour to once a day, depending on the station.</Abstract>
+        <Keywords>
+          Water
+          Freshwater
+          Hydrology
+          Sediments
+          Water
+          Water levels
+          Water level
+          Water quantity
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.891" miny="42.1589" maxx="75.6929" maxy="74.69" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/realtimehydrometric_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>Discontinued_Station_View</Name>
+        <Title>Inactive Hydrometric Monitoring Stations in Canada</Title>
+        <Abstract>The purpose is to identify inactive (discontinued) hydrometric stations in Canada that provide archived Water Level and Streamflow (discharge) data.</Abstract>
+        <Keywords>
+          Water
+          Freshwater
+          Hydrology
+          Sediments
+          Water
+          Water levels
+          Water level
+          Water quantity
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.869" miny="42.0456" maxx="-52.7017" maxy="80.6022" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/Inactivehydrometric_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>NotRT_Active_Station_View</Name>
+        <Title>Active Hydrometric Monitoring Stations in Canada</Title>
+        <Abstract>The purpose is to identify active hydrometric stations in Canada that provide only archived Water Level and Streamflow (discharge) data.</Abstract>
+        <Keywords>
+          Water
+          Freshwater
+          Hydrology
+          Sediments
+          Water
+          Water levels
+          Water level
+          Water quantity
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.559" miny="42.2981" maxx="-52.7297" maxy="81.7942" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/activehydrometric_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>rtwl</Name>
+        <Title>Real-time Hydrometric Water Levels in Canada</Title>
+        <Abstract>TBA</Abstract>
+        <Keywords>
+          Water
+          Freshwater
+          Hydrology
+          Sediments
+          Water
+          Water levels
+          Water level
+          Water quantity
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.891" miny="42.159" maxx="-52.9726" maxy="72.4839" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/RealtimeDailyWL_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>Active_Climate_Stations</Name>
+        <Title>Active Climate Monitoring Stations in Canada</Title>
+        <Abstract>Surface climate data are used by a broad range of users, including researchers, policy makers, and service providers. Climate data are essential for climate, climate change and variability studies, for ensuring the safety and security of the public in terms of infrastructure planning such as building codes, flood-way planning and ice storm resilience planning. Increasingly, the industry demands timely, quality climate information for economic benefits of their programs, and the public also demands such climate information for decision-making and planning.</Abstract>
+        <Keywords>
+          Climate
+          Meteorology
+          Weather
+          Temperature
+          Wind
+          Snow
+          Rain
+          Precipitation
+          Humidityy
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.868" miny="41.8333" maxx="-52.6642" maxy="82.5167" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/ActiveClimate_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>Inactive_Station_View</Name>
+        <Title>Inactive Climate Stations in Canada</Title>
+        <Abstract>Surface climate data are used by a broad range of users, including researchers, policy makers, and service providers. Climate data are essential for climate and climate change and variability studies, for ensuring the safety and security of the public in terms of infrastructure planning such as building codes, flood-way planning, ice storm resilience planning, and so on. Increasingly, the industry demands timely, quality climate information for economic benefits of their programs, and the public also demands such climate information for decision-making and planning.</Abstract>
+        <Keywords>
+          Climate
+          Meteorology
+          Weather
+          Temperature
+          Wind
+          Snow
+          Rain
+          Precipitation
+          Humidity
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-141" miny="0" maxx="66.4667" maxy="82.5178" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/InactiveClimate_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>Streamflow_Conditions</Name>
+        <Title>Water Level Conditions</Title>
+        <Abstract>Hydrological Conditions in Canada present current (near real-time) water level conditions at river and lake gauging stations across Canada. Colour-coded symbols are used to represent water level conditions ranging from low to normal to high. The symbols are dynamically generated based on the most recent data available in comparison with historical statistics.</Abstract>
+        <Keywords>
+          Water
+          Freshwater
+          Hydrology
+          Sediments
+          Water
+          Water levels
+          Water level
+          Water quantity
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+<!-- WARNING: Mandatory LatLongBoundingBox could not be established for this layer.  Consider setting LAYER.EXTENT or wfs_extent metadata. -->
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/HydrologicalConditions_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>adss</Name>
+        <Title>Active Suspended Sediment Stations in Canada</Title>
+        <Abstract>Active Suspended Sediment Stations in Canada</Abstract>
+        <Keywords>
+          Sediment
+          Freshwater
+          Hydrology
+          Sediments
+          Suspended Sediments
+          Suspended Load
+          Water Quality
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-139.498" miny="42.5449" maxx="-78.8249" maxy="68.3756" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/activeSuspendedSediment_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>ddss</Name>
+        <Title>Inactive Suspended Sediment Monitoring Stations in Canada</Title>
+        <Abstract>Inactive Suspended Sediment Monitoring Stations in Canada</Abstract>
+        <Keywords>
+          Sediment
+          Freshwater
+          Hydrology
+          Sediments
+          Suspended Sediments
+          Suspended Load
+          Water Quality
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.559" miny="42.0456" maxx="-52.7451" maxy="80.6022" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/InactiveSuspendedSediment_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>iblss</Name>
+        <Title>Bed Load Monitoring Stations in Canada</Title>
+        <Abstract>Bed Load Monitoring Stations in Canada</Abstract>
+        <Keywords>
+          Sediment
+          Freshwater
+          Hydrology
+          Sediments
+          Bed Load
+          Water quality
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-124.998" miny="43.8889" maxx="-78.8249" maxy="55.2942" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/IBL_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>idiss</Name>
+        <Title>Depth-Integrated Suspended Sediment Monitoring Stations in Canada</Title>
+        <Abstract>Depth-Integrated Suspended Sediment Monitoring Stations in Canada</Abstract>
+        <Keywords>
+          Sediment
+          Freshwater
+          Hydrology
+          Sediments
+          Suspended Sediments
+          Depth Integrated
+          Water quality
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.559" miny="42.0456" maxx="-52.7451" maxy="76.2" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/IDISS_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>ipiss</Name>
+        <Title>Point-integrated suspended sediment stations in Canada</Title>
+        <Abstract>Point-integrated suspended sediment stations in Canada</Abstract>
+        <Keywords>
+          Sediment
+          Freshwater
+          Hydrology
+          Sediments
+          Suspended Sediments
+          Point Integrated
+          Water quality
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-135.125" miny="42.5449" maxx="-79.5204" maxy="69.0778" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/IPISS_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>ibmss</Name>
+        <Title>Bed Material Monitoring Stations in Canada</Title>
+        <Abstract>Bed Material Monitoring Stations in Canada</Abstract>
+        <Keywords>
+          Sediment
+          Freshwater
+          Hydrology
+          Sediments
+          Suspended Sediments
+          Bed Material
+          Water quality
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-135.114" miny="42.0456" maxx="-61.1417" maxy="68.4333" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/IBM_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+    <FeatureType>
+        <Name>rtc</Name>
+        <Title>Real time Conditions</Title>
+        <Abstract>The purpose is to identify active hydrometric stations in Canada that provide Water Level data in near real-time. The real-time water level data is received via satellite (data collection platforms) or land-line (telephone) transmissions from hydrometric stations across Canada. Satellite transmissions of water level data are made on a scheduled basis, typically every 1 to 3 hours. Land-line hydrometric stations are polled on a scheduled basis varying from every hour to once a day, depending on the station.</Abstract>
+        <Keywords>
+          Water
+          Freshwater
+          Hydrology
+          Sediments
+          Water
+          Water levels
+          Water level
+          Water quantity
+          Water resources
+        </Keywords>
+        <SRS>EPSG:4326</SRS>
+        <LatLongBoundingBox minx="-140.891" miny="42.1589" maxx="75.6929" maxy="74.69" />
+        <MetadataURL type="FGDC" format="XML">http://arcms30.tor.ec.gc.ca/wem/metadata/collection/realtimehydrometric_e.xml</MetadataURL>
+<!-- WARNING: Required Feature Id attribute (fid) not specified for this feature type. Make sure you set one of wfs_featureid, ows_feature_id or gml_featureid metadata. -->
+    </FeatureType>
+</FeatureTypeList>
+
+<ogc:Filter_Capabilities>
+  <ogc:Spatial_Capabilities>
+    <ogc:Spatial_Operators>
+      <ogc:BBOX/>
+    </ogc:Spatial_Operators>
+  </ogc:Spatial_Capabilities>
+  <ogc:Scalar_Capabilities>
+    <ogc:Logical_Operators />
+    <ogc:Comparison_Operators>
+      <ogc:Simple_Comparisons />
+      <ogc:Like />
+      <ogc:Between />
+    </ogc:Comparison_Operators>
+  </ogc:Scalar_Capabilities>
+</ogc:Filter_Capabilities>
+
+</WFS_Capabilities>

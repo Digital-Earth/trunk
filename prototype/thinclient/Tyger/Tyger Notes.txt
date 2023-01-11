@@ -1,0 +1,37 @@
+
+
+Name candidates:
+- Pyxis Tyger, Symmetry, Pixelry, Pyxelry, Pyxcellular, Earth
+- Nava
+
+http://www.cs.rit.edu/usr/local/pub/ncs/java3d/examples/
+http://education.siggraph.org/resources/cgsource/instructional-materials/courses/s99-c40/FrontPage/java3d4p.pdf
+
+- Use indexed geometry with triangle (or quad strips)
+- Try to use the same texture indexes for each tile (with different image)
+- Use NuVu to get a list of coords for one tile, then hard code a single Nava tile and render it
+- Can load texture from a file if necessary
+- Then get sockets working to drive Nerve independently
+- BranchGroup for tileset (can be compiled)
+- SharedGroup and Links for sharing
+- Use different indices to do the full texture mapping, and also to show tiles or hexes (grid)
+- Page 200 -> Texture, Texture2D, TextureAttributes, TexCoordGeneration
+- Use raster geometry for labels, screen messages, etc. with Billboard behaviour
+- Try reusing tiles by calling setGeometry on the Shape3D (with WRITE enabled)
+
+Enhancements:
+- png seems to be smaller in file size
+- support additional data sources
+- allow for binary or text protocol
+- have server suggest tile vertex ordering
+- consider tiling at +7 as well as +5
+
+current reading -> at picking api p448
+
+
+Java3D Links:
+
+http://download.java.net/media/java3d/javadoc/1.5.1-latest/index.html
+http://java.sun.com/developer/onlineTraining/java3d/
+http://education.siggraph.org/resources/cgsource/instructional-materials/courses/s99-c40/FrontPage/java3d4p.pdf
+http://www.cs.rit.edu/usr/local/pub/ncs/java3d/examples/

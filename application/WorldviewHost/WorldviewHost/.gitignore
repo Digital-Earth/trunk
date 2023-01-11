@@ -1,0 +1,10 @@
+.ntvs_analysis.dat
+.ntvs_analysis.dat.tmp
+.DS_Store
+**/.DS_Store
+node_modules/
+bower_components/
+.sass-cache/
+.tmp/
+build/
+obj/

@@ -1,0 +1,8 @@
+﻿<div class="popup-menu geosource-style">
+    <div class="color-grid">
+        <div class="grid-layout" item-width="18" h-space="0" cols="4" rows="5" expand-rows="true">
+            <div ng-repeat="color in colors track by color" class="grid-item" ng-style="{'background-color':color}" 
+                    ng-click="selectColor(color)" ng-class="{selected:selectedColor==color, 'is-transparent': color == 'rgba(0,0,0,0.0)' || color == 'rgba(0,0,0,0.00)'}"></div>
+        </div>
+    </div>
+</div>

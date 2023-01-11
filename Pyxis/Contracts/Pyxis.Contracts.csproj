@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pyxis.Contract</RootNamespace>
+    <AssemblyName>Pyxis.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\application\worldview\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
+    <OutputPath>bin\Deploy\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\CssColorConverter.cs" />
+    <Compile Include="Converters\DataUrlConverter.cs" />
+    <Compile Include="DataDiscovery\DataSet.cs" />
+    <Compile Include="DataDiscovery\DataSetCatalog.cs" />
+    <Compile Include="DataDiscovery\DataSetDiscoveryReport.cs" />
+    <Compile Include="DataDiscovery\DataSetType.cs" />
+    <Compile Include="DataDiscovery\DataSetWithResource.cs" />
+    <Compile Include="DataDiscovery\NextPageResult.cs" />
+    <Compile Include="DataDiscovery\ResourceType.cs" />
+    <Compile Include="DataDiscovery\SpatialReferenceSystem.cs" />
+    <Compile Include="DataDiscovery\UrlDiscoveryReport.cs" />
+    <Compile Include="Diagnostics\Feedback.cs" />
+    <Compile Include="IPermit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="Publishing\Activity.cs" />
+    <Compile Include="Publishing\Agreement.cs" />
+    <Compile Include="Publishing\BoundingBox.cs" />
+    <Compile Include="Publishing\Domain.cs" />
+    <Compile Include="Publishing\FieldStatistics.cs" />
+    <Compile Include="Publishing\Group.cs" />
+    <Compile Include="Publishing\MultiDomainGeoSource.cs" />
+    <Compile Include="Publishing\Permissions.cs" />
+    <Compile Include="Publishing\Comment.cs" />
+    <Compile Include="Publishing\File.cs" />
+    <Compile Include="Publishing\Gallery.cs" />
+    <Compile Include="Publishing\GeoSource.cs" />
+    <Compile Include="Publishing\Gwss.cs" />
+    <Compile Include="Publishing\GwssStatus.cs" />
+    <Compile Include="Publishing\IPyxisIdentityUser.cs" />
+    <Compile Include="Publishing\License.cs" />
+    <Compile Include="Publishing\LsStatus.cs" />
+    <Compile Include="Publishing\Map.cs" />
+    <Compile Include="Publishing\Metadata.cs" />
+    <Compile Include="Publishing\Pipeline.cs" />
+    <Compile Include="Publishing\PipelineSpecification.cs" />
+    <Compile Include="Publishing\Product.cs" />
+    <Compile Include="Publishing\Rating.cs" />
+    <Compile Include="Publishing\Resource.cs" />
+    <Compile Include="Publishing\Style.cs" />
+    <Compile Include="Publishing\User.cs" />
+    <Compile Include="Publishing\UserProfile.cs" />
+    <Compile Include="Workspaces\Domains\DateRangeDomain.cs" />
+    <Compile Include="Workspaces\Domains\IDomain.cs" />
+    <Compile Include="Workspaces\Domains\NumericDomainRange.cs" />
+    <Compile Include="Workspaces\Domains\ValuesDomain.cs" />
+    <Compile Include="Workspaces\Endpoint.cs" />
+    <Compile Include="Workspaces\GeoTagMethods.cs" />
+    <Compile Include="Workspaces\GlobeTemplate.cs" />
+    <Compile Include="Workspaces\IImport.cs" />
+    <Compile Include="Workspaces\ImportDataSet.cs" />
+    <Compile Include="Workspaces\ImportTemplate.cs" />
+    <Compile Include="Workspaces\NameValidations.cs" />
+    <Compile Include="Workspaces\ObjectWithPermissions.cs" />
+    <Compile Include="Workspaces\OnwerDetails.cs" />
+    <Compile Include="Workspaces\Reference.cs" />
+    <Compile Include="Workspaces\ReferenceOrExpression.cs" />
+    <Compile Include="Workspaces\Workspace.cs" />
+    <Compile Include="Workspaces\WorkspaceFile.cs" />
+    <Compile Include="Workspaces\WorkspaceParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

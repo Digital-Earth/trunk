@@ -1,0 +1,415 @@
+﻿@{
+    ViewBag.Title = "Datasets";
+}
+@section scripts{
+    <script type="text/javascript">
+        /* ng-infinite-scroll - v1.0.0 - 2013-02-23 */
+        var mod; mod = angular.module("infinite-scroll", []), mod.directive("infiniteScroll", ["$rootScope", "$window", "$timeout", function (i, n, e) { return { link: function (t, l, o) { var r, c, f, a; return n = angular.element(n), f = 0, null != o.infiniteScrollDistance && t.$watch(o.infiniteScrollDistance, function (i) { return f = parseInt(i, 10) }), a = !0, r = !1, null != o.infiniteScrollDisabled && t.$watch(o.infiniteScrollDisabled, function (i) { return a = !i, a && r ? (r = !1, c()) : void 0 }), c = function () { var e, c, u, d; return d = n.height() + n.scrollTop(), e = l.offset().top + l.height(), c = e - d, u = n.height() * f >= c, u && a ? i.$$phase ? t.$eval(o.infiniteScroll) : t.$apply(o.infiniteScroll) : u ? r = !0 : void 0 }, n.on("scroll", c), t.$on("$destroy", function () { return n.off("scroll", c) }), e(function () { return o.infiniteScrollImmediateCheck ? t.$eval(o.infiniteScrollImmediateCheck) ? c() : void 0 : c() }, 0) } } }]);
+    </script>
+
+    <script type="text/javascript">
+        var app = angular.module('datasetApp', ['ui.bootstrap', 'infinite-scroll'], function ($compileProvider) {
+            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|pyxis):/);
+        }).config(['$locationProvider',
+        function($locationProvider) {
+            $locationProvider.html5Mode(true);
+        }]);
+
+        app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, model) {
+            $scope.model = model;
+
+            $scope.ok = function () {
+                $uibModalInstance.close($scope.model);
+            };
+        });
+
+        app.controller('datasetController', function ($scope, $http, $timeout, $location, $uibModal) {
+            if ($location.search()['q']) {
+                $scope.searchTerm = $location.search()['q'];
+            } else {
+                $scope.searchTerm = "";
+            }
+
+            if ($location.search()['s'] !== undefined) {
+                $scope.serverId = parseInt($location.search()['s']);
+            } else {
+                $scope.serverId = undefined;
+            }
+
+            $scope.$watch('searchTerm', function () {
+                var terms = {};
+
+                if ($scope.serverId !== undefined) {
+                    terms['s'] = $scope.serverId;
+                }
+
+                if ($scope.searchTerm.length > 0) {
+                    terms['q'] = $scope.searchTerm;
+                }
+
+                $location.search(terms);
+
+                $location.replace();
+            });
+
+            $scope.serviceFilter = "";
+            $scope.serviceStatusFilter = "";
+            $scope.datasets = [];
+            $scope.serverBusy = false;
+
+            $scope.$watch('serviceFilter', function () {
+                $scope.queryChange();
+            });
+
+            $scope.$watch('serviceStatusFilter', function () {
+                $scope.queryChange();
+            });
+            
+            $scope.buildSearchUri = function (term, serviceFilter, serviceStatusFilter, start, limit) {
+                var url = "/api/Datasets?query=" + encodeURIComponent(term + " ")
+                    + "&protocol=" + encodeURIComponent(serviceFilter)
+                    + "&version="
+                    + "&start=" + start
+                    + "&limit=" + limit;
+                if ($scope.serverId !== undefined) {
+                    url += "&serverId=" + $scope.serverId;
+                }
+                if (serviceStatusFilter && serviceStatusFilter.length) {
+                    url += "&status=" + encodeURIComponent(serviceStatusFilter);
+                }
+                return url;
+            }
+
+            $scope.buildErrorUri = function (term, serviceFilter, serviceStatusFilter) {
+                var url = "/api/Errors?query=" + encodeURIComponent(term + " ")
+                    + "&protocol=" + encodeURIComponent(serviceFilter)
+                    + "&version=";
+                if ($scope.serverId !== undefined) {
+                    url += "&serverId=" + $scope.serverId;
+                }
+                if (serviceStatusFilter && serviceStatusFilter.length) {
+                    url += "&status=" + encodeURIComponent(serviceStatusFilter);
+                }
+                return url;
+            }
+
+            $scope.queryChange = function () {
+                var term = $scope.searchTerm;
+                var serviceFilter = $scope.serviceFilter;
+                var serviceStatusFilter = $scope.serviceStatusFilter;
+                $scope.serverBusy = true;
+
+                $http({ method: 'GET', 'url': $scope.buildSearchUri(term, serviceFilter, serviceStatusFilter, 0, 20) })
+                    .success(function (data, status, headers, config) {
+                        if (term == $scope.searchTerm) {
+                            $scope.datasets = data;
+                            $scope.serverBusy = false;
+                        }
+                    }).
+                    error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        if (term == $scope.searchTerm) {
+                            $scope.datasets = [];
+                            $scope.serverBusy = false;
+                        }
+                    });
+            }
+
+            $scope.summarizeErrors = function () {
+                var term = $scope.searchTerm;
+                var serviceFilter = $scope.serviceFilter;
+                var serviceStatusFilter = $scope.serviceStatusFilter;
+                $scope.serverBusy = true;
+
+                $http({ method: 'GET', 'url': $scope.buildErrorUri(term, serviceFilter, serviceStatusFilter) })
+                    .success(function (data, status, headers, config) {
+                        if (term == $scope.searchTerm) {
+                            $scope.openErrorModal(data);
+                            $scope.serverBusy = false;
+                        }
+                    }).
+                    error(function (data, status, headers, config) {
+                        if (term == $scope.searchTerm) {
+                            $scope.datasets = [];
+                            $scope.serverBusy = false;
+                        }
+                    });
+            }
+
+            $scope.upsertServerGallery = function () {
+                $scope.serverBusy = true;
+
+                $http({
+                    method: 'POST',
+                    url: '/api/Servers/' + $scope.serverId
+                }).then(function () {
+                    $scope.serverBusy = false;
+                });
+            }
+
+            $scope.upsertCatalogGallery = function () {
+                $scope.serverBusy = true;
+
+                $http({
+                    method: 'POST',
+                    url: '/api/Servers/'
+                }).then(function () {
+                    $scope.serverBusy = false;
+                });
+            }
+
+            $scope.nextPage = function () {
+                var term = $scope.searchTerm;
+                var serviceFilter = $scope.serviceFilter;
+                var serviceStatusFilter = $scope.serviceStatusFilter;
+                $scope.serverBusy = true;
+                var start = $scope.datasets.length;
+
+                $http({ method: 'GET', 'url': $scope.buildSearchUri(term, serviceFilter, serviceStatusFilter, start, 20) })
+                    .success(function (data, status, headers, config) {
+                        if (term == $scope.searchTerm) {
+                            for (var i = 0; i < data.length; ++i) {
+                                $scope.datasets.push(data[i]);
+                            }
+                            $scope.serverBusy = false;
+                        }
+                    })
+                    .error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        if (term == $scope.searchTerm) {
+                            $scope.datasets = [];
+                            $scope.serverBusy = false;
+                        }
+                    });
+            }
+
+            $scope.queryChange();
+
+            $scope.buildDatasetUrl = function (dataset, service) {
+                if (service.Protocol == "WMS") {
+                    return "pyxis://" + dataset.Server + "?service=" + service.Protocol + "&version=" + service.Version + "&request=GetMap&Layers=" + dataset.DatasetId;
+                } else if (service.Protocol == "WFS") {
+                    if (service.Version == "2.0.0") {
+                        return "pyxis://" + dataset.Server + "?service=" + service.Protocol + "&version=" + service.Version + "&request=GetFeature&typeNames=" + dataset.DatasetId;
+                    } else {
+                        return "pyxis://" + dataset.Server + "?service=" + service.Protocol + "&version=" + service.Version + "&request=GetFeature&typeName=" + dataset.DatasetId;
+                    }
+                }
+                else if (service.Protocol == "WCS") {
+                    if (service.Version == "1.0.0") {
+                        return "pyxis://" + dataset.Server + "?service=" + service.Protocol + "&version=" + service.Version + "&request=GetCoverage&identifier=" + dataset.DatasetId;
+                    } else if (service.Version == "2.0.0") {
+                        return "pyxis://" + dataset.Server + "?service=" + service.Protocol + "&version=" + service.Version + "&request=GetCoverage&coverageId=" + dataset.DatasetId;
+                    } else {
+                        return "pyxis://" + dataset.Server + "?service=" + service.Protocol + "&version=" + service.Version + "&request=GetCoverage&identifiers=" + dataset.DatasetId;
+                    }
+                }
+                return "";
+            }
+
+            $scope.submitChangeOrder = function (dataSet, serviceIndex, status) {
+                $scope.serverBusy = true;
+                $http({
+                    method: 'PUT',
+                    'url': "/api/Datasets",
+                    'data': {
+                        Id: dataSet.Id,
+                        Service: {
+                            Protocol: dataSet.Services[serviceIndex].Protocol,
+                            Version: dataSet.Services[serviceIndex].Version,
+                            Status: status
+                        }
+                    }
+                }).success(function (data, statusCode, headers, config) {
+                    dataSet.Services[serviceIndex].Status = status;
+                    dataSet.Services[serviceIndex].StatusTime = new Date().getTime();
+                    $scope.serverBusy = false;
+                }).error(function (data, statusCode, headers, config) {
+                    console.log(data);
+                    $scope.serverBusy = false;
+                });
+            }
+
+            $scope.submitWholesaleChangeOrder = function (dataSets, status) {
+                for (var dataSetIndex = 0; dataSetIndex < dataSets.length; dataSetIndex++) {
+                    var services = dataSets[dataSetIndex].Services;
+                    for(var serviceIndex = 0; serviceIndex < services.length; serviceIndex++){
+                        if($scope.serviceFilter === "" || services[serviceIndex].Protocol === $scope.serviceFilter){
+                            $scope.submitChangeOrder(dataSets[dataSetIndex], serviceIndex, status);
+                        }
+                    }
+                }
+            }
+
+            $scope.openServiceModal = function (service) {
+                
+                var modalInstance = $uibModal.open({
+                    controller: "ModalInstanceCtrl",
+                    size: 'lg',
+                    template: '<div class="modal-header">\
+                        <h3>{{ model.Protocol + ":" + model.Version }}</h3>\
+                    </div>\
+                    <div class="modal-body">\
+                            <b>Error Message:</b><br />\
+                            {{ model.Error }}<br />\
+                                <b>Trace:</b><br />\
+                            {{ model.Trace }}<br />\
+                                <b>Uri:</b><br />\
+                            {{ model.Uri }}\
+                    </div>\
+                    <div class="modal-footer">\
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>\
+                    </div>',
+                    resolve: {
+                        model: function () {
+                            return service;
+                        }
+                    }
+                });
+
+            };
+
+            $scope.openDataSetModal = function (dataSet) {
+
+                var modalInstance = $uibModal.open({
+                    controller: "ModalInstanceCtrl",
+                    size: 'lg',
+                    template: '<div class="modal-header">\
+                        <h3>{{ "DataSetId: " + model.DatasetId }}</h3>\
+                    </div>\
+                    <div class="modal-body">\
+                            <b>Id: </b>{{ model.Id }}<br />\
+                            <b>Server: </b><a href={{model.Server}} target="_blank">{{ model.Server }}</a><br />\
+                            <b>WGS84 Bounding Box</b><br />\
+                            <ul>\
+                                <li><b>North: </b>{{ model.Wgs84BoundingBox.North }}</li>\
+                                <li><b>South: </b>{{ model.Wgs84BoundingBox.South }}</li>\
+                                <li><b>East: </b>{{ model.Wgs84BoundingBox.East }}</li>\
+                                <li><b>West: </b>{{ model.Wgs84BoundingBox.West }}</li>\
+                            </ul>\
+                    </div>\
+                    <div class="modal-footer">\
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>\
+                    </div>',
+                    resolve: {
+                        model: function () {
+                            return dataSet;
+                        }
+                    }
+                });
+
+            };
+
+            $scope.openErrorModal = function (errors) {
+
+                var modalInstance = $uibModal.open({
+                    controller: "ModalInstanceCtrl",
+                    size: 'lg',
+                    template: '<div class="modal-header">\
+                        <h3>Error Summary</h3>\
+                    </div>\
+                    <div ng-repeat="error in model">\
+                        <div class="modal-body">\
+                            <b>Count:</b><br />\
+                            {{ error.Count }}<br />\
+                            <b>Error:</b><br />\
+                            {{ error.Error }}\
+                        </div>\
+                    </div>\
+                    <div class="modal-footer">\
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>\
+                    </div>',
+                    resolve: {
+                        model: function () {
+                            return errors;
+                        }
+                    }
+                });
+
+            };
+
+            //$scope.updateServers();
+        });
+    </script>
+}
+<div ng-app="datasetApp" ng-controller="datasetController">
+    <div class="jumbotron">
+        <h1>Welcome to our crawler</h1>
+        <p class="lead">This is going to be amazing - we have found @ViewBag.DatasetCount datasets so far</p>           
+    </div>
+
+    @if (ViewBag.Server != null)
+    {
+        <h3>Show Datasets for server: @ViewBag.Server.Name</h3>
+        <a href="@ViewBag.Server.Uri">@ViewBag.Server.Uri</a>
+    }
+
+    <h3>
+        Datasets
+        <button style="font-size:16px;" ng-click="summarizeErrors()">Errors</button>
+        <button style="font-size:16px;" ng-click="submitWholesaleChangeOrder(datasets, 'NeedsVerifying')">Reset to NeedsVerifying</button>
+        @if (ViewBag.CanMakeCatalogGallery)
+        {
+            <button style="font-size:16px;" ng-click="upsertCatalogGallery()">@ViewBag.GalleryOperation Catalog Gallery</button>
+        }
+        else if (ViewBag.CanMakeEndpointGallery)
+        {
+            <button style="font-size: 16px;" ng-click="upsertServerGallery()">@ViewBag.GalleryOperation Server Gallery</button>
+        }
+        <div class="col-sm-3 pull-right">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" ng-model="searchTerm" ng-change="queryChange()">
+        </div>
+    </h3>
+
+    <div style="float:right">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="''">All</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'WMS'">WMS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'WFS'">WFS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'WCS'">WCS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'AGSM'">AGSM</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'AGSF'">AGSF</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="''">All</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Unknown'">Unknown</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Accessible'">Accessible</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Crawled'">Crawled</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'NeedsVerifying'">NeedsVerifying</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Offline'">Offline</button> 
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Working'">Working</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'WorkingButNotUsable'">Unusable</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Broken'">Broken</button>
+        </div>        
+    </div>
+
+    <div infinite-scroll='nextPage()' infinite-scroll-disabled='serverBusy' infinite-scroll-distance='1'>
+        <table class="table table-striped table-curved table-hover">
+            <tr ng-repeat="dataset in datasets">
+                <td>
+                    <p>
+                        <!--<div style="float:right"><button>Comment</button></div>-->
+                        <strong ng-click="openDataSetModal(dataset)">{{dataset.Name}}</strong>
+                        <span ng-repeat="service in dataset.Services" class="service service-{{service.Status}}">
+                           <span ng-click="openServiceModal(service)" uib-tooltip="{{service.Status}} - {{service.StatusTime | date:'medium':'UTC'}}">{{service.Protocol}}-{{service.Version}}</span>
+                           <a ng-show='service.Status != "NeedsVerifying"' ng-click="submitChangeOrder(dataset, $index, 'NeedsVerifying')" uib-tooltip="Verify">
+                               <img width="16" height="16" title="" alt="" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTcuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIwMS4zMjQgMjAxLjMyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjAxLjMyNCAyMDEuMzI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxjaXJjbGUgY3g9Ijk1LjU5NiIgY3k9IjEwLjA4MyIgcj0iMTAuMDgzIiBmaWxsPSIjMDAwMDAwIi8+CjxjaXJjbGUgY3g9IjE0OS4wMTgiIGN5PSIxMC4wODMiIHI9IjEwLjA4MyIgZmlsbD0iIzAwMDAwMCIvPgo8cGF0aCBkPSJNMTc5LjA2LDE5LjI1NGMtNS4xMjMtOC44NzMtMTQuMjk4LTE0LjE3LTI0LjU0NC0xNC4xN3YxMGM2LjYzMSwwLDEyLjU2OCwzLjQyOCwxNS44ODQsOS4xNyAgYzMuMzE2LDUuNzQzLDMuMzE2LDEyLjU5OSwwLjAwMSwxOC4zNDJsLTMyLjEyMiw1NS42MzZjLTMuMzE1LDUuNzQyLTkuMjUzLDkuMTctMTUuODg0LDkuMTcxYy02LjYzMSwwLTEyLjU2OS0zLjQyOC0xNS44ODUtOS4xNzEgIEw3NC4zODksNDIuNTk1Yy0zLjMxNS01Ljc0Mi0zLjMxNS0xMi41OTksMC0xOC4zNDFzOS4yNTQtOS4xNzEsMTUuODg1LTkuMTcxdi0xMGMtMTAuMjQ2LDAtMTkuNDIyLDUuMjk3LTI0LjU0NSwxNC4xNzEgIHMtNS4xMjMsMTkuNDY4LDAsMjguMzQxbDMyLjEyMSw1NS42MzZjNC4yNzIsNy4zOTksMTEuMzY2LDEyLjI5OSwxOS41NDUsMTMuNzI3djI2LjgzMmMwLDI2LjIxMS0xNS40NzMsNDcuNTM1LTM0LjQ5Miw0Ny41MzUgIGMtMTkuMDE5LDAtMzQuNDkxLTIxLjMyNC0zNC40OTEtNDcuNTM1di0zMS45NDhDNTkuODAyLDEwOS41Miw2OC40LDk5LjQyNCw2OC40LDg3LjM1NmMwLTEzLjc3OS0xMS4yMS0yNC45ODktMjQuOTg5LTI0Ljk4OSAgcy0yNC45ODksMTEuMjEtMjQuOTg5LDI0Ljk4OWMwLDEyLjA2Nyw4LjU5OCwyMi4xNjMsMTkuOTg5LDI0LjQ4NnYzMS45NDhjMCwzMS43MjUsMTkuOTU5LDU3LjUzNSw0NC40OTIsNTcuNTM1ICBjMjQuNTMyLDAsNDQuNDkxLTI1LjgxLDQ0LjQ5MS01Ny41MzV2LTI2LjgzMmM4LjE3OC0xLjQyOCwxNS4yNzMtNi4zMjgsMTkuNTQ0LTEzLjcyN2wzMi4xMjItNTUuNjM2ICBDMTg0LjE4NCwzOC43MjIsMTg0LjE4NCwyOC4xMjcsMTc5LjA2LDE5LjI1NHoiIGZpbGw9IiMwMDAwMDAiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                           </a>
+                            <a ng-show='service.Status == "NeedsVerifying"' ng-click="submitChangeOrder(dataset, $index, 'Broken')" uib-tooltip="Set broken">
+                               X
+                           </a>
+                           <a ng-href="{{buildDatasetUrl(dataset,service)}}" uib-tooltip="Import as {{service.Protocol}}">
+                               <img width="16" height="16" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hJREFUeNqkk39sU1UUx8+9r+9XX9uVzq5zHet42zJY0SIuDFHwB44w0KEkaGIElESIvwLESMj+IMRE/1niov6BRkM04kiENIGQSCDEP9wWZoeCY8rmBlu3ODq7/nilfT/63r2+dtrwvye5yb055/u595x7DqKUwhP7+uB+6z3YvfrVj6L9x3Y/mR/85dZln+S4OHBbiSiqscV2P2sv17+hMcf9wl3PhENF09yhGcVeixHZDy/dob0713b0RQd7Jlu3McBToIkc4FvDacyL7ypnD3xXBuzYtDJsWdZm09DfkJf7g0G/h5MYgGTzGrT/yixA01MMmCmgcQWkO9eLezc3vF3QzdETZwHKgL8X02fCTXWrJKdgYIw5w7SAIgDkFwGCq4DOJ+yb01C3+Ad8cXw7a0v6k5l88gSAfykFim6O3JiS2lqCWY/b6dYNs5FyNsEnABgGgGSDSByOvtxeVFXdXFRUPPLbn9+UpGXA0O93X9qwup6N3Yz3CSxsCfh9xAKCsGEiS8kDFC1A9TIcPTcMRzaFhvovj3XeOHOMlrSo9Avhb5/fa+9MhnJT6zNPu7Y+3HHk+KfnH7vHiRIiBCghBkFIKRIHE2DmEzsPPRQ7PXnhXPytH6NlQOCTR67iFbrJakKWdwpDH0R61uE0f6rK8HXY1SBxcXIwBaluDelrkyTTEL39/RgTl5S/3hl5bqkGCBYLM4WNjlbNrWLc/P5ozxSvudZRyRq2vTwouEt352SD1aot3fLBhKMRi8z5Sg1aru/ZPrfxQkCfyx7SIP2KVZfr0qsKYc4QIoCpoFdrLaRAalGS/VkqBD52VEufBX/qsiqAiOzb0554TVtwzVyac05/PbcwsS1jzu8vuHKdlNhBljhQQ+vfC5ryWI1ZH/IthHaDDIotjS6lQIr73KLLIegrUrX50K9r2A3jd8XZF6bQaA1msC6rbaRObYgwRe51gXOsxG5wziez2QrgQf+yiWwuv8vndXvtY6uqG5OsIj/arLfGKKGiRUi75OTaeIltslt9+fTswozX6zld+cbSMHWtb1ym68UDmYzypv8BbwPrYOKqZoxjjASB51ryBa02lclf43juKwLMlyPjCWvg5GGoDNMPV6fT3Y/LnwOqOqnc01/UNPUwUOgkpT5AOMbx/EGPxzXIsox15dqs9Z+u/IL/Y/8IMACmH5CfJOturgAAAABJRU5ErkJggg==" />
+                           </a>
+                        </span>
+                    </p>
+                    {{dataset.Description}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="text-align:center;margin: 4px auto;" ng-show="serverBusy">Loading more results...</div>
+</div>
+

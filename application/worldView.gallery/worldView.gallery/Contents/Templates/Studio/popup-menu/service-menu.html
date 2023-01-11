@@ -1,0 +1,7 @@
+﻿<div class="popup-menu">
+    <div class="menu-item"
+        ng-repeat="service in resource.Services"
+        ng-click="resource.SelectedService = $index">
+        {{service.Protocol + ' ' + service.Version}}
+    </div>
+</div>

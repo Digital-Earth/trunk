@@ -1,0 +1,208 @@
+﻿<form name="editForm" class="edit-resource-form" ng-esc="editResourceModel.cancel()">
+    <h2 class="title">{{'Edit '+(editResourceModel.type|upgradeResourceType)|i18n}}
+        <div style="float:right" ng-if="editResourceModel.geoSourceStatus">
+            <div class="status">
+                <span ng-switch on="editResourceModel.geoSourceStatus.Status">
+                    <div ng-switch-when="Waiting" class="fa-stack icon">
+                        <i class="fa fa-circle fa-stack-2x" style="color: #c4c4c4;"></i>
+                        <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <div ng-switch-when="Uploading" class="fa-stack icon">
+                        <i class="fa fa-circle fa-stack-2x" style="color: #6382e6;"></i>
+                        <i class="fa fa-cloud-upload fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <div ng-switch-when="Published" class="fa-stack icon">
+                        <i class="fa fa-circle fa-stack-2x" style="color: green;"></i>
+                        <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <div ng-switch-when="Removed" class="fa-stack icon">
+                        <i class="fa fa-circle fa-stack-2x" style="color: red;"></i>
+                        <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <div ng-switch-when="Published, Creating Cache" class="fa-stack icon">
+                        <i class="fa fa-circle fa-stack-2x" style="color: green;"></i>
+                        <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <div ng-switch-default class="fa-stack icon">
+                        <i class="fa fa-circle fa-stack-2x" style="color: #6382e6;"></i>
+                        <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
+                    </div>
+                </span>
+                <span>{{'GeoSource Status : '+editResourceModel.geoSourceStatus.Status | i18n}}</span>
+                <span class="gray-text" ng-if="editResourceModel.geoSourceStatus.Progress">
+                    <span class="progress-bar">
+                        <span class="bar" ng-style="{width:editResourceModel.geoSourceStatus.Progress+'px'}"></span>
+                    </span>
+                    {{editResourceModel.geoSourceStatus.Progress | number:2}}%
+                </span>
+            </div>
+        </div>
+    </h2>
+    <scrollbar class="edit-resource-form-content">
+        <div e2e-name="edit-resource-card">
+            <div class="row row-1">
+                <div class="form-group" tooltip="{{'tooltip.edit.'+editResourceModel.typelower+'.preview'|i18n}}">
+                    <div class="small-text" i18n="Card Preview"></div>
+                    <card ng-model="editResourceModel.item" img-mode="asset"></card>
+                </div>
+            </div>
+            <div class="row row-2">                        
+                <div class="form-group" tooltip="{{'tooltip.edit.'+editResourceModel.typelower+'.name'|i18n}}">
+                    <div class="small-text" i18n="Name"></div>
+                    <input type="text" class="form-control" name="name" ng-model="editResourceModel.item.Metadata.Name" i18n-placeholder="Name" required="">
+                </div>                        
+                <div class="form-group" tooltip="{{'tooltip.edit.'+editResourceModel.typelower+'.tags'|i18n}}">
+                    <div class="small-text" i18n="Tags"></div>
+                    <input-tags ng-model="editResourceModel.item.Metadata.Tags" name="tags" min-length="0" max-length="5"></input-tags>
+                </div>
+                <div class="form-group" ng-if="screenCapture.ready">
+                    <div class="small-text" i18n="Images"></div>                            
+                    <button class="gray big" ng-click="editResourceModel.startImageCapture()" i18n="Change"></button>
+                </div>
+                <div class="form-group" ng-if="editResourceModel.item.Type == 'Map'">
+                    <div class="small-text" i18n="Camera Location"></div>
+                    <button class="gray big" ng-click="editResourceModel.startCameraCapture()" i18n="Change"></button>
+                </div>
+            </div>
+            <div class="row row-3">                        
+                <div class="form-group" tooltip="{{'tooltip.edit.'+editResourceModel.typelower+'.description'|i18n}}" placement="right">
+                    <div class="small-text" i18n="Description"></div>
+                    <textarea class="form-control" style="width:100%;height:276px;resize: none;" name="description" ng-model="editResourceModel.item.Metadata.Description"></textarea>
+                </div>
+                <div class="form-group" ng-if="!editResourceModel.isLocalResource">
+                    <div class="small-text" i18n="Provided by"></div>
+                    <div ng-repeat="provider in editResourceModel.item.Metadata.Providers">
+                        <img ng-src="https://www.pyxisinnovation.com/images/avatars/thumbnails/{{provider.Id}}.jpg" style="width:64px;height:64px;vertical-align:middle;" />
+                        <span style="padding-left:10px">{{provider.Name}}</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-if="editResourceModel.isLocalResource && activeFeatures.publishResources && editResourceModel.item.Type == 'GeoSource' ">
+                    <div class="small-text" i18n="Local GeoSource"></div>
+                    <div class="status">
+                        <span ng-show="!editResourceModel.storage.quota || editResourceModel.withinStorageQuota()" i18n="Storage Quota"></span>
+                        <span ng-hide="!editResourceModel.storage.quota || editResourceModel.withinStorageQuota()" i18n="Storage Quota Exceeded" style="color:#f00"></span>
+                        <span class="progress-bar" tooltip="{{'Storage Required'|i18n:editResourceModel.storage.requiredString}}" style="left:10px">
+                            <span class="bar" ng-style="{'width':editResourceModel.storage.usedPercent+'px', 'max-width':100+'px'}"></span>
+                            <span class="bar" ng-show="editResourceModel.storage.usedPercent < 100" ng-style="{'width':editResourceModel.storage.newPercent+'px', 'left':editResourceModel.storage.usedPercent+'px', 'min-width': '2px', 'max-width':100-editResourceModel.storage.usedPercent+'px', 'background-color': editResourceModel.storage.usedPercent+editResourceModel.storage.newPercent > 100 ? '#f00' : '#1abb5c'}"></span>
+                        </span>
+                    </div>
+                    <div ng-show="!editResourceModel.emailConfirmed()" class="status">
+                        <span style="color: #f00" i18n="Confirm your email to enable publishing"></span>
+                    </div>
+                    <div>
+                        <i class="fa fa-cloud-upload gray-light" style="width:64px;height:64px;margin-right:10px;vertical-align:middle;font-size:64px"></i>
+                        <button class="big gray" ng-disabled="!editResourceModel.withinStorageQuota() || !editResourceModel.emailConfirmed()" ng-click="editResourceModel.startPublish()" i18n="Publish to WorldView.Gallery"></button>
+                    </div>
+                </div>
+                <div class="form-group" ng-if="editResourceModel.isLocalResource && activeFeatures.publishMaps && editResourceModel.item.Type == 'Map' ">
+                    <div class="small-text" i18n="Local Globe"></div>
+                    <div ng-if="editResourceModel.canPublish()">
+                        <i class="fa fa-cloud-upload gray-light" style="width: 64px; height: 64px; margin-right: 10px; vertical-align: middle; font-size: 64px"></i>
+                        <button class="big gray" ng-click="editResourceModel.startPublish()" i18n="Publish to WorldView.Gallery"></button>
+                    </div>
+                    <div ng-if="!editResourceModel.canPublish()" tooltip="{{'tooltip.edit.globe.cant-publish'|i18n}}">
+                        <div ng-show="!editResourceModel.emailConfirmed()" class="status">
+                            <span style="color: #f00" i18n="Confirm your email to enable publishing"></span>
+                        </div>
+                        <i class="fa fa-cloud-upload gray-light" style="width: 64px; height: 64px; margin-right: 10px; vertical-align: middle; font-size: 64px"></i>
+                        <button class="big gray" disabled i18n="Publish to WorldView.Gallery"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" e2e-name="edit-resource-properties" ng-if="editResourceModel.item.Type == 'GeoSource'">
+            <h3 class="title">
+                <span tooltip="{{'tooltip.edit.geosource.field_count'|i18n}}">
+                    <ng-pluralize count="filteredItems.length" when="{
+                        '0': ('No properties'|i18n),
+                        'one': ('1 property'|i18n),
+                        'other':('{} properties'|i18n) }"></ng-pluralize>
+                    <span class="gray-text">
+                        ({{filteredItems.length}}<span class="gray-text" ng-if="filteredItems.length != editResourceModel.item.Specification.Fields.length">{{' of %s'|i18n:[editResourceModel.item.Specification.Fields.length]}}</span>)
+                    </span>
+                </span>
+                <span style="float:right;padding-right:10px;position:relative;" ng-if="editResourceModel.item.Specification.Fields.length >= 5"
+                    tooltip="{{'tooltip.edit.geosource.search'|i18n}}">
+                    <span class="input-search-icon"></span>
+                    <input class="form-control search" type="text" ng-model="editResourceModel.fieldSearch" i18n-placeholder="Search for property"/>                        
+                </span>
+            </h3>
+            <div ng-repeat="field in filteredItems = (editResourceModel.item.Specification.Fields | filter:editResourceModel.fieldSearch )" ng-form="fieldForm" class="field">
+                <div class="row row-1">                        
+                    <div class="form-group">
+                        <div class="small-text">
+                            <span i18n="Property" tooltip="{{'tooltip.edit.geosource.property.name'|i18n}}" placement="top left"></span>
+                            <span class="gray-text">({{field.FieldType|i18n}})</span>
+                            <div class="field-properties">
+                                <span tooltip="{{'Make this property searchable on the search bar'|i18n}}" ng-if="editResourceModel.isFeaturesOutput && false">
+                                    <i class="field-icon field-search-icon"
+                                        ng-class="{active:editResourceModel.searchable(field)}"
+                                        ng-click="{active:editResourceModel.toggleSearchable(field)}"></i>
+                                </span>
+                                <span tooltip="{{'tooltip.edit.geosource.property.geotag'|i18n}}" ng-if="editResourceModel.isFeaturesOutput">
+                                    <i class="field-icon field-geotag-icon"
+                                        ng-class="{active:editResourceModel.geotagable(field)}"
+                                        ng-click="{active:editResourceModel.toggleGeotagable(field)}" pyx-track="toggle-geocode-property"></i>
+                                </span>
+                                <span tooltip="{{'tooltip.edit.geosource.property.star'|i18n}}" placement="top left">
+                                    <i class="field-icon field-star-icon"
+                                        ng-class="{active:editResourceModel.starred(field)}"
+                                        ng-click="{active:editResourceModel.toggleStarred(field)}"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <span tooltip="{{'tooltip.edit.geosource.property.name'|i18n}}" placement="top left">
+                            <input type="text" class="form-control" name="name" ng-model="field.Metadata.Name" i18n-placeholder="Property Name" required="">
+                        </span>
+                    </div>
+                </div>
+                <div class="row row-2">                        
+                    <div class="form-group" ng-if="field.FieldType=='Number'" tooltip="{{'tooltip.edit.geosource.property.unit'|i18n}}" style="width:160px;" placement="top left">
+                        <div class="small-text" i18n="Unit"></div>
+                        <input type="text" class="form-control" name="unit" ng-model="field.FieldUnit.Name" i18n-placeholder="Unit">
+                    </div>
+                </div>
+                <div class="row row-3">
+                    <div class="form-group">
+                        <div class="small-text" i18n="Description" tooltip="{{'tooltip.edit.geosource.property.description'|i18n}}" placement="top left"></div>
+                        <input type="text" class="form-control" name="description" ng-model="field.Metadata.Description" tooltip="{{'tooltip.edit.geosource.property.description'|i18n}}" placement="top left">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-if="editResourceModel.item.Type == 'Map'">
+            <div ng-if="editResourceModel.publishedGeoSources">
+                <h3 class="title">
+                    <ng-pluralize count="editResourceModel.publishedGeoSources.length" when="{
+                        '0': ('No published GeoSources'|i18n),
+                        'one': ('1 published GeoSource'|i18n),
+                        'other': ('{} published GeoSources'|i18n) }"></ng-pluralize>                        
+                </h3>
+                <div class="masonry" item-width="240" v-space="24" h-space="30" style="width:100%" should-expand="loadMore()">
+                    <card ng-repeat="card in editResourceModel.publishedGeoSources" readonly img-mode="asset" ng-model="card" masonry-item></card>
+                </div>  
+            </div>
+            <div ng-if="editResourceModel.localGeoSources.length">
+                <h3 class="title">
+                    <ng-pluralize count="editResourceModel.localGeoSources.length" when="{
+                        '0': ('No local GeoSources'|i18n),
+                        'one': ('1 local GeoSource'|i18n),
+                        'other': ('{} local GeoSources'|i18n) }"></ng-pluralize>                        
+                </h3>
+                <div class="masonry" item-width="240" v-space="24" h-space="30" style="width:100%" should-expand="loadMore()">
+                    <card ng-repeat="card in editResourceModel.localGeoSources" readonly img-mode="asset" ng-model="card" masonry-item></card>
+                </div>  
+            </div>
+        </div>
+    </scrollbar>        
+    <span style="float:left" ng-if="activeFeatures.updateResources && editResourceModel.needToUpdate()">
+        <button class="big gray" ng-click="editResourceModel.updateConfirm()" pyx-track="upload-changes-{{editResourceModel.item.Type.toLowerCase()}}"><i class="fa fa-cloud-upload"></i><span i18n="Upload Changes"></span></button>
+    </span>
+    <span style="float:left" ng-if="activeFeatures.updateResources && editResourceModel.needGetLatest()">
+        <button class="big gray" ng-click="editResourceModel.getLatest()" pyx-track="get-changes-{{editResourceModel.item.Type.toLowerCase()}}"><i class="fa fa-cloud-download"></i><span i18n="Get Changes"></span></button>
+    </span>
+    <modal-dialog-buttons>                        
+        <button class="big gray-hover" ng-click="editResourceModel.cancel()"><span i18n="Cancel"></span></button>
+        <button ng-disabled="!editForm.$valid" class="big gray" ng-click="editResourceModel.commit()" pyx-track="save-changes-{{editResourceModel.item.Type.toLowerCase()}}"><i class="fa fa-check"></i><span i18n="Save Changes"></span></button>                
+    </modal-dialog-buttons>
+</form>

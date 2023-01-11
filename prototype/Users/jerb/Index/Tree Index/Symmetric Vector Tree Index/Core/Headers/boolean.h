@@ -1,0 +1,47 @@
+/* Copyright (c) 2007 Jason Erb
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+# if !defined(HEADERS__BOOLEAN)
+	# define HEADERS__BOOLEAN
+
+	# include "core.h"
+
+	/* This allows boolean optimizations in C99.
+	Do not treat this as a regular integer, as integral operations on 
+	'int' and '_Bool' may return different results.
+	Note that this is time optimized, not space optimized.
+	*/
+	# if mbC99()
+		typedef _Bool Boolean_tb;
+	# else
+		typedef int Boolean_tb;
+	# endif
+
+	static INLINE Boolean_tb Boolean_fbValid(
+		REGISTER Boolean_tb const eBoolean
+	) {
+		return 0 == eBoolean || 1 == eBoolean;
+	}
+
+# endif

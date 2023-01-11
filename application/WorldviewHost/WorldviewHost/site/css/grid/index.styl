@@ -1,0 +1,119 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// GRID
+                    
+//¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+
+options = {
+    gutters: 32,
+    max-width: 1320
+}
+
+cf()
+  *zoom: 1
+
+  &:before, &:after
+    content: ''
+    display: table
+
+  &:after
+    clear: both
+
+$column(wrap, float, overflow)
+    if wrap
+        display: inline-block
+    else 
+        clear: none
+        display:inline 
+        float: float
+        
+    position: relative
+    min-height: 1px
+    overflow: overflow
+    
+$row(nested = null)
+    unless nested
+        margin-left: auto
+        margin-right: auto
+        
+    margin-top: 0
+    margin-bottom: 0
+    position: relative 
+    width: auto
+    cf()
+    
+
+make-bounds(width) 
+    $bounds = 'bottom' 'left' 'top' 'right'
+    
+    for $bound, i in $bounds
+        add-property($bound, unit(width, 'px'))
+       
+add-gutters(width)
+    $pads = 'padding-left' 'padding-right'
+    
+    for $pad, i in $pads
+        add-property($pad, unit(width / 2, 'px'))
+    
+add-padding(width, padding-property = 'padding-bottom')
+    $width = width * 100;
+    add-property(padding-property, unit($width, '%'))
+    
+column-span(width)
+    $width = width * 100;
+    add-property('width', unit($width, '%'))
+
+column-span-complex(width, gutters)     
+    $width = width * 100;
+    $gutters = gutters * 100;
+    $gutters = $gutters *2;
+    add-property('width', unit($width - $gutters, '%'))
+
+offset-span(width, side)
+    $width = width * 100;
+    
+    if side is 'left'
+        add-property('margin-left', unit($width, '%'))
+    else 
+        add-property('margin-right', unit($width, '%'))  
+
+column(span, gutters = options.gutters, offset = 0, pull = 0, wrap = null, float = left, overflow = hidden)
+    $column(wrap, float, overflow)
+    column-span(span)
+    
+    if gutters
+        add-gutters(gutters) 
+        
+    if offset isnt 0
+        offset-span(offset, 'left')
+    
+    if pull isnt 0 
+        offset-span(pull, 'right')
+
+square-block(span, gutters = 0)
+    column-span(span)
+    add-padding(span)
+    float: left
+    position: relative
+    .inner
+        make-bounds(gutters)  
+        position: absolute
+    
+row(gutters = options.gutters, cancel-margin = false)
+    $nested  = false
+    $nested  = true if gutters
+    $margins = 'margin-left' 'margin-right'
+    
+    unless cancel-margin
+        for $margin, i in $margins 
+            add-property($margin, unit((gutters / 2) * -1, 'px'))
+
+    $row($nested)
+      
+
+    
+
+
+
+
+

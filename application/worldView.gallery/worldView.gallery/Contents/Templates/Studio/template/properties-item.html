@@ -1,0 +1,18 @@
+﻿<div class="field">
+    <span class="star" ng-click="toggleFieldStar(item,field)" ng-class="{active:field.Starred}" tooltip="{{'tooltip.properties.value.star'|i18n}}"></span>    
+    <span   ng-click="showAddWidgetMenu(item.Item,field,$event)" 
+            popup-template="/popup-menu/properties-add-widget.html" placement="left center"
+            on-hide="addWidgetPopupMenu.active=false" show-trigger="click" popup-group="popup-menu">
+        <span class="on-dashboard" ng-class="{active:field.OnDashboard}" tooltip="{{'tooltip.properties.value.widget'|i18n}}"></span>
+    </span>
+    <span class="name" ellipsis-tooltip="{{field.Metadata.Name}}">{{field.Metadata.Name}}</span>            
+    <span class="value" ellipsis-tooltip="{{field.Value | valueFormat}} {{field.FieldUnit.Name | unitFormat}}">
+        <formatted-value value="field.Value" unit="field.FieldUnit.Name"></formatted-value>
+    </span>
+    <span class="style" ng-class="{active:item.StyleInfo.Field == field.Name}" popup-template="/popup-menu/properties-style.html" placement="right center" popup-group="popup-menu" show-delay="250" >
+        <span tooltip="{{'tooltip.properties.value.styling'|i18n}}">
+            <span class="style-palette-box-min" ng-if="item.StyleInfo.Field == field.Name" background-palette="item.StyleInfo.Palette"></span>
+            <span class="add-palette-box-min" ng-if="item.StyleInfo.Field != field.Name"></span>
+        </span>        
+    </span>
+</div>

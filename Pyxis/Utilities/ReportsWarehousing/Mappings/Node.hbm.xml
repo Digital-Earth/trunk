@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+***********************************************************
+Node.hbm.xml (NHibernate Mapping File)
+
+begin      : October 9, 2009
+copyright  : (c) 2009 by the PYXIS innovation inc.
+web        : www.pyxisinnovation.com
+***********************************************************
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  assembly="Pyxis.Utilities.ReportsWarehouse"
+  namespace="Pyxis.Utilities.ReportsWarehouse.Domain">
+<class name="Node">
+  <id name="id">
+    <generator class="increment"/>
+  </id>
+  <property name="Ident"/>
+  <property name="Name"/>
+</class>
+</hibernate-mapping>

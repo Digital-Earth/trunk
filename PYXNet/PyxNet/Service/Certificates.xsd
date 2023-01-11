@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Certificates" targetNamespace="http://tempuri.org/Certificates.xsd" xmlns:mstns="http://tempuri.org/Certificates.xsd" xmlns="http://tempuri.org/Certificates.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Certificates" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Certificates" msprop:Generator_DataSetName="Certificates" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Certificate" msprop:Generator_UserTableName="Certificate" msprop:Generator_RowDeletedName="CertificateRowDeleted" msprop:Generator_RowChangedName="CertificateRowChanged" msprop:Generator_RowClassName="CertificateRow" msprop:Generator_RowChangingName="CertificateRowChanging" msprop:Generator_RowEvArgName="CertificateRowChangeEvent" msprop:Generator_RowEvHandlerName="CertificateRowChangeEventHandler" msprop:Generator_TableClassName="CertificateDataTable" msprop:Generator_TableVarName="tableCertificate" msprop:Generator_RowDeletingName="CertificateRowDeleting" msprop:Generator_TablePropName="Certificate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:string" />
+              <xs:element name="MessageData" msprop:Generator_UserColumnName="MessageData" msprop:Generator_ColumnPropNameInRow="MessageData" msprop:Generator_ColumnVarNameInTable="columnMessageData" msprop:Generator_ColumnPropNameInTable="MessageDataColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Certificate" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

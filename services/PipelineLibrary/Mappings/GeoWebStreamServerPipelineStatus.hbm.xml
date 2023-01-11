@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="PipelineLibrary"
+                   namespace="Pyxis.Services.PipelineLibrary.Domain">
+  <class name="GeoWebStreamServerPipelineStatus">
+    <id name="Id" column="Id">
+      <generator class="increment" />
+    </id>
+    <property name="PipelineDefinition"/>
+    <property name="PipelineId"/>
+    <property name="IsImported"/>
+    <property name="IsDownloaded"/>
+    <property name="IsPublished"/>
+    <property name="IsProcessed"/>
+  </class>
+</hibernate-mapping>

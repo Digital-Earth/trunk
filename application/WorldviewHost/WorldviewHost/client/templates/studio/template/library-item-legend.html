@@ -1,0 +1,123 @@
+﻿<div class="legend-item" ng-if="item.Style.Fill || item.Style.Icon || item.Style.Line">
+    <!-- check if there is anything to display -->
+    <div>
+        <div class="legend-item-header">
+            <!-- is that a palette based styling -->
+            <span ng-if="item.Style.Icon.Palette || item.Style.Fill.Palette">
+                <span popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click">
+                    <span class="legend-step-box" background-palette="item.Style.Icon.Palette || item.Style.Fill.Palette" ng-style="{background:item.Style.Icon.Color || item.Style.Fill.Color}"
+                        tooltip="{{'tooltip.legend.geosource.styling'|i18n}}">
+                        <img ng-src="{{item.Style.Icon.IconDataUrl}}" style="position: absolute; left: 0px; top: 0px; width: 14px; height: 14px;" ng-if="item.Style.Icon.IconDataUrl" />
+                    </span>
+            </span>
+            <i ng-if="!item.Legend.Expanded" class="expand-button expand" ng-click="item.Legend = { Expanded: true }" tooltip="{{'tooltip.legend.geosource.expand'|i18n}}"></i>
+            <i ng-if="item.Legend.Expanded" class="expand-button down" ng-click="item.Legend = { Expanded: false }" tooltip="{{'tooltip.legend.geosource.expand'|i18n}}"></i>
+            </span>
+            <!-- solid fill color not icon -->
+            <span ng-if="item.Style.Fill.Style == 'SolidColor' && item.Style.Fill.Color && !item.Style.Icon.IconDataUrl">
+                <span popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click">
+                    <span class="legend-step-box" ng-style="{'background-color':item.Style.Fill.Color}" tooltip="{{'tooltip.legend.geosource.styling'|i18n}}"></span>
+            </span>
+            </span>
+            <!-- solid line color not icon -->
+            <span ng-if="item.Style.Line.Style == 'SolidColor' && !item.Style.Fill && !item.Style.Icon.IconDataUrl">
+                <span popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click">
+                    <span class="legend-step-box" ng-style="{'border-color':item.Style.Line.Color,'border-style':'solid','border-width':'2px'}" tooltip="{{'tooltip.legend.geosource.styling'|i18n}}"></span>
+            </span>
+            </span>
+            <!-- solid color icon -->
+            <span ng-if="item.Style.Icon.Style == 'SolidColor' && item.Style.Icon.IconDataUrl">
+                <span popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click">
+                    <span class="legend-step-box image" background-image-blend="item.Style.Icon.IconDataUrl" background-image-color="item.Style.Icon.Color" tooltip="{{'tooltip.legend.geosource.styling'|i18n}}"></span>
+            </span>
+            </span>
+            <span class="item-title" ellipsis-tooltip="{{item.Metadata.Name}}"><span class="text">{{item.Metadata.Name}}</span></span>
+        </div>
+        <div ng-if="item.Legend.Expanded && !editModel.editing && editModel.editable" class="legend-edit-button" ng-click="editModel.startEditing()" i18n="Edit"></div>
+        <!-- legend expanded mode -->
+        <div class="legend-item-content" ng-if="item.Legend.Expanded && !editModel.editing">
+            <!-- full height legend -->
+            <div class="legend-gradient" background-palette="item.Style.Icon.Palette || item.Style.Fill.Palette" direction="top"></div>
+            <!-- warning about legend that is text based but look like numeric one -->
+            <div ng-if="numericAsText" tooltip="{{'tooltip.legend.numeric-as-text'|i18n}}">
+                <i class="fa fa-warning"></i>
+                <span class="text" i18n="Alphabetical ordering"></span>
+            </div>
+            <!-- rendering of the legend steps based on fill -->
+            <div ng-repeat="step in item.Style.Fill.Palette.Steps" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 90%" ellipsis-tooltip="{{step.Value}}">
+                <span popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click">
+                    <span class="legend-step-box solid" ng-style="{'background-color':step.Color}" ng-class="{'is-transparent': step.Color == 'rgba(0,0,0,0.0)' || step.Color == 'rgba(0,0,0,0.00)'}" tooltip="{{'tooltip.legend.geosource.value.styling'|i18n}}"></span>
+                </span>
+                <span style="white-space: nowrap;">
+                    <formatted-value value="step.Value" unit="getFieldUnit(item,item.Style.Fill.PaletteExpression)" max-length="prefixLength"></formatted-value>
+                </span>
+            </div>
+            <!-- rendering of the legend steps based on icon -->
+            <div ng-repeat="step in item.Style.Icon.Palette.Steps">
+                <span popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click">
+                    <span class="legend-step-box image" background-image-blend="item.Style.Icon.IconDataUrl" background-image-color="step.Color" tooltip="{{'tooltip.legend.geosource.value.styling'|i18n}}"></span>
+                </span>
+                <formatted-value value="step.Value" unit="getFieldUnit(item,item.Style.Icon.PaletteExpression)" max-length="prefixLength"></formatted-value>
+            </div>
+        </div>
+        <!-- Start editable Legend items -->
+        <div class="legend-item-content is-editable" ng-if="item.Legend.Expanded && editModel.editable && editModel.editing">
+            <div ng-if="editModel.valueType === 'Number'">
+                <div class='legend-editing-buttons'>
+                    <div class="legend-save-button" ng-click="editModel.commitEditing(item.Style.Icon.Palette || item.Style.Fill.Palette)" i18n="Save" pyx-track="save-palette-{{editModel.valueType}}"></div>
+                    <div class="legend-cancel-button" ng-click="editModel.cancelEditing()" i18n="Cancel"></div>
+                    <div class="legend-cancel-button" ng-click="editModel.autoStyle(item.Style.Icon.Palette || item.Style.Fill.Palette)" tooltip="{{'tooltip.gradient.autoStyle'|i18n}}"><i class="fa fa-magic"></i>
+                    </div>
+
+                    <label ng-if="editModel.displayElevationControls" class="with-checkbox" tooltip="{{'tooltip.gradient.showAsElevation'|i18n}}">
+                        <input type="checkbox" ng-checked="item.Style.ShowAsElevation" ng-click="editModel.toggleShowAsElevation()">
+                        <span i18n="Elevation" ng-class="!item.Style.ShowAsElevation ? 'not-checked' : ''"></span>
+                    </label>
+                </div>
+                <div ng-if="editModel.autoStyling" class='legend-editing-buttons'>
+                    <div class="loading-progress-icon"></div>
+                    <span i18n="Auto styling..."></span>
+                </div>
+                <!-- Start - Gradient Designer -->
+                <gradient-designer class="gradient-designer mode-legend" designer-item="item" color-palette="item.Style.Icon.Palette || item.Style.Fill.Palette" designer-modifier="styleModifier" edit-interface="editModel"></gradient-designer>
+                <!-- End - Gradient Designer -->
+
+                <!-- Start - Copy and Paste -->
+                <div class='legend-copy-paste-buttons' ng-if="copyAndPaste.enable">
+                    <div class="legend-cancel-button copy-button" ng-click="copyAndPaste.copyFrom(item)" pyx-track="style-gradient-copy">Copy</div>
+
+                    <a href="" ng-if="copyAndPaste.sourceMapItem" class="legend-cancel-button" ng-click="copyAndPaste.pasteTo(item)" pyx-track="style-gradient-paste">Paste</a>
+                    <a href="" ng-if="copyAndPaste.sourceMapItem" class="legend-cancel-button" ng-click="copyAndPaste.pasteAll()" pyx-track="style-gradient-pasteall">Paste All</a>
+                    <div ng-if="!copyAndPaste.sourceMapItem" class="legend-cancel-button" style="opacity: 0.4">Paste</div>
+                </div>
+                <!-- End - Copy and Paste -->
+
+            </div>
+            <div ng-if="editModel.valueType === 'String'">
+                <div class='legend-editing-buttons'>
+                    <div class="legend-save-button" ng-click="editModel.commitEditing(editModel.palette)" i18n="Save" pyx-track="save-palette-{{editModel.valueType}}"></div>
+                    <div class="legend-cancel-button" ng-click="editModel.cancelEditing()" i18n="Cancel"></div>
+                </div>
+                <div class='legend-item-content-body'>
+                    <div class="legend-gradient" background-palette="editModel.palette" direction="top"></div>
+                    <!-- warning about legend that is text based but look like numeric one -->
+                    <div ng-if="numericAsText" tooltip="{{'tooltip.legend.numeric-as-text'|i18n}}">
+                        <i class="fa fa-warning"></i>
+                        <span class="text" i18n="Alphabetical ordering"></span>
+                    </div>
+                    <!-- rendering of the legend steps based on fill -->
+                    <div ng-repeat="step in editModel.palette.Steps" style="display: block; width: 100%; padding-left: 20px;" ellipsis-tooltip="{{step.Value}}">
+                        <color-picker color="step.Color"></color-picker>
+                        <input class="legend-flat-input" type="text" ng-model="step.Value" elastic-input ng-blur="editModel.verify()" />
+                        <i class="fa fa-times" ng-click="editModel.removeStep(step,$index)"></i>
+                    </div>
+                </div>
+                <div class="legend-item-add-step">
+                    <i class="fa fa-plus" ng-click="editModel.addStep()"></i>
+                    <input class="legend-flat-input" type="text" ng-model="editModel.newStepValue" elastic-input elastic-input-minwidth="40px" ng-enter="editModel.addStep()" ng-esc="editModel.newStepValue = ''" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

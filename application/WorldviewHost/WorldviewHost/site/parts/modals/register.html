@@ -1,0 +1,84 @@
+ <div class="modal__content" ng-controller="RegisterFormController">
+    <a class="modal__content__close" href="" ng-click="show.modal = ''"><span class="nc-icon-outline ui-1_simple-remove"></span></a>
+    <div class="modal__body" resize resize-set="height" resize-if="greater-window-height">
+        <div class="modal__header">
+            <h2 class="section-title">Register</h2>
+            <a class="link link--normal hide-on-tablet hide-on-mobile" href="" ng-click="show.modal = 'sign-in'; form.reset()">Have an account? Sign in</a>
+        </div>
+        <div ng-if="!social" class="register-social">
+            <span class="register__lead">with social media:</span>
+            <div class="register__services">
+                <a class="register__service" href=""  ng-click="socialSignIn('Facebook'); gaEvent('signin modal', 'social auth', 'Facebook');">
+                    <i class="nc-icon-glyph socials-1_logo-facebook"></i>
+                </a>
+                <a class="register__service" href=""  ng-click="socialSignIn('LinkedIn'); gaEvent('signin modal', 'social auth', 'LinkedIn');">
+                    <i class="nc-icon-glyph socials-1_logo-linkedin"></i>
+                </a>
+                <a class="register__service" href=""  ng-click="socialSignIn('Google'); gaEvent('signin modal', 'social auth', 'Google');">
+                    <i class="nc-icon-glyph socials-1_logo-google-plus"></i>
+                </a>
+            </div>
+        </div>
+        <span ng-if="!social" class="or">OR</span>
+        <div ng-if="!social" class="horizontal-rule"></div>
+        <form class="register__form" name="registerForm" validation-schema schema="Register" ng-keypress="$event.keyCode == 13 && register()">
+            <div class="form-panel">
+                <div ng-if="!social" class="form-panel__split">
+                    <label class="label-small">First Name</label>
+                    <input class="input input--rounded" type="text"  name="firstName" ng-model="signUpForm.FirstName"/>
+                </div>
+                <div ng-if="!social" class="form-panel__split">
+                    <label class="label-small">Last Name</label>
+                    <input class="input input--rounded" type="text"  name="lastName" ng-model="signUpForm.LastName"/>
+                </div>
+            </div>
+            <div ng-if="!social" class="form-panel">
+                <div class="form-panel__inner">
+                    <label class="label-small">Email</label>
+                    <input class="input input--rounded" type="email"  name="email" ng-model="signUpForm.Email"/>
+                </div>
+            </div>
+            <div ng-if="!social" class="form-panel">
+                <div class="form-panel__split">
+                    <label class="label-small">Password</label>
+                    <input class="input input--rounded" type="password" name="password" ng-model="signUpForm.Password"/>
+            </div>
+                <div class="form-panel__split">
+                    <label class="label-small">Confirm Password</label>
+                    <input class="input input--rounded" type="password" name="confirmPassword" ng-model="signUpForm.ConfirmPassword"/>
+                </div>
+            </div>
+            <div class="form-panel panel--gallery-name">
+                <div class="form-panel__inner">
+                    <label class="label-small">Username</label>
+                    <input class="input input--rounded" type="text" name="galleryName" ng-model="signUpForm.GalleryName" ng-enter="register()" ng-pattern="/^[a-zA-Z0-9]*$/" remote-validator="checkGalleryName($value)" delay="1000" />
+                    <span class="label-small label--bottom">{{galleryUrl}}/{{registerForm.galleryName.$valid ? signUpForm.GalleryName : 'yourUserName'}}</span>
+                </div>
+            </div>
+            <div class="form__footer">
+                <div class="form-info">
+                    <p>
+                    By registering, you agree to our <a class="link link--normal" href="/info/terms" target="_blank">Terms of Service</a> and <a class="link link--normal" href="/info/privacy" target="_blank">Privacy Policy</a>.</p>
+                    <label class="label-small label--bottom"><input type="checkbox" ng-model="signUpForm.PromotionConsent" checked="no" />Send me WorldView&trade; newsletters.</label>
+                </div>
+                <div class="form-sumbit">
+                    <button class="btn btn--action btn--rounded btn--small" validation-submit="registerForm" ng-click="register()" ng-disabled="submitting" ng-class="{'is-submitting': submitting}">
+                        <ng-switch on="submitting">
+                          <span ng-switch-when="false">Register</span>
+                            <span class="btn__submitting" ng-switch-when="true">Verifying info</span>
+                            <svg ng-switch-when="true" class="nc-icon outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="16px" viewBox="0 0 48 48">
+                            <g transform="translate(0, 0)">
+                            <circle class="nc-dots-5-2" data-color="color-2" fill="#000000" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-miterlimit="10" cx="24" cy="25" r="4" stroke-linejoin="miter" transform="translate(0 6.104149999446236)"></circle>
+                            <circle class="nc-dots-5-1" fill="#000000" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-miterlimit="10" cx="6" cy="25" r="4" stroke-linejoin="miter" transform="translate(0 7.895850000553764)"></circle>
+                            <circle class="nc-dots-5-3" fill="#000000" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-miterlimit="10" cx="42" cy="25" r="4" stroke-linejoin="miter" transform="translate(0 4.104149999446236)"></circle>
+                            </g>
+                            <script transform="translate(0, 0)">function dotsFiveStep(t){startDots5||(startDots5=t);var e=t-startDots5,n=Math.min(e/40,23);930&gt;e||(startDots5+=930);if(circleDots5[0][0]){window.requestAnimationFrame(dotsFiveStep);var a=[];for(j = 0;  circleDots5Number &gt; j ; j++) {for(i=0;3&gt;i;i++){a[i]=Math.max(n-2*i,0);if(a[i]&gt;8)(a[i]=16-a[i]);a[i]=Math.max(a[i],0),circleDots5[i][j].setAttribute("transform","translate(0 "+a[i]+")")}}}}!function(){var t=0;window.requestAnimationFrame||(window.requestAnimationFrame=function(e){var i=(new Date).getTime(),n=Math.max(0,16-(i-t)),a=window.setTimeout(function(){e(i+n)},n);return t=i+n,a})}();var circleDots5=[],startDots5=null;circleDots5[0]=document.getElementsByClassName("nc-dots-5-1"),circleDots5[1]=document.getElementsByClassName("nc-dots-5-2"),circleDots5[2]=document.getElementsByClassName("nc-dots-5-3"),circleDots5Number = circleDots5[0].length,window.requestAnimationFrame(dotsFiveStep);</script>
+                            </svg>
+                         
+                        </ng-switch>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

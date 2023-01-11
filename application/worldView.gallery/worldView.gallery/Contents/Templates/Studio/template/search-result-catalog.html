@@ -1,0 +1,132 @@
+﻿<!-- 1. Unexpanded Catalog shown among data sources of the front Catalog (looks like a DataSet) -->
+<div ng-if="isSubCatalog && !resource.expanded" class="data-set-background">
+    <div class="data-set-summary">
+        <!-- Catalog metadata-->
+        <div class="metadata">
+            <!-- Title-->
+            <div class="title">
+                <ng-switch on="resource.DataType">
+                    <div ng-switch-when="Local">
+                        <!-- Note: cut down the full path for local catalogs -->
+                        {{resource.Metadata.Name|editFilePath:0}}
+                    </div>
+                    <div ng-switch-default>
+                        {{resource.Metadata.Name}}
+                    </div>
+                </ng-switch>
+            </div>
+            <!-- Uri -->
+            <!-- Note: showing the URI for sub-catalogs (a short name is present as the title already) -->
+            <div class="description">{{resource.Uri}}</div>
+            <!-- Description-->
+            <div ng-if="resource.Metadata.Description" class="description" ng-click="showAll=!showAll" ng-class="{clamp: !showAll}">
+                <div class="content">
+                    {{resource.Metadata.Description}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-set-footer">
+        <a href="" ng-click="expandSubCatalog()">Expand</a>
+    </div>
+</div>
+
+<!-- 2. The level-up Catalog metadata and it's sub-catalog being expanded-->
+<div ng-if="resource.expandedSubCatalog" class="complex-result">
+    <!-- Metadata of the parent catalog -->
+    <div class="parent-catalog">
+        <span ng-if="!resource.expandedSubCatalog.expandedSubCatalog" class="fa fa-angle-left parent-back"
+             ng-click="rollUpSubCatalog()" tooltip="{{'tooltip.import.catalog.back'|i18n}}">
+            <span style="padding-left: 4px" i18n="Back"></span>
+        </span>
+       <!--  <span class="parent-header">{{resource.Metadata.Name}}</span> -->
+    </div>
+    <!-- The expanded sub-catalog -->
+    <div class="complex-result-content">
+        <div class="expanded-catalog">
+            <search-result-resource resource="resource.expandedSubCatalog" current-map="currentMap"
+                 parent-selection="selectedChildren" parent-catalog="resource" action="invoke($action,$resource)"></search-result-resource>
+        </div>
+    </div>
+</div>
+
+<!-- 3. Normal view of a Catalog with DataSets and unexpanded sub-catalogs -->
+<div ng-if="!resource.expandedSubCatalog && (!isSubCatalog || resource.expanded)" class="complex-result">
+    <!-- Header -->
+    <div class="resource-result resource-catalog complex-result-header">
+        <!-- My Computer -->
+        <div ng-if="resource.DataType==='Local'" class="title-header" i18n="My Computer"></div>
+        <!-- Other kinds of resources -->
+        <div ng-if="resource.DataType!=='Local'" class="item-header" fade-in-background="image"></div>
+    </div>
+    <div class="catalog-summary">
+        <div class="catalog-header">
+            <!-- Title -->
+            <div ng-if="resource.DataType==='Local'" class="title" tooltip="{{resource.Uri}}">
+                {{resource.Metadata.Name}}
+            </div>
+        </div>
+        <!-- Catalog load in progress -->
+        <div ng-if="dataStatus==='Loading'">
+            <!-- TODO: replace the loading-progress-icon with animation -->
+            <i class="loading-progress-icon" tooltip="{{'tooltip.import.catalog.loading'|i18n}}"></i>
+        </div>
+        <!-- Catalog failed to load -->
+        <div ng-if="dataStatus==='Failed'" class="catalog-actions">
+            <!-- The bookmark -->
+            <!-- disabling bookmark ability for release -->
+            <!--<i ng-if="resource.Uri" tooltip="{{'tooltip.import.myconnections.add'|i18n}}"><img ng-if="!indexed" class="index-bookmark" src="/Contents/Images/Studio/Icons/icon_bookmark_off.png" ng-click="addToIndex()"/></i>-->
+            <!--<i ng-if="resource.Uri" tooltip="{{'tooltip.import.myconnections.remove'|i18n}}"><img ng-if="indexed" class="index-bookmark" src="/Contents/Images/Studio/Icons/icon_bookmark_on.png" ng-click="removeFromIndex()"/></i>-->
+            <!-- A failure message -->
+            <i class="catalog-description">{{lastError}}</i>
+            <!-- The refresh button -->
+            <i ng-if="resource.Uri" tooltip="{{'tooltip.import.reload'|i18n}}"><img class="reload" src="/Contents/Images/Studio/Icons/icon_refresh.png" ng-click="reload()"/></i>
+        </div>
+        <div ng-if="!dataStatus || dataStatus==='Ready'">
+            <!-- Buttons -->
+            <div class="catalog-actions">
+                <!-- The bookmark icon to save or unsave a catalog -->
+                <!-- Note: for now, just disable the bookmark for catalogs, that don't have URI (e.g., Online OGC Catalog) -->
+                <!-- disabling bookmark ability for release -->
+                <!-- Also, disallow bookmarking of catalogs that contain more than 500 items -->
+                <!--<div ng-if="resource.Uri && subResources && subResources.length <= 500">
+                    <i tooltip="{{'tooltip.import.myconnections.add'|i18n}}"><img ng-if="!indexed" class="index-bookmark" src="/Contents/Images/Studio/Icons/icon_bookmark_off.png" ng-click="addToIndex()"/></i>
+                    <i tooltip="{{'tooltip.import.myconnections.remove'|i18n}}"><img ng-if="indexed" class="index-bookmark" src="/Contents/Images/Studio/Icons/icon_bookmark_on.png" ng-click="removeFromIndex()"/></i>
+                </div>-->
+                <!-- 'Import All', 'Import Selected' or 'Importing...' (inactive) button -->
+                <button ng-if="!selectedChildren.length" class="gray action-button" ng-click="commitImport()" ng-disabled="!resource.DataSets.length" tooltip="{{'tooltip.import.all'|i18n}}">{{'Import All'|i18n}} ({{resource.DataSets.length}})</button>
+                <button ng-if="selectedChildren.length && !resource.importing" class="gray action-button" ng-click="importSelected()" tooltip="{{'tooltip.import.selected'|i18n}}">{{'Import Selected'|i18n}} ({{selectedChildren.length}})</button>
+                <button ng-if="selectedChildren.length && resource.importing" class="gray action-button">{{'Importing...'|i18n}} ({{selectedChildren.length}})</button>
+                <!-- The refresh button -->
+                <!-- Note: for now, just disable the refresh button for catalogs, that don't have URI (e.g., Online OGC Catalog) -->
+                <i ng-if="resource.Uri" tooltip="{{'tooltip.import.reload'|i18n}}"><img class="reload" src="/Contents/Images/Studio/Icons/icon_refresh.png" ng-click="reload()"/></i>
+            </div>
+            <!-- Description -->
+            <div ng-if="resource.Metadata.Description" class="catalog-description">
+                {{resource.Metadata.Description}}
+            </div>
+            <!-- Tags -->
+            <div ng-if="resource.Metadata.Tags && resource.Metadata.Tags.length" class="catalog-tags">
+                <div class="item-type">
+                    <card-type-icon type="resource.Type"></card-type-icon>
+                    <span class="tags">
+                    <span ng-repeat="tag in resource.Metadata.Tags">{{tag}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contained items -->
+    <div class="complex-result-content">
+        <scrollbar class="results-scroll">
+            <div class="sub-items" ng-init="resource.resultLimit=50">
+                <div class="item" ng-repeat="subResource in subResources | limitTo:resource.resultLimit || 50">
+                    <search-result-resource resource="subResource" current-map="currentMap" parent-selection="selectedChildren" parent-catalog="resource" action="invoke($action,$resource)"></search-result-resource>
+                </div>
+            </div>
+            <!-- 'Show More' and 'Show Less' buttons-->
+            <div ng-if="resource.resultLimit < subResources.length" class="show-more-less" ng-click="resource.resultLimit=resource.resultLimit+50" i18n="Show More"/>
+            <div ng-if="subResources.length && subResources.length > 50 && resource.resultLimit > subResources.length" class="show-more-less" ng-click="resource.resultLimit=50" i18n="Show Less"/>
+        </scrollbar>
+    </div>
+</div>

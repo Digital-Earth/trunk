@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68EB803C-B5E0-42B7-A8D9-CE98FB93691A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PyxNet.Pyxis.Test</RootNamespace>
+    <AssemblyName>PyxNet.Pyxis.Test</AssemblyName>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\application\worldview\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>..\..\third_party\NUnit-2.4.3-net-2.0\bin\nunit-x86.exe</StartProgram>
+    <StartArguments>PyxNet.Pyxis.Test.dll</StartArguments>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>..\..\third_party\NUnit-2.4.3-net-2.0\bin\nunit-x86.exe</StartProgram>
+    <StartArguments>PyxNet.Pyxis.Test.dll</StartArguments>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Profile|AnyCPU' ">
+    <OutputPath>bin\Profile\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PyxNet.Pyxis.Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\application\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Publishing\Pyxis.Publishing.csproj">
+      <Project>{5ba06255-9024-4a7f-8253-2a60b6ba194e}</Project>
+      <Name>Pyxis.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Utilities.Test\Pyxis.Utilities.Test.csproj">
+      <Project>{cc557ed0-6200-46ce-8477-4c0ef60226b8}</Project>
+      <Name>Pyxis.Utilities.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92c4cc38-0161-457d-a0f6-7808ff4cd0f5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet.DLM\PyxNet.DLM.csproj">
+      <Project>{C302E222-29A0-4A95-8E65-740FB72E6795}</Project>
+      <Name>PyxNet.DLM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet.Pyxis\PyxNet.Pyxis.csproj">
+      <Project>{C30AE009-F214-42F2-AB9A-DD3D2CA7909F}</Project>
+      <Name>PyxNet.Pyxis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Utilities\Pyxis.Utilities.csproj">
+      <Project>{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet.Test\PyxNet.Test.csproj">
+      <Project>{2C95DBA2-A590-4240-A9F8-6B645A59BC9C}</Project>
+      <Name>PyxNet.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet\PyxNet.csproj">
+      <Project>{39EFFC79-2E12-4861-8DC9-7E59B6D2B9D1}</Project>
+      <Name>PyxNet %28PyxNet\PyxNet%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\third_party\xerces-c-3.1.1\bin\xerces-c_3_1.dll">
+      <Link>xerces-c_3_1.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\third_party\xerces-c-3.1.1\bin\xerces-c_3_1D.dll">
+      <Link>xerces-c_3_1D.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\third_party\zlib\zlib_pyxis.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\third_party\zlib\zlib_pyxisd.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /D /Y "$(SolutionDir)$(ConfigurationName)\pyxlib*.*" "$(TargetDir)*.*"
+if not exist "$(TargetDir)plugins" md "$(TargetDir)plugins"
+rem xcopy /D /Y /S "$(SolutionDir)$(ConfigurationName)\plugins\*.*" "$(TargetDir)plugins\*.*"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

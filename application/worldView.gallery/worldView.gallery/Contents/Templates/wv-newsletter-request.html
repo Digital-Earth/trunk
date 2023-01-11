@@ -1,0 +1,102 @@
+﻿<div class="beta-background">
+    <div ng-switch on="systemStatus">
+        <div ng-switch-when="ok">
+        </div>
+        <div  ng-switch-default class="beta-signbox">
+            {{systemStatusMessage}}            
+        </div>
+    </div>
+</div>
+
+<div style="height:48px"></div>
+<div class="center-content">
+    <div ng-if="!newsSubmitted">
+	    <h1 class="title" name="join" id="join">Subscribe to the E-Newsletter</h1>
+	    <p class="description">
+		    To be informed on the latest WorldView news, please fill out the following details to subscribe.
+	    </p>
+	    <div class="betaform">
+		    <form id="request-beta-form" name="signup">
+                <div id="step1" class="form-step active" ng-class="{ valid: signup.firstname.$valid && signup.lastname.$valid && signup.email.$valid && signup.email2.$valid }">
+                    <div class="title"><span class="step">1</span>We need to be able to contact you</div>
+                    <div class="content">
+
+                        <div class="form-group" style="position: relative">
+                            <span ng-show="!signup.firstname.$error.required" ng-switch on="signup.firstname.$error.required" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                <i ng-switch-when="false" class="fa fa-check fa-sm" style="color: #0c0;"></i>
+                                <i ng-switch-when="true" class="fa fa-times fa-sm" style="color: #c00;"></i>
+                            </span>
+                            <input type="text" class="form-control" id="sign-up-first-name" name="firstname" placeholder="First Name" required="" ng-model="newsForm.FirstName">
+                        </div>
+
+                        <div class="form-group" style="position: relative">
+                            <span ng-show="!signup.lastname.$error.required" ng-switch on="signup.lastname.$error.required" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                <i ng-switch-when="false" class="fa fa-check fa-sm" style="color: #0c0;"></i>
+                                <i ng-switch-when="true" class="fa fa-times fa-sm" style="color: #c00;"></i>
+                            </span>
+                            <input type="text" class="form-control" id="sign-up-last-name" name="lastname" placeholder="Last Name" required="" ng-model="newsForm.LastName">
+                        </div>
+
+                        <div class="form-group" style="position: relative">
+                            <span ng-show="!signup.email.$error.required" ng-switch on="signup.email.$error.email" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                <i ng-switch-when="false" class="fa fa-check fa-sm" style="color: #0c0;"></i>
+                                <i ng-switch-when="true" class="fa fa-times fa-sm" style="color: #c00;"></i>
+                            </span>
+                            <input type="email" class="form-control" id="sign-up-email" name="email" placeholder="Email" required="" ng-model="newsForm.Email">
+                        </div>
+
+                        <div class="form-group" style="position: relative">
+                            <span ng-show="!signup.email2.$error.required" ng-switch on="signup.email2.$error.match" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                <i ng-switch-when="false" class="fa fa-check fa-sm" style="color: #0c0;"></i>
+                                <i ng-switch-when="true" class="fa fa-times fa-sm" style="color: #c00;"></i>
+                            </span>
+                            <input type="email" class="form-control" id="sign-up-email2" name="email2" placeholder="Confirm Email" required="" ng-model="newsForm.Email2" match="newsForm.Email">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-step" ng-class="{ active: signup.firstname.$valid && signup.lastname.$valid && signup.email.$valid && signup.email2.$valid, valid: signup.hearabout.$valid }">
+                    <div class="title"><span class="step">2</span>How did you hear about us?</div>
+                    <div class="content">
+
+                        <div class="form-group">
+                             <select name="hearabout" id="sign-up-hearabout" class="form-control" placeholder="How did you hear about us?" required="" ng-model="newsForm.HearAbout" ng-class="{noValue:!newsForm.HearAbout}">
+                                <option value="">How did you hear about us?</option>
+                                <option>Search</option>
+                                <option>Social Media</option>
+                                <option>Canadian Geographic</option>
+                                <option>Geoliteracy project</option>
+                                <option>Web page</option>
+                                <option>Colleague</option>
+                                <option>Friend</option>
+                                <option>School</option>
+                                <option>Conference/Event</option>
+                                <option>Publication</option>
+                                <option>News Article</option>
+                                <option>Advertisement</option>
+                                <option>Other</option>
+                            </select>
+                            <input ng-show="newsForm.HearAbout=='Other'" type="text" class="form-control" name="hearaboutother" placeholder="Tell us more" ng-model="newsForm.HearAboutOther">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="demo-error" class="error message">{{newsError}}</div>
+				
+                <div class="form-submit">
+                    <span class="show-on-hover" ng-show="!signup.$valid">Form is not completed</span>
+                    <span ng-show="waiting">Sending request...</span>
+                    <button type="submit" class="big gray" ng-click="submitNewsRequest()" ng-disabled="!signup.$valid || waiting">Subscribe</button>
+                </div>
+		    </form>
+	    </div>
+    </div>
+     <div ng-if="newsSubmitted">
+        <h1 class="title" name="join" id="H1">Be Informed</h1>
+	    <p class="description">
+		    Thank you for subscribing to the WorldView e-newsletter.
+	    </p>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿<div class="center-content">
+    <h1 class="title">Knock knock who's there?</h1>
+    <div ng-if="user">
+        <p class="description">
+		    The page you are asking for is protected. It seems that you don't have the right permissions to view it.
+	    </p>        
+    </div>
+
+    <div ng-if="!user">
+        <p class="description">
+		    The page you are asking for is protected. You need to identify yourself in order to view it.
+	    </p>
+        <div style="margin-top: 48px;text-align: center">
+            <button class="gray big" ng-click="enterSignInMode()">Sign In</button>
+            or
+            <button class="gray big" ng-click="enterSignUpMode()">Sign Up</button>
+        </div>	
+    </div>
+    
+</div>

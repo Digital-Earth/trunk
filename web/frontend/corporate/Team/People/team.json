@@ -1,0 +1,197 @@
+{
+"People":[
+		{
+		"Id":"PerryPeterson",
+		"Name":"Perry Peterson",
+		"Title": "President, CEO, and founder of the PYXIS Innovation",
+		"PostNominals" : [ "Dipl. Tech", "B.Eng."],
+		"BoardTitle": "President, CEO, and founder of the PYXIS Innovation",
+		"PictureURL": "pic_perry_peterson.jpg",
+		"Bio":
+			[
+			"Perry Peterson is the President, CEO, and founder of the PYXIS Innovation and creator of the PYXIS <a href=\"http://www.opengeospatial.org/projects/groups/dggsswg\" target=\"_blank\">digital-Earth spatial reference system </a>.  Perry believes in the sacredness of the human journey as a story of growth and discovery.  He also believes our emerging dominance comes with the urgent responsibility to wisely connect our decisions with consequences. Perry is recognized as the passionate driver of a new medium for our collective questions about Earth and its systems.  His ideas for improving stewardship are a result of his diverse experiences as a father, a traveler, a professional engineer, a professor of geomatics, a successful entrepreneur, a software creator, a military pilot, a carpenter, a poet and song writer, a picker of wild blueberries and paddler of canoes. He is the creator of the PYXIS digital-Earth spatial reference system.  His leadership and guidance attracts a diverse team of scientists, mathematicians, engineers, and geographers dedicated to building and supporting this new digital-Earth information medium.  His efforts are recognized by thought leaders within many geospatial focused organizations including: the <a class=\"subtle\" \" target=\"_blank\" href=\"http://www.opengeospatial.org/\">Open Geospatial Consortium</a>; <a class=\"subtle\" \" target=\"_blank\" href=\"https://www.earthobservations.org/index.php\">the International Group on Earth Observations</a>; <a class=\"subtle\" \" target=\"_blank\" href=\"https://www.nga.mil/Pages/Default.aspx\">the National Geospatial-Intelligence Agency</a>; <a class=\"subtle\" \" target=\"_blank\" href=\"https://www.nasa.gov/\">NASA</a>; <a class=\"subtle\" \" target=\"_blank\" href=\"https://www.nrcan.gc.ca/home\">Natural Resources Canada</a>; <a class=\"subtle\" \" target=\"_blank\" href=\"http://www.unep.org/\">the United Nations Environmental Program</a>; <a class=\"subtle\" \" target=\"_blank\" href=\"http://www.gbif.org/\">the Global Biodiversity Information Facility</a> and <a class=\"subtle\" \" target=\"_blank\" href=\"http://www.ga.gov.au/\"> Geoscience Australia.</a>"
+			]
+		},
+		{
+		"Id":"CraigDore",
+		"Name":"Craig Dor&eacute;",
+		"PostNominals" : [ "Dipl. Tech"],
+		"BoardTitle": "Director, Angel Investor",
+		"PictureURL": "pic_craig_dore.jpg",
+		"Bio":
+			[ 
+			"Craig is a founding member of the PYXIS innovation&#8482;. As our Angel Investor, Craig has provided valuable guidance and support since day one. His 'can-do' attitude and prudent decision-making ability has been both a hallmark of his leadership and provided core principles on which our company is built.",
+			"Craig is the president of Coliseum Investments.  He is an entrepreneur, engineering and investor with a long history in the safety sector of the oil and gas industry. His experience with growth and decline, customer relations, and contract management has brought valuable lessons to our governance. He has served on many boards and as the president and CEO of several successful corporations. His passion for innovation drives his support of the ground-breaking PYXIS technology."
+			]
+		},
+		{
+		"Id":"IdanShatz",
+		"Name":"Idan Shatz",
+		"Title":"VP Product Development",
+		"PostNominals": ["B.Sc.", "M.Sc."],
+		"PictureURL": "pic_idan_shatz.jpg",
+		"Bio":
+			[
+			"As the Software Architect for the PYXIS WorldView Platform, Idan's integrity and attention to detail is key to our corporate success. Growing up on a kibbutz, the communal lifestyle gave him insight and gratitude for the world that surrounded him; his passion for technology and his curiosity led him to be a bit like a 'black sheep' technophile. His exceptional capabilities led him to such projects as redesigning the User Interface for <a href=\"http://www.idf.il/english/\" traget=\"_blank\">Israeli Military Intelligence.</a>",
+			"Always seeking new adventures, he relocated to Calgary when his partner accepted a Master's position at the University of Calgary. His graphic design capabilities, with his degree in <a href=\"http://www.technion.ac.il/en/\" traget=\"_blank\">Software Engineering</a>, enabled him to be technically creative, satisfying his desire to developing intelligent solutions in complex environments like the WorldView Platform."
+			]
+		},
+		{
+		"Id":"VanessaPizzinato",
+		"Name":"Vanessa Pizzinato",
+		"Title":"VP Marketing and Communications",
+		"PostNominals": ["Dipl. Industrial Design"],
+		"PictureURL": "pic_vanessa_pizzinato.jpg",
+		"Bio":
+			[
+			"With a desire to weave stories and provide tangible results, Vanessa is responsible for the PYXIS brand and broadening WorldView's collaborators and consumers. She has 20+ years' experience developing internationally award winning brands, websites and integrated marketing platforms that met her clients' vision and mandates. As a graduate from Canada's 'University of Imagination' <a href=\"http://www.ocadu.ca/\" traget=\"_blank\">OCAD</a>, she has a collaborative approach to product development while meeting the demands of the corporate shareholders.",
+			"Her aversion to boredom and thirst for 'different' peppers her experience from the mundane to the fantastic. After ten successful years with her own agency, she was drawn to tell a story that was bigger than her; Vanessa's 'Happy Place' - where challenges and strategies converge - where intrigue and interest flow is found at PYXIS."
+			]
+		},
+		{
+		"Id":"MikeReynolds",
+		"Name":"Mike Reynolds",
+		"Title":"VP Strategic Partnerships",		
+		"PostNominals": ["B.Comm", "CFA"],
+		"BoardTitle": "Director, Strategic Partnerships",
+		"PictureURL": "pic_mike_reynolds.jpg",
+		"Bio":
+			[
+			"Mike dedicates himself to the growth and prosperity of PYXIS by developing strategic business partnerships. He has been involved in several turnaround, merger, acquisition and divestiture mandates applying his business development, corporate finance, and problem solving expertise. His intrinsic understanding of what drives value within companies helps in identifying and crafting strategic relationships for special situation companies. Over the years, he has worked on assignments for <a href=\"https://www.bankofamerica.com/\" target=\"_blank\">Bank of America</a>, <a href=\"http://www.gecapital.ca/home\" target=\"_blank\">GE Capital</a>, and several leading venture capital, private equity, and high net worth financed organizations facing unique growth or value creation challenges.",
+			"Mike's passion is identifying and understand problems and opportunities through in-depth analysis. He is a power user of the WorldView Studio and it is this passion that fuels his belief that the PYXIS product suite is ideal for future decision makers."
+			]
+		},
+		{
+		"Id":"SeanCooney",
+		"Name":"Sean Cooney",
+		"PostNominals" : [ "BA"],
+		"BoardTitle": "Director, Marketing and Sales Strategies",
+		"PictureURL": "pic_sean_cooney.jpg",
+		"Bio":
+			[
+			"Sean brings a unique blend of a global business perspective, North American real estate and GIS implementation experience to our  Board of Directors. As  the former Executive Vice President of Land Research and Acquisitions for one of <a href=\"http://www.walton.com/\" target=\"_blank\">North America's largest real estate investment firms</a>, Sean was instrumental to the  creation and management of  a team of real estate professionals that were charged with the day-to-day research, due diligence and acquisitions of in many of North America's largest and most dynamic cities.  During his tenure,  Sean oversaw the  due diligence and acquisition of approximately 75,000 acres of land with a reported  book value  that exceeds $3 Billion USD. Of particular interest, Sean was involved in the creation and implementation of a GIS system that is widely recognized as the \"gold standard\" for asset management and spatial display in the real estate industry. Moreover, his proven ability to recruit, lead  and retain the \"best in class\" talent to implement a disruptive sales and operations strategy will be critical to our success.",
+			"Sean's passion for advancing technology, operational efficiency and delivering a timely return on investment to shareholders will serve PYXIS well."
+			]
+		},
+		{
+		"Id":"ColleenJohnson",
+		"Name":"Colleen Johnson",
+		"Title":"VP Support Services",
+		"PostNominals": ["Dipl. Tech.", "BA"],
+		"PictureURL": "pic_colleen_johnson.jpg",
+		"Bio":
+			[
+			"Colleen's support crosses all functional areas from Development and Implementation, to Infrastructure, Human Resources, Sales and Business Development. Her unique <a href=\"https://www.concordia.ca/\" target=\"_blank\">blend of degrees</a> in Architectural History and Sculpture, followed by <a href=\"http://www.stlawrencecollege.ca/\" target=\"_blank\">Civil Engineering</a>, developed her skills in analysis, aesthetic and design. Her insightful understanding of people, their personalities, and needs provides contribute to her ability to provide solutions and results.",
+			"As co-founder of PYXIS, she has managed military GeoInt and interoperability testbed projects, international biodiversity projects, and continues to work closely with our R&D, software development and marketing teams.",
+			"She is captivated by PYXIS's technical ability to meet difficult geospatial demands and in awe of the beauty that this provides through WorldView."
+			]
+		},
+		{
+		"Id":"WadeHardman",
+		"Name":"Wade Hardman",
+		"Title":"Creative Director",
+		"PostNominals": [],
+		"PictureURL": "pic_wade_hardman.jpg",
+		"Bio":
+			[
+			"To quote Dieter Rams, 'Good design is as little design as possible.' This encapsulates Wade's desire to translate information and concepts into visually engaging, psychologically appealing design. His overarching philosophy is to create elegant, functional designs that focus on the user. His extensive experience working with clients including <a href=\"http://www.motorola.ca/\" target=\"_blank\">Motorola</a>, <a href=\"http://www.hersheys.com/\" target=\"_blank\">Hershey</a>, <a href=\"http://www.thestar.com/\" target=\"_blank\">Toronto Star</a>, <a href=\"http://www.scjohnson.ca/en/scj_home.aspx\" target=\"_blank\">SC Johnson</a>, <a href=\"http://www.td.com/about-tdbfg/our-business/index.jsp\" target=\"_blank\">TD Canada Trust</a>, <a href=\"http://www.fairmont.com/\" target=\"_blank\">Fairmount</a> and <a href=\"http://www.bmwgroup.ca/en\" target=\"_blank\">BMW</a> provided him with the acumen to solidify the marketing vision while maintaining balance with corporate requirements.",
+			"Wade's interests - in film making, animation and music - have coalesced with his professional skills. His cross-disciplinary approach is uniquely valuable to the PYXIS team. His attention to detail, and his focus on using new technology to serve design goals, makes developing the WorldView platform a welcome challenge."
+			]
+		},
+		{
+		"Id":"LoganRakai",
+		"Name":"Logan Rakai",
+		"Title":"Manager Web Application Infrastructure",
+		"PostNominals": ["B.Sc.", "M.Sc.", "Ph.D."],
+		"PictureURL": "pic_logan_rakai.jpg",
+		"Bio":
+			[
+			"Logan's attention to details, devotion to web development theories, methodologies and practices, and his need for hands-on knowledge are key to his performance. He is the perfect manager for our web infrastructure with its complex requirements of the PYXIS technologies and products.",
+			"A self-proclaimed 'small town' guy, hard work and family values are his foundation. After obtaining his Ph.D. in <a href=\"http://www.ieee-ucalgary.ca/\" target=\"_blank\">Electrical Engineering</a>, specializing in large-scale optimization and automated design, he learned that working within the intimate setting of a smaller organization was better suited to his lifestyle and personality. PYXIS provides him with the challenges and learning opportunities that he craves. He is part of a strong, adaptable, and responsive team focused on a long-term vision that will successfully bring a disruptive technology to the world."
+			]
+		},
+		{
+		"Id":"NaderHamekasi",
+		"Name":"Nader Hamekasi",
+		"Title":"Manager Cloud Infrastructure",
+		"PostNominals": ["B.Sc.", "M.Sc."],
+		"PictureURL": "pic_nader_hamekasi.jpg",
+		"Bio":
+			[
+			"Nader leads PYXIS' technologies, data, services and cloud management. His determination is evident. As a student, he was in the top 5% nationally and accepted to Iran's prestigious <a href=\"http://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents\" target=\"_blank\">National Organization for Development of Exceptional Talents</a> and <a href=\"http://aut.ac.ir/www/aut/main/\" target=\"_blank\">Tehran's Polytechnic University</a>.  The rational methodologies and goal oriented focus of the program aligned with his own approach to problem solving. While working, he was inspired to pursue his <a href=\"http://www.cpsc.ucalgary.ca/\" target=\"_blank\">Master's Degree at the University of Calgary</a> when he attended to a lecture given by Dr. Faramarz Samavati.",
+			"Joining PYXIS was the perfect fit! It combined his passion for order, learning and IT adventures. It is here that he is most comfortable, as it embodies qualities that enable him to express himself and contribute to the happiness of this world."
+			]
+		},
+		{
+		"Id":"RyanTaylor",
+		"Name":"Ryan Taylor",
+		"Title":"Manager Strategic Community Development",
+		"PostNominals": ["Dipl Tech"],
+		"PictureURL": "pic_ryan_taylor.jpg",
+		"Bio":
+			[
+			"Ryan's love for developing processes and strategies that entice and engage individuals in new online technologies suits him perfectly as the strategic development lead for PYXIS. Working closely with key stakeholders, Ryan's detailed research and analysis informs and guides the creation of an online medium to share maps and information to empower both collaborators and decision makers alike.",
+			"His previous position at RIM provided extensive experience in all areas of the software lifecycle: gathering requirements, design, technical writing, business processes, and project management. Earning diplomas in <a href=\"http://www.stlawrencecollege.ca/\" target=\"_blank\">Civil and Software Engineering</a> satisfied both his practical and theoretical curiosity. Working with PYXIS, he strives to ensure its successful growth within the marketplace and is excited to provide a new social sharing platform that will disrupt the GIS marketplace."
+			]
+		},
+		{
+		"Id":"SteveAdam",
+		"Name":"Steve Adam",
+		"PostNominals" : [ "B.Sc.", "M.Sc.", "Ph.D" ],
+		"BoardTitle": "Advisor Geospatial Sciences, Energy Sector and Client Relations",
+		"PictureURL": "pic_steve_adam.jpg",
+		"Bio":
+			[
+				"Steve's unique vision, where businesses 'work smarter not harder', enhances our Advisory Board. As the President of <a href=\"http://www.adamlabs.ca/\" target=\"_blank\">AdamLabs</a>, his greatest strength is helping companies 'cross the chasm' by implementing technological change - also the foundation of PYXIS.",
+				"Steve believes that people are at the heart of any problem - or solution.  As a system based thinker, an entrepreneur, and innovation enthusiast, he strives to distinguish the difference between augmenting human capability through technology and the wisdom and discipline that must remain a human process.  Without these human essentials, all technology systems will fail. He believes that leadership is participatory so his methods focus on being inclusive, collaborative, and customer-focused. WorldView supports these goals by changing how decision makers - individuals and businesses - will quickly and easily get the answers they seek."
+			]
+		},
+		{
+		"Id":"MichaelGoodchild",
+		"Name":"Michael F. Goodchild",
+		"PostNominals" : [ "B.Sc.", "M.Sc.", "Ph.D" ],
+		"BoardTitle": "Advisor Geospatial Sciences, Earth Sciences and Academic Relations",
+		"PictureURL": "pic_michael_goodchild.jpg",
+		"Bio":
+			[
+				"<a href=\"http://en.wikipedia.org/wiki/Michael_Frank_Goodchild\" target=\"_blank\">Mike</a> is the preeminent Geospatial Information Scientist of our time. The father of the Digital Earth and the leader in <a href=\"http://en.wikipedia.org/wiki/Neogeography\" target=\"_blank\">Neogeography</a>, the <a href=\"http://chronicle.com/article/Inventing-the-Science-of/127056/\" target=\"_blank\">crowdsourcing of Volunteered Geographic Information (VGI)</a>. He brings to our Advisory Board a wealth of knowledge and guidance for the emerging discipline of Digital Earth. He is <a href=\"http://www.geog.ucsb.edu/~good/\" target=\"_blank\">Emeritus Professor of Geography</a> at the University of California, Santa Barbara, affiliated in the <a href=\"http://depts.washington.edu/geog/\" target=\"_blank\">Department of Geography at the University of Washington</a>, recipient of four honorary doctorates, an elected member of several national academies of science, editor of many publications, a member of numerous editorial boards, publisher of 15 books and 500 articles, and, in 2007 winner the <a href=\"http://en.wikipedia.org/wiki/Vautrin_Lud_Prize\" target=\"_blank\">Prix Vautrin Lud</a>.",
+				"Mike's research interests' include geographic information science, spatial analysis, and uncertainty in geographic data. It's this passion in the promotion of his research that helps formulate and build the foundation Digital Earth of the future."
+			]
+		},
+		{
+		"Id":"FaramarzSamavati",
+		"Name":"Faramarz Samavati",
+		"PostNominals" : [ "B.Sc.", "Ph.D" ],
+		"BoardTitle": "Advisor Computer Sciences, Graphics and Immersive Environments",
+		"PictureURL": "pic_faramarz_samavati.jpg",
+		"Bio":
+			[
+				"Faramarz is an internationally recognized academic expert on multi resolutions graphics and a Professor of <a href=\"http://pages.cpsc.ucalgary.ca/~samavati/\" target=\"_blank\">Computer Science at the University of Calgary</a>.  His research interests include Computer Graphics, Visualization and Geometric Modeling.  He has published more than 90 papers, one book and filed 3 patents.  Currently, he is an Associate Editor of <a href=\"http://www.sciencedirect.com/science/journal/00978493\" target=\"_blank\">Computer&Graphics</a>(Elsevier's journal) and a Network (principal) Investigator of <a href=\"http://www.grand-nce.ca/\" target=\"_blank\">GRAND NCE</a> (Networks of Centers of Excellence of Canada in Graphics, Animation and New Media). In the past three years, he has received three \"Best Paper\" awards and the <a href=\"http://grand-nce.ca/newsandmedia/news-container/2013/three-grand-researchers-2013-digital-alberta-award-winners\" target=\"_blank\">Digital Alberta Award 2013</a> (best in cross platform for GRSketch system).",
+				"Faramarz's insight on modelling from a computer graphics perspective will guide the PYXIS innovation&#8482; to produce beautiful, seamless user interfaces for our WorldView product suite."
+			]
+		},
+		{
+		"Id":"HerveBuchwalter",
+		"Name":"Herv&eacute; Buchwalter",
+		"PostNominals" : [ "B.Sc.", "MBA" ],
+		"BoardTitle": "Advisor Geospatial Sciences, Education Sector and Client Relation",
+		"PictureURL": "pic_herve_buchwalter.jpg",
+		"Bio":
+			[
+				"Herv&eacute; provides invaluable insight to the PYXIS innovation&#8482; as a member of our Advisory Board. As a specialist in the fields of Earth observation satellites, space earth observation and geo-information, he has been the Chairman and Chief Executive Officer of SPOT Image, one of the first public companies operating Earth Observation satellites transitioned into private activities including private funding of a fleet of commercial satellites (now a subsidiary of <a href=\"http://airbusdefenceandspace.com/\" target=\"_blank\">Airbus Defence and Space</a>).",
+				"Herv&eacute; is well connected with the international community producing Earth observation content. His focus is to develop a clear story, strategy and sales capacity that fits with Earth Observation content community's own objectives and priorities. His passion and experience with the geospatial data distribution will guide the successful implementation of our WorldView Gallery and WorldView Channel products."
+			]
+		},
+		{
+		"Id":"LynnMoorman",
+		"Name":"Lynn Moorman",
+		"PostNominals" : [ "FRCGS", "Ph.D" ],
+		"BoardTitle": "Advisor Geospatial Sciences, Education Sector",
+		"PictureURL": "pic_lynn_moorman.jpg",
+		"Bio":
+			[
+"Lynn is a researcher and educator focussed on geospatial literacy and the use of Digital Earth in the classroom. She teaches Spatial Innovation, Advanced Spatial Analysis and GIS, and Physical Geography at Mount Royal University. While Lynn's background is in the remote sensing and geomatics industry (Canada Centre for Remote Sensing, Intera, Intermap), she has studied spatial cognition and educational technologies to grasp the reciprocal relationship between geospatial technologies and spatial thinking. Lynn's research includes citizen science applications and understanding the geoliteracy abilities and requirements of the next generation of Digital Earth users. For this work she has been recognized as a Killam Scholar, Fellow of the Royal Canadian Geographical Society, and recipient of the Salvatore J. Natoli Dissertation award from the National Council for Geographic Education. She brings a passion for empowering learners, and works to enhance the intuitive interface and capabilities of WorldView Studio."
+			]
+		}
+	]
+}

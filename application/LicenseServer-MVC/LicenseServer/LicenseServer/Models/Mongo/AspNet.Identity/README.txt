@@ -1,0 +1,1 @@
+Adpated from the now un-maintained project at https://github.com/InspectorIT/MongoDB.AspNet.Identity

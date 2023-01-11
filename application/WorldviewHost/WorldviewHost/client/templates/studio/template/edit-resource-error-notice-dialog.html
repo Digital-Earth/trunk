@@ -1,0 +1,35 @@
+﻿<form name="editForm" class="edit-resource-form" ng-esc="editResourceModel.cancelPublish()">            
+    <h2 class="title">{{'Publish '+(editResourceModel.type|upgradeResourceType)|i18n}}</h2>
+    <scrollbar class="edit-resource-form-content">
+        <p>{{'Cant publish '+(editResourceModel.type|upgradeResourceType) + ' due to missing fields'|i18n}}</p>
+        <ul>
+            <li ng-if="editResourceModel.errors.name">
+                <span>{{'Provide a good name for your '+(editResourceModel.type|upgradeResourceType)|i18n}}.</span>
+            </li>
+            <li ng-if="editResourceModel.errors.description">
+                <span>{{'Provide a good description for your '+(editResourceModel.type|upgradeResourceType)|i18n}}.</span>
+            </li>
+            <li ng-if="editResourceModel.errors.tags">
+                <span>{{'Provide 2 - 5 tags for your '+(editResourceModel.type|upgradeResourceType)|i18n}}.</span>
+            </li>
+            <li ng-if="editResourceModel.errors.image">
+                <span>{{'Provide a picture for your '+(editResourceModel.type|upgradeResourceType)|i18n}}.</span>
+            </li>
+            <li ng-if="editResourceModel.errors.camera">
+                <span>{{'Provide a good camera position for your '+(editResourceModel.type|upgradeResourceType)|i18n}}.</span>
+            </li>
+            <li ng-if="editResourceModel.errors.localGeoSources && editResourceModel.localGeoSources.length>1">
+                <span i18n="Can't publish a Map with local GeoSources. You will need to publish the following local GeoSources:"></span>
+                <ul>
+                    <li ng-repeat="geoSource in editResourceModel.localGeoSources">{{geoSource.Metadata.Name}}</li>
+                </ul>
+            </li>
+            <li ng-if="editResourceModel.errors.localGeoSources && editResourceModel.localGeoSources.length==1">
+                <span>{{'Can\'t publish a Globe with a local GeoSource. You will need to publish "%s"'|i18n:editResourceModel.localGeoSources[0].Metadata.Name}}".</span>
+            </li>
+        </ul>
+    </scrollbar>        
+    <modal-dialog-buttons>                
+        <button class="big gray-hover" ng-click="editResourceModel.cancelPublish()"><span i18n="Cancel"></span></button>                
+    </modal-dialog-buttons>
+</form> 

@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{804D618B-7F32-4CB8-9778-224DF0B5054E}</ProjectGuid>
+    <RootNamespace>pyxlib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Message>Making output directory $(SolutionDir)$(Configuration)</Message>
+      <Command>if not exist "$(SolutionDir)$(Configuration)\" md "$(SolutionDir)$(Configuration)\"
+robocopy ..\..\..\third_party\casablanca $(OutDir) cpprest110d_2_5.dll cpprest110d_2_5.pdb &gt;nul
+exit 0</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>source;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/openssl/inc32;../../../third_party/sqlite3;../../../third_party/zlib/include;../../../third_party/casablanca/include;%(AdditionalIncludeDirectories);$(ProjectDir)./source/pyxis</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PYXLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>xerces-c_3D.lib;libeay32.lib;zlib_pyxisd.lib;sqlite3.lib;cpprest110d_2_5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);../../../third_party/xerces-c-3.1.1/lib;../../../third_party/boost/lib;../../../third_party/openssl/out32;../../../third_party/sqlite3;../../../third_party/zlib;../../../third_party/casablanca;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Message>Making output directory $(SolutionDir)$(Configuration)</Message>
+      <Command>if not exist "$(SolutionDir)$(Configuration)\" md "$(SolutionDir)$(Configuration)\"
+robocopy ..\..\..\third_party\casablanca $(OutDir) cpprest110_2_5.dll cpprest110_2_5.pdb &gt;nul
+exit 0</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>source;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/openssl/inc32;../../../third_party/sqlite3;../../../third_party/zlib/include;../../../third_party/casablanca/include;%(AdditionalIncludeDirectories);$(ProjectDir)./source/pyxis</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PYXLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>xerces-c_3.lib;libeay32.lib;zlib_pyxis.lib;sqlite3.lib;cpprest110_2_5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);../../../third_party/xerces-c-3.1.1/lib;../../../third_party/boost/lib;../../../third_party/openssl/out32;../../../third_party/sqlite3;../../../third_party/zlib;../../../third_party/casablanca;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <PreBuildEvent>
+      <Message>Making output directory $(SolutionDir)$(Configuration)</Message>
+      <Command>if not exist "$(SolutionDir)$(Configuration)\" md "$(SolutionDir)$(Configuration)\"</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>source;../../../third_party/sqlite3;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/openssl-0.9.8h/inc32;../../../third_party/zlib/include;%(AdditionalIncludeDirectories);$(ProjectDir)./source/pyxis</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PYXLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>xerces-c_2.lib;libeay32.lib;zdll.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);../../../third_party/xerces-c-3.1.1/lib;../../../third_party/boost/lib;../../../third_party/openssl-0.9.8h/out32;../../../third_party/sqlite3;../../../third_party/zlib/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\third_party\sqlite3\sqlite3.dll">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">copying %(Filename)%(Extension)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copying %(Filename)%(Extension)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\xerces-c-3.1.1\bin\xerces-c_3_1.dll">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\xerces-c-3.1.1\bin\xerces-c_3_1D.dll">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\zlib\zlib_pyxis.dll">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\zlib\zlib_pyxisd.dll">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copying %(Filename)%(Extension)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo f|xcopy /y "%(FullPath)" "$(OutDir)%(Filename)%(Extension)"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\pyxis\data\all_feature_iterator.cpp" />
+    <ClCompile Include="source\pyxis\data\catalog.cpp" />
+    <ClCompile Include="source\pyxis\data\constant_record.cpp" />
+    <ClCompile Include="source\pyxis\data\coverage.cpp" />
+    <ClCompile Include="source\pyxis\data\coverage_base.cpp" />
+    <ClCompile Include="source\pyxis\data\exceptions.cpp" />
+    <ClCompile Include="source\pyxis\data\feature.cpp" />
+    <ClCompile Include="source\pyxis\data\feature_collection.cpp" />
+    <ClCompile Include="source\pyxis\data\feature_collection_index.cpp" />
+    <ClCompile Include="source\pyxis\data\feature_group.cpp" />
+    <ClCompile Include="source\pyxis\data\feature_iterator_linq.cpp" />
+    <ClCompile Include="source\pyxis\data\feature_iterator_with_prefetch.cpp" />
+    <ClCompile Include="source\pyxis\data\feature_serializer.cpp" />
+    <ClCompile Include="source\pyxis\data\feature_style.cpp" />
+    <ClCompile Include="source\pyxis\data\histogram.cpp" />
+    <ClCompile Include="source\pyxis\data\pyx_feature.cpp" />
+    <ClCompile Include="source\pyxis\data\record.cpp" />
+    <ClCompile Include="source\pyxis\data\record_collection.cpp" />
+    <ClCompile Include="source\pyxis\data\tile_aggregator.cpp" />
+    <ClCompile Include="source\pyxis\data\value_tile.cpp" />
+    <ClCompile Include="source\pyxis\data\writable_search_feature.cpp" />
+    <ClCompile Include="source\pyxis\data\writeable_feature.cpp" />
+    <ClCompile Include="source\pyxis\data\impl\numeric_histogram_impl.cpp" />
+    <ClCompile Include="source\pyxis\data\impl\string_histogram_impl.cpp" />
+    <ClCompile Include="source\pyxis\derm\child_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\compact_index.cpp" />
+    <ClCompile Include="source\pyxis\derm\coord_converter.cpp" />
+    <ClCompile Include="source\pyxis\derm\cursor.cpp" />
+    <ClCompile Include="source\pyxis\derm\derm_utils.cpp" />
+    <ClCompile Include="source\pyxis\derm\diamond_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\dir_edge_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\direction_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\edge_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\exceptions.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\exhaustive_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\fourier_diamond_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\fourier_hexagonal_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\hex_direction_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\hexagon.cpp" />
+    <ClCompile Include="source\pyxis\derm\horizontal_datum.cpp" />
+    <ClCompile Include="source\pyxis\derm\icos_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\icosahedron.cpp" />
+    <ClCompile Include="source\pyxis\derm\index.cpp" />
+    <ClCompile Include="source\pyxis\derm\index_math.cpp" />
+    <ClCompile Include="source\pyxis\derm\iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\iterator_linq.cpp" />
+    <ClCompile Include="source\pyxis\derm\neighbour_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\pentagon.cpp" />
+    <ClCompile Include="source\pyxis\derm\point_location.cpp" />
+    <ClCompile Include="source\pyxis\derm\progressive_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\projection_method.cpp" />
+    <ClCompile Include="source\pyxis\derm\reference_sphere.cpp" />
+    <ClCompile Include="source\pyxis\derm\resolution_change_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\snyder_projection.cpp" />
+    <ClCompile Include="source\pyxis\derm\spiral_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\sub_index.cpp" />
+    <ClCompile Include="source\pyxis\derm\sub_index_math.cpp" />
+    <ClCompile Include="source\pyxis\derm\tile_set.cpp" />
+    <ClCompile Include="source\pyxis\derm\valid_direction_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\vertex_iterator.cpp" />
+    <ClCompile Include="source\pyxis\derm\wgs84.cpp" />
+    <ClCompile Include="source\pyxis\derm\wgs84_coord_converter.cpp" />
+    <ClCompile Include="source\pyxis\geometry\bounding_rects_calculator.cpp" />
+    <ClCompile Include="source\pyxis\geometry\cell.cpp" />
+    <ClCompile Include="source\pyxis\geometry\circle_geometry.cpp" />
+    <ClCompile Include="source\pyxis\geometry\circle_intersection_test.cpp" />
+    <ClCompile Include="source\pyxis\geometry\combined_index.cpp" />
+    <ClCompile Include="source\pyxis\geometry\constant_geometry.cpp" />
+    <ClCompile Include="source\pyxis\geometry\curve.cpp" />
+    <ClCompile Include="source\pyxis\geometry\exceptions.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)2.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)2.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)2.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)2.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)2.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)2.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\geometry.cpp" />
+    <ClCompile Include="source\pyxis\geometry\geometry_collection.cpp" />
+    <ClCompile Include="source\pyxis\geometry\geometry_iterator.cpp" />
+    <ClCompile Include="source\pyxis\geometry\geometry_serializer.cpp" />
+    <ClCompile Include="source\pyxis\geometry\hit_test_utils.cpp" />
+    <ClCompile Include="source\pyxis\geometry\icos_test_traverser.cpp" />
+    <ClCompile Include="source\pyxis\geometry\icos_traverser.cpp" />
+    <ClCompile Include="source\pyxis\geometry\inner_tile.cpp" />
+    <ClCompile Include="source\pyxis\geometry\inner_tile_intersection_iterator.cpp" />
+    <ClCompile Include="source\pyxis\geometry\geometry_intersection_utils.cpp" />
+    <ClCompile Include="source\pyxis\geometry\map_indexes.cpp" />
+    <ClCompile Include="source\pyxis\geometry\multi_cell.cpp" />
+    <ClCompile Include="source\pyxis\geometry\multi_geometry.cpp" />
+    <ClCompile Include="source\pyxis\geometry\polygon.cpp" />
+    <ClCompile Include="source\pyxis\geometry\test.cpp" />
+    <ClCompile Include="source\pyxis\geometry\tile.cpp" />
+    <ClCompile Include="source\pyxis\geometry\tile_cache.cpp" />
+    <ClCompile Include="source\pyxis\geometry\tile_collection.cpp" />
+    <ClCompile Include="source\pyxis\geometry\vector_geometry.cpp" />
+    <ClCompile Include="source\pyxis\geometry\vector_geometry2.cpp" />
+    <ClCompile Include="source\pyxis\pipe\parameter.cpp" />
+    <ClCompile Include="source\pyxis\pipe\parameter_spec.cpp" />
+    <ClCompile Include="source\pyxis\pipe\pipe_builder.cpp" />
+    <ClCompile Include="source\pyxis\pipe\pipe_formater.cpp" />
+    <ClCompile Include="source\pyxis\pipe\pipe_manager.cpp" />
+    <ClCompile Include="source\pyxis\pipe\pipe_utils.cpp" />
+    <ClCompile Include="source\pyxis\pipe\process.cpp" />
+    <ClCompile Include="source\pyxis\pipe\process_identity.cpp" />
+    <ClCompile Include="source\pyxis\pipe\process_identity_cache.cpp" />
+    <ClCompile Include="source\pyxis\pipe\process_init_error.cpp" />
+    <ClCompile Include="source\pyxis\pipe\process_list.cpp" />
+    <ClCompile Include="source\pyxis\pipe\process_local_storage.cpp" />
+    <ClCompile Include="source\pyxis\pipe\process_spec.cpp" />
+    <ClCompile Include="source\pyxis\pipe\pyxnet_channel.cpp" />
+    <ClCompile Include="source\pyxis\procs\feature_collection_index_proc.cpp" />
+    <ClCompile Include="source\pyxis\procs\geometry_provider.cpp" />
+    <ClCompile Include="source\pyxis\procs\geopacket_source.cpp" />
+    <ClCompile Include="source\pyxis\query\where.cpp" />
+    <ClCompile Include="source\pyxis\query\where_condition.cpp" />
+    <ClCompile Include="source\pyxis\region\region_builder.cpp" />
+    <ClCompile Include="source\pyxis\rhombus\rhombus.cpp" />
+    <ClCompile Include="source\pyxis\rhombus\rhombus_bitmap.cpp" />
+    <ClCompile Include="source\pyxis\rhombus\rhombus_filler.cpp" />
+    <ClCompile Include="source\pyxis\rhombus\rhombus_utils.cpp" />
+    <ClCompile Include="source\pyxis\storage\storage_exceptions.cpp" />
+    <ClCompile Include="source\pyxis\storage\i_blob_provider.cpp" />
+    <ClCompile Include="source\pyxis\storage\pyxis_blob_provider.cpp" />
+    <ClCompile Include="source\pyxis\utility\abstract_iterator.cpp" />
+    <ClCompile Include="source\pyxis\utility\app_services.cpp" />
+    <ClCompile Include="source\pyxis\utility\bbox_lat_lon.cpp" />
+    <ClCompile Include="source\pyxis\utility\bit_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\bitmap_server_provider.cpp" />
+    <ClCompile Include="source\pyxis\utility\blank.cpp" />
+    <ClCompile Include="source\pyxis\utility\bounding_circle_spatial_set.cpp" />
+    <ClCompile Include="source\pyxis\utility\bounding_shape.cpp" />
+    <ClCompile Include="source\pyxis\utility\cache_map.cpp" />
+    <ClCompile Include="source\pyxis\utility\cache_status.cpp" />
+    <ClCompile Include="source\pyxis\utility\checksum_calculator.cpp" />
+    <ClCompile Include="source\pyxis\utility\color_palette.cpp" />
+    <ClCompile Include="source\pyxis\utility\command.cpp" />
+    <ClCompile Include="source\pyxis\utility\command_manager.cpp" />
+    <ClCompile Include="source\pyxis\utility\coord_2d.cpp" />
+    <ClCompile Include="source\pyxis\utility\coord_3d.cpp" />
+    <ClCompile Include="source\pyxis\utility\coord_lat_lon.cpp" />
+    <ClCompile Include="source\pyxis\utility\coord_polar.cpp" />
+    <ClCompile Include="source\pyxis\utility\cost.cpp" />
+    <ClCompile Include="source\pyxis\utility\ellipsoid_math.cpp" />
+    <ClCompile Include="source\pyxis\utility\excel.cpp" />
+    <ClCompile Include="source\pyxis\utility\exception.cpp" />
+    <ClCompile Include="source\pyxis\utility\exceptions.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)3.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)3.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)3.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)3.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)3.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)3.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\file_resolver.cpp" />
+    <ClCompile Include="source\pyxis\utility\file_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\gdalinfo.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\data_source_drivers\projects\gdalinfo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\..\..\data_source_drivers\projects\gdalinfo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\data_source_drivers\projects\gdalinfo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\great_circle_arc.cpp" />
+    <ClCompile Include="source\pyxis\utility\http_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\identity_cache.cpp" />
+    <ClCompile Include="source\pyxis\utility\instance_counter.cpp" />
+    <ClCompile Include="source\pyxis\utility\local_storage.cpp" />
+    <ClCompile Include="source\pyxis\utility\local_storage_impl.cpp" />
+    <ClCompile Include="source\pyxis\utility\math_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\mem_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\memory_manager.cpp" />
+    <ClCompile Include="source\pyxis\utility\notifier.cpp" />
+    <ClCompile Include="source\pyxis\utility\numeric_histogram.cpp" />
+    <ClCompile Include="source\pyxis\utility\object.cpp" />
+    <ClCompile Include="source\pyxis\utility\pointer.cpp" />
+    <ClCompile Include="source\pyxis\utility\profile.cpp" />
+    <ClCompile Include="source\pyxis\utility\properties.cpp" />
+    <ClCompile Include="source\pyxis\utility\pyxcom.cpp" />
+    <ClCompile Include="source\pyxis\utility\range.cpp" />
+    <ClCompile Include="source\pyxis\utility\rect_2d.cpp" />
+    <ClCompile Include="source\pyxis\utility\rgb.cpp" />
+    <ClCompile Include="source\pyxis\utility\sphere_math.cpp" />
+    <ClCompile Include="source\pyxis\utility\ssl_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\stdint.cpp" />
+    <ClCompile Include="source\pyxis\utility\stl_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\string_histogram.cpp" />
+    <ClCompile Include="source\pyxis\utility\string_utils.cpp" />
+    <ClCompile Include="source\pyxis\utility\sxs.cpp" />
+    <ClCompile Include="source\pyxis\utility\tester.cpp" />
+    <ClCompile Include="source\pyxis\utility\thread_pool.cpp" />
+    <ClCompile Include="source\pyxis\utility\trace.cpp" />
+    <ClCompile Include="source\pyxis\utility\value.cpp" />
+    <ClCompile Include="source\pyxis\utility\value_column.cpp" />
+    <ClCompile Include="source\pyxis\utility\value_math.cpp" />
+    <ClCompile Include="source\pyxis\utility\value_table.cpp" />
+    <ClCompile Include="source\pyxis\utility\value_translation.cpp" />
+    <ClCompile Include="source\pyxis\utility\win32_exception.cpp" />
+    <ClCompile Include="source\pyxis\utility\wire_buffer.cpp" />
+    <ClCompile Include="source\pyxis\utility\xml_transform.cpp" />
+    <ClCompile Include="source\pyxis\utility\xml_utils.cpp" />
+    <ClCompile Include="source\pyxlib.cpp" />
+    <ClCompile Include="source\pyxlib_instance.cpp" />
+    <ClCompile Include="source\pyxis\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\bad_coverage.cpp" />
+    <ClCompile Include="source\pyxis\procs\bitmap.cpp" />
+    <ClCompile Include="source\pyxis\procs\cache.cpp" />
+    <ClCompile Include="source\pyxis\procs\const_coverage.cpp" />
+    <ClCompile Include="source\pyxis\procs\coverage_histogram_calculator.cpp" />
+    <ClCompile Include="source\pyxis\procs\data_processor.cpp" />
+    <ClCompile Include="source\pyxis\procs\default_feature.cpp" />
+    <ClCompile Include="source\pyxis\procs\embedded_resource_holder.cpp" />
+    <ClCompile Include="source\pyxis\procs\exceptions.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)4.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)4.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)4.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(IntDir)%(Filename)4.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)4.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)4.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\feature_calculator.cpp" />
+    <ClCompile Include="source\pyxis\procs\named_geometry_proc.cpp" />
+    <ClCompile Include="source\pyxis\procs\path.cpp" />
+    <ClCompile Include="source\pyxis\procs\proc_utils.cpp" />
+    <ClCompile Include="source\pyxis\procs\process_collection_proc.cpp" />
+    <ClCompile Include="source\pyxis\procs\srs.cpp" />
+    <ClCompile Include="source\pyxis\procs\string.cpp" />
+    <ClCompile Include="source\pyxis\procs\tool_box_provider.cpp" />
+    <ClCompile Include="source\pyxis\procs\url.cpp" />
+    <ClCompile Include="source\pyxis\procs\user_credentials.cpp" />
+    <ClCompile Include="source\pyxis\procs\user_credentials_provider.cpp" />
+    <ClCompile Include="source\pyxis\procs\viewpoint.cpp" />
+    <ClCompile Include="source\pyxis\procs\xy_bounds_region_proc.cpp" />
+    <ClCompile Include="source\pyxis\sampling\spatial_reference_system.cpp" />
+    <ClCompile Include="source\pyxis\sampling\xy_bounds_geometry.cpp" />
+    <ClCompile Include="source\pyxis\sampling\xy_coverage.cpp" />
+    <ClCompile Include="source\pyxis\sampling\xy_intersection_test.cpp" />
+    <ClCompile Include="source\pyxis\sampling\xy_iterator.cpp" />
+    <ClCompile Include="source\pyxis\sampling\xy_utils.cpp" />
+    <ClCompile Include="source\pyxis\region\arc_buffer.cpp" />
+    <ClCompile Include="source\pyxis\region\circle_region.cpp" />
+    <ClCompile Include="source\pyxis\region\curve_region.cpp" />
+    <ClCompile Include="source\pyxis\region\multi_curve_region.cpp" />
+    <ClCompile Include="source\pyxis\region\multi_polygon_region.cpp" />
+    <ClCompile Include="source\pyxis\region\region.cpp" />
+    <ClCompile Include="source\pyxis\region\region_serializer.cpp" />
+    <ClCompile Include="source\pyxis\region\vector_point_region.cpp" />
+    <ClCompile Include="source\pyxis\region\xy_bounds_region.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\pyxis\data\all_feature_iterator.h" />
+    <ClInclude Include="source\pyxis\data\catalog.h" />
+    <ClInclude Include="source\pyxis\data\constant_record.h" />
+    <ClInclude Include="source\pyxis\data\coverage.h" />
+    <ClInclude Include="source\pyxis\data\coverage_base.h" />
+    <ClInclude Include="source\pyxis\data\exceptions.h" />
+    <ClInclude Include="source\pyxis\data\feature.h" />
+    <ClInclude Include="source\pyxis\data\feature_collection.h" />
+    <ClInclude Include="source\pyxis\data\feature_collection_index.h" />
+    <ClInclude Include="source\pyxis\data\feature_group.h" />
+    <ClInclude Include="source\pyxis\data\feature_iterator_linq.h" />
+    <ClInclude Include="source\pyxis\data\feature_iterator_with_prefetch.h" />
+    <ClInclude Include="source\pyxis\data\feature_serializer.h" />
+    <ClInclude Include="source\pyxis\data\feature_style.h" />
+    <ClInclude Include="source\pyxis\data\histogram.h" />
+    <ClInclude Include="source\pyxis\data\pyx_feature.h" />
+    <ClInclude Include="source\pyxis\data\record.h" />
+    <ClInclude Include="source\pyxis\data\record_collection.h" />
+    <ClInclude Include="source\pyxis\data\tile_aggregator.h" />
+    <ClInclude Include="source\pyxis\data\value_tile.h" />
+    <ClInclude Include="source\pyxis\data\writable_search_feature.h" />
+    <ClInclude Include="source\pyxis\data\writeable_feature.h" />
+    <ClInclude Include="source\pyxis\data\impl\numeric_histogram_impl.h" />
+    <ClInclude Include="source\pyxis\data\impl\string_histogram_impl.h" />
+    <ClInclude Include="source\pyxis\derm\child_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\compact_index.h" />
+    <ClInclude Include="source\pyxis\derm\coord_converter.h" />
+    <ClInclude Include="source\pyxis\derm\cursor.h" />
+    <ClInclude Include="source\pyxis\derm\derm_utils.h" />
+    <ClInclude Include="source\pyxis\derm\diamond_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\dir_edge_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\direction_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\edge_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\exceptions.h" />
+    <ClInclude Include="source\pyxis\derm\exhaustive_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\fourier_diamond_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\fourier_hexagonal_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\hex_direction_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\hexagon.h" />
+    <ClInclude Include="source\pyxis\derm\horizontal_datum.h" />
+    <ClInclude Include="source\pyxis\derm\icos_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\icosahedron.h" />
+    <ClInclude Include="source\pyxis\derm\index.h" />
+    <ClInclude Include="source\pyxis\derm\index_math.h" />
+    <ClInclude Include="source\pyxis\derm\iterator.h" />
+    <ClInclude Include="source\pyxis\derm\iterator_linq.h" />
+    <ClInclude Include="source\pyxis\derm\neighbour_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\pentagon.h" />
+    <ClInclude Include="source\pyxis\derm\point_location.h" />
+    <ClInclude Include="source\pyxis\derm\progressive_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\projection_method.h" />
+    <ClInclude Include="source\pyxis\derm\reference_sphere.h" />
+    <ClInclude Include="source\pyxis\derm\resolution_change_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\snyder_projection.h" />
+    <ClInclude Include="source\pyxis\derm\spiral_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\sub_index.h" />
+    <ClInclude Include="source\pyxis\derm\sub_index_math.h" />
+    <ClInclude Include="source\pyxis\derm\tile_set.h" />
+    <ClInclude Include="source\pyxis\derm\valid_direction_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\vertex_iterator.h" />
+    <ClInclude Include="source\pyxis\derm\wgs84.h" />
+    <ClInclude Include="source\pyxis\derm\wgs84_coord_converter.h" />
+    <ClInclude Include="source\pyxis\geometry\bounding_rects_calculator.h" />
+    <ClInclude Include="source\pyxis\geometry\cell.h" />
+    <ClInclude Include="source\pyxis\geometry\circle_geometry.h" />
+    <ClInclude Include="source\pyxis\geometry\circle_intersection_test.h" />
+    <ClInclude Include="source\pyxis\geometry\combined_index.h" />
+    <ClInclude Include="source\pyxis\geometry\constant_geometry.h" />
+    <ClInclude Include="source\pyxis\geometry\curve.h" />
+    <ClInclude Include="source\pyxis\geometry\exceptions.h" />
+    <ClInclude Include="source\pyxis\geometry\geometry.h" />
+    <ClInclude Include="source\pyxis\geometry\geometry_collection.h" />
+    <ClInclude Include="source\pyxis\geometry\geometry_iterator.h" />
+    <ClInclude Include="source\pyxis\geometry\geometry_serializer.h" />
+    <ClInclude Include="source\pyxis\geometry\hit_test_utils.h" />
+    <ClInclude Include="source\pyxis\geometry\icos_test_traverser.h" />
+    <ClInclude Include="source\pyxis\geometry\icos_traverser.h" />
+    <ClInclude Include="source\pyxis\geometry\inner_tile.h" />
+    <ClInclude Include="source\pyxis\geometry\inner_tile_intersection_iterator.h" />
+    <ClInclude Include="source\pyxis\geometry\geometry_intersection_utils.h" />
+    <ClInclude Include="source\pyxis\geometry\map_indexes.h" />
+    <ClInclude Include="source\pyxis\geometry\multi_cell.h" />
+    <ClInclude Include="source\pyxis\geometry\multi_geometry.h" />
+    <ClInclude Include="source\pyxis\geometry\polygon.h" />
+    <ClInclude Include="source\pyxis\geometry\test.h" />
+    <ClInclude Include="source\pyxis\geometry\tile.h" />
+    <ClInclude Include="source\pyxis\geometry\tile_cache.h" />
+    <ClInclude Include="source\pyxis\geometry\tile_collection.h" />
+    <ClInclude Include="source\pyxis\geometry\vector_geometry.h" />
+    <ClInclude Include="source\pyxis\geometry\vector_geometry2.h" />
+    <ClInclude Include="source\pyxis\pipe\exceptions.h" />
+    <ClInclude Include="source\pyxis\pipe\parameter.h" />
+    <ClInclude Include="source\pyxis\pipe\parameter_spec.h" />
+    <ClInclude Include="source\pyxis\pipe\pipe_builder.h" />
+    <ClInclude Include="source\pyxis\pipe\pipe_formater.h" />
+    <ClInclude Include="source\pyxis\pipe\pipe_manager.h" />
+    <ClInclude Include="source\pyxis\pipe\pipe_utils.h" />
+    <ClInclude Include="source\pyxis\pipe\process.h" />
+    <ClInclude Include="source\pyxis\pipe\process_identity.h" />
+    <ClInclude Include="source\pyxis\pipe\process_identity_cache.h" />
+    <ClInclude Include="source\pyxis\pipe\process_init_error.h" />
+    <ClInclude Include="source\pyxis\pipe\process_list.h" />
+    <ClInclude Include="source\pyxis\pipe\process_local_storage.h" />
+    <ClInclude Include="source\pyxis\pipe\process_spec.h" />
+    <ClInclude Include="source\pyxis\pipe\pyxnet_channel.h" />
+    <ClInclude Include="source\pyxis\procs\feature_collection_index_proc.h" />
+    <ClInclude Include="source\pyxis\procs\geometry_provider.h" />
+    <ClInclude Include="source\pyxis\procs\geopacket_source.h" />
+    <ClInclude Include="source\pyxis\query\where.h" />
+    <ClInclude Include="source\pyxis\query\where_condition.h" />
+    <ClInclude Include="source\pyxis\region\region_builder.h" />
+    <ClInclude Include="source\pyxis\rhombus\rhombus.h" />
+    <ClInclude Include="source\pyxis\rhombus\rhombus_bitmap.h" />
+    <ClInclude Include="source\pyxis\rhombus\rhombus_filler.h" />
+    <ClInclude Include="source\pyxis\rhombus\rhombus_utils.h" />
+    <ClInclude Include="source\pyxis\storage\storage_exceptions.h" />
+    <ClInclude Include="source\pyxis\storage\i_blob_provider.h" />
+    <ClInclude Include="source\pyxis\storage\pyxis_blob_provider.h" />
+    <ClInclude Include="source\pyxis\utility\abstract_iterator.h" />
+    <ClInclude Include="source\pyxis\utility\app_services.h" />
+    <ClInclude Include="source\pyxis\utility\bbox_lat_lon.h" />
+    <ClInclude Include="source\pyxis\utility\bit_utils.h" />
+    <ClInclude Include="source\pyxis\utility\bitmap_server_provider.h" />
+    <ClInclude Include="source\pyxis\utility\blank.h" />
+    <ClInclude Include="source\pyxis\utility\bounding_circle_spatial_set.h" />
+    <ClInclude Include="source\pyxis\utility\bounding_shape.h" />
+    <ClInclude Include="source\pyxis\utility\cache_map.h" />
+    <ClInclude Include="source\pyxis\utility\cache_status.h" />
+    <ClInclude Include="source\pyxis\utility\checksum_calculator.h" />
+    <ClInclude Include="source\pyxis\utility\color_palette.h" />
+    <ClInclude Include="source\pyxis\utility\command.h" />
+    <ClInclude Include="source\pyxis\utility\command_manager.h" />
+    <ClInclude Include="source\pyxis\utility\coord_2d.h" />
+    <ClInclude Include="source\pyxis\utility\coord_3d.h" />
+    <ClInclude Include="source\pyxis\utility\coord_lat_lon.h" />
+    <ClInclude Include="source\pyxis\utility\coord_polar.h" />
+    <ClInclude Include="source\pyxis\utility\cost.h" />
+    <ClInclude Include="source\pyxis\utility\ellipsoid_math.h" />
+    <ClInclude Include="source\pyxis\utility\excel.h" />
+    <ClInclude Include="source\pyxis\utility\exception.h" />
+    <ClInclude Include="source\pyxis\utility\exceptions.h" />
+    <ClInclude Include="source\pyxis\utility\file_resolver.h" />
+    <ClInclude Include="source\pyxis\utility\file_utils.h" />
+    <ClInclude Include="source\pyxis\utility\gdalinfo.h" />
+    <ClInclude Include="source\pyxis\utility\great_circle_arc.h" />
+    <ClInclude Include="source\pyxis\utility\http_utils.h" />
+    <ClInclude Include="source\pyxis\utility\identity_cache.h" />
+    <ClInclude Include="source\pyxis\utility\instance_counter.h" />
+    <ClInclude Include="source\pyxis\utility\joblist.h" />
+    <ClInclude Include="source\pyxis\utility\joblistsp.h" />
+    <ClInclude Include="source\pyxis\utility\local_storage.h" />
+    <ClInclude Include="source\pyxis\utility\local_storage_impl.h" />
+    <ClInclude Include="source\pyxis\utility\math_utils.h" />
+    <ClInclude Include="source\pyxis\utility\mem_utils.h" />
+    <ClInclude Include="source\pyxis\utility\memory_manager.h" />
+    <ClInclude Include="source\pyxis\utility\notifier.h" />
+    <ClInclude Include="source\pyxis\utility\numeric_histogram.h" />
+    <ClInclude Include="source\pyxis\utility\object.h" />
+    <ClInclude Include="source\pyxis\utility\pointer.h" />
+    <ClInclude Include="source\pyxis\utility\profile.h" />
+    <ClInclude Include="source\pyxis\utility\properties.h" />
+    <ClInclude Include="source\pyxis\utility\pyxcom.h" />
+    <ClInclude Include="source\pyxis\utility\range.h" />
+    <ClInclude Include="source\pyxis\utility\rect_2d.h" />
+    <ClInclude Include="source\pyxis\utility\rgb.h" />
+    <ClInclude Include="source\pyxis\utility\sphere_math.h" />
+    <ClInclude Include="source\pyxis\utility\ssl_utils.h" />
+    <ClInclude Include="source\pyxis\utility\stdint.h" />
+    <ClInclude Include="source\pyxis\utility\stl_utils.h" />
+    <ClInclude Include="source\pyxis\utility\string_histogram.h" />
+    <ClInclude Include="source\pyxis\utility\string_utils.h" />
+    <ClInclude Include="source\pyxis\utility\sxs.h" />
+    <ClInclude Include="source\pyxis\utility\tester.h" />
+    <ClInclude Include="source\pyxis\utility\thread_pool.h" />
+    <ClInclude Include="source\pyxis\utility\trace.h" />
+    <ClInclude Include="source\pyxis\utility\value.h" />
+    <ClInclude Include="source\pyxis\utility\value_column.h" />
+    <ClInclude Include="source\pyxis\utility\value_math.h" />
+    <ClInclude Include="source\pyxis\utility\value_table.h" />
+    <ClInclude Include="source\pyxis\utility\value_translation.h" />
+    <ClInclude Include="source\pyxis\utility\win32_exception.h" />
+    <ClInclude Include="source\pyxis\utility\wire_buffer.h" />
+    <ClInclude Include="source\pyxis\utility\xml_transform.h" />
+    <ClInclude Include="source\pyxis\utility\xml_utils.h" />
+    <ClInclude Include="source\pyxlib.h" />
+    <ClInclude Include="source\pyxlib_instance.h" />
+    <ClInclude Include="source\pyxis\stdafx.h" />
+    <ClInclude Include="source\pyxis\procs\bad_coverage.h" />
+    <ClInclude Include="source\pyxis\procs\bitmap.h" />
+    <ClInclude Include="source\pyxis\procs\cache.h" />
+    <ClInclude Include="source\pyxis\procs\const_coverage.h" />
+    <ClInclude Include="source\pyxis\procs\coverage_histogram_calculator.h" />
+    <ClInclude Include="source\pyxis\procs\data_processor.h" />
+    <ClInclude Include="source\pyxis\procs\default_feature.h" />
+    <ClInclude Include="source\pyxis\procs\embedded_resource_holder.h" />
+    <ClInclude Include="source\pyxis\procs\exceptions.h" />
+    <ClInclude Include="source\pyxis\procs\feature_calculator.h" />
+    <ClInclude Include="source\pyxis\procs\named_geometry_proc.h" />
+    <ClInclude Include="source\pyxis\procs\path.h" />
+    <ClInclude Include="source\pyxis\procs\proc_utils.h" />
+    <ClInclude Include="source\pyxis\procs\process_collection_proc.h" />
+    <ClInclude Include="source\pyxis\procs\srs.h" />
+    <ClInclude Include="source\pyxis\procs\string.h" />
+    <ClInclude Include="source\pyxis\procs\tool_box_provider.h" />
+    <ClInclude Include="source\pyxis\procs\url.h" />
+    <ClInclude Include="source\pyxis\procs\user_credentials.h" />
+    <ClInclude Include="source\pyxis\procs\user_credentials_provider.h" />
+    <ClInclude Include="source\pyxis\procs\viewpoint.h" />
+    <ClInclude Include="source\pyxis\procs\xy_bounds_region_proc.h" />
+    <ClInclude Include="source\pyxis\sampling\spatial_reference_system.h" />
+    <ClInclude Include="source\pyxis\sampling\xy_bounds_geometry.h" />
+    <ClInclude Include="source\pyxis\sampling\xy_coverage.h" />
+    <ClInclude Include="source\pyxis\sampling\xy_intersection_test.h" />
+    <ClInclude Include="source\pyxis\sampling\xy_iterator.h" />
+    <ClInclude Include="source\pyxis\sampling\xy_utils.h" />
+    <ClInclude Include="source\pyxis\region\arc_buffer.h" />
+    <ClInclude Include="source\pyxis\region\circle_region.h" />
+    <ClInclude Include="source\pyxis\region\curve_region.h" />
+    <ClInclude Include="source\pyxis\region\multi_curve_region.h" />
+    <ClInclude Include="source\pyxis\region\multi_polygon_region.h" />
+    <ClInclude Include="source\pyxis\region\region.h" />
+    <ClInclude Include="source\pyxis\region\region_serializer.h" />
+    <ClInclude Include="source\pyxis\region\vector_point_region.h" />
+    <ClInclude Include="source\pyxis\region\xy_bounds_region.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

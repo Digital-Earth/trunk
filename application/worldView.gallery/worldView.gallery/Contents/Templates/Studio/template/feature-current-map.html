@@ -1,0 +1,11 @@
+﻿<!-- Change map warning -->
+<modal-dialog ng-if="switchMapWhileImportDialog.active" stop-propagation="keyup" modal-class="about">
+    <h2 class="title" i18n="Import in progress"></h2>
+    <p i18n="Switch globe warning message"></p>
+    <p>
+        <button class="big gray" ng-click="switchMapWhileImportDialog.cancel()"><span i18n="Continue importing queued GeoSources"></span></button>
+    </p>
+    <p>
+        <button class="big gray" ng-click="switchMapWhileImportDialog.commit()"><span i18n="Remove queued GeoSources"></span></button>
+    </p>
+</modal-dialog>

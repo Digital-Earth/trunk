@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		960CCB4912E9F6820064AF33 /* libboost_thread-xgcc42-mt-1_43.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960CCB4812E9F6820064AF33 /* libboost_thread-xgcc42-mt-1_43.a */; };
+		961DB3DA12F89CBD005256C7 /* collection_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 961DB3D912F89CBD005256C7 /* collection_interface.cpp */; };
+		96215F0C11E68F9700685050 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96215F0B11E68F9700685050 /* main.cpp */; };
+		964CCA801296DD9C00486B0E /* multimap_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA7E1296DD9C00486B0E /* multimap_interface.cpp */; };
+		964CCA811296DD9C00486B0E /* set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 964CCA7F1296DD9C00486B0E /* set.cpp */; };
+		965593B7129C0973006CE506 /* compact_set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 965593B6129C0973006CE506 /* compact_set.cpp */; };
+		966EA34012D8C90F00339422 /* dynamic_array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 966EA33F12D8C90F00339422 /* dynamic_array.cpp */; };
+		96ABE7FE12E4E4CA001C8580 /* string_forward_range.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96ABE7FD12E4E4CA001C8580 /* string_forward_range.cpp */; };
+		96B937721225ADFF00FDE5AF /* forward_range_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96B9376F1225ADFF00FDE5AF /* forward_range_interface.cpp */; };
+		96B937731225ADFF00FDE5AF /* intrusive_reference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96B937701225ADFF00FDE5AF /* intrusive_reference.cpp */; };
+		96B937741225ADFF00FDE5AF /* lazy_copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96B937711225ADFF00FDE5AF /* lazy_copy.cpp */; };
+		96BCEF2F1226BE7C00AB1F4D /* intrusive_functor_reference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96BCEF2E1226BE7C00AB1F4D /* intrusive_functor_reference.cpp */; };
+		96CED1D9126B419F00B4FFD4 /* concurrent_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96CED1D4126B419F00B4FFD4 /* concurrent_queue.cpp */; };
+		96CED1DD126B419F00B4FFD4 /* multimap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96CED1D8126B419F00B4FFD4 /* multimap.cpp */; };
+		96CED1FD126B437600B4FFD4 /* compact_vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96CED1FC126B437600B4FFD4 /* compact_vector.cpp */; };
+		96D95A861219AE6100BE8C37 /* assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A771219AE6100BE8C37 /* assert.cpp */; };
+		96D95A871219AE6100BE8C37 /* choice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A781219AE6100BE8C37 /* choice.cpp */; };
+		96D95A8A1219AE6100BE8C37 /* empty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A7B1219AE6100BE8C37 /* empty.cpp */; };
+		96D95A8B1219AE6100BE8C37 /* fraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A7C1219AE6100BE8C37 /* fraction.cpp */; };
+		96D95A8C1219AE6100BE8C37 /* functor_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A7D1219AE6100BE8C37 /* functor_interface.cpp */; };
+		96D95A8D1219AE6100BE8C37 /* is_singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A7E1219AE6100BE8C37 /* is_singleton.cpp */; };
+		96D95A8E1219AE6100BE8C37 /* map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A7F1219AE6100BE8C37 /* map.cpp */; };
+		96D95A8F1219AE6100BE8C37 /* map_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A801219AE6100BE8C37 /* map_interface.cpp */; };
+		96D95A901219AE6100BE8C37 /* pointee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A811219AE6100BE8C37 /* pointee.cpp */; };
+		96D95A911219AE6100BE8C37 /* set_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A821219AE6100BE8C37 /* set_interface.cpp */; };
+		96D95A941219AE6100BE8C37 /* visit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D95A851219AE6100BE8C37 /* visit.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8DD76F6C0486A84900D96B5E /* pyxis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pyxis; sourceTree = BUILT_PRODUCTS_DIR; };
+		960CCB4812E9F6820064AF33 /* libboost_thread-xgcc42-mt-1_43.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_thread-xgcc42-mt-1_43.a"; path = "/Volumes/Windows/Users/Jason/Documents/Clients/PYXIS/Code/Current/third_party/boost_1_43_0/lib/libboost_thread-xgcc42-mt-1_43.a"; sourceTree = "<absolute>"; };
+		961DB3D912F89CBD005256C7 /* collection_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = collection_interface.cpp; path = ../../sources/pyxis/collection_interface.cpp; sourceTree = SOURCE_ROOT; };
+		961DB3DB12F89CD2005256C7 /* collection_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = collection_interface.hpp; path = ../../headers/pyxis/collection_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96215EFD11E68F9000685050 /* assert.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = assert.hpp; path = ../../headers/pyxis/assert.hpp; sourceTree = SOURCE_ROOT; };
+		96215EFE11E68F9000685050 /* choice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = choice.hpp; path = ../../headers/pyxis/choice.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0111E68F9000685050 /* empty.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = empty.hpp; path = ../../headers/pyxis/empty.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0211E68F9000685050 /* fraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = fraction.hpp; path = ../../headers/pyxis/fraction.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0311E68F9000685050 /* functor_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = functor_interface.hpp; path = ../../headers/pyxis/functor_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0411E68F9000685050 /* map.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = map.hpp; path = ../../headers/pyxis/map.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0511E68F9000685050 /* map_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = map_interface.hpp; path = ../../headers/pyxis/map_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0611E68F9000685050 /* pointee.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = pointee.hpp; path = ../../headers/pyxis/pointee.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0711E68F9000685050 /* set_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = set_interface.hpp; path = ../../headers/pyxis/set_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0A11E68F9000685050 /* visit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = visit.hpp; path = ../../headers/pyxis/visit.hpp; sourceTree = SOURCE_ROOT; };
+		96215F0B11E68F9700685050 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../sources/main.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA7E1296DD9C00486B0E /* multimap_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = multimap_interface.cpp; path = ../../sources/pyxis/multimap_interface.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA7F1296DD9C00486B0E /* set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = set.cpp; path = ../../sources/pyxis/set.cpp; sourceTree = SOURCE_ROOT; };
+		964CCA821296DDB400486B0E /* multimap_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = multimap_interface.hpp; path = ../../headers/pyxis/multimap_interface.hpp; sourceTree = SOURCE_ROOT; };
+		964CCA831296DDB400486B0E /* set.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = set.hpp; path = ../../headers/pyxis/set.hpp; sourceTree = SOURCE_ROOT; };
+		965593B5129C095A006CE506 /* compact_set.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = compact_set.hpp; path = ../../headers/pyxis/compact_set.hpp; sourceTree = SOURCE_ROOT; };
+		965593B6129C0973006CE506 /* compact_set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = compact_set.cpp; path = ../../sources/pyxis/compact_set.cpp; sourceTree = SOURCE_ROOT; };
+		966EA32C12D8C52900339422 /* dynamic_array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = dynamic_array.hpp; path = ../../headers/pyxis/dynamic_array.hpp; sourceTree = SOURCE_ROOT; };
+		966EA33F12D8C90F00339422 /* dynamic_array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dynamic_array.cpp; path = ../../sources/pyxis/dynamic_array.cpp; sourceTree = SOURCE_ROOT; };
+		96ABE7FC12E4E362001C8580 /* string_forward_range.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = string_forward_range.hpp; sourceTree = "<group>"; };
+		96ABE7FD12E4E4CA001C8580 /* string_forward_range.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = string_forward_range.cpp; path = ../../sources/pyxis/string_forward_range.cpp; sourceTree = SOURCE_ROOT; };
+		96B9376F1225ADFF00FDE5AF /* forward_range_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = forward_range_interface.cpp; sourceTree = "<group>"; };
+		96B937701225ADFF00FDE5AF /* intrusive_reference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = intrusive_reference.cpp; sourceTree = "<group>"; };
+		96B937711225ADFF00FDE5AF /* lazy_copy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lazy_copy.cpp; sourceTree = "<group>"; };
+		96B937751225AE2200FDE5AF /* forward_range_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = forward_range_interface.hpp; path = ../../headers/pyxis/forward_range_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96B937761225AE2200FDE5AF /* intrusive_reference.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = intrusive_reference.hpp; path = ../../headers/pyxis/intrusive_reference.hpp; sourceTree = SOURCE_ROOT; };
+		96B937771225AE2200FDE5AF /* is_singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = is_singleton.hpp; path = ../../headers/pyxis/is_singleton.hpp; sourceTree = SOURCE_ROOT; };
+		96B937781225AE2200FDE5AF /* lazy_copy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = lazy_copy.hpp; path = ../../headers/pyxis/lazy_copy.hpp; sourceTree = SOURCE_ROOT; };
+		96B937791225AE2200FDE5AF /* test.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = test.hpp; path = ../../headers/pyxis/test.hpp; sourceTree = SOURCE_ROOT; };
+		96BCEF281226BE3800AB1F4D /* intrusive_functor_reference.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = intrusive_functor_reference.hpp; sourceTree = "<group>"; };
+		96BCEF2E1226BE7C00AB1F4D /* intrusive_functor_reference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = intrusive_functor_reference.cpp; path = ../../sources/pyxis/intrusive_functor_reference.cpp; sourceTree = SOURCE_ROOT; };
+		96CED1C7126B413500B4FFD4 /* concurrent_queue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = concurrent_queue.hpp; path = ../../headers/pyxis/concurrent_queue.hpp; sourceTree = SOURCE_ROOT; };
+		96CED1CB126B413500B4FFD4 /* multimap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = multimap.hpp; path = ../../headers/pyxis/multimap.hpp; sourceTree = SOURCE_ROOT; };
+		96CED1D4126B419F00B4FFD4 /* concurrent_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = concurrent_queue.cpp; path = ../../sources/pyxis/concurrent_queue.cpp; sourceTree = SOURCE_ROOT; };
+		96CED1D8126B419F00B4FFD4 /* multimap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = multimap.cpp; path = ../../sources/pyxis/multimap.cpp; sourceTree = SOURCE_ROOT; };
+		96CED1E9126B41F000B4FFD4 /* compact_vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = compact_vector.hpp; path = ../../headers/pyxis/compact_vector.hpp; sourceTree = SOURCE_ROOT; };
+		96CED1FC126B437600B4FFD4 /* compact_vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = compact_vector.cpp; path = ../../sources/pyxis/compact_vector.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A771219AE6100BE8C37 /* assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = assert.cpp; path = ../../sources/pyxis/assert.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A781219AE6100BE8C37 /* choice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = choice.cpp; path = ../../sources/pyxis/choice.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A7B1219AE6100BE8C37 /* empty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = empty.cpp; path = ../../sources/pyxis/empty.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A7C1219AE6100BE8C37 /* fraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fraction.cpp; path = ../../sources/pyxis/fraction.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A7D1219AE6100BE8C37 /* functor_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = functor_interface.cpp; path = ../../sources/pyxis/functor_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A7E1219AE6100BE8C37 /* is_singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = is_singleton.cpp; path = ../../sources/pyxis/is_singleton.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A7F1219AE6100BE8C37 /* map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = map.cpp; path = ../../sources/pyxis/map.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A801219AE6100BE8C37 /* map_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = map_interface.cpp; path = ../../sources/pyxis/map_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A811219AE6100BE8C37 /* pointee.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pointee.cpp; path = ../../sources/pyxis/pointee.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A821219AE6100BE8C37 /* set_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = set_interface.cpp; path = ../../sources/pyxis/set_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96D95A851219AE6100BE8C37 /* visit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = visit.cpp; path = ../../sources/pyxis/visit.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960CCB4912E9F6820064AF33 /* libboost_thread-xgcc42-mt-1_43.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				9682A43E11AE1B7C0049DE84 /* Libraries */,
+				96D95A711219AE4000BE8C37 /* Sources */,
+				08FB7795FE84155DC02AAC07 /* Headers */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = Pyxis;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				96215EFC11E68F9000685050 /* pyxis */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* pyxis */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96215EFC11E68F9000685050 /* pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				96215EFD11E68F9000685050 /* assert.hpp */,
+				96215EFE11E68F9000685050 /* choice.hpp */,
+				961DB3DB12F89CD2005256C7 /* collection_interface.hpp */,
+				965593B5129C095A006CE506 /* compact_set.hpp */,
+				96CED1E9126B41F000B4FFD4 /* compact_vector.hpp */,
+				96CED1C7126B413500B4FFD4 /* concurrent_queue.hpp */,
+				966EA32C12D8C52900339422 /* dynamic_array.hpp */,
+				96215F0111E68F9000685050 /* empty.hpp */,
+				96B937751225AE2200FDE5AF /* forward_range_interface.hpp */,
+				96215F0211E68F9000685050 /* fraction.hpp */,
+				96215F0311E68F9000685050 /* functor_interface.hpp */,
+				96BCEF281226BE3800AB1F4D /* intrusive_functor_reference.hpp */,
+				96B937761225AE2200FDE5AF /* intrusive_reference.hpp */,
+				96B937771225AE2200FDE5AF /* is_singleton.hpp */,
+				96B937781225AE2200FDE5AF /* lazy_copy.hpp */,
+				96215F0411E68F9000685050 /* map.hpp */,
+				96215F0511E68F9000685050 /* map_interface.hpp */,
+				96CED1CB126B413500B4FFD4 /* multimap.hpp */,
+				964CCA821296DDB400486B0E /* multimap_interface.hpp */,
+				96215F0611E68F9000685050 /* pointee.hpp */,
+				964CCA831296DDB400486B0E /* set.hpp */,
+				96215F0711E68F9000685050 /* set_interface.hpp */,
+				96ABE7FC12E4E362001C8580 /* string_forward_range.hpp */,
+				96B937791225AE2200FDE5AF /* test.hpp */,
+				96215F0A11E68F9000685050 /* visit.hpp */,
+			);
+			name = pyxis;
+			path = ../../headers/pyxis;
+			sourceTree = SOURCE_ROOT;
+		};
+		9682A43E11AE1B7C0049DE84 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				960CCB4812E9F6820064AF33 /* libboost_thread-xgcc42-mt-1_43.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		96D95A711219AE4000BE8C37 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				96215F0B11E68F9700685050 /* main.cpp */,
+				96D95A761219AE6100BE8C37 /* pyxis */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		96D95A761219AE6100BE8C37 /* pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				96D95A771219AE6100BE8C37 /* assert.cpp */,
+				96D95A781219AE6100BE8C37 /* choice.cpp */,
+				961DB3D912F89CBD005256C7 /* collection_interface.cpp */,
+				965593B6129C0973006CE506 /* compact_set.cpp */,
+				96CED1FC126B437600B4FFD4 /* compact_vector.cpp */,
+				96CED1D4126B419F00B4FFD4 /* concurrent_queue.cpp */,
+				966EA33F12D8C90F00339422 /* dynamic_array.cpp */,
+				96D95A7B1219AE6100BE8C37 /* empty.cpp */,
+				96B9376F1225ADFF00FDE5AF /* forward_range_interface.cpp */,
+				96D95A7C1219AE6100BE8C37 /* fraction.cpp */,
+				96D95A7D1219AE6100BE8C37 /* functor_interface.cpp */,
+				96BCEF2E1226BE7C00AB1F4D /* intrusive_functor_reference.cpp */,
+				96B937701225ADFF00FDE5AF /* intrusive_reference.cpp */,
+				96D95A7E1219AE6100BE8C37 /* is_singleton.cpp */,
+				96B937711225ADFF00FDE5AF /* lazy_copy.cpp */,
+				96D95A7F1219AE6100BE8C37 /* map.cpp */,
+				96D95A801219AE6100BE8C37 /* map_interface.cpp */,
+				96CED1D8126B419F00B4FFD4 /* multimap.cpp */,
+				964CCA7E1296DD9C00486B0E /* multimap_interface.cpp */,
+				96D95A811219AE6100BE8C37 /* pointee.cpp */,
+				964CCA7F1296DD9C00486B0E /* set.cpp */,
+				96D95A821219AE6100BE8C37 /* set_interface.cpp */,
+				96ABE7FD12E4E4CA001C8580 /* string_forward_range.cpp */,
+				96D95A851219AE6100BE8C37 /* visit.cpp */,
+			);
+			name = pyxis;
+			path = ../../sources/pyxis;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* pyxis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "pyxis" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pyxis;
+			productInstallPath = "$(HOME)/bin";
+			productName = Pyxis;
+			productReference = 8DD76F6C0486A84900D96B5E /* pyxis */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "pyxis" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Pyxis */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* pyxis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96215F0C11E68F9700685050 /* main.cpp in Sources */,
+				96D95A861219AE6100BE8C37 /* assert.cpp in Sources */,
+				96D95A871219AE6100BE8C37 /* choice.cpp in Sources */,
+				96D95A8A1219AE6100BE8C37 /* empty.cpp in Sources */,
+				96D95A8B1219AE6100BE8C37 /* fraction.cpp in Sources */,
+				96D95A8C1219AE6100BE8C37 /* functor_interface.cpp in Sources */,
+				96D95A8D1219AE6100BE8C37 /* is_singleton.cpp in Sources */,
+				96D95A8E1219AE6100BE8C37 /* map.cpp in Sources */,
+				96D95A8F1219AE6100BE8C37 /* map_interface.cpp in Sources */,
+				96D95A901219AE6100BE8C37 /* pointee.cpp in Sources */,
+				96D95A911219AE6100BE8C37 /* set_interface.cpp in Sources */,
+				96D95A941219AE6100BE8C37 /* visit.cpp in Sources */,
+				96B937721225ADFF00FDE5AF /* forward_range_interface.cpp in Sources */,
+				96B937731225ADFF00FDE5AF /* intrusive_reference.cpp in Sources */,
+				96B937741225ADFF00FDE5AF /* lazy_copy.cpp in Sources */,
+				96BCEF2F1226BE7C00AB1F4D /* intrusive_functor_reference.cpp in Sources */,
+				96CED1D9126B419F00B4FFD4 /* concurrent_queue.cpp in Sources */,
+				96CED1DD126B419F00B4FFD4 /* multimap.cpp in Sources */,
+				96CED1FD126B437600B4FFD4 /* compact_vector.cpp in Sources */,
+				964CCA801296DD9C00486B0E /* multimap_interface.cpp in Sources */,
+				964CCA811296DD9C00486B0E /* set.cpp in Sources */,
+				965593B7129C0973006CE506 /* compact_set.cpp in Sources */,
+				966EA34012D8C90F00339422 /* dynamic_array.cpp in Sources */,
+				96ABE7FE12E4E4CA001C8580 /* string_forward_range.cpp in Sources */,
+				961DB3DA12F89CBD005256C7 /* collection_interface.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/lib\"",
+				);
+				PRODUCT_NAME = pyxis;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/lib\"",
+				);
+				PRODUCT_NAME = pyxis;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/include\"";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../headers\"";
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/include\"";
+				LIBRARY_SEARCH_PATHS = "";
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../headers\"";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "pyxis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "pyxis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

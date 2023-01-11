@@ -1,0 +1,69 @@
+ <div class="page page-post surface">
+    <div class="container">
+         <div class="page__content">
+            <div class="page__content__inner">
+                <div class="page__body">
+                    <article class="aggregate-post">
+                        <div class="aggregate-post__media" ng-if="postCtrl.post.images">
+                           <img ng-src="{{postCtrl.post.images[0]}}" data-at2x="{{postCtrl.post.images[0]}}"/>
+                        </div>
+                        <div class="aggregate-post__meta">
+                            <span class="posted-by">Pyxis</span>
+                            <span class="circle"></span>
+                            <span class="posted-date">{{postCtrl.post.date || postCtrl.showYear}}</span>
+                            <div class="share">
+                                <a class="share__trigger" href=""><i class="nc-icon-glyph ui-2_share"></i></a>
+                                <div class="share__items">
+                                    <a class="share__item" href="">
+                                        <i class="nc-icon-glyph socials-1_logo-twitter" socialshare socialshare-provider="twitter" socialshare-text="{{post.title}}" socialshare-url="{{post.path}}"></i>
+                                    </a>
+                                    <a class="share__item" href="">
+                                        <i class="nc-icon-glyph socials-1_logo-facebook" socialshare socialshare-provider="facebook" socialshare-text="{{post.title}}" socialshare-url="{{post.path}}"></i>
+                                    </a>
+                                    <a class="share__item" href="" socialshare socialshare-provider="linkedin" socialshare-text="{{post.title}}" socialshare-url="{{post.path}}">
+                                        <i class="nc-icon-glyph socials-1_logo-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="aggregate-post__title" ng-bind-html="postCtrl.renderHtml(postCtrl.post.title)"></h3>
+                        <div class="aggregate-post__text" ng-bind-html="postCtrl.renderHtml(postCtrl.post.text)"></div>
+                    </article>
+                    <div class="related" style="display:none">
+                        <div class="related__header text-center"><hr class="hr-delimiter" text="Similar Posts"></hr></div>
+                        <div class="related__post text-center">
+                            <figure class="related__post__inner">
+                               <!--  <img ng-src="https://placeimg.com/600/600/arch/grayscale?1" />   -->
+                                <figcaption class="related__post__name">
+                                    <a class="link link--normal" href="">
+                                        Perry Peterson to Speak Pivotal International Executive Summit
+                                    </a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="related__post text-center">
+                            <figure class="related__post__inner">
+                               <!--  <img ng-src="https://placeimg.com/600/600/arch/grayscale?2" />   -->
+                                <figcaption class="related__post__name">
+                                    <a class="link link--normal" href="">
+                                       Congratulations to Dr. Samavati on the award of NSERC Grant
+                                    </a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="related__post text-center">
+                            <figure class="related__post__inner">
+                              <!--   <img ng-src="https://placeimg.com/600/600/arch/grayscale?3" />   -->
+                                <figcaption class="related__post__name">
+                                    <a class="link link--normal" href="">
+                                        PYXIS Silver Sponsorship at Pivotal International Executive Summit – Australia June 29-30
+                                    </a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>

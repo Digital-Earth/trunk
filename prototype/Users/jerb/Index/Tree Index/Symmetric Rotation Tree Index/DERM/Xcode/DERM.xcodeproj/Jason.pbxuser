@@ -1,0 +1,162 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 9632250F106FFCBD00518C9C /* DERM */;
+		activeTarget = 8DD76F620486A84900D96B5E /* DERM */;
+		addToTargets = (
+			8DD76F620486A84900D96B5E /* DERM */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = 96322519106FFCF600518C9C /* Code sense */;
+		executables = (
+			9632250F106FFCBD00518C9C /* DERM */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					302.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					540,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					375,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 282372814;
+			PBXWorkspaceStateSaveDate = 282372814;
+		};
+		perUserProjectItems = {
+			96085E9710D5609B005F77D4 /* PBXTextBookmark */ = 96085E9710D5609B005F77D4 /* PBXTextBookmark */;
+			96085E9810D5609B005F77D4 /* PBXTextBookmark */ = 96085E9810D5609B005F77D4 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 96322518106FFCF600518C9C /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8DD76F620486A84900D96B5E /* DERM */ = {
+		activeExec = 0;
+		executables = (
+			9632250F106FFCBD00518C9C /* DERM */,
+		);
+	};
+	96085E9710D5609B005F77D4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 96962E23107000C900DBDA3C /* main.cpp */;
+		rLen = 4;
+		rLoc = 12129;
+		rType = 0;
+	};
+	96085E9810D5609B005F77D4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 96962E23107000C900DBDA3C /* main.cpp */;
+		name = "main.cpp: 646";
+		rLen = 0;
+		rLoc = 13707;
+		rType = 0;
+		vrLen = 1744;
+		vrLoc = 13684;
+	};
+	9632250F106FFCBD00518C9C /* DERM */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = DERM;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	96322518106FFCF600518C9C /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	96322519106FFCF600518C9C /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	96962E23107000C900DBDA3C /* main.cpp */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{8260, 2607}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 37660}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {718, 15884}}";
+			sepNavSelRange = "{11101, 0}";
+			sepNavVisRange = "{11078, 1744}";
+			sepNavWindowFrame = "{{15, 0}, {775, 774}}";
+		};
+	};
+}

@@ -1,0 +1,19 @@
+﻿<div class="popup-menu">  
+    <div class="menu-title">Choose Widget</div>
+    <div class="add-widget-layout">
+        <div class="grid-layout" item-width="90" h-space="4" cols="4" row="3" expand-rows="false">
+            <div class="grid-item" ng-repeat="widget in addWidgetPopupMenu.widgets" 
+                                    row-span="widget.Size.rows" col-span="widget.Size.cols" 
+                                    ng-click="addWidget(addWidgetPopupMenu.item,addWidgetPopupMenu.field,widget.Type,widget.Title,widget.FieldValue)"
+                                    tooltip="{{widget.Tooltip|i18n}}">
+                <div class="title">{{widget.Title}}</div>
+                <div ng-if="widget.Type != 'Hist'" class="value">{{widget.Value}}</div>
+                <div ng-if="widget.Type == 'Hist'" class="graph">
+                    <div style="position:relative;width:170px;height:150px;overflow:hidden">
+                        <bar-chart class="blue-graph" graph-width="170" graph-height="150" labels="['A','B','C','D','E','F','G']" dataset="[1,2,3,4,3,2,1]"></bar-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

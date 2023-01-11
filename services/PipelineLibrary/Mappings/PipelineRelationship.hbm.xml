@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="PipelineLibrary"
+                   namespace="Pyxis.Services.PipelineLibrary.Domain">
+  <class name="PipelineRelationship">
+    <id name="Id" column="RelationshipId">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="Parent" class="Pipeline" column="PipelineId" fetch="select"/>
+    <property name="ChildPipelineId"/>
+  </class>
+</hibernate-mapping>

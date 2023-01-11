@@ -1,0 +1,34 @@
+﻿<div class="screen-capture" ng-esc="screenCapture.active=false">
+    <table class="outer">
+        <tr>
+            <td colspan="3"></td>
+        </tr>            
+        <tr>
+            <td width="auto"></td>
+            <td class="picture">
+                <div class="picture-shadow">
+                    <table class="inner">
+                        <tr height="10px">
+                            <td colspan="3"></td>
+                        </tr>            
+                        <tr>
+                            <td width="auto"></td>
+                            <td class="picture" id="capture"></td>
+                            <td width="auto"></td>
+                        </tr>
+                        <tr height="40px" >
+                            <td colspan="3" style="text-align:center;padding-top:4px">
+                                <button class="gray-hover big" ng-click="screenCapture.active=false" i18n="Cancel"></button>
+                                <button class="gray big" ng-click="screenCapture.capture()" i18n="Take a picture"></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td width="auto"></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+</div>

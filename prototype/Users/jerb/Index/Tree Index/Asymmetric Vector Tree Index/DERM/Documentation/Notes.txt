@@ -1,0 +1,11 @@
+
+This library provides a fast, production-quality, platform-independent C implementation of an ISEA3H DERM.
+
+Implementation notes:
+
+- 	Project files for Visual Studio 2005 and Xcode are included under "Platforms".
+
+- 	Visual Studio 2005 projects are configured as follows:
+	-	The Debug build runs a code analysis, similar to lint, automatically.
+	-	The Profile build is designed to be run with the performance profiling tools.
+	-	The Release build is tuned for speed.

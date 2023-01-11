@@ -1,0 +1,272 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88412B07-2305-4DC8-AF91-760C2B7E2CC8}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FileScope</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FileScope</RootNamespace>
+    <StartupObject>FileScope.StartApp</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt" />
+    <Content Include="README.txt" />
+    <Content Include="TODO.txt" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="GUIBridge.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="StartApp.cs" />
+    <Compile Include="SWF-UI\BrowseForFolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\ChatPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\ChatTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\Connection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\HomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\Library.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\SearchTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Controls\Transfers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\AboutDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\BrowseDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\ChattersDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\DownloadUrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\FileAlertDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\MainDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\MoreSearchInfoDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\NewVersionDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\OptionsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\TransfersMoreInfoDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Dialogs\WizardDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\ListViewSorter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\LVICompare.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\OwnerDraw\ElMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\OwnerDraw\ElTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SWF-UI\Themes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="SWF-UI\Controls\ChatPage.resx">
+      <DependentUpon>ChatPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Controls\ChatTabPage.resx">
+      <DependentUpon>ChatTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Controls\Connection.resx">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Controls\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Controls\Library.resx">
+      <DependentUpon>Library.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Controls\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Controls\SearchTabPage.resx">
+      <DependentUpon>SearchTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Controls\Transfers.resx">
+      <DependentUpon>Transfers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\AboutDlg.resx">
+      <DependentUpon>AboutDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\BrowseDlg.resx">
+      <DependentUpon>BrowseDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\ChattersDlg.resx">
+      <DependentUpon>ChattersDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\DownloadUrl.resx">
+      <DependentUpon>DownloadUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\FileAlertDlg.resx">
+      <DependentUpon>FileAlertDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\MainDlg.resx">
+      <DependentUpon>MainDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\MoreSearchInfoDlg.resx">
+      <DependentUpon>MoreSearchInfoDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\NewVersionDlg.resx">
+      <DependentUpon>NewVersionDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\OptionsDlg.resx">
+      <DependentUpon>OptionsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\TransfersMoreInfoDlg.resx">
+      <DependentUpon>TransfersMoreInfoDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\Dialogs\WizardDlg.resx">
+      <DependentUpon>WizardDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWF-UI\OwnerDraw\ElTabControl.resx">
+      <DependentUpon>ElTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileScopeCore\FileScopeCore.csproj">
+      <Project>{8F210AD8-EDB6-40F1-BB5A-109F61A1CFDB}</Project>
+      <Name>FileScopeCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

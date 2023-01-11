@@ -1,0 +1,27 @@
+﻿<scrollbar class="services">
+    <!-- The categories (services) -->
+    <!-- Note: only display a service if it actually has search results and
+    the search query is either associated with this particular service or none service -->
+    <div ng-repeat="service in data" ng-class="{service:service.results.length}" ng-show="searchServiceFilter(service.name)">
+        <div ng-if="service.results.length" ng-class="{selected: service.selected}">
+            <!-- Category title -->
+            <span class="name" ng-click="serviceClicked(service)">
+                <span ng-if="!service.selected" class="fa fa-angle-right angle-item" tooltip="{{'tooltip.import.menu.expand'|i18n}}"></span>
+                <span ng-if="service.selected" class="fa fa-angle-down angle-item" tooltip="{{'tooltip.import.menu.collapse'|i18n}}"></span>
+                <span>{{service.name}}</span>
+            </span>
+            <!-- The category item count -->
+            <span ng-if="!service.selected && service.results.length > 1" class="count">{{service.results.length}}</span>
+            <!-- The category items -->
+            <div ng-repeat="result in (service.selected ? service.results : service.results.slice(0, 3))" class="result" ng-class="{'selected':result===selectedItem}">
+                <!-- Item title -->
+                <div ng-click="selectItem(result, service);" ng-dblclick="importItem(result, service)" class="result-name"
+                    pyx-track='{"click": "search-select-item", "dblclick": "search-double-click-item"}' pyx-track-suffix="-{{service.name.split(' ').join('')}}">{{result.Metadata.Name}}</div>
+                <!-- Count of items inside this item -->
+                <span ng-if="service.selected">
+                    <span ng-if="result.DataSets" class="count">{{result.DataSets.length}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</scrollbar>

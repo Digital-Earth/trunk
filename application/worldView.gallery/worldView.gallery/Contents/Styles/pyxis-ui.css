@@ -1,0 +1,170 @@
+﻿.pyx-library
+{
+}
+
+.pyx-library-item
+{
+	cursor:pointer;
+	display:inline-block;
+	margin: 5px;
+	box-shadow: 2px 2px 5px #888;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #888;
+}
+
+.pyx-library-item-gallery
+{
+	cursor:pointer;
+	display:inline-block;
+	margin: 5px;
+	box-shadow: 2px 2px 5px #888;
+	width: 200px;
+	height: 240px;
+	border: 1px solid #888;
+}
+
+.pyx-library-item-gallery-title
+{
+	align-content:center;
+	text-align:center;
+}
+.pyx-library-subitem-gallery
+{
+	display:inline-block;
+}
+
+.pyx-thumb-big
+{
+	margin: 5px;
+	width: 190px;
+	height: 150px;
+}
+
+.pyx-thumb-small
+{
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+}
+
+.pyx-tags-list
+{
+	clear:both;
+}
+
+.pyx-tag-icon
+{
+	border-radius: 10px;
+	display:inline-block;
+	background-color: #73b0f1;
+	width:10px;
+	height:10px;
+	margin-right: 3px;
+}
+
+.pyx-tag
+{
+	border-radius: 10px;
+	border: 1px solid #444;
+	background-color: #eee;
+	padding: 2px 5px;
+	margin: 2px;
+	margin-right: 10px;
+	display:inline-block;
+}
+
+.scope-tree-key
+{
+	color: #394de4;
+}
+
+.scope-tree-value
+{
+	color: #a946f6;
+}
+
+.scope-tree-key-add, .scope-tree-key-remove
+{
+	color:#c4c4c4;
+	width:15px;
+	height:10px;
+    padding-right:10px;
+	display:none;
+}
+
+.scope-tree-key-add:hover, .scope-tree-key-remove:hover {
+    color: #394de4;
+}
+
+.scope-tree-key:hover .scope-tree-key-remove,
+.scope-tree-key:hover .scope-tree-key-add
+{
+	display:inline-block;
+}
+
+.eye-icon
+{
+	width:16px;
+	height:13px;
+	margin-top:5px;
+	display:inline-block;
+}
+
+.eye-icon.off
+{
+	background-image: url(/images/layers_eye_off.png);
+	/*background-position: 0px 0px;*/
+	background-repeat: no-repeat;
+}
+
+.eye-icon.on
+{
+	background-image: url(/images/layers_eye_on.png);
+	/*background-position: 0px -26px;*/
+	background-repeat: no-repeat;
+}
+
+.graph-icon
+{
+	width:14px;
+	height:14px;
+	margin-top:3px;
+	display:inline-block;
+}
+
+.graph-icon.off
+{
+	background-image: url(/images/graph_off.png);
+	/*background-position: 0px 0px;*/
+	background-repeat: no-repeat;
+}
+
+.graph-icon.on
+{
+	background-image: url(/images/graph_on.png);
+	/*background-position: 0px -26px;*/
+	background-repeat: no-repeat;
+}
+
+.expand-icon
+{
+	background-image: url(/images/arrow_collapsed.png);
+	background-repeat: no-repeat;
+	width:10px;
+	height:10px;
+	margin-top:5px;
+	margin-left:5px;
+	display:inline-block;
+	visibility:hidden;
+}
+
+.expand-icon.expanded
+{
+	background-image: url(/images/arrow_expanded.png);
+}
+
+.expand-icon.active
+{
+	visibility:visible;
+}

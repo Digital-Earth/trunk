@@ -1,0 +1,169 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F210AD8-EDB6-40F1-BB5A-109F61A1CFDB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileScopeCore</RootNamespace>
+    <AssemblyName>FileScopeCore</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StrippedZipLib, Version=0.5.0.1, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>StrippedZipLib\ICSharpCode.SharpZipLib\StrippedZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Gnutella2\Vendor.cs" />
+    <Compile Include="IGUIBridge.cs" />
+    <Compile Include="HashEngine.cs" />
+    <Compile Include="Listener.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Chatter\Chat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chatter\ChatHandShake.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chatter\ChatManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chatter\ChatProcessData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Downloader\Downloader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Downloader\DownloadManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Downloader\ReQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\ConnectionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\HostCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Protocol\Handshake.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Protocol\Messages.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Protocol\PacketFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Protocol\ProcessData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Protocol\QueryRouteTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Protocol\UDP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Sck.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Search.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\StartStop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gnutella2\Ultrapeer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniQueryHit.cs" />
+    <Compile Include="Uploader\Uploader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Uploader\UploadManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Base32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Endian.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\FileObject.cs" />
+    <Compile Include="Utilities\FileType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\GoodTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\GUID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Hashing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\HashSums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\IPfilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Keywords.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\md4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\VersionChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

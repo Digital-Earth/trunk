@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F9755F3-8FE4-42B0-B34F-F06480022352}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pyxis.Core</RootNamespace>
+    <AssemblyName>Pyxis.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\application\worldview\</SolutionDir>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Pyxis.Core.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\Expressions\ExpressionNodeCompilerHelper.cs" />
+    <Compile Include="Analysis\Expressions\ExpressionContext.cs" />
+    <Compile Include="Analysis\Expressions\ExpressionNode.cs" />
+    <Compile Include="Analysis\Expressions\ExpressionParser.cs" />
+    <Compile Include="Analysis\Expressions\FirstNotNullExpressionCompiler.cs" />
+    <Compile Include="Analysis\Expressions\TransfromValuesExpressionCompiler.cs" />
+    <Compile Include="Analysis\GeoSourceCalculator.cs" />
+    <Compile Include="Analysis\CoverageGetter.cs" />
+    <Compile Include="Analysis\GeoSourceMosaic.cs" />
+    <Compile Include="Analysis\PipelineSpecificationCreator.cs" />
+    <Compile Include="Analysis\EngineExtensions.cs" />
+    <Compile Include="Analysis\FeatureGetter.cs" />
+    <Compile Include="Analysis\FeaturesSearchQuery.cs" />
+    <Compile Include="Analysis\PipelineSpecificationExtensions.cs" />
+    <Compile Include="Analysis\ProcessExtensions.cs" />
+    <Compile Include="Analysis\Expressions\SlopeExpressionCompiler.cs" />
+    <Compile Include="Analysis\WhereQuery.cs" />
+    <Compile Include="DERM\Cell.cs" />
+    <Compile Include="DERM\Derm.cs" />
+    <Compile Include="DERM\EngineExtensions.cs" />
+    <Compile Include="DERM\ValueGetter.cs" />
+    <Compile Include="EngineException.cs" />
+    <Compile Include="IO\GeoJson\FeatureExtractionFlags.cs" />
+    <Compile Include="IO\GeoJson\Specialized\FeatureGroup.cs" />
+    <Compile Include="IO\GeoJson\Specialized\BBoxGeometry.cs" />
+    <Compile Include="IO\GeoJson\Specialized\ConditionGeometry.cs" />
+    <Compile Include="IO\GeoJson\Specialized\BooleanGeometry.cs" />
+    <Compile Include="IO\GeoJson\Specialized\TileCollectionGeometry.cs" />
+    <Compile Include="IO\GeoJson\MultiPolygonGeometry.cs" />
+    <Compile Include="IO\GeoJson\PolygonGeometry.cs" />
+    <Compile Include="IO\GeoJson\MultiLineStringGeometry.cs" />
+    <Compile Include="IO\GeoJson\LineStringGeometry.cs" />
+    <Compile Include="IO\GeoJson\Specialized\FeatureRefGeometry.cs" />
+    <Compile Include="IO\GeoJson\GeoJsonGeometryConverter.cs" />
+    <Compile Include="IO\IOExtensions.cs" />
+    <Compile Include="Analysis\StatisticsCreator.cs" />
+    <Compile Include="IO\PaletteExtensions.cs" />
+    <Compile Include="IO\PYXValueExtensions.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="EngineConfig.cs" />
+    <Compile Include="CoreServiceState.cs" />
+    <Compile Include="IO\GeoJson\Specialized\CellGeometry.cs" />
+    <Compile Include="IO\GeoJson\Specialized\CircleGeometry.cs" />
+    <Compile Include="IO\GeoJson\Feature.cs" />
+    <Compile Include="IO\GeoJson\FeatureCollection.cs" />
+    <Compile Include="IO\GeoJson\GeographicPosition.cs" />
+    <Compile Include="IO\GeoJson\Geometry.cs" />
+    <Compile Include="IO\GeoJson\GeoJsonObject.cs" />
+    <Compile Include="IO\GeoJson\PointGeometry.cs" />
+    <Compile Include="IO\IGeometry.cs" />
+    <Compile Include="IO\RandomStyleGenerator.cs" />
+    <Compile Include="IO\Range.cs" />
+    <Compile Include="IO\SpatialReferenceSystemExtensions.cs" />
+    <Compile Include="IO\StyleExtensions.cs" />
+    <Compile Include="Measurements\SphericalArea.cs" />
+    <Compile Include="Measurements\Measurement.cs" />
+    <Compile Include="Measurements\MeasurementType.cs" />
+    <Compile Include="Measurements\SphericalDistance.cs" />
+    <Compile Include="Measurements\Unit.cs" />
+    <Compile Include="PerimeterCalculator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ICoreService.cs" />
+    <Compile Include="Services\GeometryCacheService.cs" />
+    <Compile Include="Services\LocalPersistanceService.cs" />
+    <Compile Include="Services\PipelineService.cs" />
+    <Compile Include="Services\PyxlibService.cs" />
+    <Compile Include="Services\PyxNetService.cs" />
+    <Compile Include="Services\PyxNetStackConfiguration.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\SingletonEnforcerService.cs" />
+    <Compile Include="TraceLevels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\application\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92c4cc38-0161-457d-a0f6-7808ff4cd0f5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet.DLM\PyxNet.DLM.csproj">
+      <Project>{c302e222-29a0-4a95-8e65-740fb72e6795}</Project>
+      <Name>PyxNet.DLM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet.Pyxis\PyxNet.Pyxis.NoLibrary.csproj">
+      <Project>{0b4efb08-9514-4929-a849-d851a8b6a129}</Project>
+      <Name>PyxNet.Pyxis.NoLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet\PyxNet.csproj">
+      <Project>{39effc79-2e12-4861-8dc9-7e59b6d2b9d1}</Project>
+      <Name>PyxNet %28PyxNet\PyxNet%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contracts\Pyxis.Contracts.csproj">
+      <Project>{bb0fdb8b-be80-4db0-87f0-9c75bb89c7c7}</Project>
+      <Name>Pyxis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Publishing\Pyxis.Publishing.csproj">
+      <Project>{5ba06255-9024-4a7f-8253-2a60b6ba194e}</Project>
+      <Name>Pyxis.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pyxis.Storage\Pyxis.Storage.csproj">
+      <Project>{5c69cae6-ddea-4063-a2c9-41a63bc78bdf}</Project>
+      <Name>Pyxis.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Pyxis.Utilities.csproj">
+      <Project>{e0263220-f917-4e71-9cb4-9d6ede2aa8cb}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>robocopy $(SolutionDir)$(ConfigurationName)\plugins $(TargetDir)plugins  /E &gt;nul
+robocopy $(SolutionDir)$(ConfigurationName) $(TargetDir) pyxlib.dll pyxlib_swig.dll cpprest*.dll zlib*.dll xerces*.dll sqlite3.dll &gt;nul
+exit 0
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

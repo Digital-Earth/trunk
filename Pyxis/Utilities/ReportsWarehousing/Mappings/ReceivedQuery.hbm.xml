@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+***********************************************************
+ReceivedQuery.hbm.xml (NHibernate Mapping File)
+
+begin      : October 9, 2009
+copyright  : (c) 2009 by the PYXIS innovation inc.
+web        : www.pyxisinnovation.com
+***********************************************************
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  assembly="Pyxis.Utilities.ReportsWarehouse"
+  namespace="Pyxis.Utilities.ReportsWarehouse.Domain">
+<class name="ReceivedQuery">
+  <id name="id">
+    <generator class="increment"/>
+  </id>
+  <many-to-one name="Report"  class="Report" fetch="select" cascade="save-update"/>
+  <property name="TimeStamp"/>
+  <many-to-one name="SendingNode"  class="Node" fetch="select" cascade="save-update"/>
+  <many-to-one name="ReceivingNode" class="Node" fetch="select" cascade="save-update"/>
+  <property name="Hits"/>
+</class>
+</hibernate-mapping>

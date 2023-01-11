@@ -1,0 +1,3 @@
+The strong name key supplied here allows you to compiled the Infralution source and register the resultant assemblies in 
+the GAC.  This is not the strong name used to sign actual Infralution assemblies.   Infralution recommends signing assemblies
+with your own unique strong name to avoid possible tampering.

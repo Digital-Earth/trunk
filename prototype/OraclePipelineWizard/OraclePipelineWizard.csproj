@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54AA2505-8742-4EF7-A246-67790A43FAAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OraclePipelineWizard</RootNamespace>
+    <AssemblyName>Oracle Pipeline Wizard</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Resources\PYXIS.ico</ApplicationIcon>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="gdal_csharp, Version=1.0.3484.21288, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>gdal\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ogr_csharp, Version=1.0.3484.21288, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>gdal\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp, Version=1.0.3484.21288, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>gdal\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenerateVrtPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenerateVrtPage.Designer.cs">
+      <DependentUpon>GenerateVrtPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectionOverviewPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectionOverviewPage.Designer.cs">
+      <DependentUpon>ProjectionOverviewPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWizardForm.Designer.cs">
+      <DependentUpon>MainWizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OracleConnectData.cs" />
+    <Compile Include="RasterColumnPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RasterColumnPage.Designer.cs">
+      <DependentUpon>RasterColumnPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RasterDataTablesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RasterDataTablesPage.Designer.cs">
+      <DependentUpon>RasterDataTablesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GenerateVrtPage.resx">
+      <DependentUpon>GenerateVrtPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectionOverviewPage.resx">
+      <DependentUpon>ProjectionOverviewPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWizardForm.resx">
+      <DependentUpon>MainWizardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RasterColumnPage.resx">
+      <DependentUpon>RasterColumnPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RasterDataTablesPage.resx">
+      <DependentUpon>RasterDataTablesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OracleLoginPage.resx">
+      <DependentUpon>OracleLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpatialTablePage.resx">
+      <DependentUpon>SpatialTablePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OracleLoginPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OracleLoginPage.Designer.cs">
+      <DependentUpon>OracleLoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpatialTablePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpatialTablePage.Designer.cs">
+      <DependentUpon>SpatialTablePage.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\PYXIS.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

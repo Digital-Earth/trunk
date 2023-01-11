@@ -1,0 +1,5 @@
+AuthUserFile /home/pyxis/htpassword/.htpasswd
+AuthName "Logging Administration"
+AuthType Basic
+require user loggingadmin
+

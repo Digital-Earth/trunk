@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44B44E81-7223-45CC-AE0A-0790D1E73BE5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pyxis.IO</RootNamespace>
+    <AssemblyName>Pyxis.IO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Import\SamplerImportSetting.cs" />
+    <Compile Include="Import\ImportSettingProviderExtensions.cs" />
+    <Compile Include="Sources\ArcGIS\ArcGISDataSetImportService.cs" />
+    <Compile Include="Sources\ArcGIS\ArcGISDiscoveryService.cs" />
+    <Compile Include="Sources\ArcGIS\ArcGISFeatureDownloader.cs" />
+    <Compile Include="Sources\ArcGIS\ArcGISGeoServicesHelper.cs" />
+    <Compile Include="DataDiscovery\DataDiscoveryExtensions.cs" />
+    <Compile Include="DataDiscovery\DiscoveryHttpRequest.cs" />
+    <Compile Include="DataDiscovery\DiscoveryTask.cs" />
+    <Compile Include="DataDiscovery\IDataSetDiscoveryService.cs" />
+    <Compile Include="DataDiscovery\IDiscoveryNetworkRequest.cs" />
+    <Compile Include="DataDiscovery\IDiscoveryService.cs" />
+    <Compile Include="DataDiscovery\UriExtensions.cs" />
+    <Compile Include="Sources\Local\LocalDataSetImportService.cs" />
+    <Compile Include="Sources\Local\LocalDiscoveryService.cs" />
+    <Compile Include="Sources\Microsoft\BingDiscoveryService.cs" />
+    <Compile Include="Sources\OGC\OgcWebCoverageDiscoveryService.cs" />
+    <Compile Include="Sources\OGC\OgcDiscoveryService.cs" />
+    <Compile Include="Sources\OGC\OgcWebFeatureDiscoveryService.cs" />
+    <Compile Include="Sources\OGC\OgcWebMapDiscoveryService.cs" />
+    <Compile Include="Sources\Remote\INetworkPermit.cs" />
+    <Compile Include="Sources\Microsoft\BingImagery.cs" />
+    <Compile Include="Import\DataSetCatalogExtensions.cs" />
+    <Compile Include="Import\DownloadLocallySetting.cs" />
+    <Compile Include="Import\EngineExtensions.cs" />
+    <Compile Include="Import\GeoTagging\GeoTagByFeatureCollectionLookup.cs" />
+    <Compile Include="Import\GeoTagging\GeoTagByLatLonPoint.cs" />
+    <Compile Include="Import\GeoTagging\IGeoTagMethod.cs" />
+    <Compile Include="Import\GeoTagImportSetting.cs" />
+    <Compile Include="Import\IImportSettingProvider.cs" />
+    <Compile Include="Import\ImportGeoSourceProgress.cs" />
+    <Compile Include="Import\NetworkCredentialImportSetting.cs" />
+    <Compile Include="Sources\Local\LocalDataSetDiscoveryService.cs" />
+    <Compile Include="Sources\ArcGIS\ArcGISGeoServices.cs" />
+    <Compile Include="MultiDomain\IMultiDomainGeoSourceResolver.cs" />
+    <Compile Include="MultiDomain\SimpleMultiDomainGeoSourceResolver.cs" />
+    <Compile Include="MultiDomain\StaticMultiDomianGeoSourceResolver.cs" />
+    <Compile Include="Sources\OGC\OgcCatalogCapabilitiesParser.cs" />
+    <Compile Include="Sources\OGC\OgcCatalogServer.cs" />
+    <Compile Include="Sources\OGC\OgcCatalogUrl.cs" />
+    <Compile Include="Sources\OGC\OgcCatalogService.cs" />
+    <Compile Include="Sources\OGC\IOgcUrl.cs" />
+    <Compile Include="Import\ProcessErrorFixer.cs" />
+    <Compile Include="Import\SRSImportSetting.cs" />
+    <Compile Include="Sources\Memory\EngineExtensions.cs" />
+    <Compile Include="Sources\Memory\InMemoryGeoSourceCreator.cs" />
+    <Compile Include="Sources\OGC\OgcInvariantUrl.cs" />
+    <Compile Include="Sources\OGC\OgcMetadataExtractor.cs" />
+    <Compile Include="Sources\OGC\OgcWebCoverageCapabilitiesParser.cs" />
+    <Compile Include="Sources\OGC\OgcWebCoverageService.cs" />
+    <Compile Include="Sources\OGC\OgcWebCoverageUrl.cs" />
+    <Compile Include="Sources\OGC\OgcWebFeatureCapabilitiesParser.cs" />
+    <Compile Include="Sources\OGC\OgcWebFeatureService.cs" />
+    <Compile Include="Sources\OGC\OgcWebFeatureUrl.cs" />
+    <Compile Include="Sources\OGC\OgcWebMapCapabilitiesParser.cs" />
+    <Compile Include="Sources\OGC\OgcWebMapService.cs" />
+    <Compile Include="Sources\OGC\OgcWebMapUrl.cs" />
+    <Compile Include="Sources\OGC\OgcWebServiceBase.cs" />
+    <Compile Include="Sources\OGC\XmlNodeExtractor.cs" />
+    <Compile Include="Search\AggregationResults.cs" />
+    <Compile Include="Search\BooleanScorer.cs" />
+    <Compile Include="Search\FloatScorer.cs" />
+    <Compile Include="Search\GazeteerExtensions.cs" />
+    <Compile Include="Search\Gazetteer.cs" />
+    <Compile Include="Search\GazetteerAggregator.cs" />
+    <Compile Include="Search\GazetteerEntry.cs" />
+    <Compile Include="Search\GazetteerEntryScore.cs" />
+    <Compile Include="Search\IGazetteer.cs" />
+    <Compile Include="Search\IGazetteerAggregator.cs" />
+    <Compile Include="Search\InterestcsScorer.cs" />
+    <Compile Include="Search\MultiSourceGazetteer.cs" />
+    <Compile Include="Search\NearScorer.cs" />
+    <Compile Include="Search\IGazetteerScorer.cs" />
+    <Compile Include="Search\SearchRequest.cs" />
+    <Compile Include="Search\SearchResults.cs" />
+    <Compile Include="Search\Sources\LocalFolderGazetteer.cs" />
+    <Compile Include="Search\TextScorer.cs" />
+    <Compile Include="Search\Tokenizer.cs" />
+    <Compile Include="Search\WeightedScorer.cs" />
+    <Compile Include="Sources\Remote\IWebDataSetDiscoveryService.cs" />
+    <Compile Include="Sources\OGC\OgcUrl.cs" />
+    <Compile Include="Sources\OGC\OgcWebServerBase.cs" />
+    <Compile Include="Sources\Remote\UrlImportService.cs" />
+    <Compile Include="Sources\Remote\WebDataSetServiceBase.cs" />
+    <Compile Include="Sources\OGC\OgcWebCoverageServer.cs" />
+    <Compile Include="Sources\Remote\WebRequestHelper.cs" />
+    <Compile Include="Sources\OGC\OgcWebFeatureServer.cs" />
+    <Compile Include="Sources\OGC\OgcWebMapServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publish\EngineExtensions.cs" />
+    <Compile Include="Publish\ImageUploader.cs" />
+    <Compile Include="Publish\IPublishSettingProvider.cs" />
+    <Compile Include="Publish\PublishGeoSourceProgress.cs" />
+    <Compile Include="Publish\PublishResourceGenerator.cs" />
+    <Compile Include="Publish\PublishMapProgress.cs" />
+    <Compile Include="Publish\PublishStatus.cs" />
+    <Compile Include="Publish\UploadImagePublishSetting.cs" />
+    <Compile Include="Sources\Reflection\Converter.cs" />
+    <Compile Include="Sources\Reflection\FeatureIdAttribute.cs" />
+    <Compile Include="Sources\Reflection\IFeatureConverter.cs" />
+    <Compile Include="Sources\Reflection\ReflectionBasedFeatureConverter.cs" />
+    <Compile Include="Sources\Reflection\TypeConversionRepository.cs" />
+    <Compile Include="Settings\ISettingProvider.cs" />
+    <Compile Include="Settings\SettingProvider.cs" />
+    <Compile Include="Sources\Socrata\SocrataDataSetImportService.cs" />
+    <Compile Include="Sources\Socrata\SocrataDiscoveryService.cs" />
+    <Compile Include="Sources\Socrata\SocrataHelper.cs" />
+    <Compile Include="Sources\UCAR\UcarDiscoveryService.cs" />
+    <Compile Include="Styles\Icons.cs" />
+    <Compile Include="Styles\StyledGeoSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\application\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92c4cc38-0161-457d-a0f6-7808ff4cd0f5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet.Pyxis\PyxNet.Pyxis.NoLibrary.csproj">
+      <Project>{0b4efb08-9514-4929-a849-d851a8b6a129}</Project>
+      <Name>PyxNet.Pyxis.NoLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet\PyxNet.csproj">
+      <Project>{39effc79-2e12-4861-8dc9-7e59b6d2b9d1}</Project>
+      <Name>PyxNet %28PyxNet\PyxNet%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\projects\application\application_swig_csharp\application_swig_csharp.csproj">
+      <Project>{1cd1ac04-4400-45f7-8feb-3c4bb3f5a489}</Project>
+      <Name>application_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contracts\Pyxis.Contracts.csproj">
+      <Project>{bb0fdb8b-be80-4db0-87f0-9c75bb89c7c7}</Project>
+      <Name>Pyxis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Pyxis.Core.csproj">
+      <Project>{6f9755f3-8fe4-42b0-b34f-f06480022352}</Project>
+      <Name>Pyxis.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Publishing\Pyxis.Publishing.csproj">
+      <Project>{5ba06255-9024-4a7f-8253-2a60b6ba194e}</Project>
+      <Name>Pyxis.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pyxis.Storage\Pyxis.Storage.csproj">
+      <Project>{5c69cae6-ddea-4063-a2c9-41a63bc78bdf}</Project>
+      <Name>Pyxis.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Pyxis.Utilities.csproj">
+      <Project>{e0263220-f917-4e71-9cb4-9d6ede2aa8cb}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>PYXIS GDAL Driver (RGB)</title>
+</head>
+
+<body bgcolor="#ffffff">
+
+<h2>PYXIS GDAL Driver (RGB)</h2>
+
+The PYXIS GDAL driver provides access to PYXIS from within a GDAL implementation.  The driver loads a PYXIS PIPE file and provides access to the data in RGB format.
+<p>
+The driver input is a text file with extension “.pgd”. The contents of the file are as follows buy line number:<br>
+1. A folder where PYXIS will store its working files such as its cache.<br>
+2. A folder containing the PYXIS library files and the PYXIS plugins.<br>
+3. A PYXIS PIPE file.<br>
+4. RasterXSize: The number of pixels in the X dimension (integer).<br>
+5. RasterYSize: The number of pixels in the Y dimension (integer).<br>
+6. PYXIS resolution (integer).<br>
+7. Upper Left Longitude (double).<br>
+8. Upper Left Latitude (double).<br>
+9. Lower Right Longitude (double).<br>
+10. Lower Right Latitude (double).<br>
+<P>
+Example input file: “foo.pgd”<br>
+c:\pyxisworkingdir<br>
+c:\pyxisbin<br>
+c:\pyxis_data\Blue Marble Reloaded\reloaded.ppl<br>
+256<br>
+256<br>
+13<br>
+140.00<br>
+-25.00<br>
+145.00<br>
+-30.00<br>
+<p>
+The Well Known Text for the projection is: GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]]
+<p>
+The GeoTransform is as follows:<br>
+adfGeoTransform[0]= Upper Left Longitude<br>
+adfGeoTransform[1]= ABS((Upper Right Longitude - Upper Left Longitude)/ RasterXSize)<br>
+adfGeoTransform[2]= 0<br>
+adfGeoTransform[3]= Upper Left Latitude<br>
+adfGeoTransform[4]= 0<br>
+adfGeoTransform[5]= ABS ((Lower Right Latitude - Upper Left Latitude)/RasterYSize);<br>
+<p>
+There are three RasterBands: Red, Green and Blue.  The data type is GDT_Int32, BlockXSize is RasterXSize and  BlockYSize is 1.
+<p>
+See <a href="http://www.gdal.org/gdal_tutorial.html">GDAL Tutorial<a> for usage.
+
+</body>
+</html>

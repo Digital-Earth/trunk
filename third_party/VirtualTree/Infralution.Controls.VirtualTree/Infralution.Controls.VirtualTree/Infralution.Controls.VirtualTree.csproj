@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A44BBD6-AC7F-4332-A2D7-9C4D8063E352}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Infralution.Controls.VirtualTree</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Infralution.Controls.VirtualTree</RootNamespace>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DocumentationFile>Infralution.Controls.VirtualTree.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1699</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1699</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infralution.Controls\Infralution.Controls\Infralution.Controls.csproj">
+      <Project>{c245d32f-bc3f-4fef-b571-ca0e54f40370}</Project>
+      <Name>Infralution.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infralution.RichText\Infralution.RichText\Infralution.RichText.vcxproj">
+      <Project>{bd68d555-99c8-44cd-8a8e-190bbf3f36a7}</Project>
+      <Name>Infralution.RichText</Name>
+    </ProjectReference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\Infralution.Common\Infralution.Common.csproj">
+      <Name>Infralution.Common</Name>
+      <Project>{CBA7A8D5-DB18-4F47-BA87-E628692647D6}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CellBinding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CellBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CellData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CellEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEditorDisplayMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CellEditorEventArgs.cs" />
+    <Compile Include="CellEditorGetValueEventArgs.cs" />
+    <Compile Include="CellEditorInitializeEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CellEditorList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CellEditorSetValueEventArgs.cs" />
+    <Compile Include="CellWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClipControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Column.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColumnAutoSizePolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColumnCustomizeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColumnCustomizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColumnCustomizeWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColumnDividerWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColumnHeaderWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColumnList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StyleTemplate.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SpanningRowWidget.cs" />
+    <Compile Include="WidgetCreator.cs" />
+    <Compile Include="DataLookupConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataLookupEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataRowCellBinding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataRowRowBinding.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetCellBinding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataSetRowBinding.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataViewCellBinding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataViewList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataViewRowBinding.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignAssembly.cs" />
+    <Compile Include="ExpansionWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetAllowedRowDropLocationsEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetAllowRowDragEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetBindingEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetCellDataEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetChildPolicyEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetChildrenEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetColumnInContextEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetContextMenuEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetParentEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetRowDataEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetRowDropEffectEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HeaderWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LineStyle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NamespaceDoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectCellBinding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectRowBinding.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PanelWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Row.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowBinding.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RowBindingList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowChildPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowDividerWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowDropEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowDropLocation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowHeaderWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowSelectionList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RowWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SelectionChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SelectionChangingEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SelectionMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SetCellValueEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SimpleColumnList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VirtualTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VirtualTreePrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="ColumnCustomizeControl.resx">
+      <DependentUpon>ColumnCustomizeControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColumnCustomizeForm.resx">
+      <DependentUpon>ColumnCustomizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursors\Copy.cur" />
+    <EmbeddedResource Include="Cursors\Move.cur" />
+    <None Include="Icons\AutoFit.ico" />
+    <None Include="Icons\BestFit.ico" />
+    <None Include="Icons\BestFitAll.ico" />
+    <None Include="Icons\Collapse.ico" />
+    <None Include="Icons\CustomizeColumns.ico" />
+    <None Include="Icons\DropAbove.ico" />
+    <None Include="Icons\DropBelow.ico" />
+    <None Include="Icons\DropNone.ico" />
+    <None Include="Icons\DropOn.ico" />
+    <None Include="Icons\Error.ico" />
+    <None Include="Icons\Expand.ico" />
+    <None Include="Icons\Focus.ico" />
+    <None Include="Icons\Pin.ico" />
+    <None Include="Icons\SortAscending.ico" />
+    <None Include="Icons\SortAscendingMenu.ico" />
+    <None Include="Icons\SortDescending.ico" />
+    <None Include="Icons\SortDescendingMenu.ico" />
+    <None Include="Icons\VirtualTree.ico" />
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VirtualTree.bmp" />
+    <EmbeddedResource Include="Cursors\Arrow.cur" />
+    <None Include="Icons\CollapseVista.ico" />
+    <None Include="Icons\DownArrow.ico" />
+    <None Include="Icons\PinnedMenu.ico" />
+    <None Include="Icons\ExpandVista.ico" />
+    <None Include="Icons\UpArrow.ico" />
+    <EmbeddedResource Include="ColumnCustomizeForm.fr.resx">
+      <DependentUpon>ColumnCustomizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColumnCustomizeForm.de.resx">
+      <DependentUpon>ColumnCustomizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColumnCustomizeForm.it.resx">
+      <DependentUpon>ColumnCustomizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.it.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>echo f|xcopy "$(TargetPath)" "$(SolutionDir)$(ConfigurationName)\$(TargetFileName)" /Y
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,182 @@
+<div class="page-features surface">
+    <div class="banner surface" resize resize-set="height">
+        <section class="container container--expanded">
+            <div class="banner__media">
+                <img ng-src="/site/assets/img-features-globe@2x.png" data-at2x="/site/assets/img-features-globe@2x.png" />
+            </div>
+            <div class="banner__content">
+                <h3 class="title">Make Sense of What You See</h3>
+                <p class="description">
+                WorldView provides powerful, but simple colour visualization tools and styling options for your data. We understand that you can’t make good decisions without clearly understanding what’s in front of you.
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="">Try it for free</a>
+            </div>
+            <div class="banner__footer text-center">
+                <a class="link bounce" href="" ng-click="'.tour-place' | scrollTo : 0.6 : Power4.easeInOut"><i class="nc-icon-outline arrows-1_minimal-down"></i></a>
+            </div>
+        </section>
+    </div>
+    <div class="tour tour-place surface">
+        <section class="container">
+           <div class="tour__media text-center">
+                <img src="/site/assets/img-tour-one-place.png" />
+            </div>
+            <div class="tour__info">
+                <div class="svg-icon" svg-animate svg-uid="one-place-icon" json-path="/site/animations/data_place_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>   
+                <h3 class="title">One Place for Data</h3>
+                <p class="description">
+                Collect and store your geospatial data in one, easily accessible WorldView Gallery of your own or use a larger WorldView Channel to centralize your company’s data.
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="">Contact us</a>
+            </div>
+        </section>
+    </div>
+    <div class="tour tour-publish surface has-border-top">
+        <section class="container">
+        <div class="tour__info text-center">
+            <div class="svg-icon" svg-animate svg-uid="on-button-icon" json-path="/site/animations/on_button_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>   
+            <h3 class="title">Publish on Demand</h3>
+                <p class="description">
+                You can easily and simply publish great data for others to use at anytime in your own personal WorldView Gallery or publish your companies backlog of data in a WorldView Channel.
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="" ng-click="show.modal = 'register'">Register</a>
+            </div>
+        </section>
+    </div>
+    <div class="tour tour-embed surface" embed-animate>
+        <section class="container">
+            <div class="tour__info">
+                <div class="svg-icon" svg-animate svg-uid="web-embed-icon" json-path="/site/animations/web_embed_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>
+                <h3 class="title">Web Embeddable Globe</h3>
+                <p class="description">
+                Now you can share insights anywhere on the internet with the WorldView web embeddable globe! Let the world behold your beautiful wisdom, or just share with a friend or two.
+                </p>
+                 <a class="btn btn--small btn--rounded btn--action reverse" href="/features">Learn More</a>
+            </div>
+            <div class="tour__media text-center">
+                <img class="frame-imac" ng-src="/site/assets/img-tour-embed-imac.png" data-at2x="/site/assets/img-tour-embed-imac@2x.png" />
+                <img class="frame-ipad" ng-src="/site/assets/img-tour-embed-ipad.png" data-at2x="/site/assets/img-tour-embed-ipad@2x.png" />
+                <img class="frame-android" ng-src="/site/assets/img-tour-embed-android.png" data-at2x="/site/assets/img-tour-embed-android@2x.png" />
+            </div>
+        </section>
+    </div>
+    <!--
+     <div class="tour surface">
+        <div class="tour__header text-center">
+            <h1 class="headline">Worldview where you need it</h1>
+        </div>
+        <div class="tour-online tour-panel">
+           <div class="tour__vignette-box text-center">
+                <h3 class="title">WorldView Online</h3>
+                <div class="icon">
+                    <i class="nc-icon-glyph ui-2_cloud-25"></i>
+                </div>
+                <a class="btn btn--small btn--rounded btn--white reverse" href="">Register</a>
+           </div>
+        </div>
+         <div class="tour-download tour-panel text-center">
+           <div class="tour__vignette-box">
+                <h3 class="title">Windows 7 app</h3>
+                <div class="icon">
+                    <i class="icon-windows8"></i>
+                </div>
+                <a class="btn btn--small btn--rounded btn--white reverse" href="">Download</a>
+           </div>
+        </div>
+    </div>
+    -->
+    <div class="formats surface">
+        <section class="container has-border-bottom">
+            <div class="formats__header">
+                <div class="headline-and-icon">
+                    <div class="text text-center">
+                        <p class="text__name">File compatibility is a thing of the past.</p>
+                        <p class="text__info">Worldview supports 67+ file formats<br/> and counting</p>
+                    </div>
+                </div>
+            </div>
+            <div class="formats__body">
+                <p class="format is-yellow">.TIF</p>
+                <p class="format is-orange">.SHP</p>
+                <p class="format is-orange-hot">.IMG</p>
+                <p class="format is-red">.CSV</p>
+                <p class="format is-orange">.eOO</p>
+                <p class="format is-red">.DEM</p>
+                <p class="format is-pink">.DWG</p>
+                <p class="format is-purple">.GDB</p>
+                <div ng-if="featuresCtrl.moreFeatures" class="format-more">
+                    <p class="format is-yellow">.TIF</p>
+                    <p class="format is-orange">.SHP</p>
+                    <p class="format is-orange-hot">.IMG</p>
+                    <p class="format is-red">.CSV</p>
+                    <p class="format is-orange">.eOO</p>
+                    <p class="format is-red">.DEM</p>
+                    <p class="format is-pink">.DWG</p>
+                    <p class="format is-purple">.GDB</p>
+                </div>
+            </div>
+            <div class="formats__footer text-center">
+                <a class="link link--underline reverse" href="" ng-click="featuresCtrl.moreFeatures = true" ng-if="!featuresCtrl.moreFeatures">See the Complete List</a>
+                <a class="link link--underline reverse" href="" ng-click="featuresCtrl.moreFeatures = false" ng-if="featuresCtrl.moreFeatures">Hide the Complete List</a>
+            </div>
+        </section>
+    </div>
+    <div class="tour tour-data surface">
+        <section class="container container--expanded">
+            <img class="shape-file" src="/site/assets/img-tour-data-file.png"/>
+            <div class="tour__info text-center">
+            <div class="svg-icon" svg-animate svg-uid="your-data-icon" json-path="/site/animations/your_data_icon.json" scroll-enter on-enter-then="render" use-boundary="middle"></div>
+            <h3 class="title">Bring Your Data</h3>
+                <p class="description">
+                WorldView can read almost any Geographic Information System file format, and you can add 100x more information at once than conventional  products like Google Maps.
+                </p>
+            </div>
+        </section>
+    </div>
+    
+    <div class="tour tour-online-or-app surface">
+        <section class="container container--expanded">
+            <div class="tour__media">
+                <div class="svg-icon" svg-animate svg-uid="cloud-plus-icon" json-path="/site/animations/cloud_plus_windows_icon.json" scroll-enter on-enter-then="render" use-boundary="middle"></div>
+            </div>
+            <div class="tour__info">
+             <h3 class="title">Online and App</h3>
+                <p class="description">
+               Whether you need access to answers anywhere  or utilizing the power of your Windows computer, WorldView is ready.
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="" ng-click="show.modal = 'register'">Register Online</a> 
+                <a class="link link--underline" href="">Download Windows App</a> 
+            </div>
+          
+        </section>
+    </div>
+    
+    <!--  
+    <div class="tour tour-online-app surface">
+        <div class="container">
+            <div class="tour__header text-center">
+                <h1 class="title">Worldview where you need it</h1>
+            </div>
+            <div class="tour-panel text-center" make-square>
+               <div class="tour__vignette-box left">
+                    <h3 class="subtitle">WorldView Online</h3>
+                    <div class="icon">
+                        <i class="nc-icon-glyph ui-2_cloud-25"></i>
+                    </div>
+                    <a class="btn btn--small btn--rounded btn--action" href="">Register</a>
+               </div>
+            </div>
+             <div class="tour-panel text-center" make-square>
+               <div class="tour__vignette-box right">
+                    <h3 class="subtitle">Windows app</h3>
+                    <div class="icon">
+                        <i class="icon-windows8"></i>
+                    </div>
+                    <a class="btn btn--small btn--rounded btn--action" href="">Download</a>
+               </div>
+            </div>
+        </div>
+    </div>
+    -->
+</div>
+ 

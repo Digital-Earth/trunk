@@ -1,0 +1,4 @@
+﻿<!-- Navigation controls -->
+<div class="globe-controls" ng-class="{minimized:(dashboard.minimized || screenCapture.active || cameraCapture.active) && !quickDashboardPopup && !dashboard.mouseOver, hidden: !uiActive}">
+    <globe-controls ng-if="uiActive" goto-user-location="gotoUserLocation()"></globe-controls>
+</div>

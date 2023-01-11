@@ -1,0 +1,190 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LicenseServer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PrimaryNodeIdentity" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">091b5336-9e65-45a3-9eac-a6b33e81e329</Value>
+    </Setting>
+    <Setting Name="SecondaryNodeIdentity" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3e52e311-6b35-4282-90b4-255d66ac8cdf</Value>
+    </Setting>
+    <Setting Name="PrimarySerializedKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PFJTQUtleVZhbHVlPjxNb2R1bHVzPmd1cmgrOXFKZVFhOWVBWFBPaG5pQ3l3SU5Qd3FGbThKbDBrSlg3eEp0dHJFaVdtZitZQzdBOVpWNjl6TUFXUDVrN0J4SHFRbUpHVTRIQUpTK3B3bkE0Smx6WHA1OTlacEpmWUNQa0RuWnliUnpZODJkOWJxdUdWTUdLZTBMNGFRWmdOVWMvaFZRdmxBNWxWcGpyMTZ2eU1JaE1tWE9SKzdQQVVJMnZ4VE1YRT08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjxQPnQxNzNwTVZ2MXlZRHE5VW9rNXEwNHcrUW5xMFUrK3psOGpXOVNWemJ3Y0p2L2w5bXFRN20zejd4ZDgwQlFlbXI3OGVYaDNsUCtIS1o2MmtFMHRUWmR3PT08L1A+PFE+dHNWYjdIa3REallqSWdvMVZqMVZ3YlY3a3dSdGxWUUM3dG1iU21DdS9jWnNkb2JQS0pKamQyaDFGdUVMbXZKU3ZlSzVqbjRxWG4rc01SRTR6MStHVnc9PTwvUT48RFA+Vi9aNGVWUTAyRkptQkhIV2F5Z1ZpYTZYdzJabjRJbTlyTGpXdW5DUEFwMlJOOGJ2NmowNXh2SGN4NGxTQnhwZTNrRXlrVXhDYm40YkUvQm0zZlE0OVE9PTwvRFA+PERRPlRlSWwvTXZhUmo4Tms1alVCNjdWVjFsVmtsMkZzT2QrNUhjNE5HYWt5eUY5NExncm1MZGd5V1pxMXRnSlVQcklCWUNTMzhTbG0yVStaQjVabmd5dnV3PT08L0RRPjxJbnZlcnNlUT5sQXNkZENmZzA5VitaY3kwdXV1ZUpndXp1a0ZyK0Q0V01RenZZOEhFTjJsVnVpSGgyRU40dUtsTWovRXg0bFd1TCtzSkZlUzRqaGVYUmw2aUpaVEkwQT09PC9JbnZlcnNlUT48RD5QRUVFbjFqV21zZzZYY28ydFNRQ2dHZlVveVpIN0tsUVBidlV2NlkyT3gxM0JWT0MyRitpTTBMcnFyR2xoeUpQVk9VSk96UUxoZ2E4QzFBYWh0Tmx0TFJENm1zbzhWTXVTeVZhMyt2UjJ4N1Q1ZzgzeVhjMWo1ZnFLZkZHUEZLS0tvcE9QUGF0TUVzTjROeERvcVFTREx3NERnMm5BVFVDSVFQVzE1OEp2aTA9PC9EPjwvUlNBS2V5VmFsdWU+</Value>
+    </Setting>
+    <Setting Name="SecondarySerializedKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PFJTQUtleVZhbHVlPjxNb2R1bHVzPnFJR3c4TzduV1ZJelNqMTdBZlIwWElMQ2NYNWZET2hCamg1SlNwSTVNZmpTVUQzT0pKZFM5Q2xqaVAxWmZ6RXduN3QrOTJDVFpIeDJyenpKdHlmVGxNem8veXY5RVpyNmdPN1pQU3dyeVAwREU4QVJZMW9hc1FBUkFCMVl2ZlNoT0k3alBtWU9mWkFVNXpkbS92b0lZOWVRUUZRdUs3NzVrejQ4STZ1Rndzaz08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjxQPjZlbnczVHNycytzVkUwb0dZc01SVWtNM3lrQUp3aEN2YWJWSkpjNlNEOUhqazl0ZmRJM1JXeERnelJTemUrakxzTHIxMktKSWErUjhxcHdJdml0eVBRPT08L1A+PFE+dUdyQnFYQnlJOGtLTElRRGpOaG9SNWt1d2w3MTMzVEVnaTVROGhsT0lFMTM0TzdHeUxON1FNK1VCK1gwaHlsZmVnbVFqSzZ2Z3B3WHk4MVgvM0dYZlE9PTwvUT48RFA+a0Z6b1liRkdESmxXZlh3ZktzN1hIdDBMVHBCdE5VOVU0em1XTm5ZaDRRK1prOFE5U2xMSVZacTZFdmZtdWQ5MzdzL0VNUG9mRmkrQzNVekZmSkNWeFE9PTwvRFA+PERRPmJHZ3RNYXB0SGtZbTJlWThwQVh1dnUvNFFjQktyckhZZG1JOXFTTmcvcklyWHlsZDUwdENqK1cyTWpKbVhUSGY4MEErSGNUdVhVdmUzU24zcWF5ZmpRPT08L0RRPjxJbnZlcnNlUT5PQ2hlNm1HYmpaVU9WMm4vODRUYkZvL2poTWVub1REZytKWlYzRWU4a0Y5NXRvOEhVSWRVSTB0eUVWS0h0QnpzamdrRzh6ZklaNWkrdjBmTzdLTFZwZz09PC9JbnZlcnNlUT48RD5oeTB6SXJTa1J0VllhL0FTSTZsVlIzbG1QdUdmb3AwWEtjbEdCbHB6STVGMk5nUyt3RC9jdmg0TnlURmtnRktYclN3ZVdKalM1TU9yK2p3TG5iQ0hYQUhHWWc0azMzY0JtUTl4THJNaEdXNXk4bkxaQ3dKaVJsTlBjQTVoVXFaM2YwV1daL2tqVW1nMVFxV09QOTF4L0ZreVBZQlBWMmVnQ05PSVVmUEV3K0U9PC9EPjwvUlNBS2V5VmFsdWU+</Value>
+    </Setting>
+    <Setting Name="PrimarySerializedServiceInstance" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TTRWNSk7QzkzJlBFRUdKLSVHSlJGTFNaIVhSRjRgYGBgIUAoYGBgIkRgYCEyNFQkUWBgMGBgYCRgYDAhUQ0KTSw1L1xWQEAlLytMPy45PylBYEBDT1dKXUNGRTVZRCNZMEU3WDxVMCM5SSImK1syRyYkUUVOLks2PVM6Lw0KTVM9JEY5Xj1gL0ArVik2RzZdV0VaUzY2ImBSPjxeRSgiJyNBRSkiOkQnRyZQRF9FQ2A8UzxaVTc2YFtOYA0KTV45XUlCPDM6TURGXDdQRSlFUEVPJUJLXC1gQEwiXig5LkxcJT4rVCY+OEc6Xl4nSkBKSE5WKF84Iz5NJQ0KSEw9NzhLWjFPKkdcYGBgYGBgYGBgYGBgYGBgYGBgYGBgUjlVU0E6Nj8sRDYqPVw6OV0yTi01UGBgDQo=</Value>
+    </Setting>
+    <Setting Name="SecondarySerializedServiceInstance" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TTRWNSk7QSdDNENYVTpYKSJEKzBFNzY6TEMtXjRgYGBgIUAoYGBgIkRgYCEyNFQkUWBgMGBgYCRgYDAjKQ0KTVBINksoU1BeRF9GXipSWTQwKSM3OFBDWl9GOFdZUTIwPzBZRi9OLi4uKidUTzVAPWAhJGBMMUk6OFEnYA0KTSRQL11SIkxMLz1HTkAvSjokP1RLX15DLEUtLEdNXERcS1c5XDkpLUBdV1pbR1NgUT9VR11CJixJXSUqNw0KTSksWF00LStYLDNGMjJERD5DRCdIIyVdXjw8KiI3JzNUYDdMXTJDLTI2Pj9OXCsiIUoqSE5WKF84Iz5NJQ0KSEw9NzhLWjFPKkdcYGBgYGBgYGBgYGBgYGBgYGBgYGBgOCpaSjk4MVNIJFJSKyxWTSFDMiJGMGBgDQo=</Value>
+    </Setting>
+    <Setting Name="TermsOfUse" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">This document provides the Terms of Service between you and the PYXIS innovation inc., a corporation organized and existing under the law of Canada, with its head office located Calgary Alberta, Canada.
+By using our Services, you are agreeing to these terms. Please read them carefully.
+These Terms of Service govern the use of the WorldView™ Studio software program and the PYXIS Software Suite.
+In order to use the WorldView™ Studio software program or any of the PYXIS Software Suite, you must be capable of forming a binding legal contract with the PYXIS innovation inc., and you must agree to the Terms of Service contract as provided here. If you are using the Software on behalf of a company or organization, then “you” includes that company or organization, and you represent and warrant that you are authorized to grant all permissions and licenses provided in these Terms of Service, and to bind the company or organization to these Terms of Service.
+You agree that these Terms of Service shall apply to any and all upgrades of the Software that may occur in the future.  The re-installation, upgrade, or replacement of your copy of any of the Software shall not terminate your agreement to these Terms of Service.
+You agree that the terms and conditions of these Terms of Service are subject to change without notice to you, and you agree to be bound to those changes. At any time, the current version of the Terms of Service can be obtained by contacting the PYXIS innovation inc., or by visiting https://www.globalgridsystesm.com/info/terms. You agree that, if you do not want to accept any particular changes to the Terms of Service, you shall stop using the Software immediately, and you shall immediately notify PYXIS innovation inc. that you would like to terminate your agreement under the Terms of Service.
+1.	DEFINITIONS
+The follow definitions shall be used throughout these Terms of Service.
+“Gallery” means a collection of data, maps, and other information that is provided by a Gallery Manager, and comprises Gallery Content. In some cases, you may create or add Gallery Content to a Gallery, such as by using the WorldView™ Gallery software program. In other cases, you may be accessing a Gallery that was created or maintained by someone else.
+“Gallery Content” means the data maps, and other information that comprise a Gallery.
+“Gallery Content Use Agreement” means an agreement between you and the Gallery Manager, which governs your use of the Gallery Content. The gallery Manager may be a third party. Gallery Managers may choose to set the terms and conditions of the Gallery Content Use Agreement in their own discretion.
+“Gallery Manager” means a user of the WorldView™ Gallery software program who creates, manages, or maintains a Gallery.
+“PYXIS Software Suite” means the collection of software created or sold by the PYXIS innovation inc., including the WorldView™ Studio software program, the WorldView™ Gallery software program, and the WorldView™ Channel software program.
+“Software” means any or all of the WorldView™ software programs and the PYXIS Software Suite.
+2.	TERMINATION AND SURVIVAL
+You acknowledge and agree that the PYXIS innovation inc. may terminate or suspend these Terms of Service and any licenses granted to you without cause or notice to you.
+You acknowledge and agree that, upon termination of these Terms of Service, you shall continue to be bound to sections 2, 3, and 5 to 9, and that these sections shall survive the termination of these Terms of Service.
+3.	INTELLECTUAL PROPERTY
+3.1.	Intellectual Property owned by the PYXIS innovation inc.
+You agree not to reverse engineer the Software in any way, nor use or sell the Software or any components or parts of the Software in order to compete with the PYXIS innovation inc. in a commercial marketplace. You agree to pay to the PYXIS innovation inc. damages or an accounting of profits as can be reasonably attributed to your competitive use or sales of the Software of any components or parts of the Software when this clause is found to be violated.
+You agree to assign any and all rights to any intellectual property, such as in the form of inventions, patents or patent applications pertaining to any country or region in the world, for derivative works, improvements, inventions, products, or other innovations based on the use of the Software.
+You acknowledge that the PYXIS innovation inc. owns patents and pending patent applications pertaining to the Software. These issued patents include United States patent numbers 8,018,458 and 8,400,451; Canadian Patent No. 2,436,312; and Australian Patent No. 2004262061.
+You acknowledge that there are patents pending that cover the Software.
+You agree not to attempt to circumvent any security, digital-rights management, or digital-lock technology pertaining to the Software, a Gallery, or Gallery Content.
+You acknowledge and agree that your possession, installation, or use of the Software does not transfer any title to the intellectual property in the Software, and that you do not acquire any rights to the Software, except as expressly provided by the license granted by section 4 of these Terms of Service.
+3.2.	Intellectual Property owned by You
+You warrant that you have the rights and/or authorizations to produce, reproduce, perform, publish, and communicate the work to the public by telecommunication, any works, data, or compilations that you use yourself, or provide to others to use via the Software, which may be subject to intellectual property protection.
+3.3.	Intellectual Property owned by Third Parties
+You agree to be bound by the terms of any Gallery Content Use Agreement pertaining to any Gallery that you use. You acknowledge that you may be required to accept a Gallery Content Use Agreement between the creator or manager of a Gallery and you in order for you to access or use a particular Gallery. You agree not to use any Gallery for which you have not accepted and agreed to the terms and conditions set out in the associated Gallery Content Use Agreement, insofar as a Gallery Content Use Agreement exists for the particular Gallery.
+You acknowledge and agree that the PYXIS innovation inc. makes no representations or warranties with respect to the validity of the intellectual property rights asserted by any third parties with respect to Gallery Content.
+When you provide any Gallery Content, you agree to comply with the notice-and-notice regime established by the Copyright Act of Canada. If the PYXIS innovation inc. receives notice of alleged copyright infringement in respect of any data or content that you have uploaded, copied, made available to the public, or transmitted using the Software, the PYXIS innovation inc. shall provide notice to you. You agree to received and acknowledge receipt of this notice. You acknowledge and agree that the PYXIS innovation inc. has the right to remove any data or content that you have uploaded or transmitted using the Software in its sole discretion.
+You agree that you shall indemnify the PYXIS innovation inc., and its directors, officers, and employees, for any and all damages, penalties, costs, or any other consequence arising from the infringement of third-party intellectual property rights as determined by a court of law or other decision maker such as an administrative body, mediator, arbitrator, etc. You further agree that this indemnity shall include costs of defending an allegation of infringement, regardless of the outcome of any related disputes.
+You agree that, if you become aware of any complaint or claim made with respect to third-party intellectual property rights related to the use of the Software, you will notify the PYXIS innovation inc. immediately. You acknowledge that time is of the essence, so that the PYXIS innovation inc. has sufficient time in which to make decisions about how it shall respond to the allegations.
+You agree that, at the sole discretion of the PYXIS innovation inc., you shall subrogate any rights you might have to defend an allegation of infringement of third-party intellectual property rights, and that the PYXIS innovation inc., at its sole discretion, shall conduct the legal defence of both you and the PYXIS innovation inc.
+4.	GRANT OF LICENSE
+By way of these Terms of Service, you are granted a single, non-exclusive, non-transferable license to use a single copy of the Software, for private use.
+You acknowledge and agree that this license does not cover any use of the Software that competes with the business and commercial interests of the PYXIS innovation inc.
+5.	PRIVACY AND PERSONAL INFORMATION
+You agree not to use any Gallery Data that identifies an individual person, or to use any of the PYXIS Software Suite for purposes of identifying an individual person, except with the consent of the individual according to prevailing laws and legislation in Canada and the jurisdiction in which you are using the Software.
+You agree to comply with all legislation and laws pertaining to privacy and the use of personal information, such as Canada’s Personal Information and Electronic Documents Act and any substantially-similar provincial legislation. The User indemnifies PYXIS against any claims resulting from an alleged breach of privacy and/or personal-information rights under such laws or legislation.
+You agree that you shall indemnify the PYXIS innovation inc., and its directors, officers, and employees, for any and all damages, penalties, costs, or any other consequence arising from a breach of privacy or personal information as determined by a court of law or authoritative administrative body such as a privacy commissioner.
+You agree that, if you become aware of any complaint or claim made with respect to a breach of privacy or personal information related to the use of the Software, you will notify the PYXIS innovation inc. immediately. You acknowledge that time is of the essence, so that the PYXIS innovation inc. has sufficient time in which to make decisions about how it shall respond to the complaint or claim.
+You agree that, at the sole discretion of the PYXIS innovation inc., you shall subrogate any rights you might have to defend such a complaint or claim, and that the PYXIS innovation inc., at its sole discretion, shall conduct the legal defence of both you and the PYXIS innovation inc.
+6.	EXCLUSION OF WARRANTY/DISCLAIMER
+The PYXIS innovation inc. SPECIFICALLY DISCLAIMS ANY AND ALL WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMNET, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE.
+The PYXIS innovation inc. DOES NOT WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERUPTED OR ERROR-FREE, OR THAT ERRORS IN THE SOFTWARE WILL BE CORRECTED, OR THAT TRANSMISSION RELATED TO THE SOFTWARE WILL BE SECURE.
+The PYXIS innovation inc. MAKES NO REPRESENTATIONS OR WARRANTIES AS TO THE ACCURACY OR RELIABILITY OF DATA PROVIDED IN A GALLERY. The PYXIS innovation inc. MAKES NO REPRESENTATIONS, WARRANTIES, OR ASSURANCES AS TO THE LEGITIMACY OF ANY THIRD-PARTY DECLARATIONS OF RIGHTS, OWNERSHIP, OR AUTHORITY WITH RESPECT TO GALLERY CONTENT.
+YOU ACKNOWLEDGE AND AGREE THAT YOU ARE SOLELY RESPONSIBLE FOR ANY RISKS ASSOCIATED WITH THE QUALITY OR PERFORMANCE OF THE SOFTWARE.
+YOU ACKNOWLEDGE AND AGREE THAT THE SOFTWARE IS NOT FAULT-TOLERANT AND IS NOT DESIGNED OR INTENDED TO BE USED IN HIGH-RISK ACTIVITIES, SUCH AS, BUT NO LIMITED TO: OPERATION OF NUCLEAR FACILITIES, AIRCRAFT OR MARINE NAVIGATION OR COMMUNICATIONS, AIR TRAFFIC CONTROL, WEAPONS SYSTEMS, EMERGENY RESPONSE, DISASTER DETECTION, ETC.
+7.	LIMITATION OF LIABILITY AND INDEMNITY
+You acknowledge and agree that the PYXIS innovation inc. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNATIVIE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES RESULTING FROM YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR INABILITY TO USE THE SOFTWARE.
+You acknowledge and agree that you shall indemnify the PYXIS innovation inc., as well as its directors, officers, and employees, for any and all harm, damages, losses, or costs arising from your use or misuse of the Software, including but not limited to any remedies determined by a court of law, administrative decision maker, arbitrator, or mediator, and any associated costs.
+8.	DISPUTE RESOLUTION
+You agree that any and all disputes between you and the PYXIS innovation inc., arising as a result of this agreement, or otherwise, shall be settled by an arbitrator as provided here. When the value of a claim can be reasonably established to be under C$100,000.00, the dispute shall be settled by a single arbitrator, and the single arbitrator shall be appointed at the sole discretion of the PYXIS innovation inc. When the value of a claim can be reasonably established to be over C$100,000.00, the dispute shall be settled by three arbitrators, in which case, you shall appoint one arbitrator, the PYXIS innovation inc. shall appoint another arbitrator, and the third arbitrator shall be appointed through agreement of the other two arbitrators.
+You agree that all disputes, whether by arbitration nor otherwise, shall be brought in Calgary, Alberta, Canada, unless otherwise determined by the PYXIS innovation inc. at its sole discretion.
+9.	GENERAL
+You agree that no provision of these Terms of Service shall be deemed waived or modified except in a written addendum signed by the PYXIS innovation inc.
+You agree that these Terms of Service, and any additional agreements you may enter with the PYXIS innovation inc. in connection with the Software, shall constitute the entire agreement between you and the PYXIS innovation inc. pertaining to the Software. If any provision of these Terms of Service is found to be invalid, then the provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions of these Terms of Service shall remain in full force and effect.
+You acknowledge and agree that any waiver by the PYXIS innovation inc. of any term of these Terms of Service shall not be deemed a further or continuing waiver of such term or any other term. The failure by the PYXIS innovation to assert any right or interest under a provision of these Terms of Service shall not constitute a waiver of the right or interest.
+You agree that these Terms of Service shall be governed by the laws of Canada and the province of Alberta.
+You agree that time shall be of the essence in respect of these Terms of Service.
+You agree that these Terms of Service, and any rights or licenses granted by these Terms of Service are non-transferable, and shall not be assigned by you.</Value>
+    </Setting>
+    <Setting Name="FrontEndUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.globalgridsystesm.com/</Value>
+    </Setting>
+    <Setting Name="ElasticSearchIndex" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">pyxis_licenseserver_read</Value>
+    </Setting>
+    <Setting Name="NameBlacklist" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;pyxis&lt;/string&gt;
+  &lt;string&gt;geoamazing&lt;/string&gt;
+  &lt;string&gt;resource&lt;/string&gt;
+  &lt;string&gt;geosource&lt;/string&gt;
+  &lt;string&gt;map&lt;/string&gt;
+  &lt;string&gt;atlas&lt;/string&gt;
+  &lt;string&gt;channel&lt;/string&gt;
+  &lt;string&gt;gallery&lt;/string&gt;
+  &lt;string&gt;user&lt;/string&gt;
+  &lt;string&gt;group&lt;/string&gt;
+  &lt;string&gt;product&lt;/string&gt;
+  &lt;string&gt;license&lt;/string&gt;
+  &lt;string&gt;file&lt;/string&gt;
+  &lt;string&gt;style&lt;/string&gt;
+  &lt;string&gt;gwss&lt;/string&gt;
+  &lt;string&gt;studio&lt;/string&gt;
+  &lt;string&gt;subscription&lt;/string&gt;
+  &lt;string&gt;agreement&lt;/string&gt;
+  &lt;string&gt;account&lt;/string&gt;
+  &lt;string&gt;oauth&lt;/string&gt;
+  &lt;string&gt;odata&lt;/string&gt;
+  &lt;string&gt;admin&lt;/string&gt;
+  &lt;string&gt;billing&lt;/string&gt;
+  &lt;string&gt;store&lt;/string&gt;
+  &lt;string&gt;cart&lt;/string&gt;
+  &lt;string&gt;api&lt;/string&gt;
+  &lt;string&gt;info&lt;/string&gt;
+  &lt;string&gt;forgotpassword&lt;/string&gt;
+  &lt;string&gt;resetpassword&lt;/string&gt;
+  &lt;string&gt;updatedpassword&lt;/string&gt;
+  &lt;string&gt;confirmemail&lt;/string&gt;
+  &lt;string&gt;requestnews&lt;/string&gt;
+  &lt;string&gt;signup&lt;/string&gt;
+  &lt;string&gt;sso&lt;/string&gt;
+  &lt;string&gt;download&lt;/string&gt;
+  &lt;string&gt;news&lt;/string&gt;
+  &lt;string&gt;page&lt;/string&gt;
+  &lt;string&gt;about&lt;/string&gt;
+  &lt;string&gt;data&lt;/string&gt;
+  &lt;string&gt;table&lt;/string&gt;
+  &lt;string&gt;create&lt;/string&gt;
+  &lt;string&gt;shared&lt;/string&gt;
+  &lt;string&gt;story&lt;/string&gt;
+  &lt;string&gt;earth&lt;/string&gt;
+  &lt;string&gt;globe&lt;/string&gt;
+  &lt;string&gt;year&lt;/string&gt;
+  &lt;string&gt;month&lt;/string&gt;
+  &lt;string&gt;week&lt;/string&gt;
+  &lt;string&gt;day&lt;/string&gt;
+  &lt;string&gt;time&lt;/string&gt;
+  &lt;string&gt;zone&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="CommonFreeLicenseId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">241e80ae-54b9-4901-81ae-b285c5328ee2</Value>
+    </Setting>
+    <Setting Name="AgreementMonthsUntilExpiration" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="TrialAgreementDaysUntilExpiration" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="ZendeskJwtKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">O5JLZ7gfrrVkOWOD86NUVTh22E3DlffobrAIDiEdhWoRX7st</Value>
+    </Setting>
+    <Setting Name="ZendeskJwtAccessUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://pyxishelp.zendesk.com/access/jwt</Value>
+    </Setting>
+    <Setting Name="ElasticSearchUrls" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;http://search.pyxis.worldview.gallery:29292&lt;/string&gt;
+  &lt;string&gt;http://search.pyxis.worldview.gallery:29293&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="AnonymousUserId" Type="System.Guid" Scope="Application">
+      <Value Profile="(Default)">8fcfa664-24f5-4265-85dd-0771078160b3</Value>
+    </Setting>
+    <Setting Name="AnonymousUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Shared</Value>
+    </Setting>
+    <Setting Name="AnonymousGalleryId" Type="System.Guid" Scope="Application">
+      <Value Profile="(Default)">280866b6-17e1-4619-afe0-a853930d6624</Value>
+    </Setting>
+    <Setting Name="AnonymousGalleryName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Shared</Value>
+    </Setting>
+    <Setting Name="ExternalDataIndex" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">external_data_prod</Value>
+    </Setting>
+    <Setting Name="AlternateFrontEndUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://pyxisglobe.com/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,128 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html ng-app="worldViewStudio" ng-controller="worldViewStudioController">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/contents/images/favicon.ico" type="image/x-icon">
+    <title i18n="PYXIS WorldView Studio">PYXIS WorldView Studio</title>
+
+    @Scripts.Render("~/bundles/studio-demo-frameworks")
+    @Scripts.Render("~/bundles/pyxis")    
+    @Scripts.Render("~/bundles/studio")
+    @Scripts.Render("~/bundles/studio-localization")
+    
+
+    <!--  HERE IS OUR STUDIO-WEB SHIM -->
+    <script src="/studio-demo/interface.js"></script>
+    <script>
+        angular.element(document).ready(function () {
+            var injector = angular.element(".ng-scope").injector();
+            injector.get('studioShim');
+        });
+    </script>  
+
+
+    @*//we need to use BundleResolver.Current.GetBundleUrl as Scripts.Render doesn't run the transforms on debug *@
+    <script type="text/javascript" src="@BundleResolver.Current.GetBundleUrl("~/bundles/studio-templates")"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    @Scripts.Render("~/bundles/studio-demo-skin")
+
+    @if (Request.IsLocal)
+    {
+        <link rel="stylesheet" href="/contents/styles/font-awesome.min.css"/>
+        <style rel="stylesheet">
+            @@font-face {
+                font-family: 'Relative Medium';
+                src: url('/contents/fonts/Relative-Medium.otf') format('opentype');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @@font-face {
+                font-family: 'Relative Book';
+                src: url('/contents/fonts/Relative-Book.otf') format('opentype');
+                /*font-weight: 100;*/
+                font-style: normal;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/studio.less"/>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css"/>
+    }
+    else
+    {
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        @*request font directly from the fontdeck to avoid font flickering*@
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/4Vr8HX3Uht31GB0HW+UwdlHXdZQ/@Request.Url.Host/44896.css" type="text/css"/>
+        <script src="https://f.fontdeck.com/s/css/js/@Request.Url.Host/44896.js"></script>
+        @*<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+	    <script>
+	        WebFont.load({ fontdeck: { id: '44896' } });
+	    </script>*@
+        <link rel="stylesheet" type="text/css" href="/contents/styles/studio.css"/>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css"/>
+    }
+
+    <style rel="stylesheet">
+
+        .dashboard-window .scrollbar-area .scrollbar-content {
+            overflow: visible !important;
+        }
+
+        .search-box-tag {
+            top: 5px !important;
+        }
+
+        .dg.ac {
+            position: absolute;
+            top: 70px;
+            display: none;
+        }
+
+        .dg.a .save-row {
+            position: absolute;
+        }
+
+        .nav-tools {
+            display: none;
+        }
+
+        .dialog-box.demo {
+            display: none;
+        }
+    </style>
+
+    @if (ViewBag.Funcunit == true)
+    {
+        <link rel="stylesheet" type="text/css" href="/test/jasmine.css"/>
+    }
+
+    @if (ViewBag.BackendUrl != null)
+    {
+        <script type="text/javascript">
+            window.pyxisBackendUrl = "@Html.Raw(ViewBag.BackendUrl)";
+        </script>
+    }
+</head>
+
+<body ng-keyup="globeKeyUp($event)">
+<!-- Page Header: tools, searchbar, logo and main menu -->
+<div class="header default" stop-propagation="keyup" ng-show="!screenCapture.active" style="background: transparent;">    
+    <div style="float: left"><img src="/Contents/Images/Studio/pyxis_wv_logo_1.svg" style="height: 36px; margin-left: 30px; margin-top: 30px;"/>
+    </div>
+</div>
+
+<div ng-repeat="url in templates.sections" ng-include="url"></div>
+<div ng-repeat="url in templates.dialogs" ng-include="url"></div>
+<div ng-repeat="url in templates.widgets" ng-include="url"></div>
+
+<audio loop autoplay>
+ <source src="/contents/sounds/wv_rotation_loop.wav" type="audio/wav">
+</audio>
+
+</body>
+</html>

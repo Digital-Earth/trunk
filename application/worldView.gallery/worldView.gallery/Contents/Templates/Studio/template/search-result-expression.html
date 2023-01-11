@@ -1,0 +1,17 @@
+﻿<div class="resource-result">
+    <div ng-if="image" class="item-header" fade-in-background="image"></div>
+    <div class="section item-type"><i class="fa fa-superscript" style="margin-right: 10px"></i>{{resource.Type | i18n | uppercase}}</div>
+    <div class="section title">
+        {{resource.Metadata.Name}}
+        <div class="options">
+            <button class="gray-hover" ng-click="invoke('import',resource)" i18n="Import"></button>            
+        </div>
+    </div>
+    <div class="section">
+        <table>
+        <tr ng-repeat="(ref,field) in resource.References" style="vertical-align: top">
+            <td>{{ref}}</td><td><i class="fa fa-arrow-right"></i></td><td>{{field.Metadata.Name}}<br/><span class="gray-text tiny-text">{{field.MapItem.Metadata.Name}}</span></td>
+        </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+*/1 * * * * /home/Pyxis/scripts/prepare_gwss_requests.bash
+0 9 * * * /home/Pyxis/scripts/backup_licenseserver.bash
+0 9 * * * /home/Pyxis/scripts/purge_licenseserver_backups.bash
+0 0 1 * * /home/Pyxis/scripts/extend_agreements.bash

@@ -1,0 +1,418 @@
+ zlib_pyxisd
+
+ Timestamp is 55dca101 (Tue Aug 25 13:08:17 2015)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00020824H .text                   CODE
+ 0002:00000000 00000104H .CRT$XCA                DATA
+ 0002:00000104 00000104H .CRT$XCZ                DATA
+ 0002:00000208 00000104H .CRT$XIA                DATA
+ 0002:0000030c 00000104H .CRT$XIAA               DATA
+ 0002:00000410 00000104H .CRT$XIC                DATA
+ 0002:00000514 00000104H .CRT$XIZ                DATA
+ 0002:00000620 00004e84H .rdata                  DATA
+ 0002:000054a4 00000199H .rdata$debug            DATA
+ 0002:00005640 00000104H .rdata$sxdata           DATA
+ 0002:00005744 00000104H .rtc$IAA                DATA
+ 0002:00005848 00000104H .rtc$IZZ                DATA
+ 0002:0000594c 00000104H .rtc$TAA                DATA
+ 0002:00005a50 00000104H .rtc$TZZ                DATA
+ 0002:00005b58 00000178H .xdata$x                DATA
+ 0002:00005cd0 00000fbbH .edata                  DATA
+ 0003:00000000 00000856H .data                   DATA
+ 0003:00000858 0000036cH .bss                    DATA
+ 0004:00000000 00000028H .idata$2                DATA
+ 0004:00000028 00000014H .idata$3                DATA
+ 0004:0000003c 00000188H .idata$4                DATA
+ 0004:000001c4 00000188H .idata$5                DATA
+ 0004:0000034c 0000050cH .idata$6                DATA
+ 0005:00000000 00000169H .rsrc$01                DATA
+ 0005:00000170 000004dcH .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000001       ___safe_se_handler_count   00000001     <absolute>
+ 0000:00000000       ___ImageBase               10000000     <linker-defined>
+ 0001:000006c0       _longest_match             100016c0 f   match686.obj
+ 0001:000008a8       _match_init                100018a8 f   match686.obj
+ 0001:00000a30       _inflate_fast              10001a30 f   inffas32.obj
+ 0001:000012b0       _adler32                   100022b0 f   adler32.obj
+ 0001:00001850       _adler32_combine           10002850 f   adler32.obj
+ 0001:00001970       _adler32_combine64         10002970 f   adler32.obj
+ 0001:00001b50       _compress                  10002b50 f   compress.obj
+ 0001:00001b70       _compress2                 10002b70 f   compress.obj
+ 0001:00001c40       _compressBound             10002c40 f   compress.obj
+ 0001:00001cb0       _crc32                     10002cb0 f   crc32.obj
+ 0001:00001f00       _crc32_combine             10002f00 f   crc32.obj
+ 0001:00001f20       _get_crc_table             10002f20 f   crc32.obj
+ 0001:00002c10       _crc32_combine64           10003c10 f   crc32.obj
+ 0001:00003010       _deflate                   10004010 f   deflate.obj
+ 0001:00003f90       _deflateEnd                10004f90 f   deflate.obj
+ 0001:000040e0       _deflateSetDictionary      100050e0 f   deflate.obj
+ 0001:00004350       _deflateCopy               10005350 f   deflate.obj
+ 0001:000045b0       _deflateReset              100055b0 f   deflate.obj
+ 0001:000045e0       _deflateParams             100055e0 f   deflate.obj
+ 0001:00004730       _deflateTune               10005730 f   deflate.obj
+ 0001:00004790       _deflateBound              10005790 f   deflate.obj
+ 0001:00004920       _deflatePending            10005920 f   deflate.obj
+ 0001:00004970       _deflatePrime              10005970 f   deflate.obj
+ 0001:00004a50       _deflateSetHeader          10005a50 f   deflate.obj
+ 0001:00004a90       _deflateInit_              10005a90 f   deflate.obj
+ 0001:00004ac0       _deflateInit2_             10005ac0 f   deflate.obj
+ 0001:00004e20       _deflateResetKeep          10005e20 f   deflate.obj
+ 0001:00007e00       _gzclose                   10008e00 f   gzclose.obj
+ 0001:00007e60       _gzdopen                   10008e60 f   gzlib.obj
+ 0001:00007ed0       _gzbuffer                  10008ed0 f   gzlib.obj
+ 0001:00007f30       _gzrewind                  10008f30 f   gzlib.obj
+ 0001:00007fb0       _gzeof                     10008fb0 f   gzlib.obj
+ 0001:00008010       _gzerror                   10009010 f   gzlib.obj
+ 0001:00008090       _gzclearerr                10009090 f   gzlib.obj
+ 0001:000080f0       _gzopen                    100090f0 f   gzlib.obj
+ 0001:00008110       _gzseek                    10009110 f   gzlib.obj
+ 0001:00008170       _gztell                    10009170 f   gzlib.obj
+ 0001:000081c0       _gzoffset                  100091c0 f   gzlib.obj
+ 0001:00008210       _gzopen_w                  10009210 f   gzlib.obj
+ 0001:00008230       _gzopen64                  10009230 f   gzlib.obj
+ 0001:00008250       _gzseek64                  10009250 f   gzlib.obj
+ 0001:00008530       _gztell64                  10009530 f   gzlib.obj
+ 0001:000085a0       _gzoffset64                100095a0 f   gzlib.obj
+ 0001:00008640       _gz_error                  10009640 f   gzlib.obj
+ 0001:00008f70       _gzread                    10009f70 f   gzread.obj
+ 0001:00009190       _gzgets                    1000a190 f   gzread.obj
+ 0001:00009340       _gzgetc                    1000a340 f   gzread.obj
+ 0001:00009410       _gzungetc                  1000a410 f   gzread.obj
+ 0001:000095e0       _gzdirect                  1000a5e0 f   gzread.obj
+ 0001:00009630       _gzclose_r                 1000a630 f   gzread.obj
+ 0001:00009720       _gzgetc_                   1000a720 f   gzread.obj
+ 0001:0000a1f0       _gzsetparams               1000b1f0 f   gzwrite.obj
+ 0001:0000a2e0       _gzwrite                   1000b2e0 f   gzwrite.obj
+ 0001:0000a4e0       _gzprintf                  1000b4e0 f   gzwrite.obj
+ 0001:0000a520       _gzputs                    1000b520 f   gzwrite.obj
+ 0001:0000a570       _gzputc                    1000b570 f   gzwrite.obj
+ 0001:0000a6a0       _gzflush                   1000b6a0 f   gzwrite.obj
+ 0001:0000a740       _gzclose_w                 1000b740 f   gzwrite.obj
+ 0001:0000a860       _gzvprintf                 1000b860 f   gzwrite.obj
+ 0001:0000b100       _inflateBack               1000c100 f   infback.obj
+ 0001:0000c4b0       _inflateBackEnd            1000d4b0 f   infback.obj
+ 0001:0000c500       _inflateBackInit_          1000d500 f   infback.obj
+ 0001:0000cb90       _inflate                   1000db90 f   inflate.obj
+ 0001:0000ec80       _inflateEnd                1000fc80 f   inflate.obj
+ 0001:0000ed00       _inflateSetDictionary      1000fd00 f   inflate.obj
+ 0001:0000edd0       _inflateGetDictionary      1000fdd0 f   inflate.obj
+ 0001:0000ee70       _inflateSync               1000fe70 f   inflate.obj
+ 0001:0000f000       _inflateCopy               10010000 f   inflate.obj
+ 0001:0000f1c0       _inflateReset              100101c0 f   inflate.obj
+ 0001:0000f220       _inflateReset2             10010220 f   inflate.obj
+ 0001:0000f2f0       _inflatePrime              100102f0 f   inflate.obj
+ 0001:0000f390       _inflateMark               10010390 f   inflate.obj
+ 0001:0000f410       _inflateGetHeader          10010410 f   inflate.obj
+ 0001:0000f460       _inflateInit_              10010460 f   inflate.obj
+ 0001:0000f480       _inflateInit2_             10010480 f   inflate.obj
+ 0001:0000f590       _inflateSyncPoint          10010590 f   inflate.obj
+ 0001:0000f5e0       _inflateUndermine          100105e0 f   inflate.obj
+ 0001:0000f640       _inflateResetKeep          10010640 f   inflate.obj
+ 0001:00010510       _inflate_table             10011510 f   inftrees.obj
+ 0001:00010c30       _fill_fopen64_filefunc     10011c30 f   ioapi.obj
+ 0001:00010c90       _fill_fopen_filefunc       10011c90 f   ioapi.obj
+ 0001:00010cf0       _call_zopen64              10011cf0 f   ioapi.obj
+ 0001:00010d40       _call_zseek64              10011d40 f   ioapi.obj
+ 0001:00010dc0       _call_ztell64              10011dc0 f   ioapi.obj
+ 0001:00010e20       _fill_zlib_filefunc64_32_def_from_filefunc32 10011e20 f   ioapi.obj
+ 0001:000112d0       _fill_win32_filefunc       100122d0 f   iowin32.obj
+ 0001:00011330       _fill_win32_filefunc64     10012330 f   iowin32.obj
+ 0001:00011390       _fill_win32_filefunc64A    10012390 f   iowin32.obj
+ 0001:000113f0       _fill_win32_filefunc64W    100123f0 f   iowin32.obj
+ 0001:00011450       _win32_open_file_func      10012450 f   iowin32.obj
+ 0001:000114c0       _win32_read_file_func      100124c0 f   iowin32.obj
+ 0001:00011530       _win32_write_file_func     10012530 f   iowin32.obj
+ 0001:000115a0       _win32_tell64_file_func    100125a0 f   iowin32.obj
+ 0001:00011630       _win32_seek64_file_func    10012630 f   iowin32.obj
+ 0001:000116f0       _win32_close_file_func     100126f0 f   iowin32.obj
+ 0001:00011740       _win32_error_file_func     10012740 f   iowin32.obj
+ 0001:00011860       _win32_open64_file_func    10012860 f   iowin32.obj
+ 0001:000118d0       _win32_open64_file_funcA   100128d0 f   iowin32.obj
+ 0001:00011940       _win32_open64_file_funcW   10012940 f   iowin32.obj
+ 0001:00011a20       _win32_tell_file_func      10012a20 f   iowin32.obj
+ 0001:00011aa0       _win32_seek_file_func      10012aa0 f   iowin32.obj
+ 0001:00011d80       __tr_init                  10012d80 f   trees.obj
+ 0001:00011e10       __tr_tally                 10012e10 f   trees.obj
+ 0001:00011f50       __tr_flush_block           10012f50 f   trees.obj
+ 0001:00012320       __tr_flush_bits            10013320 f   trees.obj
+ 0001:00012340       __tr_align                 10013340 f   trees.obj
+ 0001:000125b0       __tr_stored_block          100135b0 f   trees.obj
+ 0001:00015bc0       _uncompress                10016bc0 f   uncompr.obj
+ 0001:00015cd0       _unzStringFileNameCompare  10016cd0 f   unzip.obj
+ 0001:00015d10       _unzOpen                   10016d10 f   unzip.obj
+ 0001:00015d30       _unzOpen64                 10016d30 f   unzip.obj
+ 0001:00015d50       _unzOpen2                  10016d50 f   unzip.obj
+ 0001:00015da0       _unzOpen2_64               10016da0 f   unzip.obj
+ 0001:00015e00       _unzClose                  10016e00 f   unzip.obj
+ 0001:00015e70       _unzGetGlobalInfo          10016e70 f   unzip.obj
+ 0001:00015eb0       _unzGetGlobalInfo64        10016eb0 f   unzip.obj
+ 0001:00015ef0       _unzGetGlobalComment       10016ef0 f   unzip.obj
+ 0001:00015fc0       _unzGoToFirstFile          10016fc0 f   unzip.obj
+ 0001:00016060       _unzGoToNextFile           10017060 f   unzip.obj
+ 0001:000161a0       _unzLocateFile             100171a0 f   unzip.obj
+ 0001:00016310       _unzGetFilePos             10017310 f   unzip.obj
+ 0001:00016350       _unzGoToFilePos            10017350 f   unzip.obj
+ 0001:000163a0       _unzGetFilePos64           100173a0 f   unzip.obj
+ 0001:00016410       _unzGoToFilePos64          10017410 f   unzip.obj
+ 0001:000164b0       _unzGetCurrentFileInfo64   100174b0 f   unzip.obj
+ 0001:000164e0       _unzGetCurrentFileInfo     100174e0 f   unzip.obj
+ 0001:000165e0       _unzGetCurrentFileZStreamPos64 100175e0 f   unzip.obj
+ 0001:00016640       _unzOpenCurrentFile        10017640 f   unzip.obj
+ 0001:00016660       _unzOpenCurrentFilePassword 10017660 f   unzip.obj
+ 0001:00016680       _unzOpenCurrentFile2       10017680 f   unzip.obj
+ 0001:000166a0       _unzOpenCurrentFile3       100176a0 f   unzip.obj
+ 0001:00016a20       _unzCloseCurrentFile       10017a20 f   unzip.obj
+ 0001:00016b10       _unzReadCurrentFile        10017b10 f   unzip.obj
+ 0001:00016ff0       _unztell                   10017ff0 f   unzip.obj
+ 0001:00017030       _unztell64                 10018030 f   unzip.obj
+ 0001:00017080       _unzeof                    10018080 f   unzip.obj
+ 0001:000170e0       _unzGetLocalExtrafield     100180e0 f   unzip.obj
+ 0001:000171f0       _unzGetOffset64            100181f0 f   unzip.obj
+ 0001:00017290       _unzGetOffset              10018290 f   unzip.obj
+ 0001:000172c0       _unzSetOffset64            100182c0 f   unzip.obj
+ 0001:00017360       _unzSetOffset              10018360 f   unzip.obj
+ 0001:00019a80       _zipOpen                   1001aa80 f   zip.obj
+ 0001:00019aa0       _zipOpen64                 1001aaa0 f   zip.obj
+ 0001:00019ac0       _zipOpen2                  1001aac0 f   zip.obj
+ 0001:00019b20       _zipOpen2_64               1001ab20 f   zip.obj
+ 0001:00019b90       _zipOpenNewFileInZip       1001ab90 f   zip.obj
+ 0001:00019be0       _zipOpenNewFileInZip64     1001abe0 f   zip.obj
+ 0001:00019c30       _zipOpenNewFileInZip2      1001ac30 f   zip.obj
+ 0001:00019c80       _zipOpenNewFileInZip2_64   1001ac80 f   zip.obj
+ 0001:00019cd0       _zipOpenNewFileInZip3      1001acd0 f   zip.obj
+ 0001:00019d30       _zipOpenNewFileInZip3_64   1001ad30 f   zip.obj
+ 0001:00019d90       _zipOpenNewFileInZip4      1001ad90 f   zip.obj
+ 0001:00019df0       _zipOpenNewFileInZip4_64   1001adf0 f   zip.obj
+ 0001:0001a540       _zipWriteInFileInZip       1001b540 f   zip.obj
+ 0001:0001a740       _zipCloseFileInZip         1001b740 f   zip.obj
+ 0001:0001a760       _zipCloseFileInZipRaw      1001b760 f   zip.obj
+ 0001:0001a780       _zipCloseFileInZipRaw64    1001b780 f   zip.obj
+ 0001:0001ae90       _zipClose                  1001be90 f   zip.obj
+ 0001:0001b0b0       _zipRemoveExtraInfoBlock   1001c0b0 f   zip.obj
+ 0001:0001c1b0       _LoadCentralDirectoryRecord 1001d1b0 f   zip.obj
+ 0001:0001c7f0       _zipOpen3                  1001d7f0 f   zip.obj
+ 0001:0001c9b0       _Write_LocalFileHeader     1001d9b0 f   zip.obj
+ 0001:0001ce70       _Write_Zip64EndOfCentralDirectoryLocator 1001de70 f   zip.obj
+ 0001:0001cf30       _Write_Zip64EndOfCentralDirectoryRecord 1001df30 f   zip.obj
+ 0001:0001d0e0       _Write_EndOfCentralDirectoryRecord 1001e0e0 f   zip.obj
+ 0001:0001d2e0       _Write_GlobalComment       1001e2e0 f   zip.obj
+ 0001:0001e1b0       _zlibVersion               1001f1b0 f   zutil.obj
+ 0001:0001e1c0       _zlibCompileFlags          1001f1c0 f   zutil.obj
+ 0001:0001e2e0       _zError                    1001f2e0 f   zutil.obj
+ 0001:0001e300       _zcalloc                   1001f300 f   zutil.obj
+ 0001:0001e330       _zcfree                    1001f330 f   zutil.obj
+ 0001:0001e3a6       _CreateFileA@28            1001f3a6 f   kernel32:KERNEL32.dll
+ 0001:0001e3ac       _CreateFileW@28            1001f3ac f   kernel32:KERNEL32.dll
+ 0001:0001e3b2       _ReadFile@20               1001f3b2 f   kernel32:KERNEL32.dll
+ 0001:0001e3b8       _SetFilePointer@16         1001f3b8 f   kernel32:KERNEL32.dll
+ 0001:0001e3be       _WriteFile@20              1001f3be f   kernel32:KERNEL32.dll
+ 0001:0001e3c4       _CloseHandle@4             1001f3c4 f   kernel32:KERNEL32.dll
+ 0001:0001e3ca       _GetLastError@0            1001f3ca f   kernel32:KERNEL32.dll
+ 0001:0001e3d0       __allrem                   1001f3d0 f   MSVCRTD:llrem.obj
+ 0001:0001e490       __allshr                   1001f490 f   MSVCRTD:llshr.obj
+ 0001:0001e4b2       _memcpy                    1001f4b2 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4b8       _memset                    1001f4b8 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4be       __snprintf                 1001f4be f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4c4       _strlen                    1001f4c4 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4ca       _wcstombs                  1001f4ca f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4d0       _free                      1001f4d0 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4d6       _malloc                    1001f4d6 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4dc       __lseeki64                 1001f4dc f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4e2       __wopen                    1001f4e2 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4e8       __errno                    1001f4e8 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4ee       _memchr                    1001f4ee f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4f4       _strerror                  1001f4f4 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e4fa       _fclose                    1001f4fa f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e500       _ferror                    1001f500 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e506       _fopen                     1001f506 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e50c       _fread                     1001f50c f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e512       _fseek                     1001f512 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e518       _ftell                     1001f518 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e51e       __fseeki64                 1001f51e f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e524       __ftelli64                 1001f524 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e52a       _fwrite                    1001f52a f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e530       _strcmp                    1001f530 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e540       __allmul                   1001f540 f   MSVCRTD:llmul.obj
+ 0001:0001e580       __allshl                   1001f580 f   MSVCRTD:llshl.obj
+ 0001:0001e5a0       __aulldiv                  1001f5a0 f   MSVCRTD:ulldiv.obj
+ 0001:0001e610       __aullshr                  1001f610 f   MSVCRTD:ullshr.obj
+ 0001:0001e630       _rand                      1001f630 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e636       _srand                     1001f636 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e63c       __time64                   1001f63c f   MSVCRTD:MSVCR110D.dll
+ 0001:0001e650       __chkstk                   1001f650 f   MSVCRTD:chkstk.obj
+ 0001:0001e650       __alloca_probe             1001f650     MSVCRTD:chkstk.obj
+ 0001:0001e700       _NtCurrentTeb              1001f700 f i MSVCRTD:crtdll.obj
+ 0001:0001e710       __CRT_INIT@12              1001f710 f   MSVCRTD:crtdll.obj
+ 0001:0001e9f0       __DllMainCRTStartup@12     1001f9f0 f   MSVCRTD:crtdll.obj
+ 0001:0001ebe0       __vsnprintf                1001fbe0 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001ebe6       ___CppXcptFilter           1001fbe6 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001ebec       __amsg_exit                1001fbec f   MSVCRTD:MSVCR110D.dll
+ 0001:0001ebf2       __malloc_dbg               1001fbf2 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001ebf8       __free_dbg                 1001fbf8 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001ebfe       __CrtSetCheckCount         1001fbfe f   MSVCRTD:MSVCR110D.dll
+ 0001:0001ec10       __FindPESection            1001fc10 f   MSVCRTD:pesect.obj
+ 0001:0001ec90       __IsNonwritableInCurrentImage 1001fc90 f   MSVCRTD:pesect.obj
+ 0001:0001edc0       __ValidateImageBase        1001fdc0 f   MSVCRTD:pesect.obj
+ 0001:0001ee20       ___atonexitinit            1001fe20 f   MSVCRTD:atonexit.obj
+ 0001:0001eed0       __onexit                   1001fed0 f   MSVCRTD:atonexit.obj
+ 0001:0001efd0       _atexit                    1001ffd0 f   MSVCRTD:atonexit.obj
+ 0001:0001f000       ___security_init_cookie    10020000 f   MSVCRTD:gs_support.obj
+ 0001:0001f0e0       _DllMain@12                100200e0 f   MSVCRTD:dllmain.obj
+ 0001:0001f110       __RTC_Initialize           10020110 f   MSVCRTD:initsect.obj
+ 0001:0001f140       __RTC_Terminate            10020140 f   MSVCRTD:initsect.obj
+ 0001:0001f166       __initterm                 10020166 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f16c       __initterm_e               1002016c f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f180       ___clean_type_info_names   10020180 f   MSVCRTD:tncleanup.obj
+ 0001:0001f1a0       __except_handler4          100201a0 f   MSVCRTD:chandler4gs.obj
+ 0001:0001f1c8       __lock                     100201c8 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f1ce       __unlock                   100201ce f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f1d4       __CrtDbgReportW            100201d4 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f1da       __calloc_dbg               100201da f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f1e0       ___dllonexit               100201e0 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f1e6       ___clean_type_info_names_internal 100201e6 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f1f0       @__security_check_cookie@4 100201f0 f   MSVCRTD:secchk.obj
+ 0001:0001f200       __except_handler4_common   10020200 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f210       ___raise_securityfailure   10020210 f   MSVCRTD:gs_report.obj
+ 0001:0001f260       ___report_gsfailure        10020260 f   MSVCRTD:gs_report.obj
+ 0001:0001f370       ___report_rangecheckfailure 10020370 f   MSVCRTD:gs_report.obj
+ 0001:0001f380       ___report_securityfailure  10020380 f   MSVCRTD:gs_report.obj
+ 0001:0001f460       ___report_securityfailureEx 10020460 f   MSVCRTD:gs_report.obj
+ 0001:0001f586       __crt_debugger_hook        10020586 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f58c       ___crtUnhandledException   1002058c f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f592       ___crtTerminateProcess     10020592 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f598       _EncodePointer@4           10020598 f   kernel32:KERNEL32.dll
+ 0001:0001f59e       _DecodePointer@4           1002059e f   kernel32:KERNEL32.dll
+ 0001:0001f5a4       _QueryPerformanceCounter@4 100205a4 f   kernel32:KERNEL32.dll
+ 0001:0001f5aa       _GetCurrentProcessId@0     100205aa f   kernel32:KERNEL32.dll
+ 0001:0001f5b0       _GetCurrentThreadId@0      100205b0 f   kernel32:KERNEL32.dll
+ 0001:0001f5b6       _GetSystemTimeAsFileTime@4 100205b6 f   kernel32:KERNEL32.dll
+ 0001:0001f5bc       _DisableThreadLibraryCalls@4 100205bc f   kernel32:KERNEL32.dll
+ 0001:0001f5c2       _IsDebuggerPresent@0       100205c2 f   kernel32:KERNEL32.dll
+ 0001:0001f5c8       _IsProcessorFeaturePresent@4 100205c8 f   kernel32:KERNEL32.dll
+ 0001:0001f5ce       __open                     100205ce f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f5d4       __close                    100205d4 f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f5da       __read                     100205da f   MSVCRTD:MSVCR110D.dll
+ 0001:0001f5e0       __write                    100205e0 f   MSVCRTD:MSVCR110D.dll
+ 0002:00000000       ___xc_a                    10022000     MSVCRTD:cinitexe.obj
+ 0002:00000104       ___xc_z                    10022104     MSVCRTD:cinitexe.obj
+ 0002:00000208       ___xi_a                    10022208     MSVCRTD:cinitexe.obj
+ 0002:00000514       ___xi_z                    10022514     MSVCRTD:cinitexe.obj
+ 0002:00002d40       _deflate_copyright         10024d40     deflate.obj
+ 0002:00004270       _inflate_copyright         10026270     inftrees.obj
+ 0002:000043e0       __length_code              100263e0     trees.obj
+ 0002:000044e0       __dist_code                100264e0     trees.obj
+ 0002:00005028       _unz_copyright             10027028     unzip.obj
+ 0002:00005090       _zip_copyright             10027090     zip.obj
+ 0002:000050f0       _z_errmsg                  100270f0     zutil.obj
+ 0002:00005120       __pRawDllMain              10027120     MSVCRTD:crtdll.obj
+ 0002:00005120       __pDefaultRawDllMain       10027120     MSVCRTD:crtdll.obj
+ 0002:00005124       ??_C@_0DA@FJPPCPEH@f?3?2dd?2vctools?2crt_bld?2self_x86?2c@ 10027124     MSVCRTD:crtdll.obj
+ 0002:00005158       ??_C@_1LK@BJHNKBFO@?$AA?$CI?$AA_?$AA_?$AAo?$AAn?$AAe?$AAx?$AAi?$AAt?$AAe?$AAn?$AAd?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAN?$AAU?$AAL?$AAL?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AA_?$AA_?$AAo?$AAn?$AAe?$AAx?$AAi?$AAt@ 10027158     MSVCRTD:atonexit.obj
+ 0002:00005214       ??_C@_15GANGMFKL@?$AA?$CF?$AAs?$AA?$AA@ 10027214     MSVCRTD:atonexit.obj
+ 0002:00005220       ??_C@_1GE@KOKOIPKN@?$AAf?$AA?3?$AA?2?$AAd?$AAd?$AA?2?$AAv?$AAc?$AAt?$AAo?$AAo?$AAl?$AAs?$AA?2?$AAc?$AAr?$AAt?$AA_?$AAb?$AAl?$AAd?$AA?2?$AAs?$AAe?$AAl?$AAf?$AA_?$AAx?$AA8?$AA6?$AA?2?$AAc@ 10027220     MSVCRTD:atonexit.obj
+ 0002:00005284       ??_C@_0DC@KIAPAJCJ@f?3?2dd?2vctools?2crt_bld?2self_x86?2c@ 10027284     MSVCRTD:atonexit.obj
+ 0002:000052b8       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 100272b8     MSVCRTD:initsect.obj
+ 0002:000052bc       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 100272bc     MSVCRTD:initsect.obj
+ 0002:000052c0       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 100272c0     MSVCRTD:initsect.obj
+ 0002:000052c4       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 100272c4     MSVCRTD:initsect.obj
+ 0002:000052c8       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 100272c8     MSVCRTD:initsect.obj
+ 0002:000052cc       ?value@?$_Sizeof@U_Nil@std@@U12@U12@U12@U12@U12@U12@U12@@std@@2IB 100272cc     MSVCRTD:tncleanup.obj
+ 0002:000052d0       ?value@?$integral_constant@_N$0A@@std@@2_NB 100272d0     MSVCRTD:tncleanup.obj
+ 0002:000052d1       ?value@?$integral_constant@_N$00@std@@2_NB 100272d1     MSVCRTD:tncleanup.obj
+ 0002:000052e0       __load_config_used         100272e0     MSVCRTD:loadcfg.obj
+ 0002:00005640       ___safe_se_handler_table   10027640     <linker-defined>
+ 0002:00005744       ___rtc_iaa                 10027744     MSVCRTD:initsect.obj
+ 0002:00005848       ___rtc_izz                 10027848     MSVCRTD:initsect.obj
+ 0002:0000594c       ___rtc_taa                 1002794c     MSVCRTD:initsect.obj
+ 0002:00005a50       ___rtc_tzz                 10027a50     MSVCRTD:initsect.obj
+ 0003:00000740       ___native_dllmain_reason   10029740     MSVCRTD:natstart.obj
+ 0003:00000744       ___security_cookie         10029744     MSVCRTD:gs_cookie.obj
+ 0003:00000748       ___security_cookie_complement 10029748     MSVCRTD:gs_cookie.obj
+ 0003:00000868       ?__type_info_root_node@@3U__type_info_node@@A 10029868     MSVCRTD:tncleanup.obj
+ 0003:00000b90       ___native_startup_lock     10029b90     <common>
+ 0003:00000ba0       ___native_startup_state    10029ba0     <common>
+ 0003:00000ba4       ___onexitend               10029ba4     <common>
+ 0003:00000bb4       ___onexitbegin             10029bb4     <common>
+ 0003:00000bb8       ___dyn_tls_init_callback   10029bb8     <common>
+ 0004:00000000       __IMPORT_DESCRIPTOR_KERNEL32 1002a000     kernel32:KERNEL32.dll
+ 0004:00000014       __IMPORT_DESCRIPTOR_MSVCR110D 1002a014     MSVCRTD:MSVCR110D.dll
+ 0004:00000028       __NULL_IMPORT_DESCRIPTOR   1002a028     kernel32:KERNEL32.dll
+ 0004:000001c4       __imp__CreateFileA@28      1002a1c4     kernel32:KERNEL32.dll
+ 0004:000001c8       __imp__CreateFileW@28      1002a1c8     kernel32:KERNEL32.dll
+ 0004:000001cc       __imp__ReadFile@20         1002a1cc     kernel32:KERNEL32.dll
+ 0004:000001d0       __imp__SetFilePointer@16   1002a1d0     kernel32:KERNEL32.dll
+ 0004:000001d4       __imp__WriteFile@20        1002a1d4     kernel32:KERNEL32.dll
+ 0004:000001d8       __imp__CloseHandle@4       1002a1d8     kernel32:KERNEL32.dll
+ 0004:000001dc       __imp__GetLastError@0      1002a1dc     kernel32:KERNEL32.dll
+ 0004:000001e0       __imp__IsDebuggerPresent@0 1002a1e0     kernel32:KERNEL32.dll
+ 0004:000001e4       __imp__DisableThreadLibraryCalls@4 1002a1e4     kernel32:KERNEL32.dll
+ 0004:000001e8       __imp__GetSystemTimeAsFileTime@4 1002a1e8     kernel32:KERNEL32.dll
+ 0004:000001ec       __imp__GetCurrentThreadId@0 1002a1ec     kernel32:KERNEL32.dll
+ 0004:000001f0       __imp__GetCurrentProcessId@0 1002a1f0     kernel32:KERNEL32.dll
+ 0004:000001f4       __imp__QueryPerformanceCounter@4 1002a1f4     kernel32:KERNEL32.dll
+ 0004:000001f8       __imp__DecodePointer@4     1002a1f8     kernel32:KERNEL32.dll
+ 0004:000001fc       __imp__EncodePointer@4     1002a1fc     kernel32:KERNEL32.dll
+ 0004:00000200       __imp__IsProcessorFeaturePresent@4 1002a200     kernel32:KERNEL32.dll
+ 0004:00000204       \177KERNEL32_NULL_THUNK_DATA 1002a204     kernel32:KERNEL32.dll
+ 0004:0000023c       __imp___errno              1002a23c     MSVCRTD:MSVCR110D.dll
+ 0004:00000240       __imp__memchr              1002a240     MSVCRTD:MSVCR110D.dll
+ 0004:00000244       __imp__strerror            1002a244     MSVCRTD:MSVCR110D.dll
+ 0004:00000248       __imp__fclose              1002a248     MSVCRTD:MSVCR110D.dll
+ 0004:0000024c       __imp__ferror              1002a24c     MSVCRTD:MSVCR110D.dll
+ 0004:00000250       __imp__fopen               1002a250     MSVCRTD:MSVCR110D.dll
+ 0004:00000254       __imp__fread               1002a254     MSVCRTD:MSVCR110D.dll
+ 0004:00000258       __imp__fseek               1002a258     MSVCRTD:MSVCR110D.dll
+ 0004:0000025c       __imp__ftell               1002a25c     MSVCRTD:MSVCR110D.dll
+ 0004:00000260       __imp___fseeki64           1002a260     MSVCRTD:MSVCR110D.dll
+ 0004:00000264       __imp___ftelli64           1002a264     MSVCRTD:MSVCR110D.dll
+ 0004:00000268       __imp__fwrite              1002a268     MSVCRTD:MSVCR110D.dll
+ 0004:0000026c       __imp__strcmp              1002a26c     MSVCRTD:MSVCR110D.dll
+ 0004:00000270       __imp__rand                1002a270     MSVCRTD:MSVCR110D.dll
+ 0004:00000274       __imp___wopen              1002a274     MSVCRTD:MSVCR110D.dll
+ 0004:00000278       __imp___time64             1002a278     MSVCRTD:MSVCR110D.dll
+ 0004:0000027c       __imp__vsnprintf           1002a27c     MSVCRTD:MSVCR110D.dll
+ 0004:0000027c       __imp___vsnprintf          1002a27c     MSVCRTD:MSVCR110D.dll
+ 0004:00000280       __imp____CppXcptFilter     1002a280     MSVCRTD:MSVCR110D.dll
+ 0004:00000284       __imp___amsg_exit          1002a284     MSVCRTD:MSVCR110D.dll
+ 0004:00000288       __imp___malloc_dbg         1002a288     MSVCRTD:MSVCR110D.dll
+ 0004:0000028c       __imp___free_dbg           1002a28c     MSVCRTD:MSVCR110D.dll
+ 0004:00000290       __imp___CrtSetCheckCount   1002a290     MSVCRTD:MSVCR110D.dll
+ 0004:00000294       __imp___initterm           1002a294     MSVCRTD:MSVCR110D.dll
+ 0004:00000298       __imp___initterm_e         1002a298     MSVCRTD:MSVCR110D.dll
+ 0004:0000029c       __imp___lock               1002a29c     MSVCRTD:MSVCR110D.dll
+ 0004:000002a0       __imp___unlock             1002a2a0     MSVCRTD:MSVCR110D.dll
+ 0004:000002a4       __imp___CrtDbgReportW      1002a2a4     MSVCRTD:MSVCR110D.dll
+ 0004:000002a8       __imp___calloc_dbg         1002a2a8     MSVCRTD:MSVCR110D.dll
+ 0004:000002ac       __imp____dllonexit         1002a2ac     MSVCRTD:MSVCR110D.dll
+ 0004:000002b0       __imp___onexit             1002a2b0     MSVCRTD:MSVCR110D.dll
+ 0004:000002b4       __imp____clean_type_info_names_internal 1002a2b4     MSVCRTD:MSVCR110D.dll
+ 0004:000002b8       __imp___except_handler4_common 1002a2b8     MSVCRTD:MSVCR110D.dll
+ 0004:000002bc       __imp___crt_debugger_hook  1002a2bc     MSVCRTD:MSVCR110D.dll
+ 0004:000002c0       __imp____crtUnhandledException 1002a2c0     MSVCRTD:MSVCR110D.dll
+ 0004:000002c4       __imp____crtTerminateProcess 1002a2c4     MSVCRTD:MSVCR110D.dll
+ 0004:000002c8       __imp___lseeki64           1002a2c8     MSVCRTD:MSVCR110D.dll
+ 0004:000002cc       __imp__malloc              1002a2cc     MSVCRTD:MSVCR110D.dll
+ 0004:000002d0       __imp__free                1002a2d0     MSVCRTD:MSVCR110D.dll
+ 0004:000002d4       __imp__wcstombs            1002a2d4     MSVCRTD:MSVCR110D.dll
+ 0004:000002d8       __imp__strlen              1002a2d8     MSVCRTD:MSVCR110D.dll
+ 0004:000002dc       __imp___snprintf           1002a2dc     MSVCRTD:MSVCR110D.dll
+ 0004:000002e0       __imp__memset              1002a2e0     MSVCRTD:MSVCR110D.dll
+ 0004:000002e4       __imp__memcpy              1002a2e4     MSVCRTD:MSVCR110D.dll
+ 0004:000002e8       __imp__srand               1002a2e8     MSVCRTD:MSVCR110D.dll
+ 0004:000002ec       __imp___open               1002a2ec     MSVCRTD:MSVCR110D.dll
+ 0004:000002ec       __imp__open                1002a2ec     MSVCRTD:MSVCR110D.dll
+ 0004:000002f0       __imp___close              1002a2f0     MSVCRTD:MSVCR110D.dll
+ 0004:000002f0       __imp__close               1002a2f0     MSVCRTD:MSVCR110D.dll
+ 0004:000002f4       __imp___read               1002a2f4     MSVCRTD:MSVCR110D.dll
+ 0004:000002f4       __imp__read                1002a2f4     MSVCRTD:MSVCR110D.dll
+ 0004:000002f8       __imp__write               1002a2f8     MSVCRTD:MSVCR110D.dll
+ 0004:000002f8       __imp___write              1002a2f8     MSVCRTD:MSVCR110D.dll
+ 0004:000002fc       \177MSVCR110D_NULL_THUNK_DATA 1002a2fc     MSVCRTD:MSVCR110D.dll
+
+ entry point at        0001:0001e9f0
+

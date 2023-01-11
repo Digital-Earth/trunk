@@ -1,0 +1,53 @@
+ <div class="static-legend__header">
+  <span>Legend</span>
+  <a href="" class="share" ng-click="demoInfo.shareIsActive = true;"><span class="nc-icon-outline arrows-1_share-66"></span></a>
+</div>
+
+<!-- == Card == -->
+<div class="static-legend__card" ng-repeat="card in cards" ng-class="{'is-hidden': !card.Active}"  data-id="{{card.Resource.Id}}">
+  <div class="card__header">
+    <span class="card-name">{{card.Metadata.Name}}</span>
+    <a href="" class="card-remove"><span class="nc-icon-outline ui-1_simple-remove"></span></a>
+  </div>
+  <div class="card__content" ng-if="card.Specification.OutputType === 'Feature'">
+    <a href="" class="content-hide" ng-click="toggleMapItem(card)">
+        <span ng-if="card.Active" class="fa fa-eye"></span>
+        <span ng-if="!card.Active" class="fa fa-eye-slash"></span>
+    </a>
+    <div class="content-icon"><img ng-src="{{card.Style.Icon.Alias || card.Style.Icon.IconDataUrl}}" /></div>
+    <span class="content-name">{{card.Metadata.Alias || card.Metadata.Name}}</span>
+
+    <svg class="content-loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="black" ng-if="!currentMap.isItemReady(card)">
+      <path opacity=".25" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/>
+      <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z">
+      <animateTransform attributeName="transform" type="rotate" from="0 16 16" to="360 16 16" dur="0.8s" repeatCount="indefinite" />
+      </path>
+    </svg>
+
+  </div>
+  <div class="card__content" ng-if="card.Specification.OutputType === 'Coverage'">
+    <a href="" class="content-hide" ng-click="toggleMapItem(card)">
+      <span ng-if="card.Active" class="fa fa-eye"></span>
+      <span ng-if="!card.Active" class="fa fa-eye-slash"></span>
+    </a>
+    <span class="content-name">{{card.Metadata.Alias || card.Metadata.Name}}</span>
+
+    <svg class="content-loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="black" ng-if="!currentMap.isItemReady(card)">
+      <path opacity=".25" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/>
+      <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z">
+      <animateTransform attributeName="transform" type="rotate" from="0 16 16" to="360 16 16" dur="0.8s" repeatCount="indefinite" />
+      </path>
+    </svg>
+    <div class="content-coverage">
+      <div class="content-coverage__line" paint-context="card"></div>
+      <span class="content-coverage__min">1.2&deg;C</span>
+      <span class="content-coverage__max">25.0&deg;C</span>
+    </div>
+  </div>
+</div>
+
+<div class="static-legend__footer">
+  <a ng-if="demoInfo.maps.numberLoaded < 3" href="" class="navigation__item" ng-click="demoInfo.exploreIsActive = true; demoInfo.showCloseModalButton = true; tourCommands.kill();"><span class="nc-icon-outline ui-1_simple-add"></span> Add more data</a>
+  <a ng-if="!isSupported && demoInfo.maps.numberLoaded >= 3" href="" class="navigation__item" ng-click="captureEmail.toggle($event); tourCommands.kill();">Get early access</a>
+  <a ng-if="isSupported && demoInfo.maps.numberLoaded >= 3" href="/download" target="_self">Download</a>
+</div>

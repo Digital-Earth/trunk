@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7D76F78C-2899-48F0-AAB0-847A10657498}</ProjectGuid>
+    <RootNamespace>pyxlib_swig</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../source;../../../../third_party/boost;../../../../third_party/xerces-c-3.1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PYXLIB_SWIG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);../../../../third_party/boost/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>../source;../../../../third_party/boost;../../../../third_party/xerces-c-3.1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PYXLIB_SWIG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <ForcedIncludeFiles>../../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);../../../../third_party/boost/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../source;../../../../third_party/boost;../../../../third_party/xerces-c-3.1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PYXLIB_SWIG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <ForcedIncludeFiles>../../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);../../../../third_party/boost/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>Performing Post-Build Event... (C#)</Message>
+      <Command>set REFS=
+set FLAGS=
+if $(Configuration) == Debug set FLAGS=%25FLAGS%25 /debug+
+csc %25FLAGS%25 /target:library /out:"$(OutDir)$(ProjectName)_csharp.dll" %25REFS%25 csharp\*.cs
+robocopy $(OutDir) $(IntDir) $(ProjectName)_csharp.* &gt; nul
+exit 0
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="CompileJava.bat">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="SDKSample.java">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="interface\pyxlib_swig.i">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step (SWIG)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist source mkdir source
+if not exist csharp mkdir csharp
+if not exist source_temp mkdir source_temp
+if not exist csharp_temp mkdir csharp_temp
+del /q source_temp\*
+del /q csharp_temp\*
+set INCS=
+..\..\..\..\third_party\swigwin-1.3.30\swig -c++ -csharp -dllimport $(ProjectName) -o source_temp\$(ProjectName).cxx -outdir csharp_temp -I..\source %25INCS%25 interface\$(ProjectName).i
+rem ..\..\..\..\Tools\Build\CopyModifiedFiles source_temp source
+copy /y source_temp\$(ProjectName).cxx+nul source &gt; nul
+copy /y source_temp\$(ProjectName).h+nul source &gt; nul
+..\..\..\..\Tools\Build\CopyModifiedFiles csharp_temp csharp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)pyxlib.dll;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">source\$(ProjectName).cxx;source\$(ProjectName).h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Performing Custom Build Step (SWIG)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">if not exist source mkdir source
+if not exist csharp mkdir csharp
+if not exist source_temp mkdir source_temp
+if not exist csharp_temp mkdir csharp_temp
+del /q source_temp\*
+del /q csharp_temp\*
+set INCS=
+..\..\..\..\third_party\swigwin-1.3.30\swig -c++ -csharp -dllimport $(ProjectName) -o source_temp\$(ProjectName).cxx -outdir csharp_temp -I..\source %25INCS%25 interface\$(ProjectName).i
+rem ..\..\..\..\Tools\Build\CopyModifiedFiles source_temp source
+copy /y source_temp\$(ProjectName).cxx+nul source
+copy /y source_temp\$(ProjectName).h+nul source
+..\..\..\..\Tools\Build\CopyModifiedFiles csharp_temp csharp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(OutDir)pyxlib.dll;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">source\$(ProjectName).cxx;source\$(ProjectName).h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step (SWIG)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist source mkdir source
+if not exist csharp mkdir csharp
+if not exist source_temp mkdir source_temp
+if not exist csharp_temp mkdir csharp_temp
+del /q source_temp\*
+del /q csharp_temp\*
+set INCS=
+..\..\..\..\third_party\swigwin-1.3.30\swig -c++ -csharp -dllimport $(ProjectName) -o source_temp\$(ProjectName).cxx -outdir csharp_temp -I..\source %25INCS%25 interface\$(ProjectName).i
+rem ..\..\..\..\Tools\Build\CopyModifiedFiles source_temp source
+copy /y source_temp\$(ProjectName).cxx+nul source &gt; nul
+copy /y source_temp\$(ProjectName).h+nul source &gt; nul
+..\..\..\..\Tools\Build\CopyModifiedFiles csharp_temp csharp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)pyxlib.dll;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">source\$(ProjectName).cxx;source\$(ProjectName).h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="interface\pyxlib_swig_java.i">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building JAVA Interface (SWIG)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist java md java
+if not exist java\cppsource mkdir java\cppsource
+if not exist java\com mkdir java\com\pyxisinnovation\pyxlib
+if not exist jsource_temp mkdir jsource_temp
+if not exist java_temp mkdir java_temp\com\pyxisinnovation\pyxlib
+del /q jsource_temp\*
+del /q java_temp\*
+set INCS=
+..\..\..\..\third_party\swigwin-1.3.30\swig -c++ -java -package com.pyxisinnovation.pyxlib -o jsource_temp\$(ProjectName)_java.cxx  -outdir java_temp\com\pyxisinnovation\pyxlib -I..\source %25INCS%25 interface\$(ProjectName)_java.i
+copy /y jsource_temp\$(ProjectName)_java.cxx+nul java\cppsource &gt; nul
+copy /y jsource_temp\$(ProjectName)_java.h+nul java\cppsource &gt; nul
+call ..\..\..\..\Tools\Build\CopyModifiedFiles java_temp\com\pyxisinnovation\pyxlib java\com\pyxisinnovation\pyxlib
+echo Y|rd /s java_temp &gt; nul
+echo Y|rd /s jsource_temp &gt; nul
+call CompileJava.bat $(Configuration) $(OutDir)
+echo Finished building JAVA Interface (SWIG)
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)pyxlib.dll;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">java\cppsource\$(ProjectName)_java.cxx;java\cppsource\$(ProjectName)_java.h;java\pyxlib.jar;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Building JAVA Interface (SWIG)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">if not exist java md java
+if not exist java\cppsource mkdir java\cppsource
+if not exist java\com mkdir java\com\pyxisinnovation\pyxlib
+if not exist jsource_temp mkdir jsource_temp
+if not exist java_temp mkdir java_temp\com\pyxisinnovation\pyxlib
+del /q jsource_temp\*
+del /q java_temp\*
+set INCS=
+..\..\..\..\third_party\swigwin-1.3.30\swig -c++ -java -package com.pyxisinnovation.pyxlib -o jsource_temp\$(ProjectName)_java.cxx  -outdir java_temp\com\pyxisinnovation\pyxlib -I..\source %25INCS%25 interface\$(ProjectName)_java.i
+copy /y jsource_temp\$(ProjectName)_java.cxx+nul java\cppsource &gt; nul
+copy /y jsource_temp\$(ProjectName)_java.h+nul java\cppsource &gt; nul
+call ..\..\..\..\Tools\Build\CopyModifiedFiles java_temp\com\pyxisinnovation\pyxlib java\com\pyxisinnovation\pyxlib
+echo Y|rd /s java_temp &gt; nul
+echo Y|rd /s jsource_temp &gt; nul
+call CompileJava.bat $(Configuration) $(OutDir)
+echo Finished building JAVA Interface (SWIG)
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(OutDir)pyxlib.dll;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">java\cppsource\$(ProjectName)_java.cxx;java\cppsource\$(ProjectName)_java.h;java\pyxlib.jar;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building JAVA Interface (SWIG)</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist java md java
+if not exist java\cppsource mkdir java\cppsource
+if not exist java\com mkdir java\com\pyxisinnovation\pyxlib
+if not exist jsource_temp mkdir jsource_temp
+if not exist java_temp mkdir java_temp\com\pyxisinnovation\pyxlib
+del /q jsource_temp\*
+del /q java_temp\*
+set INCS=
+..\..\..\..\third_party\swigwin-1.3.30\swig -c++ -java -package com.pyxisinnovation.pyxlib -o jsource_temp\$(ProjectName)_java.cxx  -outdir java_temp\com\pyxisinnovation\pyxlib -I..\source %25INCS%25 interface\$(ProjectName)_java.i
+copy /y jsource_temp\$(ProjectName)_java.cxx+nul java\cppsource &gt; nul
+copy /y jsource_temp\$(ProjectName)_java.h+nul java\cppsource &gt; nul
+call ..\..\..\..\Tools\Build\CopyModifiedFiles java_temp\com\pyxisinnovation\pyxlib java\com\pyxisinnovation\pyxlib
+echo Y|rd /s java_temp &gt; nul
+echo Y|rd /s jsource_temp &gt; nul
+call CompileJava.bat $(Configuration) $(OutDir)
+echo Finished building JAVA Interface (SWIG)
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)pyxlib.dll;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">java\cppsource\$(ProjectName)_java.cxx;java\cppsource\$(ProjectName)_java.h;java\pyxlib.jar;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\pyxlib_swig.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\pyxlib_swig.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

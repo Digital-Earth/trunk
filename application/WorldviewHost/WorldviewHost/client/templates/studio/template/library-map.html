@@ -1,0 +1,102 @@
+﻿<div class="map" ng-class="{current:isCurrentMap(map)}">
+    <div ng-if="isCurrentMap(map)">
+        <header class="header-selected" ng-dblclick="gotoMap(map)" pyx-track='{"dblclick": "double-click-map"}'>
+            <i class="eye-button on" ng-click="setCurrentMap(null)" tooltip="{{'tooltip.library.eye.globe'|i18n}}"></i>
+            <i ng-if="!map.Expanded" class="expand-button expand" ng-click="map.Expanded = true" tooltip="{{'tooltip.library.globe.expand'|i18n}}"></i>
+            <i ng-if="map.Expanded" class="expand-button down" ng-click="map.Expanded = false" tooltip="{{'tooltip.library.globe.expand'|i18n}}"></i>
+            <span popup-template="/client/templates/studio/popup-menu/map.html" placement="bottom center" popup-group="popup-menu" show-trigger="click">
+                <span class="item-title" ellipsis-tooltip="{{map.Metadata.Name}}"><span class="text">{{map.Metadata.Name}}</span></span>
+            </span>                        
+        </header>
+        <div ng-if="map.Expanded">
+            <div ng-repeat="group in map.Groups" class="group">
+                <header ng-if="group.Metadata.Name">
+                    <i ng-if="!allGroupItemsVisible(group)" class="eye-button off" ng-click="showGroup(group)" tooltip="{{'tooltip.library.eye.geosource'|i18n}}"></i>
+                    <i ng-if="allGroupItemsVisible(group)" class="eye-button on" ng-click="hideGroup(group)" tooltip="{{'tooltip.library.eye.geosource'|i18n}}"></i>
+                    <i ng-if="!group.Expanded" class="expand-button fa fa-angle-right" ng-click="group.Expanded = true"></i>
+                    <i ng-if="group.Expanded" class="expand-button fa fa-angle-down" ng-click="group.Expanded = false"></i>
+                    <span popup-template="/client/templates/studio/popup-menu/map-group.html" placement="bottom center" popup-group="popup-menu" show-trigger="click">
+                        <span class="item-title" ellipsis-tooltip="{{group.Metadata.Name}}"><span class="text">{{group.Metadata.Name}}</span></span>
+                    </span>
+                </header>
+                <div ng-if="group.Expanded || !group.Metadata.Name" ng-repeat="item in group.Items" class="item" ng-class="{active:item.Active}" ng-dblclick="gotoItem(item)" pyx-track='{"dblclick": "double-click-geosource"}'>
+                    <span class="status" tooltip="{{'tooltip.library.eye.geosource'|i18n}}">
+                        <map-item-status-icon active="item.Active" ready="currentMap.isItemReady(item)" loading="currentMap.isItemLoading(item)" ng-click="toggleMapItem(item)"></map-item-status-icon>
+                    </span>
+                    <span class="item-styles">
+                        <span ng-if="item.Active && (item.Style.Icon || item.Style.Fill || item.Style.Line)" popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="right center" popup-group="popup-menu" show-trigger="click" pyx-track="library-style-geosource">
+                            <span tooltip="{{'tooltip.library.geosource.styling'|i18n}}">
+                                <span class="style-palette-box-min" 
+                                    background-palette="item.Style.Icon.Palette || item.Style.Fill.Palette"
+                                    ng-style="{background:item.Style.Icon.Color || item.Style.Fill.Color || item.Style.Line.Color}"
+                                    ></span>
+
+                                <img ng-src="{{item.Style.Icon.IconDataUrl}}" style="position:absolute;right:5px;top:4px;width:16px;height:16px;" ng-if="item.Style.Icon.IconDataUrl"/>
+
+                            </span>
+                        </span>
+                    </span>
+                    <span popup-template="/client/templates/studio/popup-menu/map-item.html" placement="bottom center" popup-group="popup-menu" show-trigger="click">
+                        <span class="item-title" ellipsis-tooltip="{{item.Metadata.Name}}"><span class="text">{{item.Metadata.Name}}</span></span>
+                    </span>
+                </div>
+            </div>
+            <div class="group">
+                <div ng-repeat="item in currentMap.state.Imports" class="item">
+                    <span ng-switch on="item.status" class="status">
+                        <span ng-switch-when="queue"><i class="fa fa-ellipsis-v gray" style="position:relative;left:5px"></i></span>
+                        <span ng-switch-when="processing"><span class="loading-progress-icon"></span></span>
+                        <span ng-switch-when="completed"><i class="fa fa-check"></i></span>
+                        <span ng-switch-when="failed"><i class="fa fa-times"></i></span>
+                        <span ng-switch-when="waiting">
+                            <span ng-if="item.hasRequest('SRS')" popup-template="/client/templates/studio/popup-menu/srs-menu.html" placement="right center" popup-group="popup-menu" show-trigger="click">
+                                <i class="fa fa-exclamation-triangle info" tooltip="{{'Spatial Reference System is required'|i18n}}"></i>
+                            </span>
+                            <span ng-if="item.hasRequest('GeoTag')" popup-template="/client/templates/studio/popup-menu/geotag-menu.html" placement="right center" popup-group="popup-menu" show-trigger="click">
+                                <i class="fa fa-exclamation-triangle info" tooltip="{{'GeoTag method is required'|i18n}}"></i>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="item-styles"></span>
+                    <span popup-template="/client/templates/studio/popup-menu/map-item.html" placement="bottom center" popup-group="popup-menu" show-trigger="click">
+                        <span ng-if="item.status != 'queue'" class="item-title" ellipsis-tooltip="{{item.name}}"><span class="text">{{item.name}}</span></span>
+                        <span ng-if="item.status == 'queue'" class="item-title" tooltip="{{'This GeoSource is waiting to be imported'|i18n}}"><span class="text">{{item.name}}</span></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!isCurrentMap(map)" ng-click="setCurrentMap(map)" tooltip="{{'tooltip.library.eye.map'|i18n}}">
+        <header>
+            <i class="eye-button off"></i>
+            <i ng-if="!map.Expanded" class="expand-button expand gray" ng-click="map.Expanded = true" stop-propagation="click"></i>                            
+            <i ng-if="map.Expanded" class="expand-button down gray" ng-click="map.Expanded = false" stop-propagation="click"></i>
+            <span>
+                <span class="item-title not active"><span class="text">{{map.Metadata.Name}}</span></span>
+            </span>
+        </header>
+        <div ng-if="map.Expanded">
+            <div ng-repeat="group in map.Groups" class="group">
+                <header ng-if="group.Metadata.Name">
+                    <i class="eye-button off"></i>
+                    <i ng-if="!group.Expanded" class="expand-button fa fa-angle-right" ng-click="group.Expanded = true"></i>
+                    <i ng-if="group.Expanded" class="expand-button fa fa-angle-down" ng-click="group.Expanded = false"></i>
+                    <span class="item-title"><span class="text">{{group.Metadata.Name}}</span></span>
+                </header>
+                <div ng-if="group.Expanded || !group.Metadata.Name" ng-repeat="item in group.Items" class="item">
+                    <span class="status">
+                        <i class="eye-button off"></i>
+                    </span>
+                    <span class="item-styles">
+                        <span ng-if="item.Active && (item.Style.Icon || item.Style.Fill || item.Style.Line)" >
+                            <span class="style-palette-box-min"></span>
+                            <img ng-src="{{item.Style.Icon.IconDataUrl}}" style="position:absolute;right:5px;top:4px;width:16px;height:16px;opacity:0.5" 
+                                ng-if="item.Style.Icon.IconDataUrl" />
+                        </span>
+                    </span>
+                    <span class="item-title"><span class="text">{{item.Metadata.Name}}</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

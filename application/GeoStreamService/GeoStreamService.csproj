@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1077DA7-C543-4F24-8A9A-67472858DAA7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoStreamService</RootNamespace>
+    <AssemblyName>GeoStreamService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\worldview\</SolutionDir>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HoytSoft.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\third_party\Enterprise ASP.NET Suite\Libraries\HoytSoft.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HoytSoft.Common.Services, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\third_party\Enterprise ASP.NET Suite\Libraries\HoytSoft.Common.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheUsage.cs" />
+    <Compile Include="GalleryTester.cs" />
+    <Compile Include="GeoStreamService.cs" />
+    <Compile Include="GwssStackConfiguration.cs" />
+    <Compile Include="Jobs\CleanUpJob.cs" />
+    <Compile Include="Jobs\JobCancellationHint.cs" />
+    <Compile Include="Jobs\JobsJournal.cs" />
+    <Compile Include="Jobs\ObservableOperationStatus.cs" />
+    <Compile Include="PublishingManager.cs" />
+    <Compile Include="Jobs\DownloadJob.cs" />
+    <Compile Include="Jobs\ExitManager.cs" />
+    <Compile Include="Jobs\ImportJob.cs" />
+    <Compile Include="Jobs\Job.cs" />
+    <Compile Include="Jobs\JobManager.cs" />
+    <Compile Include="Jobs\ProcessJob.cs" />
+    <Compile Include="Jobs\PublishJob.cs" />
+    <Compile Include="Jobs\ReportStatusJob.cs" />
+    <Compile Include="Logging\Categories.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GeoStreamService.UsageReports.cs" />
+    <Compile Include="Program.cs">
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="ShellCommands.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pyxis\Contracts\Pyxis.Contracts.csproj">
+      <Project>{bb0fdb8b-be80-4db0-87f0-9c75bb89c7c7}</Project>
+      <Name>Pyxis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Core\Pyxis.Core.csproj">
+      <Project>{6f9755f3-8fe4-42b0-b34f-f06480022352}</Project>
+      <Name>Pyxis.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Publishing\Pyxis.Publishing.csproj">
+      <Project>{5ba06255-9024-4a7f-8253-2a60b6ba194e}</Project>
+      <Name>Pyxis.Publishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Pyxis.Storage\Pyxis.Storage.csproj">
+      <Project>{5c69cae6-ddea-4063-a2c9-41a63bc78bdf}</Project>
+      <Name>Pyxis.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pyxlib\projects\pyxlib\pyxlib_swig_csharp\pyxlib_swig_csharp.csproj">
+      <Project>{92c4cc38-0161-457d-a0f6-7808ff4cd0f5}</Project>
+      <Name>pyxlib_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet.DLM\PyxNet.DLM.csproj">
+      <Project>{c302e222-29a0-4a95-8e65-740fb72e6795}</Project>
+      <Name>PyxNet.DLM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet.NAT\PYXNatTraversalUPnP\PYXNatTraversal.csproj">
+      <Project>{041af7a8-5c77-4d96-98cf-342b5de11f1e}</Project>
+      <Name>PYXNatTraversal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Utilities\Pyxis.Utilities.csproj">
+      <Project>{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet.Pyxis\PyxNet.Pyxis.csproj">
+      <Project>{c30ae009-f214-42f2-ab9a-dd3d2ca7909f}</Project>
+      <Name>PyxNet.Pyxis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PYXNet\PyxNet\PyxNet.csproj">
+      <Project>{39effc79-2e12-4861-8dc9-7e59b6d2b9d1}</Project>
+      <Name>PyxNet %28PyxNet\PyxNet%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\PipelineLibrary\PipelineLibrary.csproj">
+      <Project>{63C82A1D-AAAA-4B44-ADBA-E339406C020A}</Project>
+      <Name>PipelineLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\services\projects\library\library_swig_csharp\library_swig_csharp.csproj">
+      <Project>{6888f517-2276-48d9-a6b2-3c28a531c8df}</Project>
+      <Name>library_swig_csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\utility\ApplicationUtility.csproj">
+      <Project>{e4aecebb-dab1-4d40-a012-1f648105fb5a}</Project>
+      <Name>ApplicationUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\third_party\sqlite3\sqlite3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExampleProgress.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>robocopy $(SolutionDir)$(ConfigurationName)\plugins $(TargetDir)plugins  /E &gt;nul
+robocopy $(SolutionDir)$(ConfigurationName) $(TargetDir)  pyxlib.dll pyxlib_swig.dll library.dll library_swig.dll cpprest*.dll zlib*.dll xerces*.dll sqlite3.dll msvcr*.dll &gt;nul
+exit 0
+</PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

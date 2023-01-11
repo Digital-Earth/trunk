@@ -1,0 +1,26 @@
+﻿<div>
+    <div class="resource-result resource-property">
+        <div class="section title">
+            {{resource.Question}}
+        </div>
+
+        <div ng-switch on="status" class="section title">
+            <div ng-switch-when="calculating" class="graph section">
+                <div i18n="Calculating..."></div>
+                <i class="loading-progress-icon"></i>
+            </div>
+
+            <div ng-switch-when="failed" class="graph section">
+                <div i18n="Failed!"></div>
+            </div>
+
+            <div ng-switch-when="value calculated" class="title section">
+                {{answer|number:3}}
+            </div>
+
+            <div ng-switch-when="geometry calculated" class="title section">
+                <button ng-click="selectGeometry()" pyx-track="search-question-display" class="gray big">Display on globe</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+<header class='legend__header' ng-dblclick="quickAdd.editMapName=!quickAdd.editMapName && uiEditable" ng-enter="quickAdd.editMapName=false" ng-esc="quickAdd.editMapName=false">
+	<div ng-if="!quickAdd.editMapName" class="legend__title">
+		{{currentMap.model.Metadata.Name || "Legend"}}
+		<div class="legend__share" ng-click="shareModal.open()" tooltip="Share your globe" append-to-body="true"><i class="icon"></i></div>
+	</div>
+	<input ng-if="quickAdd.editMapName" class="form-control" ng-model="currentMap.model.Metadata.Name" ng-blur="quickAdd.editMapName=false" autofocus/>
+
+</header>
+<div class="legend__item__wrapper" ng-repeat="item in currentMap.items()">
+	<div class="legend__item state-initial" item-legend="item" item-index="{{$index}}" ng-class="{active: item.Active}">
+
+		<!-- Type: Expanded -->
+		<div class="legend__item__content type-expanded" ng-if="item.Style.Icon.Palette || item.Style.Fill.Palette">
+			<div class="legend__item__header">
+				<span class="legend__item__title">{{item.Metadata.Name}}</span>
+			</div>
+			<div class="legend__item__body">
+				<div class="legend__item__attribute">
+					<div class="legend__attribute__header" ng-if="hasExpression">{{getExpression}}</div>
+					<div class="legend__attribute__body" ng-switch on="outputType">
+						<div class="legend__attribute__type" ng-switch-when="Coverage">
+							<div class="legend__attribute__swatch mode-thick" background-palette="item.Style.Icon.Palette || item.Style.Fill.Palette"
+								popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click" append-to-body="true" popup-enabled="uiEditable"></div>
+							<div class="legend__attribute__domain mode-thick">
+								<span class="value-min">
+									{{setRange(item.Style.Icon.Palette.Steps || item.Style.Fill.Palette.Steps, 'Value').min}}
+									<span ng-if="fieldUnitName">{{fieldUnitName}}</span>
+								</span>
+								<span class="value-max">
+									{{setRange(item.Style.Icon.Palette.Steps || item.Style.Fill.Palette.Steps, 'Value').max}}
+									<span ng-if="fieldUnitName">{{fieldUnitName}}</span>
+								</span>
+							</div>
+						</div>
+
+						<div class="legend__attribute__type" ng-class="{ 'has-icon': item.Style.Icon.IconDataUrl }" ng-switch-when="Feature">
+							<div ng-if="item.Style.Icon.IconDataUrl" class="legend__attribute__swatch" background-image-blend="item.Style.Icon.IconDataUrl" background-image-color="item.Style.Icon.Palette"
+								popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click" append-to-body="true" popup-enabled="uiEditable"></div>
+							<div class="palette">
+								<div class="legend__attribute__swatch mode-thick" background-palette="item.Style.Icon.Palette || item.Style.Fill.Palette" ng-style="{background:item.Style.Icon.Color || item.Style.Fill.Color}"
+									popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click" append-to-body="true" popup-enabled="uiEditable"></div>
+								<div class="legend__attribute__domain mode-thick">
+									<span class="value-min">low</span>
+									<span class="value-max">high</span>
+								</div>
+							</div>
+						</div>
+
+						<div ng-switch-default>
+							<div class="legend__attribute__swatch" background-palette="item.Style.Icon.Palette || item.Style.Fill.Palette" ng-style="{background:item.Style.Icon.Color || item.Style.Fill.Color}"
+								popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click" append-to-body="true" popup-enabled="uiEditable"></div>
+							<div class="legend__attribute__domain"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Type: Condensed -->
+		<div class="legend__item__content type-condensed" ng-if="item.Style.Fill.Style == 'SolidColor' && item.Style.Fill.Color && !item.Style.Icon.IconDataUrl">
+			<div class="legend__item__header">
+				<div class="legend__attribute__swatch mode-thick" ng-style="{'background-color':item.Style.Fill.Color}"
+					popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click" append-to-body="true" popup-enabled="uiEditable"></div>
+				<span class="legend__item__title">{{item.Metadata.Name}}</span>
+			</div>
+		</div>
+
+		<!-- Type: Condensed -->
+		<div class="legend__item__content type-condensed" ng-if="item.Style.Line.Style == 'SolidColor' && !item.Style.Fill && !item.Style.Icon.IconDataUrl">
+			<div class="legend__item__header">
+				<div class="legend__attribute__swatch mode-thin" ng-style="{'background-color': item.Style.Line.Color}"
+					popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click" append-to-body="true" popup-enabled="uiEditable"></div>
+				<span class="legend__item__title">{{item.Metadata.Name}}</span>
+			</div>
+		</div>
+
+		<!-- Type: Condensed -->
+		<div class="legend__item__content type-condensed" ng-if="item.Style.Icon.Style == 'SolidColor' && item.Style.Icon.IconDataUrl">
+			<div class="legend__item__header">
+				<div class="legend__attribute__swatch" background-image-blend="item.Style.Icon.IconDataUrl" background-image-color="item.Style.Icon.Color"
+					popup-template="/client/templates/studio/popup-menu/geosource-style.html" placement="left center" popup-group="popup-menu" show-trigger="click" append-to-body="true" popup-enabled="uiEditable"></div>
+				<span class="legend__item__title">{{item.Metadata.Name}}</span>
+			</div>
+		</div>
+
+		<!-- Type: no style: RGB -->
+		<div class="legend__item__content type-condensed" ng-if="!item.Style.Icon && !item.Style.Fill && !item.Style.Line">
+			<div class="legend__item__header">
+				<div class="legend__attribute__swatch"><img ng-src="http://www.pyxisinnovation.com/images/pipelines/thumbnails/{{item.Resource.Id}}.jpg?Version={{item.Resource.Version}}" style="height:36px;"/></div>
+				<span class="legend__item__title">{{item.Metadata.Name}}</span>
+			</div>
+		</div>
+		<div class="legend__item__controls" ng-if="uiEditable">
+			<i class="control fa fa-eye" ng-click="toggleMapItem(item)"></i>
+			<i class="control fa fa-close" ng-click="currentMap.removeItem(item)"></i>
+		</div>
+	</div>
+</div>
+<div ng-if="uiEditable">
+	<div class="legend__bottom" ng-if="!quickSearch.active">
+		<div style="float:right">
+			<div ng-if="currentMap.activeItems().length<5" 	class="legend__round-button green" ng-click="quickAdd.show('GeoSource')" tooltip="Add information" append-to-body="true"><i class="fa fa-plus"></i></div>
+			<div class="legend__round-button" ng-click="quickAdd.show('Map')" tooltip="Start a new globe" append-to-body="true"><i class="fa fa-globe"></i></div>
+		</div>
+		<div>
+			<div class="legend__round-button" ng-click="quickAdd.search()" tooltip="Goto location" append-to-body="true"><i class="fa fa-search"></i></div>
+		</div>
+	</div>
+	<div class="legend__bottom" ng-if="quickSearch.active">
+		<input class="legend__search" ng-model="quickSearch.text" ng-esc="quickSearch.active=false" ng-blur="quickSearch.active=false" ng-enter="quickSearch.search()" autofocus="true">
+		<i class="fa fa-search legend__search_icon"></i>
+		<i ng-show="isSearchInProgress()" class="loading-progress-icon legend__search_progress"></i>
+	</div>
+</div>

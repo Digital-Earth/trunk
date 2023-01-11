@@ -1,0 +1,14 @@
+  <div ng-repeat="url in templates.sections" ng-include="url"></div>
+    <div ng-repeat="url in templates.dialogs" ng-include="url"></div>
+    <div ng-repeat="url in templates.widgets" ng-include="url"></div>
+
+    <modal-dialog modal-background-class="no-background" modal-class="demo" ng-if="state.activeStep.message">
+        <h1>{{state.activeStep.message.title}}</h1>
+        <p>{{state.activeStep.message.content}}</p>
+    </modal-dialog>
+
+    <div style="position: fixed; left: 300px; bottom: 100px; right: 300px">
+        <i class="fa timeline-play-pause" ng-click="state.play = !state.play" ng-class="{'fa-play':state.play, 'fa-pause':!state.play}"></i>
+        <time-line time-line="timeLine" sections="sections" state="state" on-time-line-click="onTimeLineClick($time)"></time-line>
+        <span class="timeline-elapsed-time-display">{{state.currentTime.toFixed(2)}}</span>
+    </div>

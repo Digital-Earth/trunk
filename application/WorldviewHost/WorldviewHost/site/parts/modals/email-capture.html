@@ -1,0 +1,21 @@
+<div class="static-modal-container email-capture-modal" ng-if="captureEmail.isOpen" ng-class="captureEmail.isOpen ? 'is-open' : '' ">
+  <a href="" class="static-modal-exit navigation__item" ng-click="captureEmail.toggle($event)"><span class="nc-icon-outline ui-1_simple-remove"></span></a>
+  <div class="static-modal email-capture">
+    <div class="static-modal__scrollContainer">
+      <img class="logo" src="/site/assets/img-logo-wv-white.png" alt="PYXIS WorldView">
+      <ng-switch on="captureEmail.captured">
+        <h2 class="headline display-light" ng-switch-when="false">WorldView Studio will soon be available directly on the web.</h2>
+        <h2 class="headline display-light" ng-switch-when="true">We'll let you know when it's ready.</h2>
+        <p class="headline-description display-light" ng-switch-when="false">Sign up and be the first to know when it's ready.</p>
+      </ng-switch>
+      <form class="form form--inline" name="emailCapture" validation-schema schema="Newsletter">
+        <div class="form__panel basis-70">
+          <input class="input input--rounded" type="email" name="email" ng-model="captureEmail.model.Email" placeholder="Enter your email..."/>
+        </div>
+        <div class="form__panel basis-30">
+          <a href="" class="btn btn--action btn--rounded btn--liquid reverse" ng-click="captureEmail.submit()" ng-disabled="captureEmail.submitting"><span>Request early access</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

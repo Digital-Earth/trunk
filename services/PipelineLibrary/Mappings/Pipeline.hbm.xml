@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="PipelineLibrary"
+                   namespace="Pyxis.Services.PipelineLibrary.Domain">
+  <class name="Pipeline">
+    <id name="Id" column="PipelineId">
+      <generator class="increment"/>
+    </id>
+    <property name="Name"/>
+    <property name="Description"/>
+    <property name="PipelineGuid"/>
+    <property name="Version"/>
+    <property name="Definition"/>
+    <property name="IsPublished"/>
+    <property name="IsHidden"/>
+    <property name="IsTemporary"/>
+    <many-to-one name="Identity" class="PipelineIdentity" column="IdentityId" fetch="select"/>
+    <set name="Metadata" lazy="false" cascade="all-delete-orphan">
+      <key column="PipelineId"/>
+      <one-to-many class="PipelineMetadata"/>
+    </set>
+    <set name="OutputTypes" lazy="false" cascade="all-delete-orphan">
+      <key column="PipelineId"/>
+      <one-to-many class="PipelineOutputType"/>
+    </set>
+    <set name="Relationships" lazy="true" cascade="all-delete-orphan">
+      <key column="PipelineId"/>
+      <one-to-many class="PipelineRelationship"/>
+    </set>    
+  </class>
+</hibernate-mapping>

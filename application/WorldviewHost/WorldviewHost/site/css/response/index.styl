@@ -1,0 +1,52 @@
+cutoffs = {
+    mobile: 320
+    tablet: 768
+    small-laptop: 1024
+    laptop: 1364
+    desktop: 1600
+    big-desktop: 1920
+}
+
+is-between(min, max)
+    condition = s('only screen and (min-width: %s) and (max-width: %s)', min, max) 
+    @media condition
+        {block}
+
+is-above(min)
+    ensure(min, 'unit')
+    condition = s('only screen and (min-width: %s)', min) 
+    @media condition
+        {block}
+
+is-below(max)
+    condition = s('only screen and (max-width: %s)', max) 
+    @media condition
+        {block}
+
+is-above-mobile()
+    +is-above(unit(cutoffs.tablet, 'px'))
+        {block}
+        
+big-desktop()
+    +is-between(unit(cutoffs.desktop, 'px'), unit(cutoffs.big-desktop - 1, 'px'))
+        {block}
+
+desktop()
+    +is-above(unit(cutoffs.laptop + 1, 'px'))
+        {block}
+ 
+laptop()
+    +is-between(unit(cutoffs.laptop, 'px'), unit(cutoffs.desktop - 1, 'px'))
+        {block}
+        
+small-laptop()
+    +is-between(unit(cutoffs.small-laptop, 'px'), unit(cutoffs.laptop - 1, 'px'))
+        {block}
+      
+tablet()
+    +is-between(unit(cutoffs.tablet, 'px'), unit(cutoffs.small-laptop - 1, 'px'))
+        {block}
+        
+mobile()
+    +is-below(unit(cutoffs.tablet - 1, 'px'))
+        {block}

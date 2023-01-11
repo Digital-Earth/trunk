@@ -1,0 +1,140 @@
+ <div class="banner surface" resize resize-set="height">
+    <section class="container container--expanded">
+        <div class="banner__header text-center">
+            <div class="header-inner">
+                <h1 class="headline display-light">
+                WorldView is an immersive, high fidelity decision making tool that will forever change the way you look at the globe.
+                </h1>
+                 <a class="btn btn--small btn--rounded btn--white" href="/demo" target="_self">Try the demo</a>
+            </div>
+        </div>
+        <div class="banner__globe">
+            <img src="/site/assets/img-hero-globe.png" media-load />
+        </div>
+    </section>
+</div>
+<div class="discover surface">
+    <section class="container">
+       <div class="discover__header text-center">
+            <div class="header-inner">
+                <h2 class="title display-dark">Data from Everywhere that’s Anywhere.</h2>
+                <p class="description display-dark">
+                   Finding interesting, relevant geospatial data is a thing of the past. WorldView puts the data at the your fingertips so you can use it to make better decisions.
+                </p>
+            </div>
+       </div>
+        <div class="discover__content">
+            <div class="discover-card">
+                <div class="discover-card__inner">
+                    <div class="discover-card__media" ng-style="{'background-image':'url(/site/assets/img-card-demo01.jpg)'}"></div>
+                    <div class="discover-card__content">
+                        <div class="discover-card__title">Weather Satellite Infrared</div>
+                        <div class="discover-card__owner caption-dark">NOAA</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discover-card">
+                <div class="discover-card__inner">
+                    <div class="discover-card__media" ng-style="{'background-image':'url(/site/assets/img-card-demo02.jpg)'}"></div>
+                    <div class="discover-card__content">
+                        <div class="discover-card__title">Weather Satellite Infrared</div>
+                        <div class="discover-card__owner caption-dark">NOAA</div>
+                    </div>
+                </div>
+            </div>
+            <div class="discover-card">
+                <div class="discover-card__inner">
+                    <div class="discover-card__media" ng-style="{'background-image':'url(/site/assets/img-card-demo03.jpg)'}">
+                    </div>
+                    <div class="discover-card__content">
+                        <div class="discover-card__title">Weather Satellite Infrared</div>
+                        <div class="discover-card__owne caption-dark">NOAA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="discover__footer text-center">
+          <a href="" class="btn btn--small btn--rounded btn--action" ng-click="show.modal = 'register'">Register Now</a>
+        </div>
+    </section>
+</div>
+
+<div class="tour tour-search surface">
+    <section class="container">
+        <div class="tour__info text-center">
+            <div class="svg-icon" svg-animate svg-uid="search-icon" json-path="/site/animations/search_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>
+            <h3 class="title">Search</h3>
+            <p class="description">
+            Find the data you’re looking for with a powerful Natural Language search engine accessing over 30,000 authoritative data sources.
+            </p>
+            <a class="btn btn--small btn--rounded btn--action reverse" href="/features">Discover More Features</a>
+        </div>
+        <div class="tour__media">
+            <img ng-src="/site/assets/img-tour-search.png" data-at2x="/site/assets/img-tour-search@2x.png" width="860" />
+        </div>
+    </section>
+</div>
+<div class="tour tour-combine surface" resize resize-set="height" resize-run="setHeight()">
+    <div class="tour-panel" combine-animate scroll-enter on-enter-then="animate" use-boundary="middle" use-viewport="middle" use-bound-box="middle">
+        <div class="tour__media">
+            <img class="top-layer" src="/site/assets/img-tour-combine-top.png"/>
+            <img class="mid-layer" src="/site/assets/img-tour-combine-middle.png"/>
+            <img class="bot-layer" src="/site/assets/img-tour-combine-bottom.png"/>
+        </div>
+    </div>
+    <div class="tour-panel">
+        <div class="tour__info">
+        <div class="svg-icon" svg-animate svg-uid="combine-icon" json-path="/site/animations/combine_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>
+         <h3 class="title">Combine</h3>
+            <p class="description">
+            Combining and fusing data is a hard problem that WorldView elegantly solves, while retaining precision and fidelity.
+            </p>
+            <a class="btn btn--small btn--rounded btn--action reverse" href="/features">Learn More</a>
+        </div>
+    </div>
+</div>
+<div class="subscribe surface">
+    <section class="container text-center">
+        <div class="subscribe__header">
+            <h2 class="title">
+            Use your inbox to inform your world view.
+            </h2>
+        </div>
+        <form class="subscribe__form">
+            <div class="form-panel">
+                <input class="input input--small input--rounded " type="email" placeholder="Enter your email..."/>
+            </div>
+            <div class="form-panel">
+                <a href="" class="btn btn--action btn--rounded btn--liquid"><span>Subscribe</span></a>
+            </div>
+        </form>
+        <span class="heads-up">A very once in a while type newsletter. We value your privacy.</span>
+    </section>
+ </div>   
+<div class="updates surface">
+    <section class="container text-center"> 
+        <div class="updates-panel">
+            <div class="updates-panel__inner">
+                <h3 class="title">News</h3>
+                <article class="update">
+                    <a ng-href="/news/{{homeCtrl.showYear}}/{{homeCtrl.postPath}}" class="link link--normal">{{homeCtrl.post.title}}</a>
+                    <hr class="hr-delimiter" text="{{homeCtrl.post.date}}"></hr>
+                </article>
+            </div>
+        </div>
+        <div class="updates-panel">
+             <div class="updates-panel__inner">
+                <h3 class="title">Twitter</h3>
+                <article class="update">
+                    <a href="" class="link link--normal">Please follow @worldviewglobe where we share http://worldview.gallery experiences @gisuser</a>
+                    <hr class="hr-delimiter" text="August 13, 2015"></hr>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+

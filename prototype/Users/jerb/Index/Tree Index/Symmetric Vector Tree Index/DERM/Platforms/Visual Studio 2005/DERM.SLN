@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "..\..\..\Core\Platforms\Visual Studio 2005\Core.vcproj", "{759CF618-C951-4674-9C73-29EDBA0979DD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DERM", "DERM.vcproj", "{ADCCBE52-AB48-4CA1-A66E-E22520271B7A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{759CF618-C951-4674-9C73-29EDBA0979DD} = {759CF618-C951-4674-9C73-29EDBA0979DD}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Profile|Win32 = Profile|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{759CF618-C951-4674-9C73-29EDBA0979DD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{759CF618-C951-4674-9C73-29EDBA0979DD}.Debug|Win32.Build.0 = Debug|Win32
+		{759CF618-C951-4674-9C73-29EDBA0979DD}.Profile|Win32.ActiveCfg = Profile|Win32
+		{759CF618-C951-4674-9C73-29EDBA0979DD}.Profile|Win32.Build.0 = Profile|Win32
+		{759CF618-C951-4674-9C73-29EDBA0979DD}.Release|Win32.ActiveCfg = Release|Win32
+		{759CF618-C951-4674-9C73-29EDBA0979DD}.Release|Win32.Build.0 = Release|Win32
+		{ADCCBE52-AB48-4CA1-A66E-E22520271B7A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ADCCBE52-AB48-4CA1-A66E-E22520271B7A}.Debug|Win32.Build.0 = Debug|Win32
+		{ADCCBE52-AB48-4CA1-A66E-E22520271B7A}.Profile|Win32.ActiveCfg = Profile|Win32
+		{ADCCBE52-AB48-4CA1-A66E-E22520271B7A}.Profile|Win32.Build.0 = Profile|Win32
+		{ADCCBE52-AB48-4CA1-A66E-E22520271B7A}.Release|Win32.ActiveCfg = Release|Win32
+		{ADCCBE52-AB48-4CA1-A66E-E22520271B7A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

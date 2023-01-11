@@ -1,0 +1,291 @@
+﻿<div>
+    <!-- Sidebar menu - Hidden for now -->
+    <div class="sidebar-menu" style="display:none;">
+        <h1 class="title gray-text" style="font-size: 22px; margin-bottom: 22px; margin-top:0">Steps</h1>
+        <!-- Opens the appropriate registration page view -->
+        <button ng-repeat="step in registerSteps track by $index"
+            class="sidebar-menu-item"
+            ng-class="{'selected': registerStepNumber == $index}" 
+            ng-click="showRegisterStep($index)">{{$index+1}}: {{step}}</button>
+    </div>
+
+    <div class="center-content">
+        <!-- WorldView Studio Download -->
+        <div ng-if="registerSteps[registerStepNumber] == 'Download'" id="download-step">
+            <div class="sign-up-step">
+
+                <div ng-if="!worldViewSupported" class="unsupported-os-message">
+                    <h1 class="title" style="margin-bottom: 26px">WorldView Studio</h1>
+                    <p ng-if="userDevice !== 'Mobile'" ng-switch on="userOS">
+                        <span>Sorry, WorldView Studio doesn't support</span>
+                        <span ng-switch-when="Mac">the {{userOS}} operating system.</span> 
+                        <span ng-switch-when="Windows">{{userOSVersion === 'Unknown' ? 'this operating system' : userOSVersion}}.</span>
+                        <span ng-switch-default>this operating system.</span>
+                    </p>
+                    <p ng-if="userDevice === 'Mobile'">mobile devices yet.</p>
+                   
+                    <!-- System Requirements -->
+                    <span class='hr-delimiter' data-delimiter="System Requirements"></span>
+                    <ul class="xsmall-text gray-text-2" style="margin:0;padding-left:20px;">
+                        <li>Operating system: Windows Vista, Windows 7, Windows 8 or Windows 8.1 or higher</li>
+                        <li>Chrome, Firefox, IE 10 or higher</li>
+                        <li>Graphics card with 512MB and support for OpenGL 2.0</li>
+                        <li>Disk Space: 100MB for installed applications, and 2GB for cached data</li>
+                        <li>Memory: 2GB (4GB recommended)</li>
+                        <li>Internet connection speed: 10Mbps or faster</li>
+                    </ul>
+                    <button class="big gray" ng-click="showRegisterStep(1)" style="float: right">
+                        Continue to Sign up
+                    </button> 
+                </div>
+                
+                <div ng-if="worldViewSupported">
+                    <!-- Download button -->
+                    <h1 class="title" style="margin-bottom: 26px">Download WorldView Studio</h1>
+                    <a href="https://www.pyxisinnovation.com/Downloads/WorldViewStudioInstaller.exe">
+                        <button class="big gray">
+                            <span class="fa fa-cloud-download"></span>
+                            <span>Download WorldView Studio</span>
+                        </button>
+                    </a>
+                    <!-- Software Licensing Agreement -->
+                    <div id="license-agreement" class="xsmall-text gray-text-2">
+                        By clicking on the above Download WorldView Studio button, you acknowledge that you have read and agree to the <a href="#" ng-click="showLicensingAgreementOpen()">PYXIS Software Licensing Agreement</a>
+                        <br>
+                        <br>
+                        <span>Note: your antivirus software must allow you to install software.</span>
+                        <!-- Proceed to registration-->
+                        <button class="big gray" ng-click="showRegisterStep(1)" style="float: right">Next</button>
+                    </div>
+                    <!-- System Requirements -->
+                    <h1 class="title"></h1>
+                    <div class="xsmall-text">System Requirements</div>
+                    <ul class="xsmall-text gray-text-2" style="margin:0;padding-left:20px;">
+                        <li>Operating system: Windows Vista, Windows 7, Windows 8 or Windows 8.1 or higher</li>
+                        <li>Chrome, Firefox, IE 10 or higher</li>
+                        <li>Graphics card with 512MB and support for OpenGL 2.0</li>
+                        <li>Disk Space: 100MB for installed applications, and 2GB for cached data</li>
+                        <li>Memory: 2GB (4GB recommended)</li>
+                        <li>Internet connection speed: 10Mbps or faster</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sign Up form -->
+        <div ng-if="registerSteps[registerStepNumber] == 'Sign up' && !submitted" id="form-step">
+            <div class="sign-up-step">
+                <div ng-switch on="local">
+                    <h1 class="title" ng-switch-when="true">Sign up</h1>
+                    <h1 class="title" ng-switch-when="false">Almost done</h1>
+                    <p class="lead" ng-switch-when="true">
+                        To set up your WorldView&#8482; account we just need to collect a few details.
+                    </p>
+                    <p class="lead" ng-switch-when="false">
+                        As a member of the WorldView&#8482; community you'll need to create a personal gallery for sharing content with other members. Please specify the name of your personal gallery here.
+                    </p>
+                </div>
+              
+            <div class="sign-up-form" ng-class="{ 'sign-up-form-external': !local }">
+                <form id="signup-credentials-form" name="signup">
+                    <!-- Enter credentials -->
+                    <div class="form-step active" ng-class="{ valid: signup.firstname.$valid && signup.lastname.$valid && signup.email.$valid && signup.birthdate.$valid && signup.galleryName.$valid && signup.password.$valid && signup.confirmPassword.$valid }">
+                        <div class="content">
+                            <div class="form-step-row" ng-if="local">
+                                <!-- First Name -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.firstname.$error.required" ng-switch on="signup.firstname.$error.required" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="sign-up-first-name" name="firstname" placeholder="First Name" ng-required="local" ng-disabled="!local" ng-model="signUpForm.FirstName">
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.lastname.$error.required" ng-switch on="signup.lastname.$error.required" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="sign-up-last-name" name="lastname" placeholder="Last Name" ng-required="local" ng-disabled="!local" ng-model="signUpForm.LastName">
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group" ng-if="local" style="position: relative">
+                                <span ng-switch on="signup.email.$error.remoteProgress" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                    <i ng-switch-when="true" class="fa fa-refresh fa-spin fa-sm" style="color: #ccc;"></i>
+                                    <span ng-switch-when="false" ng-switch on="signup.email.$error.remote">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <span ng-switch-when="true">
+                                            <span ng-if="validEmail()" style="background-color: white; color: red;">Email already registered. <a href="/forgotPassword" class="link-underlined">Forgot your password?</a></span>
+                                            <i class="fa fa-times fa-sm text-red"></i>
+                                        </span>
+                                    </span>
+                                </span>
+                                <input type="email" class="form-control" name="email" placeholder="Email" ng-required="local" ng-disabled="!local" ng-model="signUpForm.Email" remote-validator="checkEmail($value)" delay="1000" ng-minlength="3">
+                            </div>
+
+                            <div class="form-step-row" ng-if="local">
+                                <!-- Password -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.password.$error.required" ng-switch on="signup.password.$error.minlength" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="password" class="form-control" name="password" placeholder="Password (minimum 6 characters)" ng-required="local" ng-disabled="!local" ng-model="signUpForm.Password" ng-minlength="6">
+                                </div>
+
+                                <!-- Confirm password -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.confirmPassword.$error.required" ng-switch on="signup.confirmPassword.$error.match" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" ng-required="local" ng-disabled="!local" ng-model="signUpForm.ConfirmPassword" match="signUpForm.Password">
+                                </div>
+                            </div>
+
+                            <!-- Gallery Name -->
+                            <div class="form-group" style="position: relative; clear: both">
+                                <span ng-switch on="signup.galleryName.$error.remoteProgress" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                    <i ng-switch-when="true" class="fa fa-refresh fa-spin fa-sm" style="color: #ccc;"></i>
+                                    <span ng-switch-when="false" ng-switch on="signup.galleryName.$error.remote">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" name="galleryName" placeholder="Gallery Name (minimum 5 characters, only letters and numbers)" required="" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="signUpForm.GalleryName" remote-validator="checkGalleryName($value)" delay="1000" ng-minlength="5">
+                            </div>
+
+                            <!-- Gallery URL dynamic hint -->
+                            <div class="form-group form-group-note" style="position: relative">
+                                <span> {{galleryUrl}}/</span><span ng-if="signup.galleryName.$valid">{{signUpForm.GalleryName}}</span><span class="gray-text" ng-if="!signup.galleryName.$valid">YourGalleryName</span>
+                            </div>
+
+                            <!-- Terms of Service -->
+                            <div class="form-group form-group-note" style="margin: 24px 0 4px; position: relative">
+                                <input type="checkbox" name="terms" ng-model="signUpForm.AgreeTerms" required />I agree to the <a href="#" class="link-underlined" ng-click="showTermsOpen()">Terms of Service.</a>
+                            </div>
+
+                            <!-- Newsletter -->
+                            <div class="form-group form-group-note" style="position: relative">
+                                <input type="checkbox" name="newsletter" ng-model="signUpForm.PromotionConsent" />I would like to receive the WorldView newsletter.
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Error message -->
+                    <div class="form-group" style="position: relative">
+                        <div id="demo-error" class="error message">{{formError}}</div>
+                    </div>
+                    <!-- Complete reqistration -->
+                    <div class="register-submit">
+                     
+                        <!-- Sign Up submit button -->
+                        <span class="sign-up-submit">
+                            <!-- Form not completed hint -->
+                            <span class="show-on-hover small-hint">
+                                <i ng-show="!signup.$valid">Form is not completed</i>
+                            </span>
+                            <!-- The button-->
+                            <button type="submit" class="big gray final" ng-click="submit(); gaEvent('signup page', 'submit click');" ng-disabled="!signup.$valid || submitting || !local && !emailClaim">{{submitting ? 'Submitting' : 'Submit'}}</button>
+                        </span>
+                    </div>
+                    <!-- Social login -->
+                    <span class='hr-delimiter' data-delimiter="Or, sign up with" ng-if="local"></span>
+                    <div class="social-login" ng-if="local">
+                        <div class="providers">
+                            <div ng-repeat="provider in externalProviders" class="provider-button {{provider.Name}}" ng-click="socialSignIn(provider.Name)">{{provider.Name}}</div>
+                        </div>
+                    </div>
+
+               
+                </form>
+            </div>
+
+        
+        </div>
+           
+        </div>
+
+        <!-- Registration completed -->
+        <div ng-if="submitted && !downloadPageSwitch" id="completed-step">
+            <div  class="sign-up-step">
+            <h1 class="title" style="margin-bottom: 26px">Thank You for Registering</h1>
+            <!-- Case of local sign in -->
+            <div ng-if="local">
+                We have sent you an email to verify your sign up, which will arrive shortly.
+                        <br>
+                You can sign in to WorldView Studio and start exploring immediately!
+                        <br>
+                Be sure to confirm your email to unlock all the account features like publishing and commenting.
+            </div>
+            <!-- Case of social sign in -->
+            <div ng-if="!local">
+                We have sent you an email with a confirmation of your registration.
+                        <br>
+                You can now sign in to WorldView Studio and start exploring immediately!
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Dialogs -->
+<!-- Terms of Service -->
+<modal-dialog ng-if="showTerms">
+    <h1 class="title">Terms of Service</h1>
+    <div class="terms" style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;">
+        <terms></terms>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="showTermsCommit()"><i class="fa fa-check"></i><span>Agree</span></button>
+        <button class="big gray" ng-click="showTermsCancel()"><i class="fa fa-times"></i><span>Disagree</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+
+<!-- PYXIS Software Licensing Agreement -->
+<modal-dialog ng-if="showLicensingAgreement">
+    <h1 class="title">PYXIS Software Licensing Agreement</h1>
+    <div class="terms" style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;">
+        <terms></terms>
+    </div>
+    <button class="big gray" ng-click="showLicensingAgreementClose()"><i class="fa fa-times"></i><span>Close</span></button>
+</modal-dialog>
+
+<!-- email already associated with a registered user social sign in alert -->
+<modal-dialog ng-if="emailRegistered">
+    <h1 class="title">Email Already Registered</h1>
+    <div class="terms" style="margin: 40px 0px;">
+        An account with the provided email address has already been registered.
+        Please create an account with a different email address.
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="emailAlreadyRegistered()"><i class="fa fa-check"></i><span>Ok</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+
+<!-- email not provided social sign in alert -->
+<modal-dialog ng-if="!local && emailClaim === false">
+    <h1 class="title">Email Permission Must Be Granted</h1>
+    <div class="terms" style="margin: 40px 0px;">
+        <p>
+            You must grant permission to WorldView to access your email.
+            You can sign up using an alternate method or perform the following steps to sign up using Facebook:
+            <ol style="font-size: 16px;">
+                <li>Navigate to <a href="https://www.facebook.com/settings?tab=applications" class="link-hover-underlined" target="_blank">your Facebook app settings</a>,</li>
+                <li>Remove WorldView Gallery from your list of apps by clicking the 'x',</li>
+                <li>Clear your browser's cookies,</li>
+                <li>Click Proceed and select Facebook.</li>
+            </ol>
+        </p>
+        <p>
+            Contact our support team at <a class="link-hover-underlined" href="mailto:support@pyxisinnovation.com">support@pyxisinnovation.com</a> if you need further assistance.
+        </p>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="emailNotProvided()"><i class="fa fa-check"></i><span>Proceed</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>

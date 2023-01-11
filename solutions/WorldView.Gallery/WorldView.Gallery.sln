@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "worldView.gallery", "..\..\application\worldView.gallery\worldview.gallery\worldView.gallery.csproj", "{2EE8AAF9-2494-4066-97F8-D1440A01CAFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F34F55FB-AEEF-4A72-B4FE-D00FC4CB8BBA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyxis.Contracts", "..\..\Pyxis\Contracts\Pyxis.Contracts.csproj", "{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\application\\worldView.gallery\\worldview.gallery\\worldView.gallery.csproj
+		SccProjectName1 = ../../application/worldView.gallery/worldView.gallery
+		SccLocalPath1 = ..\\..\\application\\worldView.gallery\\worldView.gallery
+		SccProjectUniqueName2 = ..\\..\\Pyxis\\Contracts\\Pyxis.Contracts.csproj
+		SccProjectName2 = ../../Pyxis/Contracts
+		SccLocalPath2 = ..\\..\\Pyxis\\Contracts
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EE8AAF9-2494-4066-97F8-D1440A01CAFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE8AAF9-2494-4066-97F8-D1440A01CAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE8AAF9-2494-4066-97F8-D1440A01CAFD}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE8AAF9-2494-4066-97F8-D1440A01CAFD}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{2EE8AAF9-2494-4066-97F8-D1440A01CAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE8AAF9-2494-4066-97F8-D1440A01CAFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

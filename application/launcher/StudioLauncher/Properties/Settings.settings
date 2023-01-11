@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="StudioLauncher.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LocalStudioVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RestAPIVersionServerAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://ls-api.globalgridsystems.com/api/v1</Value>
+    </Setting>
+    <Setting Name="ProductionStartupURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.globalgridsystems.com/studio/beta-v1</Value>
+    </Setting>
+    <Setting Name="TestStartupURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www-test.globalgridsystems.com/studio/beta-v1</Value>
+    </Setting>
+    <Setting Name="DevelopmentStartupURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www-dev.globalgridsystems.com/studio/beta-v1</Value>
+    </Setting>
+    <Setting Name="StartupArg" Type="System.String" Scope="User">
+      <Value Profile="(Default)">startup</Value>
+    </Setting>
+    <Setting Name="ControlMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StagingStartupURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www-staging.globalgridsystems.com/studio/beta-v1</Value>
+    </Setting>
+    <Setting Name="TestDirectoryArg" Type="System.String" Scope="User">
+      <Value Profile="(Default)">testdirectory</Value>
+    </Setting>
+    <Setting Name="ClearCacheArg" Type="System.String" Scope="User">
+      <Value Profile="(Default)">clearcache</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

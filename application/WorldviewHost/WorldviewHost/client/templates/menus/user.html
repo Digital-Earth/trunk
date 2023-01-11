@@ -1,0 +1,21 @@
+﻿<div class="popup-menu">
+    <div class="menu-item" ng-click="gotoUserPage()">Galleries</div>
+    <hr/>
+    <a href="/download" class="no-decoration">
+        <div class="menu-item">
+            Download Studio
+        </div>
+    </a>
+    <hr/>
+    <a href="/admin/status" class="no-decoration">
+        <div ng-if="admin" class="menu-item">
+            System Status
+        </div>
+    </a>
+    <a href="/info/account" class="no-decoration">
+        <div class="menu-item">
+            Account
+        </div>
+    </a>
+    <div class="menu-item" ng-click="signOut()">Sign out</div>
+</div>

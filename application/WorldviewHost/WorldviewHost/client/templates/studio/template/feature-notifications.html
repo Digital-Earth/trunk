@@ -1,0 +1,7 @@
+﻿<!-- Alerts popup -->
+<div class="alerts" ng-if="alertArchive.length > 0">
+    <div ng-repeat="alert in alertArchive track by alert.id" class="alert-panel {{alert.type}} panel-{{$index}}" ng-if="alert.visible" ng-class="alert.show ? 'show' : 'hide' ">
+        {{alert.message}}
+        <span class="alert-hide"><i class="fa fa-times" ng-click="hideMessage(alert)"></i></span>
+    </div>
+</div>

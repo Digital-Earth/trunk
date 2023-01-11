@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		960CCB7612E9FA370064AF33 /* libboost_thread-xgcc42-mt-1_43.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960CCB7512E9FA370064AF33 /* libboost_thread-xgcc42-mt-1_43.a */; };
+		9618CC9F12F08F50001EABD7 /* cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9618CC9B12F08F50001EABD7 /* cell.cpp */; };
+		9618CCA012F08F50001EABD7 /* gazetteer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9618CC9C12F08F50001EABD7 /* gazetteer.cpp */; };
+		9618CCA112F08F50001EABD7 /* geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9618CC9D12F08F50001EABD7 /* geometry.cpp */; };
+		9618CCA212F08F50001EABD7 /* rosette.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9618CC9E12F08F50001EABD7 /* rosette.cpp */; };
+		9621600F11E6928100685050 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9621600E11E6928100685050 /* main.cpp */; };
+		96FE739412BFB06E00D9D6E8 /* cell_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96FE739112BFB06E00D9D6E8 /* cell_interface.cpp */; };
+		96FE739612BFB06E00D9D6E8 /* tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96FE739312BFB06E00D9D6E8 /* tree.cpp */; };
+		96FE73A812BFEC8A00D9D6E8 /* coordinates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96FE73A712BFEC8A00D9D6E8 /* coordinates.cpp */; };
+		96FE73AE12BFEC9500D9D6E8 /* resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96FE73AB12BFEC9500D9D6E8 /* resolution.cpp */; };
+		96FE73B012BFEC9E00D9D6E8 /* tile_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96FE73AF12BFEC9E00D9D6E8 /* tile_interface.cpp */; };
+		96FE73C012BFEDF000D9D6E8 /* direction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96FE73BF12BFEDF000D9D6E8 /* direction.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		960CCB7512E9FA370064AF33 /* libboost_thread-xgcc42-mt-1_43.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_thread-xgcc42-mt-1_43.a"; path = "/Volumes/Windows/Users/Jason/Documents/Clients/PYXIS/Code/Current/third_party/boost_1_43_0/lib/libboost_thread-xgcc42-mt-1_43.a"; sourceTree = "<absolute>"; };
+		9618CC9712F08F1E001EABD7 /* cell.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cell.hpp; path = ../../headers/pyxis/grid/cell.hpp; sourceTree = SOURCE_ROOT; };
+		9618CC9812F08F1E001EABD7 /* gazetteer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = gazetteer.hpp; path = ../../headers/pyxis/grid/gazetteer.hpp; sourceTree = SOURCE_ROOT; };
+		9618CC9912F08F1E001EABD7 /* geometry.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = geometry.hpp; path = ../../headers/pyxis/grid/geometry.hpp; sourceTree = SOURCE_ROOT; };
+		9618CC9A12F08F1E001EABD7 /* rosette.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = rosette.hpp; path = ../../headers/pyxis/grid/rosette.hpp; sourceTree = SOURCE_ROOT; };
+		9618CC9B12F08F50001EABD7 /* cell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cell.cpp; path = ../../sources/pyxis/grid/cell.cpp; sourceTree = SOURCE_ROOT; };
+		9618CC9C12F08F50001EABD7 /* gazetteer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gazetteer.cpp; path = ../../sources/pyxis/grid/gazetteer.cpp; sourceTree = SOURCE_ROOT; };
+		9618CC9D12F08F50001EABD7 /* geometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = geometry.cpp; path = ../../sources/pyxis/grid/geometry.cpp; sourceTree = SOURCE_ROOT; };
+		9618CC9E12F08F50001EABD7 /* rosette.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rosette.cpp; path = ../../sources/pyxis/grid/rosette.cpp; sourceTree = SOURCE_ROOT; };
+		961B30AE12C2897400367346 /* test.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = test.hpp; path = ../../headers/pyxis/grid/dodecahedral/test.hpp; sourceTree = SOURCE_ROOT; };
+		9621600E11E6928100685050 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../sources/main.cpp; sourceTree = SOURCE_ROOT; };
+		963FEF5711B2F9FF000326B0 /* pyxis.grid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pyxis.grid; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D2231B12D629F600351623 /* tile_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = tile_interface.hpp; path = ../../headers/pyxis/grid/dodecahedral/tile_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96FE739112BFB06E00D9D6E8 /* cell_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cell_interface.cpp; path = ../../sources/pyxis/grid/dodecahedral/cell_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96FE739312BFB06E00D9D6E8 /* tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tree.cpp; path = ../../sources/pyxis/grid/dodecahedral/tree.cpp; sourceTree = SOURCE_ROOT; };
+		96FE739712BFB07E00D9D6E8 /* cell_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cell_interface.hpp; path = ../../headers/pyxis/grid/dodecahedral/cell_interface.hpp; sourceTree = SOURCE_ROOT; };
+		96FE739912BFB07E00D9D6E8 /* tree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = tree.hpp; path = ../../headers/pyxis/grid/dodecahedral/tree.hpp; sourceTree = SOURCE_ROOT; };
+		96FE739C12BFB4AF00D9D6E8 /* resolution.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = resolution.hpp; path = ../../headers/pyxis/grid/dodecahedral/resolution.hpp; sourceTree = SOURCE_ROOT; };
+		96FE73A412BFB69A00D9D6E8 /* coordinates.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = coordinates.hpp; path = ../../headers/pyxis/grid/dodecahedral/coordinates.hpp; sourceTree = SOURCE_ROOT; };
+		96FE73A712BFEC8A00D9D6E8 /* coordinates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = coordinates.cpp; path = ../../sources/pyxis/grid/dodecahedral/coordinates.cpp; sourceTree = SOURCE_ROOT; };
+		96FE73AB12BFEC9500D9D6E8 /* resolution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = resolution.cpp; path = ../../sources/pyxis/grid/dodecahedral/resolution.cpp; sourceTree = SOURCE_ROOT; };
+		96FE73AF12BFEC9E00D9D6E8 /* tile_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tile_interface.cpp; path = ../../sources/pyxis/grid/dodecahedral/tile_interface.cpp; sourceTree = SOURCE_ROOT; };
+		96FE73BE12BFEDB800D9D6E8 /* direction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = direction.hpp; path = ../../headers/pyxis/grid/dodecahedral/direction.hpp; sourceTree = SOURCE_ROOT; };
+		96FE73BF12BFEDF000D9D6E8 /* direction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = direction.cpp; path = ../../sources/pyxis/grid/dodecahedral/direction.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960CCB7612E9FA370064AF33 /* libboost_thread-xgcc42-mt-1_43.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				9682A43E11AE1B7C0049DE84 /* Libraries */,
+				96D95A371219AD7700BE8C37 /* Sources */,
+				08FB7795FE84155DC02AAC07 /* Headers */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = Pyxis;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				96215FE711E6926300685050 /* pyxis */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				963FEF5711B2F9FF000326B0 /* pyxis.grid */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96215FE711E6926300685050 /* pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				96FE738F12BFAEA800D9D6E8 /* grid */,
+			);
+			name = pyxis;
+			path = ../../../pyxis/headers/pyxis;
+			sourceTree = SOURCE_ROOT;
+		};
+		9682A43E11AE1B7C0049DE84 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				960CCB7512E9FA370064AF33 /* libboost_thread-xgcc42-mt-1_43.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		96D95A371219AD7700BE8C37 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				96FE738C12BFAE8E00D9D6E8 /* pyxis */,
+				9621600E11E6928100685050 /* main.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		96FE738C12BFAE8E00D9D6E8 /* pyxis */ = {
+			isa = PBXGroup;
+			children = (
+				96FE738D12BFAE9600D9D6E8 /* grid */,
+			);
+			name = pyxis;
+			sourceTree = "<group>";
+		};
+		96FE738D12BFAE9600D9D6E8 /* grid */ = {
+			isa = PBXGroup;
+			children = (
+				96FE738E12BFAE9C00D9D6E8 /* dodecahedral */,
+				9618CC9B12F08F50001EABD7 /* cell.cpp */,
+				9618CC9C12F08F50001EABD7 /* gazetteer.cpp */,
+				9618CC9D12F08F50001EABD7 /* geometry.cpp */,
+				9618CC9E12F08F50001EABD7 /* rosette.cpp */,
+			);
+			name = grid;
+			sourceTree = "<group>";
+		};
+		96FE738E12BFAE9C00D9D6E8 /* dodecahedral */ = {
+			isa = PBXGroup;
+			children = (
+				96FE739112BFB06E00D9D6E8 /* cell_interface.cpp */,
+				96FE73A712BFEC8A00D9D6E8 /* coordinates.cpp */,
+				96FE73BF12BFEDF000D9D6E8 /* direction.cpp */,
+				96FE73AB12BFEC9500D9D6E8 /* resolution.cpp */,
+				96FE73AF12BFEC9E00D9D6E8 /* tile_interface.cpp */,
+				96FE739312BFB06E00D9D6E8 /* tree.cpp */,
+			);
+			name = dodecahedral;
+			sourceTree = "<group>";
+		};
+		96FE738F12BFAEA800D9D6E8 /* grid */ = {
+			isa = PBXGroup;
+			children = (
+				96FE739012BFAEAE00D9D6E8 /* dodecahedral */,
+				9618CC9712F08F1E001EABD7 /* cell.hpp */,
+				9618CC9812F08F1E001EABD7 /* gazetteer.hpp */,
+				9618CC9912F08F1E001EABD7 /* geometry.hpp */,
+				9618CC9A12F08F1E001EABD7 /* rosette.hpp */,
+			);
+			name = grid;
+			sourceTree = "<group>";
+		};
+		96FE739012BFAEAE00D9D6E8 /* dodecahedral */ = {
+			isa = PBXGroup;
+			children = (
+				96FE739712BFB07E00D9D6E8 /* cell_interface.hpp */,
+				96FE73A412BFB69A00D9D6E8 /* coordinates.hpp */,
+				96FE73BE12BFEDB800D9D6E8 /* direction.hpp */,
+				96FE739C12BFB4AF00D9D6E8 /* resolution.hpp */,
+				961B30AE12C2897400367346 /* test.hpp */,
+				96D2231B12D629F600351623 /* tile_interface.hpp */,
+				96FE739912BFB07E00D9D6E8 /* tree.hpp */,
+			);
+			name = dodecahedral;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* pyxis.grid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "pyxis.grid" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pyxis.grid;
+			productInstallPath = "$(HOME)/bin";
+			productName = Pyxis;
+			productReference = 963FEF5711B2F9FF000326B0 /* pyxis.grid */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "pyxis.grid" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Pyxis */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* pyxis.grid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9621600F11E6928100685050 /* main.cpp in Sources */,
+				96FE739412BFB06E00D9D6E8 /* cell_interface.cpp in Sources */,
+				96FE739612BFB06E00D9D6E8 /* tree.cpp in Sources */,
+				96FE73A812BFEC8A00D9D6E8 /* coordinates.cpp in Sources */,
+				96FE73AE12BFEC9500D9D6E8 /* resolution.cpp in Sources */,
+				96FE73B012BFEC9E00D9D6E8 /* tile_interface.cpp in Sources */,
+				96FE73C012BFEDF000D9D6E8 /* direction.cpp in Sources */,
+				9618CC9F12F08F50001EABD7 /* cell.cpp in Sources */,
+				9618CCA012F08F50001EABD7 /* gazetteer.cpp in Sources */,
+				9618CCA112F08F50001EABD7 /* geometry.cpp in Sources */,
+				9618CCA212F08F50001EABD7 /* rosette.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/lib\"",
+				);
+				PRODUCT_NAME = pyxis.grid;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/lib\"",
+				);
+				PRODUCT_NAME = pyxis.grid;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = ansi;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/include\"";
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../pyxis/headers\" \"${SOURCE_ROOT}/../../headers\"";
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = ansi;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../../../third_party/boost_1_43_0/include\"";
+				LIBRARY_SEARCH_PATHS = "";
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/../../../pyxis/headers\" \"${SOURCE_ROOT}/../../headers\"";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "pyxis.grid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "pyxis.grid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

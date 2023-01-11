@@ -1,0 +1,1378 @@
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+:::       :::  ::::::::  :::::::::  :::        :::::::::  :::     ::: ::::::::::: :::::::::: :::       ::: 
+:+:       :+: :+:    :+: :+:    :+: :+:        :+:    :+: :+:     :+:     :+:     :+:        :+:       :+: 
++:+       +:+ +:+    +:+ +:+    +:+ +:+        +:+    +:+ +:+     +:+     +:+     +:+        +:+       +:+ 
++#+  +:+  +#+ +#+    +:+ +#++:++#:  +#+        +#+    +:+ +#+     +:+     +#+     +#++:++#   +#+  +:+  +#+ 
++#+ +#+#+ +#+ +#+    +#+ +#+    +#+ +#+        +#+    +#+  +#+   +#+      +#+     +#+        +#+ +#+#+ +#+ 
+ #+#+# #+#+#  #+#    #+# #+#    #+# #+#        #+#    #+#   #+#+#+#       #+#     #+#         #+#+# #+#+#  
+  ###   ###    ########  ###    ### ########## #########      ###     ########### ##########   ###   ###  
+
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/                                                                                                                                                                                                              
+
+// Block    - .blockname or .block-name 
+// Element  - .block-name-element 
+
+// Modifiers and States
+// a. with  - .blockname.with-divider
+// b. has   - .blockname.has-background
+// c. is    - .blockname.is-open
+// d. type  - .blockname.type-post
+
+// JS Hook  - .js-blockname 
+
+@require 'fonts/nucleo-webfonts-1-9/outline/css/nucleo-outline.css'
+@require 'fonts/nucleo-webfonts-1-9/glyph/css/nucleo-glyph.css'
+@require 'fonts/*'
+@require 'jeet/*'
+@require 'grid/*'
+@require 'utilities/*'
+@require 'universal/*'
+@require 'mixins/*'
+@require 'response/*'
+@require 'effects/hover-min.css'
+
+//edit()
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+G L O B A L  V A R I A B L E S   
+             
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+-font-family-book = 'Relative'
+-font-family-italic = 'Relative Italic'
+-font-family-bold = 'Relative Bold'
+-font-family-bold-italice = 'Relative Bold Italic'
+
+-wireframe-mode = true
+-wireframe-border-color = rgb(220, 220, 220)
+-wireframe-background-color = rgb(240, 240, 240)
+-wireframe-highlight-color = rgb(60, 95, 150)
+
+-max-width-page = jeet.max-width
+-min-width-page = 400px
+
+-zindex-page-progress = 1099
+-zindex-page-header = 999
+-zindex-page-menu = 899
+
+-height-page-header = 68px
+-height-page-nav = 20px
+
+-padding-page-header = 44px
+
+-color-highlight = #FFD64B
+-color-secondary = #13BF4F
+-color-white = rgb(250, 250, 250)
+-color-black = rgb(10, 10, 10)
+-color-white-alpha = rgba(255, 255, 255, 0.2)
+-color-black-alpha = rgba(0, 0, 0, 0.075)
+-margin-page-container = 128px
+-padding-block = 40px
+
+-font-size-tiny = 12px
+-font-size-small = 14px
+-font-size-base = 16px
+-font-size-menu = 18px
+-font-size-large = 24px
+-font-size-section-header = 40px
+-font-size-h1 = 36px
+-font-size-h2 = 32px
+-font-size-h3 = 20px
+-font-size-btn-large = 20px
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+G E N E R A L 
+             
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+body {
+    background-color: -color-white
+    font-family: -font-family-book 
+}
+
+
+}
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+B U T T O N S  +  L I N K S
+             
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+-height-menu-fullscreen = auto
+-height-menu-row = 25%
+-height-menu-row-large = 75%
+-font-size-menu-btn = 24px
+-size-social-icon = 72px
+
+-duration = 0.5
+-size = 100%
+-toggled-size = .75
+
+-bg = #449A88
+-nav-bg = #2A2A2A
+-content-bg = #E7E6DD
+
+
+.link-normal,
+.link-reverse {
+    color: -color-black
+}
+
+.link-important {
+    color: -color-secondary
+    font-size: -font-size-menu
+}
+
+.link-normal span,
+.link-reverse span,
+.link-important span {
+    border-width: 0 0 1px
+    border-style: solid 
+    -transition(border 0.3s ease)
+}
+
+.link-normal span,
+.link-reverse:hover span {
+    border-color:  -color-black
+}
+
+.link-important:hover span {
+    border-color: -color-secondary
+}
+
+.link-normal:hover span,
+.link-reverse span,
+.link-important span  {
+    border-color: transparent
+}
+
+.link-important .nc-icon-glyph {
+    font-size: 11px !important
+    font-weight: bold
+    margin-left: 12px
+}
+
+
+.btn {
+    display: inline-block
+    cursor: pointer
+    margin-bottom: 0
+    text-align: center
+    vertical-align: middle
+    white-space: nowrap
+    vendor(user-select, none)
+    -transition(background-color 0.3s ease-in-out)
+    -border-radius(6px)
+}
+
+.btn-block {
+    display: block
+    white-space: normal
+}
+
+.btn-large {
+    padding: 12px 24px
+    font-family: -font-family-book
+    font-size: -font-size-btn-large 
+    
+}
+
+.btn-hero {
+    padding: 23px 40px
+    font-family: -font-family-book
+    font-size: 24px
+}
+
+.btn-fluid {
+    display: table 
+    height: 100%
+    padding-left: 44px
+    padding-right: 44px
+}
+
+.btn-fluid span {
+    display: table-cell
+    vertical-align: middle
+}
+
+.btn-default {
+    background-color: -color-black
+    color: -color-white
+}
+
+.btn-default:hover {
+    background-color: lighten(-color-black, 25%) 
+}
+
+.btn-contrast {
+    background-color: -color-white 
+    color: -color-black
+}
+
+.btn-contrast:hover {
+    background-color: darken(-color-white, 25%) 
+}
+
+
+.btn-pop {
+    background-color: -color-highlight 
+    color: -color-black
+}
+
+.btn-contrast:hover {}
+
+.btn-square {
+    -border-radius(0)
+}
+
+.navicon-button {
+  display: inline-block
+  padding: 8px 0
+  position: relative 
+  transition: (-duration/2)s
+  cursor: pointer
+  user-select: none
+}
+
+.navicon-button .navicon:before, 
+.navicon-button .navicon:after {
+  transition: (-duration/2)s
+}
+
+.navicon-button:hover {
+  transition: (-duration)s
+}
+
+.navicon-button:hover .navicon:before, 
+.navicon-button:hover .navicon:after {
+  transition: all (-duration/2)s
+}
+
+.navicon-button:hover .navicon:before {
+  top: (8 + 4)px
+}
+
+.navicon-button:hover .navicon:after {
+  top: -(8 + 4)px
+}
+
+.navicon {
+  position: relative
+  width: 24px
+  height: 3px
+  background:-color-white 
+  transition: (-duration/2)s
+}
+
+.navicon:before, 
+.navicon:after {
+  display: block
+  content: ""
+  height: 3px
+  width: 24px
+  background: -color-white 
+  position: absolute
+  z-index: -1
+  transition: (-duration)s (-duration/2)s
+}
+
+.navicon:before {
+  top: 8px
+}
+
+.navicon:after {
+  top: -8px
+}
+
+.open:not(.steps) .navicon:before,
+.open:not(.steps) .navicon:after {
+  top: 0 !important
+}
+
+.open .navicon:before,
+.open .navicon:after {
+  transition: (-duration)s
+}
+
+.open.plus .navicon,
+.open.x .navicon {
+  background: transparent
+}
+
+.open.plus .navicon:before,
+.open.x .navicon:before {
+  transform: rotate(-45deg)
+}
+
+.open.plus .navicon:after,
+.open.x .navicon:after {
+  transform: rotate(45deg)
+}
+
+.open.plus {
+  transform: scale(0.75) rotate(45deg)
+}
+
+.nav {
+    float: left
+    font-size: -font-size-base 
+    list-style: none
+}
+
+.nav li {
+    position: relative   
+}
+
+.nav-pills:before, 
+.nav-pills:after  {
+    display: table
+    line-height: 0
+    content: ''
+}
+
+.nav-pills:after {
+    clear: both;
+}
+
+.nav-pills li {
+    float: left
+    margin-right: 32px
+}
+
+.nav-pills li:last-child {
+    margin-right: 0
+}
+
+.nav-list  {
+    display: block
+}
+
+.nav-list li {
+    margin-bottom: 12px
+}
+
+.nav-list li:last-child {
+    margin-bottom: 0
+}
+
+.nav-item,
+.nav-separator  {
+    color: inherit
+    display: block
+}
+
+.nav-menu {
+    margin-left: 104px
+}
+
+.nav-menu li.has-icon {
+    font-size: 0
+}
+
+.nav-menu li.has-icon .nav-item span {
+    font-size: -font-size-menu 
+}
+
+.nav-menu li.has-icon .nav-item a {
+    font-size: 32px
+    margin-top: -3px
+    margin-left: 20px
+    vertical-align: middle
+}
+
+.nav-menu li.has-icon .nav-item a,
+.nav-menu li.has-icon .nav-item span {
+    display: inline-block
+}
+
+.app-navigation .nav-item,
+.app-navigation .nav-separator {
+    color: -color-white
+    height: 100%
+    line-height: 36px
+}
+
+.app-navigation .nav-separator {
+    position: relative
+}
+
+.app-navigation .nav-item:hover span {
+    border-bottom-color: -color-white
+}
+
+.app-navigation .dot {
+    background-color: -color-white
+    display: block
+    height: 8px
+    width: 8px
+    margin-top: (36 - (@width * 2) - (@width / 2)) px
+    top: 0
+    -border-radius(1000px)
+}
+
+.app-navigation .nav-item {
+    font-size: -font-size-menu 
+}
+
+.app-menu-fullscreen {
+    background-color: #F3F3F3
+    display: block
+    left: 0
+    height: 100%
+    overflow: hidden
+    padding-top: -height-page-header
+    position: fixed
+    top: 0
+    width: 100%
+    visibility: hidden
+    z-index: -zindex-page-menu
+    -webkit-transform: translateY(-100%)
+    transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s
+    transition: transform 0.4s ease-in-out, visibility 0s 0.4s
+}
+
+.app-menu-fullscreen.is-active {
+    padding-top: -height-page-header 
+    visibility: visible
+    -webkit-transform: translateY(0%)
+    transform: translateY(0%)
+    -webkit-transition: -webkit-transform 0.4s ease-in-out
+    transition: transform 0.4s ease-in-out
+}
+
+.menu-span {
+    span(6/12)
+    height: 100%
+    position: relative
+}
+
+.menu-span:last-of-type {
+    border-left: 4px solid -color-black-alpha 
+}
+
+.menu-row,
+.menu-btn,
+.menu-row-header {  
+    width: 100%
+}
+
+.menu-row {
+    display: block
+    height: auto
+    position: relative
+}
+
+.menu-row.has-bottom-border {
+    border-color: -color-black-alpha 
+}
+
+.menu-row-header {
+    font-size: 28px
+}
+
+.menu-row.type-slab {
+    height: -height-menu-row
+}
+
+.menu-row.type-panel {
+    height: -height-menu-row-large
+}
+
+.menu-row-header {
+    color: rgba(0, 0, 0, 0.75)
+    padding-bottom: 16px
+    padding-top: 38px // 44px
+}
+
+.menu-btn {
+    display: table !important
+    color: rgba(0, 0, 0, 0.75)
+    display: block
+    font-size: 28px
+    height: 100%
+    -transition(background-color 0.3s ease-in-out)
+}
+
+.menu-btn span {
+    display: table-cell
+    vertical-align: middle
+}
+
+.menu-btn:hover {
+    color: -color-black
+    background-color: white
+}
+
+.globe-container {
+     display: table
+     height: 100%
+     position: absolute
+     width: 100%
+}
+
+.globe {
+    display: table-cell
+    vertical-align: middle
+}
+
+.globe img {
+    margin-left: auto
+    margin-right: auto
+    // margin-top: -68px
+    width: 55% 
+}
+
+.menu-row.social-icons {
+    font-size: 0
+}
+
+.menu-row.social-icons .menu-row-header {
+    font-size: -font-size-base
+}
+
+.menu-row .social-icon {
+    border: 4px solid transparent 
+    display: inline-block
+    height: -size-social-icon
+    margin-left: 16px
+    margin-right: 16px
+    width: @height
+    vertical-align: top
+    -border-radius(1000px)
+}
+
+.menu-row .social-icon:hover {
+    border: 4px solid -color-black-alpha
+}
+
+.menu-row .social-icon i {
+    color: rgba(0, 0, 0, 0.75)
+    font-size: 32px
+    line-height: px(72 - 4)
+}
+
+.menu-row.contact-info {
+    color: rgba(0, 0, 0, 0.75)
+    padding-left: 32px
+    padding-right: 32px
+}
+
+.menu-row.contact-info .menu-row-header {
+    padding-bottom: 10px // 24px
+}
+
+.menu-row.contact-info .menu-row {
+    margin-bottom: 14px // 24px
+}
+
+.menu-row.contact-info p.extra-space {
+    margin-bottom: 9px // 16px
+}
+
+.menu-row.contact-info .hello {
+    font-size: -font-size-menu-btn
+}
+
+.menu-row.contact-info .phone {
+    margin-top: 53px // 64px
+    font-size: 24px
+    line-height: 32px
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+F O R M S
+             
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+input.no-chrome {
+    background: transparent 
+    border: none
+    outline: none
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+M O D U L E S
+             
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+.app-base,
+.app-progress-bar,
+.app-header,
+.app-footer  {
+    width: 100%
+}
+
+.app-progress-bar {
+    display: none
+    background-color: yellow
+    height: 4px
+    left: 0
+    position: fixed
+    top: 0
+    z-index: -zindex-page-progress
+}
+
+.app-header {
+    background-color: transparent 
+    height: auto
+    left: 0
+    padding-bottom: -padding-page-header
+    padding-top: -padding-page-header
+    position: fixed
+    top: 0
+    z-index: -zindex-page-header
+    -transition(all 0.15s ease)
+}
+
+.app-header.is-active {
+    background-color: -color-black
+    padding-bottom: 16px
+    padding-top: 16px
+}
+
+.app-header .logo {
+    position: absolute
+}
+
+.app-header .logo img,
+.app-header .logo span {
+    display: inline-block
+    font-size: 0
+}
+
+.app-header .logo span {
+    color: -color-white
+    font-size: -font-size-menu
+    line-height: 1
+    margin-left: 16px
+    position: relative
+    top: -10px
+}
+
+.app-footer {
+    height: 104px
+    position: relative
+}
+
+.app-header-inner,
+.app-footer-inner {
+    height: 100%
+    margin-left: auto
+    margin-right: auto
+    max-width: 100%
+    position: relative  
+    width: 100%  
+}
+
+.app-header-inner,
+.app-footer-inner {
+    padding: 0 60px
+}
+
+.app-footer-inner {
+    border-top: 1px solid -color-black
+    center(max-width = jeet.max-width)
+}
+
+.app-footer-inner .copyright,
+.app-footer-inner .other {
+    display: table
+    height: 100%
+}
+
+.app-footer-inner .copyright {
+    float: left
+}
+
+.app-footer-inner .other {
+    float: right
+}
+
+.app-footer-inner .other *,
+.app-footer-inner .copyright * {
+    display: table-cell
+    vertical-align: middle
+}
+
+.app-footer-inner .other * {
+    margin-left: 32px
+} 
+
+.app-header.with-menu .nav-item,
+.app-header.with-menu .nav-separator,
+.app-header.with-menu .nav-item i {
+    color: -color-white !important
+}
+
+.app-content {
+    overflow-x: hidden
+    width: 100%
+}
+
+.app-navigation {
+    display: inline-block
+    float: right
+    height: 100%
+    width: auto
+}
+
+.app-navigation  {
+    height: 100%
+}
+
+.block,
+.section-wrapper,
+.section-container,
+.page-container {
+    cf()
+}
+
+.block {
+    position: relative
+    padding-left: -padding-block 
+    padding-right: -padding-block 
+}
+
+.block-full {
+    padding-left: 0
+    padding-right: 0
+}
+
+.section-divider {
+    background-color: -color-black
+    border: 0
+    height: 1px
+    margin: 0
+    width: 100%
+}
+
+.section-wrapper {
+    margin-left: auto
+    margin-right: auto
+    max-width: -max-width-page
+    position: relative
+}
+
+.section-header,
+.section-footer {
+    display: inline-block
+    width: 100%
+}
+
+.section-header {
+    margin-top: 112px // 124px
+}
+
+.section-header h2 {
+    font-size: -font-size-section-header
+}
+
+.section-header h3 {
+    font-size: -font-size-h3
+}
+
+.section-header p {
+    font-size: -font-size-large
+    line-height: 36px
+    margin-top: 17px // 36px
+}
+
+.section-header-inner,
+.section-footer-inner {
+    center()
+    max-width: 944px
+}
+
+.page-header {
+    @extends .section-wrapper
+    padding-top: 64px
+    padding-bottom: 62px
+}
+
+.page-header h1 {
+    font-size: -font-size-h1;
+}
+
+.page-container {
+    display: block
+    margin-bottom: -margin-page-container
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+H E R O
+*/
+
+-height-hero-banner = 1000px
+-zindex-hero-title = 99
+-zindex-hero-globe = 9
+
+.hero {
+    background: rgba(0,0,0,1)
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 100%)
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(36,36,36,1)))
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 100%)
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 100%)
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 100%)
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 100%)
+}
+
+.hero .section-wrapper {
+    max-width: 1600px
+    padding-left: 60px
+    padding-right: 60px
+}
+
+.hero-banner,
+.hero-content,
+.hero-globe  {
+    width: 100%
+}
+
+.hero-banner {
+    display: table
+    height: 100%
+}
+
+.hero-globe,
+.hero-scroll-down {
+    position: absolute
+}
+
+.hero-content,
+.hero-scroll-down {
+    z-index: -zindex-hero-title 
+}
+
+.hero-content {
+    display: table-cell
+    color: -color-white
+    position: relative
+    vertical-align: middle
+}
+
+.hero-title {
+    font-size: 48px
+    line-height: 60px 
+    opacity: 0.8
+    width: 800px
+}
+
+.hero-globe {
+    left: 0
+    height: 100%
+    top: 0
+}
+
+.hero-scroll-down {
+    left: 0
+    bottom: 0
+    margin-bottom: 60px
+    width: 100%
+}
+
+.hero-scroll-down i {
+    color: -color-white
+    font-size: 48px
+}
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+F E A T U R E S
+*/
+
+-height-tour-card = 248px
+-padding-tour-card = 20px
+
+.tour.section-wrapper {
+    center(max-width = 704)
+}
+
+.tour .section-footer {
+    margin-bottom: 40px
+    margin-top: 20px
+}
+
+.tour .section-container,
+.tour .section-footer-inner {
+    width: 100%
+}
+
+.tour-card {
+    border: 1px solid -wireframe-border-color if -wireframe-mode
+    height: auto
+    min-height: -height-tour-card
+    margin-bottom: 60px
+    padding: -padding-tour-card
+    position: relative
+    overflow: hidden
+    width: 100%
+    -border-radius(16px)
+    cf()
+}
+
+.tour-card:last-of-type,
+.tour-card:last-child {
+    margin-bottom: 0
+}
+
+.tour-card-left,
+.tour-card-right {
+    height: auto
+}
+
+.tour-card-left {
+    float: left
+    span(3/5)
+}
+
+.tour-card-right {
+    // border-left: 1px solid -wireframe-border-color if -wireframe-mode
+    float: right
+    span(2/5)
+}
+
+.tour-card-right img,
+.tour-card-left img {
+    display: block
+    height: auto
+    max-height: 100%
+    max-width: 100%
+    width: 100%
+}
+
+.tour-card-right img {
+    padding-left: -padding-tour-card
+}
+
+.tour-card-left img {
+    padding-right: -padding-tour-card
+}
+
+.tour-card.reverse .tour-card-left {
+    float: right
+    span(2/5) 
+}
+
+.tour-card.reverse .tour-card-right {
+    float: left
+    span(3/5) 
+}
+
+// .tour-card:not(.reverse) .tour-card-title,
+// .tour-card:not(.reverse) .tour-card-content {
+//     padding-left: -padding-tour-card
+// }
+
+// .tour-card.reverse .tour-card-title,
+// .tour-card.reverse .tour-card-content {
+//     padding-right: -padding-tour-card
+// }
+
+.tour-card-title {
+    font-family: -font-family-bold 
+    font-size: -font-size-large
+    margin-bottom: 16px
+}
+
+.tour-card-content {
+    font-size: -font-size-base
+    line-height: 24px
+}
+
+.page-feature .block {
+    margin-top: 64px
+}
+
+.page-feature .block:first-of-type {
+    margin-top: 0
+}
+
+.page-feature .feature-title {
+    font-size: -font-size-h2
+    margin-bottom: 28px
+}
+
+.page-feature .feature-content {
+    font-size: 20px
+    line-height: 28px
+}
+
+.page-feature .section-wrapper {
+    center(max-width = 1280)
+}
+
+.feature-search-content {
+    column(5/12, gutter: 6)
+}
+
+.feature-search-media {
+    column(7/12, gutter: 6)
+}
+
+.feature-combine-content {
+    column(7/12, gutter: 6)
+}
+
+.feature-combine-media {
+    column(5/12, gutter: 6)
+}
+
+.feature-analyze-content {
+    column(5/12, gutter: 6)
+}
+
+.feature-analyze-media {
+    column(7/12, gutter: 6)
+}
+
+.discover {
+    margin-bottom: 76px // 80px
+}
+
+.discover .section-container {
+    margin-top: 68px // 96px
+}
+
+.discover-item {
+    font-size: -font-size-menu
+    min-height: 288px
+    overflow: hidden
+    column(4/12, cycle: 3, gutter: 4)
+}
+
+.discover-item-icon,
+.discover-item-title,
+.discover-item-content {
+    width: 100%
+}
+
+.discover-item-icon {
+    height: 72px
+}
+
+.discover-item-icon img {
+    display: inline-block
+    -align-vertical()
+}
+
+.discover-item-title {
+    font-size: -font-size-h1
+    margin-bottom: 22px // 36px
+}
+
+.discover-item-content {
+    line-height: 24px
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+S P O T L I G H T 
+*/
+
+.spotlight .section-divider,
+.spotlight .section-header-inner,
+.spotlight .section-container  {
+    width: 100%
+}
+
+.spotlight .section-container {
+    margin-top: 88px // 96px
+}
+
+.spotlight .section-footer {
+    margin-bottom: 80px
+    margin-top: 80px
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+I N F L U E N C E
+*/
+
+.influence.section-wrapper {
+    center(max-width = 944)
+}
+
+.influence .section-header-inner,
+.influence .section-container  {
+    width: 100%
+}
+
+.influence .section-footer {
+    margin-bottom: 72px
+    margin-top: 72px
+}
+
+.logo-card {
+    border: 1px solid -wireframe-border-color if -wireframe-mode
+    height: 200px
+    column(3/12, cycle: 4, gutter: 5)
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+K N O C K O U T S
+*/
+
+-font-size-subscribe-input = 24px
+
+.knockout {
+    border-top: 4px solid -color-black-alpha
+    background-color: #F3F3F3
+}
+
+.knockout .subscribe-info {
+    height: 124px
+}
+
+.knockout .subscribe-info .knockout-inner {
+    height: 100%
+    padding-top: 36px
+    padding-bottom: 36px 
+    column(8/12, offset: 2/12) 
+}
+
+.knockout .subscribe-info input,
+.knockout .subscribe-info input::-webkit-input-placeholder {
+    color: -color-black
+}
+
+.knockout .subscribe-info input:-moz-placeholder {
+    color: -color-black
+}
+
+.knockout .subscribe-info input::-moz-placeholder {
+    color: -color-black
+}
+
+.knockout .subscribe-info input:-ms-input-placeholder {
+    color: -color-black
+}
+
+.knockout .subscribe-info input {
+    font-size: -font-size-subscribe-input
+    height: 100%
+    column(8/12)    
+}
+
+.knockout .subscribe-info .btn {
+    height: 100%
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+S T Y L E S
+*/
+
+.styles {
+    background: #F3F3F3 url('../assets/img-styles-globe.png') no-repeat right -600px top -800px
+    overflow: hidden
+}
+
+.styles .section-wrapper {
+    display: table
+    height: 764px
+}
+
+.styles-container {
+    display: table-cell
+    vertical-align: middle
+    width: 100%  
+}
+
+.styles-info {
+    column(8/12)
+}
+
+.styles-title {
+    font-size: -font-size-section-header 
+    margin-bottom: 12px // 32px
+}
+
+.styles-content {
+    font-size: -font-size-large
+    line-height: 36px
+    margin-bottom: 17px // 32px
+}
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+A G G R E G A T E S 
+*/
+
+.aggregates .section-container {
+    margin-top: 118px // 124px
+    width: 100%
+}
+
+.aggregate {    
+    height: auto
+    column(6/12, gutter: 12) 
+}
+
+.aggregate-header {
+   // border-bottom: 1px solid -wireframe-border-color
+    padding-bottom: 15px // 20px
+    position: relative
+}
+
+.aggregate-title {
+    display: inline-block
+    font-size: -font-size-h2
+    line-height: 1
+}
+
+.aggregate-posts {
+    font-size: -font-size-base
+    margin-top: 15px // 20px
+    width: 100%
+}
+
+.aggregate-post {
+    margin-bottom: 17px // 20px
+}
+
+.aggregate-post:last-child {
+    margin-bottom: 32px // 40px
+}
+
+.aggregate-post-title,
+.aggregate-post-content {
+    margin-bottom: 9px // 20px  
+}
+
+.aggregate-post-title {
+    display: block
+    font-size: -font-size-menu
+    line-height: 24px
+}
+
+.aggregate-post-content {
+    color: lighten(-color-black, 25)
+    line-height: 20px
+}
+
+.inventory-header {
+    width: 100%
+}
+
+.inventory-title {
+    font-size: -font-size-h2
+    line-height: 1
+    margin-top: -4px
+}
+
+.inventory-aside {
+    border: 1px solid -wireframe-border-color
+    padding: 20px 
+    column(3/12, gutter: 6)
+}
+
+.inventory-posts {
+    column(9/12, gutter: 6)
+}
+
+.inventory-post {
+    margin-bottom: 60px
+}
+
+.inventory-header {
+    padding-bottom: 40px
+    width: 100%   
+}
+
+.inventory-post-content {
+    margin-top: 20px
+    width: 90%
+}
+
+.inventory-post-context {
+    font-size: 0
+    margin-bottom: 8px
+}
+  
+.inventory-post-date,
+.inventory-post-location {
+    display: inline-block
+    font-size: -font-size-tiny 
+}
+
+.inventory-post-title {
+    font-size: 24px
+    margin-bottom: 24px
+}
+
+.inventory-post-content p {
+    font-size: 16px
+    line-height: 24px
+    margin-bottom: 12px
+}
+
+.inventory-next-prev {
+    width: 100%
+}
+
+
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+G A L L E R Y
+*/
+
+-border-color-gallery-card = #C3C3C3
+
+.gallery-card {
+    border: 1px solid -border-color-gallery-card
+    cursor: pointer
+    font-size: -font-size-menu
+    min-height: 288px
+    overflow: hidden
+    column(3/12, cycle: 4, gutter: 5.25)
+    -border-radius(6px)
+}
+
+.gallery-card-media {
+    border-bottom: 1px solid -border-color-gallery-card
+    height: auto
+    position: relative
+    width: 100%
+}
+
+.gallery-card-media img {
+    display: block
+    height: auto
+    max-width: 100%
+}   
+
+.gallery-card-content {
+    padding-bottom: 8px
+    padding-left: 16px
+    padding-top: 8px
+}
+
+.gallery-card-title {
+    margin-bottom: 2px
+}
+
+.gallery-card-owner {
+    color: rgb(174, 174, 174)
+}
+
+

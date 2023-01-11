@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WMSClientDLL", "WMSClientDLL\WMSClientDLL.vcproj", "{DF7943B0-1EB6-4605-B861-D33F000C7B0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF7943B0-1EB6-4605-B861-D33F000C7B0A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF7943B0-1EB6-4605-B861-D33F000C7B0A}.Debug|Win32.Build.0 = Debug|Win32
+		{DF7943B0-1EB6-4605-B861-D33F000C7B0A}.Release|Win32.ActiveCfg = Release|Win32
+		{DF7943B0-1EB6-4605-B861-D33F000C7B0A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

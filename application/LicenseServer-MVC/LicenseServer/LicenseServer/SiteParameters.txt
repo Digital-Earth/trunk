@@ -1,0 +1,5 @@
+This list contains all key-value parameter pairs available in the Parameters collection.
+
+Beta-StorageLimit:    1073741824
+Member-StorageLimit:  1073741824
+Super-StorageLimit: 107374182400

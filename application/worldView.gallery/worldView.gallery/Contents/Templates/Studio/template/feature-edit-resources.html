@@ -1,0 +1,13 @@
+﻿<!-- Screen Capture and Camera Capture UI -->
+<div ng-if="screenCapture.active" ng-include="'/template/screen-capture.html'"></div>
+<div ng-if="cameraCapture.active" ng-include="'/template/camera-capture.html'"></div>
+
+<!-- Edit resource dialog -->
+<modal-dialog ng-if="editResourceModel.active && !screenCapture.active && !cameraCapture.active" modal-class="edit-mode" stop-propagation="keyup">
+    <div ng-if="editResourceModel.step=='edit'" ng-include="'/template/edit-resource-dialog.html'"></div>
+    <div ng-if="editResourceModel.step=='errorNotice'" ng-include="'/template/edit-resource-error-notice-dialog.html'"></div>
+    <div ng-if="editResourceModel.step=='selectGallery'" ng-include="'/template/edit-resource-select-gallery-dialog.html'"></div>
+    <div ng-if="editResourceModel.step=='publishSummary'" ng-include="'/template/edit-resource-publish-summary-dialog.html'"></div>
+    <div ng-if="editResourceModel.step=='publishTerms'" ng-include="'/template/edit-resource-publish-terms-dialog.html'"></div>
+    <div ng-if="editResourceModel.step=='publishProgress'" ng-include="'/template/edit-resource-publish-progress-dialog.html'"></div>
+</modal-dialog>

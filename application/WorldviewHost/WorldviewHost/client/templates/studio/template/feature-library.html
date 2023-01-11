@@ -1,0 +1,11 @@
+﻿<!-- Library window -->
+<div class="library" ng-class="{minimized:libraryState.minimized || screenCapture.active || cameraCapture.active, hidden: !uiActive || walkThrough.active}" stop-propagation="keyup">
+    <header>
+        <i class="docking-pin fa fa-thumb-tack" ng-class="{'gray':libraryState.minimized}" ng-click="libraryState.minimized = !libraryState.minimized" tooltip="{{'tooltip.library.pushpin'|i18n}}"></i>
+        <span i18n="Library"></span>
+    </header>    
+    <scrollbar class="library-content">
+        <div ng-repeat="map in importingMaps" ng-include="'/client/templates/studio/template/library-importing-map.html'"></div>
+        <div ng-repeat="map in library.Maps" id="{{map.Id}}" ng-include="'/client/templates/studio/template/library-map.html'"></div>
+    </scrollbar>
+</div>

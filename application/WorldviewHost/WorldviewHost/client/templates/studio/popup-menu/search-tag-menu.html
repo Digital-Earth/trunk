@@ -1,0 +1,20 @@
+﻿<div class="popup-menu" stop-propagation="mouseup mousedown click keyup keydown">
+    <div ng-switch on="tag.geometry.type">
+        <div ng-switch-when="Condition">
+            <div class="menu-row big">{{tag.name}}</div>
+            <div class="menu-row" style="padding-bottom: 10px">
+                <input type="text" ng-model="range.Min" class="form-control inline small" /><span>to</span><input type="text" ng-model="range.Max" class="form-control inline small"/>
+            </div>
+            <div class="menu-row big align-center">
+                <buton class="flat-button" ng-click="updateRange()" style="padding:10px">Update Range</button>
+            </div>
+        </div>
+        <div ng-switch-when="FeatureRef">
+            <div class="menu-item center-content" ng-click="reselectSearchTag()" i18n="Select Again"></div>
+            <div class="menu-item center-content" ng-click="removeSearchTag()" i18n="Remove"></div>
+        </div>
+        <div ng-switch-default>
+            <div class="menu-item center-content" ng-click="removeSearchTag()" i18n="Remove"></div>
+        </div>
+    </div>
+</div>

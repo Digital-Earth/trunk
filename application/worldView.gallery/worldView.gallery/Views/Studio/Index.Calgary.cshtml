@@ -1,0 +1,100 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="worldViewStudio" ng-controller="worldViewStudioController">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/contents/images/favicon.ico" type="image/x-icon">
+    <title ng-bind="$root.title">PYXIS WorldView.Gallery</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/pyxis")
+    <script src="/contents/scripts/pyxis-ui.js"></script>
+    @Scripts.Render("~/bundles/studio")
+    <script src="/contents/scripts/studio/skin/calgary.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
+
+    @if (Request.IsLocal)
+    {
+        <link rel="stylesheet" href="/contents/styles/font-awesome.min.css" />
+    <style rel="stylesheet">
+        @@font-face {
+            font-family: 'Relative Medium';
+            src: url('/contents/fonts/Relative-Medium.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @@font-face {
+            font-family: 'Relative Book';
+            src: url('/contents/fonts/Relative-Book.otf') format('opentype');
+            /*font-weight: 100;*/
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/contents/styles/studio.less" />
+    <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css" />
+    }
+    else
+    {
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    @*request font directly from the fontdeck to avoid font flickering*@
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/4Vr8HX3Uht31GB0HW+UwdlHXdZQ/@Request.Url.Host/44896.css" type="text/css" />
+    <script src="https://f.fontdeck.com/s/css/js/@Request.Url.Host/44896.js"></script>
+    @*<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+        WebFont.load({ fontdeck: { id: '44896' } });
+    </script>
+    *@
+        <link rel="stylesheet" type="text/css" href="/contents/styles/studio.css" />
+    <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css" />
+    }
+</head>
+<body class="calgary">
+    <div class="header rigs">
+        <div style="float: left; font-size: 30px; padding-left: 10px; padding-top: 15px">CalgareeXplorer</div>
+        <div style="float: right">
+            <img src="~/Contents/Images/wv_logo_sm.gif" style="height: 50px; padding-right: 20px; padding-top: 10px;" />
+        </div>
+        <div class="search">
+            <input type="text" ng-model="search" placeholder="Search" ng-change="searchChanged()" />
+            <div class="suggestions" ng-show="suggestions.length">
+                <div class="option" ng-repeat="option in suggestions | orderBy:'values.length':true" ng-click="selectOption(option)">{{option.text}} <span class="count">{{option.values.length}} results</span></div>
+            </div>
+        </div>
+        <button style="position: fixed; left: 0; top: 60px;" ng-click="getCorelation()">Correlation</button>
+
+        <globe-controls></globe-controls>
+       
+    </div>
+    <div class="sub-window" style="top: 100px; left: 100px; width: 520px; height: 600px;" ng-hide="close">
+        <div class="sub-window-header sub-window-drag"><i class="fa fa-times" style="float: left" ng-click="close=true"></i>Correlation</div>
+        <div id="chart_div" style="height: 500px; width: 500px;"></div>
+        <input ng-model="corField1"></input><br>
+        <input ng-model="corField2"></input><br>
+        <div class="sub-window-resize bottom-right"></div>
+    </div>
+
+    <prop-window ng-repeat="item in active" geo-source="item" field-click="setStyleByField(item,$index)" eye-click="hide(item,$index)"></prop-window>
+
+    @*
+    <div class="rig-window" ng-show="selected.length">
+        <div class="title">
+            <i class="fa fa-caret-left" style="float: left" ng-click="selectedIndex = selectedIndex-1"></i>
+            Rig {{selectedIndex+1}} of {{selected.length}}
+            <i class="fa fa-caret-right" style="float: right" ng-click="selectedIndex = selectedIndex+1"></i>
+        </div>
+        <div class="prop"><strong>Contractor:</strong>{{selected[selectedIndex].properties.ContractorName}}</div>
+        <div class="prop"><strong>Operator:</strong>{{selected[selectedIndex].properties.OperatorName}}</div>
+        <div class="prop"><strong>Rig#</strong>{{selected[selectedIndex].properties.Rig}}</div>
+        <div class="prop"><strong>Status</strong>{{selected[selectedIndex].properties.RigStatus}}  <strong>PDepth</strong>{{selected[selectedIndex].properties.ProjectedDepth}}</div>
+        <div class="prop"><strong>Spudded</strong>{{selected[selectedIndex].properties.Spud}}</div>
+        <div class="button" ng-click="gotoRig(selected[selectedIndex])">Show</div>
+    </div>
+    *@
+</body>
+</html>

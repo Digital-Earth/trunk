@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Pyxis.Publishing.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LicenseServerRestPrefix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">api/v1/</Value>
+    </Setting>
+    <Setting Name="ProductionLicenseServerRestAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://ls-api.globalgridsystems.com/</Value>
+    </Setting>
+    <Setting Name="TestLicenseServerRestAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://ls-api-test.globalgridsystems.com/</Value>
+    </Setting>
+    <Setting Name="DevelopmentLicenseServerRestAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://ls-api-dev.globalgridsystems.com/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

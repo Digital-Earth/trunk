@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OGCServersList>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion> </ServiceVersion>
+		<Provider>NGA</Provider>
+		<Name/>
+		<GetCapabalities/>
+		<CanFetchLayers> </CanFetchLayers>
+		<CanImportLayers/>
+		<Working/>
+		<Comments>Service is restricted and requires and NDA  OWS-9 https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciServerClientIP</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.5</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/daily_ndvi_2012?SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> GMU CSISS Daily NDVI WCS example http://ows9.csiss.gmu.edu/cgi-bin/daily_ndvi_2000?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.3</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/biweekly/ndvi/2012/ndvi_20_2012.05.15_2012.05.28.map&amp;SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.1</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/biweekly/vci/2012/vci_20_2012.05.15_2012.05.28.map&amp;SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.5</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/daily/ndvi/2012/NDVI2012.07.20.map&amp;SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.4</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/weekly/ndvi/2012/ndvi_28_2012.07.10_2012.07.16.map&amp;SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.2</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/weekly/vci/2012/vci_28_2012.07.10_2012.07.16.map&amp;SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://129.194.231.202/ArcGIS/services/EnviroGrids/eg_hydro_wp4/MapServer/WMSServer?service=WMS&amp;request=getcapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://129.194.231.202/ArcGIS/services/EnviroGrids/eg_scenario_wp3/MapServer/WMSServer?service=WMS&amp;request=getcapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>SOS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://141.30.100.135:8080/eo2heavenSOS/sos?service=SOS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS-G</ServiceType>
+		<ServiceVersion>1.1</ServiceVersion>
+		<Provider>Envitia WFS-G Semantic Mediator</Provider>
+		<Name/>
+		<GetCapabalities>http://217.33.30.9:8080/wfs/SemanticMediator?service=WFS&amp;request=GetFeature&amp;VERSION=1.1.0&amp;TypeName=iso19112:SI_Gazetteer</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Envitia WFS-G Semantic Mediator(GetFeature SI_Gazetteer example 2)</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS-G</ServiceType>
+		<ServiceVersion>1.1</ServiceVersion>
+		<Provider>Envitia WFS-G Semantic Mediator</Provider>
+		<Name/>
+		<GetCapabalities>http://217.33.30.9:8080/wfs/SemanticMediator?service=WFS&amp;request=GetFeature&amp;VERSION=1.1.0&amp;TypeName=iso19112:SI_LocationInstance&amp;maxFeatures=100&amp;semantics=nga:populated%20locality</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Envitia WFS-G Semantic Mediator(GetFeature SI_LocationInstance example)</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>2.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://eoxserver.org/demo_trunk/ows?service=wcs&amp;version=2.0.0&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider>NGA</Provider>
+		<Name>GNS</Name>
+		<GetCapabalities>http://geonames.nga.mil/names/request.asp?REQUEST=getCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider>NGA</Provider>
+		<Name>GNS</Name>
+		<GetCapabalities>http://geonames.nga.mil/nameswfs/request.aspx?REQUEST=GetCapabilities&amp;SERVICE=wfs&amp;VERSION=1.0.0</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider>NGA</Provider>
+		<Name>GNS</Name>
+		<GetCapabalities>http://geonames.nga.mil/nameswfs/request.aspx?REQUEST=GetCapabilities&amp;SERVICE=wfs&amp;VERSION=1.1.0</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS-G</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider>NGA</Provider>
+		<Name>GNS</Name>
+		<GetCapabalities>http://geonames.nga.mil/nameswfsg/request.aspx?service=WFS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://gis.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/gisiv01/mapfiles/VCI/16days/2012/VCI.2012.065.map&amp;SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments/>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://giswebservices.massgis.state.ma.us/geoserver/wfs?</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType/>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://iceds.ge.ucl.ac.uk/cgi-bin/icedswcs?</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>CSW</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://ows-8.compusult.net/wes/serviceManagerCSW/csw Compusult CSW?</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>OWS-9 https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciServerClientIP</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>CSW </ServiceType>
+		<ServiceVersion/>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://provenance.csiss.gmu.edu/CSWProvenance/   CSW Lineage Server: http://data.laits.gmu.edu:8082/CSWProvenance/cswprov</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>OWS-9 OGC Web Services Data Lineage Demonstration</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider>sedac</Provider>
+		<Name/>
+		<GetCapabalities>http://sedac.ciesin.columbia.edu/geoserver/ows?service=wcs&amp;version=1.0.0&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider>sedac</Provider>
+		<Name/>
+		<GetCapabalities>http://sedac.ciesin.columbia.edu/geoserver/ows?service=wcs&amp;version=1.1.1&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider>sedac</Provider>
+		<Name/>
+		<GetCapabalities>http://sedac.ciesin.columbia.edu/geoserver/ows?service=wfs&amp;version=1.0.0&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://sedac.ciesin.columbia.edu/geoserver/ows?service=wfs&amp;version=1.1.0&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.3.0</ServiceVersion>
+		<Provider>sedac</Provider>
+		<Name/>
+		<GetCapabalities>http://sedac.ciesin.columbia.edu/geoserver/ows?service=wms&amp;version=1.3.0&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://sedac.ciesin.columbia.edu/geoserver/wcs?service=WCS&amp;request=GetCapabilities&amp;version=1.0.0</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.1</ServiceVersion>
+		<Provider>NGA</Provider>
+		<Name/>
+		<GetCapabalities>http://services.interactive-instruments.de/xsprojects/ows8-tds/cgi-bin/ltds/wfs?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>(Service is restricted and requires and NDA) OWS-9 https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciServerClientIP</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType/>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://toolbox.webservice-energy.org/TOOLBOX/manager?output=xml&amp;cmd=getSrvWSDL&amp;serviceName=Solar_Radiation</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://webmap.ornl.gov/ogcbroker/wcs?service=wcs&amp;version=1.0.0&amp;request=getcapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://webmap.ornl.gov/ogcbroker/wms?service=WMS&amp;version=1.1.1&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS-G</ServiceType>
+		<ServiceVersion>1.0.0 /1.1.0</ServiceVersion>
+		<Provider>USGS</Provider>
+		<Name>cubewerx</Name>
+		<GetCapabalities>http://wfsg.usgs.gov/cubewerx/cubeserv.cgi?config=full&amp;datastore=full&amp;service=WFS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>http://frameworkwfs.usgs.gov/wfsg/</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMTS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://portal.cubewerx.com/cubewerx/cubeserv/cubeserv.cgi?CONFIG=OIM_IFR&amp;SERVICE=WMTS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>perry's email</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMTS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://portal.cubewerx.com/cubewerx/cubeserv/cubeserv.cgi?CONFIG=OIM_Landsat_7&amp;SERVICE=WMTS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>perry's email</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>  http://gis.csiss.gmu.edu/cgi-bin/wms_cdlall?service=wcs&amp;version=1.0.0&amp;request=getcoverage&amp;coverage=cdl_2009&amp;crs=epsg:102004&amp;bbox=130783,2203171,153923,2217961&amp;resx=30&amp;resy=30&amp;format=gtiff </GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> - Cropview</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>CSW</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://ows-8.compusult.net/wes/serviceManagerCSW/csw  Compusult CSW?</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>OWS-9 https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciServerClientIP</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>2</ServiceVersion>
+		<Provider>NGA</Provider>
+		<Name/>
+		<GetCapabalities>http://services.interactive-instruments.de/xsprojects/ows8-tds/cgi-bin/ltds/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> (Service is restricted and requires and NDA)  OWS-9 https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciServerClientIP</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS-G</ServiceType>
+		<ServiceVersion>1.1</ServiceVersion>
+		<Provider>Envitia WFS-G Semantic Mediator</Provider>
+		<Name/>
+		<GetCapabalities>http://217.33.30.9:8080/wfs/SemanticMediator?service=WFS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Envitia WFS-G Semantic Mediator(DescribeFeatureType example)</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS-G</ServiceType>
+		<ServiceVersion>1.1</ServiceVersion>
+		<Provider>Envitia WFS-G Semantic Mediator</Provider>
+		<Name/>
+		<GetCapabalities>http://217.33.30.9:8080/wfs/SemanticMediator?service=WFS&amp;request=DescribeFeatureType&amp;VERSION=1.1.0&amp;TypeName=iso19112:SI_LocationInstance</GetCapabalities>
+		<CanFetchLayers>false</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Envitia WFS-G Semantic Mediator(DescribeFeatureType example)</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://129.174.131.6/cgi-bin/wms_cdlall?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities </GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/biweekly/ndvi/2012/ndvi_20_2012.05.15_2012.05.28.map&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/biweekly/vci/2012/vci_20_2012.05.15_2012.05.28.map&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/daily/ndvi/2012/NDVI2012.07.20.map&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/weekly/ndvi/2012/ndvi_28_2012.07.10_2012.07.16.map&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://ows9.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/RAIDL1/GeoData2/products/weekly/vci/2012/vci_28_2012.07.10_2012.07.16.map&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://eo2-services.brgm-rec.fr/cgi-bin/mapserv?map=/carto/EO2H/test/mapFiles/who.map&amp;service=wfs&amp;request=getCapabilities&amp;version=1.1.0</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://geoserver.webservice-energy.org/geoserver/ows?service=wcs&amp;version=1.0.0&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://geoserver.webservice-energy.org/geoserver/wms?service=wms&amp;AcceptVersions=1.1.0&amp;request=GetCapabilities&amp;namespace=paca</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://nsidc.org/cgi-bin/atlas_north?service=WFS&amp;request=GetCapabilities&amp;version=1.1.0</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://nsidc.org/cgi-bin/atlas_north?service=WMS&amp;request=GetCapabilities&amp;version=1.1.1</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>2.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://ows.eox.at/ofc/ows?service=wcs&amp;version=2.0.0&amp;request=getcapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion/>
+		<Provider>WFS USGS TNM</Provider>
+		<Name/>
+		<GetCapabalities>http://portal.cubewerx.com/cubewerx/projects/ows9/cubeserv.cgi?service=WFS&amp;datastore=OWS9&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>OWS-9 https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciServerClientIP</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://rsg.pml.ac.uk/wfs?service=wfs&amp;request=getcapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://time2maps.dyndns.org/cgi-bin/timewfs?service=WFS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://wms.ess-ws.nrcan.gc.ca/wms/toporama_en?VERSION=1.1.1&amp;request=GetCapabilities&amp;service=wms</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://www.neodaas.ac.uk/wms?service=WMS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>true</CanImportLayers>
+		<Working>true</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>2.0.0</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://geobrain.laits.gmu.edu/cgi-bin/ows8/wcseo?service=wcs&amp;version=2.0&amp;request=getcapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>`&lt;WCS_GDAL&gt;&lt;ServiceURL&gt;http://geobrain.laits.gmu.edu/cgi-bin/ows8/wcseo&lt;/ServiceURL&gt;&lt;CoverageName&gt;TRMM_Daily_Accumulated_Precipitation_Year_2002&lt;/CoverageName&gt;&lt;Version&gt;2.0&lt;/Version&gt;&lt;Timeout&gt;200&lt;/Timeout&gt;&lt;/WCS_GDAL&gt;' does not exist in the file system,
+and is not recognised as a supported dataset name.</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://geobrain.laits.gmu.edu/cgi-bin/wcs-all?service=wcs&amp;version=1.1.0&amp;request=getcapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://gis.csiss.gmu.edu/cgi-bin/wms_cdlall?service=wcs&amp;version=1.0.0&amp;request=getcapabilities </GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://argon.geogr.uni-jena.de:8080/geoserver/ows?service=WCS&amp;request=GetCapabilities&amp;version=1.1.1</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion/>
+		<Provider>WFS USGS Gazetteer</Provider>
+		<Name/>
+		<GetCapabalities>http://cubewerx.pvretano.com/usgs/gazetteer/cubeserv.cgi?config=lite&amp;datastore=lite&amp;service=WFS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>OWS-9 https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciServerClientIP</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType/>
+		<ServiceVersion/>
+		<Provider/>
+		<Name>cubewerx</Name>
+		<GetCapabalities>http://cubewerx.pvretano.com/usgs/gazetteer/cubeserv.cgi?config=lite&amp;dataStore=lite&amp;service=WFS&amp;request=GetFeature&amp;VERSION=1.1.0&amp;TypeName=iso19112:SI_LocationType</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>https://portal.opengeospatial.org/twiki/bin/view/OWS9/CciGeoNames#Plan</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.3.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://eo2-services.brgm-rec.fr/cgi-bin/mapserv?map=/carto/EO2H/test/mapFiles/who.map&amp;service=wms&amp;request=getCapabilities&amp;version=1.3.0</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WPS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider>52North</Provider>
+		<Name/>
+		<GetCapabalities>http://geoprocessing.demo.52north.org:8081/ows-9-conflation-wps/WebProcessingService?Request=GetCapabilities&amp;Service=WPS</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments> </Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://geoserver.webservice-energy.org/geoserver/ows?service=wcs&amp;version=1.1.1&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider>GMU</Provider>
+		<Name/>
+		<GetCapabalities>http://gis.csiss.gmu.edu/cgi-bin/mapserv?MAP=/media/gisiv01/mapfiles/VCI/16days/2012/VCI.2012.065.map&amp;SERVICE=WMS&amp;VERSION=1.0.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments/>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://motherlode.ucar.edu:8080/thredds/wcs/fmrc/NCEP/DGEX/Alaska_12km/NCEP-DGEX-Alaska_12km_best.ncd?service=WCS&amp;request=GetCapabilities&amp;version=1.1.1</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.0.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://nsidc.org/cgi-bin/atlas_north?service=WCS&amp;request=GetCapabilities&amp;version=1.0.0</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WCS</ServiceType>
+		<ServiceVersion>1.1.1</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://nsidc.org/cgi-bin/atlas_north?service=WCS&amp;request=GetCapabilities&amp;version=1.1.1</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>Hardcoded list</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion>1.3.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://ows.eox.at/ofc/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://time2maps.dyndns.org/cgi-bin/time?service=WMS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WMS</ServiceType>
+		<ServiceVersion/>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://time2maps.dyndns.org/cgi-bin/time_saxony?service=WMS&amp;request=GetCapabilities</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>table with smilies</Comments>
+	</OGCServer>
+	<OGCServer>
+		<ServiceType>WFS</ServiceType>
+		<ServiceVersion>1.1.0</ServiceVersion>
+		<Provider/>
+		<Name/>
+		<GetCapabalities>http://namesweb.intergraphgovsolutions.com/nameswfsg/request.aspx?service=WFS&amp;version=1.1.0&amp;request=DescribeFeatureType</GetCapabalities>
+		<CanFetchLayers>true</CanFetchLayers>
+		<CanImportLayers>false</CanImportLayers>
+		<Working>false</Working>
+		<Comments>idan's email</Comments>
+	</OGCServer>
+</OGCServersList>

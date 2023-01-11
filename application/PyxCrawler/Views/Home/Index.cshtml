@@ -1,0 +1,327 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts{
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="Scripts/d3.layout.cloud.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var app = angular.module('serverApp', ['ui.bootstrap']);
+
+        app.controller('serversController', function($scope,$http,$timeout) {
+            $scope.newServer = { 'endpoint': "" };
+            $scope.serviceFilter = "";
+            $scope.serviceStatusFilter = "";            
+            $scope.servers = [];
+            $scope.tasks = [];
+            $scope.tasksDelta = 0;
+
+            $scope.serversToCrawl = [];
+
+            $scope.isMatch = function (service) {
+                if ($scope.serviceFilter != "" && $scope.serviceFilter != service.Protocol) {
+                    return false;
+                }
+                if ($scope.serviceStatusFilter == "") return true;
+                if ($scope.serviceStatusFilter == service.Status) return true;
+                if ($scope.serviceStatusFilter == "Broken" && service.Status == "WorkingButNotUsable") return true;
+                if ($scope.serviceStatusFilter == "Unknown" && service.Status == "Crawled") return true;
+                if ($scope.serviceStatusFilter == "Working" && service.Status == "Accessible") return true;
+                return false;
+            }
+
+            $scope.filterServers = function () {                
+                var filtered = [];
+                angular.forEach($scope.servers, function (server) {
+                    var foundService = false;
+
+                    angular.forEach(server.Services, function (service) {
+                        if ($scope.isMatch(service)) {
+                            foundService = true;
+                        }
+                    });
+
+                    if (foundService) {                    
+                        filtered.push(server);
+                    }
+                });
+                return filtered;
+            }
+
+            $scope.updateServers = function () {
+                $http({ method: 'GET', url: "/api/Servers" })
+                    .success(function (data, status, headers, config) {
+                        $scope.servers = data;
+                    }).
+                    error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                    });
+            }
+
+            $scope.dataSetOperationInProgress = false;
+            $scope.dataSetOperation = function (operation) {
+                $scope.dataSetOperationInProgress = true;
+                $http({ method: 'POST', url: "/api/Datasets", data: {Operation: operation} })
+                    .success(function (data, status, headers, config) {
+                        $scope.dataSetOperationInCompleted = true;
+                        $scope.dataSetOperationInProgress = false;
+                    }).
+                    error(function (data, status, headers, config) {
+                        $scope.dataSetOperationInCompleted = false;
+                        $scope.dataSetOperationInProgress = false;
+                    });
+            }
+            
+            $scope.updateTasks = function () {
+                $http({ method: 'GET', url: "/api/Crawl" })
+                    .success(function (data, status, headers, config) {
+                        $scope.tasks = data;
+                        $scope.tasksDelta = 0;
+                        $timeout(function () { $scope.updateTasks() }, 2500);
+                    }).
+                    error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        $timeout(function () { $scope.updateTasks() }, 2500);
+                    });
+            }
+
+            $scope.updateTasks();
+
+            $scope.crawl = function (uri) {
+                $scope.serversToCrawl.push(uri);
+            }
+
+            $scope.register = function (uri) {
+                $scope.crawl(uri);
+            }
+
+            $scope.crawlAll = function () {
+                var count = 0;
+                $scope.serversToCrawl = [];
+                angular.forEach($scope.filterServers(), function (server) {
+                    $scope.serversToCrawl.push(server.Uri);
+                    count++;
+                });                               
+            }
+
+            $scope.crawlOneServer = function () {
+                if ($scope.serversToCrawl.length > 0 && ($scope.tasks.length + $scope.tasksDelta) < 10) {
+                    uri = $scope.serversToCrawl.shift();
+                    $scope.tasksDelta++;
+                    $http({ method: 'POST', url: "/api/Crawl", data: uri });                    
+                }
+                $timeout(function () { $scope.crawlOneServer() }, 500);
+            }
+
+            $scope.crawlOneServer();
+        });
+    </script>
+
+    <script>
+        var width = 400,
+            height = 400,
+            radius = Math.min(width, height) / 2;
+
+        var color = d3.scale.ordinal()
+            .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+        var arc = d3.svg.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(radius - 100);
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function (d) { return d.count; });
+
+        var datasetSvg = d3.select("#datasets").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+          .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        datasets = [
+            { service: "WMS", count: @ViewBag.WMSDatasets },
+            { service: "WCS", count: @ViewBag.WCSDatasets },
+            { service: "WFS", count: @ViewBag.WFSDatasets },
+            { service: "AGSM", count: @ViewBag.AGSMDatasets },
+            { service: "AGSF", count: @ViewBag.AGSFDatasets },
+        ];
+
+        var g = datasetSvg.selectAll(".arc")
+                .data(pie(datasets))
+              .enter().append("g")
+                .attr("class", "arc");
+
+        g.append("path")
+            .attr("d", arc)
+            .style("fill", function (d) { return color(d.data.service); });
+
+        g.append("text")
+            .attr("transform", function (d) { return "translate(" + arc.centroid(d) + ")"; })
+            .attr("dy", ".35em")
+            .style("text-anchor", "middle")
+            .text(function (d) { return d.data.service; });
+
+        var endpointsSvg = d3.select("#endpoints").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        endpoints = [
+            { service: "WMS", count: @ViewBag.WMSEndpoints },
+            { service: "WCS", count: @ViewBag.WCSEndpoints },
+            { service: "WFS", count: @ViewBag.WFSEndpoints },
+            { service: "CSW", count: @ViewBag.CSWEndpoints },
+            { service: "AGS", count: @ViewBag.AGSEndpoints },
+            { service: "AGSM", count: @ViewBag.AGSMEndpoints },
+            { service: "AGSF", count: @ViewBag.AGSFEndpoints },
+        ];
+
+        var g = endpointsSvg.selectAll(".arc")
+                .data(pie(endpoints))
+              .enter().append("g")
+                .attr("class", "arc");
+
+        g.append("path")
+            .attr("d", arc)
+            .style("fill", function (d) { return color(d.data.service); });
+
+        g.append("text")
+            .attr("transform", function (d) { return "translate(" + arc.centroid(d) + ")"; })
+            .attr("dy", ".35em")
+            .style("text-anchor", "middle")
+            .text(function (d) { return d.data.service; });
+
+        
+        window.setTimeout(function(){
+            d3.json('api/stats/150',function(err,data){
+                var fill = d3.scale.category20c();
+
+                //data = [ 
+                //    { 'Value':'flux','Count':4231},
+                //    { 'Value':'carbon','Count':3874},
+                //    { 'Value':'hourly','Count':3723},
+                //];
+                var size = d3.scale.sqrt().domain([0,d3.max(data,function(d){return d.Count;})]).range([8,45]);
+
+                var width = 1100;
+                var height = 500;
+
+                d3.layout.cloud().size([width-10, height-10])
+                  .words(data.map(function(d) {
+                      return {text: d.Value, size: size(d.Count)};
+                  }))
+                  .rotate(function() { return ~~(Math.random() * 2)*90; })
+                  .padding(2)
+                  .font("Impact")
+                  .fontSize(function(d) { return d.size; })
+                  .on("end", draw)
+                  .start();
+
+                function draw(words) {
+                    d3.select("#cloud")
+                        .attr("width", width)
+                        .attr("height", height)
+                      .append("g")
+                        .attr("transform", "translate("+(width/2) + "," + (height/2)+ ")")
+                      .selectAll("text")
+                        .data(words)
+                      .enter()
+                        .append("a")
+                        .classed("no-underline",true)
+                        .attr('xlink:href',function(d) { return '/Home/Datasets?q='+d.text;})
+                        .append("text")
+                        .style("font-size", function(d) { return d.size + "px"; })
+                        .style("font-family", "Impact")
+                        .style("stroke", function(d, i) { return d3.rgb(fill(i)).darker(); })
+                        .style('stroke-width',0)
+                        .style("fill", function(d, i) { return fill(i); })
+                        .attr("text-anchor", "middle")
+                        .attr("transform", function(d) {
+                            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                        })
+                        .text(function(d) { return d.text; })
+                    .on('mouseover',function(){
+                        d3.select(this).transition().duration(100).style('font-size',function(d) { return (d.size+5)+"px";}).style('stroke-width',1);
+                    })
+                    .on('mouseout',function(){
+                        d3.select(this).transition().duration(100).style('font-size',function(d) { return (d.size)+"px";}).style('stroke-width',0);
+                    });
+                    ;
+                }
+            });
+        },100);
+    </script>
+}
+@section featured {    
+}
+<div ng-app="serverApp" ng-controller="serversController">
+    <div class="jumbotron">
+        <h1>Welcome to our crawler</h1>        
+        <p>
+            So far, we have discovered @ViewBag.DatasetCount data sets from @ViewBag.EndpointsCount endpoints.
+        </p>
+        <br />
+        <p>
+            Please, help us make it better...<br />
+            <input type="url" placeholder="Your Server Endpoint" size="54" ng-model="newServer.endpoint" />
+            <a class="btn btn-lg btn-success" href="#" role="button" ng-disabled="newServer.endpoint==''" ng-click="register(newServer.endpoint)">Register Your server</a>
+            <a class="btn btn-lg btn-success" href="#" role="button" ng-disabled="dataSetOperationInProgress" ng-click="dataSetOperation('Verify')">Verify</a>
+            <a class="btn btn-lg btn-success" href="#" role="button" ng-disabled="dataSetOperationInProgress" ng-click="dataSetOperation('Index')">Index</a>
+        </p>
+    </div>
+
+    <div class="ng-cloak" ng-show="serversToCrawl.length>0 || tasks.length>0">
+        <h3>Crawling Tasks</h3>
+        {{serversToCrawl.length}} crawling tasks in queue...
+        <table class="table table-striped table-curved table-hover">
+            <tr ng-repeat="task in tasks">
+                <td width="50%">
+                    <a href="{{task.Uri}}">{{task.Uri}}</a>
+                    <span class="service">
+                        {{task.Service}}
+                    </span>
+                </td>
+                <td width="50%">
+                    <div class="span4">
+                        {{task.Status}}
+                    </div>
+                    <div class="span4">
+                        <uib-progressbar value="task.Progress" class=" active"></uib-progressbar>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="ng-cloak">
+        <h3>What topics do the servers contain?</h3>
+        <svg id="cloud" width="1100" height="500"></svg>
+    </div>
+
+    <table class="ng-cloak" style="width:100%;vertical-align:top;table-layout:fixed">
+        <tr>
+            <td style="vertical-align:top;align-content:center">
+                <h3>
+                    Endpoints
+                </h3>
+                <div id="endpoints"></div>
+                <div style="align-content:center">
+                    <a href="/Home/Endpoints"><button type="button" class="btn btn-lg btn-default">See All endpoints</button></a>
+                </div>
+            </td>
+            <td  style="vertical-align:top;align-content:center">
+                <h3>
+                    Data Sets
+                </h3>
+                <div id="datasets"></div>
+                <div style="align-content:center">
+                    <a href="/Home/Datasets"><button type="button" class="btn btn-lg btn-default" >Search For data set</button></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

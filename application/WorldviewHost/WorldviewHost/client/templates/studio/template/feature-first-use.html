@@ -1,0 +1,18 @@
+﻿<!-- Welcome to WorldView dialog -->
+<modal-dialog ng-if="getYouStarted.active" stop-propagation="keyup" modal-class="get-you-started" ng-esc="getYouStarted.close()">
+    <div>
+        <span style="float: right" ng-click="getYouStarted.close()"><i class="fa fa-close"></i></span>
+        <h2 class="title" i18n="Welcome to WorldView Studio"></h2>
+    </div>
+    <div style="position: relative">
+    <scrollbar class="maps">
+        <p i18n="Welcome to WorldView Studio intro" class="welcome-message" ></p>
+        <div class="masonry" item-width="240" v-space="24" h-space="30">
+            <card ng-repeat="map in getYouStarted.maps" ng-model="map" masonry-item ng-click="getYouStarted.import(map)" readonly></card>
+        </div>
+    </scrollbar>
+    <div class="top-fade-white"></div>
+    <div class="bottom-fade-white"></div>
+    </div>
+    <a href='' class='link-hover-underlined opt-out' ng-click="getYouStarted.optOut()" i18n="Don’t show me this again"></a>
+</modal-dialog>

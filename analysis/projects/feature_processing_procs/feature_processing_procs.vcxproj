@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A8086067-90AF-4039-8A4C-9B1F68173FCD}</ProjectGuid>
+    <RootNamespace>image_processing_procs</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\plugins\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\plugins\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\plugins\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>source;../../../data_source_drivers/projects/pyxis_data_sources/source;../../../pyxlib/projects/pyxlib/source;../../../internal/projects/pyxis/headers;../../../internal/projects/pyxis.grid/headers;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;IMAGE_PROCESSING_PROCS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)$(Configuration)/plugins;../../../third_party/boost/lib;../../../third_party/sqlite3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>source;../../../data_source_drivers/projects/pyxis_data_sources/source;../../../pyxlib/projects/pyxlib/source;../../../internal/projects/pyxis/headers;../../../internal/projects/pyxis.grid/headers;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;../../../third_party/sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;IMAGE_PROCESSING_PROCS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)$(Configuration)/plugins;../../../third_party/boost/lib;../../../third_party/sqlite3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>source;../../../data_source_drivers/projects/pyxis_data_sources/source;../../../pyxlib/projects/pyxlib/source;../../../internal/projects/pyxis/headers;../../../internal/projects/pyxis.grid/headers;../../../third_party/boost;../../../third_party/xerces-c-3.1.1/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;IMAGE_PROCESSING_PROCS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>../../../../config/windows/force_include.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);$(SolutionDir)$(Configuration)/plugins;../../../third_party/boost/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\pyxlib\projects\pyxlib\pyxlib.vcxproj">
+      <Project>{804d618b-7f32-4cb8-9778-224df0b5054e}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\data_source_drivers\projects\pyxis_data_sources\pyxis_coverages.vcxproj">
+      <Project>{219fa5f5-d07b-4889-b84a-aeccac1649b6}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\aggregate_coverage_calculator.cpp" />
+    <ClCompile Include="source\aggregate_feature_calculator.cpp" />
+    <ClCompile Include="source\area_style_feature_collection_process.cpp" />
+    <ClCompile Include="source\attribute_query.cpp" />
+    <ClCompile Include="source\behaviour_feature_collection_process.cpp" />
+    <ClCompile Include="source\bitmap_crop_process.cpp" />
+    <ClCompile Include="source\bitmap_grid_process.cpp" />
+    <ClCompile Include="source\bitmap_process.cpp" />
+    <ClCompile Include="source\concat_features.cpp" />
+    <ClCompile Include="source\constant_feature_calculator.cpp" />
+    <ClCompile Include="source\count_feature_calculator.cpp" />
+    <ClCompile Include="source\coverage_histogram_calculator.cpp" />
+    <ClCompile Include="source\data_collection.cpp" />
+    <ClCompile Include="source\equals.cpp" />
+    <ClCompile Include="source\feature_collection_calculator.cpp" />
+    <ClCompile Include="source\features_summary.cpp" />
+    <ClCompile Include="source\features_summary_filter.cpp" />
+    <ClCompile Include="source\first_not_null_geometry_provider.cpp" />
+    <ClCompile Include="source\generic_feature_group.cpp" />
+    <ClCompile Include="source\feature_collection_geometry_provider.cpp" />
+    <ClCompile Include="source\icon_style_feature_collection_process.cpp" />
+    <ClCompile Include="source\icos_tree.cpp" />
+    <ClCompile Include="source\intersection.cpp" />
+    <ClCompile Include="source\intersects.cpp" />
+    <ClCompile Include="source\line_style_feature_collection_process.cpp" />
+    <ClCompile Include="source\modify_feature_properties_process.cpp" />
+    <ClCompile Include="source\module_feature_processing_procs.cpp" />
+    <ClCompile Include="source\point_aggregator_process.cpp" />
+    <ClCompile Include="source\geotag_record_collection.cpp" />
+    <ClCompile Include="source\point_geometry_provider.cpp" />
+    <ClCompile Include="source\resolution_filter.cpp" />
+    <ClCompile Include="source\select_feature_by_id.cpp" />
+    <ClCompile Include="source\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\styled_feature_collection_process.cpp" />
+    <ClCompile Include="source\styled_features_summary.cpp" />
+    <ClCompile Include="source\union.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\aggregate_coverage_calculator.h" />
+    <ClInclude Include="source\aggregate_feature_calculator.h" />
+    <ClInclude Include="source\area_style_feature_collection_process.h" />
+    <ClInclude Include="source\attribute_query.h" />
+    <ClInclude Include="source\behaviour_feature_collection_process.h" />
+    <ClInclude Include="source\bitmap_crop_process.h" />
+    <ClInclude Include="source\bitmap_grid_process.h" />
+    <ClInclude Include="source\bitmap_process.h" />
+    <ClInclude Include="source\concat_features.h" />
+    <ClInclude Include="source\constant_feature_calculator.h" />
+    <ClInclude Include="source\count_feature_calculator.h" />
+    <ClInclude Include="source\coverage_histogram_calculator.h" />
+    <ClInclude Include="source\data_collection.h" />
+    <ClInclude Include="source\equals.h" />
+    <ClInclude Include="source\feature_collection_calculator.h" />
+    <ClInclude Include="source\features_summary.h" />
+    <ClInclude Include="source\features_summary_filter.h" />
+    <ClInclude Include="source\first_not_null_geometry_provider.h" />
+    <ClInclude Include="source\generic_feature_group.h" />
+    <ClInclude Include="source\feature_collection_geometry_provider.h" />
+    <ClInclude Include="source\icon_style_feature_collection_process.h" />
+    <ClInclude Include="source\icos_tree.h" />
+    <ClInclude Include="source\intersection.h" />
+    <ClInclude Include="source\intersects.h" />
+    <ClInclude Include="source\line_style_feature_collection_process.h" />
+    <ClInclude Include="source\modify_feature_properties_process.h" />
+    <ClInclude Include="source\module_feature_processing_procs.h" />
+    <ClInclude Include="source\point_aggregator_process.h" />
+    <ClInclude Include="source\geotag_record_collection.h" />
+    <ClInclude Include="source\point_geometry_provider.h" />
+    <ClInclude Include="source\resolution_filter.h" />
+    <ClInclude Include="source\select_feature_by_id.h" />
+    <ClInclude Include="source\stdafx.h" />
+    <ClInclude Include="source\styled_feature_collection_process.h" />
+    <ClInclude Include="source\styled_features_summary.h" />
+    <ClInclude Include="source\union.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

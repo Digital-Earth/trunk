@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pyxis.Services.PipelineLibrary.Domain.PipelineIdentity">
+    <Position X="1.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\PipelineIdentity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pipelines" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Pyxis.Services.PipelineLibrary.Domain.Pipeline">
+    <Position X="5" Y="1" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAACAABBAAAgCAAAEAQBAAQACMIAAAAAAECAABIEEAA=</HashCode>
+      <FileName>Domain\Pipeline.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Identity" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Metadata" />
+      <Property Name="OutputTypes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Pyxis.Services.PipelineLibrary.Domain.PipelineMetadata">
+    <Position X="8.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Domain\PipelineMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pyxis.Services.PipelineLibrary.Domain.PipelineOutputType">
+    <Position X="8.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\PipelineOutputType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pyxis.Services.PipelineLibrary.Domain.PipelineRelationship">
+    <Position X="8.75" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Domain\PipelineRelationship.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,383 @@
+/*
+**********************************************************************
+ __    __           _     _       _
+/ / /\ \ \___  _ __| | __| /\   /(_) _____      _____ _ __
+\ \/  \/ / _ \| '__| |/ _` \ \ / / |/ _ \ \ /\ / / _ \ '__|
+ \  /\  / (_) | |  | | (_| |\ V /| |  __/\ V  V /  __/ |
+  \/  \/ \___/|_|  |_|\__,_| \_/ |_|\___| \_/\_/ \___|_|
+
+**********************************************************************
+- The prototype Edition :-)
+*/
+
+px(number)
+	return unit(number, 'px')
+
+$legend-zindex = 100
+$legend-width = 300
+$legend-background-color = rgba(255, 255, 255, 0.7)
+$legend-border-width = 1;
+$legend-start-height = 150
+$legend-padding = 10
+$legend-position-left = 28
+$legend-position-top = 76
+$legend-header-height = 30
+$legend-item-height = 44
+$legend-item-padding = 10
+$legend-item-header-height = 30
+$legend-attribute-swatch-height = (88 - $legend-item-header-height - ($legend-item-padding * 2) - ($legend-border-width * 2))
+$legend-button-size = 40
+
+::-webkit-scrollbar
+	width: px(6)
+	height: px(6)
+
+::-webkit-scrollbar-thumb
+	background: #333
+
+::-webkit-scrollbar-track
+	background: #fff
+
+body
+.legend-container
+	scrollbar-face-color: #333
+	scrollbar-track-color: #fff
+
+.truncate
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+
+.legend-container
+	background-color: $legend-background-color
+	height: auto
+	max-height: s('-moz-calc(%s - %s)', 100%, px($legend-position-top + $legend-position-top))
+	max-height: s('-o-calc(%s - %s)', 100%, px($legend-position-top + $legend-position-top))
+	max-height: s('-webkit-calc(%s - %s)', 100%, px($legend-position-top + $legend-position-top))
+	min-height: px($legend-start-height)
+	overflow: hidden
+	padding: px(10)
+	position: absolute
+	left: px($legend-position-left)
+	top: px($legend-position-top)
+	width: px($legend-width)
+	z-index: $legend-zindex
+	-webkit-backdrop-filter: blur(10px)
+	backdrop-filter: blur(10px)
+	overflow-y: auto
+
+.legend__header
+	@extend .truncate
+	height: px($legend-header-height)
+	position: relative
+	width: 100%
+
+.legend__title
+	color: #767676
+	font-family:'Relative Medium', 'Century Gothic';
+	font-size: 18px
+
+.legend__item
+	background-color: #ffffff
+	border-radius: px(3)
+	border: px($legend-border-width) solid rgba(0, 0, 0, 0.25)
+	height: auto
+	min-height: px($legend-item-height)
+	opacity: 0.3
+	overflow: hidden
+	position: relative
+	width: 100%
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1)
+	-moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1)
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1)
+	transform: translate3d(0, 0, 0);
+	transition: all 0.3s ease-out
+
+.legend__item.active
+	opacity: 1
+
+.legend__item:nth-child(1n)
+	margin-top: px($legend-padding)
+
+.legend__item__body,
+.legend__item__header
+	width: 100%
+
+.legend__item__header
+	@extend .truncate
+	border-bottom: px($legend-border-width) solid #dadada
+	color: #949494
+	height: px($legend-item-header-height)
+	padding: 0 px($legend-padding)
+	position: relative
+	z-index: 10
+
+.legend__item__body
+	font-size: 0
+	height: s('-moz-calc(%s - %s)', 100%, px($legend-item-header-height))
+	height: s('-o-calc(%s - %s)', 100%, px($legend-item-header-height))
+	height: s('-webkit-calc(%s - %s)', 100%, px($legend-item-header-height))
+	position: relative
+	transition: height 0.4s ease 0.1s, opacity 0.2s linear
+
+.legend__item__title
+.legend__attribute__domain
+.legend__attribute__header
+	color: #949494
+	font-family:'Relative Medium', 'Century Gothic';
+	font-size: 14px
+
+.legend__item__title
+	font-size: 14px
+	line-height: px($legend-item-header-height)
+	width: 100%
+
+.legend__item__attribute
+	height: 100%
+	padding: px($legend-item-padding) 0
+	position relative
+	width: 100%
+
+.legend__item__attribute + .legend__item__attribute
+	padding-top: px($legend-item-padding)
+
+.legend__item__controls
+	opacity: 0
+	position: absolute
+	right: 1px
+	top: 1px
+	display: inline-block
+	padding: 4px
+	font-size: 10px
+	line-height: 10px;
+	color: #aaa
+	z-index: 11
+
+	.control
+		margin-left: 5px
+
+	.control:hover
+		color: #000
+
+.legend__item:hover
+	.legend__item__controls
+		opacity: 1
+
+.legend__attribute__header
+	line-height: 1
+	margin-bottom: px($legend-item-padding)
+	padding: 0 px($legend-item-padding)
+
+.legend__attribute__body
+	height: auto
+	overflow: hidden
+	padding: 0 px($legend-item-padding)
+
+.legend__attribute__type.has-icon .palette
+		position:relative;
+		display:inline-block;
+		width:80%;
+		margin-left: 10px;
+
+.legend__attribute__domain
+.legend__attribute__header
+	font-size: 12px
+
+.legend__attribute__swatch
+.legend__attribute__domain
+	vertical-align: middle
+
+.legend__attribute__swatch
+	border-radius: px(3)
+	background-size: px($legend-attribute-swatch-height)
+	background-color: rgba(0, 0, 0, 0.075)
+	display: inline-block
+	float: left
+	height: px($legend-attribute-swatch-height)
+	overflow: hidden
+	position: relative
+	width: @height
+
+.legend__attribute__swatch.mode-thick
+.legend__attribute__swatch.mode-thin
+	border-radius: 0
+
+.legend__attribute__swatch.mode-thick
+	height: px($legend-attribute-swatch-height / 3)
+	width: 100%
+
+.legend__attribute__swatch.mode-thin
+	height: px($legend-attribute-swatch-height / 9)
+	width: 100%
+
+.legend__attribute__swatch
+.legend__attribute__domain
+	display: inline-block
+	height: px($legend-attribute-swatch-height)
+
+.legend__attribute__domain
+	margin-left: 10px
+
+.legend__attribute__domain span
+	line-height: px($legend-attribute-swatch-height)
+
+.legend__attribute__domain.mode-thick
+.legend__attribute__domain.mode-thin
+	height: auto
+	margin-left: 0
+	padding-top: px($legend-item-padding)
+	width: 100%
+
+.legend__attribute__domain.mode-thick span
+.legend__attribute__domain.mode-thin span
+	line-height: 1
+
+.legend__attribute__domain.mode-thick .value-min
+.legend__attribute__domain.mode-thin .value-min
+	display: inline-block
+	float: left
+
+.legend__attribute__domain.mode-thick .value-max
+.legend__attribute__domain.mode-thin .value-max
+	display: inline-block
+	float: right
+	text-align: right
+
+.legend__item__content.type-condensed .legend__item__header
+	border-bottom: none
+	display: -webkit-flex
+	display: flex
+	-webkit-align-items: center
+	align-items: center
+	padding: px($legend-item-padding)
+	height: px($legend-attribute-swatch-height + ($legend-item-padding * 2))
+
+.legend__item__content.type-condensed .legend__item__header .legend__attribute__swatch
+	display: block
+	-webkit-flex: none
+	flex: none
+	margin-right: px($legend-item-padding)
+	width: px($legend-attribute-swatch-height)
+
+.legend__item__content.type-condensed .legend__item__header .legend__item__title
+	@extend .truncate
+	-webkit-align-items: center
+	align-items: center
+	-webkit-flex: 1
+	flex: 1
+	line-height: 1
+
+
+/* States */
+.legend__item.state-initial
+	opacity: 0
+	transform: translate3d(-25%, 0, 0);
+
+
+$logo-width = 104
+
+.viewer__logo
+	position: fixed
+	left: px($legend-width/2 + $legend-position-left - $logo-width/2)
+	top: 20px
+
+
+/* Quick add data */
+
+
+.legend__bottom
+	margin-top:10px
+	position:relative;
+
+.legend__round-button
+	display: inline-block
+	cursor: pointer
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.5)
+	border-radius: px($legend-button-size/2)
+	background-color: #eee
+
+	font-size: px($legend-button-size / 2)
+	line-height:px($legend-button-size)
+	width: px($legend-button-size)
+	height: px($legend-button-size)
+	text-align: center
+
+	&:hover
+		background-color: #fff
+
+	&.green
+		color: #0a0
+
+.quick-add-menu
+	position: fixed
+	z-index: $legend-zindex + 1
+	left: 100px
+	right: 100px
+	top: 50px
+	bottom: 50px
+
+.quick-add-menu__close-button
+	position: absolute
+	right: 6px
+	top: 2px
+
+input.legend__search
+	width: 100%
+	height: px($legend-button-size)
+	line-height: px($legend-button-size)
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.5)
+	border-radius: px($legend-button-size/2)
+	background-color: #eee
+	outline: none;
+	border: none;
+	transition: background-color 0.5s
+	font-size: px($legend-button-size/2)
+	padding: 0px px($legend-button-size/2)
+	padding-left: px($legend-button-size)
+
+	&:focus
+		background-color:white;
+
+.legend__search_icon
+	position: absolute
+	font-size: px($legend-button-size/2)
+	left: px($legend-button-size/4)
+	top: 0
+	line-height: px($legend-button-size)
+
+.legend__search_progress
+	position: absolute
+	right: px($legend-button-size/2 - 7)
+	top: px($legend-button-size/2 - 7)
+
+.legend__share
+	opacity: 0.1
+	position: absolute
+	top: 0
+	right: 0
+	.icon
+		display: inline-block;
+		background-image: url(/assets/images/studio/icon_share.svg);
+		background-size: contain;
+		height:25px;
+		width:25px;
+
+.legend__header:hover
+	.legend__share
+		opacity: 1
+
+.goto-back-to-location-button
+	position: fixed
+	left: 50%
+	bottom: -50px
+	opacity:0
+	margin-left:-150px
+	width:300px
+	transition: all 0.5s ease-out
+
+	&.active
+		opacity:1
+		bottom: 50px
+
+	.legend__round-button
+		width: 300px

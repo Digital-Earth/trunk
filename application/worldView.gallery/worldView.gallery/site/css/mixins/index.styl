@@ -1,0 +1,115 @@
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+F U N C T I O N S
+                    
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+vendor($prop, $values...)
+    $vendor = (-webkit- -moz- -ms- -o-)
+    $values = unquote($values) if $values is a 'string'
+       
+    for $prefix, $index in $vendor
+        {$prefix}{$prop}: $values
+       
+    {$prop}: $values
+
+strip-unit($value)
+    return unit($value, '')
+
+px($value)
+    return unit($value, 'px') 
+
+auto-line-height($value, $increase = 0) 
+    $magic-number = 1.35
+    $do-operation = '*'
+    $update-value = operate($do-operation, strip-unit($value), $magic-number + $increase)
+  
+    if $update-value % 4 isnt 0 
+        $update-value = floor($update-value / 4) * 4
+        
+    return unit(round($update-value), 'px')
+    
+image-width($path)
+    return image-size($path)[0]
+    
+image-height($path)
+    return image-size($path)[1]
+    
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+M I X I N S
+                    
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+*/
+
+transition()
+    $arguments = ''
+
+    if length(arguments) is 2
+        for argument, index in arguments
+            if index
+                noprint = $arguments += ', ' + argument
+            else
+                noprint = $arguments += argument
+                
+        vendor('transition', $arguments) 
+        
+    else
+        vendor('transition', arguments)  
+
+
+transform-property() 
+    vendor('transform', arguments)
+
+transform-origin()
+    vendor('transform-origin', arguments)
+    
+box-sizing()
+    vendor('box-sizing', arguments)
+
+box-shadow()
+    vendor('box-shadow', arguments)
+
+text-shadow()
+    vendor('text-shadow', arguments)
+
+border-radius()
+    vendor('border-radius', arguments)
+
+border-box-html()
+  html
+    box-sizing: border-box
+
+  *,
+  *:before,
+  *:after
+    box-sizing: inherit
+         
+circle($radius)
+    height: px($radius)
+    width: px($radius)
+    border-radius(px(1000))
+    
+align($position = relative, $axis = 'vertical')
+    if $axis is 'horizontal'
+        left: 50%
+        transform-property(translate3d(-50%, 0%, 0%))
+    else if $axis is 'vertical'  
+        top: 50%
+        transform-property(translate3d(0%, -50%, 0%))
+    else 
+        left: 50%
+        top: 50%
+        transform-property(translate3d(-50%, -50%, 0%))
+        
+    position: $position
+    vendor(backface-visibility, hidden)
+    vendor(transform-style, flat)
+
+
+
+
+

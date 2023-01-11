@@ -1,0 +1,228 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts{
+    <script type="text/javascript">
+            /* ng-infinite-scroll - v1.0.0 - 2013-02-23 */
+            var mod; mod = angular.module("infinite-scroll", []), mod.directive("infiniteScroll", ["$rootScope", "$window", "$timeout", function (i, n, e) { return { link: function (t, l, o) { var r, c, f, a; return n = angular.element(n), f = 0, null != o.infiniteScrollDistance && t.$watch(o.infiniteScrollDistance, function (i) { return f = parseInt(i, 10) }), a = !0, r = !1, null != o.infiniteScrollDisabled && t.$watch(o.infiniteScrollDisabled, function (i) { return a = !i, a && r ? (r = !1, c()) : void 0 }), c = function () { var e, c, u, d; return d = n.height() + n.scrollTop(), e = l.offset().top + l.height(), c = e - d, u = n.height() * f >= c, u && a ? i.$$phase ? t.$eval(o.infiniteScroll) : t.$apply(o.infiniteScroll) : u ? r = !0 : void 0 }, n.on("scroll", c), t.$on("$destroy", function () { return n.off("scroll", c) }), e(function () { return o.infiniteScrollImmediateCheck ? t.$eval(o.infiniteScrollImmediateCheck) ? c() : void 0 : c() }, 0) } } }]);
+    </script>
+
+    <script type="text/javascript">
+        var app = angular.module('serverApp', ['ui.bootstrap', 'infinite-scroll'], function ($compileProvider) {
+            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|pyxis):/);
+        });
+
+        app.controller('serversController', function ($scope, $http, $timeout) {
+            $scope.newServer = { 'endpoint': "" };
+            $scope.serviceFilter = "";
+            $scope.serviceStatusFilter = "";
+            $scope.servers = [];
+            $scope.tasks = [];
+            $scope.tasksDelta = 0;
+            $scope.serverLimit = 50;
+
+            $scope.$watch('serviceFilter', function () {
+                $scope.serverLimit = 50;
+            });
+
+            $scope.nextPage = function () {
+                $scope.serverLimit = Math.max(50, Math.min($scope.serverLimit + 10, $scope.servers.length));
+            }
+
+            $scope.serversToCrawl = [];
+
+            $scope.isMatchingServer = function (server) {
+                if ($scope.serviceFilter == "None") {
+                    return server.Services.length == 0;
+                }
+
+                var foundService = false;
+
+                angular.forEach(server.Services, function (service) {
+                    if ($scope.isMatch(service)) {
+                        foundService = true;
+                    }
+                });
+
+                return foundService;
+            }
+
+            $scope.isMatch = function (service) {
+                if ($scope.serviceFilter != "" && $scope.serviceFilter != service.Protocol) {
+                    return false;
+                }
+                if ($scope.serviceStatusFilter == "") return true;
+                if ($scope.serviceStatusFilter == service.Status) return true;
+                if ($scope.serviceStatusFilter == "Broken" && service.Status == "WorkingButNotUsable") return true;
+                if ($scope.serviceStatusFilter == "Unknown" && service.Status == "Crawled") return true;
+                if ($scope.serviceStatusFilter == "Working" && service.Status == "Accessible") return true;
+                return false;
+            }
+
+            $scope.filterServers = function () {
+                var filtered = [];
+                angular.forEach($scope.servers, function (server) {
+                    if ($scope.isMatchingServer(server)) {
+                        filtered.push(server);
+                    }
+                });
+                return filtered;
+            }
+
+            $scope.updateServers = function () {
+                $http({ method: 'GET', url: "/api/Servers" })
+                    .success(function (data, status, headers, config) {
+                        $scope.servers = data;
+                    }).
+                    error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                    });
+            }
+
+            $scope.updateTasks = function () {
+                $http({ method: 'GET', url: "/api/Crawl" })
+                    .success(function (data, status, headers, config) {
+                        $scope.tasks = data;
+                        $scope.tasksDelta = 0;
+                        $timeout(function () { $scope.updateTasks() }, 2500);
+                    }).
+                    error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        $timeout(function () { $scope.updateTasks() }, 2500);
+                    });
+            }
+
+            $scope.updateTasks();
+            $scope.updateServers();
+
+            $scope.crawl = function (uri) {
+                $scope.serversToCrawl.push(uri);
+            }
+
+            $scope.register = function (uri) {
+                //$http({ method: 'PUT', url: "/api/Servers", data: uri }).success(function () { $scope.updateServers(); });
+                $scope.crawl(uri);
+            }
+
+            $scope.crawlAll = function () {
+                var count = 0;
+                $scope.serversToCrawl = [];
+                angular.forEach($scope.filterServers(), function (server) {
+                    $scope.serversToCrawl.push(server.Uri);
+                    count++;
+                });
+            }
+
+            $scope.crawlOneServer = function () {
+                if ($scope.serversToCrawl.length > 0 && ($scope.tasks.length + $scope.tasksDelta) < 5) {
+                    uri = $scope.serversToCrawl.shift();
+                    $scope.tasksDelta++;
+                    $http({ method: 'POST', url: "/api/Crawl", data: uri });
+                }
+                $timeout(function () { $scope.crawlOneServer() }, 500);
+            }
+
+            $scope.buildServerUri = function (server) {
+                var service = server.Services[0];
+
+                if (service.Protocol != "CSW") {
+                    return "pyxis://" + server.Uri + "?service=" + service.Protocol + "&version=" + service.Version;
+                } else {
+                    return "";
+                }
+            }
+
+            $scope.crawlOneServer();
+        });
+    </script>
+}
+@section featured {    
+}
+<div ng-app="serverApp" ng-controller="serversController">
+    <div class="jumbotron">
+        <h1>Welcome to our crawler</h1>
+        <p class="lead">This is going to be amazing</p>
+        <p>            
+            <input type="url" placeholder="Your Server Endpoint" size="60" ng-model="newServer.endpoint" />
+            <a class="btn btn-lg btn-success" href="#" role="button" ng-disabled="newServer.endpoint==''" ng-click="register(newServer.endpoint)">Register Your server</a>
+        </p>
+    </div>
+
+    <div ng-show="serversToCrawl.length>0 || tasks.length>0">
+        <h3>Crawling Tasks</h3>
+        {{serversToCrawl.length}} crawling tasks in queue...
+        <table class="table table-striped table-curved table-hover">
+            <tr ng-repeat="task in tasks">
+                <td width="50%">
+                    <a href="{{task.Uri}}">{{task.Uri}}</a>
+                    <span class="service">
+                        {{task.Service}}
+                    </span>
+                </td>
+                <td width="50%">
+                    <div class="span4">
+                        {{task.Status}}
+                    </div>
+                    <div class="span4">
+                        <uib-progressbar value="task.Progress" class=" active"></uib-progressbar>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="float:right">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="''">All</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'CSW'">CSW</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'WMS'">WMS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'WFS'">WFS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'WCS'">WCS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'AGS'">AGS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'AGSM'">AGSM</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'AGSF'">AGSF</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'SOS'">SOS</button>
+            <button type="button" class="btn btn-default" ng-model="serviceFilter" uib-btn-radio="'None'">None</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="''">All</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Unknown'">Unknown</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Offline'">Offline</button> 
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Working'">Working</button>
+            <button type="button" class="btn btn-default" ng-model="serviceStatusFilter" uib-btn-radio="'Broken'">Broken</button>
+        </div>        
+    </div>
+
+    <h3>Endpoints
+        <button type="button" class="btn btn-default" ng-click="updateServers()">Refresh</button>
+    </h3>
+
+    {{filterServers().length}} endpoints 
+
+    <div infinite-scroll='nextPage()' infinite-scroll-distance='1'>
+        <table class="table table-striped table-curved table-hover">
+            <tr ng-repeat="server in servers | filter:isMatchingServer | limitTo:serverLimit">
+                <td>
+                    <a ng-href="/Home/Datasets?s={{server.Id}}">{{server.Name}}</a>
+                    <span ng-repeat="service in server.Services">
+                        <span class="service service-{{service.Status}}" uib-tooltip="{{service.Status}} - {{service.StatusTime | date:'medium'}}">
+                            {{service.Protocol}}-{{service.Version}}
+                        </span>
+                        <span class="attribute" ng-repeat="(key,value) in service.Attributes">
+                            {{key}} : {{value}}
+                        </span>
+                    </span>
+                    <span ng-repeat="tag in server.Tags" class="tag">{{tag}}</span>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-xs btn-default" ng-click="crawl(server.Uri)">Crawl</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <button type="button" class="btn btn-primary" ng-click="crawlAll()">Crawl All Items</button>
+</div>

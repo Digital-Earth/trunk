@@ -1,0 +1,1 @@
+"C:\Program Files\MongoDB 2.6 Standard\bin\mongodump.exe" -username admin -password Innovation1 --out "C:\mongo\backup\pyxis_licenseserver-%time:~0,2%%time:~3,2%%time:~6,2%_%date:~-10,2%%date:~-7,2%%date:~-4,4%"

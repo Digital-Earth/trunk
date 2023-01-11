@@ -1,0 +1,126 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManifestCreator", "..\..\application\ManifestCreator\ManifestCreator.csproj", "{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyxis.Utilities", "..\..\Pyxis\Utilities\Pyxis.Utilities.csproj", "{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyxis.Contracts", "..\..\Pyxis\Contracts\Pyxis.Contracts.csproj", "{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyxis.Publishing", "..\..\Pyxis\Publishing\Pyxis.Publishing.csproj", "{5BA06255-9024-4A7F-8253-2A60B6BA194E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyxis.Storage", "..\..\Pyxis\Pyxis.Storage\Pyxis.Storage.csproj", "{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageClient", "..\..\application\StorageClient\StorageClient.csproj", "{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductPublishingClient", "..\..\application\ProductPublishingClient\ProductPublishingClient.csproj", "{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = ..\\..\\Pyxis\\Utilities\\Pyxis.Utilities.csproj
+		SccProjectName0 = ../../Pyxis/Utilities
+		SccAuxPath0 = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath0 = ..\\..\\Pyxis\\Utilities
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\application\\ManifestCreator\\ManifestCreator.csproj
+		SccProjectName1 = ../../application/ManifestCreator
+		SccAuxPath1 = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath1 = ..\\..\\application\\ManifestCreator
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\Pyxis\\Contracts\\Pyxis.Contracts.csproj
+		SccProjectName2 = ../../Pyxis/Contracts
+		SccAuxPath2 = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath2 = ..\\..\\Pyxis\\Contracts
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\..\\Pyxis\\Publishing\\Pyxis.Publishing.csproj
+		SccProjectName3 = ../../Pyxis/Publishing
+		SccAuxPath3 = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath3 = ..\\..\\Pyxis\\Publishing
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ..\\..\\Pyxis\\Pyxis.Storage\\Pyxis.Storage.csproj
+		SccProjectName4 = ../../Pyxis/Pyxis.Storage
+		SccAuxPath4 = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath4 = ..\\..\\Pyxis\\Pyxis.Storage
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = ..\\..\\application\\StorageClient\\StorageClient.csproj
+		SccProjectName5 = ../../application/StorageClient
+		SccAuxPath5 = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath5 = ..\\..\\application\\StorageClient
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = ..\\..\\application\\ProductPublishingClient\\ProductPublishingClient.csproj
+		SccProjectName6 = ../../application/ProductPublishingClient
+		SccAuxPath6 = https://pyxisinnovation.visualstudio.com/defaultcollection
+		SccLocalPath6 = ..\\..\\application\\ProductPublishingClient
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
+		Profile|Any CPU = Profile|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Profile|Any CPU.ActiveCfg = Release|Any CPU
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Profile|Any CPU.Build.0 = Release|Any CPU
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BD6A4E-4EF7-4F7D-BEA8-CAA0629FE775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Profile|Any CPU.ActiveCfg = Profile|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Profile|Any CPU.Build.0 = Profile|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Profile|Any CPU.ActiveCfg = Deploy|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Profile|Any CPU.Build.0 = Deploy|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0FDB8B-BE80-4DB0-87F0-9C75BB89C7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Profile|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Profile|Any CPU.Build.0 = Release|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA06255-9024-4A7F-8253-2A60B6BA194E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Profile|Any CPU.ActiveCfg = Release|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Profile|Any CPU.Build.0 = Release|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C69CAE6-DDEA-4063-A2C9-41A63BC78BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Profile|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Profile|Any CPU.Build.0 = Release|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF965B4-4A55-4AD3-A5C6-8919BC597B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Profile|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Profile|Any CPU.Build.0 = Release|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8FAFE3-2536-4087-AED3-37D7AA7C2CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

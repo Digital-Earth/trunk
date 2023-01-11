@@ -1,0 +1,261 @@
+﻿<!-- Upgrade WorldView dialog-->
+<modal-dialog ng-if="forceUpgrade" stop-propagation="keyup" modal-class="login">
+    <h2 class="title">Upgrade Required</h2>
+    <div style="font-size: 16px">
+        <p>To continue using WorldView Studio, and get access to the latest features, please perform the following steps:</p>
+        <ol>
+            <li><a href="http://windows.microsoft.com/en-ca/windows/uninstall-change-program#uninstall-change-program=windows-7" target="_blank">Uninstall</a> WorldView Studio from your computer</li>
+            <li><a href="https://www.worldview.gallery/signUp" target="_blank">Download WorldView Studio </a></li>
+            <li>Reinstall WorldView Studio</li>
+        </ol>
+        <div style="text-align: center">
+            <button class="gray" ng-click="closeApp()">Close WorldView</button>
+        </div>
+    </div>
+</modal-dialog>
+
+<!-- Sign up dialog -->
+<div ng-if="userInitiation.mode === 'register'" class="theme" ng-class="{'with-background':theme.url != ''}">
+ <div ng-if="theme.url" class="background" fade-in-background="theme.url" target-opacity="0.9"></div>
+    <modal-dialog modal-class="signup" stop-propagation="keyup">
+        <div ng-if="!submitted" class="sign-up-step">
+            <div ng-switch on="login.local">
+                <h2 class="title" i18n="Sign up" ng-switch-when="true"></h2>
+                <h2 class="title" i18n="Almost done" ng-switch-when="false"></h2>
+                <p class="have-an-account" ng-switch-when="true">Already have an account? <a href='' class='link-hover-underlined' ng-click="userInitiation.mode = 'login'" i18n="Sign in"></a></p>
+                <p class="lead" ng-switch-when="true" i18n="Set up WorldView Local"></p>
+                <p class="lead lead-external" ng-switch-when="false" i18n="Set up WorldView External"></p>
+            </div>
+            <div class="sign-up-form">
+                <form id="signup-credentials-form" name="signup">
+                    <!-- Enter credentials -->
+                    <div class="form-step active" ng-class="{ valid: signup.firstname.$valid && signup.lastname.$valid && signup.email.$valid && signup.birthdate.$valid && signup.galleryName.$valid && signup.password.$valid && signup.confirmPassword.$valid }">
+                        <div class="content">
+                            <div class="form-step-row" ng-if="login.local">
+                                <!-- First Name -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.firstname.$error.required" ng-switch on="signup.firstname.$error.required" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="sign-up-first-name" name="firstname" i18n-placeholder="First Name" ng-required="login.local" ng-disabled="!login.local" ng-model="signUpForm.FirstName">
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.lastname.$error.required" ng-switch on="signup.lastname.$error.required" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="sign-up-last-name" name="lastname" i18n-placeholder="Last Name" ng-required="login.local" ng-disabled="!login.local" ng-model="signUpForm.LastName">
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group" ng-if="login.local" style="position: relative">
+                                <span ng-switch on="signup.email.$error.remoteProgress" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                    <i ng-switch-when="true" class="fa fa-refresh fa-spin fa-sm" style="color: #ccc;"></i>
+                                    <span ng-switch-when="false" ng-switch on="signup.email.$error.remote">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <span ng-switch-when="true">
+                                            <span ng-if="validEmail()" style="background-color: white; color: red;">Email already registered. <a href="/forgotPassword" style="color: black">Forgot your password?</a></span>
+                                            <i class="fa fa-times fa-sm text-red"></i>
+                                        </span>
+                                    </span>
+                                </span>
+                                <input type="email" class="form-control" name="email" placeholder="Email" ng-required="login.local" ng-disabled="!login.local" ng-model="signUpForm.Email" remote-validator="checkEmail($value)" delay="1000" ng-minlength="3">
+                            </div>
+
+                            <div class="form-step-row" ng-if="login.local">
+                                <!-- Password -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.password.$error.required" ng-switch on="signup.password.$error.minlength" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="password" class="form-control" name="password" i18n-placeholder="Password (minimum 6 characters)" ng-required="login.local" ng-disabled="!login.local" ng-model="signUpForm.Password" ng-minlength="6">
+                                </div>
+
+                                <!-- Confirm password -->
+                                <div class="form-group" style="position: relative">
+                                    <span ng-show="!signup.confirmPassword.$error.required" ng-switch on="signup.confirmPassword.$error.match" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                    <input type="password" class="form-control" name="confirmPassword" i18n-placeholder="Confirm Password" ng-required="login.local" ng-disabled="!login.local" ng-model="signUpForm.ConfirmPassword" match="signUpForm.Password">
+                                </div>
+                            </div>
+
+                            <!-- Gallery Name -->
+                            <div  class="form-group" style="position: relative; clear: both">
+                                <span ng-switch on="signup.galleryName.$error.remoteProgress" style="position: absolute; right: 10px; top: 3px; font-size: 14px;">
+                                    <i ng-switch-when="true" class="fa fa-refresh fa-spin fa-sm" style="color: #ccc;"></i>
+                                    <span ng-switch-when="false" ng-switch on="signup.galleryName.$error.remote">
+                                        <i ng-switch-when="false" class="fa fa-check fa-sm text-green"></i>
+                                        <i ng-switch-when="true" class="fa fa-times fa-sm text-red"></i>
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" name="galleryName" i18n-placeholder="Gallery Name" required="" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="signUpForm.GalleryName" remote-validator="checkGalleryName($value)" delay="1000" ng-minlength="5">
+                            </div>
+
+                            <!-- Gallery URL dynamic hint -->
+                            <div class="form-group form-group-note" style="position: relative">
+                                <span>{{displayUrl}}/</span>
+                                <span ng-if="signup.galleryName.$valid">{{signUpForm.GalleryName}}</span>
+                                <span class="gray-text" ng-if="!signup.galleryName.$valid">YourGalleryName</span>
+                            </div>
+
+                            <!-- Terms of Service -->
+                            <div class="form-group form-group-note" style="margin: 24px 0 4px; position: relative">
+                                <input type="checkbox" name="terms" ng-model="signUpForm.AgreeTerms" required />I agree to the <a href="" class="link-hover-underlined" ng-click="showTermsOpen()">Terms of Service.</a>
+                            </div>
+
+                            <!-- Newsletter -->
+                            <div class="form-group form-group-note" style="position: relative">
+                                <input type="checkbox" name="newsletter" ng-model="signUpForm.PromotionConsent" />I would like to receive the WorldView newsletter.
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Error message -->
+                    <div class="form-group" style="position: relative">
+                        <div id="demo-error" class="error message">{{formError}}</div>
+                    </div>
+                    <!-- Complete reqistration -->
+                    <div class="register-submit">
+                     
+                        <!-- Sign Up submit button -->
+                        <span class="sign-up-submit">
+                            <!-- Form not completed hint -->
+                            <span class="show-on-hover small-hint">
+                                <i ng-show="!signup.$valid">Form is not completed</i>
+                            </span>
+                            <!-- The button-->
+                            <button type="submit" class="big gray final" ng-click="submit()" ng-disabled="!signup.$valid || submitting">{{submitting ? 'Submitting' : 'Submit'}}</button>
+                        </span>
+                    </div>
+                    <!-- Social login -->
+                    <span class='hr-delimiter' i18n="Or, sign up with" ng-if="login.local"></span>
+                    <div class="social-login" ng-if="login.local">
+                         <div class="providers">
+                          <div ng-repeat="provider in loginService.externalProviders()" class="provider-button {{provider.Name}}" ng-click="socialSignUp(provider.Name)">{{provider.Name}}</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Registration completed -->
+        <div ng-if="submitted" id="completed-step">
+            <div class="sign-up-step registration-message">
+            <h2 class="title" i18n="Thank You for Registering"></h2>
+            <!-- Case of local sign in -->
+            <div ng-if="login.local" class="lead">
+                <p i18n="Registration Message Local"></p>
+                <a href="" class="link-underlined" ng-click="userFirstSignin()" i18n="Start using WorldView Studio"></a>
+            </div>
+            <!-- Case of social sign in -->
+            <div ng-if="!login.local"  class="lead">
+                <p i18n="Registration Message External"></p>
+                <a href="" class="link-underlined" ng-click="userFirstSignin()" i18n="Start using WorldView Studio"></a>
+            </div>
+        </div>
+        </div>
+    </modal-dialog>
+
+    <!-- Terms of Service -->
+    <modal-dialog ng-if="showTerms">
+        <h1 class="title" i18n="Terms of Service"></h1>
+        <div class="terms" style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;">
+            <terms></terms>
+        </div>
+        <modal-dialog-buttons>
+            <button class="big gray" ng-click="showTermsCommit()"><i class="fa fa-check"></i><span i18n="Agree"></span></button>
+            <button class="big gray" ng-click="showTermsCancel()"><i class="fa fa-times"></i><span i18n="Disagree"></span></button>
+        </modal-dialog-buttons>
+    </modal-dialog>
+
+    <!-- PYXIS Software Licensing Agreement -->
+    <modal-dialog ng-if="showLicensingAgreement">
+        <h1 class="title" i18n="PYXIS Software Licensing Agreement"></h1>
+        <div class="terms" style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;">
+            <terms></terms>
+        </div>
+        <button class="big gray" ng-click="showLicensingAgreementClose()"><i class="fa fa-times"></i><span i18n="Close"></span></button>
+    </modal-dialog>
+
+</div>
+
+<!-- Verify Email dialog -->
+<div ng-if="userInitiation.mode === 'verify'" class="theme" ng-class="{'with-background':theme.url != ''}">
+   <div ng-include="'/template/verify-email.html'"></div>
+</div>
+
+<!-- Login dialog -->
+<div ng-if="userInitiation.mode === 'login' && login.active" class="theme" ng-class="{'with-background':theme.url != ''}">
+    <div ng-if="theme.url" class="background" fade-in-background="theme.url" target-opacity="0.9"></div>
+    <modal-dialog ng-if="login.active" modal-class="login" stop-propagation="keyup">
+        <form name="loginForm">
+            <h2 class="title" i18n="Sign in"></h2>
+            <p i18n="Sign in Greeting"></p>
+            <div class="form-group" style="padding-top: 5px">
+                <div style="position: relative">
+                    <input autofocus type="text" class="form-control" name="user" ng-model="login.user" i18n-placeholder="User Name or Email" required="">
+                </div>
+            </div>
+            <div class="form-group" style="padding-bottom: 5px">
+                <div style="position: relative">
+                    <input type="password" class="form-control" name="password" ng-model="login.password" i18n-placeholder="Password" required="" ng-enter="signIn()">
+                </div>
+            </div>
+            <span style="float: left; font-size: 16px">
+                <a href="https://www.worldview.gallery/forgotPassword" target="_blank" class="action link-hover-underlined" i18n="Forgot Password"></a>
+                <a ng-click="userInitiation.mode = 'register'" href="" class="action link-hover-underlined" i18n="Sign up Now"></a>
+            </span>               
+
+            <modal-dialog-buttons style="height: 30px">
+                <button ng-if="!login.inProgress" ng-disabled="!loginForm.$valid" class="gray" ng-click="signIn()"><span i18n="Sign in"></span>
+                </button>
+                <span ng-if="login.inProgress" style="font-size: 16px"  i18n="Authenticating..."></span>
+            </modal-dialog-buttons>
+        </form>
+        <span class="hr-delimiter" i18n="Or, sign in with"></span>
+        <div class="providers">
+            <div ng-repeat="provider in loginService.externalProviders()" class="provider-button {{provider.Name}}" ng-click="socialLoginIn(provider.Name)">{{provider.Name}}</div>
+        </div>
+        <div class="application-version">{{applicationVersion}}</div>
+    </modal-dialog>
+</div>
+
+<!-- email already associated with a registered user social sign in alert -->
+<modal-dialog ng-if="emailRegistered">
+    <h1 class="title" i18n="Email Already Registered"></h1>
+    <div class="terms" style="margin: 40px 0px;" i18n="Email Address Registered">
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="emailAlreadyRegistered()"><i class="fa fa-check"></i><span>Ok</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+
+<!-- email not provided social sign in alert -->
+<modal-dialog ng-if="!login.local && emailClaim === false">
+    <h1 class="title">Email Permission Must Be Granted</h1>
+    <div class="terms" style="margin: 40px 0px;">
+        <p>
+            You must grant permission to WorldView to access your email.
+            You can sign up using an alternate method or perform the following steps to sign up using Facebook:
+            <ol style="font-size: 16px;">
+                <li>Navigate to <a href="https://www.facebook.com/settings?tab=applications" target="_blank">your Facebook app settings</a>,</li>
+                <li>Remove WorldView Gallery from your list of apps by clicking the 'x',</li>
+                <li>Clear your browser's cookies,</li>
+                <li>Click Proceed and select Facebook.</li>
+            </ol>
+        </p>
+        <p>
+            Contact our support team at support@pyxisinnovation.com if you need further assistance.
+        </p>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="emailNotProvided()"><i class="fa fa-check"></i><span>Proceed</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>

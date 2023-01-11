@@ -1,0 +1,226 @@
+﻿<!-- GeoSource Active display -->
+<div class="content-padding" ng-if="resource.State != 'Removed'">
+    <div class="two-column left">
+        <div ng-if="owner" class="content screen-shot">            
+            <div ng-if="!img" class="no-image-frame" image-drop="uploadImage($files)"><span><i class="fa fa-cloud-upload"></i> Upload a screenshot</span></div>
+            <img ng-if="img" ng-src="{{img}}"  image-drop="uploadImage($files)" style="width:100%;" />
+            <div class="drag-drop-help"><div class="text">Drag and drop an image or <input class="form-control" type="file" file-change="uploadImage($files)" /></div></div>
+        </div>
+        <div ng-if="!owner" class="content">            
+            <div ng-if="!img" class="no-image-frame"><span>No image has been provided</span></div>
+            <figure class="resource-featured-image" ng-if="img" ng-click="handleSubscribe(); gaEvent('geosource page', 'view in studio image');">
+                <div class="resource-featured-image-icon" animate options="{source: '.resource-featured-image'}" on-enter="{duration: 0.4, opacity: 1, scale: 1.15, ease: 'Power1.easeOut'}" on-leave="{duration: 0.3, opacity: 0.5,  scale: 1, ease: 'Back.easeOut'}">
+                    <img src="/Contents/Images/icon_view_in_studio.svg" />
+                </div>
+                <img ng-src="{{img}}" src-error=""/>
+            </figure>
+        </div>
+    </div>
+    <div class="two-column right">
+        <div class="content pushup">
+            <h1 style="text-align: justify;">
+                <i ng-show="resource.Metadata.Visibility == 'Private'" class="fa fa-lock" title="{{resource.Type}}"></i>
+                {{resource.Metadata.Name}}
+            </h1>
+            <div ng-if="resource.Metadata.Providers.length">
+                <div class="provider" ng-repeat="provider in resource.Metadata.Providers">
+                    <img ng-src="{{getProviderImage(provider)}}" src-error="/Contents/Images/avatar_default.gif" style="width:96px;height:96px;float:left;"/>
+                    <br />
+                    Data set provided by<br />
+                    <a href="/{{provider.Name}}">{{provider.Name}}</a>
+                    <div style="clear:both"></div>
+                </div>
+                <hr />
+            </div>
+            <div ng-if="owner && resource.Type == 'GeoSource'">
+                <div class="status">
+                    <span class="gray-text">Status: </span>
+
+                    <span ng-switch on="status.Status">
+                        <span ng-switch-when="Waiting" class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x" style="color:#c4c4c4;"></i>
+                            <i class="fa fa-refresh fa-spin fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span ng-switch-when="Uploading" class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x" style="color:#6382e6;"></i>
+                            <i class="fa fa-cloud-upload fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span ng-switch-when="Published" class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x" style="color:green;"></i>
+                            <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span ng-switch-when="Published, Creating Cache" class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x" style="color:green;"></i>
+                            <i class="fa fa-refresh fa-spin fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span ng-switch-default class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x" style="color:#6382e6;"></i>
+                            <i class="fa fa-refresh fa-spin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </span>
+                    
+                    <span>{{status.Status}}</span>
+                    <span class="gray-text" ng-if="status.Progress">
+                        <span class="progress-bar">
+                            <span class="bar" ng-style="{width:status.Progress+'px'}"></span>
+                        </span>
+                        {{status.Progress | number:2}}%
+                    </span>
+                </div>
+                <hr />
+            </div>
+            <div class="metadata">
+                <a class="user" href="/User/{{resource.Metadata.User.Id}}">
+                    <i class="fa fa-user"></i>{{resource.Metadata.User.Name}}
+                </a>
+                <span class="created">
+                    Created: <span class="gray-text">{{resource.Metadata.Created | timedelta}}</span>
+                </span>
+                
+                <div style="float:right">
+                    <button ng-show="admin && !owner" class="big orange" title="EnableEdit" ng-click="owner = admin">Enable Edit</button>
+                    <button ng-show="owner" class="big gray" title="Delete" ng-click="enterDeleteMode()"><i class="fa fa-trash-o"></i></button>
+                    <button ng-show="owner" class="big gray" title="Edit" ng-click="enterEditMode()"><i class="fa fa-edit"></i></button>
+
+                    <button class="big gray" ng-click="handleSubscribe(); gaEvent('geosource page', 'view in studio button');">
+                        <span ng-if="userSignedIn()">View in WorldView Studio</span>
+                        <span ng-if="!userSignedIn()">Sign in to view</span>
+                        <i class="fa fa-caret-right"></i>
+                    </button>
+
+                </div>
+                
+                <div style="clear:both"></div>
+            </div>
+            <div class="tags">
+                <span ng-repeat="tag in resource.Metadata.Tags"><a href="/?search={{tag}}">{{tag}}</a></span>
+            </div>
+            <br />
+            <div style="padding-top:24px;padding-right:40px;">{{resource.Metadata.Description}}</div>
+        </div>
+    </div>    
+    <div style="clear:both"></div>
+
+    <div class="two-column left">
+        <div class="content">
+            <div ng-if="layers">
+                <h2 class="title">GeoSources Used In This Globe</h2>
+                <div class="masonry" item-width="240" v-space="24" h-space="30" style="" should-expand="false">
+                    <card ng-repeat="card in layers" ng-model="card" masonry-item>{{card.Metadata.Name}}</card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="two-column right">
+        <div class="content">
+            <div ng-if="emailConfirmed">
+                <h2 class="title">Comments</h2>
+                <textarea style="width: 100%; height: 100px; resize: none;" ng-model="comment.body"></textarea>
+                <div style="width: 100%; text-align: right">
+                    <button class="gray-hover" ng-click="replyNow()">Post your WorldView</button><span style="float: left" class="error message" ng-show="postError">{{postError}}</span>
+                </div>
+            </div>
+            <comment ng-repeat="comment in resource.Metadata.Comments" comment="comment"></comment>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</div>
+<!-- GeoSource Removed display -->
+<div class="content-padding" ng-if="resource.State =='Removed'">
+    <h1>{{resource.Metadata.Name}}</h1>
+    {{resource.Type}} no longer published
+</div>
+<!-- Dialogs -->
+<modal-dialog ng-if="editmode">
+    <form name="editForm">
+        <div class="form-group">
+            <span class="gray-text small-text">Name</span>
+            <div style="position:relative">
+                <i ng-hide="editForm.name.$valid" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+                <input type="text" class="form-control" name="name" ng-model="newValues.Name" placeholder="{{resource.Type}}  Name" required="">
+            </div>
+	    </div>
+        <div class="form-group">
+            <span class="gray-text small-text">Description</span>
+            <div style="position:relative">
+                <i ng-hide="editForm.description.$valid" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+                <textarea class="form-control" style="width:100%;height:200px;resize: none;" name="description" ng-model="newValues.Description" required=""></textarea>
+            </div>
+	    </div>
+        <div class="form-group">
+            <span class="gray-text small-text">Tags (2 to 5)</span>
+            <div style="position:relative">
+                <i ng-hide="editForm.tags.$valid" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+                <input-tags ng-model="newValues.Tags" name="tags" min-length="2" max-length="5"></input-tags>
+            </div>
+	    </div>
+        <div class="form-group" style="font-size:16px;">
+            <span class="gray-text small-text">Permissions</span>
+            <input-permission ng-model="newValues.Visibility"></input-permission>
+	    </div>
+        <div ng-if="admin && resource.Type == 'GeoSource'" class="form-group" style="font-size:16px;">
+            <span class="gray-text small-text">State</span>
+            <input-state ng-model="newValues.State"></input-state>
+        </div>
+        <modal-dialog-buttons>
+            <button ng-disabled="!editForm.$valid" class="big gray" ng-click="commitEditMode()"><i class="fa fa-check"></i><span>Save Changes</span></button>
+            <button class="big gray" ng-click="cancelEditMode()"><i class="fa fa-times"></i><span>Cancel</span></button>
+        </modal-dialog-buttons>
+    </form>
+</modal-dialog>
+<modal-dialog ng-if="deletemode">
+    <h1>Delete {{resource.Type}}</h1>
+    <div style="min-height:300px;">
+        <p>Are you sure you would like to remove '{{resource.Metadata.Name}}'?</p>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="commitDeleteMode()"><i class="fa fa-trash-o"></i><span>Delete</span></button>
+        <button class="big gray" ng-click="cancelDeleteMode()"><i class="fa fa-times"></i><span>Cancel</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+
+<modal-dialog ng-if="subscribe && !resource.Licenses.length">
+    <h1 class="title">Terms of Service</h1>
+    <div style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;"><terms></terms></div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="commitSubscribe()"><i class="fa fa-check"></i><span>Agree</span></button>
+        <button class="big gray" ng-click="cancelSubscribe()"><i class="fa fa-times"></i><span>Disagree</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+<license-agreement ng-if="subscribe && resource.Licenses.length" license-id="resource.Licenses[0].Id" on-agree="commitSubscribe()" on-disagree="cancelSubscribe()"></license-agreement>
+
+<modal-dialog ng-if="downloadApp">
+    <h1 class="title">Download WorldView Studio</h1>
+    <div style="min-height:300px;">        
+        <img src="/Contents/Images/worldview-browser-download.jpg" style="width:300px;float:left" />
+        <span ng-if="!downloaded">
+            <p>Download WorldView Studio to fully experience the power of integration and analysis. Combine and analyze multiple Globes and GeoSources in a matter of minutes!</p>
+            <p>Once you have installed WorldView Studio on your computer, you can subscribe and work with all the available GeoSources and Globes on WorldView.Gallery</p>
+            <p>As WorldView Studio is a new product, some browsers and antivirus programs may display warnings that the downloaded file is not well known and therefore might be dangerous. We assure you that the installer is safe. As more people download and run the installer these warnings will go away.</p>
+            <p>(Windows Vista or higher)</p>
+        </span>
+        <span ng-if="downloaded">
+            <p>Please run the downloaded installer file and follow the installation instructions.</p>
+            <p>Once you have installed WorldView Studio on your computer, click the "Continue" button to subscribe to the {{resource.Metadata.Type}}.</p>
+        </span>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-if="!downloaded" ng-click="startDownload()"><i class="fa fa-cloud-download"></i><span><a href="http://www.pyxisinnovation.com/Downloads/WorldViewStudioInstaller.exe">Download WorldView Studio</a></span></button>
+        <button class="big gray" ng-if="!downloaded" ng-click="skipDownload()"><i class="fa fa-check"></i><span>I already have it</span></button>
+        <button class="big gray" ng-if="downloaded" ng-click="confirmDownload()"><i class="fa fa-check"></i><span>WorldView Studio installed, let's continue</span></button>        
+    </modal-dialog-buttons>
+</modal-dialog>
+
+<!-- not supported user is signed in  -->
+<modal-dialog ng-if="notSupportedSignedIn" modal-class="modal-size-small">
+    <div class='modal-body'>
+        <p>Unfortunately WorldView Studio is not supported on your system.</p>
+        <p>The WorldView Studio app will soon be accessible on the web for all platforms.</p>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="exitNotSupportedMode()">
+            <span>Ok</span>
+        </button>
+    </modal-dialog-buttons>
+</modal-dialog>

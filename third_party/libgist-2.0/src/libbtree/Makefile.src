@@ -1,0 +1,9 @@
+# Makefile.src
+# Copyright (c) 1997, Regents of the University of California
+# $Header: /pyxis_dev/dev/third_party_code/libgist-2.0/src/libbtree/Makefile.src,v 1.1 2004/12/15 21:33:42 Patrick Dooley Exp $
+
+SRCS += $(LIBBTREEDIR)/gist_btree.cc
+
+ifeq (${AMDB},true)
+SRCS += $(LIBBTREEDIR)/amdb_btree.cc
+endif

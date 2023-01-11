@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+***********************************************************
+Report.hbm.xml (NHibernate Mapping File)
+
+begin      : October 9, 2009
+copyright  : (c) 2009 by the PYXIS innovation inc.
+web        : www.pyxisinnovation.com
+***********************************************************
+-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  assembly="Pyxis.Utilities.ReportsWarehouse"
+  namespace="Pyxis.Utilities.ReportsWarehouse.Domain">
+<class name="Report">
+  <id name="id">
+    <generator class="increment"/>
+  </id>
+  <property name="TimeStamp"/>
+  <many-to-one name="SendingNode"  class="Node" fetch="select" cascade="save-update"/>
+  <property name="Name"/>
+  <property name="Processed"/>
+
+  <set name ="MatchedQuery" inverse="true" cascade="all-delete-orphan">
+    <key column="Report"/>
+    <one-to-many class="MatchedQuery"/>
+  </set>
+  <set name ="ReceivedQuery" inverse="true" cascade="all-delete-orphan">
+    <key column="Report"/>
+    <one-to-many class="ReceivedQuery"/>
+  </set>
+  <set name ="DataTransferred" inverse="true" cascade="all-delete-orphan">
+    <key column="Report"/>
+    <one-to-many class="DataTransferred"/>
+  </set>
+</class>
+</hibernate-mapping>

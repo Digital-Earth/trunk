@@ -1,0 +1,199 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="worldViewSite" ng-controller="worldviewSiteController">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/contents/images/favicon.ico" type="image/x-icon">
+    <title ng-bind="$root.title">PYXIS WorldView.Gallery</title>
+    <meta name="Description" content="{{$root.description}} "/>
+    <!--[if lte IE 9]>
+        <script src="scripts/xdomain.js" slave="https://api.pyxis.worldview.gallery/Proxy/proxy.html"></script>
+    <![endif]-->
+
+    @*//one single bundle for gallery application - from Idan's suggestion *@
+    @Scripts.Render("~/bundles/site")
+
+    @*//we need to use BundleResolver.Current.GetBundleUrl as Scripts.Render doesn't run the transforms on debug *@
+    <script type="text/javascript" src="@BundleResolver.Current.GetBundleUrl("~/bundles/site-templates")"></script>
+
+    @if (Request.IsLocal)
+    {
+        <link rel="stylesheet" href="/contents/styles/font-awesome.min.css"/>
+        <style rel="stylesheet">
+            @@font-face {
+                font-family: 'Relative Medium';
+                src: url('/contents/fonts/Relative-Medium.otf') format('opentype');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @@font-face {
+                font-family: 'Relative Book';
+                src: url('/contents/fonts/Relative-Book.otf') format('opentype');
+                /*font-weight: 100;*/
+                font-style: normal;
+            }
+
+            @@font-face {
+                font-family: 'Relative Bold';
+                src: url('/contents/fonts/Relative-Bold.otf') format('opentype');
+                font-weight: bold;
+                font-style: normal;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/site.less"/>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css"/>
+    }
+    else
+    {
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+@*request font directly from the fontdeck to avoid font flickering*@
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/4Vr8HX3Uht31GB0HW+UwdlHXdZQ/@Request.Url.Host/44896.css" type="text/css"/>
+        <script src="https://f.fontdeck.com/s/css/js/@Request.Url.Host/44896.js"></script>
+@*<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+	    <script>
+	        WebFont.load({ fontdeck: { id: '44896' } });
+	    </script>*@
+        <link rel="stylesheet" type="text/css" href="/contents/styles/site.css"/>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css"/>
+    }
+
+    @if (ViewBag.BackendUrl != null)
+    {
+        <script type="text/javascript">
+            window.pyxisBackendUrl = "@Html.Raw(ViewBag.BackendUrl)";
+        </script>
+    }
+
+    @if (ViewBag.CreateJson != null)
+    {
+        <script type="text/javascript">
+            window.wvCreateJson = @Html.Raw(ViewBag.CreateJson)
+        </script>
+    }
+</head>
+
+<body>
+<!-- Page header: logo, menu, searchbar -->
+<header ng-class="{login:user,logout:!user}">
+    <div class="body">
+        <a class="logo" href="/"></a>
+        <div class="search" ng-class="{enabled:!searchDisabled}">
+            <autocomplete data="searchListSuggestions" ng-model="search" attr-placeholder="Search" ng-change="searchChanged()" click-activation="true"></autocomplete>
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="options">
+            <div class="item">
+                <a href="/download" class="button" ng-click="gaEvent('header', 'download app');">
+                    <span>Download the App</span>
+                    <span class="fa fa-windows"></span>
+                </a>
+            </div>
+            <div ng-if="user" class="item">
+                <div class="button blue" popup-template="/Menus/user.html" padding="70" placement="bottom" popup-group="popup-menu">
+                    <div ng-click="gotoUserPage()">
+                        {{profile.Metadata.Name || "Profile"}}
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!user && !signInDisabled" class="item">
+                <div class="button" ng-click="enterSignInMode(); gaEvent('header', 'sign in click')">Sign in</div>
+            </div>
+            <div class="item">
+                <div class="menu-button" popup-template="/Menus/main.html" padding="40" placement="bottom" popup-group="popup-menu">
+                    <i class="fa fa-bars"></i>
+                </div>    
+            </div>
+        </div>
+        <div ng-show="alert.show" class="header-message {{alert.type}}">
+            <span class="body">
+                <i class="type fa" ng-class="{'fa-warning':alert.type=='error','fa-check':alert.type=='success','fa-exclamation':alert.type=='info'}"></i>{{alert.message}}<i class="close fa fa-times-circle" ng-click="alert.show=false"></i>
+            </span>
+        </div>
+    </div>
+</header>
+<!-- Page body -->
+<div class="header-spacer"></div>
+<scrollbar class="page-content">
+    <!-- Page view: the real content of the page -->
+    <div ng-view autoscroll="true" style="min-height: 500px;"></div>
+
+    <!-- Page footer -->
+    <footer>
+        <div class="footer-left">
+            &copy; the PYXIS innovation 2015
+        </div>
+        <div class="footer-right">
+            <!--<a href="https://www.facebook.com/pages/the-PYXIS-innovation/113016318769769" target="_blank"><i class="fa fa-facebook"></i></a>-->
+            <a href="https://twitter.com/pyxisinnovation" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/vsearch/p?company=The+Pyxis+Innovation&amp;trk=prof-exp-company-name" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <!--<a href="http://www.pinterest.com/WorldViewMap/" target="_blank" class="neu-pinterest">Pinterest</a>-->
+            <a href="https://www.pyxisinnovation.com/About/Contact" class="link-hover-underlined">Contact Us</a>
+            <a href="/info/terms" class="link-hover-underlined">Terms &amp; Conditions</a>
+            <a href="/info/privacy" class="link-hover-underlined">Privacy</a>
+        </div>
+    </footer>
+</scrollbar>
+
+<!-- Feedback dialog -->
+<modal-dialog ng-if="feedback">
+    <h1>Feedback</h1>
+    WorldView.gallery is a living, breathing system and, like the world we live in, ever evolving. We will provide a better product with the support of our online contributors and community. Your feedback is greatly appreciated and valued.
+    <div class="form-group">
+        <span class="gray-text small-text">Name</span>
+        <input type="text" class="form-control" name="name" ng-model="feedbackForm.Name" placeholder="Your Name" required="">
+    </div>
+    <div class="form-group">
+        <span class="gray-text small-text">Email</span>
+        <input type="email" class="form-control" name="email" ng-model="feedbackForm.Email" placeholder="Your Email" required="">
+    </div>
+    <div class="form-group">
+        <span class="gray-text small-text">Feedback</span>
+        <textarea class="form-control" style="width: 100%; height: 200px; resize: none;" ng-model="feedbackForm.Body"></textarea>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="commitFeedbackMode(); gaEvent('feedback modal', 'submit');"><i class="fa fa-check"></i><span>Submit Feedback</span></button>
+        <button class="big gray" ng-click="cancelFeedbackMode(); gaEvent('feedback modal', 'cancel');"><i class="fa fa-times"></i><span>Maybe Later</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+
+<!-- Sign in dialog -->
+<modal-dialog ng-if="signIn" modal-class="login" ng-esc="cancelSignIn()">
+    <form name="loginForm">
+        <h2 class="title">Sign in</h2>
+        <i class="fa fa-close modal-close" ng-click="cancelSignIn()"></i>
+        <!-- <p>Please sign in to your account below or <a ng-click="enterSignUpMode()" href="/signUp" class="action">sign up</a> now for a brand new WorldView account.</p> -->
+        <p class="font-small">Don't have an account? &nbsp; <a ng-click="enterSignUpMode(); gaEvent('signin modal', 'proceed to signup');" href="/signUp" class="link-hover-underlined">Sign up now</a>.</p>
+        <div class="form-group" style="padding-top: 5px">
+            <input type="text" class="form-control" name="name" ng-model="login.username" placeholder="Username or Email" required="" set-focus>
+        </div>
+        <div class="form-group" style="padding-bottom: 5px">
+            <input type="password" class="form-control" name="name" ng-model="login.password" placeholder="Password" required="">
+        </div>
+        <span style="float: left;">
+            <a ng-click="enterForgotPasswordMode(); gaEvent('signin modal', 'forgot password');" href="/forgotPassword" class="action link-hover-underlined">Forgot Password</a>
+            <!-- <a ng-click="enterSignUpMode()" href="/signUp" class="action">Sign up Now</a> -->
+            <a href="/download" ng-click="cancelSignIn(); gaEvent('signin modal', 'proceed to download');" class="action link-hover-underlined">
+                Download App 
+                <span class="fa fa-windows" style="padding-left: 6px;"></span>
+            </a> 
+        </span>
+        <modal-dialog-buttons style="height: 30px">
+            <button ng-if="!login.inProgress" ng-disabled="!loginForm.$valid" class="gray" ng-click="doLogin(); gaEvent('signin modal', 'default sign in');"><span>Sign in</span></button>
+            <span ng-if="login.inProgress" style="font-size: 16px">Authenticating...</span>
+        </modal-dialog-buttons>
+    </form>
+    <span class="hr-delimiter" data-delimiter="Or, sign in with"></span>
+    <div class="providers">
+        <div ng-repeat="provider in externalProviders" class="provider-button {{provider.Name}}" ng-click="socialSignIn(provider.Name); gaEvent('signin modal', 'social auth', provider.Name);">{{provider.Name}}</div>
+    </div>
+</modal-dialog>
+
+
+</body>
+</html>

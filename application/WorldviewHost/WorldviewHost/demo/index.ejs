@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html ng-app="worldViewStudio" ng-controller="worldViewStudioController">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/contents/images/favicon.ico" type="image/x-icon">
+    <title i18n="PYXIS WorldView Studio">PYXIS WorldView Studio</title>
+
+    <%- inject('/build/studio-frameworks.js') %>
+    <%- inject('/build/pyxis.js') %>
+    <%- inject('/build/studio.js') %>
+    <%- inject('/build/studio-localization.js') %>
+    
+
+    <!--  HERE IS OUR STUDIO-WEB SHIM -->
+    <script src="/build/web-globe-bundle.js"></script>
+    <script src="/client/globe-interface.js"></script>
+    <script>
+        angular.element(document).ready(function () {
+            var injector = angular.element(".ng-scope").injector();
+            injector.get('studioShim');
+        });
+
+        // make sure assets are loaded from this folder
+        window.assetRoot = '/';
+    </script>  
+
+
+    <script type="text/javascript" src="/build/studio-templates.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <%- inject('/build/studio-demo-skin.js') %>
+
+    <% if(isLocal){ %>
+        <link rel="stylesheet" href="/assets/styles/font-awesome.min.css"/>
+        <style rel="stylesheet">
+            @font-face {
+                font-family: 'Relative Medium';
+                src: url('/assets/fonts/Relative-Medium.otf') format('opentype');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Relative Book';
+                src: url('/assets/fonts/Relative-Book.otf') format('opentype');
+                /*font-weight: 100;*/
+                font-style: normal;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="/assets/styles/studio.css"/>
+    <% } else { %>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/4Vr8HX3Uht31GB0HW+UwdlHXdZQ/<%= encodeURIComponent(host) %>44896.css" type="text/css"/>
+        <script src="https://f.fontdeck.com/s/css/js/<%= encodeURIComponent(host) %>/44896.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+        <script>
+	        WebFont.load({ fontdeck: { id: '44896' } });
+	    </script> -->
+        <link rel="stylesheet" type="text/css" href="/assets/styles/studio.css"/>
+    <% } %>
+
+    <style rel="stylesheet">
+
+        .dashboard-window .scrollbar-area .scrollbar-content {
+            overflow: visible !important;
+        }
+
+        .search-box-tag {
+            top: 5px !important;
+        }
+
+        .dg.ac {
+            position: absolute;
+            top: 70px;
+            display: none;
+        }
+
+        .dg.a .save-row {
+            position: absolute;
+        }
+
+        .nav-tools {
+            display: none;
+        }
+
+        .dialog-box.demo {
+            display: none;
+        }
+
+        .modal-dialog .dialog-box.demo {
+            left: 30px;
+            top: 100px;
+        }
+    </style>
+
+    <% if (runTests) { %>
+        <link rel="stylesheet" type="text/css" href="/test/jasmine.css"/>
+    <% } %>
+
+    <% if (backendUrl) { %>
+        <script type="text/javascript">
+            window.pyxisBackendUrl = "<%= backendUrl %>";
+        </script>
+    <% } %>
+
+    <!-- Intercom snippet - https://app.intercom.io -->
+    <script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/cnp6v6cw'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()</script>
+</head>
+
+<body ng-keyup="globeKeyUp($event)">
+<!-- Page Header: tools, searchbar, logo and main menu -->
+<div class="header default" stop-propagation="keyup" ng-show="!screenCapture.active" style="background: transparent;">    
+    <div style="float: left"><img src="/assets/images/Studio/pyxis_wv_logo_1.svg" style="height: 36px; margin-left: 30px; margin-top: 30px;"/>
+    </div>
+</div>
+
+<div ng-repeat="url in templates.sections" ng-include="url"></div>
+<div ng-repeat="url in templates.dialogs" ng-include="url"></div>
+<div ng-repeat="url in templates.widgets" ng-include="url"></div>
+
+<modal-dialog modal-background-class="no-background" modal-class="demo" ng-if="state.activeStep.message">
+    <h1>{{state.activeStep.message.title}}</h1>
+    <p>{{state.activeStep.message.content}}</p>
+</modal-dialog>
+
+<div style="position: fixed; left: 300px; bottom: 100px; right: 300px">
+    <i class="fa timeline-play-pause" ng-click="state.play = !state.play" ng-class="{'fa-play':state.play, 'fa-pause':!state.play}"></i>
+    <time-line time-line="timeLine" sections="sections" state="state" on-time-line-click="onTimeLineClick($time)"></time-line>
+    <span class="timeline-elapsed-time-display">{{state.currentTime.toFixed(2)}}</span>
+</div>
+
+</body>
+</html>

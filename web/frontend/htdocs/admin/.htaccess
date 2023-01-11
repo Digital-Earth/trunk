@@ -1,0 +1,9 @@
+AuthUserFile /home/pyxis/htpassword/.htpasswd
+AuthName "Client Administration"
+AuthType Basic
+<Files "clientadmin.php">
+	require user clientadmin
+</Files>
+<Files "loggingadmin.php">
+	require user loggingadmin
+</Files>

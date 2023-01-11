@@ -1,0 +1,16 @@
+﻿<!-- Dashboard window -->
+<div class="dashboard-window" ng-class="{minimized:(dashboard.minimized || screenCapture.active || cameraCapture.active) && !quickDashboardPopup, hidden: !uiActive || walkThrough.active}" stop-propagation="keyup"
+     ng-mouseenter="dashboard.mouseOver = true" ng-mouseleave="dashboard.mouseOver = false">
+    <header><i class="docking-pin fa fa-thumb-tack" ng-class="{'gray':dashboard.minimized}" ng-click="dashboard.minimized = !dashboard.minimized" tooltip="{{'tooltip.dashboard.pushpin'|i18n}}"></i>
+        <color-picker ng-if="selection.color" color="selection.color" on-color-picked="changeSelectionColor($color)"></color-picker>
+        <span i18n="Dashboard"></span>
+    </header>
+    <scrollbar class="dashboard-content">
+        <dashboard ng-repeat="dashboard in currentMap.model.Dashboards" widgets="dashboard.Widgets" selection="dashboard.Selection"></dashboard>
+        <div ng-if="currentMap">
+            <div ng-repeat="item in currentMap.activeItems()">
+                <library-item-legend item="item" style-modifier="styleModifier" copy-and-paste="copyAndPaste"></library-item-legend>
+            </div>
+        </div>
+    </scrollbar>
+</div>

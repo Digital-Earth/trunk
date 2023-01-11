@@ -1,0 +1,70 @@
+ <div class="page page-news surface">
+    <div class="container">
+        <div class="page__header text-center">
+            <h1 class="headline">News</h1>
+        </div>
+
+        <!-- 
+        <aside class="page__menu" make-sticky>
+            <div class="page__menu__inner">
+                <div class="page__menu-item">
+                    <a class="link link--underline" href="">2015</a>
+                </div>
+                <div class="page__menu-item">
+                    <a class="link link--underline" href="/news/2014">2014</a>
+                </div>
+                <div class="page__menu-item">
+                    <a class="link link--underline" href="">2013</a>
+                </div>
+                <div class="page__menu-item">
+                    <a class="link link--underline" href="">2012</a>
+                </div>
+                <div class="page__menu-item">
+                    <a class="link link--underline" href="">2011</a>
+                </div>
+                <div class="page__menu-item">
+                    <a class="link link--underline" href="">See More...</a>
+                </div>
+            </div>
+
+        </aside>
+        --> 
+
+        <div class="page__content">
+            <div class="page__content__inner">
+                <div class="page__body">
+                  <!--   <h2 class="title">2015</h2> -->
+                    <article class="aggregate-post has-border-bottom" ng-repeat="post in newsCtrl.posts">
+                        <div class="aggregate-post__media" ng-if="post.images"><img ng-src="{{post.images[0]}}" data-at2x="{{post.images[0]}}"/></div>
+                        <div class="aggregate-post__meta">
+                            <span class="posted-by">Pyxis</span>
+                            <span class="circle"></span>
+                            <span class="posted-date">{{post.date || newsCtrl.showYear}}</span>
+                            <div class="share">
+                                <a class="share__trigger" href=""><i class="nc-icon-glyph ui-2_share"></i></a>
+                                <div class="share__items">
+                                    <a class="share__item" href="" socialshare socialshare-provider="twitter" socialshare-text="{{post.title}}" socialshare-url="{{post.path}}">
+                                        <i class="nc-icon-glyph socials-1_logo-twitter"></i>
+                                    </a>
+                                    <a class="share__item" href="" socialshare socialshare-provider="facebook" socialshare-text="{{post.title}}" socialshare-url="{{post.path}}">
+                                        <i class="nc-icon-glyph socials-1_logo-facebook"></i>
+                                    </a>
+                                    <a class="share__item" href="" socialshare socialshare-provider="linkedin" socialshare-text="{{post.title}}" socialshare-url="{{post.path}}">
+                                        <i class="nc-icon-glyph socials-1_logo-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="aggregate-post__title" ng-bind-html="newsCtrl.renderHtml(post.title)" ></h3>
+                        <div class="aggregate-post__text" ng-bind-html="newsCtrl.renderHtml(post.text)" truncate-content></div>
+                        <a class="link link--underline" ng-href="/news/{{newsCtrl.showYear}}/{{post.path}}">Read More <i class="nc-icon-glyph arrows-1_tail-right"></i></a>
+                    </article>
+                </div>
+                <div class="page__body__footer text-center">
+                    <a ng-href="/news/{{(newsCtrl.showYear - 0) + 1}}" ng-if="newsCtrl.yearIndex > 0" class="btn btn--medium btn--rounded btn--action">{{(newsCtrl.showYear - 0) + 1}}</a>
+                    <a ng-href="/news/{{(newsCtrl.showYear - 0) - 1}}" ng-if="newsCtrl.yearIndex < newsCtrl.maxYears" class="btn btn--medium btn--rounded btn--action">{{(newsCtrl.showYear - 0) - 1}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>

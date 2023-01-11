@@ -1,0 +1,1475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Third Party">
+      <UniqueIdentifier>{0b8f638b-4064-43ee-a451-e0a3f4580b37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{b53766b7-7394-43cb-8646-a8d95e8ea8d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\Source Files">
+      <UniqueIdentifier>{102b2c2e-7dc1-47c1-af13-a1549f38be18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\Header Files">
+      <UniqueIdentifier>{3437a12e-4d35-413b-b9d2-899a5e113492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\impl">
+      <UniqueIdentifier>{04c9a125-f7db-46b7-9fce-e066e5255413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\impl\Header Files">
+      <UniqueIdentifier>{8ccee41c-37c3-4cbb-8103-a6ea8d9c2034}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\impl\Source Files">
+      <UniqueIdentifier>{6443dca4-3554-4643-951c-9d9b0dada466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="derm">
+      <UniqueIdentifier>{bd2c1090-53bc-43d9-88b9-e97fb1eae4b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="derm\Source Files">
+      <UniqueIdentifier>{2926b84a-3cdb-4f93-b5bd-de328dd0222b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="derm\Header Files">
+      <UniqueIdentifier>{65172d03-1437-44c9-b7ad-6b8abd3c7f14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="geometry">
+      <UniqueIdentifier>{6270c745-dc7a-4177-b44e-4345b7a1642d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="geometry\Source Files">
+      <UniqueIdentifier>{7ede8d17-f22d-470a-bd20-3489fc4dc0f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="geometry\Header Files">
+      <UniqueIdentifier>{ed57ebae-2db7-46c5-9f74-6384e6e773c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pipe">
+      <UniqueIdentifier>{b699847c-5829-42b1-ad39-c3d4ce6af478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pipe\Source Files">
+      <UniqueIdentifier>{020e6475-5420-4e82-a1ea-b8d4eb931c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pipe\Header Files">
+      <UniqueIdentifier>{c6be2be6-b800-4221-a153-65a7a1a33009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{f4f15014-ee5e-4e8c-97c9-b5f58e330ebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\Source Files">
+      <UniqueIdentifier>{2230bfa2-b444-4d2e-9a50-fbea2b6f8426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\Header Files">
+      <UniqueIdentifier>{5b4d56cb-951d-42c5-9c88-d5f2930149e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module">
+      <UniqueIdentifier>{8a96861b-5a32-4891-b3b2-b9810dfe5591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module\Source Files">
+      <UniqueIdentifier>{152d8f41-c82c-43da-9d6c-f2a53b1f8071}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module\Header Files">
+      <UniqueIdentifier>{163fe9ed-974c-405b-9511-ca7354152642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="procs">
+      <UniqueIdentifier>{5f0fbd42-0439-4d9c-8b4b-2ce5b00036b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="procs\Header Files">
+      <UniqueIdentifier>{78f76e3d-3795-4306-8f30-14e7393cead1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="procs\Source Files">
+      <UniqueIdentifier>{de68982b-d448-45bb-8de7-112ec92a696a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sampling">
+      <UniqueIdentifier>{db5875dd-28fa-43f6-8460-98d67c71dd9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sampling\Source Files">
+      <UniqueIdentifier>{e97cd00f-bb3b-4190-95c5-529cb8318f1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sampling\Header Files">
+      <UniqueIdentifier>{aeeea6da-92ce-4dcf-85b3-c64c5ba8533a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="region">
+      <UniqueIdentifier>{fa64cc88-25e6-4df9-a564-d185a42b266b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="region\Header Files">
+      <UniqueIdentifier>{2a941690-9dd4-4763-ae66-4a1cf3ef5712}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="region\Source Files">
+      <UniqueIdentifier>{286c0876-52e1-48bd-8c3d-7bbdf7c8fbee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="query">
+      <UniqueIdentifier>{4a2ea5bf-27ed-4aa4-9b92-5d60d5b425af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="query\Header Files">
+      <UniqueIdentifier>{99c9b173-c903-4bb7-afce-8c7d05167d19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="query\Source Files">
+      <UniqueIdentifier>{2db7c040-a405-4bcf-b59c-0f029ebce5dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="storage">
+      <UniqueIdentifier>{0eb8bb92-76ff-449b-9198-cf77446771e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="storage\Header Files">
+      <UniqueIdentifier>{560cd099-b458-4228-a520-a15bd17c9fbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="storage\Source Files">
+      <UniqueIdentifier>{c086040d-af56-4bf2-acb2-740cd192939f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rhombus">
+      <UniqueIdentifier>{b437f88d-80de-4a1f-a5a1-9a2571a9452b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rhombus\Header Files">
+      <UniqueIdentifier>{83319771-c3db-49e4-bff5-d345547623e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rhombus\Source Files">
+      <UniqueIdentifier>{77659a51-fbec-49f7-89e0-d091eb0263d0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\pyxis\data\all_feature_iterator.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\constant_record.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\coverage.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\coverage_base.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\exceptions.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature_collection.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature_group.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature_iterator_linq.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature_iterator_with_prefetch.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature_style.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\histogram.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\pyx_feature.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\record.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\value_tile.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\writable_search_feature.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\writeable_feature.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\impl\numeric_histogram_impl.cpp">
+      <Filter>data\impl\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\impl\string_histogram_impl.cpp">
+      <Filter>data\impl\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\child_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\compact_index.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\coord_converter.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\cursor.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\derm_utils.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\diamond_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\dir_edge_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\direction_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\edge_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\exceptions.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\exhaustive_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\fourier_diamond_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\fourier_hexagonal_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\hex_direction_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\hexagon.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\horizontal_datum.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\icos_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\icosahedron.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\index.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\index_math.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\neighbour_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\pentagon.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\point_location.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\progressive_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\projection_method.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\reference_sphere.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\resolution_change_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\snyder_projection.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\spiral_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\sub_index.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\sub_index_math.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\tile_set.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\valid_direction_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\vertex_iterator.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\wgs84.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\wgs84_coord_converter.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\bounding_rects_calculator.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\cell.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\circle_geometry.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\circle_intersection_test.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\combined_index.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\constant_geometry.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\curve.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\exceptions.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\geometry.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\geometry_collection.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\geometry_iterator.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\geometry_serializer.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\hit_test_utils.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\icos_test_traverser.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\icos_traverser.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\inner_tile.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\inner_tile_intersection_iterator.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\map_indexes.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\multi_cell.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\multi_geometry.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\polygon.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\test.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\tile.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\tile_cache.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\tile_collection.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\vector_geometry.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\vector_geometry2.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\parameter.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\parameter_spec.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\pipe_builder.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\pipe_formater.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\pipe_manager.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\pipe_utils.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\process.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\process_identity.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\process_identity_cache.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\process_init_error.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\process_list.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\process_local_storage.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\process_spec.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\pipe\pyxnet_channel.cpp">
+      <Filter>pipe\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\abstract_iterator.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\app_services.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\bit_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\bitmap_server_provider.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\blank.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\bounding_circle_spatial_set.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\bounding_shape.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\cache_map.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\cache_status.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\checksum_calculator.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\color_palette.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\command.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\command_manager.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\coord_2d.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\coord_3d.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\coord_lat_lon.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\coord_polar.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\cost.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\ellipsoid_math.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\excel.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\exception.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\exceptions.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\file_resolver.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\file_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\gdalinfo.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\great_circle_arc.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\http_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\identity_cache.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\instance_counter.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\local_storage.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\local_storage_impl.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\math_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\mem_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\memory_manager.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\notifier.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\numeric_histogram.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\object.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\pointer.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\profile.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\properties.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\pyxcom.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\range.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\rect_2d.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\rgb.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\sphere_math.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\ssl_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\stdint.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\stl_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\string_histogram.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\string_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\sxs.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\tester.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\thread_pool.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\trace.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\value.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\value_column.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\value_math.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\value_table.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\value_translation.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\win32_exception.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\wire_buffer.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\xml_transform.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\xml_utils.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxlib.cpp">
+      <Filter>module\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxlib_instance.cpp">
+      <Filter>module\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\stdafx.cpp">
+      <Filter>module\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\bad_coverage.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\bitmap.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\cache.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\const_coverage.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\coverage_histogram_calculator.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\data_processor.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\default_feature.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\embedded_resource_holder.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\exceptions.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\feature_calculator.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\named_geometry_proc.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\path.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\proc_utils.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\process_collection_proc.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\srs.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\string.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\tool_box_provider.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\url.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\user_credentials.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\user_credentials_provider.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\viewpoint.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\xy_bounds_region_proc.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\sampling\spatial_reference_system.cpp">
+      <Filter>sampling\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\sampling\xy_bounds_geometry.cpp">
+      <Filter>sampling\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\sampling\xy_coverage.cpp">
+      <Filter>sampling\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\sampling\xy_intersection_test.cpp">
+      <Filter>sampling\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\sampling\xy_iterator.cpp">
+      <Filter>sampling\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\sampling\xy_utils.cpp">
+      <Filter>sampling\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\arc_buffer.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\circle_region.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\curve_region.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\multi_curve_region.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\multi_polygon_region.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\region.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\region_serializer.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\vector_point_region.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\xy_bounds_region.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\derm\iterator_linq.cpp">
+      <Filter>derm\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature_collection_index.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\feature_collection_index_proc.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\record_collection.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\geometry_provider.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\region\region_builder.cpp">
+      <Filter>region\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\procs\geopacket_source.cpp">
+      <Filter>procs\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\query\where_condition.cpp">
+      <Filter>query\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\query\where.cpp">
+      <Filter>query\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\catalog.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\storage\i_blob_provider.cpp">
+      <Filter>storage\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\storage\pyxis_blob_provider.cpp">
+      <Filter>storage\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\storage\storage_exceptions.cpp">
+      <Filter>storage\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\geometry\geometry_intersection_utils.cpp">
+      <Filter>geometry\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\utility\bbox_lat_lon.cpp">
+      <Filter>utility\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\data\tile_aggregator.cpp">
+      <Filter>data\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\rhombus\rhombus.cpp">
+      <Filter>rhombus\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\rhombus\rhombus_bitmap.cpp">
+      <Filter>rhombus\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\rhombus\rhombus_utils.cpp">
+      <Filter>rhombus\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pyxis\rhombus\rhombus_filler.cpp">
+      <Filter>rhombus\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\pyxis\data\all_feature_iterator.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\constant_record.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\coverage.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\coverage_base.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\exceptions.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature_collection.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature_group.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature_iterator_linq.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature_iterator_with_prefetch.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature_style.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\histogram.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\pyx_feature.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\record.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\value_tile.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\writable_search_feature.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\writeable_feature.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\impl\numeric_histogram_impl.h">
+      <Filter>data\impl\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\impl\string_histogram_impl.h">
+      <Filter>data\impl\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\child_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\compact_index.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\coord_converter.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\cursor.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\derm_utils.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\diamond_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\dir_edge_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\direction_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\edge_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\exceptions.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\exhaustive_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\fourier_diamond_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\fourier_hexagonal_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\hex_direction_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\hexagon.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\horizontal_datum.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\icos_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\icosahedron.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\index.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\index_math.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\neighbour_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\pentagon.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\point_location.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\progressive_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\projection_method.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\reference_sphere.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\resolution_change_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\snyder_projection.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\spiral_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\sub_index.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\sub_index_math.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\tile_set.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\valid_direction_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\vertex_iterator.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\wgs84.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\wgs84_coord_converter.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\bounding_rects_calculator.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\cell.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\circle_geometry.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\circle_intersection_test.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\combined_index.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\constant_geometry.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\curve.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\exceptions.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\geometry.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\geometry_collection.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\geometry_iterator.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\geometry_serializer.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\hit_test_utils.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\icos_test_traverser.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\icos_traverser.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\inner_tile.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\inner_tile_intersection_iterator.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\map_indexes.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\multi_cell.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\multi_geometry.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\polygon.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\test.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\tile.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\tile_cache.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\tile_collection.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\vector_geometry.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\vector_geometry2.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\exceptions.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\parameter.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\parameter_spec.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\pipe_builder.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\pipe_formater.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\pipe_manager.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\pipe_utils.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\process.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\process_identity.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\process_identity_cache.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\process_init_error.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\process_list.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\process_local_storage.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\process_spec.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\pipe\pyxnet_channel.h">
+      <Filter>pipe\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\abstract_iterator.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\app_services.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\bit_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\bitmap_server_provider.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\blank.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\bounding_circle_spatial_set.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\bounding_shape.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\cache_map.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\cache_status.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\checksum_calculator.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\color_palette.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\command.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\command_manager.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\coord_2d.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\coord_3d.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\coord_lat_lon.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\coord_polar.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\cost.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\ellipsoid_math.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\excel.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\exception.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\exceptions.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\file_resolver.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\file_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\gdalinfo.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\great_circle_arc.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\http_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\identity_cache.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\instance_counter.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\joblist.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\joblistsp.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\local_storage.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\local_storage_impl.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\math_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\mem_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\memory_manager.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\notifier.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\numeric_histogram.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\object.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\pointer.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\profile.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\properties.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\pyxcom.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\range.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\rect_2d.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\rgb.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\sphere_math.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\ssl_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\stdint.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\stl_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\string_histogram.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\string_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\sxs.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\tester.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\thread_pool.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\trace.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\value.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\value_column.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\value_math.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\value_table.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\value_translation.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\win32_exception.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\wire_buffer.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\xml_transform.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\xml_utils.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxlib.h">
+      <Filter>module\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxlib_instance.h">
+      <Filter>module\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\stdafx.h">
+      <Filter>module\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\bad_coverage.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\bitmap.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\cache.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\const_coverage.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\coverage_histogram_calculator.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\data_processor.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\default_feature.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\embedded_resource_holder.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\exceptions.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\feature_calculator.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\named_geometry_proc.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\path.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\proc_utils.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\process_collection_proc.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\srs.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\string.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\tool_box_provider.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\url.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\user_credentials.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\user_credentials_provider.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\viewpoint.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\xy_bounds_region_proc.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\sampling\spatial_reference_system.h">
+      <Filter>sampling\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\sampling\xy_bounds_geometry.h">
+      <Filter>sampling\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\sampling\xy_coverage.h">
+      <Filter>sampling\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\sampling\xy_intersection_test.h">
+      <Filter>sampling\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\sampling\xy_iterator.h">
+      <Filter>sampling\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\sampling\xy_utils.h">
+      <Filter>sampling\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\arc_buffer.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\circle_region.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\curve_region.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\multi_curve_region.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\multi_polygon_region.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\region.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\region_serializer.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\vector_point_region.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\xy_bounds_region.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\derm\iterator_linq.h">
+      <Filter>derm\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature_collection_index.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\feature_collection_index_proc.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\record_collection.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\geometry_provider.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\region\region_builder.h">
+      <Filter>region\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\procs\geopacket_source.h">
+      <Filter>procs\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\query\where_condition.h">
+      <Filter>query\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\query\where.h">
+      <Filter>query\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\catalog.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\storage\i_blob_provider.h">
+      <Filter>storage\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\storage\pyxis_blob_provider.h">
+      <Filter>storage\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\storage\storage_exceptions.h">
+      <Filter>storage\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\geometry\geometry_intersection_utils.h">
+      <Filter>geometry\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\utility\bbox_lat_lon.h">
+      <Filter>utility\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\data\tile_aggregator.h">
+      <Filter>data\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\rhombus\rhombus.h">
+      <Filter>rhombus\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\rhombus\rhombus_bitmap.h">
+      <Filter>rhombus\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\rhombus\rhombus_utils.h">
+      <Filter>rhombus\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\pyxis\rhombus\rhombus_filler.h">
+      <Filter>rhombus\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\third_party\xerces-c-3.1.1\bin\xerces-c_3_1.dll">
+      <Filter>Third Party</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\xerces-c-3.1.1\bin\xerces-c_3_1D.dll">
+      <Filter>Third Party</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\sqlite3\sqlite3.dll">
+      <Filter>Third Party</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\zlib\zlib_pyxis.dll">
+      <Filter>Third Party</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\third_party\zlib\zlib_pyxisd.dll">
+      <Filter>Third Party</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

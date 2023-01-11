@@ -1,0 +1,146 @@
+ <div class="banner surface" resize resize-set="height">
+    <section class="container container--expanded">
+        <div class="banner__header text-center disablemouse">
+            <div class="header-inner">
+                <h1 class="headline display-light">
+                   {{homeCtrl.entry.headline}}
+                </h1>
+                <a id="demo-link" class="btn btn--small btn--rounded btn--white enablemouse" ng-if="supports.webgl && userDevice !== 'Mobile'" href="#" target="_self" >See it in action</a>
+                <a class="btn btn--small btn--rounded btn--white" href="" ng-if="!supports.webgl" ng-click="show.modal = 'register'">Register Now</a>
+                <a class="btn btn--small btn--rounded btn--white" href="/mobile/register" ng-if="userDevice === 'Mobile'">Register Now</a>
+            </div>
+        </div>
+        <div class="banner__globe">
+            <img src="/site/assets/img-hero-globe-half.png" />
+        </div>
+    </section>
+
+    <div id="globe-loader" landing-globe></div>
+</div>
+<div class="discover surface" discover-animate scroll-enter on-enter-then="animateDiscover" use-boundary="middle" use-viewport="middle">
+    <section class="container">
+       <div class="discover__header text-center">
+            <div class="header-inner">
+                <h2 class="section-title display-dark">{{homeCtrl.entry.discover.title}}</h2>
+                <p class="description display-dark">
+                    {{homeCtrl.entry.discover.content}}
+                </p>
+            </div>
+       </div>
+        <div class="discover__content">
+            <div class="discover-card">
+                <div class="discover-card__inner">
+                    <div class="discover-card__media" ng-style="{'background-image':'url(/site/assets/img-card-demo01.jpg)'}"></div>
+                    <div class="discover-card__content">
+                        <div class="discover-card__title">Weather Satellite Infrared</div>
+                        <div class="discover-card__owner caption-dark">NOAA</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discover-card">
+                <div class="discover-card__inner">
+                    <div class="discover-card__media" ng-style="{'background-image':'url(/site/assets/img-card-demo02.jpg)'}"></div>
+                    <div class="discover-card__content">
+                        <div class="discover-card__title">Weather Satellite Infrared</div>
+                        <div class="discover-card__owner caption-dark">NOAA</div>
+                    </div>
+                </div>
+            </div>
+            <div class="discover-card">
+                <div class="discover-card__inner">
+                    <div class="discover-card__media" ng-style="{'background-image':'url(/site/assets/img-card-demo03.jpg)'}">
+                    </div>
+                    <div class="discover-card__content">
+                        <div class="discover-card__title">Weather Satellite Infrared</div>
+                        <div class="discover-card__owne caption-dark">NOAA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="discover__footer text-center">
+        <a class="btn btn--small btn--rounded btn--action" href="" ng-if="userDevice !== 'Mobile'" ng-click="show.modal = 'register'">Register Now</a>
+        <a class="btn btn--small btn--rounded btn--action" href="/mobile/register" ng-if="userDevice === 'Mobile'">Register Now</a>
+        </div>
+    </section>
+</div>
+
+<div class="tour tour-search surface">
+    <section class="container">
+        <div class="tour__info text-center">
+            <div class="svg-icon" svg-animate svg-uid="search-icon" json-path="/site/animations/search_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>
+            <h3 class="section-title">{{homeCtrl.entry.examine.title}}</h3>
+            <p class="description">
+                {{homeCtrl.entry.examine.content}}
+            </p>
+            <a class="btn btn--small btn--rounded btn--action reverse" href="" ng-if="userDevice !== 'Mobile'" ng-click="show.modal = 'register'">Register Now</a>
+            <a class="btn btn--small btn--rounded btn--action reverse" href="/mobile/register" ng-if="userDevice === 'Mobile'">Register Now</a>
+        </div>
+        <div class="tour__media">
+            <img ng-src="/site/assets/img-tour-search.png" data-at2x="/site/assets/img-tour-search@2x.png" width="860" />
+        </div>
+    </section>
+</div>
+<div class="tour tour-combine surface" resize resize-set="height" exclude-from-cutoff="true" resize-run="setCombineHeight('resize')">
+    <div class="tour-panel" combine-animate scroll-enter on-enter-then="animateCombine" use-boundary="middle" use-viewport="bottom">
+        <div class="tour__media hide-on-mobile">
+            <img class="top-layer" src="/site/assets/img-tour-combine-top.png"    media-load after-load="setCombineHeight()" />
+            <img class="mid-layer" src="/site/assets/img-tour-combine-middle.png" media-load after-load="setCombineHeight()" />
+            <img class="bot-layer" src="/site/assets/img-tour-combine-bottom.png" media-load after-load="setCombineHeight()" />
+        </div>
+    </div>
+    <div class="tour-panel">
+        <div class="tour__info">
+        <div class="svg-icon" svg-animate svg-uid="combine-icon" json-path="/site/animations/combine_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>
+         <h3 class="section-title">{{homeCtrl.entry.integrate.title}}</h3>
+            <p class="description">
+              {{homeCtrl.entry.integrate.content}}
+            </p>
+            <a class="btn btn--small btn--rounded btn--action reverse" href="" ng-click="'.subscribe' | scrollTo : 0.6 : Power4.easeInOut">Learn More</a>
+        </div>
+    </div>
+</div>
+<div class="subscribe surface" ng-controller="NewsletterFormController">
+    <section class="container text-center">
+        <div class="subscribe__header">
+            <h2 class="section-title">
+                Use your inbox to inform your WorldView &trade;
+            </h2>
+        </div>
+        <form class="subscribe__form"  name="newsletterForm" validation-schema schema="Newsletter">
+            <div class="form-panel">
+                <input class="input input--small input--rounded " type="email" name="email" ng-model="newsletterForm.Email" placeholder="Enter your email..."/>
+            </div>
+            <div class="form-panel">
+                <a href="" class="btn btn--action btn--rounded btn--liquid reverse" ng-click="submitNewsletterRequest()" ng-disabled="submitting"><span>Subscribe</span></a>
+            </div>
+        </form>
+        <span class="heads-up">
+            We'll keep you informed of software updates, exciting map data, and introductions to new Galleries created by people like you.  We value your privacy.
+        </span>
+    </section>
+ </div>   
+<div class="updates surface">
+    <section class="container text-center"> 
+        <div class="updates-panel">
+            <div class="updates-panel__inner">
+                <h3 class="section-title">News</h3>
+                <article class="update">
+                    <a ng-href="/news/{{homeCtrl.showYear}}/{{homeCtrl.postPath}}" class="link link--normal">{{homeCtrl.post.title}}</a>
+                    <hr class="hr-delimiter" text="{{homeCtrl.post.date}}"></hr>
+                </article>
+            </div>
+        </div>
+        <div class="updates-panel">
+             <div class="updates-panel__inner">
+                <h3 class="section-title">Twitter</h3>
+                <article class="update" ng-bind-html="homeCtrl.renderHtml(homeCtrl.latestTweet)">
+                </article>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+

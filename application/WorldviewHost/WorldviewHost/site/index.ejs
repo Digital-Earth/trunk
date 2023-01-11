@@ -1,0 +1,339 @@
+<!--[if lt IE 9]>
+<html class='no-js lt-ie9' lang='en-US' prefix='og:http://ogp.me/ns#'>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<html lang='en-US' prefix='og:http://ogp.me/ns#' ng-app="worldViewSite" ng-controller="worldviewSiteController">
+<!--<![endif]-->
+    <head>
+        <meta charset='utf-8'>
+        <meta name='apple-mobile-web-app-capable' content='yes'>
+        <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+        <link rel='shortcut icon' href=''>
+        <meta name='description' content="<%= description %>">
+        <meta name='keywords' content=''>
+        <title><%= title %></title>
+        <% if (metadata) { %>
+        <meta name="twitter:card" content="<%= metadata.card %>" />
+        <meta name="twitter:site" content="<%= metadata.twitter %>" />
+        <meta name="twitter:title" content="<%= metadata.title %>" />
+        <meta name="twitter:description" content="<%= metadata.description %>" />
+        <meta name="twitter:image" content="<%= metadata.image %>" />
+        <% } %>
+
+        <!-- Prevent FOUC -->
+        <style rel="stylesheet">
+            [ng\:cloak], [ng-cloak], .ng-cloak {
+                display: none !important;
+            }
+        </style>
+
+        <!-- == Stylesheets == -->
+      <!--   <link rel="stylesheet" href="//f.fontdeck.com/s/css/Qco3+GVz8b4byDHjqddR4BIYCf0/wv-test.azurewebsites.net/59893.css" type="text/css" /> -->
+
+        <!-- TODO: stylus compile on the fly -->
+        <link rel="stylesheet" media='screen' href='/site/css/app.css'>
+
+        <!--[if lte IE 9]>
+            <script type="text/javascript src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+        <![endif]-->
+
+
+        <!-- now using bundles -->
+        <%- inject('/build/site.js') %>
+
+        <!-- globe loader here -->
+        <script src="/site/js/landing-globe.js"></script>
+        <script src="/assets/scripts/dat.gui.min.js"></script>
+
+
+        <script async src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js'></script>
+        <script async src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/BezierPlugin.min.js'></script>
+
+        <!-- angular template cache -->
+        <script type="text/javascript" src="/build/gallery-templates.js"></script>
+        <script type="text/javascript" src="/build/site-templates.js"></script>
+
+        <!-- needed for demo to load -->
+        <script async type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+        <!-- asynchronously load -->
+        <% if(isLocal){ %>
+            <link rel="stylesheet" href="/assets/styles/font-awesome.min.css"/>
+            <style rel="stylesheet">
+                @font-face {
+                    font-family: 'Relative Medium';
+                    src: url('/assets/fonts/Relative-Medium.otf') format('opentype');
+                    font-weight: 600;
+                    font-style: normal;
+                }
+
+                @font-face {
+                    font-family: 'Relative Book';
+                    src: url('/assets/fonts/Relative-Book.otf') format('opentype');
+                    /*font-weight: 100;*/
+                    font-style: normal;
+                }
+
+                @font-face {
+                    font-family: 'Relative Bold';
+                    src: url('/assets/fonts/Relative-Bold.otf') format('opentype');
+                    font-weight: bold;
+                    font-style: normal;
+                }
+            </style>
+            <link rel="stylesheet" type="text/css" href="/assets/styles/site.css"/>
+        <% } else { %>
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="/assets/styles/site.css"/>
+        <% } %>
+
+        <% if (backendUrl) { %>
+            <script type="text/javascript">
+                window.pyxisBackendUrl = "<%= backendUrl %>";
+            </script>
+        <% } %>
+        
+        <!-- Intercom snippet - https://app.intercom.io -->
+        <script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/cnp6v6cw'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()</script>
+    </head>
+    <body ng-cloak scroll scroll-off="{{menu.active || show.modal !== ''}}" ng-class="page" loading>
+
+    <!-- == M E N U == -->
+    <div class="menu-panels" ng-if="userDevice !== 'Mobile'" resize resize-set="height" ng-include="'/site/parts/menu-fullscreen.html'" ng-class="menu.active ? 'is-active' : ''"></div>
+    <div class="menu-panels menu-panels--mobile" ng-if="userDevice === 'Mobile'" resize resize-set="height" ng-include="'/site/parts/menu-fullscreen-mobile.html'" ng-class="menu.active ? 'is-active' : ''"></div>
+    
+	<!-- == A L E R T S == -->
+	<div ng-show="alert.show" class="header-message {{alert.type}}">
+		<span class="body">
+			<i class="type fa" ng-class="{'fa-warning':alert.type=='error','fa-check':alert.type=='success','fa-exclamation':alert.type=='info'}"></i>{{alert.message}}<i class="close fa fa-times-circle" ng-click="alert.show=false"></i>
+		</span>
+	</div>
+
+    <ng-switch on="newSite">
+    <!-- == H E A D E R - G A L L E R Y == -->
+    <header ng-switch-when="false" class="header on-white is-active header--gallery">
+        <div class="header__container">
+            <a class="brandmark" href="/browse">
+                <img src="/site/assets/img-logo-wv-black.png" alt="PYXIS WorldView">
+                <span class="brandmark__name">PYXIS WorldView</span>
+            </a>
+
+            <!-- == S E A R C H == -->
+            <div class="search" ng-class="{enabled:!searchDisabled}">
+                <i class="nc-icon-outline ui-1_zoom"></i>
+                <autocomplete data="searchListSuggestions" ng-model="$parent.search" attr-placeholder="Search" click-activation="true">
+                </autocomplete>
+                    </div>
+            <nav class="menu">
+                <!-- == A C C O U N T == -->
+                <div class="link link--username" popup-template="/client/templates/menus/user.html" padding="70" placement="bottom" popup-group="popup-menu">
+                    <a href="" ng-if="user" ng-click="gotoUserPage()">
+                        <i class="nc-icon-outline users_circle-10"></i>
+                        <span ng-if="!mobile">{{profile.Metadata.Name || "Profile"}}</span>
+                    </a>
+                </div>
+                <a class="btn btn-menu btn--phantom hide-on-mobile" href="" ng-if="!user" ng-click="show.modal = 'sign-in'; gaEvent('header', 'sign in click');">Sign in</a>
+                <a class="btn btn-menu btn--phantom reverse hide-on-mobile" ng-if="!user" href="" ng-click="show.modal = 'register'; gaEvent('header', 'register click');">Register</a>
+            </div>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- == H E A D E R  S I T E == -->
+     <header ng-switch-when="true" class="header on-white is-active header--gallery">
+        <div class="header__container">
+            <a class="brandmark" href="/browse">
+                <img src="/site/assets/img-logo-wv-black.png" alt="PYXIS WorldView">
+                <span class="brandmark__name">PYXIS WorldView</span>
+            </a>
+
+            <!-- == S E A R C H == -->
+            <div class="search" ng-class="{enabled:!searchDisabled}">
+                <i class="nc-icon-outline ui-1_zoom"></i>
+                <autocomplete data="searchListSuggestions" ng-model="$parent.search" attr-placeholder="Search" click-activation="true">
+                </autocomplete>
+                    </div>
+            <nav class="menu">
+                <!-- == A C C O U N T == -->
+                <div class="link link--username" popup-template="/client/templates/menus/user.html" padding="70" placement="bottom" popup-group="popup-menu">
+                    <a href="" ng-if="user" ng-click="gotoUserPage()">
+                        <i class="nc-icon-outline users_circle-10"></i>
+                        <span ng-if="!mobile">{{profile.Metadata.Name || "Profile"}}</span>
+                    </a>
+                </div>
+                <a class="btn btn-menu btn--phantom hide-on-tablet hide-on-mobile" href="" ng-if="!user" ng-click="show.modal = 'sign-in'; gaEvent('header', 'sign in click');">Sign in</a>
+                <a class="btn btn-menu btn--phantom reverse hide-on-tablet hide-on-mobile" ng-if="!user" href="" ng-click="show.modal = 'register'; gaEvent('header', 'register click');">Register</a>
+            </div>
+                </a>
+            </nav>
+        </div>
+    </header>
+  
+    <!-- == G A L L E R Y == -->
+    <div ng-switch-when="false">
+<div class="header-spacer"></div>
+<scrollbar class="page-content">
+    <div ng-view autoscroll="true" style="min-height: 500px;"></div>
+    <footer>
+        <div class="footer-left">
+            &copy; the PYXIS innovation 2016
+        </div>
+        <div class="footer-right">
+            <!--<a href="https://www.facebook.com/pages/the-PYXIS-innovation/113016318769769" target="_blank"><i class="fa fa-facebook"></i></a>-->
+            <a href="https://twitter.com/pyxisinnovation" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/vsearch/p?company=The+Pyxis+Innovation&amp;trk=prof-exp-company-name" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <!--<a href="http://www.pinterest.com/WorldViewMap/" target="_blank" class="neu-pinterest">Pinterest</a>-->
+            <a href="https://www.pyxisinnovation.com/About/Contact" class="link-hover-underlined">Contact Us</a>
+            <a href="/info/terms" class="link-hover-underlined">Terms &amp; Conditions</a>
+            <a href="/info/privacy" class="link-hover-underlined">Privacy</a>
+        </div>
+    </footer>
+</scrollbar>
+    </div>
+
+    <!-- == S I T E == -->
+    <div ng-switch-when="true">
+        <!-- == M A I N  == -->
+        <div class="wrapper">
+            <main class="surface" ng-view autoscroll="true"></main>
+        </div>
+        <!-- == F O O T E R == -->     
+        <div class="pusher hide-on-tablet hide-on-mobile"></div>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="pyxis-logo">
+                    <img src="/site/assets/pyxis-logo.png" alt="PYXIS Innovation"/>
+                </div>
+                <div class="links" ensure-even-dimensions>
+                    <a class="icon" href="https://twitter.com/worldviewglobe" target="_blank">
+                        <i class="nc-icon-glyph socials-1_logo-twitter"></i>
+                    </a>
+                    <a class="icon" href="https://www.linkedin.com/vsearch/p?company=The+Pyxis+Innovation&amp;trk=prof-exp-company-name" target="_blank">
+                        <i class="nc-icon-glyph socials-1_logo-linkedin"></i>
+                    </a>
+                    <i class="circle hide-on-mobile"></i>
+                    <a class="link link--underline hide-on-mobile hide-on-tablet" href="/download" target="_blank">Download the App</a>
+                    <i class="circle"></i>
+                    <a class="link link--underline" href="https://www.pyxisinnovation.com/About/Company" target="_blank">About</a>
+                    <a class="link link--underline" href="https://www.pyxisinnovation.com/Team/Board" target="_blank">Team</a>
+                    <a class="link link--underline" href="/info/privacy">Privacy</a>
+                    <a class="link link--underline" href="/info/terms">Terms</a>
+                    <a class="link link--underline" href="" ng-click="menu.toggle()">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</ng-switch>
+
+<div id="Intercom" ng-show="intercomEnabled">
+</div>
+
+<!-- Feedback dialog -->
+<modal-dialog ng-if="feedback">
+    <h1>Feedback</h1>
+    WorldView.gallery is a living, breathing system and, like the world we live in, ever evolving. We will provide a better product with the support of our online contributors and community. Your feedback is greatly appreciated and valued.
+    <div class="form-group">
+        <span class="gray-text small-text">Name</span>
+        <input type="text" class="form-control" name="name" ng-model="feedbackForm.Name" placeholder="Your Name" required="">
+    </div>
+    <div class="form-group">
+        <span class="gray-text small-text">Email</span>
+        <input type="email" class="form-control" name="email" ng-model="feedbackForm.Email" placeholder="Your Email" required="">
+    </div>
+    <div class="form-group">
+        <span class="gray-text small-text">Feedback</span>
+        <textarea class="form-control" style="width: 100%; height: 200px; resize: none;" ng-model="feedbackForm.Body"></textarea>
+    </div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="commitFeedbackMode(); gaEvent('feedback modal', 'submit');"><i class="fa fa-check"></i><span>Submit Feedback</span></button>
+        <button class="big gray" ng-click="cancelFeedbackMode(); gaEvent('feedback modal', 'cancel');"><i class="fa fa-times"></i><span>Maybe Later</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>
+
+<!-- Sign in dialog -->
+<modal-dialog ng-if="signIn" modal-class="login" ng-esc="cancelSignIn()">
+    <form name="loginForm">
+        <h2 class="title">Sign in</h2>
+        <i class="fa fa-close modal-close" ng-click="cancelSignIn()"></i>
+        <!-- <p>Please sign in to your account below or <a ng-click="enterSignUpMode()" href="/signUp" class="action">sign up</a> now for a brand new WorldView account.</p> -->
+        <p class="font-small">Don't have an account? &nbsp; <a ng-click="enterSignUpMode('signin modal', 'proceed to signup')" href="/signUp" class="link-hover-underlined">Sign up now</a>.
+        </p>
+        <div class="form-group" style="padding-top: 5px">
+            <input type="text" class="form-control" name="name" ng-model="login.username" placeholder="Username or Email" required="" set-focus>
+        </div>
+        <div class="form-group" style="padding-bottom: 5px">
+            <input type="password" class="form-control" name="name" ng-model="login.password" placeholder="Password" required="">
+        </div>
+        <span style="float: left;">
+            <a ng-click="enterForgotPasswordMode(); gaEvent('signin modal', 'forgot password');" href="/forgotPassword" class="action link-hover-underlined">Forgot Password</a>
+            <!-- <a ng-click="enterSignUpMode()" href="/signUp" class="action">Sign up Now</a> -->
+            <a href="/download" ng-click="cancelSignIn(); gaEvent('signin modal', 'proceed to download');" class="action link-hover-underlined">
+                Download App 
+                <span class="fa fa-windows" style="padding-left: 6px;"></span>
+            </a> 
+        </span>
+        <modal-dialog-buttons style="height: 30px">
+            <button ng-if="!login.inProgress" ng-disabled="!loginForm.$valid" class="gray" ng-click="doLogin(); gaEvent('signin modal', 'default sign in');"><span>Sign in</span></button>
+            <span ng-if="login.inProgress" style="font-size: 16px">Authenticating...</span>
+        </modal-dialog-buttons>
+    </form>
+    <span class="hr-delimiter" data-delimiter="Or, sign in with"></span>
+    <div class="providers">
+        <div ng-repeat="provider in externalProviders" class="provider-button {{provider.Name}}" ng-click="socialSignIn(provider.Name); gaEvent('signin modal', 'social auth', provider.Name);">{{provider.Name}}</div>
+    </div>
+</modal-dialog>
+<div>
+  
+    <!-- == M O D A L S C R I M == -->
+    <div class="modal modal--register slide-up-bottom" ng-class="{'is-visible': show.modal === 'register'}" ng-include="'/site/parts/modals/register.html'"></div>
+    <div class="modal modal--sign-in slide-up-bottom" ng-class="{'is-visible': show.modal === 'sign-in'}" ng-include="'/site/parts/modals/sign-in.html'" ensure-even-dimensions></div>
+    <div class="modal-overlay" ng-click="show.modal = ''; form.reset()"></div>
+
+</div>
+
+
+<div ng-if="demo" ng-include="'/site/parts/demo.html'"></div>
+
+<script src='/site/js/vendor/contentful.min.js'></script>
+</body>
+
+<!-- todo: remove -->
+<style>
+.modal-dialog .dialog-box.demo {
+    display: none;
+}
+
+#demo-chooser {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+#demo-chooser .btn{
+    margin: 0 20px;
+}
+</style>
+
+<div id="demo-chooser" style="display: none;">
+    <a class="btn btn-menu btn--phantom reverse" href="" onclick="window.loadMap(window.map1);">Populated Places</a>
+    <a class="btn btn-menu btn--phantom reverse" href="" onclick="window.loadMap(window.map2);">Global Temperature</a>
+</div>
+
+
+<script>
+window.map1 = {"Type":"Map","Metadata":{"Name":"New Map"},"Expanded":true,"Groups":[{"Metadata":{"Name":""},"Items":[{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"c509bb71-192b-4fa9-aa58-58ab58f43473","Name":"Pyxis"},"Providers":[{"Type":"Gallery","Id":"abaa02d7-2580-4d53-a076-cef6f95f6df5","Name":"Natural Earth"}],"Category":"Demo","Created":"2014-09-29T06:38:26.97Z","Updated":"2014-09-29T06:40:32.024Z","BasedOnVersion":"0c5e0d38-d968-4ce9-8b00-f10d09428c79","Visibility":"Public","Name":"Populated Places","Description":"Point symbols with name attributes. Includes all admin-0 and many admin-1 capitals, major cities and towns, plus a sampling of smaller towns in sparsely inhabited regions. We favor regional significance over population census in determining our selection of places. provided by http://www.naturalearthdata.com/","Tags":["Global","Populated","Places","Points"],"SystemTags":[],"ExternalUrls":[{"Type":"Image","Url":"https://www.pyxisinnovation.com/images/pipelines/1d6c092e-38be-47fa-b196-a40292934499.jpg"}]},"Specification":{"OutputType":"Feature","Fields":[{"Name":"SCALERANK","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"SCALERANK","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"NATSCALE","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"NATSCALE","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"LABELRANK","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LABELRANK","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"FEATURECLA","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"FEATURECLA","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"NAME","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"NAME","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"NAMEPAR","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"NAMEPAR","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"NAMEALT","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"NAMEALT","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"DIFFASCII","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"DIFFASCII","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"NAMEASCII","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"NAMEASCII","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"ADM0CAP","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ADM0CAP","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"CAPALT","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"CAPALT","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"CAPIN","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"CAPIN","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"WORLDCITY","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"WORLDCITY","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MEGACITY","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MEGACITY","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"SOV0NAME","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"SOV0NAME","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"SOV_A3","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"SOV_A3","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"ADM0NAME","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ADM0NAME","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"ADM0_A3","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ADM0_A3","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"ADM1NAME","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ADM1NAME","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"ISO_A2","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ISO_A2","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"NOTE","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"NOTE","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"LATITUDE","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LATITUDE","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"LONGITUDE","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LONGITUDE","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"CHANGED","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"CHANGED","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"NAMEDIFF","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"NAMEDIFF","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"DIFFNOTE","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"DIFFNOTE","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP_MAX","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP_MAX","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP_MIN","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP_MIN","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP_OTHER","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP_OTHER","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"RANK_MAX","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"RANK_MAX","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"RANK_MIN","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"RANK_MIN","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"GEONAMEID","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"GEONAMEID","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MEGANAME","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MEGANAME","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"LS_NAME","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LS_NAME","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"LS_MATCH","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LS_MATCH","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"CHECKME","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"CHECKME","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_POP10","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_POP10","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_POP20","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_POP20","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_POP50","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_POP50","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_POP300","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_POP300","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_POP310","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_POP310","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_NATSCA","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_NATSCA","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_AREAKM","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_AREAKM","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_AREAKM","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_AREAKM","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_AREAMI","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_AREAMI","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_AREAMI","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_AREAMI","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_PERKM","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_PERKM","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_PERKM","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_PERKM","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_PERMI","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_PERMI","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_PERMI","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_PERMI","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_BBXMIN","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_BBXMIN","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_BBXMIN","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_BBXMIN","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_BBXMAX","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_BBXMAX","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_BBXMAX","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_BBXMAX","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_BBYMIN","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_BBYMIN","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_BBYMIN","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_BBYMIN","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MIN_BBYMAX","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MIN_BBYMAX","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MAX_BBYMAX","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MAX_BBYMAX","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MEAN_BBXC","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MEAN_BBXC","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"MEAN_BBYC","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"MEAN_BBYC","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"COMPARE","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"COMPARE","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"GN_ASCII","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"GN_ASCII","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"FEATURE_CL","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"FEATURE_CL","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"FEATURE_CO","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"FEATURE_CO","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"ADMIN1_COD","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ADMIN1_COD","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"GN_POP","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"GN_POP","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"ELEVATION","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ELEVATION","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"GTOPO30","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"GTOPO30","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"TIMEZONE","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"TIMEZONE","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"GEONAMESNO","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"GEONAMESNO","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"UN_FID","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"UN_FID","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"UN_ADM0","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"UN_ADM0","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"UN_LAT","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"UN_LAT","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"UN_LONG","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"UN_LONG","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1950","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1950","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1955","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1955","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1960","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1960","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1965","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1965","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1970","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1970","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1975","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1975","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1980","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1980","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1985","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1985","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1990","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1990","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP1995","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP1995","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP2000","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP2000","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP2005","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP2005","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP2010","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP2010","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP2015","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP2015","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP2020","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP2020","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP2025","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP2025","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"POP2050","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"POP2050","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"CITYALT","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"CITYALT","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false}]},"Resource":{"Id":"1d6c092e-38be-47fa-b196-a40292934499","Type":"GeoSource","Version":"24f29555-eb7a-4911-bd22-58e472e8d5fb"},"Style":{"Fill":{"PaletteExpression":null,"Style":"SolidColor","Palette":null,"Color":"rgba(127,127,255,0.60)"},"Icon":{"IconDataUrl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAWRSURBVHhe7do7aERFFAbg+A4qkkIkKmpAhZQRQYMPCFZBBOOz0SLamMIiVjZCsEojBBsrIdjYWMRGAjaxkYBNbCRgk0oCNmmEgM16vnBH7t7HZpPdyW7g/vA32blzHnPmzJkzmenQoUOHDh06dOiQF3cG7w7eMwSNM/6O4K1GMvre4IPBh4OPBh8bQL8bZ/x9wbJDbg0oS/EHgox5PPhM8LngS8FXBtDvxj0bfCKYHHJ/8K7gVEdFMtzqPRJ8OsiYl4OvBV8Pvhl8awD9bpzxrwY5ZCn4ZPChoPmnMhqsjlVKhj8fXAkyZi34dvDd4HvB9wfQ78YZnxyyGlwOigrzp2iYGlDGqlslK54MZwBjknEfBr8O/hD8JfhHib8G/f2b4CfBskPeCb4RNK/5ySFvKpyQjH8q+ELQalUN/yr4W/DfYG9I/hn8Nshp5jCfec1PDnkTd0LZ+BeDVt1qpTD/Mmh1mwwclmdBUVGOBnLIm6gT2oynqFX7Odhk0HX5e/DjoPkn7gRZWCKyF4Vj2XhKjrrqbfwr+Gmw7ATy6UGfGzsdHEWysYRkT5aNp2ST8hecm5vrra+v93Z3d3sHBwf/c29vr7e5udlbWFho/K7Ef4KfBZMTyKcHfeiVvU7gZSHnqJOVJSZ7U9i3rvzS0tKFkcPg6Oiot7Ky0jhPwb+DnE0u+fRwRKoTsm+FtPrOeSGYsr1jrUnZ3vb2dmHa1cBhIqZpziBnfxAk3xGpTsi+FUysvC2vPuMdczUlZ2dnh171NpycnPQWFxdrcxf8LljeCipGZbO7QxaYmAB7rrz6J8Gagvv7+4UZo4ET5ufna/MHHZFpK6gYldzuHS5fY88FJjQxAQQpbwluXP2dnZ1C/fHg8PCwJqPgT0GLoHR2f5AL5Kixb4OU/AggiECCa4lPwsuBjY2NPjkFRQE9RKOoFJ1ZtkFT+H8UrJW3o+77Npyenl7klaq8oIozbQO3R1doyXqsMKGJCSCIQCVqnzLO8ZxYXV3tk1fwx6AokJRtT42VLA4wMQEp+9fKXWGaEwqoqsygbZgcoKmS1QEEJAe44fUpkyv8E46Pj/vkFVQYTcQBrqx9ysjWOXF+ft4nr6A8NBEH8HyfMs7s3GipCSbigFoBpI7PjarMghNxgDt6nyLjqv7a4CisygymWuBGHFA+BWoXoK2trULVPODgqsygXHQjDqjWAS4jfcosLy8XquaBXkJVZtBCJAdkqwOaKkGNiZpCwjQHnAAtCVCnOXsl2HYXqJ0Ea2trhcrjhQtWVVbQEagkz34XcBv0Vue5yotNygPK0Jpi4z4NRFVLc0QxRo/st0FoygMeMWoXIneCs7OzQv3RIPTllqqMgp8H6eF6bv9n6wdAygM6L+VmaC0Zor7eqE5gfEviw7T62cM/QVildrgenF4c4XpzjV0h7azrVofCfsDK6w5rkVt921GLTqtOyy5L+Cfouuq+2mvlrjBlFCQ1Zd3h1QfDRoNVl/AGNERRJ8rqN7XGs8LeIqTpXeCLYOv7X3oTcGNkZBXeB4Z8G/g+mIwX+jf+OFLeCtWXId0Z4dmkeI0DOr5trBo/seexQW+DtsPAF6JrkFPLYT9R4xPanCAnKE50bFu3xBUo25efw6bC+ISyE2wHOUFidDpQWJ3Q+mp0Cd02bSnzcOrUGZ+QnCAnSIxOB0dkigYGpP8O4YxaJ6mgo9RqV/9LhDM5lXM5eaqMT6CMxOh0cESqEyisYlSmMiI54zIaZ7zvVHhWnVM5l5OnzvgEp4MjUp1AURWj8lSNzgjOsJKX0Tjjfed7hityOJeTp9L4BHVCigZl6VX+RzDROON953vzqPA490bO+XGAomryq/yXaKJxxvvO9+a5NYY3ITnDCg7LW290hw4dOnTo0KFDh+nGzMx/SHLxSfpiZvgAAAAASUVORK5CYII=","Scale":0.2,"PaletteExpression":"RANK_MAX","Style":"Palette","Palette":{"Steps":[{"Value":0,"Color":"#FEF0D9"},{"Value":1,"Color":"#FDE4C0"},{"Value":2,"Color":"rgba(252,217,167,1.00)"},{"Value":3,"Color":"#FDCE90"},{"Value":4,"Color":"#FCBD7E"},{"Value":5,"Color":"#FCA96F"},{"Value":6,"Color":"#FC9660"},{"Value":7,"Color":"#F88253"},{"Value":8,"Color":"#F06D47"},{"Value":9,"Color":"#E8593B"},{"Value":10,"Color":"#DF442F"},{"Value":11,"Color":"#D02D1F"},{"Value":12,"Color":"#C1160F"},{"Value":13.5,"Color":"#B30000"}]},"Color":null}},"Active":true,"ShowDetails":true}]}],"Dashboards":[{"Widgets":[]}],"EmbeddedResources":[]};
+
+
+window.map2 = {"Type":"Map","Metadata":{"Name":"New Map"},"Expanded":true,"Groups":[{"Metadata":{"Name":""},"Items":[{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"36d7d61c-e620-4153-aa5a-3b93bb6e0377","Name":"MikeReynolds"},"Providers":[{"Type":"Gallery","Id":"b8c54d85-00dd-4e5e-95fa-268bc8249613","Name":"MikeReynolds"}],"Category":"SDK","Created":"2015-03-25T02:35:32.761Z","Updated":"2015-03-25T02:35:32.761Z","BasedOnVersion":"32a6382a-49ed-45b2-addd-75ad44a28f21","Visibility":"Public","Name":"Geology of the conterminous United States","Description":"Geology of the conterminous United States. \n\nSource: http://mrdata.usgs.gov/geology/us/","Tags":["Geology","Stratigraphy","Rock","Mineral","Resources"],"SystemTags":[],"ExternalUrls":[{"Type":"Image","Url":"http://www.pyxisinnovation.com/images/pipelines/012ad56d-d89e-4ab3-a3af-f308dc128db5.png"}]},"Specification":{"OutputType":"Feature","Fields":[{"Name":"AREA","FieldType":"Number","Metadata":{"Name":"AREA","Description":"","SystemTags":["Favorite"]}},{"Name":"PERIMETER","FieldType":"Number","Metadata":{"Name":"PERIMETER","Description":"","SystemTags":["Favorite"]}},{"Name":"KB_GEOLOGY","FieldType":"Number","Metadata":{"Name":"KB_GEOLOGY","Description":"","SystemTags":["Favorite"]}},{"Name":"KB_GEOLO_1","FieldType":"Number","Metadata":{"Name":"KB_GEOLO_1","Description":"","SystemTags":["Favorite"]}},{"Name":"ORDER_","FieldType":"Number","Metadata":{"Name":"ORDER_","Description":"","SystemTags":["Favorite"]}},{"Name":"S1","FieldType":"String","Metadata":{"Name":"S1","Description":"","SystemTags":[]}},{"Name":"UNIT","FieldType":"String","Metadata":{"Name":"UNIT","Description":"","SystemTags":[]}},{"Name":"S2","FieldType":"String","Metadata":{"Name":"S2","Description":"","SystemTags":[]}},{"Name":"ROCKDESC","FieldType":"String","Metadata":{"Name":"ROCKDESC","Description":"","SystemTags":[]}},{"Name":"METAMOR","FieldType":"String","Metadata":{"Name":"METAMOR","Description":"","SystemTags":[]}},{"Name":"ROCK","FieldType":"String","Metadata":{"Name":"ROCK","Description":"","SystemTags":[]}}]},"Resource":{"Id":"012ad56d-d89e-4ab3-a3af-f308dc128db5","Type":"GeoSource","Version":"b63176c6-dc34-4836-aa56-9d8cd27986e6"},"Style":{"Fill":{"PaletteExpression":"ROCKDESC","Style":"Palette","Palette":{"Steps":[{"Value":"Anorthosite","Color":"#FF1C8C"},{"Value":"Des Moinesian Series","Color":"#FF449C"},{"Value":"Jurassic","Color":"#FF6DAC"},{"Value":"Lower Paleozoic","Color":"#FF96BC"},{"Value":"Middle Paleozoic granitic rocks","Color":"#FFBFCC"},{"Value":"Navarro Group","Color":"#FFE8DB"},{"Value":"Pleistocene","Color":"#EAF1E5"},{"Value":"Pliocene volcanic rocks","Color":"#C0DBE8"},{"Value":"Tertiary intrusive rocks","Color":"#96C5EC"},{"Value":"Upper Mesozoic eugeosynclinal","Color":"#6DAEEF"},{"Value":"water","Color":"#1A82F6"},{"Value":"Woodbine and Tuscaloosa groups","Color":"#4398F2"}]},"Color":null}},"Active":true,"ShowDetails":true},{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"e5d51f7e-32f3-4916-ad53-dfe3faebd369","Name":"ppeterson"},"Providers":[{"Type":"Gallery","Id":"32f9cd5d-6ef6-4601-b367-109d8d288557","Name":"Microsoft Bing Maps"}],"Category":"Demo","Created":"2014-05-06T05:26:30.561Z","Updated":"2014-07-03T22:04:54.894Z","BasedOnVersion":"5f75efbb-0386-4362-8cbf-10e90cee9950","Visibility":"Public","Name":"Global Base Imagery - Terra Pixel","Description":"(C) 2013 Microsoft Digital Globe - for non commercial demonstration only","Tags":["Imagery","WebService"],"SystemTags":["WebService"],"ExternalUrls":[{"Type":"Image","Url":"https://www.pyxisinnovation.com/images/pipelines/ac8436e7-e492-4bed-ba17-e2007f6d1099.jpg"}]},"Specification":{"OutputType":"Coverage","Fields":[{"Name":"RGB","FieldType":"Color","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"RGB","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false,"Value":[110,115,85]}]},"Resource":{"Id":"ac8436e7-e492-4bed-ba17-e2007f6d1099","Type":"GeoSource","Version":"46958385-0c92-4c71-b708-1493be991900"},"Style":{"ShowAsElevation":false},"Active":true,"ShowDetails":true},{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"c509bb71-192b-4fa9-aa58-58ab58f43473","Name":"Pyxis"},"Providers":[{"Type":"Gallery","Id":"32f9cd5d-6ef6-4601-b367-109d8d288557","Name":"Microsoft Bing Maps"}],"Category":"Demo","Created":"2014-05-05T21:21:34Z","Updated":"2015-01-11T00:09:40.058Z","BasedOnVersion":"1d6a3b01-50ef-4d80-906c-9e1524d77c32","Visibility":"Public","Name":"Global Elevation (GTOPO30)","Description":"GTOPO30 is a global digital elevation model (DEM) with a horizontal grid spacing of 30 arc seconds (approximately 1 kilometer). GTOPO30 was derived from several raster and vector sources of topographic information.\r\n\r\nGTOPO30, completed in late 1996, was developed over a three year period through a collaborative effort led by staff at the U.S. Geological Survey's Center for Earth Resources Observation and Science (EROS). The following organizations participated by contributing funding or source data:  the National Aeronautics and Space Administration (NASA), the United Nations Environment Programme/Global Resource Information Database (UNEP/GRID), the U.S. Agency for International Development (USAID), the Instituto Nacional de Estadistica Geografica e Informatica (INEGI) of Mexico, the Geographical Survey Institute (GSI) of Japan, Manaaki Whenua Landcare Research of New Zealand, and the Scientific Committee on Antarctic Research (SCAR).\r\n\r\nsource: https://lta.cr.usgs.gov/GTOPO30","Tags":["Global","Elevation"],"SystemTags":[],"ExternalUrls":[{"Type":"Image","Url":"https://www.pyxisinnovation.com/images/pipelines/8be6a2ec-5110-49cf-a295-1008f8e9a21b.jpg"}]},"Specification":{"OutputType":"Coverage","Fields":[{"Name":"RGB","FieldType":"Number","FieldUnit":{"Name":"m"},"Metadata":{"Name":"Elevation","Description":"","SystemTags":[]}}]},"Resource":{"Id":"8be6a2ec-5110-49cf-a295-1008f8e9a21b","Type":"GeoSource","Version":"0329caed-c92e-49c7-b7ce-d0b81af25d97"},"Style":{"Fill":{"PaletteExpression":"RGB","Style":"Palette","Palette":{"Steps":[{"Value":-200,"Color":"rgba(0,0,0,0.0)"},{"Value":-0.06,"Color":"#000000"},{"Value":9000,"Color":"#000000"}]},"Color":null},"ShowAsElevation":true},"Active":true,"ShowDetails":true,"Legend":{"Expanded":false}}]}],"Dashboards":[{"Widgets":[]}],"EmbeddedResources":[]};
+</script>
+
+</html>
+

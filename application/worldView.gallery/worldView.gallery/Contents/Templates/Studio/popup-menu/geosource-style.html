@@ -1,0 +1,41 @@
+﻿<div class="popup-menu geosource-style">
+    <div class="icon-grid" ng-if="item.Style.Icon.IconDataUrl">
+        <div class="grid-layout" item-width="18" item-height="18" h-space="8" v-space="5" cols="2" rows="4" expand-rows="true">
+            <div ng-repeat="icon in styleModifier.styleOptions.icons track by icon.name" class="grid-item"
+                    ng-click="styleModifier.updateIcon(item,icon)" ng-class="{selected:item.Style.Icon.IconDataUrl==icon.oldDataUrl}"><img ng-src="{{icon.oldDataUrl}}" width="18px" /></div>
+        </div>
+    </div><div class="icon-size" ng-if="item.Style.Icon.IconDataUrl">
+        <div class="grid-layout" item-width="18" item-height="18" h-space="8" v-space="18" cols="1" rows="3" expand-rows="true">
+            <div ng-repeat="scale in [0.4,0.3,0.2]" class="grid-item"
+                    ng-click="styleModifier.updateIconScale(item,scale)" ng-class="{selected:item.Style.Icon.Scale==scale}">
+                <img ng-src="{{item.Style.Icon.IconDataUrl}}" width="{{64*scale}}px" style="position:relative" ng-style="{top: 8 - 64*scale/2 + 'px',left: 8 - 64*scale/2 + 'px'}" />
+            </div>
+        </div>
+    </div>
+    <div class="color-grid" ng-if="step || !(item.Specification.OutputType=='Coverage')">
+        <div ng-if="step" class="grid-layout" item-width="18" h-space="0" cols="4" rows="5" expand-rows="true">
+            <div ng-repeat="color in styleModifier.styleOptions.colors track by color" class="grid-item" ng-style="{'background-color':color}" 
+                    ng-click="styleModifier.updatePalleteStep(item,step,color)" ng-class="{selected:step.Color==color, 'is-transparent':color == 'rgba(0,0,0,0.0)'}"></div>
+        </div>
+        <div ng-if="!step && item.Style.Icon.IconDataUrl" class="grid-layout" item-width="18" h-space="0" cols="4" rows="5" expand-rows="true">
+            <div ng-repeat="color in styleModifier.styleOptions.colors track by color" class="grid-item" ng-style="{'background-color':color}" 
+                    ng-click="styleModifier.updateIconColor(item,color)" ng-class="{selected:item.Style.Icon.Color==color}" ng-if="color !== 'rgba(0,0,0,0.0)'"></div>
+        </div>
+        <div ng-if="!step && !item.Style.Icon.IconDataUrl && item.Style.Line.Style == 'SolidColor' " class="grid-layout" item-width="18" h-space="0" cols="4" rows="5" expand-rows="true">
+            <div ng-repeat="color in styleModifier.styleOptions.colors track by color" class="grid-item" ng-style="{'background-color':color}" 
+                    ng-click="styleModifier.updateLineColor(item,color)" ng-class="{selected:item.Style.Line.Color==color}"></div>
+        </div>
+        <div ng-if="!step && !item.Style.Icon.IconDataUrl && item.Style.Line.Style != 'SolidColor' " class="grid-layout" item-width="18" h-space="0" cols="4" rows="5" expand-rows="true">
+            <div ng-repeat="color in styleModifier.styleOptions.colors track by color" class="grid-item" ng-style="{'background-color':color}" 
+                    ng-click="styleModifier.updateFillColor(item,color)" ng-class="{selected:item.Style.Fill.Color==color}"></div>
+        </div>
+    </div>
+        <div class="fill-grid" ng-if="!step && !item.Style.Icon.IconDataUrl && (item.Style.Line.Style == 'SolidColor' || item.Style.Fill.Style == 'SolidColor')">
+        <div class="grid-layout" item-width="18" h-space="10" v-space="18" cols="1" rows="2" expand-rows="true">
+            <div class="grid-item" ng-class="{selected:item.Style.Fill.Color}" ng-click="styleModifier.updateFillColor(item,item.Style.Fill.Color || item.Style.Line.Color)"><div class="fill-item" ng-style="{'background-color':item.Style.Fill.Color || item.Style.Line.Color }" ></div></div>
+            <div class="grid-item" ng-class="{selected:item.Style.Line.Color}" ng-click="styleModifier.updateLineColor(item,item.Style.Fill.Color || item.Style.Line.Color)" ><div class="border-item" ng-style="{'border-color':item.Style.Fill.Color || item.Style.Line.Color }"></div></div>
+        </div>        
+    </div><div class="palette-grid" ng-if="!step && (item.Style.Icon.PaletteExpression || item.Style.Fill.PaletteExpression)">
+        <div class="palette-item" ng-repeat="palette in styleModifier.styleOptions.palettes" ng-click="styleModifier.updatePalette(item, palette)"><span class="style-palette-box" background-palette="palette"></span></div>
+    </div>
+</div>

@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>.NET Zip Library #ziplib (SharpZipLib)</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Christoph Wille - christophw@ic">
+	<META NAME="CREATED" CONTENT="20061102;14015292">
+	<META NAME="CHANGED" CONTENT="20061102;14051835">
+	<META NAME="DESCRIPTION" CONTENT="Welcome to the homepage of #ziplib (SharpZipLib, formerly NZipLib), the free open-source C# (C Sharp) implementation of zip, gzip, tar and bzip2 compression and decompression.">
+	<META NAME="KEYWORDS" CONTENT=".NET,DotNet,ASP.NET,ADO.NET,CSharp,C Sharp,C#,.NET Framework SDK,Framework,Editor,SharpDevelop,SD,Zip,GZip,NZipLib,compression,deflate,decompress,Tar,bzip,bz2,Bzip2,SharpZipLib">
+	<META NAME="robots" CONTENT="FOLLOW,INDEX">
+	<META NAME="copyright" CONTENT="(c) 2001-2006 ic#code">
+	<META HTTP-EQUIV="content-type: text/html; charset= ISO-8859-1" CONTENT="">
+</HEAD>
+<BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 STYLE="page-break-before: always">
+	<TR>
+		<TD HEIGHT=72 STYLE="background: url(http://static.icsharpcode.net/Layout/blue/balken_links.gif) repeat scroll">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics1" ALIGN=BOTTOM WIDTH=412 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=100% STYLE="background: url(http://static.icsharpcode.net/Layout/blue/balken_mitte.gif) repeat scroll">
+			<P>&nbsp;</P>
+		</TD>
+		<TD STYLE="background: url(http://static.icsharpcode.net/Layout/blue/balken_rechts.gif) repeat scroll">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics2" ALIGN=BOTTOM WIDTH=363 HEIGHT=2 BORDER=0></P>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE WIDTH=301 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<COL WIDTH=15>
+	<COL WIDTH=34>
+	<COL WIDTH=13>
+	<COL WIDTH=57>
+	<COL WIDTH=13>
+	<COL WIDTH=80>
+	<COL WIDTH=13>
+	<COL WIDTH=37>
+	<COL WIDTH=13>
+	<COL WIDTH=24>
+	<TR>
+		<TD WIDTH=15 BGCOLOR="#dcddde">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics3" ALIGN=BOTTOM WIDTH=15 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=34 BGCOLOR="#dcddde">
+			<P><FONT COLOR="#db4e2e"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><B>Home</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=13 BGCOLOR="#dcddde">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics4" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/line_hor_black.gif" NAME="graphics5" ALIGN=BOTTOM WIDTH=2 HEIGHT=15 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics6" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=57 BGCOLOR="#dcddde">
+			<P><A HREF="/OpenSource/SharpZipLib/Download.aspx"><B><SPAN STYLE="font-style: normal"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">Download</FONT></FONT></FONT></SPAN></B></A></P>
+		</TD>
+		<TD WIDTH=13 BGCOLOR="#dcddde">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics7" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/line_hor_black.gif" NAME="graphics8" ALIGN=BOTTOM WIDTH=2 HEIGHT=15 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics9" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=80 BGCOLOR="#dcddde">
+			<P><A HREF="/OpenSource/SD/Default.aspx"><B><SPAN STYLE="font-style: normal"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">SharpDevelop</FONT></FONT></FONT></SPAN></B></A></P>
+		</TD>
+		<TD WIDTH=13 BGCOLOR="#dcddde">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics10" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/line_hor_black.gif" NAME="graphics11" ALIGN=BOTTOM WIDTH=2 HEIGHT=15 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics12" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=37 BGCOLOR="#dcddde">
+			<P><A HREF="/OpenSource/SharpZipLib/Forum.asp"><B><SPAN STYLE="font-style: normal"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">Forum</FONT></FONT></FONT></SPAN></B></A></P>
+		</TD>
+		<TD WIDTH=13 BGCOLOR="#dcddde">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics13" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/line_hor_black.gif" NAME="graphics14" ALIGN=BOTTOM WIDTH=2 HEIGHT=15 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics15" ALIGN=BOTTOM WIDTH=5 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=24 BGCOLOR="#dcddde">
+			<P><A HREF="/OpenSource/SharpZipLib/GPL.asp"><B><SPAN STYLE="font-style: normal"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">GPL</FONT></FONT></FONT></SPAN></B></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=10 WIDTH=301 BGCOLOR="#dcddde"></TD>
+	</TR>
+</TABLE>
+<TABLE WIDTH=1198 BORDER=0 CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=10>
+	<COL WIDTH=100>
+	<COL WIDTH=0>
+	<COL WIDTH=0>
+	<COL WIDTH=5>
+	<COL WIDTH=1022>
+	<COL WIDTH=5>
+	<TR>
+		<TD COLSPAN=3 WIDTH=125 HEIGHT=33 BGCOLOR="#c2e0fb">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics16" ALIGN=BOTTOM WIDTH=135 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=0>
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/pixel_weiss.gif" NAME="graphics17" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD COLSPAN=3 WIDTH=1052 BGCOLOR="#a8c6e3">
+			<P><FONT COLOR="#ffffff"><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics18" ALIGN=BOTTOM WIDTH=15 HEIGHT=2 BORDER=0><B><FONT FACE="Arial, Helvetica, sans-serif">The
+			Zip, GZip, BZip2 and Tar Implementation For .NET</FONT></B></FONT></P>
+			<P><FONT COLOR="#ffffff"><FONT FACE="Arial, Helvetica, sans-serif"><B>PAGE
+			SAVED FROM URL: <A HREF="http://www.icsharpcode.net/OpenSource/SharpZipLib/">http://www.icsharpcode.net/OpenSource/SharpZipLib/</A></B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=7 WIDTH=1188>
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/pixel_weiss.gif" NAME="graphics19" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=10 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics20" ALIGN=BOTTOM WIDTH=20 HEIGHT=10 BORDER=0></P>
+		</TD>
+		<TD WIDTH=100 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics21" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD ROWSPAN=16 WIDTH=0 VALIGN=TOP BGCOLOR="#ffffff"></TD>
+		<TD ROWSPAN=18 WIDTH=0 HEIGHT=260>
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/pixel_weiss.gif" NAME="graphics35" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=5 BGCOLOR="#d6d7d8">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics36" ALIGN=BOTTOM WIDTH=15 HEIGHT=15 BORDER=0></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=1022 BGCOLOR="#d6d7d8">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics37" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=5 BGCOLOR="#d6d7d8">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics38" ALIGN=BOTTOM WIDTH=15 HEIGHT=2 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 COLSPAN=2 WIDTH=120 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics22" ALIGN=BOTTOM WIDTH=2 HEIGHT=4 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#d6d7d8">
+		<TD ROWSPAN=15 WIDTH=5 BGCOLOR="#d6d7d8">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics39" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=1022></TD>
+		<TD ROWSPAN=15 WIDTH=5 BGCOLOR="#d6d7d8">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics40" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 WIDTH=10 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics23" ALIGN=BOTTOM WIDTH=10 HEIGHT=2 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/dot_listing.gif" NAME="graphics24" ALIGN=BOTTOM WIDTH=8 HEIGHT=8 BORDER=0><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics25" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=100 BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal"><FONT COLOR="#808285"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><B>Home</B></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 WIDTH=1022 BGCOLOR="#d5ebbe">
+			<P ALIGN=JUSTIFY><SPAN STYLE="font-weight: medium"><SPAN STYLE="font-style: normal"><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Verdana, Arial, Geneva, Helvetica"><FONT COLOR="#000000">Developers
+			look to <A HREF="http://www.xceedsoft.com/redirect/ad/index.aspx?adtype=51">Xceed
+			Zip for .NET</A>, community sponsor of SharpZipLib, when they need
+			advanced Zip and streaming compression capabilities. </FONT></FONT></FONT></SPAN></SPAN>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 COLSPAN=2 WIDTH=120 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics26" ALIGN=BOTTOM WIDTH=2 HEIGHT=4 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 WIDTH=1022 HEIGHT=10 BGCOLOR="#d5ebbe"></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 WIDTH=10 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics27" ALIGN=BOTTOM WIDTH=20 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=100 BGCOLOR="#ffffff">
+			<P><A HREF="/OpenSource/SharpZipLib/ContactUs.asp"><B><SPAN STYLE="font-style: normal"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#808285">Contact
+			Us</FONT></FONT></FONT></SPAN></B></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=3 WIDTH=1022 BGCOLOR="#d5ebbe">
+			<P ALIGN=JUSTIFY><A HREF="http://www.xceedsoft.com/redirect/ad/index.aspx?adtype=52"><SPAN STYLE="font-weight: medium"><SPAN STYLE="font-style: normal"><FONT SIZE=1 STYLE="font-size: 8pt"><FONT FACE="Verdana, Arial, Geneva, Helvetica"><FONT COLOR="#000000">Sponsor</FONT></FONT></FONT></SPAN></SPAN></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=120 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics28" ALIGN=BOTTOM WIDTH=2 HEIGHT=4 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 COLSPAN=2 WIDTH=120 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics29" ALIGN=BOTTOM WIDTH=2 HEIGHT=4 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR BGCOLOR="#d6d7d8">
+		<TD ROWSPAN=6 WIDTH=1022>
+			<P><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">#ziplib
+			(SharpZipLib, formerly NZipLib) is a <STRONG>Zip, GZip, Tar and
+			BZip2 library</STRONG> written entirely in C# for the .NET
+			platform. It is implemented as an assembly (installable in the
+			GAC), and thus can easily be incorporated into other projects (in
+			any .NET language). The creator of #ziplib put it this way: &quot;I've
+			ported the zip library over to C# because I needed gzip/zip
+			compression and I didn't want to use libzip.dll or something like
+			this. I want all in pure C#.&quot; </FONT></FONT></FONT>
+			</P>
+			<H3><FONT COLOR="#000000"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">License</FONT></FONT></FONT></H3>
+			<P><FONT COLOR="#000000"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">The
+			library is released under the GPL with the following exception: </FONT></FONT></FONT>
+			</P>
+			<P><FONT COLOR="#000000"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><I>Linking
+			this library statically or dynamically with other modules is
+			making a combined work based on this library. Thus, the terms and
+			conditions of the GNU General Public License cover the whole
+			combination.<BR><BR>As a special exception, the copyright holders
+			of this library give you permission to link this library with
+			independent modules to produce an executable, regardless of the
+			license terms of these independent modules, and to copy and
+			distribute the resulting executable under terms of your choice,
+			provided that you also meet, for each linked independent module,
+			the terms and conditions of the license of that module. An
+			independent module is a module which is not derived from or based
+			on this library. If you modify this library, you may extend this
+			exception to your version of the library, but you are not
+			obligated to do so. If you do not wish to do so, delete this
+			exception statement from your version. </I></FONT></FONT></FONT>
+			</P>
+			<P><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000"><STRONG>Note</STRONG>
+			The exception is changed to reflect the latest <A HREF="http://www.gnu.org/software/classpath/classpath.html" TARGET="_blank">GNU
+			Classpath</A> exception. Older versions of #ziplib did have
+			another exception, but the new one is clearer and it doesn't break
+			compatibility with the old one. </FONT></FONT></FONT>
+			</P>
+			<P><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000"><STRONG>Bottom
+			line</STRONG> In plain English this means you can use this library
+			in commercial closed-source applications. </FONT></FONT></FONT>
+			</P>
+			<H3><FONT COLOR="#000000"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">Download</FONT></FONT></FONT></H3>
+			<P><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">You
+			can download the source code and compiled assembly from this site.
+			<A HREF="Download.aspx">Download now!</A> </FONT></FONT></FONT>
+			</P>
+			<P><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">#ziplib
+			is a by-product to our open source IDE <STRONG><A HREF="/OpenSource/SD/Default.aspx">SharpDevelop</A></STRONG>.
+			It is free, C# source code included! </FONT></FONT></FONT>
+			</P>
+			<H3><FONT COLOR="#000000"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">Credits</FONT></FONT></FONT></H3>
+			<P><FONT COLOR="#000000"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">#ziplib
+			has intially been developed by Mike Krueger, however, much
+			existing Java code helped a lot in speeding the creation of this
+			library. Therefore credits fly out to other people. </FONT></FONT></FONT>
+			</P>
+			<P><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">The
+			current maintainer of #ziplib is John Reilly. Please contact him
+			regarding features, bugs etc via the <A HREF="Forum.asp">forum</A>.
+			</FONT></FONT></FONT>
+			</P>
+			<H3><FONT COLOR="#000000"><FONT FACE="Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt">Change
+			Log</FONT></FONT></FONT></H3>
+			<P><FONT SIZE=2 STYLE="font-size: 9pt"><FONT FACE="Arial, Helvetica, sans-serif"><FONT COLOR="#000000">The
+			changes are documented in the <A HREF="http://wiki.sharpdevelop.net/default.aspx/SharpZipLib.ReleaseHistory">release
+			history</A> that can be found in our <A HREF="http://wiki.sharpdevelop.net/default.aspx/SharpZipLib.SharpZipLib">project
+			wiki</A>. </FONT></FONT></FONT>
+			</P>
+			<P><FONT COLOR="#000000">&nbsp;</FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=120 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics30" ALIGN=BOTTOM WIDTH=2 HEIGHT=4 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=120 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics31" ALIGN=BOTTOM WIDTH=2 HEIGHT=4 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=120 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics32" ALIGN=BOTTOM WIDTH=2 HEIGHT=4 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=10 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics33" ALIGN=BOTTOM WIDTH=20 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=100 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#808285"><A HREF="/OpenSource/SD/InsideSharpDevelop.aspx"><IMG SRC="http://static.icsharpcode.net/Layout/Common/InsideSharpDevelop.png" NAME="graphics34" ALT="Dissecting a C# Application: Inside SharpDevelop" ALIGN=BOTTOM WIDTH=110 HEIGHT=133 BORDER=0></A></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2 COLSPAN=3 WIDTH=125 VALIGN=TOP BGCOLOR="#ffffff"></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=3 WIDTH=1052 VALIGN=TOP BGCOLOR="#d6d7d8"></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=7 WIDTH=1188>
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/pixel_weiss.gif" NAME="graphics41" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=3 WIDTH=125 HEIGHT=10 BGCOLOR="#ffffff">
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics42" ALIGN=BOTTOM WIDTH=135 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD WIDTH=0>
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/pixel_weiss.gif" NAME="graphics43" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+		<TD COLSPAN=3 WIDTH=1052 BGCOLOR="#a8c6e3">
+			<P><FONT COLOR="#000000"><IMG SRC="http://static.icsharpcode.net/Layout/Common/blind.gif" NAME="graphics44" ALIGN=BOTTOM WIDTH=15 HEIGHT=2 BORDER=0><FONT SIZE=1><FONT FACE="Arial, Helvetica, sans-serif">Copyright
+			&copy;2000-2006 <A HREF="mailto:webmaster%20AT%20icsharpcode%20DOT%20net">IC#Code</A>.
+			All rights reserved. Want to sponsor a feature / the project? <A HREF="/OpenSource/SD/ContactUs.asp">Get
+			in touch!</A></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=7 WIDTH=1188>
+			<P><IMG SRC="http://static.icsharpcode.net/Layout/Common/pixel_weiss.gif" NAME="graphics45" ALIGN=BOTTOM WIDTH=2 HEIGHT=2 BORDER=0></P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

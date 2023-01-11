@@ -1,0 +1,1 @@
+﻿var app = angular.module('worldViewSite', ['ngRoute', 'pyxis', 'pyxis-ui', 'analytics', 'autocomplete']);

@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39EFFC79-2E12-4861-8DC9-7E59B6D2B9D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PyxNet</RootNamespace>
+    <AssemblyName>PyxNet</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\application\worldview\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <CodeAnalysisRules>-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300</CodeAnalysisRules>
+    <StartAction>Program</StartAction>
+    <StartProgram>..\third_party\NUnit-2.4.3-net-2.0\bin\nunit-x86.exe</StartProgram>
+    <StartArguments>PyxNet.dll</StartArguments>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <CodeAnalysisRules>-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1305</CodeAnalysisRules>
+    <StartAction>Program</StartAction>
+    <StartProgram>..\third_party\NUnit-2.4.3-net-2.0\bin\nunit-x86.exe</StartProgram>
+    <StartArguments>PyxNet.dll</StartArguments>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionManager.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="FileTransfer\ManifestCatalogue.cs" />
+    <Compile Include="FileTransfer\DownloadContext.cs" />
+    <Compile Include="FileTransfer\ManifestBuilder.cs" />
+    <Compile Include="FileTransfer\ManifestDownloader.cs" />
+    <Compile Include="FileTransfer\ManifestEntryDownloader.cs" />
+    <Compile Include="FileTransfer\ManifestManager.cs" />
+    <Compile Include="GeoStreamServer\PublishMessage.cs" />
+    <Compile Include="GeoStreamServer\GenerateReportMessage.cs" />
+    <Compile Include="GeoStreamServer\DataSourcesMessage.cs" />
+    <Compile Include="GeoStreamServer\GeoStreamServerMessage.cs" />
+    <Compile Include="GeoStreamServer\GeoStreamServerService.cs" />
+    <Compile Include="GeoStreamServer\LoginMessage.cs" />
+    <Compile Include="GeoStreamServer\NoOpMessage.cs" />
+    <Compile Include="GeoStreamServer\RequestConfigMessage.cs" />
+    <Compile Include="GeoStreamServer\RestartMessage.cs" />
+    <Compile Include="GeoStreamServer\MessageSender.cs" />
+    <Compile Include="GeoStreamServer\SessionSynchronization.cs" />
+    <Compile Include="GeoStreamServer\ProgressMessage.cs" />
+    <Compile Include="ICertificateValidator.cs" />
+    <Compile Include="ICertificateProvider.cs" />
+    <Compile Include="IPAddressAndPort.cs" />
+    <Compile Include="IPyxNetStackConfiguration.cs" />
+    <Compile Include="LicenseServer\LicenseCompleteMessage.cs" />
+    <Compile Include="LicenseServer\LicenseAcceptMessage.cs" />
+    <Compile Include="LicenseServer\StartPublishingMessage.cs" />
+    <Compile Include="Logging\Categories.cs" />
+    <Compile Include="Logging\LoggedEventMessage.cs" />
+    <Compile Include="Logging\LoggingClient.cs" />
+    <Compile Include="Logging\LoggingService.cs" />
+    <Compile Include="MessageSender.cs" />
+    <Compile Include="PersistentConnection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishing\CertificatePublisher.cs" />
+    <Compile Include="Publishing\Files\FileInformation.cs" />
+    <Compile Include="Publishing\Files\FileSystemPublisher.cs" />
+    <Compile Include="Publishing\Files\PublishedFileInfo.cs" />
+    <Compile Include="Publishing\Files\PublishedFileRepository.cs" />
+    <Compile Include="Publishing\PublishedCertificate.cs" />
+    <Compile Include="Publishing\PublishedNodeInfo.cs" />
+    <Compile Include="Publishing\PublishedXmlObject.cs" />
+    <Compile Include="Publishing\Publisher.cs" />
+    <Compile Include="Publishing\UsageReportsMessage.cs" />
+    <Compile Include="PyxNetStack.cs" />
+    <Compile Include="PyxNetStackDefaultConfiguration.cs" />
+    <Compile Include="Service\Certificate.cs" />
+    <Compile Include="Service\CertificateFinder.cs" />
+    <Compile Include="Service\CertificateRepository.cs" />
+    <Compile Include="Service\CertificateRequestResponse.cs" />
+    <Compile Include="Service\CertificateRequest.cs" />
+    <Compile Include="Service\CertificateRequester.cs" />
+    <Compile Include="Service\Certificates.cs">
+      <DependentUpon>Certificates.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Certificates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Certificates.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CertificateServer.cs" />
+    <Compile Include="Service\GeoSourcePermissionFact.cs" />
+    <Compile Include="Service\PipelinePermissionFact.cs" />
+    <Compile Include="Service\PublishedPipelineFact.cs" />
+    <Compile Include="Service\ResourceDefinitionFact.cs" />
+    <Compile Include="Service\ResourceFinder.cs" />
+    <Compile Include="Service\ResourceId.cs" />
+    <Compile Include="Service\ResourceInstanceFact.cs" />
+    <Compile Include="Service\ResourcePermissionFact.cs" />
+    <Compile Include="Service\ServiceBase.cs" />
+    <Compile Include="Service\ServiceFinder.cs" />
+    <Compile Include="Service\ServiceId.cs" />
+    <Compile Include="Service\ServiceInstance.cs" />
+    <Compile Include="Service\ServiceInstanceFact.cs" />
+    <Compile Include="Service\ServiceInstanceId.cs" />
+    <Compile Include="StatusMessage.cs" />
+    <Compile Include="StatusMessageRequest.cs" />
+    <Compile Include="TimedConnectionHolder.cs" />
+    <Compile Include="DataHandling\DataChunkRequest.cs" />
+    <Compile Include="DataHandling\DataDownloader.cs" />
+    <Compile Include="DataHandling\DataGuid.cs" />
+    <Compile Include="DataHandling\DataChunk.cs" />
+    <Compile Include="DataHandling\DataInfo.cs" />
+    <Compile Include="DataHandling\DataPackage.cs" />
+    <Compile Include="EncryptedMessageHelper.cs" />
+    <Compile Include="Publishing\Files\FilePublisher.cs" />
+    <Compile Include="INetwork.cs" />
+    <Compile Include="INetworkConnection.cs" />
+    <Compile Include="ITransmissible.cs" />
+    <Compile Include="KnownHubList.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageHandlerCollection.cs" />
+    <Compile Include="MessageReader.cs" />
+    <Compile Include="MessageRelay.cs" />
+    <Compile Include="MessageRelayAcknowledgement.cs" />
+    <Compile Include="MessageRelayer.cs" />
+    <Compile Include="NetworkAddress.cs" />
+    <Compile Include="NodeId.cs" />
+    <Compile Include="NodeInfo.cs" />
+    <Compile Include="ProgressiveBroadcast.cs" />
+    <Compile Include="ProgressiveBroadcastAcknowledgement.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Querier.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="QueryAcknowledgement.cs" />
+    <Compile Include="QueryHashTable.cs" />
+    <Compile Include="QueryResult.cs" />
+    <Compile Include="QueryResultList.cs" />
+    <Compile Include="SignedMessageHelper.cs" />
+    <Compile Include="Stack.cs" />
+    <Compile Include="StackConnection.cs" />
+    <Compile Include="StackConnectionRequest.cs" />
+    <Compile Include="StackConnectionResponse.cs" />
+    <Compile Include="StackConnector.cs" />
+    <Compile Include="StackSingleton.cs" />
+    <Compile Include="TcpNetwork.cs" />
+    <Compile Include="TcpNetworkConnection.cs" />
+    <Compile Include="UserId.cs" />
+    <Compile Include="XPathQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pyxis\Pyxis.Storage\Pyxis.Storage.csproj">
+      <Project>{5c69cae6-ddea-4063-a2c9-41a63bc78bdf}</Project>
+      <Name>Pyxis.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pyxis\Utilities\Pyxis.Utilities.csproj">
+      <Project>{E0263220-F917-4E71-9CB4-9D6EDE2AA8CB}</Project>
+      <Name>Pyxis.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet.DLM\PyxNet.DLM.csproj">
+      <Project>{C302E222-29A0-4A95-8E65-740FB72E6795}</Project>
+      <Name>PyxNet.DLM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PyxNet.NAT\PYXNatTraversalUPnP\PYXNatTraversal.csproj">
+      <Project>{041af7a8-5c77-4d96-98cf-342b5de11f1e}</Project>
+      <Name>PYXNatTraversal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service\Certificates.xsc">
+      <DependentUpon>Certificates.xsd</DependentUpon>
+    </None>
+    <None Include="Service\Certificates.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Certificates.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service\Certificates.xss">
+      <DependentUpon>Certificates.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"$(ProjectDir)..\..\Tools\Build\sgen" $(TargetPath) /force</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

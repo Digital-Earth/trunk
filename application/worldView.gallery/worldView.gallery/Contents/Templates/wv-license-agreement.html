@@ -1,0 +1,9 @@
+﻿<modal-dialog>
+    <h1 class="title">License Terms</h1>
+    <div class="license-content" style="margin: 40px 0px; padding: 10px; max-height: 300px; overflow-y: scroll; border: 1px solid #c4c4c4;"></div>
+    <div ng-show="errorMessage" class="text-red">{{errorMessage}}</div>
+    <modal-dialog-buttons>
+        <button class="big gray" ng-click="recordDecision('Agree')" ng-disabled="submitting"><i class="fa fa-check"></i><span>Agree</span></button>
+        <button class="big gray" ng-click="recordDecision('Disagree')" ng-disabled="submitting"><i class="fa fa-times"></i><span>Disagree</span></button>
+    </modal-dialog-buttons>
+</modal-dialog>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PyxisCLI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultCacheInDays" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">31</Value>
+    </Setting>
+    <Setting Name="RavenClient" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://2102b37516ac4c678ad5c13ea903c09f:8075daedbbcb4ca5851023d9cfec9cb3@sentry.io/1236459</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

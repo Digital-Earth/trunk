@@ -1,0 +1,28 @@
+﻿<div class="properties-popup">
+    <header class="properties-header" i18n="Properties"></header>                
+    <scrollbar class="properties">
+        <div class="prop-item" ng-repeat="item in pickedItems">
+            <div class="item-header" ellipsis-tooltip="{{item.Item.Metadata.Name}}">
+                <i ng-if="!item.Item.ShowDetails" class="expand-button expand" ng-click="item.Item.ShowDetails = true" tooltip="{{'tooltip.properties.geosource.expand'|i18n}}"></i>
+                <i ng-if="item.Item.ShowDetails" class="expand-button down" ng-click="item.Item.ShowDetails = false" tooltip="{{'tooltip.properties.geosource.expand'|i18n}}"></i>
+                {{item.Item.Metadata.Name}}
+            </div>
+            <div ng-if="item.Item.ShowDetails">
+                <div ng-repeat="field in item.ShownFields" ng-include="'/client/templates/studio/template/properties-item.html'"></div>
+                <div ng-if="item.HiddenFields.length">
+                    <div ng-if="!item.showAll">
+                        <div class="field">
+                            <span class="show-all" ng-click="item.showAll=true" i18n="Show All..." tooltip="{{'tooltip.properties.geosource.show'|i18n}}"></span>
+                        </div>
+                    </div>
+                    <div ng-if="item.showAll">
+                        <div ng-repeat="field in item.HiddenFields" ng-include="'/client/templates/studio/template/properties-item.html'"></div>
+                        <div class="field">
+                            <span class="show-all" ng-click="item.showAll=false" i18n="Hide" tooltip="{{'tooltip.properties.geosource.hide'|i18n}}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </scrollbar>
+</div>

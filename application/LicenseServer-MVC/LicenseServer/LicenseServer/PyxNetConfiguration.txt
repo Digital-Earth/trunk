@@ -1,0 +1,5 @@
+﻿License Server PyxNet Configuration
+===================================
+
+Each instance of LicenseServer must have a unique Primary and Secondary PyxNetLicenseService (PyxNet PrivateKey, NodeId, and ServiceInstance).
+The utility function CreateSerializedLicenseService() in PyxNetConfig.cs can be used to generate the Settings needed.

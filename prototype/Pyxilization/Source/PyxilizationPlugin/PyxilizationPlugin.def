@@ -1,0 +1,12 @@
+; PyxilizationPlugin.def : Declares the module parameters for the DLL.
+
+LIBRARY      "PyxilizationPlugin"
+
+EXPORTS
+    ; Explicit exports can go here
+    
+    DLLSetOwner
+	DLLAutoLoad
+	DLLGetPYXDialogEventHandler
+	DLLAddCmdResponse
+

@@ -1,0 +1,17 @@
+﻿<div>
+    <div class="resource-result">
+        <div class="section title">
+            {{resource.Metadata.Name}}
+        </div>
+        <div ng-if="resource.Metadata.Description" class="section description">
+            <div class="content">{{resource.Metadata.Description}}</div>
+        </div>
+        <div ng-switch on="resource.Feature.type" class="section title">
+            <div ng-switch-when="Feature" class="title section">
+                <button ng-click="invoke('goto', resource)" class="gray big" i18n="Goto"></button>
+                <!--Single point features are not zoom-friendly and a features_summary needs to be added for publishing
+                <button ng-click="commitImport()" class="gray big" i18n="Import"></button>-->
+            </div>
+        </div>
+    </div>
+</div>

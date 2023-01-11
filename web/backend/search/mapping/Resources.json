@@ -1,0 +1,89 @@
+{
+    "settings": { 
+      "index" : {
+        "number_of_shards": 1
+      }
+    },
+    "mappings" : {
+        "Resources" : {
+        "dynamic" : "false",
+        "include_in_all": false,
+        "properties" : {
+          "Id" : {
+            "type" : "string",
+            "index": "not_analyzed"
+          },
+          "Metadata" : {
+            "properties" : {
+              "Created" : {
+                "type" : "date",
+                "format" : "dateOptionalTime"
+              },
+              "Description" : {
+                "type" : "string",
+                "analyzer" : "standard",
+                "include_in_all": true
+              },
+              "Name" : {
+                "type" : "string",
+                "analyzer" : "standard",
+                "include_in_all": true,
+                "fields": {
+                  "completion": { 
+                    "type":  "completion",
+                    "index_analyzer" : "simple",
+                    "search_analyzer" : "simple"
+                  }
+                }
+              },
+              "Tags" : {
+                "type" : "string",
+                "analyzer" : "standard",
+                "include_in_all": true,
+                "fields": {
+                  "raw": {
+                    "type":  "string",
+                    "index": "not_analyzed"
+                  },
+                  "completion": {
+                    "type": "completion",
+                    "index_analyzer" : "simple",
+                    "search_analyzer" : "simple"
+                  }
+                }
+              },
+              "Updated" : {
+                "type" : "date",
+                "format" : "dateOptionalTime"
+              },
+              "User" : {
+                "properties" : {
+                  "Name" : {
+                    "type" : "string",
+                    "index": "not_analyzed"
+                  },
+                  "_id" : {
+                    "type" : "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "Visibility" : {
+                "type" : "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "State" : {
+            "type" : "string",
+            "index" : "not_analyzed"
+          },
+          "Type" : {
+            "type" : "string",
+            "index": "not_analyzed"
+          }
+        }
+      }
+    }
+}
+

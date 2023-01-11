@@ -1,0 +1,62 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M0.35 512l-0.35-312.074 384-52.144v364.218zM448 138.482l511.872-74.482v448h-511.872zM959.998 576l-0.126 448-511.872-72.016v-375.984zM384 943.836l-383.688-52.594-0.020-315.242h383.708z"
+				],
+				"attrs": [],
+				"tags": [
+					"windows8",
+					"brand",
+					"os"
+				],
+				"grid": 16
+			},
+			"attrs": [],
+			"properties": {
+				"id": 1352,
+				"order": 1,
+				"prevSize": 32,
+				"ligatures": "windows8, brand58",
+				"name": "windows8",
+				"code": 58880
+			},
+			"setIdx": 0,
+			"setId": 0,
+			"iconIdx": 451
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "icomoon"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "icon-",
+			"metadata": {
+				"fontFamily": "icomoon"
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"embed": false
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215
+		},
+		"historySize": 100,
+		"showCodes": false
+	}
+}

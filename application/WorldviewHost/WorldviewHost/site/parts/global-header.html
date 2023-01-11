@@ -1,0 +1,19 @@
+<div class="global-header__content">
+	<a class="brandmark" href="/" ng-click="reloadPage()">
+		<img src="/site/assets/img-logo-wv-white.png" alt="PYXIS WorldView">
+		<span class="brandmark__name hide-on-mobile">PYXIS WorldView</span>
+	</a>
+	<nav class="navigation">
+		<ul>
+			<li>
+				<a class="navigation__item" href="/browse" target="_blank">Gallery</a>
+			</li>
+			<li>
+				<ng-switch on="isSupported">
+					<a class="signup-or-download btn btn--smaller btn--rounded btn--white reverse"  ng-switch-when="true" href="/download" target="_self">Download</a>
+					<a class="signup-or-download btn btn--smaller btn--rounded btn--white reverse"  ng-switch-when="false" href="" ng-click="captureEmail.toggle($event);">Get early access</a>
+				</ng-switch>
+			</li>
+		</ul>
+	</nav>
+</div>

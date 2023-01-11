@@ -1,0 +1,129 @@
+<div class="page-features surface">
+    <div class="banner surface" resize resize-set="height">
+        <section class="container container--expanded">
+            <div class="banner__media">
+                <img ng-src="/site/assets/img-features-globe@2x.png" data-at2x="/site/assets/img-features-globe@2x.png" />
+            </div>
+            <div class="banner__content">
+                <h3 class="section-title">Create Beauty. Establish Meaning.</h3>
+                <p class="description">
+                Captured the knowledge? Now style your message using WorldView’s cartographic enhancements to achieve an extraordinary connection between your content and your audience. Create your own globe. Make an impact.    
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="">Try it for free</a>
+            </div>
+            <div class="banner__footer text-center hide-on-laptop hide-on-small-laptop hide-on-tablet hide-on-mobile">
+                <a class="link bounce" href="" ng-click="'.tour-place' | scrollTo : 0.6 : Power4.easeInOut"><i class="nc-icon-outline arrows-1_minimal-down"></i></a>
+            </div>
+        </section>
+    </div>
+    <div class="tour tour-place surface">
+        <section class="container">
+           <div class="tour__media text-center">
+                <img src="/site/assets/img-tour-one-place.png" />
+            </div>
+            <div class="tour__info">
+                <div class="svg-icon" svg-animate svg-uid="one-place-icon" json-path="/site/animations/data_place_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>   
+                <h3 class="section-title">Where is It? What is Here?</h3>
+                <p class="description">
+               Once you have the values, ask important questions using WorldView’s simple location-based search and explore bar. Find places. Discover patterns. Chart and summarize statistics. Turn data and information into worldly knowledge.
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" target="_blank" href="">Contact us</a>
+            </div>
+        </section>
+    </div> 
+    <div class="tour tour-publish surface has-border-top">
+        <section class="container">
+        <div class="tour__info text-center">
+            <div class="svg-icon" svg-animate svg-uid="on-button-icon" json-path="/site/animations/on_button_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>   
+            <h3 class="section-title">Contribute Value. Promote Collaboration.</h3>
+                <p class="description">
+                 Your PYXIS Gallery is a place to post and share insights with others.  With 1 GB of cloud storage, you can grow a community. Communicate with others.
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="" ng-if="!supports.touch" ng-click="show.modal = 'register'">Register Now</a>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="/mobile-register" ng-if="supports.touch">Register Now</a>
+            </div>
+        </section>
+    </div>
+    <div class="tour tour-embed surface" embed-animate scroll-enter on-enter-then="animateEmbed" use-boundary="middle" use-viewport="middle">
+        <section class="container">
+            <div class="tour__info">
+                <div class="svg-icon" svg-animate svg-uid="web-embed-icon" json-path="/site/animations/web_embed_icon.json" scroll-enter on-enter-then="render" use-boundary="middle" use-viewport="middle"></div>
+                <h3 class="section-title">Web Embeddable Globe</h3>
+                <p class="description">
+                Now you can share insights anywhere on the internet with the WorldView web embeddable globe! Let the world behold your beautiful wisdom, or just share with a friend or two.
+                </p>
+            </div>
+            <div class="tour__media text-center hide-on-mobile">
+                <img class="frame-imac" ng-src="/site/assets/img-tour-embed-imac.png" data-at2x="/site/assets/img-tour-embed-imac@2x.png" />
+                <img class="frame-ipad" ng-src="/site/assets/img-tour-embed-ipad.png" data-at2x="/site/assets/img-tour-embed-ipad@2x.png" />
+                <img class="frame-android" ng-src="/site/assets/img-tour-embed-android.png" data-at2x="/site/assets/img-tour-embed-android@2x.png" />
+            </div>
+        </section>
+    </div>
+    <div class="formats surface">
+        <section class="container has-border-bottom">
+            <div class="formats__header">
+                <div class="headline-and-icon">
+                    <div class="text text-center">
+                        <p class="text__name">Many Formats. Massive Data.</p>
+                        <p class="text__info">Import GIS data files and display 100x more information than existing web mapping products. <br/> WorldView is a full WxS OGC client application.  Get the values.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="formats__body">
+                <p class="format is-yellow">.TIF</p>
+                <p class="format is-orange">.SHP</p>
+                <p class="format is-orange-hot">.IMG</p>
+                <p class="format is-red">.CSV</p>
+                <p class="format is-orange">.eOO</p>
+                <p class="format is-red">.DEM</p>
+                <p class="format is-pink">.DWG</p>
+                <p class="format is-purple">.GDB</p>
+                <div ng-if="featuresCtrl.moreFeatures" class="format-more">
+                    <p class="format is-yellow">.TIF</p>
+                    <p class="format is-orange">.SHP</p>
+                    <p class="format is-orange-hot">.IMG</p>
+                    <p class="format is-red">.CSV</p>
+                    <p class="format is-orange">.eOO</p>
+                    <p class="format is-red">.DEM</p>
+                    <p class="format is-pink">.DWG</p>
+                    <p class="format is-purple">.GDB</p>
+                </div>
+            </div>
+            <div class="formats__footer text-center">
+                <a class="link link--underline reverse" href="" ng-click="featuresCtrl.moreFeatures = true" ng-if="!featuresCtrl.moreFeatures">See the Complete List</a>
+                <a class="link link--underline reverse" href="" ng-click="featuresCtrl.moreFeatures = false" ng-if="featuresCtrl.moreFeatures">Hide the Complete List</a>
+            </div>
+        </section>
+    </div>
+    <div class="tour tour-data surface">
+        <section class="container container--expanded">
+            <img class="shape-file hide-on-mobile" src="/site/assets/img-tour-data-file.png"/>
+            <div class="tour__info text-center">
+            <div class="svg-icon" svg-animate svg-uid="your-data-icon" json-path="/site/animations/your_data_icon.json" scroll-enter on-enter-then="render" use-boundary="middle"></div>
+            <h3 class="section-title">Bring Your Data</h3>
+                <p class="description">
+                WorldView can read almost any Geographic Information System file format, and you can add 100x more information at once than conventional  products like Google Maps.
+                </p>
+            </div>
+        </section>
+    </div>
+    
+    <div class="tour tour-online-or-app surface hide-on-tablet">
+        <section class="container container--expanded">
+            <div class="tour__media">
+                <div class="svg-icon" svg-animate svg-uid="cloud-plus-icon" json-path="/site/animations/cloud_plus_windows_icon.json" scroll-enter on-enter-then="render" use-boundary="middle"></div>
+            </div>
+            <div class="tour__info">
+             <h3 class="section-title">Online and App</h3>
+                <p class="description">
+               Whether you need access to answers anywhere  or utilizing the power of your Windows computer, WorldView is ready.
+                </p>
+                <a class="btn btn--small btn--rounded btn--action reverse" href="" ng-click="show.modal = 'register'">Register Online</a> 
+                <a class="link link--underline" href="/download" ng-if="!supports.touch">Download Windows App</a> 
+            </div>
+          
+        </section>
+    </div>
+</div>
+ 

@@ -1,0 +1,85 @@
+﻿<div>
+    <div class="resource-result resource-property">
+        <div class="section title">
+            {{resource.Metadata.Name}}
+        </div>
+        <div ng-if="stats" class="stats section">
+            <div class="stats-item" ng-if="stats.MaxCount !== undefined && !isCoverage">
+                <span class="on-dashboard" tooltip="{{'tooltip.properties.value.widget'|i18n}}" ng-click="addDashboardWidget('Count')"></span>
+                <span class="stat-name" i18n="Count"></span>
+                <span>{{stats.MaxCount}}</span>
+            </div>
+
+            <div class="stats-item" ng-if="stats.Max !== undefined">
+                <span class="on-dashboard" tooltip="{{'tooltip.properties.value.widget'|i18n}}" ng-click="addDashboardWidget('Max')"></span>
+                <span class="stat-name" i18n="Max"></span>
+                <span>{{stats.Max | valueFormat}} {{resource.Field.FieldUnit.Name|unitFormat}}</span>
+            </div>
+            <div class="stats-item" ng-if="stats.Average">
+                <span class="on-dashboard" tooltip="{{'tooltip.properties.value.widget'|i18n}}" ng-click="addDashboardWidget('Average')"></span>
+                <span class="stat-name" i18n="Average"></span>
+                <span>{{stats.Average | valueFormat}} {{resource.Field.FieldUnit.Name|unitFormat}}</span>
+            </div>
+            <div class="stats-item" ng-if="stats.Min !== undefined">
+                <span class="on-dashboard" tooltip="{{'tooltip.properties.value.widget'|i18n}}" ng-click="addDashboardWidget('Min')"></span>
+                <span class="stat-name" i18n="Min"></span>
+                <span>{{stats.Min | valueFormat}} {{resource.Field.FieldUnit.Name|unitFormat}}</span>
+            </div>
+        </div>
+        <div ng-if="status == 'calculating'" class="graph section">
+            <div i18n="Calculating..."></div>
+            <i class="loading-progress-icon"></i>
+        </div>
+        <div ng-if="status == 'no-selection'" class="graph section">
+            <div i18n="At this time we can't display statistics for this Property when no selection has been made on the Globe."></div>            
+        </div>
+        <div ng-if="graph" class="graph section">
+            <bar-chart mode="vertical" dataset="graph.data" graph-width="280" graph-height="100"
+                       on-bar-enter="setGraphTooltip($index,$event)"
+                       on-bar-leave="hideGraphTooltip($index,$event)"></bar-chart>
+
+            <div ng-if="tooltip.show" ng-style="{top:tooltip.top+'px',left:tooltip.left+'px'}" style="position: fixed; z-index: 100000">
+                <popup-window arrow="top center">
+                    <div class="graph-tooltip">
+                        <div class="graph-tooltip-name" scale-font-to-match text="{{tooltip.name}} {{resource.Field.FieldUnit.Name|unitFormat}}" font-min-size="10" font-max-size="14"></div>
+                        <div class="graph-tooltip-value" scale-font-to-match text="{{tooltip.value|valueFormat}}"></div>
+                    </div>
+                </popup-window>
+            </div>
+            <div style="position: absolute; left: 10px; top: 10px">
+                <span class="on-dashboard" tooltip="{{'tooltip.properties.value.widget'|i18n}}" ng-click="addDashboardWidget('Hist')"></span>
+            </div>
+        </div>
+        <div ng-if="canDoWhereIsIt && range" class="select section">
+            <div style="height: 24px;">
+                <span style="float: left">{{getRangeValue(range.min) | valueFormat}}</span>
+                <span style="float: right">{{getRangeValue(range.max) | valueFormat}}</span>
+            </div>
+            <div class="selector-area">
+                <range-selector min-range="range.minRange" max-range="range.maxRange" min="range.min" max="range.max"></range-selector>
+            </div>
+            <div style="height: 24px;" class="gray-text">
+                <span style="float: left">{{getRangeValue(range.minRange) | valueFormat}}</span>
+                <span style="float: right">{{getRangeValue(range.maxRange) | valueFormat}}</span>
+            </div>
+            <div class="options" ng-if="item">
+                <button ng-disabled="fullRange()" class="gray-hover" ng-click="doWhereIsIt()" pyx-track="search-property-where" i18n="Where is it"></button>
+            </div>
+        </div>
+        <div ng-if="resource.Metadata.Description" class="section description" ng-click="showAll=!showAll" ng-class="{clamp: !showAll}">
+            <div class="content">
+                {{resource.Metadata.Description}}
+            </div>
+        </div>
+        <div ng-if="resource.Metadata.Tags" class="section">
+            <span class="tags">
+                <span ng-repeat="tag in resource.Metadata.Tags">{{tag}}</span>
+            </span>    
+        </div>
+    </div>
+    <div class="sub-items">
+        <div class="item">
+            <search-result-resource resource="item" current-map="currentMap" action="invoke($action,$resource)"></search-result-resource>
+        </div>
+    </div>
+</div>

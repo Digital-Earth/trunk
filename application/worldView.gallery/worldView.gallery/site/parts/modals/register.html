@@ -1,0 +1,77 @@
+ <div class="modal__content" ng-controller="RegisterFormController">
+    <div class="modal__body">
+        <div class="modal__header">
+            <h2 class="title">Register</h2>
+        </div>
+        <div class="register-social">
+            <span class="register__lead">With social media:</span>
+            <div class="register__services">
+                <a class="register__service" href="">
+                    <i class="nc-icon-glyph socials-1_logo-facebook"></i>
+                </a>
+                <a class="register__service" href="">
+                    <i class="nc-icon-glyph socials-1_logo-linkedin"></i>
+                </a>
+                <a class="register__service" href="">
+                    <i class="nc-icon-glyph socials-1_logo-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="register-divider">
+            <span>OR</span>
+        </div>
+        <form class="register__form" name="registerForm" validation-schema schema="Register">
+            <div class="form-panel">
+                <div class="form-panel__split">
+                    <label class="label-small">First Name</label>
+                    <input class="input input--rounded" type="text"  name="firstName" ng-model="signUpForm.FirstName" validator="required" />
+                </div>
+                <div class="form-panel__split">
+                    <label class="label-small">Last Name</label>
+                    <input class="input input--rounded" type="text"  name="lastName" ng-model="signUpForm.LastName" validator="required"/>
+                </div>
+            </div>
+            <div class="form-panel">
+                <div class="form-panel__inner">
+                    <label class="label-small">Email</label>
+                    <input class="input input--rounded" type="email"  name="email" ng-model="signUpForm.Email" validator="required, email"/>
+                </div>
+            </div>
+            <div class="form-panel">
+                <div class="form-panel__inner">
+                    <label class="label-small">Password</label>
+                    <input class="input input--rounded" type="password" name="password" ng-model="signUpForm.Password" validator="required, minlength=6"/>
+                </div>
+                <div class="help-info"><span>?</span> </div>
+            </div>
+            <div class="form-panel">
+                <div class="form-panel__inner">
+                    <label class="label-small">Confirm Password</label>
+                    <input class="input input--rounded" type="password" name="confirmPassword" ng-model="signUpForm.ConfirmPassword"  validator="required, minlength=6"/>
+                </div>
+                <div class="help-info"><span>?</span> </div>
+            </div>
+            <div class="form-panel">
+                <div class="form-panel__inner">
+                    <label class="label-small">Gallery Name</label>
+                    <input class="input input--rounded" type="url" name="galleryName" ng-model="signUpForm.GalleryName" validator="required, url, minlength=5"/>
+                    <span class="label-small label--bottom">https://worldview.gallery/yourGalleryName</span>
+                </div>
+                <div class="help-info"><span>?</span> </div>
+            </div>
+            <div class="form__footer">
+                <div class="form-info">
+                    <p>
+                    By registering, you agree to our <a class="link link--normal" href="">Terms of Service</a> and <a class="link link--normal" href="">Privacy Policy</a>.</p>
+                    <label class="label-small label--bottom"><input type="checkbox" checked="no" />Send me Worldview newsletters.</label>
+                </div>
+                <div class="form-sumbit">
+                    <a class="btn btn--action btn--rounded btn--small" validation-submit="registerForm" href="">Register</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal__footer text-center">
+        <a class="link link--normal" href="" ng-click="show.modal = 'sign-in'; form.reset()">Have an account? Sign in</a>
+    </div>
+</div>

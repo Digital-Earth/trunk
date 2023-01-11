@@ -1,0 +1,41 @@
+<div class="static-modal modal__content">
+  <div class="static-modal__scrollContainer">
+    <div class="static-modal__header">
+      <a href="" class="static-modal-exit navigation__item" ng-click="demoInfo.exploreIsActive = false; demoInfo.hideOverlay();" ng-if="demoInfo.showCloseModalButton"><span class="nc-icon-outline ui-1_simple-remove"></span></a>
+      <h2 class="section-title display-light">Explore. Create. Share.</h2>
+      <p>On PYXIS data finds a home and a purpose. Here, you can search out answers for anything (even shark attacks) by using data for reference. <span class="italic">Take a tour.</span></p>
+    </div>
+    <div class="static-modal__content">
+      <!-- == Data Card == -->
+      <div class="data-card" ng-class="{'is-loaded': demoInfo.maps.sharkAttacksLoaded}" ng-click="demoInfo.maps.loadSharkAttacks(); demoInfo.exploreIsActive = false;
+        demoInfo.showLegend = true; demoInfo.stopGlobeSpin(); tourCommands.load('sharkAttacks')" >
+        <div class="data-card__media">
+          <img src="/site/assets/img-demo-card-sharks.jpg" />
+        </div>
+        <div class="data-card__name">
+          <h3>Shark Attacks</h3>
+        </div>
+      </div>
+      <!-- == Data Card == -->
+      <div class="data-card" ng-class="{'is-loaded': demoInfo.maps.campgroundsLoaded}" ng-click="demoInfo.maps.loadCampgrounds();  demoInfo.exploreIsActive = false;
+        demoInfo.showLegend = true; demoInfo.stopGlobeSpin(); tourCommands.load('campgrounds')">
+        <div class="data-card__media">
+          <img src="/site/assets/img-demo-card-campgrounds.jpg" />
+        </div>
+        <div class="data-card__name">
+          <h3>North America Campgrounds</h3>
+        </div>
+      </div>
+      <!-- == Data Card == -->
+      <div class="data-card" ng-class="{'is-loaded': demoInfo.maps.temperatureLoaded}" ng-click="demoInfo.maps.loadTemperature();  demoInfo.exploreIsActive = false;
+        demoInfo.showLegend = true; demoInfo.stopGlobeSpin(); tourCommands.load('temperature')">
+        <div class="data-card__media">
+          <img src="/site/assets/img-demo-card-temperature.jpg" />
+        </div>
+        <div class="data-card__name">
+          <h3>Global Temperature</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

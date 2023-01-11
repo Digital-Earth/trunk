@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html ng-app="worldViewStudio" ng-controller="worldViewStudioController">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <title i18n="PYXIS WorldView Studio"><%= title || "PYXIS WorldView" %></title>
+
+    <%- inject('/build/studio-frameworks.js') %>
+    <%- inject('/build/pyxis.js') %>
+    <%- inject('/build/studio.js') %>
+    <%- inject('/build/studio-localization.js') %>
+
+    <!--  HERE IS OUR STUDIO-WEB SHIM -->
+    <script src="/build/web-globe-bundle.js"></script>
+    <script src="/client/globe-interface.js"></script>
+    <script>
+        angular.element(document).ready(function () {
+            var injector = angular.element(".ng-scope").injector();
+            injector.get('studioShim');
+        });
+
+        // make sure assets are loaded from this folder
+        window.assetRoot = '/';
+
+        // inject the map object from the server directly here
+        window.resourceID = 'ea1939fd-ff0c-4240-a240-b809ee9cc9c1';
+        window.resourceObject = {"Type":"Map","Metadata":{"Name":"WorldView Demo","Tags":[]},"Expanded":true,"Groups":[{"Metadata":{"Name":""},"Items":[{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"e5d51f7e-32f3-4916-ad53-dfe3faebd369","Name":"ppeterson"},"Providers":[{"Type":"Gallery","Id":"a157cc15-9271-4485-b089-3e8875bb92d2","Name":"ppeterson"}],"Category":"Demo","Created":"2013-11-26T02:23:14Z","Updated":"2014-08-01T20:54:36.338Z","BasedOnVersion":"87d4f5cc-1d19-4d55-bd9e-804b17f608ce","Visibility":"Public","Name":"World Political Boundaries","Description":"World Political Boundaries 2000. Administrative boundary files are the intellectual property of ESRI and its licensors and are using herein with permission. Â© 1992-1997 ESRI, GMi. All Rights Reserved.","Tags":["Boundaries","Cultural"],"SystemTags":[],"ExternalUrls":[{"Type":"Image","Url":"https://www.pyxisinnovation.com/images/pipelines/7664e383-9d2c-494d-b3ec-5ae708623565.png"}]},"Specification":{"OutputType":"Feature","Fields":[{"Name":"HIT","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"HIT","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false,"Value":"CAL-OO"},{"Name":"COUNT","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"COUNT","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false,"Value":1},{"Name":"ID","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ID","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false,"Value":531},{"Name":"ISO_CODE","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ISO_CODE","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false,"Value":"US"},{"Name":"LEVEL_4_NA","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LEVEL_4_NA","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false,"Value":"California"},{"Name":"LEVEL_4_CO","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LEVEL_4_CO","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":"OO"},{"Name":"LEVEL_3_CO","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LEVEL_3_CO","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":"CAL"},{"Name":"LEVEL_2_RE","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LEVEL_2_RE","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":76},{"Name":"LEVEL_1_CO","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LEVEL_1_CO","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":7},{"Name":"ID 2","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"ID 2","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":52},{"Name":"LEVEL_NAME","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"LEVEL_NAME","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":"California"},{"Name":"REGION_NAM","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"REGION_NAM","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":"Southwestern U.S.A."},{"Name":"CONTINENT","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"CONTINENT","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"Value":"NORTHERN AMERICA"}]},"Resource":{"Id":"7664e383-9d2c-494d-b3ec-5ae708623565","Type":"GeoSource","Version":"ff42f986-bb66-4d40-a7f8-15f9eaeae387"},"Style":{"Line":{"Style":"SolidColor","Color":"#000000"}},"Active":true,"ShowDetails":true,"$$hashKey":"0B6"},{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"c509bb71-192b-4fa9-aa58-58ab58f43473","Name":"Pyxis"},"Providers":[{"Type":"Gallery","Id":"f6809b5e-cfa1-4d9c-b26a-04d0080eedc2","Name":"GeoliteracyAustralia"}],"Category":"Demo","Created":"2014-05-05T21:21:34Z","Updated":"2015-01-11T00:09:40.058Z","BasedOnVersion":"1d6a3b01-50ef-4d80-906c-9e1524d77c32","Visibility":"Public","Name":"Global Elevation (GTOPO30)","Description":"GTOPO30 is a global digital elevation model (DEM) with a horizontal grid spacing of 30 arc seconds (approximately 1 kilometer). GTOPO30 was derived from several raster and vector sources of topographic information.\r\n\r\nGTOPO30, completed in late 1996, was developed over a three year period through a collaborative effort led by staff at the U.S. Geological Survey's Center for Earth Resources Observation and Science (EROS). The following organizations participated by contributing funding or source data:  the National Aeronautics and Space Administration (NASA), the United Nations Environment Programme/Global Resource Information Database (UNEP/GRID), the U.S. Agency for International Development (USAID), the Instituto Nacional de Estadistica Geografica e Informatica (INEGI) of Mexico, the Geographical Survey Institute (GSI) of Japan, Manaaki Whenua Landcare Research of New Zealand, and the Scientific Committee on Antarctic Research (SCAR).\r\n\r\nsource: https://lta.cr.usgs.gov/GTOPO30","Tags":["Global","Elevation"],"SystemTags":["SLA-High"],"ExternalUrls":[{"Type":"Image","Url":"https://www.pyxisinnovation.com/images/pipelines/8be6a2ec-5110-49cf-a295-1008f8e9a21b.jpg"}]},"Specification":{"OutputType":"Coverage","Fields":[{"Name":"RGB","FieldType":"Number","FieldUnit":{"Name":"m"},"Metadata":{"Name":"Elevation","Description":"","SystemTags":["Favorite"]},"Starred":true,"OnDashboard":false,"Value":488}]},"Resource":{"Id":"8be6a2ec-5110-49cf-a295-1008f8e9a21b","Type":"GeoSource","Version":"0329caed-c92e-49c7-b7ce-d0b81af25d97"},"Style":{"Fill":{"PaletteExpression":"RGB","Style":"Palette","Palette":{"Steps":[{Value: -1000, Color:"rgba(0,0,0,0.0)"},{Value:0, Color:"#444444" },{Value:3341, Color:"#aaaaaa" },{Value:5052, Color:"#ffffff" }]},"Color":null},"ShowAsElevation":true},"Active":true,"ShowDetails":true,"Legend":{"Expanded":true},"$$hashKey":"0B7"},{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"23119ff4-b1c8-47a9-9817-65deb2d02a4e","Name":"JoJonesMaps"},"Providers":[{"Type":"Gallery","Id":"f6809b5e-cfa1-4d9c-b26a-04d0080eedc2","Name":"GeoliteracyAustralia"}],"Category":"SDK","Created":"2015-12-07T21:25:46.031Z","Updated":"2015-12-07T21:55:43.497Z","BasedOnVersion":"a00c5d8e-410f-4828-a502-cb29b4e7d0de","Visibility":"Public","Name":"2015 Annual Mean Temperature","Description":"Source: WorldClim - Global Climate Data\nThe data layers were generated through interpolation of average monthly climate data from weather stations on a 30 arc-second resolution grid (often referred to as \"1 km2\" resolution). Variables included are monthly total precipitation, and monthly mean, minimum and maximum temperature, and 19 derived bioclimatic variables.\n\nWorldClim version 1 was developed by Robert J. Hijmans, Susan Cameron, and Juan Parra, at the Museum of Vertebrate Zoology, University of California, Berkeley, in collaboration with Peter Jones and Andrew Jarvis (CIAT), and with Karen Richardson (Rainforest CRC).","Tags":["Climate","Change","Weather"],"SystemTags":[],"ExternalUrls":[{"Type":"Image","Url":"http://www.pyxisinnovation.com/images/pipelines/033b0de3-5050-40cb-bc49-cca74a06a292.png"}]},"Specification":{"OutputType":"Coverage","Fields":[{"Name":"RGB","FieldType":"Number","FieldUnit":{"Name":"C x 10"},"Metadata":{"Name":"Mean Temperature","Description":"Annual Mean Temperature","SystemTags":["Favorite"]},"Starred":true,"OnDashboard":false,"Value":184}]},"Resource":{"Id":"033b0de3-5050-40cb-bc49-cca74a06a292","Type":"GeoSource","Version":"dbc6341b-d040-40cd-a739-efca42517097"},"Style":{"Fill":{"PaletteExpression":"RGB","Style":"Palette","Palette":{"Steps":[{"Value":63.27,"Color":"#6B96FE","$$hashKey":"0EN"},{"Value":104,"Color":"#00C305","$$hashKey":"0EO"},{"Value":160.73,"Color":"#FFDD20","$$hashKey":"0EP"},{"Value":240,"Color":"#FF2B2D","$$hashKey":"0EQ"},{"Value":251.64,"Color":"#8B0000","$$hashKey":"0ER"},{"Value":262.55,"Color":"#000000","$$hashKey":"0ES"}]},"Color":null},"ShowAsElevation":false},"Active":true,"ShowDetails":true,"Legend":{"Expanded":true},"$$hashKey":"0B8"},{"Metadata":{"Comments":[{"Comment":{"Id":"1fce697a-f2d6-4dd9-8af8-ae034621925d","ResourceId":"2426f917-455a-4351-8d34-411a580af45c","Message":"Neat pattern. Obviously, the greater number of swimmers, number of reportings help explain the large circles along all three coast lines for the USA.","Created":"2015-05-17T03:02:21.185Z","User":{"Id":"7a6737a5-1582-4fc1-b1be-3f85abb9ea75","Name":"Rajkumar"}},"Replies":[]},{"Comment":{"Id":"43fb8f7a-fa6a-4698-98f0-dd1f1df8539b","ResourceId":"2426f917-455a-4351-8d34-411a580af45c","Message":"Wow - I did not know that shark attacks were so widespread.","Created":"2014-10-08T15:19:44.077Z","User":{"Id":"e5d51f7e-32f3-4916-ad53-dfe3faebd369","Name":"Perry Peterson"}},"Replies":[]}],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"641bb704-2da4-4fc4-b13a-e038049f65a0","Name":"Adamlabs"},"Providers":[{"Type":"Gallery","Id":"f6809b5e-cfa1-4d9c-b26a-04d0080eedc2","Name":"GeoliteracyAustralia"}],"Category":"Demo","Created":"2014-09-29T05:26:24.311Z","Updated":"2015-04-16T16:02:42.821Z","BasedOnVersion":"8c98f6d5-0dc2-4e74-a5e9-448c7435d5c0","Visibility":"Public","Name":"Global Shark Attacks","Description":"Data from the Global Shark Attack File  http://www.sharkattackfile.net/index.htm\nData from the mid 1800's to summer 2014","Tags":["Shark","Attack","Ocean","Fish","Water"],"SystemTags":[],"ExternalUrls":[{"Type":"Image","Url":"https://www.pyxisinnovation.com/images/pipelines/2426f917-455a-4351-8d34-411a580af45c.jpg"}]},"Specification":{"OutputType":"Feature","Fields":[{"Name":"OBJECTID","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"OBJECTID","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"Country","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Country","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"Area","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Area","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"Location","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Location","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"longitude","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"longitude","Description":"","Tags":null,"SystemTags":["Favorite"],"ExternalUrls":null},"ValueTranslation":null,"Starred":true,"OnDashboard":false},{"Name":"latititude","FieldType":"Number","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"latititude","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"Activity","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Activity","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false,"HoverDisplay":true},{"Name":"Name","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Name","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"Sex","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Sex","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"Age","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Age","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"Injury","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Injury","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"Time_","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Time_","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"Species","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Species","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false},{"Name":"Source","FieldType":"String","FieldUnit":null,"Metadata":{"Comments":null,"Ratings":null,"User":null,"Providers":null,"Category":null,"Created":"0001-01-01T00:00:00","Updated":"0001-01-01T00:00:00","BasedOnVersion":null,"Visibility":null,"Name":"Source","Description":"","Tags":null,"SystemTags":[],"ExternalUrls":null},"ValueTranslation":null,"Starred":false,"OnDashboard":false}]},"Resource":{"Id":"2426f917-455a-4351-8d34-411a580af45c","Type":"GeoSource","Version":"0ba49603-7606-4246-b37f-1c995a81001a"},"Style":{"Fill":{"PaletteExpression":null,"Style":"SolidColor","Palette":null,"Color":"rgba(57,188,232,1.0)"},"Icon":{"HoverExpression":"Injury",IconDataUrl:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA1CAYAAADxhu2sAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Rjk5NDg5RjlDMkVDMTFFNUI4RjhCMDRBOTlGRTc4MTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Rjk5NDg5RkFDMkVDMTFFNUI4RjhCMDRBOTlGRTc4MTUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGOTk0ODlGN0MyRUMxMUU1QjhGOEIwNEE5OUZFNzgxNSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGOTk0ODlGOEMyRUMxMUU1QjhGOEIwNEE5OUZFNzgxNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pi/AZ+sAAAYJSURBVHja5Ft9SJ1lFH906nSEX2gzkfymwk8EHaaVWropaagTESZE4JgYcx9QZkqaEVKjFAyDsjlCCW0g+scd+G0mKS5E01jqNJ0w6RruD7829XSed/fa1d3nfZ/33vd+qAd+f73nPfec3/N1nnPeS8gxFxsj3j2BeB0Rr4NBHfQeZeKKECCBdcQNhO9RC76ZI/iDaENkHpeRF0PHYSbihJHB66IR4XrYCHhDQQK0KDlMBHxsAgIofkdkHwYCVKwgVCoVrK2tQWtrKyQmJhpKxFcAQOTCnNLJcr6zsxN0ZWJiAgoKCsDBwUEuCf0Ib2sl4BOW42VlZaBPFhYW4NKlS3KJ+Adx3hoJeJPldFJSEojJ/fv3IScnR+5suGFtBLiwnHVxcQEeGRwchLCwMDkk3LYmAqhMs5ydnp7mIuHJkydQVVUFjo6OvCTQO4WdtRDATIObm5tBjoyPj0NISAgvCQMsEowVW5n6d5kP7t6VZQiXAhkdHSV4WvCov4bosUGxdC6Qyhql1NRUMFTq6+t5T4oOSy8BP5Zzfn5+YIz09PQImykHCd9YkgBblmO2trawsbFhFAljY2Pg6enJQ8J7liKAyhTLsampKTBWaBbJQcIW4iVLbIJU5pkP5ueNdig0NJTgciDu7u5iag6IH5Wa0lZFgJaE9vZ24uTkJKYWjYdCjSUIWGQ+WFxUbJ3FxcWRhoYGKbViRI65CVAzH6jVim42eXl55Pr161JqVebeBDNYm1NGRgYoLTR1jomJkdoUPzInAbEsR2JjY8EUQu8Zp06dkiLByVxLYIX5YGXFJIwHBQURvEBJqX1x6LNBMdne3obw8HCpWeBmDgLcWQ7g2Q2mlO7ubikCPjUHAc4sB5ydncHUcu7cOTECJuQGY2MgAb8gwvU9bGlpIWfPniVIBpcxms4ODw+Trq4ugmkwWV5eJuvr6wQvRsTf35/gCUAwaOLj4yPoDw0NCTmCiHxNnjZqnyf7m7V/GDPqdpq+wChPAcPe3h4uXLggFD1Ysrm5CTU1NRAQECBpj1606HUbgxfePXPmjCFld1psfdeQ4D80tOlBHb948SLg6bAv+P7+fggODjbIZlpaGlRXVxvTiPlOM6CSQudchxLdHy8vL2hra4OtrS0oKSkRiDHGngH9hoP4WSr4XMS/SrfBOO/65sJVVvBFVuSkqfFM9vj2MQqeIk03FaZZVD3P5hAZGUkqKyvJwMAAmZubIw8ePBAqvHV1dSQ+Pl72Luvm5kYuX75MVCoVmZ2dFezhCUJu3rxJ0tPTCe4Z/De1jAwyMjIi1CYaGxsJLjsx9X3O/iTFWGhoKNy5c4erwBkREcF1ShQXF8Pq6qpkDyE5OVnSHj0ed3Z25GSPA3vVFSnjtMn5+PFjWbl7RUWFkBPos4eJDfT29srKAnFEwdXVlbnB3rt375l3dnd3xeLa1RJwVSx4VveXR2ihNDc3F06ePLnXR+QZdZY8fPgQCgsL90ro1G5WVhbgUtSrj0tTjIBRLQG3WUr5+fmK5PB0JB49eqTovYCSSGea2G8mJCSIEbBXU1xmKWFurtc4DebatWvg7e0NHh4eUFRUBGq12qiA8D4AUVFRwjSnswY3RKPslZaWSu0b57UEbLKUaM5+UGZmZiAwMFDvOqSfycgVmiFeuXIFbGxs9tmjVSB6X6AjKXe2lZeX8xyDXloCulhKNO/WlaWlJfD19RU1jEcXTE5OcjlLTxWpLnF0dDT09fVx2aODk5KSwhP8l7pHYIWYcmZmJtTW1gpT6vTp09wXIUrErVu3hJqedq3SIiclhzZEaQ1RTuKC12DAXEM4FrUnErVLl0pTUxNkZ2eDnZ0dj62hgwnBW8csA4zQlxVNHJPgC8XSwqMe/PumKn6sK+zotML2RjXZLpckIP6UYbxB0639ViFnP+DZmGWg1pAymD3ie8SMiOFf6YcKB95L1xChlunkAuIzPaWq5xCfI+Zk2ltF/IB4R4mq8Avk/7/ELOtUWXcl3ntF571XEf7k6Sf324i/DlRs5zj8eJHs/3vOy5qB2kH8jfhNxx53efw/AQYA9lIwpSFoJxMAAAAASUVORK5CYII=","Scale":0.2,"PaletteExpression":null,"Style":"SolidColor","Palette":null,"Color":"#39BCE8"}},"Active":true,"ShowDetails":true,"$$hashKey":"0B9"},{"Metadata":{"Comments":[],"Ratings":{"Likes":0,"Dislikes":0},"User":{"Id":"36d7d61c-e620-4153-aa5a-3b93bb6e0377","Name":"MikeReynolds"},"Providers":[{"Type":"Gallery","Id":"b8c54d85-00dd-4e5e-95fa-268bc8249613","Name":"MikeReynolds"}],"Category":"SDK","Created":"2015-06-29T17:26:20.979Z","Updated":"2015-06-29T17:26:20.979Z","BasedOnVersion":"1ea14660-dcfe-4d07-96bb-e1501d580093","Visibility":"Public","Name":"North American Campgrounds (more than 20,000)","Description":"Over 20,375 campgrounds including name, address, and telephone numbers.\n\nSource: http://www.poi-factory.com/node/41987","Tags":["Camp","Camping","Campground","Travel","Tour"],"SystemTags":[],"ExternalUrls":[{"Type":"Image","Url":"http://www.pyxisinnovation.com/images/pipelines/6c733647-8e86-454f-a4d9-6a8ed153347d.png"}]},"Specification":{"OutputType":"Feature","Fields":[{"Name":"LONG","FieldType":"Number","Metadata":{"Name":"LONG","Description":"","SystemTags":["Favorite"]},"Starred":true,"OnDashboard":false},{"Name":"LAT","FieldType":"Number","Metadata":{"Name":"LAT","Description":"","SystemTags":["Favorite"]},"Starred":true,"OnDashboard":false},{"Name":"CAMPGROUND","FieldType":"String","Metadata":{"Name":"CAMPGROUND","Description":"","SystemTags":["Favorite"]},"Starred":true,"OnDashboard":false,"HoverDisplay":true},{"Name":"ADDRESS","FieldType":"String","Metadata":{"Name":"ADDRESS","Description":"","SystemTags":["Favorite"]},"Starred":true,"OnDashboard":false},{"Name":"CITY / TOWN","FieldType":"String","Metadata":{"Name":"CITY / TOWN","Description":"","SystemTags":["Favorite"]},"Starred":true,"OnDashboard":false},{"Name":"ZIP / POSTAL","FieldType":"String","Metadata":{"Name":"ZIP / POSTAL","Description":"","SystemTags":[]},"Starred":false,"OnDashboard":false},{"Name":"TELEPHONE","FieldType":"String","Metadata":{"Name":"TELEPHONE","Description":"","SystemTags":[]},"Starred":false,"OnDashboard":false}]},"Resource":{"Id":"6c733647-8e86-454f-a4d9-6a8ed153347d","Type":"GeoSource","Version":"c1e84d83-aa28-4081-b322-90c566948796"},"Style":{"Icon":{"HoverExpression":"CAMPGROUND","IconDataUrl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94MCBcSAms3thsAAAPvSURBVHhe7Zo9aBRBFMfjFwQVCSgSBSUg9ieCnB+FlRwieH4S0N4UFrEyhY2NaYRglSaNVQqL2EjAXgI2qWxsrkx5jRCwWf8/2YHd2Zl1N+7txzF/+DW3s3fvzXtv5u3czgQFBQUFBQUFBdWjw+KoOOaBa4yZSh0Rx8UZcU6ct+AzrjGGsVMlHDopLoqeuC5uWfAZ1xjD2KmZBFKaqOLYNTEQ98UDCz7jGmMYyz1TUQ7U9llxReDgQ/FEPLXgM64xhrHcw72HRGdFBEnnS+K2INI4+kp8sngjuMYYxl4Wp0RnS4HImehfFXfFY0G0v4vIYiyeCcbcE33R6VIgckSQSJro4/w7YTtv+CgY80jYpdApJRc+IklETfRHwuU8kAUvRLIUKB/KqFNZYC98RBTnPwiX40m+CMYyYZQN5dOpLPAtfM8FEXY5neS3IAuYhE5mgW/ho75dDrtgkexkFriijyNE9JdIOdrv96Pl5eXUZwlei85lgS/61HXGyd3d3Whvby+anZ3NXBM/hC8LWtkc+aL/UlDXKQeHw2FktLq6mrqW4L1IZkFrm6NSTQ8RH41GsftRtL+/H83Pz6fGxLBlmixodXPka3qo44xj1L2t9fX1zLiY1jdHRMLX9PwUKYfm5ub+1r1LvV4vNTaGrZMttLXNkUl9u+mhfjMOra2txe5mtbW1lRkfw8OSKYVWbYuuhc80PZmWlzqn3vM0GAxS98S0tjnyLXzOpmdzczN20y+2Rte9onUtsiv6GOhseanvolpcXEzdm6BVzZEv+p9Fxvjt7e3YvX8rpzlqTYvsiz51mtv0FFVOi/xWNJ4Fvuh/FRmjqeuyGo/HRZojOwtqaZF90Xc2PUtLS7FL5cWW6fpO0ViLXLrl9TU9RcSWubCwkPrOmMbOD0ud862srMSuHFw5zVHtLTIzW/icr0jTU1Q5LXKt54cm9Qud8+W1vGW1s7OT+f6Y2poj18LnPecjYlVF34it1P4dUVuL7Fv4nC0vdVu12Eqbao6YyRPC3va853yTUsnzQ2yuJAt4aYH/7an9ZPS953yTUonzQ2zFZmz/b5FKvLxwQ/AXNrXvPOdrGJojbMNGbMXmSsqAL+ENjptiKJhpDihcRjTJN4Ft2Iit2FzZBDCbvMFhMoD6z6z+DUI2sg6YDMDWyjLArAG8vpLc/zeEy5gmMP2A6QqxtbI1gJX0IP/01kUtzwWuZwDSjUloA9hitsCJPBkmnwLZYu4Iao0fbQPYgk3JB6LKzwZMKVwQvlfdmsK8YodtE30kJq34gdOCVTb5omOTYAs2YdvED0WYXVZX0qxNYNPEIh8UFBQUFBQUFBQ0VZqZ+QOVaqI2UZtb/QAAAABJRU5ErkJggg==","Scale":0.2,"Style":"SolidColor","Color":"#15520C"}},"Active":true,"ShowDetails":true,"$$hashKey":"0BA"}],"$$hashKey":"0B4"}],"Dashboards":[{"Widgets":[],"$$hashKey":"0D1"}],"EmbeddedResources":[],"$$hashKey":"01T"};
+
+    var items = window.resourceObject.Groups[0].Items;
+    window.resourceDemoLayers = [items[0], items[1], items[2], items[3], items[4]];
+    window.demoBaseLayers = [items[0], items[1]];
+    window.demoLayersSharkAttacks = [items[3]];
+    window.demoLayersCampgrounds = [items[4]];
+    window.demoLayersTemperature = [items[2]];
+
+    // set to elevation only
+    window.resourceObject.Groups[0].Items = [items[1]];
+    </script>
+
+
+    <script type="text/javascript" src="/build/studio-templates.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <%- inject('/build/studio-landing-skin.js') %>
+
+    <% if(isLocal){ %>
+        <link rel="stylesheet" href="/assets/styles/font-awesome.min.css"/>
+        <style rel="stylesheet">
+            @font-face {
+                font-family: 'Relative Medium';
+                src: url('/assets/fonts/Relative-Medium.otf') format('opentype');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Relative Book';
+                src: url('/assets/fonts/Relative-Book.otf') format('opentype');
+                /*font-weight: 100;*/
+                font-style: normal;
+            }
+        </style>
+        <link rel="stylesheet" media='screen' href='/site/css/app.css'>
+        <link rel="stylesheet" type="text/css" href="/assets/styles/studio.css"/>
+        <link rel="stylesheet" type="text/css" href="/assets/styles/landing.css"/>
+    <% } else { %>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" media='screen' href='/site/css/app.css'>
+        <link rel="stylesheet" type="text/css" href="/assets/styles/studio.css"/>
+        <link rel="stylesheet" type="text/css" href="/assets/styles/landing.css"/>
+    <% } %>
+
+    <style rel="stylesheet">
+
+        .dashboard-window .scrollbar-area .scrollbar-content {
+            overflow: visible !important;
+        }
+
+        .search-box-tag {
+            top: 5px !important;
+        }
+
+        .dg.ac {
+            position: absolute;
+            top: 70px;
+        }
+
+        .dg.a .save-row {
+            position: absolute;
+        }
+
+        .dg.main {
+            min-width: 500px;
+        }
+
+        .dg .selector {
+            min-width: 140px;
+        }
+
+/*        .nav-tools {
+            display: none;
+        }*/
+
+        .dialog-box.demo {
+            display: none;
+        }
+
+        .modal-dialog .dialog-box.demo {
+            left: 30px;
+            top: 100px;
+        }
+
+
+        .library {
+            display: none;
+        }
+
+        .dashboard-window {
+            background: transparent;
+            right: 0;
+            border-left: none !important;
+        }
+
+        .header__container {
+            display: block !important;
+        }
+
+        .header.is-active {
+            background-color: transparent !important;
+            border-color: transparent !important;
+        }
+
+        .header.is-active .header__container {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .header.on-white .btn--phantom.reverse-transparent {
+            border-color: black;
+        }
+
+        .header.on-white .btn--phantom.reverse-transparent:hover {
+            background: white;
+        }
+
+
+        .header.default {
+            background: transparent !important;
+        }
+
+        .bottom-border {
+            display: none;
+        }
+
+        .globe-controls {
+            right: 0 !important;
+        }
+
+
+        /* MOVE TO Separate file */
+        body, html {
+            background-color: #C7C7C7;
+        }
+
+        .loading-title {
+            position: fixed;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            margin-left: -400px;
+            width: 800px;
+            /*transform: translateX(-50%) translateY(-50%);*/
+            font-size: 32px;
+            text-align: center;
+            line-height: 1.3;
+            pointer-events: none;
+        }
+
+        .loading-bar {
+            background: rgba(0, 0, 0, 0.1);
+            height: 12px;
+            position: fixed;
+            bottom: 10px;
+            width: 120px;
+            left: 28px;
+            pointer-events: none;
+            border: solid rgba(255,255,255,0.4) 3px;
+        }
+
+        .loading-bar > span {
+            display: block;
+            position: absolute;
+            background: black;
+            width: 0%;
+            height: 6px;
+        }
+
+        html, body {
+            background-color: #272525;
+        }
+
+        .header .search {
+            display: none;
+        }
+
+        #loading-title {
+            display: none;
+        }
+
+        .legend-container {
+            left: -1000px !important;
+        }
+
+        #demo-link {
+          pointer-events: all;
+        }
+
+    </style>
+
+    <script>
+    // set these for the landing configuration
+    window.globeConfig = {
+        disableZoomControls: false,
+        defaultTheme: 'landingGlobeConfig',
+        enableGlobeSpin: true, // wait until load to set this
+        rangeLimitMin: 500000.0,  // in meters
+        HoverDisplay: {
+          "6c733647-8e86-454f-a4d9-6a8ed153347d": {
+            field: 'CAMPGROUND', title: 'Campground'
+          },
+          "2426f917-455a-4351-8d34-411a580af45c": {
+            field: 'Activity', title: 'Event'
+          }
+        }
+    }
+    </script>
+
+    <% if (backendUrl) { %>
+        <script type="text/javascript">
+            window.pyxisBackendUrl = "<%= backendUrl %>";
+        </script>
+    <% } %>
+
+    <!-- Intercom snippet - https://app.intercom.io -->
+    <script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/cnp6v6cw'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()</script>
+</head>
+
+
+<body ng-keyup="globeKeyUp($event)" ng-cloak>
+
+<!-- == Landing Header == -->
+<header ng-include="'/site/parts/global-header.html'" class="global-header"></header>
+
+<!-- == Main Call To Action == -->
+<div id="landing-container" class="landing__banner text-center disablemouse" fade-in-intro fade-in-init="demoInfo.set('overlayIsActive', true);" fade-in-done="demoInfo.set('exploreIsActive', true);">
+    <div class="header-inner">
+        <h1 class="headline-landing display-light">
+            <span class="headline-landing__brandname">PYXIS WorldView.</span> 
+            <span class="headline-landing__tagline" ng-if="supports.webgl">Where your globe comes to life.</span>
+            <span class="headline-landing__tagline text-small" ng-if="!supports.webgl">It looks like your browser doesn't support WebGl. Don't worry you can still explore the WorldView Gallery.</span>
+        </h1>
+        <div class="headline-landing__description display-light">
+            <a class="navigation__item reverse go-next" href="" ng-click="skipToEnd()"><span>Next</span> <span class="icon nc-icon-glyph arrows-1_tail-right"></span></a>
+            <p>On any given day we have questions about our world. We expect answers.</p>
+            <p>The globe is your canvas. Search and explore the Earth. Find places and discover spaces.</p>
+            <p>This is PYXIS WorldView, a new platform designed for business, education and human curiosity.</p>
+        </div>
+
+        <a id="demo-link" class="btn btn--small btn--rounded btn--white get-exploring " href="" ng-if="supports.webgl">Explore now</a>
+        <a class="btn btn--small btn--rounded btn--white" href="/browse" target="_self" ng-if="!supports.webgl">Explore the gallery</a>
+        <a class="btn btn--small btn--rounded btn--white" href="" ng-if="userDevice === 'Mobile' && supports.webgl" ng-click="captureEmail.toggle($event);">Get early access</a>
+    </div>
+</div>
+
+<!-- == Demo Legend  == -->
+<div ng-if="demoInfo.showLegend" demo-legend legend-map="currentMap" legend-prune="['8be6a2ec-5110-49cf-a295-1008f8e9a21b', '7664e383-9d2c-494d-b3ec-5ae708623565']"  legend-event="{'on': 'iconHoverStart', 'off': 'iconHoverEnd'}" ng-include="'/site/parts/static-legend.html'"></div>
+
+<!-- == Templates  == -->
+<div ng-repeat="url in templates.sections" ng-include="url"></div>
+<div ng-repeat="url in templates.dialogs" ng-include="url"></div>
+<div ng-repeat="url in templates.widgets" ng-include="url"></div>
+
+<div id="Intercom" ng-show="intercomEnabled" class="landing">
+</div>
+
+<div class="loading-bar"><span></span></div>
+
+<!-- == Landing Footer == -->
+<footer ng-include="'/site/parts/global-footer.html'" class="global-footer"></footer>
+
+<!-- == Modals == -->
+    <div class="modal demo-info-modal slide-up-bottom" ng-class="{'is-visible is-open': demoInfo.exploreIsActive}" ng-include="'/site/parts/modals/demo-info.html'" ensure-even-dimensions></div>
+    <div class="modal share-modal slide-up-bottom" ng-class="{'is-visible': demoInfo.shareIsActive}"  ng-include="'/site/parts/modals/share.html'"></div>
+    <div class="static-modal-overlay" ng-if="demoInfo.shareIsActive || demoInfo.exploreIsActive || demoInfo.overlayIsActive" transition-props="{autoAlpha: 1}" transition-duration="0.4"></div>
+
+<!-- == Globe Tour == -->
+<div class="tour-bubble" feature-tour="globeTour">
+    <div class="tour-bubble__wrapper" ng-if="tourCommands.play">
+        <div class="tour-bubble__container" ng-if="tourCommands.partSection">
+            <div class="tour-bubble__arrow" ng-if="tourCommands.partSection.arrowUrl">
+                <img ng-src="{{tourCommands.partSection.arrowUrl}}" />
+            </div>
+            <div class="tour-bubble__header">
+                <span>{{tourCommands.partSection.headline}}</span>
+            </div>
+            <p class="tour-bubble__caption">
+                {{tourCommands.insert('tour-bubble__caption', tourCommands.partSection.caption)}}
+            </p>
+            <div class="tour-bubble__footer">
+                <a class="tour-next navigation__item reverse" href="" ng-if="tourCommands.getIndex() < tourCommands.currentPart.steps.length - 1" ng-click="tourCommands.control('next')">Next</a>
+                <a class="tour-next navigation__item reverse" href="" ng-if="tourCommands.getIndex() === tourCommands.currentPart.steps.length - 1" ng-click="tourCommands.kill()">Done</a>
+                <a class="tour-prev navigation__item reverse" href="" ng-if="tourCommands.getIndex() > 0" ng-click="tourCommands.control('prev')">Prev</a>
+            </div>
+        </div>
+    </div>
+
+<script>
+// used to turn on theme controls
+window.themeControlsEnabled = false;
+
+function animateCamera() {
+    window.GC.config.enableGlobeSpin = true;
+
+    // fade in the globe
+    TweenMax.to('#globe-default', 10.0, {opacity: 1.0, ease: Quad.easeOut});
+}
+
+TweenMax.set('#globe-default', {autoAlpha: 0});
+setTimeout(animateCamera, 5500);
+
+</script>
+
+</body>
+</html>

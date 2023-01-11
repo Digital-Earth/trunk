@@ -1,0 +1,207 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html ng-app="worldViewStudio" ng-controller="worldViewStudioController">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/contents/images/favicon.ico" type="image/x-icon">
+    <title i18n="PYXIS WorldView Studio">PYXIS WorldView Studio</title>
+
+    @Scripts.Render("~/bundles/studio-demo-frameworks")
+    @Scripts.Render("~/bundles/pyxis")    
+    @Scripts.Render("~/bundles/studio")
+    @Scripts.Render("~/bundles/studio-localization")
+    
+
+    <!--  HERE IS OUR STUDIO-WEB SHIM -->
+    <script src="/studio-demo/interface.js"></script>
+    <script>
+        angular.element(document).ready(function () {
+            var injector = angular.element(".ng-scope").injector();
+            injector.get('studioShim');
+        });
+    </script>  
+
+
+    @*//we need to use BundleResolver.Current.GetBundleUrl as Scripts.Render doesn't run the transforms on debug *@
+    <script type="text/javascript" src="@BundleResolver.Current.GetBundleUrl("~/bundles/studio-templates")"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    @Scripts.Render("~/bundles/studio-web-skin")
+
+    @if (Request.IsLocal)
+    {
+        <link rel="stylesheet" href="/contents/styles/font-awesome.min.css"/>
+        <style rel="stylesheet">
+            @@font-face {
+                font-family: 'Relative Medium';
+                src: url('/contents/fonts/Relative-Medium.otf') format('opentype');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @@font-face {
+                font-family: 'Relative Book';
+                src: url('/contents/fonts/Relative-Book.otf') format('opentype');
+                /*font-weight: 100;*/
+                font-style: normal;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/studio.less"/>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css"/>
+    }
+    else
+    {
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        @*request font directly from the fontdeck to avoid font flickering*@
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/4Vr8HX3Uht31GB0HW+UwdlHXdZQ/@Request.Url.Host/44896.css" type="text/css"/>
+        <script src="https://f.fontdeck.com/s/css/js/@Request.Url.Host/44896.js"></script>
+        @*<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+	    <script>
+	        WebFont.load({ fontdeck: { id: '44896' } });
+	    </script>*@
+        <link rel="stylesheet" type="text/css" href="/contents/styles/studio.css"/>
+        <link rel="stylesheet" type="text/css" href="/contents/styles/pyxis-ui.css"/>
+    }
+
+    <style rel="stylesheet">
+
+        .dashboard-window .scrollbar-area .scrollbar-content {
+            overflow: visible !important;
+        }
+
+        .search-box-tag {
+            top: 5px !important;
+        }
+
+        .dg.ac {
+            position: absolute;
+            top: 70px;
+            display: none;
+        }
+
+        .dg.a .save-row {
+            position: absolute;
+        }
+    </style>
+
+    @if (ViewBag.Funcunit == true)
+    {
+        <link rel="stylesheet" type="text/css" href="/test/jasmine.css"/>
+    }
+
+    @if (ViewBag.BackendUrl != null)
+    {
+        <script type="text/javascript">
+            window.pyxisBackendUrl = "@Html.Raw(ViewBag.BackendUrl)";
+        </script>
+    }
+</head>
+
+<body ng-keyup="globeKeyUp($event)">
+<!-- Page Header: tools, searchbar, logo and main menu -->
+<div class="header default" stop-propagation="keyup" ng-show="!screenCapture.active">
+    <div class="bottom-border"></div>
+    <div style="float: right"><img src="/Contents/Images/Studio/wv_top_logo.png" style="height: 36px; margin-right: 20px; margin-top: 20px;"/>
+    </div>
+    <div class="tools">
+        <div popup-template="/popup-menu/main.html" placement="bottom" popup-group="popup-menu" show-trigger="click" class="tool-button">
+            <span class="header-nav-menu" tooltip="{{'tooltip.menu.menu'|i18n}}"></span>
+        </div>
+    </div>
+    <div class="search" delayed-hover delayed-leave="hideSearchWindow($event)" delay="2000">
+        <div class="search-box" ng-click="showSearchWindowIfNeeded()" onscroll="this.scrollTop = 0">
+            <search-box-tag ng-repeat="tag in searchTags" tag="tag"></search-box-tag>
+            <input ng-disabled="!uiActive" type="text" ng-model="search" i18n-placeholder="Search" ng-change="searchChanged()" ng-keyup="handleSearchKey($event)" focus-on="searchResultActive" elastic-input width-padding="40" width-method="max" tooltip="{{'tooltip.search'|i18n}}" />            
+            <div class="search-icon" ng-click="searchIconClick()" ng-class="{'kill':search.length}"></div>
+        </div>
+        <div ng-if="currentMap" class="select-tools" popup-template="/popup-menu/tools.html" placement="bottom center">
+            <div class="tool {{currentTool.name}}" tooltip="{{'tooltip.tools.menu'|i18n}}"></div>
+        </div>
+        <div class="suggestions" ng-show="searchResultWindowActive">
+            <scrollbar class="services">
+                <div ng-repeat="service in services" ng-class="{service:service.results.length}">
+                    <div ng-if="service.results.length">
+                        <div class="name">{{service.name}}</div>
+                        <div ng-repeat="result in service.results | limitTo:service.resultLimit"
+                             class="result"
+                             ng-click="selectSearchResult(result)" ng-dblclick="addResource(result)"
+                             ng-class="{'selected':result===currentSearchResult}">{{result.Metadata.Name}}</div>
+                        <div class="show-more" ng-if="service.resultLimit < service.results.length" ng-click="service.resultLimit=50">Show All</div>
+                    </div>
+                </div>
+            </scrollbar>
+            <div class="results">
+                <div ng-if="currentSearchResult">
+                    <div ng-switch on="currentSearchResult.Type">
+                        <div ng-switch-when="Gallery">
+                            <search-result-resource resource="currentSearchResult" current-map="currentMap" action="handleSearchAction($action,$resource)"></search-result-resource>
+                        </div>
+                        <div ng-switch-default>
+                            <scrollbar class="results-scroll">
+                                <search-result-resource resource="currentSearchResult" current-map="currentMap" action="handleSearchAction($action,$resource)"></search-result-resource>
+                            </scrollbar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-repeat="url in templates.sections" ng-include="url"></div>
+<div ng-repeat="url in templates.dialogs" ng-include="url"></div>
+<div ng-repeat="url in templates.widgets" ng-include="url"></div>
+
+@if (ViewBag.Funcunit == true)
+{
+    //load end2end unit testing framework 
+    <script src="/test/jasmine.js"></script>
+    <script src="/test/jasmine-html.js"></script>
+    <script src="/test/funcunit.js"></script>
+    
+        
+    //load specs
+    <script src="/test/e2e/functional-studio.js"></script>
+    <script src="/test/e2e/basic-functions-tests.js"></script>
+    <script src="/test/e2e/edit-tests.js"></script>
+    <script src="/test/e2e/import-tests.js"></script>
+    <script src="/test/e2e/style-tests.js"></script>
+    <script src="/test/e2e/property-window-tests.js"></script>
+    <script src="/test/e2e/selection-tests.js"></script>
+   
+    //supporting ui
+    <script src="/test/test-controller.js"></script>
+    <div class="tests-runner" ng-controller="testController" ng-class="{expanded:tester.expanded}">
+        <i style="float: right" class="fa fa-arrow-circle-up" ng-click="tester.expanded=true" ng-if="!tester.expanded"></i>
+        <i style="float: right" class="fa fa-arrow-circle-down" ng-click="tester.expanded=false" ng-if="tester.expanded"></i>
+        <button ng-class="{gray:tester.customMode,'gray-hover':!tester.customMode}" ng-click="tester.toggleCustomMode()" style="float: right">Custom</button>
+        <div ng-if="!tester.customMode">
+            <button ng-click="tester.runAllTests()" class="gray">All</button>            
+            <button ng-repeat="(name,test) in tests" ng-click="tester.run(test)" class="gray-hover">{{name}}</button>
+        </div>
+        <div ng-if="tester.customMode">
+            <button class="gray" ng-click="tester.runCustomTest()">Run</button>
+            <button ng-click="tester.saveCustomTest()" class="gray-hover">Save</button>
+            <button ng-click="tester.loadCustomTest()" class="gray-hover">Load</button>
+            {{tester.compileError}}
+            <textarea style="height: 400px; width: 100%" ng-model="tester.customTest"></textarea>
+        </div>
+        <div ng-if="tester.expanded">
+            <div class="small-text">
+                last click index: {{cursor}}
+            </div>
+            <div class="small-text">
+                <span ng-click="tester.updateCamera()">camera: </span>{{camera}}
+            </div>
+        </div>
+
+        <div class="test-result"></div>
+    </div>
+}
+
+</body>
+</html>

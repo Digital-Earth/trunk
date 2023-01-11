@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0" updateSequence="3535" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://129.194.231.213:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>EnviroGRIDS Web Map Service</Title>
+    <Abstract>EnviroGRIDS WMS</Abstract>
+    <KeywordList>
+      <Keyword>WFS</Keyword>
+      <Keyword>WMS</Keyword>
+      <Keyword>GEOSERVER</Keyword>
+      <Keyword>ENVIROGRIDS</Keyword>
+    </KeywordList>
+    <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>Gregory Giuliani</ContactPerson>
+        <ContactOrganization>University of Geneva &amp; UNEP/GRID-Geneva</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>Scientific collaborator</ContactPosition>
+      <ContactAddress>
+        <AddressType/>
+        <Address>7 route de Drize</Address>
+        <City>Carouge</City>
+        <StateOrProvince>Geneva</StateOrProvince>
+        <PostCode>1227</PostCode>
+        <Country>USA</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone>+41 22 917 84 17</ContactVoiceTelephone>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>gregory.giuliani@unepgrid.ch</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>NONE</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/pdf</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/html</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+    </Exception>
+    <Layer>
+      <Title>EnviroGRIDS Web Map Service</Title>
+      <Abstract>EnviroGRIDS WMS</Abstract>
+      <CRS>EPSG:3035</CRS>
+      <CRS>EPSG:3785</CRS>
+      <CRS>EPSG:3857</CRS>
+      <CRS>EPSG:4326</CRS>
+      <CRS>EPSG:900913</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>5.476156075509966</westBoundLongitude>
+        <eastBoundLongitude>58.249074282599615</eastBoundLongitude>
+        <southBoundLatitude>20.628027886247736</southBoundLatitude>
+        <northBoundLatitude>73.8063984320827</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="5.476156075509966" miny="20.628027886247736" maxx="58.249074282599615" maxy="73.8063984320827"/>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_cities2_c</Name>
+        <Title>Europe Cities</Title>
+        <Abstract>Europe Cities represents the cities of Europe including national capitals, major population centers, and landmark cities.</Abstract>
+        <KeywordList>
+          <Keyword>Esri93_cities2_c</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.489419875591158</westBoundLongitude>
+          <eastBoundLongitude>58.20683351392478</eastBoundLongitude>
+          <southBoundLatitude>20.688694757156536</southBoundLatitude>
+          <northBoundLatitude>73.40610839549015</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.489419875591158" miny="20.688694757156536" maxx="58.20683351392478" maxy="73.40610839549015"/>
+        <BoundingBox CRS="EPSG:3035" minx="1687154.25762475" miny="4134586.87739679" maxx="4268757.54591372" maxy="7272516.631895"/>
+        <AuthorityURL name="GeoNetwork">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="GeoNetwork">a5324664-4e9a-4878-8414-14ad91abdef3</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=19655B7F-B681-4209-999B-7D24F47B5E64"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=19655B7F-B681-4209-999B-7D24F47B5E64"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_cities2_c_style</Name>
+          <Title>eg basemap Esri93 cities2 c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_cities2_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_maj_roads_c</Name>
+        <Title>Europe Major Roads</Title>
+        <Abstract>Europe Major Roads represents the major roads (European Highway System and national roads) of Europe.</Abstract>
+        <KeywordList>
+          <Keyword>Esri93_maj_roads_c</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.993537626559868</westBoundLongitude>
+          <eastBoundLongitude>57.73169273154971</eastBoundLongitude>
+          <southBoundLatitude>21.145409437297584</southBoundLatitude>
+          <northBoundLatitude>72.88356454228742</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.993537626559868" miny="21.145409437297584" maxx="57.73169273154971" maxy="72.88356454228742"/>
+        <BoundingBox CRS="EPSG:3035" minx="1679000.0" miny="4134000.0" maxx="4270000.0" maxy="7275000.0"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">80bc1f28-0987-431c-a707-85e74dea2d53</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=BCA1D84A-C28C-4458-98D9-961B1A0D822C"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=BCA1D84A-C28C-4458-98D9-961B1A0D822C"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_maj_roads_c_style</Name>
+          <Title>eg basemap Esri93 maj roads c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_maj_roads_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_min_roads_c</Name>
+        <Title>Europe Roads</Title>
+        <Abstract>Europe Roads represents the roads (European Highway System, national, and secondary roads) in Europe.</Abstract>
+        <KeywordList>
+          <Keyword>Esri93_min_roads_c</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>6.50077444131468</westBoundLongitude>
+          <eastBoundLongitude>57.2244559167949</eastBoundLongitude>
+          <southBoundLatitude>32.5397401100915</southBoundLatitude>
+          <northBoundLatitude>61.4892338694935</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="6.50077444131468" miny="32.5397401100915" maxx="57.2244559167949" maxy="61.4892338694935"/>
+        <BoundingBox CRS="EPSG:3035" minx="1679000.0" miny="4134000.0" maxx="4270000.0" maxy="7275000.0"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">577023f6-189d-499e-b75b-008d1b3009aa</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=72981E46-3F3E-4FF7-90A6-ED240995CC36"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=72981E46-3F3E-4FF7-90A6-ED240995CC36"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_min_roads_c_style</Name>
+          <Title>eg basemap Esri93 min roads c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_min_roads_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_populated_places_c</Name>
+        <Title>Europe Places</Title>
+        <Abstract>Europe Places contains the populated places in Europe.</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Esri93_populated_places_c</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.9941913879786775</westBoundLongitude>
+          <eastBoundLongitude>57.71538439326325</eastBoundLongitude>
+          <southBoundLatitude>21.15618271586986</southBoundLatitude>
+          <northBoundLatitude>72.87737572115444</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.9941913879786775" miny="21.15618271586986" maxx="57.71538439326325" maxy="72.87737572115444"/>
+        <BoundingBox CRS="EPSG:3035" minx="1679115.61975185" miny="4134020.06366637" maxx="4269885.88225268" maxy="7273744.70770361"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">dfa3f83f-ab5d-49b6-bf09-86782961c28e</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=FD4A79C6-AD50-4F3A-B90F-05BEE68A86A7"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=FD4A79C6-AD50-4F3A-B90F-05BEE68A86A7"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_populated_places_c_style</Name>
+          <Title>eg basemap Esri93 populated places c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_populated_places_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_rail_lines_c</Name>
+        <Title>Europe Railroads</Title>
+        <Abstract>Europe Railroads contains the railroads in Europe.</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Esri93_rail_lines_c</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>6.50077444131469</westBoundLongitude>
+          <eastBoundLongitude>57.2244559167949</eastBoundLongitude>
+          <southBoundLatitude>32.5397401100915</southBoundLatitude>
+          <northBoundLatitude>61.4892338694935</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="6.50077444131469" miny="32.5397401100915" maxx="57.2244559167949" maxy="61.4892338694935"/>
+        <BoundingBox CRS="EPSG:3035" minx="1679000.0" miny="4134000.0" maxx="4270000.0" maxy="7275000.0"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">016ee301-b610-4e3e-8394-9fa034e388e5</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=18F22EA1-9D49-4168-BB59-BCE34EE7DC1B"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=18F22EA1-9D49-4168-BB59-BCE34EE7DC1B"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_rail_lines_c_style</Name>
+          <Title>eg basemap Esri93 rail lines c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_rail_lines_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_rail_stations_c</Name>
+        <Title>Europe Railroad Stations</Title>
+        <Abstract>Europe Railroad Stations represents the railroad stations in Europe.</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Esri93_rail_stations_c</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.996571334883576</westBoundLongitude>
+          <eastBoundLongitude>57.71900480900362</eastBoundLongitude>
+          <southBoundLatitude>21.155679629860277</southBoundLatitude>
+          <northBoundLatitude>72.87811310398031</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.996571334883576" miny="21.155679629860277" maxx="57.71900480900362" maxy="72.87811310398031"/>
+        <BoundingBox CRS="EPSG:3035" minx="1679267.47556365" miny="4134148.23905485" maxx="4269888.2481823" maxy="7274042.73131471"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">baaf180e-486d-4fc1-aabb-fac250c88f53</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=6D3097A5-0212-4A84-8BAD-9D233737C052"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=6D3097A5-0212-4A84-8BAD-9D233737C052"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_rail_stations_c_style</Name>
+          <Title>eg basemap Esri93 rail stations c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_rail_stations_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_rivers_maj_c</Name>
+        <Title>Europe Major Rivers</Title>
+        <Abstract>Europe Major Rivers contains the major rivers of Europe.</Abstract>
+        <KeywordList>
+          <Keyword>Esri93_rivers_maj_c</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.476156075509979</westBoundLongitude>
+          <eastBoundLongitude>58.24907428259961</eastBoundLongitude>
+          <southBoundLatitude>21.033480224993085</southBoundLatitude>
+          <northBoundLatitude>73.8063984320827</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.476156075509979" miny="21.033480224993085" maxx="58.24907428259961" maxy="73.8063984320827"/>
+        <BoundingBox CRS="EPSG:3035" minx="1777093.42815598" miny="4134000.0" maxx="4270000.0" maxy="7275000.0"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">46dc6a59-dbb5-4dda-90a1-6f9d3a275149</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=17550BE5-256A-4ADF-9EED-31195A5C4428"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=17550BE5-256A-4ADF-9EED-31195A5C4428"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_rivers_maj_c_style</Name>
+          <Title>eg basemap Esri93 rivers maj c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_rivers_maj_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_rivers_min_c</Name>
+        <Title>Europe Water Bodies</Title>
+        <Abstract>Europe Water Bodies contains rivers, lakes, and other inland water bodies for Europe.</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Esri93_rivers_min_c</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.476156075509966</westBoundLongitude>
+          <eastBoundLongitude>58.249074282599615</eastBoundLongitude>
+          <southBoundLatitude>20.628027886247736</southBoundLatitude>
+          <northBoundLatitude>73.40094609333737</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.476156075509966" miny="20.628027886247736" maxx="58.249074282599615" maxy="73.40094609333737"/>
+        <BoundingBox CRS="EPSG:3035" minx="1679000.0" miny="4134000.0" maxx="4270000.0" maxy="7275000.0"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">08568c26-4873-47d0-8841-2d880bf01fb2</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=D220DA18-B5BC-4984-8537-EDBA75C286B4"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=D220DA18-B5BC-4984-8537-EDBA75C286B4"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_rivers_min_c_style</Name>
+          <Title>eg basemap Esri93 rivers min c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_rivers_min_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>eg_basemap:Esri93_urban_areas_c</Name>
+        <Title>Europe Urbanized Areas</Title>
+        <Abstract>Europe Urbanized Areas represents the urbanized areas of Europe.</Abstract>
+        <KeywordList>
+          <Keyword>Esri93_urban_areas_c</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3035</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.993537626559908</westBoundLongitude>
+          <eastBoundLongitude>57.73169273154971</eastBoundLongitude>
+          <southBoundLatitude>21.145409437297605</southBoundLatitude>
+          <northBoundLatitude>72.8835645422874</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.993537626559908" miny="21.145409437297605" maxx="57.73169273154971" maxy="72.8835645422874"/>
+        <BoundingBox CRS="EPSG:3035" minx="1679000.0" miny="4134000.0" maxx="4270000.0" maxy="7275000.0"/>
+        <AuthorityURL name="ESRI">
+          <OnlineResource xlink:type="simple" xlink:href="http://geonetwork-opensource.org/"/>
+        </AuthorityURL>
+        <Identifier authority="ESRI">b840b628-fda2-4597-b3a5-f17c7732192a</Identifier>
+        <MetadataURL type="other">
+          <Format>text/html</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home?uuid=659B1CF1-AD1B-4CF7-85E0-F5D8BAE03613"/>
+        </MetadataURL>
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xlink:type="simple" xlink:href="http://129.194.231.213:8080/geonetwork/srv/en/main.home/srv/en/csw?service=CSW&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;request=GetRecordById&amp;id=659B1CF1-AD1B-4CF7-85E0-F5D8BAE03613"/>
+        </MetadataURL>
+        <Style>
+          <Name>eg_basemap_Esri93_urban_areas_c_style</Name>
+          <Title>eg basemap Esri93 urban areas c style</Title>
+          <Abstract/>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://129.194.231.213:8080/geoserver/eg_basemap/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Esri93_urban_areas_c"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

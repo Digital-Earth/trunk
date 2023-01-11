@@ -1,0 +1,25 @@
+﻿<div class="popup-menu">
+    <!-- Item imported and active -->
+    <div ng-if="item.Active" class="menu-item" ng-click="gotoItem(item)" i18n="Goto" tooltip="{{'tooltip.library.geosource.menu.goto'|i18n}}"></div>
+    <!-- Item imported but inactive -->
+    <div ng-if="!item.Active && item.Resource.Id" class="menu-item gray" i18n="Goto" tooltip="{{'tooltip.library.geosource.menu.goto'|i18n}}"></div>
+    <!-- Item imported (active or inactive) -->
+    <div ng-if="item.Resource.Id" class="menu-item" ng-click="editResource(item)" i18n="Edit" tooltip="{{'tooltip.library.geosource.menu.edit'|i18n}}"></div>
+    <div ng-if="item.Resource.Id" class="menu-item" ng-click="removeMapItem(group,item,$index)" i18n="Remove" tooltip="{{'tooltip.library.geosource.menu.remove'|i18n}}"></div>
+    <!-- Item import is in progress -->
+    <div ng-if="item.status == 'waiting'">
+        <div ng-if="item.hasRequest('SRS')" class="menu-item sub-menu" popup-template="/popup-menu/srs-menu.html" placement="right center" popup-group="popup-menu-2" show-trigger="click">
+            {{'Select a Spatial Reference System'|i18n}}
+        </div>
+        <div ng-if="item.hasRequest('GeoTag')" class="menu-item sub-menu" popup-template="/popup-menu/geotag-menu.html" placement="right center" popup-group="popup-menu-2" show-trigger="click">
+            {{'Select a GeoTag method'|i18n}}
+        </div>
+    </div>
+    <div ng-if="item.dataSet && item.dataSet.Uri" class="menu-item" ng-click="cancelItemImport(item)" i18n="Cancel" tooltip="{{'tooltip.library.geosource.menu.cancel'|i18n}}"></div>
+    <!-- Publish/Unpublish features -->
+    <div ng-if="activeFeatures.allowLocalPublish && item.Active">
+        <hr />
+        <div class="menu-item" ng-click="publishItemLocally(item)" i18n="Publish Locally"></div>
+        <div class="menu-item" ng-click="unpublishItemLocally(item)" i18n="Unpublish Locally"></div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple", "simple\simple.vcproj", "{7CF9544C-EF2F-473E-8B20-E3A4297209A9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{804D618B-7F32-4CB8-9778-224DF0B5054E} = {804D618B-7F32-4CB8-9778-224DF0B5054E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pyxlib", "..\..\..\projects\pyxlib\pyxlib.vcproj", "{804D618B-7F32-4CB8-9778-224DF0B5054E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CF9544C-EF2F-473E-8B20-E3A4297209A9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7CF9544C-EF2F-473E-8B20-E3A4297209A9}.Debug|Win32.Build.0 = Debug|Win32
+		{7CF9544C-EF2F-473E-8B20-E3A4297209A9}.Release|Win32.ActiveCfg = Release|Win32
+		{7CF9544C-EF2F-473E-8B20-E3A4297209A9}.Release|Win32.Build.0 = Release|Win32
+		{804D618B-7F32-4CB8-9778-224DF0B5054E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{804D618B-7F32-4CB8-9778-224DF0B5054E}.Debug|Win32.Build.0 = Debug|Win32
+		{804D618B-7F32-4CB8-9778-224DF0B5054E}.Release|Win32.ActiveCfg = Release|Win32
+		{804D618B-7F32-4CB8-9778-224DF0B5054E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

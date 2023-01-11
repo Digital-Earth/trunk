@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+xmlns="http://www.opengis.net/wms"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>CTR_10000_AGG-2008</Title>
+    <Abstract>WMS</Abstract>
+    <KeywordList><Keyword></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://map.sitr.regione.sicilia.it/ArcGIS/services/CTR_10000_AGG-2008/MapServer/WMSServer"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson></ContactPerson>
+        <ContactOrganization></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition></ContactPosition>
+      <ContactAddress>
+        <AddressType></AddressType>
+        <Address></Address>
+        <City></City>
+        <StateOrProvince></StateOrProvince>
+        <PostCode></PostCode>
+        <Country></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone></ContactVoiceTelephone>
+      <ContactFacsimileTelephone></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees></Fees>
+    <AccessConstraints></AccessConstraints>
+    <MaxWidth>6144</MaxWidth>
+    <MaxHeight>6144</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://map.sitr.regione.sicilia.it/ArcGIS/services/CTR_10000_AGG-2008/MapServer/WMSServer"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://map.sitr.regione.sicilia.it/ArcGIS/services/CTR_10000_AGG-2008/MapServer/WMSServer"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://map.sitr.regione.sicilia.it/ArcGIS/services/CTR_10000_AGG-2008/MapServer/WMSServer"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+    <Title>CTR 1:10.000 2007-2008</Title>
+    <CRS>CRS:84</CRS>
+    <CRS>EPSG:4326</CRS>
+    <CRS>EPSG:3004</CRS>
+    <EX_GeographicBoundingBox>
+      <westBoundLongitude>11.631162</westBoundLongitude>
+      <eastBoundLongitude>15.865890</eastBoundLongitude>
+      <southBoundLatitude>35.295618</southBoundLatitude>
+      <northBoundLatitude>38.983969</northBoundLatitude>
+    </EX_GeographicBoundingBox>
+    <BoundingBox CRS="CRS:84" minx="11.631162" miny="35.295618" maxx="15.865890" maxy="38.983969"/>
+    <BoundingBox CRS="EPSG:4326" minx="35.295618" miny="11.631162" maxx="38.983969" maxy="15.865890"/>
+    <BoundingBox CRS="EPSG:3004" minx="2227972.148960" miny="3910619.890000" maxx="2595003.231836" maxy="4315070.310000"/>
+      <Layer>
+        <Title>Acque</Title>
+        <Abstract>Acque</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.830694</westBoundLongitude>
+          <eastBoundLongitude>15.671739</eastBoundLongitude>
+          <southBoundLatitude>35.465878</southBoundLatitude>
+          <northBoundLatitude>38.818305</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.830694" miny="35.465878" maxx="15.671739" maxy="38.818305"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.465878" miny="11.830694" maxx="38.818305" maxy="15.671739"/>
+        <BoundingBox CRS="EPSG:3004" minx="2244655.380000" miny="3929004.000000" maxx="2578320.000000" maxy="4296686.200000"/>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title>Acque - Area idrica</Title>
+        <Abstract>Acque - Area idrica</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.905729</westBoundLongitude>
+          <eastBoundLongitude>15.591170</eastBoundLongitude>
+          <southBoundLatitude>35.502206</southBoundLatitude>
+          <northBoundLatitude>38.580791</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.905729" miny="35.502206" maxx="15.591170" maxy="38.580791"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.502206" miny="11.905729" maxx="38.580791" maxy="15.591170"/>
+        <BoundingBox CRS="EPSG:3004" minx="2250293.260000" miny="3932866.880000" maxx="2571494.720000" maxy="4270329.630000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Area idrica</Title>
+          <LegendURL width="100" height="11">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default1.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title>Acque - Aree acqua</Title>
+        <Abstract>Acque - Aree acqua</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845339</westBoundLongitude>
+          <eastBoundLongitude>15.655764</eastBoundLongitude>
+          <southBoundLatitude>35.478982</southBoundLatitude>
+          <northBoundLatitude>38.810252</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845339" miny="35.478982" maxx="15.655764" maxy="38.810252"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478982" miny="11.845339" maxx="38.810252" maxy="15.655764"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245898.690000" miny="3930421.180000" maxx="2576939.410000" maxy="4295792.600000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Aree acqua</Title>
+          <LegendURL width="100" height="28">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default2.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title>Acque - Superfici</Title>
+        <Abstract>Acque - Superfici</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.830694</westBoundLongitude>
+          <eastBoundLongitude>15.671739</eastBoundLongitude>
+          <southBoundLatitude>35.465878</southBoundLatitude>
+          <northBoundLatitude>38.818305</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.830694" miny="35.465878" maxx="15.671739" maxy="38.818305"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.465878" miny="11.830694" maxx="38.818305" maxy="15.671739"/>
+        <BoundingBox CRS="EPSG:3004" minx="2244655.380000" miny="3929004.000000" maxx="2578320.000000" maxy="4296686.200000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Superfici</Title>
+          <LegendURL width="100" height="28">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default3.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title>Acque - Altri elementi</Title>
+        <Abstract>Acque - Altri elementi</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.860923</westBoundLongitude>
+          <eastBoundLongitude>15.648128</eastBoundLongitude>
+          <southBoundLatitude>35.494623</southBoundLatitude>
+          <northBoundLatitude>38.810914</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.860923" miny="35.494623" maxx="15.648128" maxy="38.810914"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.494623" miny="11.860923" maxx="38.810914" maxy="15.648128"/>
+        <BoundingBox CRS="EPSG:3004" minx="2247257.180000" miny="3932116.800000" maxx="2576275.820000" maxy="4295866.090000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Altri elementi</Title>
+          <LegendURL width="100" height="70">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default4.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>5</Name>
+        <Title>Acque - Acquedotti</Title>
+        <Abstract>Acque - Acquedotti</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.872078</westBoundLongitude>
+          <eastBoundLongitude>15.545395</eastBoundLongitude>
+          <southBoundLatitude>35.487562</southBoundLatitude>
+          <northBoundLatitude>38.727735</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.872078" miny="35.487562" maxx="15.545395" maxy="38.727735"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.487562" miny="11.872078" maxx="38.727735" maxy="15.545395"/>
+        <BoundingBox CRS="EPSG:3004" minx="2247912.220000" miny="3931312.670000" maxx="2567410.300000" maxy="4286635.650000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Acquedotti</Title>
+          <LegendURL width="100" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default5.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>6</Name>
+        <Title>Acque - Corsi d'accqua</Title>
+        <Abstract>Acque - Corsi d'accqua</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.860923</westBoundLongitude>
+          <eastBoundLongitude>15.648128</eastBoundLongitude>
+          <southBoundLatitude>35.494623</southBoundLatitude>
+          <northBoundLatitude>38.810914</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.860923" miny="35.494623" maxx="15.648128" maxy="38.810914"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.494623" miny="11.860923" maxx="38.810914" maxy="15.648128"/>
+        <BoundingBox CRS="EPSG:3004" minx="2247257.180000" miny="3932116.800000" maxx="2576275.820000" maxy="4295866.090000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Corsi d'accqua</Title>
+          <LegendURL width="100" height="39">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default6.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>7</Name>
+        <Title>Acque - Arco Idrico</Title>
+        <Abstract>Acque - Arco Idrico</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.896094</westBoundLongitude>
+          <eastBoundLongitude>15.609631</eastBoundLongitude>
+          <southBoundLatitude>35.494029</southBoundLatitude>
+          <northBoundLatitude>38.810914</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.896094" miny="35.494029" maxx="15.609631" maxy="38.810914"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.494029" miny="11.896094" maxx="38.810914" maxy="15.609631"/>
+        <BoundingBox CRS="EPSG:3004" minx="2250317.270000" miny="3931958.030000" maxx="2572932.980000" maxy="4295866.090000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Arco Idrico</Title>
+          <LegendURL width="100" height="11">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default7.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>8</Name>
+        <Title>Acque - Simboli</Title>
+        <Abstract>Acque - Simboli</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.847191</westBoundLongitude>
+          <eastBoundLongitude>15.652796</eastBoundLongitude>
+          <southBoundLatitude>36.618613</southBoundLatitude>
+          <northBoundLatitude>38.790185</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.847191" miny="36.618613" maxx="15.652796" maxy="38.790185"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.618613" miny="11.847191" maxx="38.790185" maxy="15.652796"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245983.090000" miny="4057003.500000" maxx="2576697.590000" maxy="4293565.770000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Acque - Simboli</Title>
+          <LegendURL width="100" height="44">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default8.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer>
+        <Title>Morfologia</Title>
+        <Abstract>Morfologia</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.843959</westBoundLongitude>
+          <eastBoundLongitude>15.658217</eastBoundLongitude>
+          <southBoundLatitude>35.478345</southBoundLatitude>
+          <northBoundLatitude>38.817105</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.843959" miny="35.478345" maxx="15.658217" maxy="38.817105"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478345" miny="11.843959" maxx="38.817105" maxy="15.658217"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245804.910000" miny="3930353.320000" maxx="2577146.910000" maxy="4296553.050000"/>
+      <Layer queryable="1">
+        <Name>10</Name>
+        <Title>Morfologia</Title>
+        <Abstract>Morfologia</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.909358</westBoundLongitude>
+          <eastBoundLongitude>15.658217</eastBoundLongitude>
+          <southBoundLatitude>35.836101</southBoundLatitude>
+          <northBoundLatitude>38.817105</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.909358" miny="35.836101" maxx="15.658217" maxy="38.817105"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.836101" miny="11.909358" maxx="38.817105" maxy="15.658217"/>
+        <BoundingBox CRS="EPSG:3004" minx="2251494.520000" miny="3969913.230000" maxx="2577146.910000" maxy="4296553.050000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Morfologia</Title>
+          <LegendURL width="100" height="32">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default10.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>11</Name>
+        <Title>Morfologia - Scarpate, Impluvi</Title>
+        <Abstract>Morfologia - Scarpate, Impluvi</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844295</westBoundLongitude>
+          <eastBoundLongitude>15.637141</eastBoundLongitude>
+          <southBoundLatitude>35.478345</southBoundLatitude>
+          <northBoundLatitude>38.809473</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844295" miny="35.478345" maxx="15.637141" maxy="38.809473"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478345" miny="11.844295" maxx="38.809473" maxy="15.637141"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245804.910000" miny="3930353.320000" maxx="2575322.850000" maxy="4295706.110000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Morfologia - Scarpate, Impluvi</Title>
+          <LegendURL width="100" height="45">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default11.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>12</Name>
+        <Title>Morfologia - Caverna, grotta, pozzo naturale</Title>
+        <Abstract>Morfologia - Caverna, grotta, pozzo naturale</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>12.277452</westBoundLongitude>
+          <eastBoundLongitude>15.312775</eastBoundLongitude>
+          <southBoundLatitude>36.761750</southBoundLatitude>
+          <northBoundLatitude>38.730741</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="12.277452" miny="36.761750" maxx="15.312775" maxy="38.730741"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.761750" miny="12.277452" maxx="38.730741" maxy="15.312775"/>
+        <BoundingBox CRS="EPSG:3004" minx="2283224.010000" miny="4071790.660000" maxx="2547187.480000" maxy="4286969.240000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Morfologia - Caverna, grotta, pozzo naturale</Title>
+          <LegendURL width="100" height="5">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default12.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer>
+        <Title>Vegetazione</Title>
+        <Abstract>Vegetazione</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844767</westBoundLongitude>
+          <eastBoundLongitude>15.656496</eastBoundLongitude>
+          <southBoundLatitude>35.478477</southBoundLatitude>
+          <northBoundLatitude>38.810222</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844767" miny="35.478477" maxx="15.656496" maxy="38.810222"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478477" miny="11.844767" maxx="38.810222" maxy="15.656496"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245848.790000" miny="3930366.630000" maxx="2577002.980000" maxy="4295789.280000"/>
+      <Layer queryable="1">
+        <Name>14</Name>
+        <Title>Vegetazione - Aree vegetazione</Title>
+        <Abstract>Vegetazione - Aree vegetazione</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.847953</westBoundLongitude>
+          <eastBoundLongitude>15.617651</eastBoundLongitude>
+          <southBoundLatitude>35.478554</southBoundLatitude>
+          <northBoundLatitude>38.810222</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.847953" miny="35.478554" maxx="15.617651" maxy="38.810222"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478554" miny="11.847953" maxx="38.810222" maxy="15.617651"/>
+        <BoundingBox CRS="EPSG:3004" minx="2246126.060000" miny="3930366.630000" maxx="2573629.950000" maxy="4295789.280000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Vegetazione - Aree vegetazione</Title>
+          <LegendURL width="100" height="79">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default14.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>15</Name>
+        <Title>Vegetazione - Limite bosco - Agrumeto</Title>
+        <Abstract>Vegetazione - Limite bosco - Agrumeto</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>13.028332</westBoundLongitude>
+          <eastBoundLongitude>15.603076</eastBoundLongitude>
+          <southBoundLatitude>36.721695</southBoundLatitude>
+          <northBoundLatitude>38.475562</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="13.028332" miny="36.721695" maxx="15.603076" maxy="38.475562"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.721695" miny="13.028332" maxx="38.475562" maxy="15.603076"/>
+        <BoundingBox CRS="EPSG:3004" minx="2347961.770000" miny="4065795.470000" maxx="2572608.380000" maxy="4258652.950000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Vegetazione - Limite bosco - Agrumeto</Title>
+          <LegendURL width="100" height="28">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default15.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>16</Name>
+        <Title>Vegetazione - Limiti, Filare</Title>
+        <Abstract>Vegetazione - Limiti, Filare</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844767</westBoundLongitude>
+          <eastBoundLongitude>15.656496</eastBoundLongitude>
+          <southBoundLatitude>35.478877</southBoundLatitude>
+          <northBoundLatitude>38.810222</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844767" miny="35.478877" maxx="15.656496" maxy="38.810222"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478877" miny="11.844767" maxx="38.810222" maxy="15.656496"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245848.790000" miny="3930411.040000" maxx="2577002.980000" maxy="4295789.280000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Vegetazione - Limiti, Filare</Title>
+          <LegendURL width="100" height="93">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default16.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>17</Name>
+        <Title>Vegetazione - Simboli</Title>
+        <Abstract>Vegetazione - Simboli</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845519</westBoundLongitude>
+          <eastBoundLongitude>15.655725</eastBoundLongitude>
+          <southBoundLatitude>35.479496</southBoundLatitude>
+          <northBoundLatitude>38.809344</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845519" miny="35.479496" maxx="15.655725" maxy="38.809344"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.479496" miny="11.845519" maxx="38.809344" maxy="15.655725"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245910.890000" miny="3930477.840000" maxx="2576936.700000" maxy="4295691.870000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Vegetazione - Simboli</Title>
+          <LegendURL width="100" height="231">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default17.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer>
+        <Title>Prod.-Trasp. energia</Title>
+        <Abstract>Prod.-Trasp. energia</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.858912</westBoundLongitude>
+          <eastBoundLongitude>15.656588</eastBoundLongitude>
+          <southBoundLatitude>35.499581</southBoundLatitude>
+          <northBoundLatitude>38.802019</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.858912" miny="35.499581" maxx="15.656588" maxy="38.802019"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.499581" miny="11.858912" maxx="38.802019" maxy="15.656588"/>
+        <BoundingBox CRS="EPSG:3004" minx="2247048.340000" miny="3932673.790000" maxx="2577017.550000" maxy="4294878.920000"/>
+      <Layer queryable="1">
+        <Name>19</Name>
+        <Title>Prod.-Trasp. energia - Aree impianti</Title>
+        <Abstract>Prod.-Trasp. energia - Aree impianti</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.858912</westBoundLongitude>
+          <eastBoundLongitude>15.636039</eastBoundLongitude>
+          <southBoundLatitude>35.505765</southBoundLatitude>
+          <northBoundLatitude>38.802019</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.858912" miny="35.505765" maxx="15.636039" maxy="38.802019"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.505765" miny="11.858912" maxx="38.802019" maxy="15.636039"/>
+        <BoundingBox CRS="EPSG:3004" minx="2247048.340000" miny="3933360.590000" maxx="2575232.920000" maxy="4294878.920000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Prod.-Trasp. energia - Aree impianti</Title>
+          <LegendURL width="100" height="42">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default19.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>20</Name>
+        <Title>Prod.-Trasp. energia - Reti distribuzione</Title>
+        <Abstract>Prod.-Trasp. energia - Reti distribuzione</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.909238</westBoundLongitude>
+          <eastBoundLongitude>15.647384</eastBoundLongitude>
+          <southBoundLatitude>36.667622</southBoundLatitude>
+          <northBoundLatitude>38.519873</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.909238" miny="36.667622" maxx="15.647384" maxy="38.519873"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.667622" miny="11.909238" maxx="38.519873" maxy="15.647384"/>
+        <BoundingBox CRS="EPSG:3004" minx="2250372.300000" miny="4062308.500000" maxx="2576439.190000" maxy="4263569.880000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Prod.-Trasp. energia - Reti distribuzione</Title>
+          <LegendURL width="100" height="48">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default20.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>21</Name>
+        <Title>Prod.-Trasp. energia - Traliccio</Title>
+        <Abstract>Prod.-Trasp. energia - Traliccio</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>12.439412</westBoundLongitude>
+          <eastBoundLongitude>15.640283</eastBoundLongitude>
+          <southBoundLatitude>36.774804</southBoundLatitude>
+          <northBoundLatitude>38.272575</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="12.439412" miny="36.774804" maxx="15.640283" maxy="38.272575"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.774804" miny="12.439412" maxx="38.272575" maxy="15.640283"/>
+        <BoundingBox CRS="EPSG:3004" minx="2295908.420000" miny="4072897.880000" maxx="2576010.590000" maxy="4236129.040000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Prod.-Trasp. energia - Traliccio</Title>
+          <LegendURL width="100" height="7">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default21.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>22</Name>
+        <Title>Prod.-Trasp. energia - Simboli</Title>
+        <Abstract>Prod.-Trasp. energia - Simboli</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.876056</westBoundLongitude>
+          <eastBoundLongitude>15.656586</eastBoundLongitude>
+          <southBoundLatitude>35.499990</southBoundLatitude>
+          <northBoundLatitude>38.801731</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.876056" miny="35.499990" maxx="15.656586" maxy="38.801731"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.499990" miny="11.876056" maxx="38.801731" maxy="15.656586"/>
+        <BoundingBox CRS="EPSG:3004" minx="2248539.040000" miny="3932673.790000" maxx="2577017.550000" maxy="4294846.960000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Prod.-Trasp. energia - Simboli</Title>
+          <LegendURL width="100" height="34">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default22.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer>
+        <Title>Sistema comunicazioni</Title>
+        <Abstract>Sistema comunicazioni</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844970</westBoundLongitude>
+          <eastBoundLongitude>15.656988</eastBoundLongitude>
+          <southBoundLatitude>35.478518</southBoundLatitude>
+          <northBoundLatitude>38.810417</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844970" miny="35.478518" maxx="15.656988" maxy="38.810417"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478518" miny="11.844970" maxx="38.810417" maxy="15.656988"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245867.240000" miny="3930370.650000" maxx="2577045.560000" maxy="4295810.930000"/>
+      <Layer queryable="1">
+        <Name>24</Name>
+        <Title>Sistema comunicazioni - Altre strutture</Title>
+        <Abstract>Sistema comunicazioni - Altre strutture</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844970</westBoundLongitude>
+          <eastBoundLongitude>15.656988</eastBoundLongitude>
+          <southBoundLatitude>35.478518</southBoundLatitude>
+          <northBoundLatitude>38.810417</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844970" miny="35.478518" maxx="15.656988" maxy="38.810417"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478518" miny="11.844970" maxx="38.810417" maxy="15.656988"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245867.240000" miny="3930370.650000" maxx="2577045.560000" maxy="4295810.930000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Altre strutture</Title>
+          <LegendURL width="100" height="103">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default24.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>25</Name>
+        <Title>Sistema comunicazioni - Ferrovie</Title>
+        <Abstract>Sistema comunicazioni - Ferrovie</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844970</westBoundLongitude>
+          <eastBoundLongitude>15.656988</eastBoundLongitude>
+          <southBoundLatitude>35.478518</southBoundLatitude>
+          <northBoundLatitude>38.810417</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844970" miny="35.478518" maxx="15.656988" maxy="38.810417"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478518" miny="11.844970" maxx="38.810417" maxy="15.656988"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245867.240000" miny="3930370.650000" maxx="2577045.560000" maxy="4295810.930000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Ferrovie</Title>
+          <LegendURL width="100" height="32">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default25.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>26</Name>
+        <Title>Sistema comunicazioni - Strade</Title>
+        <Abstract>Sistema comunicazioni - Strade</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844970</westBoundLongitude>
+          <eastBoundLongitude>15.656988</eastBoundLongitude>
+          <southBoundLatitude>35.478518</southBoundLatitude>
+          <northBoundLatitude>38.810417</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844970" miny="35.478518" maxx="15.656988" maxy="38.810417"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478518" miny="11.844970" maxx="38.810417" maxy="15.656988"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245867.240000" miny="3930370.650000" maxx="2577045.560000" maxy="4295810.930000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Strade</Title>
+          <LegendURL width="100" height="49">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default26.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>27</Name>
+        <Title>Sistema comunicazioni - Arco ferroviario</Title>
+        <Abstract>Sistema comunicazioni - Arco ferroviario</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>12.425918</westBoundLongitude>
+          <eastBoundLongitude>15.564163</eastBoundLongitude>
+          <southBoundLatitude>36.682552</southBoundLatitude>
+          <northBoundLatitude>38.240339</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="12.425918" miny="36.682552" maxx="15.564163" maxy="38.240339"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.682552" miny="12.425918" maxx="38.240339" maxy="15.564163"/>
+        <BoundingBox CRS="EPSG:3004" minx="2294626.860000" miny="4062688.000000" maxx="2569373.270000" maxy="4232552.190000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Arco ferroviario</Title>
+          <LegendURL width="100" height="6">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default27.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>47247.023810</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>28</Name>
+        <Title>Sistema comunicazioni - Arco viario</Title>
+        <Abstract>Sistema comunicazioni - Arco viario</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845270</westBoundLongitude>
+          <eastBoundLongitude>15.656459</eastBoundLongitude>
+          <southBoundLatitude>35.479933</southBoundLatitude>
+          <northBoundLatitude>38.809559</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845270" miny="35.479933" maxx="15.656459" maxy="38.809559"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.479933" miny="11.845270" maxx="38.809559" maxy="15.656459"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245890.030000" miny="3930527.090000" maxx="2577000.340000" maxy="4295715.690000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Arco viario</Title>
+          <LegendURL width="100" height="6">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default28.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>47247.023810</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>29</Name>
+        <Title>Sistema comunicazioni - Stazione area complessiva</Title>
+        <Abstract>Sistema comunicazioni - Stazione area complessiva</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>12.576607</westBoundLongitude>
+          <eastBoundLongitude>15.313544</eastBoundLongitude>
+          <southBoundLatitude>36.707740</southBoundLatitude>
+          <northBoundLatitude>38.211893</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="12.576607" miny="36.707740" maxx="15.313544" maxy="38.211893"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.707740" miny="12.576607" maxx="38.211893" maxy="15.313544"/>
+        <BoundingBox CRS="EPSG:3004" minx="2307749.020000" miny="4065149.300000" maxx="2547450.380000" maxy="4229395.770000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Stazione area complessiva</Title>
+          <LegendURL width="100" height="5">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default29.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>30</Name>
+        <Title>Sistema comunicazioni - Stazioni e caselli</Title>
+        <Abstract>Sistema comunicazioni - Stazioni e caselli</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>12.428693</westBoundLongitude>
+          <eastBoundLongitude>15.565898</eastBoundLongitude>
+          <southBoundLatitude>36.702722</southBoundLatitude>
+          <northBoundLatitude>38.238671</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="12.428693" miny="36.702722" maxx="15.565898" maxy="38.238671"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.702722" miny="12.428693" maxx="38.238671" maxy="15.565898"/>
+        <BoundingBox CRS="EPSG:3004" minx="2294864.970000" miny="4064921.470000" maxx="2569526.200000" maxy="4232367.010000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Stazioni e caselli</Title>
+          <LegendURL width="100" height="26">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default30.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>31</Name>
+        <Title>Sistema comunicazioni - Simboli</Title>
+        <Abstract>Sistema comunicazioni - Simboli</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845933</westBoundLongitude>
+          <eastBoundLongitude>15.642797</eastBoundLongitude>
+          <southBoundLatitude>35.479555</southBoundLatitude>
+          <northBoundLatitude>38.809171</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845933" miny="35.479555" maxx="15.642797" maxy="38.809171"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.479555" miny="11.845933" maxx="38.809171" maxy="15.642797"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245946.230000" miny="3930483.400000" maxx="2575814.270000" maxy="4295672.650000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Sistema comunicazioni - Simboli</Title>
+          <LegendURL width="100" height="41">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default31.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>32</Name>
+        <Title>Elementi divisori e di sostegno</Title>
+        <Abstract>Elementi divisori e di sostegno</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844691</westBoundLongitude>
+          <eastBoundLongitude>15.657509</eastBoundLongitude>
+          <southBoundLatitude>35.478896</southBoundLatitude>
+          <northBoundLatitude>38.809943</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844691" miny="35.478896" maxx="15.657509" maxy="38.809943"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478896" miny="11.844691" maxx="38.809943" maxy="15.657509"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245841.190000" miny="3930413.340000" maxx="2577091.190000" maxy="4295758.350000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Elementi divisori e di sostegno</Title>
+          <LegendURL width="100" height="61">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default32.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer>
+        <Title>Edificato</Title>
+        <Abstract>Edificato</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845262</westBoundLongitude>
+          <eastBoundLongitude>15.657116</eastBoundLongitude>
+          <southBoundLatitude>35.478589</southBoundLatitude>
+          <northBoundLatitude>38.809793</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845262" miny="35.478589" maxx="15.657116" maxy="38.809793"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478589" miny="11.845262" maxx="38.809793" maxy="15.657116"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245890.250000" miny="3930377.770000" maxx="2577057.140000" maxy="4295741.620000"/>
+      <Layer queryable="1">
+        <Name>34</Name>
+        <Title>Edificato - Altre strutture</Title>
+        <Abstract>Edificato - Altre strutture</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.846574</westBoundLongitude>
+          <eastBoundLongitude>15.653324</eastBoundLongitude>
+          <southBoundLatitude>35.478620</southBoundLatitude>
+          <northBoundLatitude>38.809314</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.846574" miny="35.478620" maxx="15.653324" maxy="38.809314"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478620" miny="11.846574" maxx="38.809314" maxy="15.653324"/>
+        <BoundingBox CRS="EPSG:3004" minx="2246002.540000" miny="3930377.770000" maxx="2576728.290000" maxy="4295688.470000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Edificato - Altre strutture</Title>
+          <LegendURL width="100" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default34.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>35</Name>
+        <Title>Edificato - Complessi</Title>
+        <Abstract>Edificato - Complessi</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.849903</westBoundLongitude>
+          <eastBoundLongitude>15.649539</eastBoundLongitude>
+          <southBoundLatitude>35.488142</southBoundLatitude>
+          <northBoundLatitude>38.803618</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.849903" miny="35.488142" maxx="15.649539" maxy="38.803618"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.488142" miny="11.849903" maxx="38.803618" maxy="15.649539"/>
+        <BoundingBox CRS="EPSG:3004" minx="2246270.420000" miny="3931427.120000" maxx="2576404.100000" maxy="4295056.400000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Edificato - Complessi</Title>
+          <LegendURL width="100" height="64">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default35.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>36</Name>
+        <Title>Edificato</Title>
+        <Abstract>Edificato</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845262</westBoundLongitude>
+          <eastBoundLongitude>15.657116</eastBoundLongitude>
+          <southBoundLatitude>35.478982</southBoundLatitude>
+          <northBoundLatitude>38.809793</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845262" miny="35.478982" maxx="15.657116" maxy="38.809793"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478982" miny="11.845262" maxx="38.809793" maxy="15.657116"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245890.250000" miny="3930421.390000" maxx="2577057.140000" maxy="4295741.620000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Edificato</Title>
+          <LegendURL width="100" height="70">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default36.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>37</Name>
+        <Title>Edificato - Simboli</Title>
+        <Abstract>Edificato - Simboli</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.850290</westBoundLongitude>
+          <eastBoundLongitude>15.656892</eastBoundLongitude>
+          <southBoundLatitude>35.485053</southBoundLatitude>
+          <northBoundLatitude>38.803730</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.850290" miny="35.485053" maxx="15.656892" maxy="38.803730"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.485053" miny="11.850290" maxx="38.803730" maxy="15.656892"/>
+        <BoundingBox CRS="EPSG:3004" minx="2246304.540000" miny="3931083.000000" maxx="2577042.570000" maxy="4295068.880000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Edificato - Simboli</Title>
+          <LegendURL width="100" height="57">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default37.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer>
+        <Title>Orografia</Title>
+        <Abstract>Orografia</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844096</westBoundLongitude>
+          <eastBoundLongitude>15.656381</eastBoundLongitude>
+          <southBoundLatitude>35.478653</southBoundLatitude>
+          <northBoundLatitude>38.811350</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844096" miny="35.478653" maxx="15.656381" maxy="38.811350"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478653" miny="11.844096" maxx="38.811350" maxy="15.656381"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245794.800000" miny="3930387.830000" maxx="2576992.090000" maxy="4295914.400000"/>
+      <Layer queryable="1">
+        <Name>39</Name>
+        <Title>Orografia - Altre curve di livello</Title>
+        <Abstract>Orografia - Altre curve di livello</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844096</westBoundLongitude>
+          <eastBoundLongitude>15.638055</eastBoundLongitude>
+          <southBoundLatitude>35.478746</southBoundLatitude>
+          <northBoundLatitude>38.811350</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844096" miny="35.478746" maxx="15.638055" maxy="38.811350"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478746" miny="11.844096" maxx="38.811350" maxy="15.638055"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245794.800000" miny="3930398.180000" maxx="2575400.810000" maxy="4295914.400000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Orografia - Altre curve di livello</Title>
+          <LegendURL width="100" height="42">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default39.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>40</Name>
+        <Title>Orografia - H002, Curva di livello ordinaria (10m)</Title>
+        <Abstract>Orografia - H002, Curva di livello ordinaria (10m)</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844096</westBoundLongitude>
+          <eastBoundLongitude>15.638055</eastBoundLongitude>
+          <southBoundLatitude>35.478746</southBoundLatitude>
+          <northBoundLatitude>38.811350</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844096" miny="35.478746" maxx="15.638055" maxy="38.811350"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478746" miny="11.844096" maxx="38.811350" maxy="15.638055"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245794.800000" miny="3930398.180000" maxx="2575400.810000" maxy="4295914.400000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Orografia - H002, Curva di livello ordinaria (10m)</Title>
+          <LegendURL width="100" height="5">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default40.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>41</Name>
+        <Title>Orografia - H001, Curva di livello direttrice (50m)</Title>
+        <Abstract>Orografia - H001, Curva di livello direttrice (50m)</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844096</westBoundLongitude>
+          <eastBoundLongitude>15.638055</eastBoundLongitude>
+          <southBoundLatitude>35.478746</southBoundLatitude>
+          <northBoundLatitude>38.811350</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844096" miny="35.478746" maxx="15.638055" maxy="38.811350"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478746" miny="11.844096" maxx="38.811350" maxy="15.638055"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245794.800000" miny="3930398.180000" maxx="2575400.810000" maxy="4295914.400000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Orografia - H001, Curva di livello direttrice (50m)</Title>
+          <LegendURL width="100" height="5">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default41.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>42</Name>
+        <Title>Orografia - H003, Quota aerofotogrammetrica al suolo</Title>
+        <Abstract>Orografia - H003, Quota aerofotogrammetrica al suolo</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.844962</westBoundLongitude>
+          <eastBoundLongitude>15.656375</eastBoundLongitude>
+          <southBoundLatitude>35.478673</southBoundLatitude>
+          <northBoundLatitude>38.810687</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.844962" miny="35.478673" maxx="15.656375" maxy="38.810687"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.478673" miny="11.844962" maxx="38.810687" maxy="15.656375"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245867.580000" miny="3930387.830000" maxx="2576992.090000" maxy="4295840.810000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Orografia - H003, Quota aerofotogrammetrica al suolo</Title>
+          <LegendURL width="100" height="4">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default42.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>43</Name>
+        <Title>Punti di Inquadramento</Title>
+        <Abstract>Punti di Inquadramento</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.847033</westBoundLongitude>
+          <eastBoundLongitude>15.656164</eastBoundLongitude>
+          <southBoundLatitude>35.480348</southBoundLatitude>
+          <northBoundLatitude>38.810241</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.847033" miny="35.480348" maxx="15.656164" maxy="38.810241"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.480348" miny="11.847033" maxx="38.810241" maxy="15.656164"/>
+        <BoundingBox CRS="EPSG:3004" minx="2246046.100000" miny="3930568.360000" maxx="2576974.140000" maxy="4295791.380000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Punti di Inquadramento</Title>
+          <LegendURL width="100" height="49">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default43.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer>
+        <Title>Limiti amministrativi</Title>
+        <Abstract>Limiti amministrativi</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845265</westBoundLongitude>
+          <eastBoundLongitude>15.656793</eastBoundLongitude>
+          <southBoundLatitude>35.480939</southBoundLatitude>
+          <northBoundLatitude>38.809733</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845265" miny="35.480939" maxx="15.656793" maxy="38.809733"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.480939" miny="11.845265" maxx="38.809733" maxy="15.656793"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245890.250000" miny="3930638.830000" maxx="2577029.130000" maxy="4295734.980000"/>
+      <Layer queryable="1">
+        <Name>45</Name>
+        <Title>Limiti Amministrativi - Zona censura militare</Title>
+        <Abstract>Limiti Amministrativi - Zona censura militare</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>14.261237</westBoundLongitude>
+          <eastBoundLongitude>15.575198</eastBoundLongitude>
+          <southBoundLatitude>36.682085</southBoundLatitude>
+          <northBoundLatitude>38.207775</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="14.261237" miny="36.682085" maxx="15.575198" maxy="38.207775"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.682085" miny="14.261237" maxx="38.207775" maxy="15.575198"/>
+        <BoundingBox CRS="EPSG:3004" minx="2455316.670000" miny="4059916.000000" maxx="2570361.440000" maxy="4228938.870000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Limiti Amministrativi - Zona censura militare</Title>
+          <LegendURL width="100" height="5">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default45.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>46</Name>
+        <Title>Limiti amministrativi</Title>
+        <Abstract>Limiti amministrativi</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.845265</westBoundLongitude>
+          <eastBoundLongitude>15.656793</eastBoundLongitude>
+          <southBoundLatitude>35.480939</southBoundLatitude>
+          <northBoundLatitude>38.809733</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.845265" miny="35.480939" maxx="15.656793" maxy="38.809733"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.480939" miny="11.845265" maxx="38.809733" maxy="15.656793"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245890.250000" miny="3930638.830000" maxx="2577029.130000" maxy="4295734.980000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Limiti amministrativi</Title>
+          <LegendURL width="100" height="50">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default46.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>47247.023810</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>47</Name>
+        <Title>Limiti amministrativi - Croce di cimitero</Title>
+        <Abstract>Limiti amministrativi - Croce di cimitero</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.853461</westBoundLongitude>
+          <eastBoundLongitude>15.634278</eastBoundLongitude>
+          <southBoundLatitude>35.488599</southBoundLatitude>
+          <northBoundLatitude>38.803357</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.853461" miny="35.488599" maxx="15.634278" maxy="38.803357"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.488599" miny="11.853461" maxx="38.803357" maxy="15.634278"/>
+        <BoundingBox CRS="EPSG:3004" minx="2246579.050000" miny="3931468.480000" maxx="2575078.970000" maxy="4295027.390000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Limiti amministrativi - Croce di cimitero</Title>
+          <LegendURL width="100" height="6">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default47.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>48</Name>
+        <Title>Toponimi</Title>
+        <Abstract>Toponimi</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.836881</westBoundLongitude>
+          <eastBoundLongitude>15.662381</eastBoundLongitude>
+          <southBoundLatitude>35.477243</southBoundLatitude>
+          <northBoundLatitude>38.816445</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.836881" miny="35.477243" maxx="15.662381" maxy="38.816445"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.477243" miny="11.836881" maxx="38.816445" maxy="15.662381"/>
+        <BoundingBox CRS="EPSG:3004" minx="2245186.520000" miny="3930249.880000" maxx="2577508.980000" maxy="4296479.880000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Toponimi</Title>
+          <LegendURL width="100" height="589">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default48.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>47247.023810</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>49</Name>
+        <Title>Quadro Sezioni</Title>
+        <Abstract>Quadro Sezioni</Abstract>
+        <CRS>CRS:84</CRS>
+        <CRS>EPSG:4326</CRS>
+        <CRS>EPSG:3004</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>11.830876</westBoundLongitude>
+          <eastBoundLongitude>15.671736</eastBoundLongitude>
+          <southBoundLatitude>35.467771</southBoundLatitude>
+          <northBoundLatitude>38.817990</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="11.830876" miny="35.467771" maxx="15.671736" maxy="38.817990"/>
+        <BoundingBox CRS="EPSG:4326" minx="35.467771" miny="11.830876" maxx="38.817990" maxy="15.671736"/>
+        <BoundingBox CRS="EPSG:3004" minx="2244670.079461" miny="3929213.789056" maxx="2578320.000796" maxy="4296651.286742"/>
+        <Style>
+          <Name>default</Name>
+          <Title>Quadro Sezioni</Title>
+          <LegendURL width="100" height="12">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="http://map.sitr.regione.sicilia.it/proxyoutput/CTR_10000_AGG-2008_MapServer/wms/default49.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

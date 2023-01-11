@@ -1,0 +1,10 @@
+﻿<!-- walk through -->
+<modal-dialog modal-background-class="no-background" modal-class="demo" modal-style="walkThrough.style" ng-if="walkThrough.active" ng-esc="walkThrough.finish()">
+    <div>{{walkThrough.content}}</div>
+    <div style="text-align: right;margin-top: 10px">
+        <button ng-disable="!walkThrough.hasPrevious()" class="gray-hover" ng-click="walkThrough.previous()">Prev</button>
+        <span style="margin-left: 10px"></span>
+        <button ng-if="walkThrough.resumeNeeded()" class="gray" ng-click="walkThrough.resume()">Resume</button>
+        <button ng-if="!walkThrough.resumeNeeded()" class="gray" ng-click="walkThrough.next()">{{walkThrough.hasNext()?'Next':'Done'}}</button>
+    </div>    
+</modal-dialog>

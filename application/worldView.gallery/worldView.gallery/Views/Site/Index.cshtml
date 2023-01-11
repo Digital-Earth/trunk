@@ -1,0 +1,134 @@
+﻿<!--[if lt IE 9]>
+<html class='no-js lt-ie9' lang='en-US' prefix='og:http://ogp.me/ns#'>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<html lang='en-US' prefix='og:http://ogp.me/ns#' ng-app='appRoot'>
+<!--<![endif]-->
+    <head>
+        <meta charset='utf-8'>
+        <meta name='apple-mobile-web-app-capable' content='yes'>
+        <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+        <link rel='shortcut icon' href=''>
+        <meta name='description' content=''>
+        <meta name='keywords' content=''>
+    
+        <title>PYXIS Worldview</title>
+
+        <!-- == Stylesheets == -->
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/Qco3+GVz8b4byDHjqddR4BIYCf0/wv-test.azurewebsites.net/59893.css" type="text/css" />
+        <link rel="stylesheet" media='screen' href='/site/css/development.css'>
+
+
+        <!-- == Modernizr == -->
+        <script async src='/site/js/vendor/modernizr.custom.26732.js'></script>
+        <script async src='/site/js/news.repository.js'></script>
+
+        <!-- == Library == -->
+        <script src='/site/js/vendor/jquery-2.1.3.min.js'></script>
+        <script src='/site/js/vendor/jquery.truncate.js'></script>
+        <script src='/site/js/vendor/underscore-min.js'></script>
+        <script src='/site/js/vendor/TweenMax.min.js'></script>
+        <script src='/site/js/vendor/bodymovin-dev.js'></script>
+        <script async src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js'></script>
+        <script async src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/BezierPlugin.min.js'></script>
+
+        
+        <!-- == Angular == -->
+        <script src='/site/js/vendor/angular.min.js'></script>
+        <script src='/site/js/vendor/angular-resource.min.js'></script>
+        <script src='/site/js/vendor/angular-animate.min.js'></script>
+        <script src='/site/js/vendor/angular-cookies.min.js'></script>
+        <script src='/site/js/vendor/angular-route.min.js'></script>
+
+
+        <!-- == Custom == -->
+        <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-touch.js"></script>-->
+        <script src='/site/js/vendor/angular-validation.min.js'></script>
+        <script src='/site/js/vendor/angular-validation-schema.min.js'></script>
+        <script src='/site/js/vendor/angular-validation-rule.min.js'></script>
+        <script src='/site/js/vendor/angular-retina.js'></script>
+        <script src="/site/js/vendor/angular-socialshare.min.js"></script>
+        <script src="/site/js/vendor/svgDirs.js"></script>
+
+        <!-- == Fontdeck == -->
+        <script type="text/javascript">
+        WebFontConfig = { fontdeck: { id: '59893' } };
+
+        (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+        })();
+        </script>
+    
+    </head>
+       <body class="ng-class:page" ng-controller="RootController" ng-cloak scroll scroll-off="{{menu.active}}">
+       <!-- == M E N U == -->
+       <div class="menu-panels" resize resize-set="height" ng-include="'/site/parts/menu-fullscreen.html'" ng-class="menu.active ? 'is-active' : ''"></div>
+        <!-- == H E A D E R == -->
+        <header class="header" smart-header="distanceFromTop" format-style="page" ng-class="{'is-active on-white': menu.active}">
+            <div class="header__container">
+                <div class="wv-logo" ng-click="path('/'); menu.toggle('exit')">
+                    <img class="logo-white" src="/site/assets/img-logo-wv-white.png" />
+                    <img class="logo-black" src="/site/assets/img-logo-wv-black.png" />
+                    <span>PYXIS WorldView</span>
+                </div>
+                <nav class="menu">
+                    <a class="btn btn-menu btn--phantom" href="" ng-click="show.modal = 'sign-in'">Sign in</a>
+                    <a class="btn btn-menu btn--phantom reverse" href="" ng-click="show.modal = 'register'">Register</a>
+                    <a class="link link--open" href="" ng-click="menu.toggle()">
+                        <ng-switch on="menu.active">
+                            <span ng-switch-when="false">Menu</span>
+                            <span ng-switch-when="true" >Close</span>
+                        </ng-switch>
+                        <div class="hamburger" ng-class="menu.active ? 'is-active' : ''">
+                            <div class="hamburger__icon"></div>
+                        </div> 
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="wrapper">
+            <!-- == M A I N  == -->
+            <main class="surface" ng-view autoscroll=""></main>
+        </div>
+
+        <!-- == F O O T E R == -->
+        <div class="pusher"></div>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="pyxis-logo">
+                    <img src="/site/assets/pyxis-logo.png" />
+                </div>
+                <div class="links">
+                    <a class="link link--underline" href="">Download the App</a>
+                    <i class="circle"></i>
+                    <a class="link link--underline" href="https://www.pyxisinnovation.com/About/Company" target="_blank">About</a>
+                    <a class="link link--underline" href="https://www.pyxisinnovation.com/Team/Board" target="_blank">Team</a>
+                    <a class="link link--underline" href="/privacy">Privacy</a>
+                    <a class="link link--underline" href="/terms">Terms</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- == M O D A L  S C R I M == -->
+        <div class="modal modal--register slide-up-bottom" ng-class="{'is-visible': show.modal === 'register'}" ng-include="'/site/parts/modals/register.html'" ensure-even-dimensions></div>
+        <div class="modal modal--sign-in slide-up-bottom" ng-class="{'is-visible': show.modal === 'sign-in'}"  ng-include="'/site/parts/modals/sign-in.html'" ensure-even-dimensions></div>
+
+        <div class="modal-overlay" ng-click="show.modal = ''"></div>
+
+        <script src='/site/js/app.root.js'></script>
+        <script src='/site/js/app.routes.js'></script>
+        <script src='/site/js/app.controllers.js'></script>
+        <script src='/site/js/app.services.js'></script>
+        <script src='/site/js/app.filters.js'></script>
+        <script src='/site/js/app.directives.js'></script>
+    </body>
+</html>
+

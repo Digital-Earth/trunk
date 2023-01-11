@@ -1,0 +1,19 @@
+﻿<div class="menu">
+    <div class="menu-content">
+        <div class="menu-tool" ng-click="selectTool('arrow')" tooltip="{{'tooltip.tools.arrow'|i18n}}">
+            <span class="tool arrow"></span>
+        </div><div class="menu-tool" ng-click="selectTool('magic-wand')" pyx-track="select-tool-magicwand" ng-if="currentMapHasFeatures()" tooltip="{{'tooltip.tools.wand'|i18n}}">
+            <span class="tool magic-wand"></span>
+        </div><div class="menu-tool disabled" ng-if="!currentMapHasFeatures()" tooltip="{{'tooltip.tools.wand.disabled'|i18n}}">
+            <span class="tool magic-wand"></span>
+        </div><div class="menu-tool" ng-click="selectTool('freehand')" pyx-track="select-tool-freehand" tooltip="{{'tooltip.tools.freehand'|i18n}}">
+            <span class="tool freehand"></span>
+        </div><div class="menu-tool" ng-click="selectTool('polygon')" pyx-track="select-tool-polygon" tooltip="{{'tooltip.tools.polygon'|i18n}}">
+            <span class="tool polygon"></span>
+        </div><div class="menu-tool" ng-click="selectTool('watershed')" pyx-track="select-tool-watershed" ng-if="currentMapHasElevation()" tooltip="{{'tooltip.tools.watershed'|i18n}}">
+            <span class="tool watershed"></span>
+        </div><div class="menu-tool disabled" ng-if="!currentMapHasElevation()" tooltip="{{'tooltip.tools.watershed.disabled'|i18n}}">
+            <span class="tool watershed"></span>
+        </div>
+    </div>
+</div>

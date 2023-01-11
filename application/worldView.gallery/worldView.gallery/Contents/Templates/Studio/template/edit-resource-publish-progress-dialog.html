@@ -1,0 +1,34 @@
+﻿<form name="editForm" class="edit-resource-form">            
+    <h2 class="title">{{'Publish '+(editResourceModel.type|upgradeResourceType)|i18n}}</h2>
+    <scrollbar class="edit-resource-form-content">
+        <div style="padding-bottom:24px;" i18n="You are almost there..."></div>
+        <div>
+            <div class="row row-1">
+                <div class="form-group">
+                    <div class="small-text">{{'Publishing '+(editResourceModel.type|upgradeResourceType)|i18n}}</div>
+                    <card ng-model="editResourceModel.item" img-mode="asset"></card>
+                </div>
+                <div style="text-align:center;font-size:48px;line-height:48px;"><i class="fa fa-arrow-down"></i></div>
+                <div class="form-group">
+                    <div class="small-text" i18n="Into Gallery"></div>
+                    <card ng-model="editResourceModel.selectedGallery" img-mode="asset"></card>
+                </div>
+            </div>
+            <div class="row row-23">
+                <div class="form-group">
+                    <div class="small-text" i18n="Progress"></div>
+                    {{editResourceModel.publishProgress.state}}
+                    <span class="status" ng-if="editResourceModel.publishProgress.progress">
+                        <span class="progress-bar">
+                            <span class="bar" ng-style="{width:editResourceModel.publishProgress.progress+'px'}"></span>
+                        </span>
+                        {{editResourceModel.publishProgress.progress | number:2}}%
+                    </span>
+                </div>
+            </div>
+        </div>
+    </scrollbar>        
+    <modal-dialog-buttons>                        
+        <button class="big gray" ng-click="editResourceModel.close()"><i class="fa fa-check"></i><span i18n="Hide"></span></button>                
+    </modal-dialog-buttons>
+</form>

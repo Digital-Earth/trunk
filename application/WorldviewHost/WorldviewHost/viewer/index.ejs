@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html ng-app="worldViewStudio" ng-controller="worldViewStudioController">
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/assets/view/images/favicon.ico" type="image/x-icon">
+    <title i18n="PYXIS WorldView Studio"><%= title || "PYXIS WorldView" %></title>
+
+    <%- inject('/build/studio-frameworks.js') %>
+    <%- inject('/build/pyxis.js') %>
+    <%- inject('/build/studio.js') %>
+    <%- inject('/build/studio-localization.js') %>
+
+
+    <!--  HERE IS OUR STUDIO-WEB SHIM -->
+    <%- inject('/build/web-globe-bundle.js') %>
+    <%- inject('/client/globe-interface.js') %>
+    <script>
+        angular.element(document).ready(function () {
+            var injector = angular.element(".ng-scope").injector();
+            injector.get('studioShim');
+        });
+
+        // make sure assets are loaded from this folder
+        window.assetRoot = '/';
+
+        // inject the resource object from the server directly here
+        window.resourceID = '<%= id %>';
+        window.resourceObject = <%- resource %>;
+    </script>
+
+
+    <%- inject('/build/studio-templates.js') %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <%- inject('/build/studio-viewer-skin.js') %>
+
+
+
+    <% if(isLocal){ %>
+        <%- inject('/assets/view/styles/font-awesome.min.css') %>
+        <style rel="stylesheet">
+            @font-face {
+                font-family: 'Relative Medium';
+                src: url('/assets/view/fonts/Relative-Medium.otf') format('opentype');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Relative Book';
+                src: url('/assets/view/fonts/Relative-Book.otf') format('opentype');
+                /*font-weight: 100;*/
+                font-style: normal;
+            }
+        </style>
+        <%- inject('/build/studio.css') %>
+        <%- inject('/build/viewer.css') %>
+    <% } else { %>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//f.fontdeck.com/s/css/4Vr8HX3Uht31GB0HW+UwdlHXdZQ/<%= encodeURIComponent(host) %>44896.css" type="text/css"/>
+        <script src="https://f.fontdeck.com/s/css/js/<%= encodeURIComponent(host) %>/44896.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+        <script>
+           WebFont.load({ fontdeck: { id: '44896' } });
+        </script> -->
+        <%- inject('/build/studio.css') %>
+        <%- inject('/build/viewer.css') %>
+    <% } %>
+
+
+    <style rel="stylesheet">
+
+        .dashboard-window .scrollbar-area .scrollbar-content {
+            overflow: visible !important;
+        }
+
+        .search-box-tag {
+            top: 5px !important;
+        }
+
+        .dg.ac {
+            position: absolute;
+            top: 70px;
+            display: none;
+        }
+
+        .dg.a .save-row {
+            position: absolute;
+        }
+
+/*        .nav-tools {
+            display: none;
+        }*/
+
+        .dialog-box.demo {
+            display: none;
+        }
+
+        .modal-dialog .dialog-box.demo {
+            left: 30px;
+            top: 100px;
+        }
+
+
+        .library {
+            display: none;
+        }
+
+        .dashboard-window {
+            background: transparent;
+            right: 0;
+            border-left: none !important;
+        }
+
+        .header__container {
+            display: block !important;
+        }
+
+        .header.is-active {
+            background-color: transparent !important;
+            border-color: transparent !important;
+        }
+
+        .header.is-active .header__container {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .header.on-white .btn--phantom.reverse-transparent {
+            border-color: black;
+        }
+
+        .header.on-white .btn--phantom.reverse-transparent:hover {
+            background: white;
+        }
+
+
+        .header.default {
+            background: transparent !important;
+        }
+
+        .bottom-border {
+            display: none;
+        }
+
+        .globe-controls {
+            right: 0 !important;
+        }
+
+
+
+
+        /* MOVE TO Separate file */
+        body, html {
+            background-color: #C7C7C7;
+        }
+
+        .loading-title {
+            position: fixed;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            margin-left: -400px;
+            width: 800px;
+            /*transform: translateX(-50%) translateY(-50%);*/
+            font-size: 32px;
+            text-align: center;
+            line-height: 1.3;
+            pointer-events: none;
+        }
+
+        .loading-bar {
+            background: rgba(0, 0, 0, 0.1);
+            height: 12px;
+            position: fixed;
+            bottom: 10px;
+            width: 120px;
+            left: 28px;
+            pointer-events: none;
+            border: solid rgba(255,255,255,0.4) 3px;
+        }
+
+        .loading-bar > span {
+            display: block;
+            position: absolute;
+            background: black;
+            width: 0%;
+            height: 6px;
+        }
+
+    </style>
+
+    <% if (runTests) { %>
+        <link rel="stylesheet" type="text/css" href="/test/jasmine.css"/>
+    <% } %>
+
+    <% if (backendUrl) { %>
+        <script type="text/javascript">
+            window.pyxisBackendUrl = "<%= backendUrl %>";
+        </script>
+    <% } %>
+
+    <!-- Intercom snippet - https://app.intercom.io -->
+    <script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/cnp6v6cw'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()</script>
+</head>
+
+<body ng-keyup="globeKeyUp($event)">
+
+<div class="header default" stop-propagation="keyup" ng-show="!screenCapture.active">
+    <div style="float: left;"><img src="/assets/view/images/studio/wv_top_logo.png" style="height: 36px; margin-left: 20px; margin-top: 15px;"/>
+    </div>
+    <div class="search" delayed-hover delayed-leave="hideSearchWindow($event)" delay="2000">
+        <!-- Search box -->
+        <div class="search-box" ng-click="showSearchWindowIfNeeded()" onscroll="this.scrollTop = 0">
+            <search-box-tag ng-repeat="tag in searchTags" tag="tag"></search-box-tag>
+            <input ng-disabled="!uiActive" type="text" ng-model="search" i18n-placeholder="Search" ng-change="searchChanged()" ng-keyup="handleSearchKey($event)" focus-on="search-result-active" elastic-input width-padding="40" width-method="max" tooltip="{{'tooltip.search'|i18n}}"/>
+            <!-- Search icon or remove icon -->
+            <div ng-if="!isSearchInProgress() && !isOffline" class="search-icon" ng-click="searchIconClick()" ng-class="{'kill':search.length}"></div>
+            <!-- Search in progress icon -->
+            <i ng-if="isSearchInProgress() && !isOffline" class="loading-progress-icon"></i>
+            <!-- 'Network connection lost' icon -->
+            <div ng-if="isOffline" class="network-down fa fa-exclamation-triangle" tooltip="{{'tooltip.network.down'|i18n}}"></div>
+        </div>
+        <!-- Search results window -->
+        <div class="suggestions" ng-show="searchResultWindowActive" ng-esc="hideSearchWindow()">
+            <!-- Search results menu -->
+            <search-result-menu data="services" item-selector="selectSearchResult" item-importer="addResource" search-service-filter="searchServiceFilter"></search-result-menu>
+            <div ng-show="currentSearchResult" ng-include="'/client/templates/studio/template/search-result-selected.html'"></div>
+        </div>
+    </div>
+</div>
+
+<div class="legend-container" ng-include="'/client/templates/studio/template/viewer-item-legend.html'" ng-if="currentMap"></div>
+
+<div ng-repeat="url in templates.sections" ng-include="url"></div>
+<div ng-repeat="url in templates.dialogs" ng-include="url"></div>
+<div ng-repeat="url in templates.widgets" ng-include="url"></div>
+
+<div id="Intercom" ng-show="intercomEnabled" class="viewer">
+</div>
+
+<div class="loading-title"><%= title %></div>
+<div class="loading-bar"><span></span></div>
+
+</body>
+</html>

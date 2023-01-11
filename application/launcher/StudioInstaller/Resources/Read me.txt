@@ -1,0 +1,6 @@
+To modify the .exe:
+
+1- modify the .js
+2- use visual studio command prompt and browse to this folder.
+3- call: jsc <jscript_file_name>.js
+

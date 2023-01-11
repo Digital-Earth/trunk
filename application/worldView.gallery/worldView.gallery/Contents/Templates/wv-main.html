@@ -1,0 +1,95 @@
+﻿<div ng-show="tags.length" class="tags-filter tags-filter-top {{bannerClass}}" tag-filter-menu>
+    <span class="tags-body">
+        <span class="gray-text">Filter:</span>
+        <span class="tag" ng-repeat="tag in tags" ng-class="{selected:insideSearch(tag.Name)}" ng-click="toggleSearchWord(tag.Name)">{{tag.Name}}</span>
+    </span>
+</div>
+<div ng-show="tags.length" class="tags-filter-spacer"></div>
+
+<!-- 
+    Added the welcome banner here, and not within the div below to allow for full width content.  
+    It will only show when the user is not logged in and we are at the home page.
+    Uses welcome-banner directive to animate each panel
+    -->
+<div ng-if="welcomeBanner" class="welcome-banner" welcome-banner>
+    <div class="welcome-layout">
+        <h1>Welcome to WorldView&trade;</h1>
+        <h2>Here are 3 steps to get you started</h2>
+
+        <div class="welcome-panel-container horizontal-align">
+            <div class="welcome-panel">
+                <img class="welcome-panel-image" src="/Contents/Images/welcome-banner-1.png"/>
+                <div class="welcome-panel-number">1</div>
+                <div class="welcome-panel-text">Search or browse for a card that interests you.</div>
+            </div>
+            <div class="welcome-panel">
+                <img class="welcome-panel-image" src="/Contents/Images/welcome-banner-2.png"/>
+                <div class="welcome-panel-number">2</div>
+                <div class="welcome-panel-text">View it on your computer in the WorldView Studio App.</div>
+            </div>
+            <div class="welcome-panel">
+                <img class="welcome-panel-image" src="/Contents/Images/welcome-banner-3.png"/>
+                <div class="welcome-panel-number">3</div>
+                <div class="welcome-panel-text">Combine it with other cards and share your insights with the world!</div>
+            </div>
+
+            <div style="clear: both;"></div>
+        </div>
+
+        <a href="/download" class="download-link" ng-click="gaEvent('welcome banner', 'download')">
+            <button class="xl gray pink">
+                <span>Download the App</span>
+                <span class="fa fa-windows"></span>
+            </button>
+        </a>
+        <div>or <a href="#" class="link-hover-underlined link-signin" ng-click="enterSignInMode(); gaEvent('welcome banner', 'sign in')">Sign in</a></div>
+    </div>
+</div>
+
+<div ng-if="welcomeBanner" ng-show="tags.length" class="tags-filter tags-filter-inline">
+    <span class="tags-body">
+        <span class="gray-text">Filter:</span>
+        <span class="tag" ng-repeat="tag in tags" ng-class="{selected:insideSearch(tag.Name)}" ng-click="toggleSearchWord(tag.Name)">{{tag.Name}}</span>
+    </span>
+</div>
+
+<div style="left:0px;right:0px;padding:40px;">
+    <div ng-if="noResultsFound" class="no-results-found">
+        <h2>No results found...</h2>
+        <span ng-if="matchSuggestion">looking for <button class="big gray" ng-click="searchMatchSuggestion()">{{matchSuggestion}}</button>?</span>
+    </div>
+    <div class="masonry" item-width="240" v-space="24" h-space="30" style="margin-left: auto; margin-right: auto;" should-expand="loadMore()">
+        <div ng-if="!search" masonry-item>
+            {{search}}
+            <div class="card">
+                <div class="image">
+                    <a href="/info/vision"><img src="/Contents/Images/wv-welcome-video.png" style="width: 238px"></a>
+                </div>
+                <div class="type">POST</div>
+                <div class="name" style="text-align: center">
+                    New to WorldView?
+                </div>
+                <div class="name" style="text-align: center">
+                    Search <br/>Combine <br/> Analyze <br/> Share
+                </div>
+                <div class="desc">
+                    Discover the power of WorldView.
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <div class="image">
+                    <a href="/info/education-vision"><img src="/Contents/Images/wv-in-education.png" style="width: 238px"></a>
+                </div>
+                <div class="type">VIDEO</div>
+                <div class="name">
+                    The future of education
+                </div>
+                <div class="desc">
+                    It is so simple a 12 year old kid can use it. And so powerful it will change the future of geospatial education.
+                </div>
+            </div>
+        </div>
+        <card ng-repeat="card in cards" ng-model="card" masonry-item>{{card.Metadata.Name}}</card>
+    </div>    
+</div>

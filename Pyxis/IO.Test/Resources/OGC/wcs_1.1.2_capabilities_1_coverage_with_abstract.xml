@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Capabilities xmlns="http://www.opengis.net/wcs/1.1"
+ xmlns:ows="http://www.opengis.net/ows/1.1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xsi:schemaLocation="http://www.opengis.net/wcs/1.1 http://schemas.opengis.net/wcs/1.1/wcsGetCapabilities.xsd http://www.opengis.net/ows/1.1/ http://schemas.opengis.net/ows/1.1.0/owsAll.xsd" version="1.1.2">
+  <ows:ServiceIdentification>
+    <ows:Title>KYUpperOrdovician_WCS</ows:Title>
+    <ows:Keywords>
+      <ows:Keyword>GIS, Kentucky, KGS, top of Upper part of Ordovician System, Upper Ordovician, stratigraphy, gridded surface, geothermal</ows:Keyword>
+    </ows:Keywords>
+  <ows:ServiceType>WCS</ows:ServiceType>
+  <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+  <ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
+  <ows:ServiceTypeVersion>1.1.1</ows:ServiceTypeVersion>
+  <ows:ServiceTypeVersion>1.1.2</ows:ServiceTypeVersion>
+  <ows:Fees>None</ows:Fees>
+  <ows:AccessConstraints>None</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>Kentucky Geological Survey</ows:ProviderName>
+    <ows:ProviderSite xlink:href="http://kgs.uky.edu"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>Doug Curl</ows:IndividualName>
+      <ows:PositionName>Head of Geoscience Information Section</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>859-323-0519</ows:Voice>
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>228 MMRB, University of Kentucky</ows:DeliveryPoint>
+          <ows:City>Lexington</ows:City>
+          <ows:AdministrativeArea>Kentucky</ows:AdministrativeArea>
+          <ows:PostalCode>40506-0107</ows:PostalCode>
+          <ows:Country>USA</ows:Country>
+          <ows:ElectronicMailAddress>KGSMail@uky.edu</ows:ElectronicMailAddress>
+        </ows:Address>
+        <ows:OnlineResource xlink:href="http://kgs.uky.edu/usgin/services/aasggeothermal/KYUpperOrdovician_WCS/MapServer/WCSServer"/>
+        <ows:ContactInstructions>email</ows:ContactInstructions>
+      </ows:ContactInfo>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://kgs.uky.edu/usgin/services/aasggeothermal/KYUpperOrdovician_WCS/MapServer/WCSServer"/>
+          <ows:Post xlink:href="http://kgs.uky.edu/usgin/services/aasggeothermal/KYUpperOrdovician_WCS/MapServer/WCSServer"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="service">
+        <ows:AllowedValues>
+          <ows:Value>WCS</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="AcceptVersions">
+        <ows:AllowedValues>
+          <ows:Value>1.0.0</ows:Value>
+          <ows:Value>1.1.0</ows:Value>
+          <ows:Value>1.1.1</ows:Value>
+          <ows:Value>1.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="DescribeCoverage">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://kgs.uky.edu/usgin/services/aasggeothermal/KYUpperOrdovician_WCS/MapServer/WCSServer"/>
+          <ows:Post xlink:href="http://kgs.uky.edu/usgin/services/aasggeothermal/KYUpperOrdovician_WCS/MapServer/WCSServer"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="service">
+        <ows:AllowedValues>
+          <ows:Value>WCS</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="version">
+        <ows:AllowedValues>
+          <ows:Value>1.0.0</ows:Value>
+          <ows:Value>1.1.0</ows:Value>
+          <ows:Value>1.1.1</ows:Value>
+          <ows:Value>1.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="Identifier">
+        <ows:AllowedValues>
+          <ows:Value>1</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetCoverage">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://kgs.uky.edu/usgin/services/aasggeothermal/KYUpperOrdovician_WCS/MapServer/WCSServer"/>
+          <ows:Post xlink:href="http://kgs.uky.edu/usgin/services/aasggeothermal/KYUpperOrdovician_WCS/MapServer/WCSServer"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="service">
+        <ows:AllowedValues>
+          <ows:Value>WCS</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="version">
+        <ows:AllowedValues>
+          <ows:Value>1.0.0</ows:Value>
+          <ows:Value>1.1.0</ows:Value>
+          <ows:Value>1.1.1</ows:Value>
+          <ows:Value>1.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="Identifier">
+        <ows:AllowedValues>
+          <ows:Value>1</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="InterpolationType">
+        <ows:AllowedValues>
+          <ows:Value>nearest</ows:Value>
+          <ows:Value>bilinear</ows:Value>
+          <ows:Value>bicubic</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="format">
+        <ows:AllowedValues>
+          <ows:Value>image/GeoTIFF</ows:Value>
+          <ows:Value>image/NITF</ows:Value>
+          <ows:Value>image/JPEG</ows:Value>
+          <ows:Value>image/PNG</ows:Value>
+          <ows:Value>image/JPEG2000</ows:Value>
+          <ows:Value>image/HDF</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="store">
+        <ows:AllowedValues>
+          <ows:Value>False</ows:Value>
+          <ows:Value>True</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+  </ows:OperationsMetadata>
+  <Contents>
+    <CoverageSummary>
+      <ows:Title>Surface_1</ows:Title>
+      <ows:Abstract>These data were analyzed with Petra mapping software using available in-house oil-and-gas well locations (KY single zone projection, NAD 83, state plane feet) from the KGS well database and some selected nonstate supplied well data. Tops were picked for the Upper part of Ordovician System. A smoothed (unfaulted) raster dataset was generated from a total of 1178 wells examined. An ascii tabular grid file (cell size 4000 feet) was exported from Petra and loaded into ArcMap. Raster dataset then clipped to Silurian outcrop limit for central Kentucky; remainder clipped to buffered state outline.</ows:Abstract>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>-89.681257009396447 36.448445436536268</ows:LowerCorner>
+        <ows:UpperCorner>-81.897162338724613 38.792239411835347</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <Identifier>1</Identifier>
+    </CoverageSummary>
+    <SupportedCRS>urn:ogc:def:crs:EPSG::4326</SupportedCRS>
+    <SupportedCRS>urn:ogc:def:crs:EPSG::3089</SupportedCRS>
+    <SupportedFormat>image/GeoTIFF</SupportedFormat>
+    <SupportedFormat>image/NITF</SupportedFormat>
+    <SupportedFormat>image/JPEG</SupportedFormat>
+    <SupportedFormat>image/PNG</SupportedFormat>
+    <SupportedFormat>image/JPEG2000</SupportedFormat>
+    <SupportedFormat>image/HDF</SupportedFormat>
+  </Contents>
+</Capabilities>

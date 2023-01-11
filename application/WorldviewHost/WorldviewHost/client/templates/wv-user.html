@@ -1,0 +1,54 @@
+﻿<div style="left:0px;right:0px;padding:40px;">
+    <div class="banner" >
+        <img ng-show="banner" ng-src="{{banner}}" />
+    </div>
+    <div>
+        <div ng-if="owner && (emailConfirmed && cards.length < 1 || admin)" style="float:right;margin-top:20px"><button class="big gray" ng-click="enterNewGalleryMode()"><i class="fa fa-plus"></i><span>New Gallery</span></button></div>
+        <h1><i class="fa fa-user"></i> {{profile.Metadata.Name}} <span class="gray-text small-text">({{cards.length}} {{cards.length > 1 ? 'Galleries' : 'Gallery'}})</span></h1>
+        <div style="clear:both"></div>
+        <div class="metadata">
+        </div>
+        <div style="text-align: justify;">{{gallery.Metadata.Description}}</div>
+        <br />
+    </div>
+    <div class="masonry" item-width="240" v-space="24" h-space="30" style="margin-left:auto;margin-right:auto;" should-expand="false">
+        <card ng-repeat="card in cards" ng-model="card" masonry-item></card>
+    </div>    
+</div>
+
+<modal-dialog ng-if="newGalleryMode">
+    <form name="newgalleryform">
+        <div class="form-group">
+            <span class="gray-text small-text">Name</span>
+            <div style="position:relative">
+                <i ng-hide="!newgalleryform.name.$error.required" class="fa fa-asterisk fa-sm" style="color: #faa;position:absolute;left: -20px;top: 10px;font-size: 14px;"></i>
+
+                <span ng-switch on="newgalleryform.name.$error.remoteProgress" style="position:absolute;right: 10px;top: 3px;font-size: 14px;">
+                    <i ng-switch-when="true" class="fa fa-refresh fa-spin fa-sm" style="color: #ccc;"></i>
+                    <span ng-switch-when="false" ng-switch on="newgalleryform.name.$error.remote" >
+                        <i ng-switch-when="false" class="fa fa-check fa-sm" style="color: #0c0;"></i>
+                        <i ng-switch-when="true" class="fa fa-times fa-sm" style="color: #c00;"></i>
+                    </span>
+                </span>
+
+                <input type="text" class="form-control" name="name" ng-model="newValues.Name" placeholder="Your Gallery Name" required="" autocomplete="off" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="5" remote-validator="checkNewGalleryName($value)" delay="1000">
+            </div>
+	    </div>
+        <div class="form-group">
+            <span class="gray-text small-text">Description</span>
+            <textarea class="form-control" style="width:100%;height:100px;resize: none;" ng-model="newValues.Description" placeholder="Gallery Description"></textarea>
+	    </div>
+        <div class="form-group">
+            <span class="gray-text small-text">Tags</span>
+            <input-tags ng-model="newValues.Tags"></input-tags>
+	    </div>
+        <div class="form-group">
+            <span class="gray-text small-text">Permissions</span>
+            <input-permission ng-model="newValues.Visibility"></input-permission>
+	    </div>
+        <modal-dialog-buttons>
+            <button ng-disabled="!newgalleryform.$valid" class="big gray" ng-click="commitNewGalleryMode()"><i class="fa fa-check"></i><span>Create Gallery</span></button>
+            <button class="big gray" ng-click="cancelNewGalleryMode()"><i class="fa fa-times"></i><span>Cancel</span></button>
+        </modal-dialog-buttons>
+    </form>
+</modal-dialog>

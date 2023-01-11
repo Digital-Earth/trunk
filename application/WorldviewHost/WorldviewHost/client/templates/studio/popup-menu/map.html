@@ -1,0 +1,9 @@
+﻿<div class="popup-menu">
+    <div ng-if="map.Camera.Range" class="menu-item" ng-click="gotoMap(map)" i18n="Goto" tooltip="{{'tooltip.library.globe.menu.goto'|i18n}}"></div>
+    <div class="menu-item" ng-click="setMapCamera(map)" i18n="Save Camera" tooltip="{{'tooltip.library.globe.menu.savecamera'|i18n}}"></div>
+    <hr />
+    <div class="menu-item" ng-click="editResource(map)" i18n="Edit" tooltip="{{'tooltip.library.globe.menu.edit'|i18n}}"></div>
+    <div class="menu-item" ng-click="duplicateMap(map,$index)" i18n="Duplicate" tooltip="{{'tooltip.library.globe.menu.duplicate'|i18n}}"></div>
+    <div ng-if="activeFeatures.mosaic" class="menu-item" ng-click="mosaic(map,$index)" i18n="Mosaic" tooltip="{{'tooltip.library.globe.menu.mosaic'|i18n}}"></div>
+    <div class="menu-item" ng-click="removeMap(map,$index)" i18n="Remove" tooltip="{{'tooltip.library.globe.menu.remove'|i18n}}"></div>
+</div>

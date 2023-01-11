@@ -1,0 +1,32 @@
+﻿<div class="resource-result data-set">
+    <div ng-if="resource.Metadata.Visibility === 'Private'"><i class="fa fa-lock"></i> {{'Private' | i18n }}</div>
+<div class="data-set-background">
+    <div class="data-set-summary">
+        <!-- Action buttons -->
+        <div class="actions">
+            <div ng-if="!item">
+                <!-- 'Loading in progress' icon -->
+                <i ng-if="resource.importing" class="loading-progress-icon"></i>
+                <div ng-if="!resource.importing" class="actions-select">
+                    <input type="checkbox" ng-checked="resource.selected" ng-click="resource.selected = !resource.selected" />
+                </div>
+            </div>
+            <!-- 'Already imported' icon -->
+            <div ng-if="item" class="fa-stack">
+                <i class="fa fa-check-circle-o fa-stack-1x check"></i>
+            </div>
+        </div>
+        <!-- DataSet metadata-->
+        <div class="metadata">
+            <!-- Title-->
+            <div class="title">
+                {{resource.Metadata.Name}}
+            </div>
+            <!-- Description-->
+            <div ng-if="resource.Metadata.Description" class="description">
+                {{resource.Metadata.Description}}
+            </div>
+        </div>
+    </div>
+</div>
+</div>

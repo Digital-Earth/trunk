@@ -1,0 +1,16 @@
+﻿<form name="editForm" class="edit-resource-form" ng-esc="editResourceModel.cancelPublish()">            
+    <h2 class="title">{{'Publish '+(editResourceModel.type|upgradeResourceType)|i18n}}</h2>
+    <scrollbar class="edit-resource-form-content">
+        <div>{{'Please select a gallery for your '+(editResourceModel.type|upgradeResourceType)+' to be published in'|i18n}}</div>
+        <div class="masonry" item-width="240" v-space="24" h-space="30" style="width:100%" should-expand="loadMore()">
+            <card ng-repeat="card in editResourceModel.userGalleries" 
+                    ng-click="editResourceModel.selectGallery(card)" tag-click="editResourceModel.selectGallery(card)" 
+                    img-mode="asset" ng-model="card" masonry-item 
+                    ng-class="{selected:card == editResourceModel.selectedGallery}"></card>
+        </div>  
+    </scrollbar>        
+    <modal-dialog-buttons>                
+        <button class="big gray-hover" ng-click="editResourceModel.cancelPublish()"><span i18n="Cancel"></span></button>
+        <button ng-disabled="!editResourceModel.selectedGallery" class="big gray" ng-click="editResourceModel.commitSelectGallery()"><i class="fa fa-check"></i><span i18n="Select Gallery"></span></button>
+    </modal-dialog-buttons>
+</form>

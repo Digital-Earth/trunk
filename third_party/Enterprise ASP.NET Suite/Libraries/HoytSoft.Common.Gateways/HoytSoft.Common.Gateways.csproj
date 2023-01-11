@@ -1,0 +1,92 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A1C6D06-DF10-4077-9A5A-2CB01FE7A3B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HoytSoft.Common.Gateways</RootNamespace>
+    <AssemblyName>HoytSoft.Common.Gateways</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractGateway.cs" />
+    <Compile Include="AbstractResponse.cs" />
+    <Compile Include="AddressInformation.cs" />
+    <Compile Include="CheckInformation.cs" />
+    <Compile Include="CountryInformation.cs" />
+    <Compile Include="CreditCardInformation.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointBillingInformation.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointCheckInformation.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointCountry.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointCreditCardInformation.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointItemCollection.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointItemInformation.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointOptionsCollection.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointPaymentInformation.cs" />
+    <Compile Include="Implementations\LinkPoint\LinkPointResponse.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointShippingInformation.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointTransactionInformation.cs" />
+    <Compile Include="Implementations\LinkPoint\Components\LinkPointUSState.cs" />
+    <Compile Include="Implementations\LinkPoint\Enums.cs" />
+    <Compile Include="Implementations\LinkPoint\Factory.cs" />
+    <Compile Include="Implementations\LinkPoint\LinkPointGateway.cs" />
+    <Compile Include="Implementations\LinkPoint\LinkPointGatewayV3_5.cs" />
+    <Compile Include="Implementations\LinkPoint\LinkPointResponseV3_5.cs" />
+    <Compile Include="Implementations\LinkPoint\LinkPointStandardErrorMessages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="USStateInformation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HoytSoft.Common\HoytSoft.Common.csproj">
+      <Project>{08E9977B-215E-4720-92F5-835D77517CF1}</Project>
+      <Name>HoytSoft.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(ProjectDir)..\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

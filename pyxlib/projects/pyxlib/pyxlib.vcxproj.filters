@@ -783,6 +783,7 @@
     <ClCompile Include="source\pyxis\rhombus\rhombus_filler.cpp">
       <Filter>rhombus\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\pyxis\data\feature_serializer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\pyxis\data\all_feature_iterator.h">
@@ -1451,6 +1452,7 @@
     <ClInclude Include="source\pyxis\rhombus\rhombus_utils.h">
       <Filter>rhombus\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\pyxis\data\feature_serializer.h" />
     <ClInclude Include="source\pyxis\rhombus\rhombus_filler.h">
       <Filter>rhombus\Header Files</Filter>
     </ClInclude>

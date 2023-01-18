@@ -159,7 +159,7 @@ namespace PyxisCLI
                     {
                         AppServices.setConfiguration(AppServicesConfiguration.localStorageFormat,AppServicesConfiguration.localStorageFormat_files);
                         AppServices.setConfiguration(AppServicesConfiguration.importMemoryLimit, "200");
-
+                                
                         s_engine = Engine.Create(EngineConfig);
 
                         EngineCleanup.AttachToEngine(s_engine);

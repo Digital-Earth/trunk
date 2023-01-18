@@ -130,7 +130,7 @@ exit 0</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>xerces-c_3.lib;libeay32.lib;zlib_pyxis.lib;sqlite3.lib;cpprest110_2_5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>xerces-c_3.lib;zlib_pyxis.lib;sqlite3.lib;cpprest110_2_5.lib;ssleay32.lib;libeay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);../../../third_party/xerces-c-3.1.1/lib;../../../third_party/boost/lib;../../../third_party/openssl/out32;../../../third_party/sqlite3;../../../third_party/zlib;../../../third_party/casablanca;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>

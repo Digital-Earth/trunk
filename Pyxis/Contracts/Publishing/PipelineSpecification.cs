@@ -73,6 +73,11 @@ namespace Pyxis.Contract.Publishing
             /// Gets or sets the name of the unit
             /// </summary>
             public string Name { get; set; }
+
+            /// <summary>
+            /// Gets or sets the symbol of the unit
+            /// </summary>
+            public string Symbol { get; set; }
         }
 
         //TODO: consider rename to Type (merge with Domain)
@@ -114,7 +119,7 @@ namespace Pyxis.Contract.Publishing
             {
                 if (referenceField.FieldUnit != null)
                 {
-                    FieldUnit = new FieldUnit() {Name = referenceField.FieldUnit.Name};
+                    FieldUnit = new FieldUnit() { Name = referenceField.FieldUnit.Name, Symbol = referenceField.FieldUnit.Symbol };
                 }
                 if (referenceField.Metadata != null)
                 {

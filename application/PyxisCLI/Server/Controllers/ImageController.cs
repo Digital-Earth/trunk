@@ -13,8 +13,12 @@ using PyxisCLI.Server.Services;
 using PyxisCLI.Server.Utilities;
 using PyxisCLI.Server.WebConfig;
 
+using System.Reflection;
+using ApplicationUtility;
+
 namespace PyxisCLI.Server.Controllers
 {
+
     /// <summary>
     /// Return image generated from rhombus values. used for visualization of data
     /// </summary>
@@ -31,8 +35,9 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSource">GeoSource to use</param>
         /// <param name="fromCache">if ture, request will only generate rhombus is all data in cache</param>
         /// <returns>image</returns>
-        [HttpGet]
+
         [Route("Style")]
+        [HttpGet]
         [ApiCache]
         [TimeTrace("geoSource,key,size,format,style,fromCache")]
         public HttpResponseMessage RGBWithStyle(string key, int size, Guid geoSource, string style, string format = "png", bool fromCache = false)
@@ -97,12 +102,14 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSource">GeoSource to load</param>
         /// <param name="format">"PYX0"</param>
         /// <returns>PYX0 file format</returns>
-        [HttpGet()]
+
         [Route("TextureValue")]
-        [ApiCache()]
+        [HttpGet]
+        [ApiCache]
         [TimeTrace("key,size,geoSource,format")]
         public HttpResponseMessage TextureValue(string key, int size, Guid geoSource, string format)
         {
+
             if (!RhombusHelper.IsValidSize(size))
             {
                 return null;
@@ -110,7 +117,30 @@ namespace PyxisCLI.Server.Controllers
 
             if (format.ToLower() != "pyx0")
             {
-                throw new Exception("unsupported format");
+                if (format.ToLower() == "geotiff")
+                {
+/*                    byte[] bytes;
+                    int hasValuesBlockSize;
+
+                    LoadRhombusValues(key, size, geoSource, out bytes, out hasValuesBlockSize);
+
+                    var process = GeoSourceInitializer.InitializeAsCoverage(geoSource);
+
+                    IProcess_SPtr converterProc =
+                        PYXCOMFactory.CreateProcess(
+                            new PYXCOMProcessCreateInfo("{7732B135-8BB8-47f7-99E4-6E039FDF5067}")
+                            .AddAttribute("savePath", AppServices.makeTempFile(".geotiff"))
+                            .AddInput(0, process)
+                            );
+
+                    converterProc.initProc();
+
+                    // Convert the data and write to file.
+                    IDataProcessor_SPtr dataProc = pyxlib.QueryInterface_IDataProcessor(pyxlib.QueryInterface_PYXCOM_IUnknown(converterProc));
+                    dataProc.processData();*/
+
+                }
+
             }
 
             var resultBytes = GeoSourceBlobCacheSingleton.GetBlob(geoSource, key, size, format);
@@ -145,8 +175,9 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="format">"jpeg" or "png"</param>
         /// <param name="geoSource">GeoSource to use</param>
         /// <returns>image</returns>
-        [HttpGet]
+
         [Route("RGB")]
+        [HttpGet]
         [ApiCache]
         public HttpResponseMessage RGB(string key, int size, string format, Guid geoSource)
         {
@@ -280,7 +311,24 @@ namespace PyxisCLI.Server.Controllers
             return bytes;
         }
 
+        /*private static void configureGDAL()
+        {
+            Console.WriteLine($"Working directory: {Directory.GetCurrentDirectory()}");
+            Console.WriteLine("Trying to configure all twice");
+            GdalBase.ConfigureAll();
+            GdalBase.ConfigureAll();
+            Console.WriteLine("GDAL configured");
 
+            var version = Assembly.GetAssembly(typeof(MaxRev.Gdal.Core.GdalBase))
+                     .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                                 .InformationalVersion;
+
+            Console.WriteLine($"Package version: {version}");
+
+            Console.WriteLine(string.Join(
+                $"GDAL Version: {Gdal.VersionInfo("RELEASE_NAME")}",
+                $"GDAL INFO: {Gdal.VersionInfo("")}"));
+        }*/
         private static Bitmap BitmapFromRawBytes(byte[] bytes, int width, int height)
         {
             var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb);

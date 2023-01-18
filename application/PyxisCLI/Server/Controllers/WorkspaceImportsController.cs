@@ -10,6 +10,7 @@ using Pyxis.Contract.DataDiscovery;
 using Pyxis.Contract.Workspaces;
 using PyxisCLI.Server.Models;
 using PyxisCLI.Server.WebConfig;
+using PyxisCLI.State;
 using PyxisCLI.Workspaces;
 
 namespace PyxisCLI.Server.Controllers
@@ -43,8 +44,16 @@ namespace PyxisCLI.Server.Controllers
         [TimeTrace("workspace")]
         public IImport PostImport(string workspace, string import, [FromBody] JObject importJson)
         {
-            var newImport = WorkspaceParser.ParseImport(importJson);
 
+            var newImport = WorkspaceParser.ParseImport(importJson);
+            if (newImport.Uri.Contains("https://"))
+            {
+                string proxyPort = ClusterConfiguration.ProxyPort;
+                string proxyhost = ClusterConfiguration.ProxyHost;
+
+                var newProxyURl = "http://" + proxyhost + ":" + proxyPort + "/external/https/";
+                newImport.Uri = newImport.Uri.Replace("https://", newProxyURl);
+            }
             Workspaces.GetWorkspaceFile(workspace).UpdateOrInsertImport(import,newImport);
             return newImport;            
         }

@@ -45,6 +45,19 @@ namespace PyxisCLI.State
             get { return Environment.GetEnvironmentVariable("GGS_CLUSTER_MASTER"); }
         }
 
+        public static string ProxyPort
+        {
+            get { return Environment.GetEnvironmentVariable("PORT"); }
+        }
+
+        public static string ProxyHost
+        {
+            get {
+                return (MasterNode.Substring(MasterNode.IndexOf("//")+2)).Substring(0, (MasterNode.Substring(MasterNode.IndexOf("//") + 2)).IndexOf(":"));
+                /* return "localhost";*/
+            }
+        }
+
         public static string JobId
         {
             get { return Environment.GetEnvironmentVariable("GGS_JOB"); }

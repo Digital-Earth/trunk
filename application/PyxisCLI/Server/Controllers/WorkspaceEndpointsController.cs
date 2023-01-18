@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using Pyxis.Contract.DataDiscovery;
 using Pyxis.Contract.Workspaces;
 using PyxisCLI.Server.Utilities;
 using PyxisCLI.Server.WebConfig;
+using PyxisCLI.State;
 using PyxisCLI.Workspaces;
 
 namespace PyxisCLI.Server.Controllers
@@ -33,7 +35,7 @@ namespace PyxisCLI.Server.Controllers
         [HttpGet]
         [TimeTrace("workspace")]
         [AllowAnonymous]
-        public Endpoint Endpoint(string workspace, string endpoint)
+        public Endpoint Endpoint2(string workspace, string endpoint)
         {
             return Workspaces.GetEndpoint(Reference.FromParts(workspace, endpoint));
         }
@@ -41,8 +43,17 @@ namespace PyxisCLI.Server.Controllers
         [Route("{workspace}/Endpoint/{endpoint}")]
         [HttpPost]
         [TimeTrace("workspace")]
-        public Endpoint Endpoint(string workspace, string endpoint, string uri)
+        public Endpoint Endpoint3(string workspace, string endpoint, string uri)
         {
+            if (uri.Contains("https://"))
+            {
+                string proxyPort = ClusterConfiguration.ProxyPort;
+                string proxyhost = ClusterConfiguration.ProxyHost;
+
+                var newProxyURl = "http://" + proxyhost + ":" + proxyPort + "/external/https/";
+                uri = uri.Replace("https://", newProxyURl);
+            }
+            
             var newEndpoint = new Endpoint() {Uri = uri};
             var ws = Workspaces.GetWorkspaceFile(workspace);
             ws.UpdateOrInsertEndpoint(endpoint,newEndpoint);
@@ -69,10 +80,21 @@ namespace PyxisCLI.Server.Controllers
         [HttpGet]
         [TimeTrace("workspace")]
         [AllowAnonymous]
-        public IEnumerable<dynamic> Search(string workspace, string endpoint, ODataQueryOptions<DataSet> odataParameters, string query = null)
+        public IEnumerable<dynamic> Search3(string workspace, string endpoint, ODataQueryOptions<DataSet> odataParameters, string query = null)
         {
             var endpointState = GetEndpointState(workspace, endpoint);
             var datasets = endpointState.Search(query ?? "");
+            string proxyPort = ClusterConfiguration.ProxyPort;
+            string proxyhost = ClusterConfiguration.ProxyHost;
+
+            var newProxyURl = "http://" + proxyhost + ":" + proxyPort + "/external/https/";
+            foreach (var d in datasets)
+            {
+                if (d.Uri.Contains(newProxyURl))
+                {
+                    d.Uri = d.Uri.Replace(newProxyURl, "https://");
+                }
+            }
             return odataParameters.ApplyTo(datasets);
         }
 
@@ -91,7 +113,7 @@ namespace PyxisCLI.Server.Controllers
         [TimeTrace("workspace")]
         public string Discover(string workspace, string endpoint)
         {
-            var ep = Endpoint(workspace, endpoint);
+            var ep = Endpoint2(workspace, endpoint);
             if (ep == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
@@ -103,7 +125,15 @@ namespace PyxisCLI.Server.Controllers
 
         private EndpointState GetEndpointState(string workspace, string endpoint)
         {
-            var endpointObject = Endpoint(workspace, endpoint);
+            var endpointObject = Endpoint2(workspace, endpoint);
+            if (endpointObject.Uri.Contains("https://"))
+            {
+                string proxyPort = ClusterConfiguration.ProxyPort;
+                string proxyhost = ClusterConfiguration.ProxyHost;
+
+                var newProxyURl = "http://" + proxyhost + ":" + proxyPort + "/external/https/";
+                endpointObject.Uri = endpointObject.Uri.Replace("https://", newProxyURl);
+            }
             var key = workspace + "/" + endpoint;
             EndpointState endpointState;
             if (s_endpointStates.ContainsKey(key))

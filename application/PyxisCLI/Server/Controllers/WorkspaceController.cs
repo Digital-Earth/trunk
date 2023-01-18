@@ -10,6 +10,7 @@ using PyxisCLI.Server.Cluster;
 using PyxisCLI.Server.Models;
 using PyxisCLI.Server.Services;
 using PyxisCLI.Server.WebConfig;
+using PyxisCLI.State;
 using PyxisCLI.Workspaces;
 
 namespace PyxisCLI.Server.Controllers
@@ -80,13 +81,24 @@ namespace PyxisCLI.Server.Controllers
                 Globes = new Dictionary<string, WorkspaceWithStatus.ItemAndStatus>()
             };
 
-            foreach(var endpoint in ws.Endpoints)
+            string proxyPort = ClusterConfiguration.ProxyPort;
+            string proxyhost = ClusterConfiguration.ProxyHost;
+
+            var newProxyURl = "http://" + proxyhost + ":" + proxyPort + "/external/https/";
+
+            foreach (var endpoint in ws.Endpoints)
             {
+                if (endpoint.Value.Uri.Contains(newProxyURl))
+                {
+                    endpoint.Value.Uri = endpoint.Value.Uri.Replace(newProxyURl, "https://");
+                }
+                
                 result.Endpoints[endpoint.Key] = new WorkspaceWithStatus.ItemAndStatus()
                 {
                     Item = endpoint.Value,
                     Status = StatusFactory.Create(endpoint.Value)
                 };
+
             }
 
             foreach (var import in ws.Imports)
@@ -132,7 +144,7 @@ namespace PyxisCLI.Server.Controllers
         [HttpGet]
         [TimeTrace("reference")]
         [AllowAnonymous]
-        public GeoSource Resolve(string reference, bool broadcast = true, bool forceImport = false )
+        public GeoSource Resolve2(string reference, bool broadcast = true, bool forceImport = false )
         {
             var geoSource = Workspaces.ResolveGeoSource(new ReferenceOrExpression() { Reference = reference }, forceImport);
 

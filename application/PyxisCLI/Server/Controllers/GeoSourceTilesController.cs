@@ -23,10 +23,11 @@ namespace PyxisCLI.Server.Controllers
     [RoutePrefix("api/v1/GeoSource")]
     public class GeoSourceTilesController : ApiController
     {
-        [HttpGet]
+
         [Route("{geoSourceId}/Tile")]
+        [HttpGet]
         [TimeTrace("geoSourceId,root,depth,field")]
-        public async Task<HttpResponseMessage> GetPyxisTile(Guid geoSourceId, string root, int depth, string field = "")
+        public async Task<HttpResponseMessage> GetPyxisTile2(Guid geoSourceId, string root, int depth, string field = "")
         {
             var index = new PYXIcosIndex(root);
             var tile = PYXTile.create(index, index.getResolution() + depth);
@@ -48,10 +49,11 @@ namespace PyxisCLI.Server.Controllers
             return BytesToResponse(bytes, "application/pyxtile");
         }
         
-        [HttpGet]
+
         [Route("{geoSourceId}/Cell")]
+        [HttpGet]
         [TimeTrace("geoSourceId,cell,field")]
-        public async Task<object> GetPyxisCell(Guid geoSourceId, string cell, string field = "")
+        public async Task<object> GetPyxisCell2(Guid geoSourceId, string cell, string field = "")
         {
             var state = GeoSourceInitializer.GetGeoSourceState(geoSourceId);
             var process = await state.GetProcess();
@@ -79,8 +81,9 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSourceId">GeoSource Id</param>
         /// <param name="pathInfo">Sub path that should be passed to the target proxy</param>
         /// <returns>HttpResponse</returns>
-        [HttpGet]
+
         [Route("{geoSourceId}/Tile/Where")]
+        [HttpGet]
         [TimeTrace("geoSourceId,root,depth,field")]
         public async Task<HttpResponseMessage> GetPyxisTile(Guid geoSourceId, string root, int depth, string field = "",string min = "",string max = "",string format = "raw")
         {
@@ -161,10 +164,10 @@ namespace PyxisCLI.Server.Controllers
             throw new Exception("unsupported GeoSource format");
         }
 
-        [HttpGet]
         [Route("{geoSourceId}/Rhombus/Where")]
+        [HttpGet]
         [TimeTrace("geoSourceId,key,depth,field")]
-        public async Task<HttpResponseMessage> RasterRhombus(Guid geoSourceId, string key, int size, string field = "", string min = "", string max = "")
+        public async Task<HttpResponseMessage> RasterRhombus2(Guid geoSourceId, string key, int size, string field = "", string min = "", string max = "")
         {
             var state = GeoSourceInitializer.GetGeoSourceState(geoSourceId);
             var process = await state.GetProcess();

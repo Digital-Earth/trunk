@@ -18,10 +18,11 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="style">Style to generate has for</param>
         /// <returns>key - hash string value</returns>
-        [HttpPost]
+
         [Route("")]
-        [TimeTrace()]
-        public string Post(Style style)
+        [HttpPost]
+        [TimeTrace]
+        public string PostStyle(Style style)
         {
             return StyleCacheSingleton.Add(style);
         }

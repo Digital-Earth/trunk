@@ -239,8 +239,9 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geometry">A GeoJson geometry</param>
         /// <returns>key - hash string value</returns>
-        [HttpPost]
+
         [Route("")]
+        [HttpPost]
         [TimeTrace()]
         public string PostGeometry(IGeometry geometry)
         {
@@ -248,8 +249,9 @@ namespace PyxisCLI.Server.Controllers
         }
 
         [Route("{geometryId}")]
+        [HttpGet]
         [TimeTrace("geometryId")]
-        public IGeometry GetGeometry(string geometryId)
+        public IGeometry GetGeometry2(string geometryId)
         {
             var geometry = GeometryCacheSingleton.Get(geometryId);
             return geometry;
@@ -260,12 +262,13 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geometryId">geometry hash id</param>
         /// <returns>Area in square meters</returns>
-        [HttpGet]
+
         [Route("{geometryId}/Area")]
+        [HttpGet]
         [TimeTrace()]
-        public double Area(string geometryId)
+        public double Area2(string geometryId)
         {
-            var geometry = GetGeometry(geometryId);
+            var geometry = GetGeometry2(geometryId);
             return geometry.GetArea(Program.Engine).InSquareMeters;
         }
         
@@ -275,8 +278,8 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geometryId">geometry hash id</param>
         /// <param name="resolution">resolutions to calculate perimeter</param>
         /// <returns>Area in square meters</returns>
-        [HttpGet]
         [Route("{geometryId}/Perimeter")]
+        [HttpGet]
         [TimeTrace("geometryId,resolution")]
         public IGeometry GetPerimeter(string geometryId, int resolution)
         {
@@ -289,8 +292,9 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource to request data characterization on</param>
         /// <returns>GeoSourceDataCharacterization for the given GeoSource</returns>
-        [HttpGet]
+
         [Route("{geometryId}/Characterize")]
+        [HttpGet]
         [ApiCache()]
         [TimeTrace("geometryId")]
         public GeoSourceDataCharacterization Characterize(string geometryId)
@@ -318,8 +322,9 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geometryId">geometry hash id</param>
         /// <returns>A GeoJson CircleGeometry that covers the given GeoJson geometry</returns>
-        [HttpGet]
+
         [Route("{geometryId}/BoundingCircle")]
+        [HttpGet]
         [TimeTrace()]
         public CircleGeometry BoundingCircle(string geometryId)
         {
@@ -341,8 +346,8 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geometryId">geometry hash id</param>
         /// <returns>HttpResponse that includes TileCollection result for the intersection of the given geometry with the requested tile</returns>
-        [HttpGet]
         [Route("{geometryId}/Tile")]
+        [HttpGet]
         [TimeTrace("geometryId,root,depth")]
         public async Task<HttpResponseMessage> Get(string geometryId, string root, int depth)
         {
@@ -356,8 +361,8 @@ namespace PyxisCLI.Server.Controllers
             return Request.CreateResponseWithCache(new TileCollectionGeometry(tileCollection));
         }
 
-        [HttpGet]
         [Route("{geometryId}/Rhombus")]
+        [HttpGet]
         [TimeTrace("geometryId,key,size")]
         public async Task<HttpResponseMessage> RasterRhombus(string geometryId, string key, int size, string format = "png")
         {

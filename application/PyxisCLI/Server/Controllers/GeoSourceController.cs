@@ -29,10 +29,11 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource Id</param>
         /// <returns>GeoSource object</returns>
-        [HttpGet]
+
         [Route("{geoSource}")]
+        [HttpGet]
         [TimeTrace("geoSource")]
-        public GeoSource Get(Guid geoSource)
+        public GeoSource GetGeo(Guid geoSource)
         {
             return GeoSourceInitializer.GetGeoSource(geoSource);
         }
@@ -42,10 +43,11 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource object</param>
         /// <returns>GeoSource object</returns>
-        [HttpPost]
+
         [Route("{geoSource}")]
+        [HttpPost]
         [TimeTrace("geoSource")]
-        public GeoSource Post([FromBody] GeoSource geoSource)
+        public GeoSource PostGeo([FromBody] GeoSource geoSource)
         {
             GeoSourceInitializer.Initialize(geoSource);
             return geoSource;
@@ -56,8 +58,9 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource Id</param>
         /// <returns>GeoSource object</returns>
-        [HttpGet]
+
         [Route("{geoSource}/Refresh")]
+        [HttpGet]
         [TimeTrace("geoSource")]
         public string Refresh(Guid geoSource)
         {
@@ -83,12 +86,13 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSource">Guid represent the geosource</param>
         /// <param name="group">optional group id</param>
         /// <returns>FeatureGroup represent the return data</returns>
-        [HttpGet]
+
         [Route("{geoSource}/Data")]
         [Route("{geoSource}/Data/{group}")]
+        [HttpGet]
         [ApiCache]
         [TimeTrace("geoSource,group,$select")]
-        public FeatureGroup Data(
+        public FeatureGroup Data2(
             Guid geoSource,
             string group = null)
         {
@@ -352,11 +356,12 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSource">GeoSource Id to use.</param>
         /// <param name="id">feature Id to extract.</param>
         /// <returns>GeoJson description of the feature</returns>
+
+        [Route("{geoSource}/Feature/{id}")]
         [HttpGet]
-        [Route("{geoSource}/Feature/{id}")]        
         [ApiCache]
         [TimeTrace("geoSource,id")]
-        public Feature Feature(
+        public Feature Feature3(
             Guid geoSource,
             string id)
         {
@@ -387,9 +392,10 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSource">GeoSource to request statistics on</param>
         /// <param name="bins">Number of bins to return in the value histogram (default:20)</param>
         /// <returns>FieldStatistics for the given GeoSource</returns>
-        [HttpGet]
+ 
         [Route("{geoSource}/Stats")]
-        [ApiCache()]
+        [HttpGet]
+        [ApiCache]
         [TimeTrace("geoSource,$select")]
         public FieldStatistics Stats(Guid geoSource, int bins = 20)
         {
@@ -421,9 +427,10 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource to request specification on</param>
         /// <returns>PipelineSpecification for the given GeoSource</returns>
-        [HttpGet]
+
         [Route("{geoSource}/Specification")]
-        [ApiCache()]
+        [HttpGet]
+        [ApiCache]
         [TimeTrace("geoSource")]
         public PipelineSpecification Specification(Guid geoSource)
         {
@@ -437,9 +444,10 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">Id of the Given GeoSource</param>
         /// <returns>size in bytes</returns>
-        [HttpGet]
+
         [Route("{geoSource}/DataSize")]
-        [ApiCache()]
+        [HttpGet]
+        [ApiCache]
         [TimeTrace("geoSource")]
         public long DataSize(Guid geoSource, bool includeGeoTag = false)
         {
@@ -458,11 +466,12 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource to request bounding circle on</param>
         /// <returns>CircleGeometry for the given GeoSource</returns>
-        [HttpGet]
+
         [Route("{geoSource}/BoundingCircle")]
-        [ApiCache()]
+        [HttpGet]
+        [ApiCache]
         [TimeTrace("geoSource")]
-        public CircleGeometry BoundingCircle(Guid geoSource)
+        public CircleGeometry BoundingCircle2(Guid geoSource)
         {
             var state = GeoSourceInitializer.GetGeoSourceState(geoSource);
             return state.GetCharacterization().Result.BoundingCircle;
@@ -473,11 +482,12 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource to request bounding box on</param>
         /// <returns>BBox for the given GeoSource</returns>
-        [HttpGet]
+
         [Route("{geoSource}/BoundingBox")]
+        [HttpGet]
         [ApiCache()]
         [TimeTrace("geoSource")]
-        public BoundingBox BoundingBox(Guid geoSource)
+        public BoundingBox BoundingBox2(Guid geoSource)
         {
             var state = GeoSourceInitializer.GetGeoSourceState(geoSource);
 
@@ -520,11 +530,12 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource to request data characterization on</param>
         /// <returns>GeoSourceDataCharacterization for the given GeoSource</returns>
-        [HttpGet]
+
         [Route("{geoSource}/Characterize")]
-        [ApiCache()]
+        [HttpGet]
+        [ApiCache]
         [TimeTrace("geoSource")]
-        public GeoSourceDataCharacterization Characterize(Guid geoSource)
+        public GeoSourceDataCharacterization Characterize2(Guid geoSource)
         {
             var state = GeoSourceInitializer.GetGeoSourceState(geoSource);
             return state.GetCharacterization().Result;
@@ -549,9 +560,10 @@ namespace PyxisCLI.Server.Controllers
         /// </summary>
         /// <param name="geoSource">GeoSource to request data characterization on</param>
         /// <returns>GeoSourceDataCharacterization for the given GeoSource</returns>
-        [HttpGet]
+
         [Route("{geoSource}/Style")]
-        [ApiCache()]
+        [HttpGet]
+        [ApiCache]
         [TimeTrace("geoSource")]
         public StyleAndHash Style(Guid geoSource)
         {
@@ -565,11 +577,11 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSource">GeoSource to request data characterization on</param>
         /// <param name="styleRequest">Style request on how to generate new style</param>
         /// <returns>GeoSourceDataCharacterization for the given GeoSource</returns>
-        [HttpPost]
         [Route("{geoSource}/Style")]
-        [ApiCache()]
+        [HttpPost]
+        [ApiCache]
         [TimeTrace("geoSource")]
-        public StyleAndHash Style(Guid geoSource, [FromBody] AutoStyleRequest styleRequest)
+        public StyleAndHash Style2(Guid geoSource, [FromBody] AutoStyleRequest styleRequest)
         {
             var state = GeoSourceInitializer.GetGeoSourceState(geoSource);
             return CreateStyleResponse(state.GetStyle(styleRequest).Result);
@@ -590,9 +602,9 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSource">GeoSource to be used as elevation</param>
         /// <param name="location">circle geometry to specify the location</param>
         /// <returns></returns>
+        [Route("{geoSource}/Watershed")]
         [HttpGet]
         [ApiCache]
-        [Route("{geoSource}/Watershed")]
         [TimeTrace("geoSource,location")]
         public IGeometry Watershed(Guid geoSource, string location)
         {

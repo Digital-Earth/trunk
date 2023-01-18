@@ -25,10 +25,11 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="geoSourceId">GeoSource Id</param>
         /// <param name="pathInfo">Sub path that should be passed to the target proxy</param>
         /// <returns>HttpResponse</returns>
-        [HttpGet]
+
         [Route("{geoSourceId}/Proxy/{*pathInfo}")]
+        [HttpGet]
         [TimeTrace("geoSourceId")]
-        public async Task<HttpResponseMessage> Get(Guid geoSourceId,string pathInfo)
+        public async Task<HttpResponseMessage> GetProx(Guid geoSourceId,string pathInfo)
         {
             var state = GeoSourceInitializer.GetGeoSourceState(geoSourceId);
 

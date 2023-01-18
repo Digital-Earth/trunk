@@ -20,7 +20,7 @@ namespace StorageServer.Controllers
         [Dependency]
         public IBlobProvider BlobProvider { get; set; }
 
-        [HttpGet()]
+        [HttpGet]
         [Route("blob/{key}")]
         public async Task<HttpResponseMessage> GetBlob([FromUri]string key)
         {
@@ -49,7 +49,7 @@ namespace StorageServer.Controllers
             return response;
         }
 
-        [HttpPost()]
+        [HttpPost]
         [Route("blob/{key}")]
         public async Task<HttpResponseMessage> PostBlob([FromUri]string key)
         {
@@ -68,7 +68,7 @@ namespace StorageServer.Controllers
             return response;
         }
 
-        [HttpPost()]
+        [HttpPost]
         [Route("missingblobs")]
         public async Task<HttpResponseMessage> GetMissingBlobs()
         {
@@ -88,7 +88,7 @@ namespace StorageServer.Controllers
             return response;
         }
 
-        [HttpPost()]
+        [HttpPost]
         [Route("multiblobs")]
         public async Task<HttpResponseMessage> GetMultiBlobs()
         {

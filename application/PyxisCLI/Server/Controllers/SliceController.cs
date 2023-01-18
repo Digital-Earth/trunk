@@ -50,7 +50,7 @@ namespace PyxisCLI.Server.Controllers
 
         [Route("")]
         [HttpPost]
-        public List<CellResult> Slice([FromBody] SliceRequest request)
+        public List<CellResult> Slice2([FromBody] SliceRequest request)
         {
             if (request.Cell.HasContent() && request.Cells == null)
             {

@@ -24,11 +24,12 @@ namespace PyxisCLI.Server.Controllers
         /// <param name="field">field name. can be "*" for all fields or several field names splited by ","</param>
         /// <param name="groupId">optional groupId, if not specific the root group of GeoSource is used</param>
         /// <returns>Icons Model for the given group.</returns>
-        [HttpGet]
+
         [Route("{geoSource}/Icons")]
+        [HttpGet]
         [ApiCache]
         [TimeTrace("geoSource,field,groupId")]
-        public IconsModel Icons(Guid geoSource, string field, string groupId = "")
+        public IconsModel Icons2(Guid geoSource, string field, string groupId = "")
         {
             var model = new IconsModel
             {

@@ -19,8 +19,8 @@ namespace Pyxis.IO.DataDiscovery
 
             request.Accept = "*/*";
             request.UserAgent = "Pyxis Crawller";
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls |
-                                                   SecurityProtocolType.Tls11 | SecurityProtocolType.Ssl3;
+/*            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls |
+                                                   SecurityProtocolType.Tls11 | SecurityProtocolType.Ssl3;*/
 
             var networkPermit = Permit as INetworkPermit;
 

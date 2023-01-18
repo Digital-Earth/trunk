@@ -68,8 +68,8 @@ namespace Pyxis.IO.Sources.Remote
         {
             var request = (HttpWebRequest) WebRequest.Create(url);
             request.Accept = accept ?? "application/json; charset=utf-8";
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls |
-                                                   SecurityProtocolType.Tls11 | SecurityProtocolType.Ssl3;
+/*            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls |
+                                                   SecurityProtocolType.Tls11 | SecurityProtocolType.Ssl3;*/
 
             try
             {
@@ -141,8 +141,8 @@ namespace Pyxis.IO.Sources.Remote
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls |
-                                                   SecurityProtocolType.Tls11 | SecurityProtocolType.Ssl3;
+/*            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls |
+                                                   SecurityProtocolType.Tls11 | SecurityProtocolType.Ssl3;*/
 
             try
             {

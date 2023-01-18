@@ -70,8 +70,8 @@ namespace PyxisCLI.State
                 new MongoUrl(connectionString)
             );
 
-            settings.SslSettings =
-                new SslSettings() {EnabledSslProtocols = SslProtocols.Tls12};
+/*            settings.SslSettings =
+                new SslSettings() {EnabledSslProtocols = SslProtocols.Tls12};*/
 
             s_mongoClient = new MongoClient(settings);
             s_mongoDatabase = s_mongoClient.GetDatabase(DatabaseName);

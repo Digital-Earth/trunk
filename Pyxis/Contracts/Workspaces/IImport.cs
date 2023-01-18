@@ -11,7 +11,7 @@ namespace Pyxis.Contract.Workspaces
     {
         string Type { get; }
 
-        string Uri { get; }
+        string Uri { get; set; }
 
         string Layer { get; }
 
